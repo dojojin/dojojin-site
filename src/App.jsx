@@ -91,6 +91,38 @@ const PROJECTS = [
     desc:"ตรวจสอบความหนาแน่นของฝูงชน real-time ผ่าน computer vision ส่ง alert เมื่อเกิน threshold ผ่าน MQTT",
     tech:["YOLO","OpenCV / CV2","Python","MQTT","NodeJS","FFmpeg"] },
 ];
+const CASE_STUDIES = [
+  {
+    title: "Bosch MQTT Dashboard",
+    tag: "CCTV ANALYTICS",
+    icon: "📹",
+    color: "#00ffb4",
+    problem: "กล้อง Bosch 8100i/3100i ส่ง event เยอะ แต่ทีมต้องเห็น motion, crowd density และ vehicle detection แบบ real-time ในที่เดียว",
+    solution: "สร้าง dashboard ที่รับ event ผ่าน MQTT, เก็บข้อมูลลง PostgreSQL, แสดงผลผ่าน web UI พร้อม map/status และต่อออกอินเทอร์เน็ตผ่าน Cloudflare Tunnel",
+    result: "จาก raw camera events กลายเป็น operations dashboard ที่เปิดดูสถานะและเหตุการณ์ล่าสุดได้ทันที",
+    stack: ["Bosch", "MQTT", "NodeJS", "PostgreSQL", "Docker", "Cloudflare"],
+  },
+  {
+    title: "ANPR / Vehicle Detection",
+    tag: "COMPUTER VISION",
+    icon: "🚗",
+    color: "#a78bfa",
+    problem: "ต้องบันทึก entry/exit ของรถและเลขทะเบียนแบบต่อเนื่อง โดยไม่พึ่งการกรอกข้อมูลเองทุกครั้ง",
+    solution: "เชื่อม Hikvision ISAPI กับ pipeline ตรวจจับรถ/ป้ายทะเบียน แล้วส่ง log เข้าระบบค้นหาและตรวจสอบย้อนหลัง",
+    result: "ลดงาน manual logging และทำให้เหตุการณ์รถเข้าออกถูกจัดเก็บเป็นข้อมูลที่ค้นหาได้",
+    stack: ["Python", "OpenCV", "YOLO", "Elasticsearch", "Hikvision ISAPI"],
+  },
+  {
+    title: "AI OCR Pipeline",
+    tag: "AUTOMATION",
+    icon: "📄",
+    color: "#f59e0b",
+    problem: "เอกสารภาษาไทยต้องถูกอ่านและแปลงข้อมูลซ้ำ ๆ ซึ่งกินเวลาและผิดพลาดง่ายเมื่อทำมือ",
+    solution: "ทำ image preprocessing, OCR extraction และ AI-assisted validation เพื่อดึงข้อมูลสำคัญออกจากไฟล์เอกสาร",
+    result: "เปลี่ยนงานเอกสารซ้ำ ๆ ให้เป็น pipeline ที่ตรวจสอบและส่งต่อข้อมูลได้เร็วขึ้น",
+    stack: ["Python", "OpenCV", "OCR", "Stack AI", "FFmpeg", "DeepSeek"],
+  },
+];
 const CONTEXT_ITEMS = [
   { label:"🔍  inspect life.exe",          action:null },
   { label:"🐛  git blame ตัวเอง",           action:null },
@@ -610,6 +642,52 @@ function DevConfession() {
   );
 }
 
+function CaseStudiesSection() {
+  return (
+    <section className="case-section">
+      <div style={{display:"flex",alignItems:"center",gap:"12px",marginBottom:"22px",paddingBottom:"14px",borderBottom:"1px solid rgba(255,255,255,0.06)",flexWrap:"wrap"}}>
+        <span style={{fontSize:"14px",fontWeight:"700",color:"rgba(255,255,255,0.75)",letterSpacing:"0.1em"}}>● CASE STUDIES</span>
+        <div style={{flex:1,minWidth:"160px",height:"1px",background:"linear-gradient(90deg,rgba(0,255,180,0.2),transparent)"}}/>
+        <span style={{fontSize:"10px",color:"rgba(0,255,180,0.45)",letterSpacing:"0.15em"}}>real problems // shipped systems</span>
+      </div>
+      <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,320px),1fr))",gap:"16px"}}>
+        {CASE_STUDIES.map((item) => (
+          <article key={item.title} className="case-card" style={{background:"rgba(255,255,255,0.018)",border:"1px solid rgba(255,255,255,0.07)",borderRadius:"18px",padding:"22px",position:"relative",overflow:"hidden"}}>
+            <div style={{position:"absolute",inset:0,background:`linear-gradient(135deg,${item.color}09,transparent 48%)`,pointerEvents:"none"}}/>
+            <div style={{position:"relative"}}>
+              <div style={{display:"flex",alignItems:"flex-start",justifyContent:"space-between",gap:"12px",marginBottom:"16px"}}>
+                <div style={{display:"flex",gap:"12px",alignItems:"center",minWidth:0}}>
+                  <div style={{width:"44px",height:"44px",borderRadius:"12px",background:`${item.color}12`,border:`1px solid ${item.color}36`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:"22px",flexShrink:0}}>{item.icon}</div>
+                  <div style={{minWidth:0}}>
+                    <h2 style={{fontSize:"15px",margin:"0 0 5px",color:"rgba(255,255,255,0.9)",lineHeight:1.35}}>{item.title}</h2>
+                    <div style={{fontSize:"9px",letterSpacing:"0.15em",color:item.color,fontWeight:"700"}}>{item.tag}</div>
+                  </div>
+                </div>
+                <span style={{fontSize:"10px",color:item.color,border:`1px solid ${item.color}33`,background:`${item.color}08`,borderRadius:"999px",padding:"4px 9px",whiteSpace:"nowrap"}}>SHIPPED</span>
+              </div>
+              {[
+                ["Problem", item.problem],
+                ["Solution", item.solution],
+                ["Result", item.result],
+              ].map(([label, text]) => (
+                <div key={label} style={{marginBottom:"13px"}}>
+                  <div style={{fontSize:"10px",letterSpacing:"0.16em",color:"rgba(255,255,255,0.28)",marginBottom:"5px"}}>{label.toUpperCase()}</div>
+                  <p style={{fontSize:"12px",lineHeight:1.75,color:"rgba(255,255,255,0.5)",margin:0}}>{text}</p>
+                </div>
+              ))}
+              <div style={{display:"flex",flexWrap:"wrap",gap:"5px",paddingTop:"4px"}}>
+                {item.stack.map((tech) => (
+                  <span key={tech} style={{fontSize:"10px",padding:"2px 8px",borderRadius:"5px",background:"rgba(255,255,255,0.04)",border:"1px solid rgba(255,255,255,0.08)",color:"rgba(255,255,255,0.42)"}}>{tech}</span>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function ProjectsPage() {
   const [hov, setHov] = useState(null);
   return (
@@ -1097,6 +1175,7 @@ export default function DevChaosProfile() {
         ::-webkit-scrollbar-thumb { background:rgba(0,255,180,0.3); border-radius:2px; }
 
         .main-grid    { display:grid; grid-template-columns:1fr 1fr 320px; gap:20px; max-width:1280px; margin:0 auto; padding:32px; }
+        .case-section { max-width:1280px; margin:0 auto 24px; padding:0 32px 8px; }
         .header-inner { max-width:1280px; margin:0 auto; padding:24px 32px 16px; display:flex; gap:20px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
         .term-wrap    { max-width:1280px; margin:0 auto; padding:0 32px 16px; }
         .nav-wrap     { max-width:1280px; margin:0 auto; padding:0 32px; }
@@ -1116,6 +1195,7 @@ export default function DevChaosProfile() {
         /* ── Mobile ── */
         @media(max-width:640px){
           .main-grid      { grid-template-columns:1fr; padding:12px; gap:12px; }
+          .case-section   { padding:0 12px 8px; margin-bottom:12px; }
           .main-grid > aside { grid-template-columns:1fr!important; }
           .header-inner   { padding:12px; gap:10px; flex-wrap:wrap; }
           .term-wrap      { padding:0 12px 12px; }
@@ -1344,9 +1424,10 @@ export default function DevChaosProfile() {
                 // or: click logo x5
               </div>
             </aside>
-          </main>
-
-          <div style={{transform:"scaleX(-1)"}}><KeyboardTicker reverse/></div>
+	          </main>
+	          <CaseStudiesSection/>
+	
+	          <div style={{transform:"scaleX(-1)"}}><KeyboardTicker reverse/></div>
 
           <section className="hero-section">
             <div className="hero-inner">
