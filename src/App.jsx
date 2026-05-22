@@ -123,6 +123,51 @@ const CASE_STUDIES = [
     stack: ["Python", "OpenCV", "OCR", "Stack AI", "FFmpeg", "DeepSeek"],
   },
 ];
+const WHAT_I_BUILD = [
+  {
+    title: "CCTV Analytics Dashboards",
+    desc: "รวม camera events, map, crowd density, vehicle detection และ alert feed ให้ทีมดูสถานะได้ในหน้าเดียว",
+    icon: "📹",
+    color: "#00ffb4",
+  },
+  {
+    title: "Real-time Event Systems",
+    desc: "ต่อ MQTT/WebSocket/Firebase ให้ข้อมูลไหลจาก device หรือ backend ไปยัง UI แบบทันใช้",
+    icon: "📡",
+    color: "#00b4ff",
+  },
+  {
+    title: "Computer Vision Pipelines",
+    desc: "ทำ detection/OCR/ANPR ตั้งแต่ preprocessing, model output, log storage ไปจนถึง dashboard",
+    icon: "🎯",
+    color: "#a78bfa",
+  },
+  {
+    title: "Automation For Boring Work",
+    desc: "เปลี่ยนงานซ้ำ ๆ เช่นอ่านเอกสาร, จัดข้อมูล, ตรวจ log ให้กลายเป็น workflow ที่คนไม่ต้องทำมือทุกครั้ง",
+    icon: "⚙️",
+    color: "#f59e0b",
+  },
+  {
+    title: "Backend + Infra Repair",
+    desc: "Express, PostgreSQL, Docker, Nginx, Cloudflare Tunnel และงานไล่ปัญหาระบบที่ไม่ยอมบอกตรง ๆ ว่าพังตรงไหน",
+    icon: "🛠️",
+    color: "#ff4466",
+  },
+  {
+    title: "Mobile Companion Apps",
+    desc: "React Native/Expo สำหรับ event screen, camera status, alerts และ control surface ที่ติดมือกว่า desktop",
+    icon: "📱",
+    color: "#34d399",
+  },
+];
+const BUILD_LOG = [
+  { date: "NOW", title: "Guestbook auth flow", detail: "เพิ่ม Google owner mode, Firestore guestbook และ visitor counter ให้เว็บ portfolio มี interaction จริง", color:"#00ffb4" },
+  { date: "WIP", title: "Mobile Events screen", detail: "ออกแบบ companion app สำหรับดู camera events และ alert stream ผ่าน WebSocket", color:"#00b4ff" },
+  { date: "OPS", title: "Bosch MQTT stream", detail: "ต่อ event จากกล้อง Bosch 8100i/3100i เข้าระบบ dashboard และ log storage", color:"#a78bfa" },
+  { date: "FIX", title: "Expo image migration", detail: "ไล่แก้ snapshot/image flow บน Android เพื่อให้ render ภาพนิ่งกว่าเดิม", color:"#f59e0b" },
+  { date: "2AM", title: "Nginx + tunnel repair", detail: "debug reverse proxy, Cloudflare Tunnel และ service restart loop ที่ชอบพังตอนดึก", color:"#ff4466" },
+];
 const CONTEXT_ITEMS = [
   { label:"🔍  inspect life.exe",          action:null },
   { label:"🐛  git blame ตัวเอง",           action:null },
@@ -688,6 +733,81 @@ function CaseStudiesSection() {
   );
 }
 
+function WhatIBuildSection() {
+  return (
+    <section className="case-section">
+      <div style={{display:"flex",alignItems:"center",gap:"12px",marginBottom:"22px",paddingBottom:"14px",borderBottom:"1px solid rgba(255,255,255,0.06)",flexWrap:"wrap"}}>
+        <span style={{fontSize:"14px",fontWeight:"700",color:"rgba(255,255,255,0.75)",letterSpacing:"0.1em"}}>● WHAT I BUILD</span>
+        <div style={{flex:1,minWidth:"160px",height:"1px",background:"linear-gradient(90deg,rgba(0,180,255,0.2),transparent)"}}/>
+        <span style={{fontSize:"10px",color:"rgba(0,180,255,0.45)",letterSpacing:"0.15em"}}>systems that survive contact with reality</span>
+      </div>
+      <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,260px),1fr))",gap:"12px"}}>
+        {WHAT_I_BUILD.map((item) => (
+          <article key={item.title} className="case-card" style={{background:"rgba(255,255,255,0.018)",border:"1px solid rgba(255,255,255,0.07)",borderRadius:"16px",padding:"18px",position:"relative",overflow:"hidden"}}>
+            <div style={{position:"absolute",inset:0,background:`linear-gradient(135deg,${item.color}08,transparent 55%)`,pointerEvents:"none"}}/>
+            <div style={{position:"relative",display:"flex",gap:"12px",alignItems:"flex-start"}}>
+              <div style={{width:"38px",height:"38px",borderRadius:"11px",background:`${item.color}12`,border:`1px solid ${item.color}33`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:"18px",flexShrink:0}}>{item.icon}</div>
+              <div>
+                <h2 style={{fontSize:"13px",margin:"0 0 7px",color:"rgba(255,255,255,0.88)",lineHeight:1.35}}>{item.title}</h2>
+                <p style={{fontSize:"11px",lineHeight:1.75,color:"rgba(255,255,255,0.45)",margin:0}}>{item.desc}</p>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function BuildLogSection() {
+  return (
+    <section className="case-section">
+      <div style={{display:"flex",alignItems:"center",gap:"12px",marginBottom:"18px",paddingBottom:"14px",borderBottom:"1px solid rgba(255,255,255,0.06)",flexWrap:"wrap"}}>
+        <span style={{fontSize:"14px",fontWeight:"700",color:"rgba(255,255,255,0.75)",letterSpacing:"0.1em"}}>● BUILD LOG</span>
+        <div style={{flex:1,minWidth:"160px",height:"1px",background:"linear-gradient(90deg,rgba(245,158,11,0.22),transparent)"}}/>
+        <span style={{fontSize:"10px",color:"rgba(245,158,11,0.52)",letterSpacing:"0.15em"}}>recent experiments // active repairs</span>
+      </div>
+      <div style={{background:"rgba(0,0,0,0.28)",border:"1px solid rgba(255,255,255,0.06)",borderRadius:"18px",overflow:"hidden"}}>
+        {BUILD_LOG.map((item, i) => (
+          <div key={`${item.date}-${item.title}`} style={{display:"grid",gridTemplateColumns:"72px 1fr",gap:"14px",padding:"15px 18px",borderTop:i ? "1px solid rgba(255,255,255,0.045)" : "none",alignItems:"start"}}>
+            <div style={{fontSize:"10px",letterSpacing:"0.14em",color:item.color,fontWeight:"800",paddingTop:"2px"}}>{item.date}</div>
+            <div>
+              <div style={{fontSize:"13px",color:"rgba(255,255,255,0.82)",fontWeight:"700",marginBottom:"4px"}}>{item.title}</div>
+              <div style={{fontSize:"11px",lineHeight:1.75,color:"rgba(255,255,255,0.43)"}}>{item.detail}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function WorkWithMeSection({ onGuestbook }) {
+  return (
+    <section className="case-section">
+      <div className="work-card" style={{background:"linear-gradient(135deg,rgba(0,255,180,0.06),rgba(120,80,255,0.055))",border:"1px solid rgba(0,255,180,0.16)",borderRadius:"20px",padding:"24px",display:"grid",gridTemplateColumns:"1.4fr 0.6fr",gap:"18px",alignItems:"center"}}>
+        <div>
+          <div style={{fontSize:"11px",letterSpacing:"0.22em",color:"rgba(0,255,180,0.65)",fontWeight:"800",marginBottom:"8px"}}>WORK_WITH_ME.exe</div>
+          <h2 style={{fontSize:"22px",lineHeight:1.25,margin:"0 0 10px",color:"rgba(255,255,255,0.9)"}}>มีระบบแปลก ๆ ที่ต้องทำให้มันใช้งานจริง?</h2>
+          <p style={{fontSize:"13px",lineHeight:1.85,color:"rgba(255,255,255,0.5)",margin:"0 0 14px",maxWidth:"760px"}}>
+            ส่งโจทย์มาได้ทั้ง dashboard, camera analytics, automation, backend/API, mobile companion app หรือ infra ที่ต้องแกะจาก log ตอนระบบเริ่มงอแง
+          </p>
+          <div style={{display:"flex",flexWrap:"wrap",gap:"7px"}}>
+            {["CCTV / AI vision", "Realtime events", "Automation", "Backend repair", "Mobile app"].map((tag) => (
+              <span key={tag} style={{fontSize:"10px",padding:"4px 9px",borderRadius:"999px",background:"rgba(0,0,0,0.25)",border:"1px solid rgba(255,255,255,0.08)",color:"rgba(255,255,255,0.42)"}}>{tag}</span>
+            ))}
+          </div>
+        </div>
+        <div style={{display:"flex",flexDirection:"column",gap:"9px"}}>
+          <a href="https://facebook.com/dojojin" target="_blank" rel="noreferrer" className="social-link" style={{textAlign:"center",textDecoration:"none",padding:"11px 14px",borderRadius:"11px",background:"rgba(0,255,180,0.1)",border:"1px solid rgba(0,255,180,0.35)",color:"#00ffb4",fontSize:"12px",fontWeight:"800",letterSpacing:"0.08em"}}>MESSAGE</a>
+          <button onClick={onGuestbook} style={{padding:"11px 14px",borderRadius:"11px",background:"rgba(255,255,255,0.04)",border:"1px solid rgba(255,255,255,0.1)",color:"rgba(255,255,255,0.55)",fontSize:"12px",fontFamily:"inherit",cursor:"pointer",letterSpacing:"0.08em"}}>GUESTBOOK</button>
+          <a href="https://github.com/dojojin/" target="_blank" rel="noreferrer" className="social-link" style={{textAlign:"center",textDecoration:"none",padding:"11px 14px",borderRadius:"11px",background:"rgba(120,80,255,0.08)",border:"1px solid rgba(120,80,255,0.28)",color:"#a78bfa",fontSize:"12px",fontWeight:"800",letterSpacing:"0.08em"}}>GITHUB</a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function ProjectsPage() {
   const [hov, setHov] = useState(null);
   return (
@@ -797,6 +917,11 @@ const EXPERIENCES = [
 
 function BiographyPage() {
   const [openIdx, setOpenIdx] = useState(0);
+  const strengths = [
+    "แกะระบบจาก log, packet, event stream และ error ที่ไม่ยอมพูดความจริง",
+    "ต่อโลก hardware/camera เข้ากับ dashboard, backend และ automation workflow",
+    "เรียนเอง ทดลองเอง แล้ว ship ระบบที่ใช้งานจริง แม้เริ่มจากโจทย์ที่ยังไม่ชัด",
+  ];
   return (
     <div className="bio-wrap">
       <div style={{background:"rgba(0,255,180,0.03)",border:"1px solid rgba(0,255,180,0.15)",borderRadius:"20px",padding:"28px 32px",marginBottom:"28px"}}>
@@ -808,8 +933,16 @@ function BiographyPage() {
           </div>
         </div>
         <p style={{fontSize:"14px",color:"rgba(255,255,255,0.65)",lineHeight:"1.9",margin:0}}>
-          Experienced <span style={{color:"#00ffb4"}}>System Engineer</span> with a demonstrated history in the telecommunications industry. Skilled across <span style={{color:"#a78bfa"}}>development</span>, <span style={{color:"#00b4ff"}}>content marketing</span>, and <span style={{color:"#f59e0b"}}>digital marketing</span>. Strong IT background spanning infrastructure, AI/ML, computer vision, web development, and full-stack engineering — built through 20+ years of hands-on chaos.
+          ผมเป็น <span style={{color:"#00ffb4"}}>self-taught system builder</span> ที่โตมากับงาน infrastructure, support, QA, marketing และ development เลยถนัดโจทย์ที่ต้องคุยได้ทั้งกับคน ระบบ และอุปกรณ์จริง ตั้งแต่ <span style={{color:"#a78bfa"}}>CCTV analytics</span>, <span style={{color:"#00b4ff"}}>MQTT/WebSocket events</span>, <span style={{color:"#f59e0b"}}>computer vision</span>, backend, mobile app ไปจนถึง Docker/Nginx/Cloudflare ที่ชอบพังตอนดึก
         </p>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,260px),1fr))",gap:"10px",marginTop:"20px"}}>
+          {strengths.map((item) => (
+            <div key={item} style={{background:"rgba(0,0,0,0.24)",border:"1px solid rgba(255,255,255,0.06)",borderRadius:"12px",padding:"12px 14px",display:"flex",gap:"9px",alignItems:"flex-start"}}>
+              <span style={{color:"#00ffb4",fontSize:"10px",marginTop:"4px",flexShrink:0}}>▸</span>
+              <span style={{fontSize:"12px",lineHeight:1.75,color:"rgba(255,255,255,0.5)"}}>{item}</span>
+            </div>
+          ))}
+        </div>
         <div style={{display:"flex",flexWrap:"wrap",gap:"8px",marginTop:"20px"}}>
           {["20+ yrs experience","7 roles","3 industries","∞ coffee consumed","🇹🇭 UTC+7","1 life.exe (barely running)"].map(tag => (
             <span key={tag} style={{fontSize:"10px",padding:"4px 10px",borderRadius:"20px",background:"rgba(0,255,180,0.07)",border:"1px solid rgba(0,255,180,0.2)",color:"rgba(0,255,180,0.7)",letterSpacing:"0.08em"}}>{tag}</span>
@@ -1175,7 +1308,7 @@ export default function DevChaosProfile() {
         ::-webkit-scrollbar-thumb { background:rgba(0,255,180,0.3); border-radius:2px; }
 
         .main-grid    { display:grid; grid-template-columns:1fr 1fr 320px; gap:20px; max-width:1280px; margin:0 auto; padding:32px; }
-        .case-section { max-width:1280px; margin:0 auto 24px; padding:0 32px 8px; }
+	        .case-section { max-width:1280px; margin:0 auto 24px; padding:0 32px 8px; }
         .header-inner { max-width:1280px; margin:0 auto; padding:24px 32px 16px; display:flex; gap:20px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
         .term-wrap    { max-width:1280px; margin:0 auto; padding:0 32px 16px; }
         .nav-wrap     { max-width:1280px; margin:0 auto; padding:0 32px; }
@@ -1195,7 +1328,8 @@ export default function DevChaosProfile() {
         /* ── Mobile ── */
         @media(max-width:640px){
           .main-grid      { grid-template-columns:1fr; padding:12px; gap:12px; }
-          .case-section   { padding:0 12px 8px; margin-bottom:12px; }
+	          .case-section   { padding:0 12px 8px; margin-bottom:12px; }
+	          .work-card      { grid-template-columns:1fr!important; padding:18px!important; }
           .main-grid > aside { grid-template-columns:1fr!important; }
           .header-inner   { padding:12px; gap:10px; flex-wrap:wrap; }
           .term-wrap      { padding:0 12px 12px; }
@@ -1314,7 +1448,7 @@ export default function DevChaosProfile() {
       {/* ══ HOME ══ */}
       {activePage === "home" && (
         <>
-          <main className="main-grid">
+	          <main className="main-grid">
             {/* LEFT */}
             <div style={{background:"rgba(255,255,255,0.02)",border:"1px solid rgba(255,255,255,0.06)",borderRadius:"20px",padding:"28px",backdropFilter:"blur(10px)"}}>
               <div style={{marginBottom:"20px"}}>
@@ -1423,11 +1557,14 @@ export default function DevChaosProfile() {
                 // try: konami code (↑↑↓↓←→←→BA)<br/>
                 // or: click logo x5
               </div>
-            </aside>
-	          </main>
-	          <CaseStudiesSection/>
-	
-	          <div style={{transform:"scaleX(-1)"}}><KeyboardTicker reverse/></div>
+	            </aside>
+		          </main>
+	          <WhatIBuildSection/>
+		          <CaseStudiesSection/>
+	          <BuildLogSection/>
+	          <WorkWithMeSection onGuestbook={() => setActivePage("comments")}/>
+		
+		          <div style={{transform:"scaleX(-1)"}}><KeyboardTicker reverse/></div>
 
           <section className="hero-section">
             <div className="hero-inner">
