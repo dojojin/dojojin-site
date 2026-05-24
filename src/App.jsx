@@ -1400,7 +1400,7 @@ export default function DevChaosProfile() {
             </div>
             <div style={{minWidth:0}}>
               <div style={{fontSize:"10px",letterSpacing:"0.35em",color:"rgba(0,255,180,0.65)",marginBottom:"4px",display:"flex",alignItems:"center",gap:"6px"}}>
-                <span>■</span> DOJOJIN.TECH — DEV_CHAOS_PORTFOLIO v3.0
+                <span>■</span> DOJOJIN.TECH — DEV_CHAOS_PORTFOLIO V.4.1
               </div>
               <h1 style={{fontSize:"clamp(20px,3.2vw,44px)",fontWeight:"800",lineHeight:1.05,margin:"0 0 3px",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",background:"linear-gradient(135deg,#ffffff 0%,#00ffb4 50%,#00b4ff 100%)",backgroundSize:"200% 200%",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",animation:"shimmer 4s linear infinite"}}>
                 <GlitchText text={profile.name}/>
