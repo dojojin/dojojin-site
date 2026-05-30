@@ -292,10 +292,23 @@ dig +short NS dojojin.tech
 
 ## 7. สถานะ ณ ปัจจุบัน (2026-05-31)
 
+**Deploy เสร็จสมบูรณ์ — dojojin.tech ออนไลน์ถาวรแล้ว** ✅
+
 - ✅ เว็บ build แล้ว วางที่ `/var/www/dojojin-site`, nginx เสิร์ฟปกติ
-- ✅ `config-host.yml` สร้างแล้ว, named tunnel รันบน host → **`https://dojojin.tech` = 200**
-- ✅ binary copy ไป `/usr/local/bin/cloudflared` แล้ว
-- ⏳ **ค้าง:** ติดตั้ง systemd service ให้ครบ (`enable --now`) เพื่อให้รันถาวร —
-  ตอนนี้ tunnel ยังรันผ่าน session อยู่ จะดับเมื่อปิด session
-  รันคำสั่งในหัวข้อ 4.5 เพื่อปิดงานส่วนนี้
-- ⏳ (ถ้าต้องการ) เพิ่ม DNS `www`, ลบไฟล์ขยะ `dojojin.conf:`, ปิด cloudflared container เดิมใน docker
+- ✅ `config-host.yml` สร้างแล้ว (ชี้ `127.0.0.1`)
+- ✅ binary ติดตั้งที่ `/usr/local/bin/cloudflared`
+- ✅ **systemd service `cloudflared-dojojin.service` = `active` + `enabled`**
+  (auto-start ตอนบูต, auto-restart on failure) — tunnel **ไม่ผูกกับ session** อีกต่อไป
+- ✅ **`https://dojojin.tech` = 200** (เสิร์ฟโดย service ล้วน)
+
+**งานเสริม (optional ทำหรือไม่ก็ได้):**
+- ⏳ เพิ่ม DNS record `www` (CNAME ไป tunnel) ใน Cloudflare ถ้าต้องการ `www.dojojin.tech`
+- ⏳ ลบไฟล์ขยะ `/etc/nginx/conf.d/dojojin.conf:` (ชื่อมี `:` ต่อท้าย, nginx ไม่โหลดอยู่แล้ว)
+- ⏳ ปิด cloudflared container เดิมใน docker (`sudo docker rm -f cloudflared`) กัน split-brain ในอนาคต
+
+**คำสั่งจัดการ service:**
+```bash
+systemctl status  cloudflared-dojojin.service
+sudo systemctl restart cloudflared-dojojin.service
+journalctl -u cloudflared-dojojin.service -n 50 --no-pager
+```
