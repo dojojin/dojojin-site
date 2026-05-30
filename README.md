@@ -46,6 +46,34 @@ Lint the project:
 npm run lint
 ```
 
+The dev server is configured (in [vite.config.js](./vite.config.js)) with `server.host: true`
+(listen on both IPv4 and IPv6) and `server.allowedHosts` for `*.trycloudflare.com`, so it can be
+reached through a Cloudflare quick tunnel during development.
+
+## Deployment
+
+Production is served as static files (no Docker, no Node runtime in production):
+
+```
+dojojin.tech → Cloudflare → cloudflared (named tunnel, on host via systemd)
+            → nginx :80 (root /var/www/dojojin-site) → built files (dist/)
+```
+
+Deploy a new build:
+
+```bash
+npm run build
+sudo rsync -a --delete dist/ /var/www/dojojin-site/
+sudo chown -R nginx:nginx /var/www/dojojin-site
+```
+
+The Cloudflare Tunnel runs as `cloudflared-dojojin.service` using a host-specific config
+(`~/.cloudflared/config-host.yml`, pointing at `127.0.0.1` — not the Docker `config.yml`).
+
+Full step-by-step instructions, the systemd unit, and a detailed troubleshooting log (the 530 / 502 /
+404 errors hit during setup and how each was fixed) live in [DEPLOYMENT.md](./DEPLOYMENT.md).
+Project conventions and a quick troubleshooting table are in [CLAUDE.md](./CLAUDE.md).
+
 ## Firebase
 
 The app uses the Firebase project configured in [src/firebase.js](./src/firebase.js).
@@ -61,4 +89,6 @@ Before production deployment, replace the placeholder owner email in `firestore.
 
 ## Project Notes
 
-See [PROJECT_SUMMARY.md](./PROJECT_SUMMARY.md) for a functional summary, security notes, and maintenance checklist.
+- [PROJECT_SUMMARY.md](./PROJECT_SUMMARY.md) — functional summary, security notes, and maintenance checklist
+- [DEPLOYMENT.md](./DEPLOYMENT.md) — full install & deploy guide + troubleshooting (Thai)
+- [CLAUDE.md](./CLAUDE.md) — project guide for Claude Code, with deployment architecture and a troubleshooting table (Thai)

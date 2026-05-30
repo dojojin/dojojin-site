@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# cloudflared binary (39MB) — ไม่ commit, ดู DEPLOYMENT.md
+src/cloudflared
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
