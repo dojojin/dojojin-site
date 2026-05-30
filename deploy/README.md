@@ -29,7 +29,14 @@ cd ~/dojojin-backup && bash restore.sh
 ```bash
 crontab deploy/dojojin-backup.cron   # ติดตั้ง   (ดู: crontab -l   ถอด: crontab -r)
 ```
-log: `~/.cache/dojojin-backup.log`
+log: `~/.cache/dojojin-backup.log`  ·  ต้องมี crond ทำงาน: `systemctl is-active crond`
+
+**ตรวจ/ทดสอบว่า cron ยิงจริง** (ตั้งทุกนาทีชั่วคราว รอ 1 รอบ แล้วคืนค่า):
+```bash
+( crontab -l; echo '* * * * * bash ~/dojojin-site/deploy/backup.sh >> ~/.cache/dojojin-backup.log 2>&1' ) | crontab -
+sleep 75; grep '^created' ~/dojojin-backup/MANIFEST.txt   # ควรเป็นเวลานาทีล่าสุด
+crontab deploy/dojojin-backup.cron                         # คืนค่าตารางปกติ
+```
 
 ## ติดตั้ง tunnel เป็น systemd service (รันถาวร)
 
