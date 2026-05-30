@@ -139,14 +139,22 @@ src/cloudflared tunnel --config ~/.cloudflared/config-host.yml run
 
 ### 4.5 ทำให้รันถาวรด้วย systemd (วิธีที่แนะนำสำหรับ production)
 
-ติดตั้ง binary และ service:
+**วิธีง่ายสุด — ใช้สคริปต์ใน repo (ทำทุกขั้นในคำสั่งเดียว):**
 ```bash
-sudo install -m755 /home/kiseki/dojojin-site/src/cloudflared /usr/local/bin/cloudflared
-sudo cp /tmp/cloudflared-dojojin.service /etc/systemd/system/
+sudo bash deploy/install-tunnel.sh
+```
+
+**หรือทำเองทีละขั้น:**
+```bash
+sudo install -m755 deploy/../src/cloudflared /usr/local/bin/cloudflared
+sudo install -o kiseki -g kiseki -m600 deploy/cloudflared-config-host.yml ~/.cloudflared/config-host.yml
+sudo install -m644 deploy/cloudflared-dojojin.service /etc/systemd/system/cloudflared-dojojin.service
 sudo systemctl daemon-reload
 sudo systemctl enable --now cloudflared-dojojin.service
 systemctl status cloudflared-dojojin.service
 ```
+
+> ไฟล์ตั้งค่าทั้งหมด (unit / host config / nginx) เก็บ version-controlled ไว้ที่ [`deploy/`](./deploy/)
 
 ไฟล์ `/etc/systemd/system/cloudflared-dojojin.service`:
 ```ini

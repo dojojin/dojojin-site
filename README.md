@@ -69,6 +69,8 @@ sudo chown -R nginx:nginx /var/www/dojojin-site
 
 The Cloudflare Tunnel runs as `cloudflared-dojojin.service` using a host-specific config
 (`~/.cloudflared/config-host.yml`, pointing at `127.0.0.1` — not the Docker `config.yml`).
+Version-controlled copies of the nginx, cloudflared, and systemd config live in [deploy/](./deploy/);
+install the tunnel as a service with `sudo bash deploy/install-tunnel.sh`.
 
 Full step-by-step instructions, the systemd unit, and a detailed troubleshooting log (the 530 / 502 /
 404 errors hit during setup and how each was fixed) live in [DEPLOYMENT.md](./DEPLOYMENT.md).
