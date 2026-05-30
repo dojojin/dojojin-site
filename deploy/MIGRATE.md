@@ -23,12 +23,19 @@ bash deploy/backup.sh          # -> ~/dojojin-backup (replace ของเดิ
 ├── restore.sh                     สคริปต์กู้คืน (Linux)
 ├── MIGRATE.md                     คู่มือนี้
 ├── MANIFEST.txt                   เวอร์ชัน/tunnel-id ของเครื่องต้นทาง
+├── bin/
+│   └── cloudflared-linux-amd64    binary (เผื่อ restore แบบ offline / ล็อกเวอร์ชัน)
 └── secrets/                       ⚠️ ของลับ — ห้าม commit/แชร์
     ├── cloudflared.tar.gz         ทั้ง ~/.cloudflared (creds + cert + config-host.yml)
     ├── env.local.bak              .env.local
     └── README-secrets.txt
 ```
 **ย้ายเครื่อง:** คัดลอกทั้งโฟลเดอร์ `~/dojojin-backup` ไปเครื่องใหม่ (USB เข้ารหัส / cloud ส่วนตัว) — secrets อยู่ในนี้
+
+**Backup อัตโนมัติ (cron):** ตั้งให้ backup เองทุกสัปดาห์
+```bash
+crontab deploy/dojojin-backup.cron      # ทุกวันอาทิตย์ 03:17 → log: ~/.cache/dojojin-backup.log
+```
 
 ---
 
