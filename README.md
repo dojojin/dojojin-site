@@ -76,6 +76,20 @@ Full step-by-step instructions, the systemd unit, and a detailed troubleshooting
 404 errors hit during setup and how each was fixed) live in [DEPLOYMENT.md](./DEPLOYMENT.md).
 Project conventions and a quick troubleshooting table are in [CLAUDE.md](./CLAUDE.md).
 
+### Moving to a new machine (backup / restore)
+
+Secrets that are not in git (`~/.cloudflared` credentials, `.env.local`) are bundled by a script:
+
+```bash
+bash deploy/backup.sh          # → ~/dojojin-backup (copy it to a USB / private cloud)
+# on the new machine, after copying the bundle across:
+cd ~/dojojin-backup && bash restore.sh
+```
+
+`restore.sh` rebuilds everything (clone, build, nginx, SELinux context, systemd tunnel) and verifies
+with curl. Per-OS instructions for **Fedora/Nobara, Ubuntu/Debian, and Windows** are in
+[deploy/MIGRATE.md](./deploy/MIGRATE.md).
+
 ## Firebase
 
 The app uses the Firebase project configured in [src/firebase.js](./src/firebase.js).
@@ -94,3 +108,5 @@ Before production deployment, replace the placeholder owner email in `firestore.
 - [PROJECT_SUMMARY.md](./PROJECT_SUMMARY.md) — functional summary, security notes, and maintenance checklist
 - [DEPLOYMENT.md](./DEPLOYMENT.md) — full install & deploy guide + troubleshooting (Thai)
 - [CLAUDE.md](./CLAUDE.md) — project guide for Claude Code, with deployment architecture and a troubleshooting table (Thai)
+- [deploy/](./deploy/) — version-controlled prod config + install/backup/restore scripts
+- [deploy/MIGRATE.md](./deploy/MIGRATE.md) — move to a new machine (Fedora / Ubuntu / Windows) (Thai)

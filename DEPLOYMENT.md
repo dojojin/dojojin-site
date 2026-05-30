@@ -312,3 +312,21 @@ systemctl status  cloudflared-dojojin.service
 sudo systemctl restart cloudflared-dojojin.service
 journalctl -u cloudflared-dojojin.service -n 50 --no-pager
 ```
+
+---
+
+## 8. ย้ายเครื่อง / Backup-Restore
+
+โค้ด + config ระบบอยู่ใน git (`deploy/`) แล้ว — backup เก็บแค่ **ของลับ** (`~/.cloudflared`, `.env.local`)
+
+```bash
+bash deploy/backup.sh        # สร้าง bundle → ~/dojojin-backup (เก็บใส่ USB/cloud ส่วนตัว)
+# เครื่องใหม่: คัดลอก ~/dojojin-backup มา แล้ว
+cd ~/dojojin-backup && bash restore.sh
+```
+
+`restore.sh` ทำครบ: กู้ `~/.cloudflared` → clone repo → กู้ `.env.local` → build → deploy ไป
+`/var/www/dojojin-site` (+SELinux context) → nginx → กัน split-brain → ติดตั้ง systemd service → verify
+
+> คู่มือย้ายเครื่องแยกตาม OS (**Fedora/Nobara · Ubuntu/Debian · Windows**) ดู [`deploy/MIGRATE.md`](./deploy/MIGRATE.md)
+> — bundle เป็นของลับ อยู่นอก repo **ห้าม commit**
