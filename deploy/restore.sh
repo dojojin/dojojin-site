@@ -99,7 +99,12 @@ fi
 
 # ---------------------------------------------------------------------------
 say "8) ติดตั้ง cloudflared tunnel เป็น systemd service (auto-start ถาวร)"
-# install-tunnel.sh จะจัดการ binary (ดาวน์โหลดถ้าไม่มี) + config + unit + enable --now
+# ใช้ binary จาก bundle ถ้ามี (offline) ไม่งั้น install-tunnel.sh จะดาวน์โหลดเอง
+if [ -f "$BUNDLE_DIR/bin/cloudflared-linux-amd64" ] && [ ! -x /usr/local/bin/cloudflared ]; then
+  sudo install -m755 "$BUNDLE_DIR/bin/cloudflared-linux-amd64" /usr/local/bin/cloudflared
+  echo "   ติดตั้ง cloudflared จาก bundle (offline)"
+fi
+# install-tunnel.sh จัดการ binary (ถ้ายังไม่มี) + config + unit + enable --now
 sudo bash "$REPO_DIR/deploy/install-tunnel.sh"
 
 # ---------------------------------------------------------------------------

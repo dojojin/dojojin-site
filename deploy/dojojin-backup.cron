@@ -1,0 +1,10 @@
+# dojojin-site — auto backup ของลับเป็นระยะ (weekly)
+# ติดตั้ง:  crontab deploy/dojojin-backup.cron      (เขียนทับ crontab เดิม)
+# หรือดู:  crontab -l   /   ถอด: crontab -r
+#
+# cron มี env น้อย — กำหนด PATH ให้เจอ tar/node/cloudflared
+PATH=/usr/local/bin:/usr/bin:/bin
+SHELL=/bin/bash
+
+# ทุกวันอาทิตย์ 03:17 น. — สร้าง bundle ใหม่ที่ ~/dojojin-backup (log ไว้ดูย้อนหลัง)
+17 3 * * 0 bash /home/kiseki/dojojin-site/deploy/backup.sh >> /home/kiseki/.cache/dojojin-backup.log 2>&1

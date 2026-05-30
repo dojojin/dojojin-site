@@ -10,6 +10,7 @@
 #   <dir>/secrets/cloudflared.tar.gz   ทั้งโฟลเดอร์ ~/.cloudflared (creds+cert+config-host.yml)
 #   <dir>/secrets/env.local.bak        สำเนา .env.local
 #   <dir>/secrets/README-secrets.txt   คำเตือน
+#   <dir>/bin/cloudflared-linux-amd64  binary (เผื่อ restore แบบ offline)
 #   <dir>/restore.sh                   สคริปต์กู้คืน (สำเนาจาก repo)
 #   <dir>/MIGRATE.md                   คู่มือย้ายเครื่อง (สำเนาจาก repo)
 #   <dir>/MANIFEST.txt                 เวอร์ชัน/วันที่ของเครื่องต้นทาง
@@ -45,6 +46,19 @@ if [ -f "$REPO_DIR/.env.local" ]; then
   echo "   + secrets/env.local.bak"
 else
   echo "   !! ไม่พบ .env.local — ข้าม"
+fi
+
+# 2.5) cloudflared binary (เผื่อ restore แบบ offline / ล็อกเวอร์ชันให้ตรงต้นทาง)
+BIN_SRC=""
+if [ -x /usr/local/bin/cloudflared ]; then BIN_SRC=/usr/local/bin/cloudflared
+elif [ -f "$REPO_DIR/src/cloudflared" ]; then BIN_SRC="$REPO_DIR/src/cloudflared"; fi
+if [ -n "$BIN_SRC" ]; then
+  mkdir -p "$BACKUP_DIR/bin"
+  cp "$BIN_SRC" "$BACKUP_DIR/bin/cloudflared-linux-amd64"
+  chmod +x "$BACKUP_DIR/bin/cloudflared-linux-amd64"
+  echo "   + bin/cloudflared-linux-amd64   ($(du -h "$BACKUP_DIR/bin/cloudflared-linux-amd64" | cut -f1))  [offline restore]"
+else
+  echo "   !! ไม่พบ cloudflared binary — restore จะดาวน์โหลดจากเน็ตแทน"
 fi
 
 # 3) สำเนา restore.sh + MIGRATE.md เข้า bundle ให้ self-contained
