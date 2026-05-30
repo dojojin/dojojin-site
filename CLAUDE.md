@@ -76,6 +76,16 @@ sudo systemctl restart cloudflared-dojojin.service
 journalctl -u cloudflared-dojojin.service -n 50 --no-pager
 ```
 
+**สคริปต์ใน `deploy/` (version-controlled):**
+- `install-tunnel.sh` — ติดตั้ง tunnel เป็น systemd service (`sudo bash deploy/install-tunnel.sh`)
+- `backup.sh` — สร้าง migration bundle ของลับ → `~/dojojin-backup` (`~/.cloudflared` + `.env.local`)
+- `restore.sh` — กู้คืนทั้งระบบบนเครื่องใหม่ (clone→build→nginx→SELinux→systemd→verify)
+- `MIGRATE.md` — คู่มือย้ายเครื่องครบทุก OS (Fedora/Nobara · Ubuntu/Debian · Windows)
+- `nginx-dojojin-site.conf` / `cloudflared-config-host.yml` / `cloudflared-dojojin.service` — สำเนา config จริง
+
+**ย้ายเครื่อง:** `bash deploy/backup.sh` → คัดลอก `~/dojojin-backup` ไปเครื่องใหม่ → `bash restore.sh`
+(ของลับอยู่ใน bundle นอก repo — **ห้าม commit**)
+
 ---
 
 ## Troubleshooting (สรุปจากปัญหาจริงที่เคยเจอ — รายละเอียดเต็มใน DEPLOYMENT.md)
