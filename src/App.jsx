@@ -135,19 +135,19 @@ const CONFESSIONS = [
   "ส่ง git commit ว่า fix ทั้งที่แก้ 300 บรรทัด  ✅  เมื่อกี้",
 ];
 const NOW_ITEMS = [
-  { task:"CCTV analytics platform (Bosch 8100i/3100i)", icon:"📹", status:"BUILDING", color:"#00ffb4" },
+  { task:"Vigil Platform — multi-vendor CCTV analytics", icon:"📹", status:"BUILDING", color:"#00ffb4" },
   { task:"Mobile app — Events screen via WebSocket",    icon:"📱", status:"NEXT UP",  color:"#00b4ff" },
   { task:"Fix SESSION_SECRET หลัง server restart",      icon:"🔐", status:"PENDING",  color:"#f59e0b" },
   { task:"Android snapshot → expo-image migration",     icon:"🤖", status:"TODO",     color:"#a78bfa" },
   { task:"ทะเลาะกับ nginx 502 (อีกรอบ)",               icon:"🟩", status:"ONGOING",  color:"#ff4466" },
 ];
 const PROJECTS = [
-  { name:"Bosch MQTT Dashboard", emoji:"📹", color:"#00ffb4", status:"LIVE", statusColor:"#00ffb4", link:"https://dashboard.dojojin.tech",
-    desc:"CCTV analytics platform สำหรับกล้อง Bosch 8100i/3100i แสดง real-time events, crowd density, vehicle detection ผ่าน web dashboard",
-    tech:["NodeJS","Express","PostgreSQL","MQTT","Chart.js","OpenLayers","Docker","Cloudflare"] },
-  { name:"DojoJin Mobile App", emoji:"📱", color:"#00b4ff", status:"IN DEV", statusColor:"#f59e0b",
-    desc:"React Native companion app — ดู camera status, events feed และ real-time alerts ผ่าน WebSocket รองรับ iOS + Android",
-    tech:["React Native","Expo SDK 55","Zustand","Axios","Victory Native","Mapbox"] },
+  { name:"Vigil Platform", emoji:"📹", color:"#00ffb4", status:"LIVE", statusColor:"#00ffb4", link:"https://dashboard.dojojin.tech",
+    desc:"Multi-vendor CCTV analytics & management suite — รับ event จาก Bosch (MQTT/ONVIF Profile M), Hikvision (ISAPI), Dahua (CGI VCA) และ ONVIF ทั่วไป ในแดชบอร์ดเดียว: real-time monitoring, LINE alerts, branded reports, demographic face analytics, license ผูกเครื่องด้วย Ed25519",
+    tech:["NodeJS","Express","PostgreSQL","MQTT / EMQX","ONVIF","Docker","Cloudflare"] },
+  { name:"Vigil Mobile", emoji:"📱", color:"#00b4ff", status:"IN DEV", statusColor:"#f59e0b",
+    desc:"React Native companion app ของ Vigil Platform — ดู camera overview, live snapshot, online/offline status, alert badges และ real-time events ผ่าน WebSocket รองรับ iOS + Android",
+    tech:["React Native","Expo SDK 54","Expo Router","Zustand","Axios","WebSocket"] },
   { name:"ANPR / Vehicle Detection", emoji:"🚗", color:"#a78bfa", status:"DEPLOYED", statusColor:"#00ffb4",
     desc:"License plate recognition ด้วย Hikvision ISAPI + Elasticsearch เก็บ log entry/exit ยานพาหนะแบบ real-time",
     tech:["Python","OpenCV","YOLO","Elasticsearch","Hikvision ISAPI","C++"] },
@@ -160,14 +160,14 @@ const PROJECTS = [
 ];
 const CASE_STUDIES = [
   {
-    title: "Bosch MQTT Dashboard",
+    title: "Vigil Platform",
     tag: "CCTV ANALYTICS",
     icon: "📹",
     color: "#00ffb4",
-    problem: "กล้อง Bosch 8100i/3100i ส่ง event เยอะ แต่ทีมต้องเห็น motion, crowd density และ vehicle detection แบบ real-time ในที่เดียว",
-    solution: "สร้าง dashboard ที่รับ event ผ่าน MQTT, เก็บข้อมูลลง PostgreSQL, แสดงผลผ่าน web UI พร้อม map/status และต่อออกอินเทอร์เน็ตผ่าน Cloudflare Tunnel",
-    result: "จาก raw camera events กลายเป็น operations dashboard ที่เปิดดูสถานะและเหตุการณ์ล่าสุดได้ทันที",
-    stack: ["Bosch", "MQTT", "NodeJS", "PostgreSQL", "Docker", "Cloudflare"],
+    problem: "กล้องหลายยี่ห้อ (Bosch, Hikvision, Dahua, ONVIF) ส่ง event คนละ protocol — ทีม security ต้องเห็น motion, line-crossing, intrusion และ face capture แบบ real-time ในที่เดียว",
+    solution: "สร้าง multi-vendor ingester (Bosch MQTT/ONVIF Profile M · Hikvision ISAPI alert stream · Dahua CGI VCA) ที่ normalize ทุก event ลงตารางเดียว แล้วต่อ alert engine, LINE notification, branded reports และ operational dashboard",
+    result: "จากกล้องต่างยี่ห้อกลายเป็น operations platform เดียว: morning briefing, offline alerts, health report และ demographic analytics — ใช้งานจริงบน production (license ผูกเครื่อง Ed25519)",
+    stack: ["Bosch", "Hikvision", "Dahua", "ONVIF", "MQTT", "PostgreSQL"],
   },
   {
     title: "ANPR / Vehicle Detection",
@@ -231,7 +231,7 @@ const WHAT_I_BUILD = [
 const BUILD_LOG = [
   { date: "NOW", title: "Guestbook auth flow", detail: "เพิ่ม Google owner mode, Firestore guestbook และ visitor counter ให้เว็บ portfolio มี interaction จริง", color:"#00ffb4" },
   { date: "WIP", title: "Mobile Events screen", detail: "ออกแบบ companion app สำหรับดู camera events และ alert stream ผ่าน WebSocket", color:"#00b4ff" },
-  { date: "OPS", title: "Bosch MQTT stream", detail: "ต่อ event จากกล้อง Bosch 8100i/3100i เข้าระบบ dashboard และ log storage", color:"#a78bfa" },
+  { date: "OPS", title: "Vigil multi-vendor ingest", detail: "ต่อ event จาก Bosch/Hikvision/Dahua/ONVIF เข้าระบบ Vigil Platform และ log storage", color:"#a78bfa" },
   { date: "FIX", title: "Expo image migration", detail: "ไล่แก้ snapshot/image flow บน Android เพื่อให้ render ภาพนิ่งกว่าเดิม", color:"#f59e0b" },
   { date: "2AM", title: "Nginx + tunnel repair", detail: "debug reverse proxy, Cloudflare Tunnel และ service restart loop ที่ชอบพังตอนดึก", color:"#ff4466" },
 ];
@@ -261,8 +261,8 @@ function processCommand(raw) {
     "  sudo [cmd]   nice try","  exit         ออกไม่ได้","  clear        clear screen",
   ].join("\n");
   if (["ls","ls -la","ls projects"].includes(cmd)) return [
-    "drwxr-xr-x  bosch-mqtt-dashboard/",
-    "drwxr-xr-x  dojojin-mobile-v2/",
+    "drwxr-xr-x  vigil-platform/",
+    "drwxr-xr-x  vigil-mobile/",
     "drwxr-xr-x  anpr-system/",
     "drwxr-xr-x  ai-ocr-pipeline/",
     "-rw-r--r--  life.exe   [Exited(1)]",
@@ -297,12 +297,12 @@ function processCommand(raw) {
   if (cmd.startsWith("cat ")) {
     const f = cmd.slice(4).trim();
     const files = {
-      "bosch.txt":"# Bosch MQTT Dashboard\nBosch 8100i/3100i CCTV analytics\nStack: Express+PostgreSQL+MQTT\nHost: Cloudflare Tunnel -> Mac\nStatus: LIVE",
-      "mobile.md":"# DojoJin Mobile App\nReact Native + Expo SDK 55\nNext: Events screen via WebSocket\nStatus: IN DEV",
+      "vigil.txt":"# Vigil Platform\nMulti-vendor CCTV analytics (Bosch/Hikvision/Dahua/ONVIF)\nStack: Express+PostgreSQL+MQTT/EMQX\nHost: Cloudflare Tunnel\nLicense: Ed25519 (machine-bound)\nStatus: LIVE",
+      "mobile.md":"# Vigil Mobile\nReact Native + Expo SDK 54 + Expo Router\nReal-time events via WebSocket\nStatus: IN DEV",
       "life.log":"[02:00] nginx: 502\n[02:15] docker restart\n[02:16] nginx: 502 (again)\n[03:45] it works (dont know why)\n[04:00] sleep",
       "quote.txt":"วันนึงจะไม่ต้องพิมพ์อะไรเองอีก\nแต่สุดท้ายยังต้องพิมพ์ git push เองอยู่ดี\n-- Mr. Dojo-mAn, 2am",
     };
-    return files[f] || "cat: "+f+": No such file\nTry: bosch.txt mobile.md life.log quote.txt";
+    return files[f] || "cat: "+f+": No such file\nTry: vigil.txt mobile.md life.log quote.txt";
   }
   if (["exit","quit"].includes(cmd)) return "ออกไปไหน? นี่คือชีวิต";
   if (cmd === "npm install") return "added 1,337 packages\nfound 47 vulnerabilities";
