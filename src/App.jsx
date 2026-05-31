@@ -7,6 +7,69 @@ import {
   onSnapshot, query, orderBy,
   runTransaction, serverTimestamp,
 } from "firebase/firestore";
+import {
+  SiDocker, SiCloudflare, SiNginx, SiOllama, SiOpencv, SiFfmpeg, SiPython,
+  SiCplusplus, SiNodedotjs, SiExpress, SiReact, SiLinux, SiUltralytics,
+  SiGooglegemini, SiDiscord, SiGithub, SiFacebook,
+} from "react-icons/si";
+import {
+  LuTarget, LuSatellite, LuUsers, LuSearch, LuCloud, LuTriangleAlert,
+  LuClapperboard, LuSkull, LuVideo, LuSmartphone, LuLock, LuBot, LuCar,
+  LuFileText, LuSettings, LuWrench, LuBug, LuRefreshCcw, LuCoffee, LuRocket,
+  LuClipboard, LuFlame, LuGamepad2, LuMoon, LuZap, LuActivity, LuMessageSquare,
+  LuInbox, LuEye, LuBrain, LuGlobe, LuLinkedin, LuLanguages, LuLayoutDashboard,
+  LuShuffle, LuScanLine, LuFileScan, LuMonitor, LuSparkles,
+} from "react-icons/lu";
+
+/* ══════ SVG ICONS ══════ */
+// emoji → SVG icon (react-icons). ใช้แทน emoji ที่ทำหน้าที่เป็น icon ใน UI
+const EMOJI_MAP = {
+  "🎯":LuTarget,"📡":LuSatellite,"👥":LuUsers,"🔍":LuSearch,"🐳":SiDocker,"🟩":SiNginx,
+  "☁":LuCloud,"😱":LuTriangleAlert,"🎬":LuClapperboard,"💀":LuSkull,"📹":LuVideo,"📱":LuSmartphone,
+  "🔐":LuLock,"🤖":LuBot,"🚗":LuCar,"📄":LuFileText,"⚙":LuSettings,"🛠":LuWrench,"🐧":SiLinux,
+  "🐛":LuBug,"♻":LuRefreshCcw,"☕":LuCoffee,"🚀":LuRocket,"📋":LuClipboard,"😈":LuFlame,
+  "🎮":LuGamepad2,"🌙":LuMoon,"⚡":LuZap,"😳":LuActivity,"💬":LuMessageSquare,"📭":LuInbox,
+  "👁":LuEye,"🧠":LuBrain,"🌐":LuGlobe,"⚠":LuTriangleAlert,
+};
+// แสดง SVG จาก emoji; ถ้าไม่มี mapping ก็ render emoji เดิม (รองรับ variation-selector ️)
+function Ico({ e, size=20, color="currentColor", style }) {
+  const C = EMOJI_MAP[(e||"").replace(/\uFE0F/g,"")];
+  if (!C) return <span style={style}>{e}</span>;
+  return <C size={size} color={color} style={{display:"inline-block",verticalAlign:"-0.125em",...style}} />;
+}
+
+/* ══════ TECH ARSENAL (logo + link) ══════ */
+// product จริง = logo แบรนด์ + url ; concept = ไอคอน generic (ไม่มี url)
+const TECH_META = {
+  "Docker":           { C:SiDocker,        color:"#2496ED", url:"https://www.docker.com" },
+  "Cloudflare Tunnel":{ C:SiCloudflare,    color:"#F38020", url:"https://www.cloudflare.com/products/tunnel/" },
+  "Nginx":            { C:SiNginx,         color:"#009639", url:"https://nginx.org" },
+  "OpenWebUI":        { C:LuMonitor,       color:"#ffffff", url:"https://openwebui.com" },
+  "Ollama":           { C:SiOllama,        color:"#ffffff", url:"https://ollama.com" },
+  "Stack AI":         { C:LuSparkles,      color:"#7c5cff", url:"https://www.stack-ai.com" },
+  "DeepSeek":         { C:LuBot,           color:"#4D6BFE", url:"https://www.deepseek.com" },
+  "Gemma":            { C:SiGooglegemini,  color:"#1FA1F1", url:"https://ai.google.dev/gemma" },
+  "Qwen":             { C:LuSparkles,      color:"#615CED", url:"https://qwen.ai" },
+  "YOLO":             { C:SiUltralytics,   color:"#5b8def", url:"https://docs.ultralytics.com" },
+  "OpenCV / CV2":     { C:SiOpencv,        color:"#5C3EE8", url:"https://opencv.org" },
+  "FFmpeg":           { C:SiFfmpeg,        color:"#3bb14a", url:"https://ffmpeg.org" },
+  "Python":           { C:SiPython,        color:"#3776AB", url:"https://www.python.org" },
+  "C++":              { C:SiCplusplus,     color:"#00599C", url:"https://isocpp.org" },
+  "NodeJS":           { C:SiNodedotjs,     color:"#5FA04E", url:"https://nodejs.org" },
+  "ExpressJS":        { C:SiExpress,       color:"#ffffff", url:"https://expressjs.com" },
+  "React":            { C:SiReact,         color:"#61DAFB", url:"https://react.dev" },
+  // concept — ไม่มี product/url
+  "Video Analytics":  { C:LuVideo,           color:"#00ffb4" },
+  "AI OCR":           { C:LuFileScan,        color:"#f59e0b" },
+  "Vehicle Detection":{ C:LuCar,             color:"#a78bfa" },
+  "Crowd Density":    { C:LuUsers,           color:"#ff4466" },
+  "License Plate":    { C:LuScanLine,        color:"#00b4ff" },
+  "Translation System":{ C:LuLanguages,      color:"#00ffb4" },
+  "Metadata Dashboard":{ C:LuLayoutDashboard,color:"#00b4ff" },
+  "Reverse Proxy":    { C:LuShuffle,         color:"#a78bfa" },
+  "Linux Server":     { C:SiLinux,           color:"#ffffff" },
+  "Social Content":   { C:LuSmartphone,      color:"#34d399" },
+};
 
 /* ══════ CONSTANTS ══════ */
 const CHAOS_TITLES = [
@@ -169,14 +232,14 @@ const BUILD_LOG = [
   { date: "2AM", title: "Nginx + tunnel repair", detail: "debug reverse proxy, Cloudflare Tunnel และ service restart loop ที่ชอบพังตอนดึก", color:"#ff4466" },
 ];
 const CONTEXT_ITEMS = [
-  { label:"🔍  inspect life.exe",          action:null },
-  { label:"🐛  git blame ตัวเอง",           action:null },
-  { label:"♻️  restart feelings",           action:()=>window.location.reload() },
-  { label:"💀  sudo rm -rf /regrets",       action:null },
-  { label:"☕  refill coffee.exe",           action:null },
-  { label:"🚀  deploy to prod (วันศุกร์)", action:()=>window.open("https://dojojin.tech","_blank") },
-  { label:"📋  copy stack trace",           action:()=>navigator.clipboard?.writeText("Error: life crashed\n  at sleep() [2am]\n  at docker.restart()\n  at nginx.502()") },
-  { label:"😈  git push -f",               action:null },
+  { icon:"🔍", label:"inspect life.exe",          action:null },
+  { icon:"🐛", label:"git blame ตัวเอง",           action:null },
+  { icon:"♻️", label:"restart feelings",           action:()=>window.location.reload() },
+  { icon:"💀", label:"sudo rm -rf /regrets",       action:null },
+  { icon:"☕", label:"refill coffee.exe",           action:null },
+  { icon:"🚀", label:"deploy to prod (วันศุกร์)", action:()=>window.open("https://dojojin.tech","_blank") },
+  { icon:"📋", label:"copy stack trace",           action:()=>navigator.clipboard?.writeText("Error: life crashed\n  at sleep() [2am]\n  at docker.restart()\n  at nginx.502()") },
+  { icon:"😈", label:"git push -f",               action:null },
 ];
 
 /* ══════ TERMINAL CMD PROCESSOR ══════ */
@@ -332,7 +395,7 @@ function KonamiPopup({ onClose }) {
   return (
     <div style={{position:"fixed",inset:0,zIndex:9999,background:"rgba(0,0,0,0.88)",backdropFilter:"blur(20px)",display:"flex",alignItems:"center",justifyContent:"center"}} onClick={onClose}>
       <div style={{background:"rgba(0,255,180,0.06)",border:"2px solid rgba(0,255,180,0.5)",borderRadius:"24px",padding:"40px 48px",maxWidth:"480px",textAlign:"center",animation:"rgb-border 2s ease-in-out infinite"}} onClick={e=>e.stopPropagation()}>
-        <div style={{fontSize:"56px",marginBottom:"16px"}}>🎮</div>
+        <div style={{marginBottom:"16px",display:"flex",justifyContent:"center",color:"#00ffb4"}}><Ico e="🎮" size={56}/></div>
         <div style={{fontSize:"13px",letterSpacing:"0.3em",color:"rgba(0,255,180,0.7)",marginBottom:"8px"}}>KONAMI CODE UNLOCKED</div>
         <div style={{fontSize:"22px",fontWeight:"800",color:"#fff",marginBottom:"20px"}}>ULTRA CHAOS MODE</div>
         <div style={{fontSize:"12px",color:"rgba(255,255,255,0.5)",lineHeight:"1.9",marginBottom:"28px",fontFamily:"monospace"}}>
@@ -356,7 +419,7 @@ function KonamiPopup({ onClose }) {
 function LightModeOverlay({ onClose }) {
   return (
     <div style={{position:"fixed",inset:0,zIndex:10000,background:"#f0ede8",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",fontFamily:"monospace"}}>
-      <div style={{fontSize:"80px",marginBottom:"20px"}}>😱</div>
+      <div style={{marginBottom:"20px",display:"flex",justifyContent:"center",color:"#0a1628"}}><Ico e="😱" size={80}/></div>
       <div style={{fontSize:"28px",fontWeight:"800",color:"#0a1628",marginBottom:"8px"}}>LIGHT MODE ACTIVATED</div>
       <div style={{fontSize:"14px",color:"#666",marginBottom:"4px"}}>// นี่มันไม่ใช่ chaos dev theme</div>
       <div style={{fontSize:"12px",color:"#999",marginBottom:"36px"}}>// triggered by: logo x 5 clicks</div>
@@ -367,7 +430,7 @@ function LightModeOverlay({ onClose }) {
         <span style={{color:"#ff4466"}}>&gt; git blame: dojoman (as always)</span>
       </div>
       <button onClick={onClose} style={{padding:"12px 32px",background:"#0a1628",color:"#00ffb4",border:"none",borderRadius:"12px",fontSize:"13px",fontWeight:"700",cursor:"pointer",letterSpacing:"0.1em",fontFamily:"monospace"}}>
-        🌙 กลับ Dark Mode
+        <span style={{display:"inline-flex",alignItems:"center",gap:"6px"}}><Ico e="🌙" size={14}/>กลับ Dark Mode</span>
       </button>
     </div>
   );
@@ -470,7 +533,7 @@ function ToastStack() {
     <div style={{position:"fixed",top:"70px",right:"20px",zIndex:5000,display:"flex",flexDirection:"column",gap:"8px",pointerEvents:"none",width:"min(280px,calc(100vw - 40px))"}}>
       {toasts.map(t => (
         <div key={t.id} style={{background:"rgba(3,11,20,0.92)",border:`1px solid ${t.color}44`,borderRadius:"12px",padding:"10px 14px",backdropFilter:"blur(16px)",display:"flex",alignItems:"center",gap:"10px",animation:"toastIn 0.3s ease"}}>
-          <span style={{fontSize:"16px",flexShrink:0}}>{t.icon}</span>
+          <span style={{flexShrink:0,display:"inline-flex"}}><Ico e={t.icon} size={16}/></span>
           <div>
             <div style={{fontSize:"9px",letterSpacing:"0.2em",color:t.color,marginBottom:"2px"}}>SYSTEM EVENT</div>
             <div style={{fontSize:"11px",color:"rgba(255,255,255,0.65)",fontFamily:"monospace"}}>{t.msg}</div>
@@ -529,9 +592,9 @@ function ContextMenuOverlay() {
       {CONTEXT_ITEMS.map((item, i) => (
         <button key={i} onClick={() => { setMenu(null); item.action?.(); }}
           style={{display:"block",width:"100%",textAlign:"left",background:"none",border:"none",color:"rgba(255,255,255,0.65)",fontSize:"12px",padding:"8px 12px",cursor:"pointer",borderRadius:"8px",letterSpacing:"0.03em",fontFamily:"monospace"}}
-          onMouseEnter={e=>{e.target.style.background="rgba(0,255,180,0.08)";e.target.style.color="#fff";}}
-          onMouseLeave={e=>{e.target.style.background="none";e.target.style.color="rgba(255,255,255,0.65)";}}>
-          {item.label}
+          onMouseEnter={e=>{e.currentTarget.style.background="rgba(0,255,180,0.08)";e.currentTarget.style.color="#fff";}}
+          onMouseLeave={e=>{e.currentTarget.style.background="none";e.currentTarget.style.color="rgba(255,255,255,0.65)";}}>
+          <span style={{display:"inline-flex",alignItems:"center",gap:"9px"}}><Ico e={item.icon} size={13}/>{item.label}</span>
         </button>
       ))}
     </div>
@@ -642,7 +705,7 @@ function NowSection() {
   return (
     <div style={{background:"rgba(0,180,255,0.04)",border:"1px solid rgba(0,180,255,0.2)",borderRadius:"16px",padding:"18px"}}>
       <div style={{display:"flex",alignItems:"center",gap:"8px",marginBottom:"14px"}}>
-        <span style={{fontSize:"16px"}}>⚡</span>
+        <span style={{display:"inline-flex"}}><Ico e="⚡" size={16}/></span>
         <div>
           <div style={{fontSize:"12px",fontWeight:"700",color:"#00b4ff",letterSpacing:"0.1em"}}>NOW</div>
           <div style={{fontSize:"10px",color:"rgba(255,255,255,0.25)",letterSpacing:"0.15em"}}>// สิ่งที่กำลังทำอยู่</div>
@@ -651,7 +714,7 @@ function NowSection() {
       <div style={{display:"flex",flexDirection:"column",gap:"7px"}}>
         {NOW_ITEMS.map((item,i) => (
           <div key={i} style={{display:"flex",alignItems:"center",gap:"8px",background:"rgba(0,0,0,0.25)",borderRadius:"9px",padding:"7px 10px"}}>
-            <span style={{fontSize:"14px",flexShrink:0}}>{item.icon}</span>
+            <span style={{flexShrink:0,display:"inline-flex"}}><Ico e={item.icon} size={14}/></span>
             <div style={{flex:1,minWidth:0,fontSize:"11px",color:"rgba(255,255,255,0.5)",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{item.task}</div>
             <div style={{fontSize:"8px",padding:"2px 6px",borderRadius:"5px",fontWeight:"700",letterSpacing:"0.08em",background:`${item.color}18`,color:item.color,border:`1px solid ${item.color}33`,flexShrink:0}}>{item.status}</div>
           </div>
@@ -674,7 +737,7 @@ function DevConfession() {
   return (
     <div style={{background:"rgba(255,68,102,0.04)",border:"1px solid rgba(255,68,102,0.18)",borderRadius:"16px",padding:"18px"}}>
       <div style={{display:"flex",alignItems:"center",gap:"8px",marginBottom:"10px"}}>
-        <span style={{fontSize:"16px"}}>😳</span>
+        <span style={{display:"inline-flex"}}><Ico e="😳" size={16}/></span>
         <div>
           <div style={{fontSize:"12px",fontWeight:"700",color:"#ff4466",letterSpacing:"0.1em"}}>DEV CONFESSION</div>
           <div style={{fontSize:"10px",color:"rgba(255,255,255,0.25)",letterSpacing:"0.15em"}}>// confession #{idx+1}/{CONFESSIONS.length}</div>
@@ -702,7 +765,7 @@ function CaseStudiesSection() {
             <div style={{position:"relative"}}>
               <div style={{display:"flex",alignItems:"flex-start",justifyContent:"space-between",gap:"12px",marginBottom:"16px"}}>
                 <div style={{display:"flex",gap:"12px",alignItems:"center",minWidth:0}}>
-                  <div style={{width:"44px",height:"44px",borderRadius:"12px",background:`${item.color}12`,border:`1px solid ${item.color}36`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:"22px",flexShrink:0}}>{item.icon}</div>
+                  <div style={{width:"44px",height:"44px",borderRadius:"12px",background:`${item.color}12`,border:`1px solid ${item.color}36`,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}><Ico e={item.icon} size={22}/></div>
                   <div style={{minWidth:0}}>
                     <h2 style={{fontSize:"15px",margin:"0 0 5px",color:"rgba(255,255,255,0.9)",lineHeight:1.35}}>{item.title}</h2>
                     <div style={{fontSize:"9px",letterSpacing:"0.15em",color:item.color,fontWeight:"700"}}>{item.tag}</div>
@@ -746,7 +809,7 @@ function WhatIBuildSection() {
           <article key={item.title} className="case-card" style={{background:"rgba(255,255,255,0.018)",border:"1px solid rgba(255,255,255,0.07)",borderRadius:"16px",padding:"18px",position:"relative",overflow:"hidden"}}>
             <div style={{position:"absolute",inset:0,background:`linear-gradient(135deg,${item.color}08,transparent 55%)`,pointerEvents:"none"}}/>
             <div style={{position:"relative",display:"flex",gap:"12px",alignItems:"flex-start"}}>
-              <div style={{width:"38px",height:"38px",borderRadius:"11px",background:`${item.color}12`,border:`1px solid ${item.color}33`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:"18px",flexShrink:0}}>{item.icon}</div>
+              <div style={{width:"38px",height:"38px",borderRadius:"11px",background:`${item.color}12`,border:`1px solid ${item.color}33`,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}><Ico e={item.icon} size={18}/></div>
               <div>
                 <h2 style={{fontSize:"13px",margin:"0 0 7px",color:"rgba(255,255,255,0.88)",lineHeight:1.35}}>{item.title}</h2>
                 <p style={{fontSize:"11px",lineHeight:1.75,color:"rgba(255,255,255,0.45)",margin:0}}>{item.desc}</p>
@@ -824,7 +887,7 @@ function ProjectsPage() {
             {hov===i && <div style={{position:"absolute",inset:0,background:`radial-gradient(circle at 30% 30%,${proj.color}06,transparent 60%)`,pointerEvents:"none"}}/>}
             <div style={{display:"flex",alignItems:"flex-start",justifyContent:"space-between",marginBottom:"14px"}}>
               <div style={{display:"flex",alignItems:"center",gap:"12px"}}>
-                <div style={{width:"44px",height:"44px",borderRadius:"12px",background:`${proj.color}12`,border:`1px solid ${proj.color}30`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:"22px",flexShrink:0}}>{proj.emoji}</div>
+                <div style={{width:"44px",height:"44px",borderRadius:"12px",background:`${proj.color}12`,border:`1px solid ${proj.color}30`,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}><Ico e={proj.emoji} size={22}/></div>
                 <div>
                   <div style={{fontSize:"14px",fontWeight:"700",color:"rgba(255,255,255,0.9)",marginBottom:"4px"}}>{proj.name}</div>
                   <div style={{fontSize:"9px",padding:"2px 7px",borderRadius:"5px",display:"inline-block",background:`${proj.statusColor}18`,color:proj.statusColor,border:`1px solid ${proj.statusColor}33`,letterSpacing:"0.1em",fontWeight:"700"}}>{proj.status}</div>
@@ -960,7 +1023,7 @@ function BiographyPage() {
           return (
             <div key={i} style={{background:isOpen?"rgba(255,255,255,0.03)":"rgba(255,255,255,0.015)",border:`1px solid ${isOpen?exp.color+"44":"rgba(255,255,255,0.06)"}`,borderRadius:"16px",overflow:"hidden",transition:"all 0.25s"}}>
               <div onClick={() => setOpenIdx(isOpen?null:i)} style={{display:"flex",alignItems:"center",gap:"14px",padding:"16px 20px",cursor:"pointer"}}>
-                <div style={{width:"42px",height:"42px",borderRadius:"12px",flexShrink:0,background:`${exp.color}18`,border:`1px solid ${exp.color}33`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:"20px"}}>{exp.icon}</div>
+                <div style={{width:"42px",height:"42px",borderRadius:"12px",flexShrink:0,background:`${exp.color}18`,border:`1px solid ${exp.color}33`,display:"flex",alignItems:"center",justifyContent:"center"}}><Ico e={exp.icon} size={20}/></div>
                 <div style={{flex:1,minWidth:0}}>
                   <div style={{fontSize:"14px",fontWeight:"700",color:"rgba(255,255,255,0.9)"}}>{exp.role}</div>
                   <div style={{fontSize:"11px",color:exp.color,marginTop:"2px",letterSpacing:"0.08em"}}>{exp.period}</div>
@@ -1093,7 +1156,7 @@ function CommentsPage() {
       {/* ── Header ── */}
       <div style={{background:"rgba(120,80,255,0.04)",border:"1px solid rgba(120,80,255,0.2)",borderRadius:"20px",padding:"28px 32px",marginBottom:"24px"}}>
         <div style={{display:"flex",alignItems:"center",gap:"12px",marginBottom:"8px",flexWrap:"wrap"}}>
-          <span style={{fontSize:"22px"}}>💬</span>
+          <span style={{display:"inline-flex"}}><Ico e="💬" size={22}/></span>
           <div style={{flex:1}}>
             <div style={{fontSize:"14px",fontWeight:"700",color:"#a78bfa",letterSpacing:"0.1em"}}>GUESTBOOK</div>
             <div style={{fontSize:"10px",color:"rgba(255,255,255,0.25)",letterSpacing:"0.15em"}}>// ฝากข้อความถึงเจ้าของเว็บได้เลย · real-time via Firebase</div>
@@ -1165,12 +1228,12 @@ function CommentsPage() {
       {/* ── List ── */}
       {loading ? (
         <div style={{textAlign:"center",padding:"48px",color:"rgba(255,255,255,0.15)",fontSize:"12px",fontFamily:"monospace",letterSpacing:"0.15em"}}>
-          <div style={{fontSize:"28px",marginBottom:"12px",animation:"statusBlink 1s infinite"}}>📡</div>
+          <div style={{marginBottom:"12px",animation:"statusBlink 1s infinite",display:"flex",justifyContent:"center",color:"rgba(0,255,180,0.6)"}}><Ico e="📡" size={28}/></div>
           connecting to Firebase...
         </div>
       ) : comments.length === 0 ? (
         <div style={{textAlign:"center",padding:"48px",color:"rgba(255,255,255,0.15)",fontSize:"12px",fontFamily:"monospace",letterSpacing:"0.15em"}}>
-          <div style={{fontSize:"32px",marginBottom:"12px"}}>📭</div>
+          <div style={{marginBottom:"12px",display:"flex",justifyContent:"center",color:"rgba(255,255,255,0.3)"}}><Ico e="📭" size={32}/></div>
           no messages yet... be the first!
         </div>
       ) : (
@@ -1209,15 +1272,6 @@ function CommentsPage() {
   );
 }
 
-const TECH_ICONS = {
-  "Docker":"🐳","Cloudflare Tunnel":"☁️","Nginx":"🟩","OpenWebUI":"🖥️","Ollama":"🦙",
-  "Stack AI":"🧠","DeepSeek":"🔮","Gemma":"💎","Qwen":"🤖","YOLO":"🎯",
-  "OpenCV / CV2":"📷","FFmpeg":"🎬","Python":"🐍","C++":"⚙️","NodeJS":"🟢",
-  "ExpressJS":"🚂","Video Analytics":"📹","AI OCR":"📄","Vehicle Detection":"🚗",
-  "Crowd Density":"👥","License Plate":"🔍","Translation System":"🌐",
-  "Metadata Dashboard":"📊","Reverse Proxy":"🔀","Linux Server":"🐧",
-  "Social Content":"📱","React":"⚛️",
-};
 
 /* ══════ MAIN COMPONENT ══════ */
 export default function DevChaosProfile() {
@@ -1240,7 +1294,7 @@ export default function DevChaosProfile() {
     title:   "System Engineer / Infrastructure Archaeologist",
     subtitle:"Build ทุกอย่าง...แต่ยังงงบางอย่างอยู่ดี",
     quote:   "วันนึงจะไม่ต้องพิมพ์อะไรเองอีก แต่สุดท้ายยังต้องพิมพ์ว่า git push เองอยู่ดี",
-    stack:   Object.keys(TECH_ICONS),
+    stack:   Object.keys(TECH_META),
     socials: { github:"https://github.com/dojojin/", facebook:"https://facebook.com/dojojin", linkedin:"https://linkedin.com/in/prakasit", discord:"dojoman" },
   };
 
@@ -1272,7 +1326,7 @@ export default function DevChaosProfile() {
     if (logoClicks.current.length >= 5) { logoClicks.current = []; setLightMode(m => !m); }
   };
 
-  const socialIcons = { github:"⌥", facebook:"◈", linkedin:"◉", discord:"◎" };
+  const socialIcons = { github:SiGithub, facebook:SiFacebook, linkedin:LuLinkedin, discord:SiDiscord };
   const NAV_TABS = [
     { id:"home",     label:"~/home",      icon:"⌂" },
     { id:"bio",      label:"./biography", icon:"▸" },
@@ -1388,7 +1442,7 @@ export default function DevChaosProfile() {
             <span style={{color:"#ff4466",animation:"statusBlink 1s infinite"}}>RAM: 2%</span>
             <span style={{color:"rgba(255,255,255,0.3)"}}>CLICKS: {clickCount}</span>
             {visitorCount !== null && (
-              <span style={{color:"rgba(0,180,255,0.7)",fontWeight:"700"}}>👁 {visitorCount.toLocaleString()} visitors</span>
+              <span style={{color:"rgba(0,180,255,0.7)",fontWeight:"700",display:"inline-flex",alignItems:"center",gap:"5px"}}><Ico e="👁" size={13}/>{visitorCount.toLocaleString()} visitors</span>
             )}
           </span>
         </div>
@@ -1453,7 +1507,7 @@ export default function DevChaosProfile() {
             <div style={{background:"rgba(255,255,255,0.02)",border:"1px solid rgba(255,255,255,0.06)",borderRadius:"20px",padding:"28px",backdropFilter:"blur(10px)"}}>
               <div style={{marginBottom:"20px"}}>
                 <div style={{display:"flex",alignItems:"center",gap:"10px",marginBottom:"4px"}}>
-                  <span style={{fontSize:"18px"}}>💀</span>
+                  <span style={{display:"inline-flex"}}><Ico e="💀" size={18}/></span>
                   <h2 style={{margin:0,fontSize:"18px",fontWeight:"700",letterSpacing:"0.05em"}}>Daily Chaos Log</h2>
                 </div>
                 <div style={{fontSize:"11px",color:"rgba(255,255,255,0.3)",letterSpacing:"0.15em"}}>// chaos-driven development schedule</div>
@@ -1464,7 +1518,7 @@ export default function DevChaosProfile() {
                   return (
                     <div key={i} className="routine-card" style={{background:"rgba(255,255,255,0.02)",border:"1px solid rgba(255,255,255,0.06)",borderRadius:"12px",padding:"14px 16px",display:"flex",alignItems:"center",gap:"14px",transition:"all 0.2s",cursor:"default"}}>
                       <div style={{fontFamily:"monospace",fontSize:"13px",color:"rgba(0,255,180,0.7)",minWidth:"50px"}}>{item.time}</div>
-                      <div style={{fontSize:"20px",flexShrink:0}}>{item.icon}</div>
+                      <div style={{flexShrink:0,display:"inline-flex"}}><Ico e={item.icon} size={20}/></div>
                       <div style={{flex:1}}><div style={{fontSize:"13px",color:"rgba(255,255,255,0.7)"}}>{item.task}</div></div>
                       <div style={{fontSize:"10px",padding:"3px 8px",borderRadius:"6px",fontWeight:"700",letterSpacing:"0.1em",background:`${c}18`,color:c,border:`1px solid ${c}33`,animation:item.status!=="RUNNING"?"statusBlink 2s infinite":"none"}}>{item.status}</div>
                     </div>
@@ -1483,7 +1537,7 @@ export default function DevChaosProfile() {
                 <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>
                   <div>
                     <div style={{display:"flex",alignItems:"center",gap:"10px",marginBottom:"4px"}}>
-                      <span style={{fontSize:"18px"}}>🧠</span>
+                      <span style={{display:"inline-flex"}}><Ico e="🧠" size={18}/></span>
                       <h2 style={{margin:0,fontSize:"18px",fontWeight:"700",letterSpacing:"0.05em"}}>Tech Arsenal</h2>
                     </div>
                     <div style={{fontSize:"11px",color:"rgba(255,255,255,0.3)",letterSpacing:"0.15em"}}>// AI • Infra • CV • Backend • DevOps</div>
@@ -1492,14 +1546,25 @@ export default function DevChaosProfile() {
                 </div>
               </div>
               <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(100px,1fr))",gap:"8px"}}>
-                {profile.stack.map((tech,i) => (
-                  <div key={i} className="tech-card" onMouseEnter={() => setHoveredTech(tech)} onMouseLeave={() => setHoveredTech(null)}
-                    style={{background:"rgba(255,255,255,0.02)",border:"1px solid rgba(255,255,255,0.06)",borderRadius:"12px",padding:"12px 8px",textAlign:"center",cursor:"default",transition:"all 0.2s",position:"relative",overflow:"hidden"}}>
-                    {hoveredTech===tech && <div style={{position:"absolute",inset:0,background:"linear-gradient(135deg,rgba(0,255,180,0.05),rgba(0,180,255,0.05))"}}/>}
-                    <div style={{fontSize:"24px",marginBottom:"6px"}}>{TECH_ICONS[tech]||"⚡"}</div>
-                    <div style={{fontSize:"10px",fontWeight:"500",color:"rgba(255,255,255,0.55)",lineHeight:"1.3",letterSpacing:"0.03em"}}>{tech}</div>
-                  </div>
-                ))}
+                {profile.stack.map((tech,i) => {
+                  const m = TECH_META[tech] || {};
+                  const Logo = m.C;
+                  const cardStyle = {background:"rgba(255,255,255,0.02)",border:"1px solid rgba(255,255,255,0.06)",borderRadius:"12px",padding:"12px 8px",textAlign:"center",cursor:m.url?"pointer":"default",transition:"all 0.2s",position:"relative",overflow:"hidden",textDecoration:"none",display:"block"};
+                  const inner = (
+                    <>
+                      {hoveredTech===tech && <div style={{position:"absolute",inset:0,background:"linear-gradient(135deg,rgba(0,255,180,0.05),rgba(0,180,255,0.05))"}}/>}
+                      {m.url && <span style={{position:"absolute",top:"5px",right:"7px",fontSize:"9px",color:"rgba(255,255,255,0.22)"}}>↗</span>}
+                      <div style={{height:"26px",marginBottom:"6px",display:"flex",alignItems:"center",justifyContent:"center"}}>
+                        {Logo ? <Logo size={24} color={m.color||"#00ffb4"}/> : <Ico e="⚡" size={24}/>}
+                      </div>
+                      <div style={{fontSize:"10px",fontWeight:"500",color:"rgba(255,255,255,0.55)",lineHeight:"1.3",letterSpacing:"0.03em",position:"relative"}}>{tech}</div>
+                    </>
+                  );
+                  const evts = { onMouseEnter:() => setHoveredTech(tech), onMouseLeave:() => setHoveredTech(null) };
+                  return m.url
+                    ? <a key={i} className="tech-card" href={m.url} target="_blank" rel="noreferrer" title={`เปิด ${tech} ↗`} style={cardStyle} {...evts}>{inner}</a>
+                    : <div key={i} className="tech-card" style={cardStyle} {...evts}>{inner}</div>;
+                })}
               </div>
             </div>
 
@@ -1508,29 +1573,32 @@ export default function DevChaosProfile() {
               <div style={{background:"rgba(255,255,255,0.02)",border:"1px solid rgba(255,255,255,0.06)",borderRadius:"20px",padding:"22px",backdropFilter:"blur(10px)"}}>
                 <div style={{marginBottom:"14px"}}>
                   <div style={{display:"flex",alignItems:"center",gap:"8px",marginBottom:"4px"}}>
-                    <span style={{fontSize:"15px"}}>🌐</span>
+                    <span style={{display:"inline-flex"}}><Ico e="🌐" size={15}/></span>
                     <h2 style={{margin:0,fontSize:"15px",fontWeight:"700"}}>Socials</h2>
                   </div>
                   <div style={{fontSize:"10px",color:"rgba(255,255,255,0.25)",letterSpacing:"0.15em"}}>// อย่าไปรู้เลย</div>
                 </div>
                 <div style={{display:"flex",flexDirection:"column",gap:"8px"}}>
-                  {Object.entries(profile.socials).map(([key,value]) => (
+                  {Object.entries(profile.socials).map(([key,value]) => {
+                    const SoIco = socialIcons[key];
+                    return (
                     <a key={key} href={value.startsWith("http")?value:undefined} className="social-link"
                       style={{display:"block",background:"rgba(0,0,0,0.3)",border:"1px solid rgba(255,255,255,0.07)",borderRadius:"10px",padding:"10px 14px",textDecoration:"none",transition:"all 0.2s"}}>
                       <div style={{display:"flex",alignItems:"center",gap:"8px"}}>
-                        <span style={{color:"rgba(0,255,180,0.5)",fontSize:"15px"}}>{socialIcons[key]}</span>
+                        <span style={{color:"rgba(0,255,180,0.6)",display:"inline-flex"}}>{SoIco && <SoIco size={16}/>}</span>
                         <div>
                           <div style={{fontSize:"10px",letterSpacing:"0.15em",color:"rgba(0,255,180,0.6)",textTransform:"uppercase"}}>{key}</div>
                           <div style={{fontSize:"11px",color:"rgba(255,255,255,0.4)",marginTop:"1px"}}>{value.replace("https://","").replace("http://","")}</div>
                         </div>
                       </div>
                     </a>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
 
               <div style={{background:"rgba(255,68,102,0.04)",border:"1px solid rgba(255,68,102,0.15)",borderRadius:"16px",padding:"18px"}}>
-                <div style={{fontSize:"12px",fontWeight:"700",color:"#ff4466",marginBottom:"8px",letterSpacing:"0.1em"}}>⚠ SYS STATUS</div>
+                <div style={{fontSize:"12px",fontWeight:"700",color:"#ff4466",marginBottom:"8px",letterSpacing:"0.1em",display:"flex",alignItems:"center",gap:"6px"}}><Ico e="⚠" size={13}/>SYS STATUS</div>
                 <div style={{fontSize:"12px",color:"rgba(255,255,255,0.45)",lineHeight:"1.6"}}>
                   Infrastructure ทำงานด้วย Docker + Cloudflare + <span style={{color:"#f59e0b"}}>ความหวัง</span>
                 </div>
@@ -1568,8 +1636,8 @@ export default function DevChaosProfile() {
 
           <section className="hero-section">
             <div className="hero-inner">
-              <div style={{position:"absolute",top:"-60px",left:"-60px",fontSize:"160px",opacity:0.05,transform:"rotate(15deg)",pointerEvents:"none",lineHeight:1}}>🐳</div>
-              <div style={{position:"absolute",bottom:"-60px",right:"-60px",fontSize:"160px",opacity:0.05,transform:"rotate(-15deg)",pointerEvents:"none",lineHeight:1}}>☁️</div>
+              <div style={{position:"absolute",top:"-60px",left:"-60px",opacity:0.05,transform:"rotate(15deg)",pointerEvents:"none",lineHeight:1,color:"#fff"}}><Ico e="🐳" size={160}/></div>
+              <div style={{position:"absolute",bottom:"-60px",right:"-60px",opacity:0.05,transform:"rotate(-15deg)",pointerEvents:"none",lineHeight:1,color:"#fff"}}><Ico e="☁️" size={160}/></div>
               <div style={{fontSize:"clamp(36px,8vw,88px)",fontWeight:"800",letterSpacing:"0.08em",background:"linear-gradient(135deg,#00ffb4,#00b4ff,#a78bfa,#00ffb4)",backgroundSize:"300% 300%",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",animation:"shimmer 5s linear infinite",lineHeight:1,marginBottom:"8px"}}>
                 DOJOJIN<span style={{color:"rgba(0,255,180,0.4)",WebkitTextFillColor:"rgba(0,255,180,0.4)"}}>  .TECH</span>
               </div>
