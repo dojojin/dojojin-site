@@ -1,20 +1,11 @@
 // src/firebase.js
+// โหลด Firebase แบบ lazy — โมดูลจริงอยู่ใน firebase-impl.js (static import → tree-shake ได้)
+// dynamic import ทำให้ทั้งก้อนถูกแยกเป็น chunk ที่โหลดตอนใช้ครั้งแรกเท่านั้น
+// คืน object ที่มี { db, auth, googleProvider, + named firestore/auth functions }
 
-import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
-import { getFirestore  } from "firebase/firestore";
+let _fb = null;
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDEVPjjO1b6chwpIXXfpCvvqEkc8Bgspz8",
-  authDomain: "dojojin-guestbook-visitor.firebaseapp.com",
-  projectId: "dojojin-guestbook-visitor",
-  storageBucket: "dojojin-guestbook-visitor.firebasestorage.app",
-  messagingSenderId: "703191129555",
-  appId: "1:703191129555:web:be0cb85e52e26207462326",
-  measurementId: "G-PG142TH1X9"
-};
-
-const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
-export const auth = getAuth(app);
-export const googleProvider = new GoogleAuthProvider();
+export function loadFirebase() {
+  if (!_fb) _fb = import("./firebase-impl.js").then((m) => m.init());
+  return _fb;
+}

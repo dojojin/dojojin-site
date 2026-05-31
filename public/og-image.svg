@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a1628"/>
+      <stop offset="1" stop-color="#0d1f33"/>
+    </linearGradient>
+    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00ffb4"/>
+      <stop offset="0.5" stop-color="#00b4ff"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- subtle scanlines -->
+  <g opacity="0.06" fill="#ffffff">
+    <rect x="0" y="0" width="1200" height="1"/>
+    <rect x="0" y="160" width="1200" height="1"/>
+    <rect x="0" y="320" width="1200" height="1"/>
+    <rect x="0" y="480" width="1200" height="1"/>
+  </g>
+
+  <!-- corner brackets -->
+  <g stroke="#00ffb4" stroke-width="3" fill="none" opacity="0.5">
+    <path d="M70 70 H140 M70 70 V140"/>
+    <path d="M1130 70 H1060 M1130 70 V140"/>
+    <path d="M70 560 H140 M70 560 V490"/>
+    <path d="M1130 560 H1060 M1130 560 V490"/>
+  </g>
+
+  <!-- REC dot -->
+  <circle cx="92" cy="120" r="7" fill="#ff3b3b"/>
+  <text x="112" y="126" font-family="monospace" font-size="20" fill="#00ffb4" opacity="0.7" letter-spacing="3">REC</text>
+
+  <!-- title -->
+  <text x="600" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="92" letter-spacing="2" fill="url(#neon)">DOJOJIN<tspan fill="#00ffb4" opacity="0.45">.TECH</tspan></text>
+
+  <!-- subtitle -->
+  <text x="600" y="360" text-anchor="middle" font-family="monospace" font-size="30" letter-spacing="6" fill="#ffffff" opacity="0.65">System Engineer / Infrastructure</text>
+
+  <!-- tagline chips -->
+  <text x="600" y="430" text-anchor="middle" font-family="monospace" font-size="22" letter-spacing="2" fill="#00b4ff" opacity="0.8">CCTV Analytics  •  Computer Vision  •  Real-time  •  Infra</text>
+
+  <!-- footer line -->
+  <text x="600" y="540" text-anchor="middle" font-family="monospace" font-size="20" letter-spacing="6" fill="#ffffff" opacity="0.35">Build • Break • Repeat • Deploy on Friday</text>
+</svg>
