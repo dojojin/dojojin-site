@@ -1,12 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import logoSvg from "./favicon.svg";
-import { auth, db, googleProvider } from "./firebase";
-import { onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
-import {
-  collection, addDoc, deleteDoc, doc,
-  onSnapshot, query, orderBy,
-  runTransaction, serverTimestamp,
-} from "firebase/firestore";
+import { loadFirebase } from "./firebase";
 import {
   SiDocker, SiCloudflare, SiNginx, SiOllama, SiOpencv, SiFfmpeg, SiPython,
   SiCplusplus, SiNodedotjs, SiExpress, SiReact, SiLinux, SiUltralytics,
@@ -32,44 +26,54 @@ const EMOJI_MAP = {
   "👁":LuEye,"🧠":LuBrain,"🌐":LuGlobe,"⚠":LuTriangleAlert,
 };
 // แสดง SVG จาก emoji; ถ้าไม่มี mapping ก็ render emoji เดิม (รองรับ variation-selector ️)
-function Ico({ e, size=20, color="currentColor", style }) {
+function Ico({ e, size=20, color="currentColor", style, label }) {
   const C = EMOJI_MAP[(e||"").replace(/\uFE0F/g,"")];
-  if (!C) return <span style={style}>{e}</span>;
-  return <C size={size} color={color} style={{display:"inline-block",verticalAlign:"-0.125em",...style}} />;
+  const a11y = label ? { role:"img", "aria-label":label } : { "aria-hidden":true, focusable:"false" };
+  if (!C) return <span style={style} {...a11y}>{e}</span>;
+  return <C size={size} color={color} style={{display:"inline-block",verticalAlign:"-0.125em",...style}} {...a11y} />;
 }
 
 /* ══════ TECH ARSENAL (logo + link) ══════ */
 // product จริง = logo แบรนด์ + url ; concept = ไอคอน generic (ไม่มี url)
 const TECH_META = {
-  "Docker":           { C:SiDocker,        color:"#2496ED", url:"https://www.docker.com" },
-  "Cloudflare Tunnel":{ C:SiCloudflare,    color:"#F38020", url:"https://www.cloudflare.com/products/tunnel/" },
-  "Nginx":            { C:SiNginx,         color:"#009639", url:"https://nginx.org" },
-  "OpenWebUI":        { C:LuMonitor,       color:"#ffffff", url:"https://openwebui.com" },
-  "Ollama":           { C:SiOllama,        color:"#ffffff", url:"https://ollama.com" },
-  "Stack AI":         { C:LuSparkles,      color:"#7c5cff", url:"https://www.stack-ai.com" },
-  "DeepSeek":         { C:LuBot,           color:"#4D6BFE", url:"https://www.deepseek.com" },
-  "Gemma":            { C:SiGooglegemini,  color:"#1FA1F1", url:"https://ai.google.dev/gemma" },
-  "Qwen":             { C:LuSparkles,      color:"#615CED", url:"https://qwen.ai" },
-  "YOLO":             { C:SiUltralytics,   color:"#5b8def", url:"https://docs.ultralytics.com" },
-  "OpenCV / CV2":     { C:SiOpencv,        color:"#5C3EE8", url:"https://opencv.org" },
-  "FFmpeg":           { C:SiFfmpeg,        color:"#3bb14a", url:"https://ffmpeg.org" },
-  "Python":           { C:SiPython,        color:"#3776AB", url:"https://www.python.org" },
-  "C++":              { C:SiCplusplus,     color:"#00599C", url:"https://isocpp.org" },
-  "NodeJS":           { C:SiNodedotjs,     color:"#5FA04E", url:"https://nodejs.org" },
-  "ExpressJS":        { C:SiExpress,       color:"#ffffff", url:"https://expressjs.com" },
-  "React":            { C:SiReact,         color:"#61DAFB", url:"https://react.dev" },
-  // concept — ไม่มี product/url
-  "Video Analytics":  { C:LuVideo,           color:"#00ffb4" },
-  "AI OCR":           { C:LuFileScan,        color:"#f59e0b" },
-  "Vehicle Detection":{ C:LuCar,             color:"#a78bfa" },
-  "Crowd Density":    { C:LuUsers,           color:"#ff4466" },
-  "License Plate":    { C:LuScanLine,        color:"#00b4ff" },
-  "Translation System":{ C:LuLanguages,      color:"#00ffb4" },
-  "Metadata Dashboard":{ C:LuLayoutDashboard,color:"#00b4ff" },
-  "Reverse Proxy":    { C:LuShuffle,         color:"#a78bfa" },
-  "Linux Server":     { C:SiLinux,           color:"#ffffff" },
-  "Social Content":   { C:LuSmartphone,      color:"#34d399" },
+  // Infra
+  "Docker":           { C:SiDocker,        color:"#2496ED", url:"https://www.docker.com", cat:"infra" },
+  "Cloudflare Tunnel":{ C:SiCloudflare,    color:"#F38020", url:"https://www.cloudflare.com/products/tunnel/", cat:"infra" },
+  "Nginx":            { C:SiNginx,         color:"#009639", url:"https://nginx.org", cat:"infra" },
+  "Reverse Proxy":    { C:LuShuffle,       color:"#a78bfa", cat:"infra" },
+  "Linux Server":     { C:SiLinux,         color:"#ffffff", url:"https://kernel.org", cat:"infra" },
+  // AI Models
+  "OpenWebUI":        { C:LuMonitor,       color:"#ffffff", url:"https://openwebui.com", cat:"ai" },
+  "Ollama":           { C:SiOllama,        color:"#ffffff", url:"https://ollama.com", cat:"ai" },
+  "Stack AI":         { C:LuSparkles,      color:"#7c5cff", url:"https://www.stack-ai.com", cat:"ai" },
+  "DeepSeek":         { C:LuBot,           color:"#4D6BFE", url:"https://www.deepseek.com", cat:"ai" },
+  "Gemma":            { C:SiGooglegemini,  color:"#1FA1F1", url:"https://ai.google.dev/gemma", cat:"ai" },
+  "Qwen":             { C:LuSparkles,      color:"#615CED", url:"https://qwen.ai", cat:"ai" },
+  // Computer Vision
+  "YOLO":             { C:SiUltralytics,   color:"#5b8def", url:"https://docs.ultralytics.com", cat:"cv" },
+  "OpenCV / CV2":     { C:SiOpencv,        color:"#5C3EE8", url:"https://opencv.org", cat:"cv" },
+  "FFmpeg":           { C:SiFfmpeg,        color:"#3bb14a", url:"https://ffmpeg.org", cat:"cv" },
+  "Video Analytics":  { C:LuVideo,         color:"#00ffb4", cat:"cv" },
+  "Vehicle Detection":{ C:LuCar,           color:"#a78bfa", cat:"cv" },
+  "Crowd Density":    { C:LuUsers,         color:"#ff4466", cat:"cv" },
+  "License Plate":    { C:LuScanLine,      color:"#00b4ff", cat:"cv" },
+  "AI OCR":           { C:LuFileScan,      color:"#f59e0b", cat:"cv" },
+  // Backend / Web
+  "Python":           { C:SiPython,        color:"#3776AB", url:"https://www.python.org", cat:"backend" },
+  "C++":              { C:SiCplusplus,     color:"#00599C", url:"https://isocpp.org", cat:"backend" },
+  "NodeJS":           { C:SiNodedotjs,     color:"#5FA04E", url:"https://nodejs.org", cat:"backend" },
+  "ExpressJS":        { C:SiExpress,       color:"#ffffff", url:"https://expressjs.com", cat:"backend" },
+  "React":            { C:SiReact,         color:"#61DAFB", url:"https://react.dev", cat:"backend" },
+  "Translation System":{ C:LuLanguages,    color:"#00ffb4", cat:"backend" },
+  "Metadata Dashboard":{ C:LuLayoutDashboard,color:"#00b4ff", cat:"backend" },
+  "Social Content":   { C:LuSmartphone,    color:"#34d399", cat:"backend" },
 };
+const TECH_CATEGORIES = [
+  { key:"ai",      label:"AI MODELS" },
+  { key:"cv",      label:"COMPUTER VISION" },
+  { key:"infra",   label:"INFRA" },
+  { key:"backend", label:"BACKEND / WEB" },
+];
 
 /* ══════ CONSTANTS ══════ */
 const CHAOS_TITLES = [
@@ -1053,22 +1057,25 @@ function BiographyPage() {
 function useVisitorCount() {
   const [count, setCount] = useState(null);
   useEffect(() => {
-    if (!db) return;
-    const ref = doc(db, "meta", "visitors");
-    // Increment once per session
-    if (!sessionStorage.getItem("dojojin_visited")) {
-      sessionStorage.setItem("dojojin_visited", "1");
-      runTransaction(db, async (tx) => {
-        const snap = await tx.get(ref);
-        const cur  = snap.exists() ? (snap.data().count || 0) : 0;
-        tx.set(ref, { count: cur + 1 });
-      }).catch(() => {});
-    }
-    // Real-time listener
-    const unsub = onSnapshot(ref, (snap) => {
-      if (snap.exists()) setCount(snap.data().count ?? 0);
-    });
-    return unsub;
+    let alive = true, unsub = () => {};
+    loadFirebase().then(({ db, doc, runTransaction, onSnapshot }) => {
+      if (!alive) return;
+      const ref = doc(db, "meta", "visitors");
+      // Increment once per session
+      if (!sessionStorage.getItem("dojojin_visited")) {
+        sessionStorage.setItem("dojojin_visited", "1");
+        runTransaction(db, async (tx) => {
+          const snap = await tx.get(ref);
+          const cur  = snap.exists() ? (snap.data().count || 0) : 0;
+          tx.set(ref, { count: cur + 1 });
+        }).catch(() => {});
+      }
+      // Real-time listener
+      unsub = onSnapshot(ref, (snap) => {
+        if (snap.exists()) setCount(snap.data().count ?? 0);
+      });
+    }).catch(() => {});
+    return () => { alive = false; unsub(); };
   }, []);
   return count;
 }
@@ -1084,16 +1091,24 @@ function CommentsPage() {
   const ownerEmail = ownerUser?.email?.toLowerCase() || "";
   const isOwner = Boolean(ownerEmail && OWNER_EMAILS.includes(ownerEmail));
 
-  useEffect(() => onAuthStateChanged(auth, setOwnerUser), []);
+  useEffect(() => {
+    let alive = true, unsub = () => {};
+    loadFirebase().then(({ auth, onAuthStateChanged }) => { if (alive) unsub = onAuthStateChanged(auth, setOwnerUser); });
+    return () => { alive = false; unsub(); };
+  }, []);
 
   // Real-time listener from Firestore
   useEffect(() => {
-    const q = query(collection(db, "comments"), orderBy("ts", "desc"));
-    const unsub = onSnapshot(q, (snap) => {
-      setComments(snap.docs.map(d => ({ id: d.id, ...d.data() })));
-      setLoading(false);
-    }, () => setLoading(false));
-    return unsub;
+    let alive = true, unsub = () => {};
+    loadFirebase().then(({ db, collection, query, orderBy, onSnapshot }) => {
+      if (!alive) return;
+      const q = query(collection(db, "comments"), orderBy("ts", "desc"));
+      unsub = onSnapshot(q, (snap) => {
+        setComments(snap.docs.map(d => ({ id: d.id, ...d.data() })));
+        setLoading(false);
+      }, () => setLoading(false));
+    }).catch(() => setLoading(false));
+    return () => { alive = false; unsub(); };
   }, []);
 
   const SPAM_WORDS = ["http://","https://","<script","onclick","javascript:","viagra","casino","free money","click here"];
@@ -1106,6 +1121,7 @@ function CommentsPage() {
     if (isSpam(n)||isSpam(m)) { setStatus("spam"); return; }
     setStatus("sending");
     try {
+      const { db, collection, addDoc, serverTimestamp } = await loadFirebase();
       await addDoc(collection(db, "comments"), { name: n, msg: m, ts: serverTimestamp() });
       setName(""); setMsg(""); setStatus("ok");
       setTimeout(() => setStatus(null), 3000);
@@ -1115,6 +1131,7 @@ function CommentsPage() {
   const deleteComment = async (id) => {
     if (!isOwner) return;
     try {
+      const { db, doc, deleteDoc } = await loadFirebase();
       await deleteDoc(doc(db, "comments", id));
     } catch {
       setStatus("err");
@@ -1123,6 +1140,7 @@ function CommentsPage() {
 
   const loginOwner = async () => {
     try {
+      const { auth, googleProvider, signInWithPopup } = await loadFirebase();
       await signInWithPopup(auth, googleProvider);
       setOwnerBox(false);
     } catch {
@@ -1132,6 +1150,7 @@ function CommentsPage() {
 
   const logoutOwner = async () => {
     try {
+      const { auth, signOut } = await loadFirebase();
       await signOut(auth);
     } finally {
       setOwnerBox(false);
@@ -1357,6 +1376,15 @@ export default function DevChaosProfile() {
         .routine-card:hover{ border-color:rgba(120,80,255,0.4)!important; background:rgba(120,80,255,0.08)!important; }
         .nav-btn:hover     { color:rgba(255,255,255,0.8)!important; }
 
+        /* keyboard focus (a11y) */
+        a:focus-visible, button:focus-visible, [tabindex]:focus-visible,
+        .tech-card:focus-visible, .social-link:focus-visible, .nav-btn:focus-visible {
+          outline:2px solid rgba(0,255,180,0.75); outline-offset:2px; border-radius:8px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          *, *::before, *::after { animation-duration:0.001ms!important; animation-iteration-count:1!important; transition-duration:0.001ms!important; scroll-behavior:auto!important; }
+        }
+
         ::-webkit-scrollbar       { width:4px; }
         ::-webkit-scrollbar-track { background:rgba(255,255,255,0.02); }
         ::-webkit-scrollbar-thumb { background:rgba(0,255,180,0.3); border-radius:2px; }
@@ -1545,25 +1573,40 @@ export default function DevChaosProfile() {
                   <div style={{fontSize:"24px",fontWeight:"800",color:"rgba(0,255,180,0.25)",fontFamily:"monospace"}}>{profile.stack.length}</div>
                 </div>
               </div>
-              <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(100px,1fr))",gap:"8px"}}>
-                {profile.stack.map((tech,i) => {
-                  const m = TECH_META[tech] || {};
-                  const Logo = m.C;
-                  const cardStyle = {background:"rgba(255,255,255,0.02)",border:"1px solid rgba(255,255,255,0.06)",borderRadius:"12px",padding:"12px 8px",textAlign:"center",cursor:m.url?"pointer":"default",transition:"all 0.2s",position:"relative",overflow:"hidden",textDecoration:"none",display:"block"};
-                  const inner = (
-                    <>
-                      {hoveredTech===tech && <div style={{position:"absolute",inset:0,background:"linear-gradient(135deg,rgba(0,255,180,0.05),rgba(0,180,255,0.05))"}}/>}
-                      {m.url && <span style={{position:"absolute",top:"5px",right:"7px",fontSize:"9px",color:"rgba(255,255,255,0.22)"}}>↗</span>}
-                      <div style={{height:"26px",marginBottom:"6px",display:"flex",alignItems:"center",justifyContent:"center"}}>
-                        {Logo ? <Logo size={24} color={m.color||"#00ffb4"}/> : <Ico e="⚡" size={24}/>}
+              <div style={{display:"flex",flexDirection:"column",gap:"16px"}}>
+                {TECH_CATEGORIES.map(catg => {
+                  const items = profile.stack.filter(t => (TECH_META[t]||{}).cat === catg.key);
+                  if (!items.length) return null;
+                  return (
+                    <div key={catg.key}>
+                      <div style={{fontSize:"9px",letterSpacing:"0.2em",color:"rgba(255,255,255,0.32)",marginBottom:"8px",display:"flex",alignItems:"center",gap:"8px"}}>
+                        {catg.label}
+                        <span style={{flex:1,height:"1px",background:"rgba(255,255,255,0.06)"}}/>
+                        <span style={{color:"rgba(0,255,180,0.4)",fontFamily:"monospace"}}>{items.length}</span>
                       </div>
-                      <div style={{fontSize:"10px",fontWeight:"500",color:"rgba(255,255,255,0.55)",lineHeight:"1.3",letterSpacing:"0.03em",position:"relative"}}>{tech}</div>
-                    </>
+                      <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(92px,1fr))",gap:"8px"}}>
+                        {items.map((tech,i) => {
+                          const m = TECH_META[tech] || {};
+                          const Logo = m.C;
+                          const cardStyle = {background:"rgba(255,255,255,0.02)",border:"1px solid rgba(255,255,255,0.06)",borderRadius:"12px",padding:"12px 8px",textAlign:"center",cursor:m.url?"pointer":"default",transition:"all 0.2s",position:"relative",overflow:"hidden",textDecoration:"none",display:"block"};
+                          const inner = (
+                            <>
+                              {hoveredTech===tech && <div style={{position:"absolute",inset:0,background:"linear-gradient(135deg,rgba(0,255,180,0.05),rgba(0,180,255,0.05))"}}/>}
+                              {m.url && <span aria-hidden="true" style={{position:"absolute",top:"5px",right:"7px",fontSize:"9px",color:"rgba(255,255,255,0.22)"}}>↗</span>}
+                              <div style={{height:"26px",marginBottom:"6px",display:"flex",alignItems:"center",justifyContent:"center"}}>
+                                {Logo ? <Logo size={24} color={m.color||"#00ffb4"} aria-hidden="true"/> : <Ico e="⚡" size={24}/>}
+                              </div>
+                              <div style={{fontSize:"10px",fontWeight:"500",color:"rgba(255,255,255,0.55)",lineHeight:"1.3",letterSpacing:"0.03em",position:"relative"}}>{tech}</div>
+                            </>
+                          );
+                          const evts = { onMouseEnter:() => setHoveredTech(tech), onMouseLeave:() => setHoveredTech(null) };
+                          return m.url
+                            ? <a key={i} className="tech-card" href={m.url} target="_blank" rel="noreferrer" aria-label={`${tech} — เปิดเว็บไซต์ (แท็บใหม่)`} title={`เปิด ${tech} ↗`} style={cardStyle} {...evts}>{inner}</a>
+                            : <div key={i} className="tech-card" title={tech} style={cardStyle} {...evts}>{inner}</div>;
+                        })}
+                      </div>
+                    </div>
                   );
-                  const evts = { onMouseEnter:() => setHoveredTech(tech), onMouseLeave:() => setHoveredTech(null) };
-                  return m.url
-                    ? <a key={i} className="tech-card" href={m.url} target="_blank" rel="noreferrer" title={`เปิด ${tech} ↗`} style={cardStyle} {...evts}>{inner}</a>
-                    : <div key={i} className="tech-card" style={cardStyle} {...evts}>{inner}</div>;
                 })}
               </div>
             </div>
@@ -1582,10 +1625,12 @@ export default function DevChaosProfile() {
                   {Object.entries(profile.socials).map(([key,value]) => {
                     const SoIco = socialIcons[key];
                     return (
-                    <a key={key} href={value.startsWith("http")?value:undefined} className="social-link"
+                    <a key={key} href={value.startsWith("http")?value:undefined}
+                      {...(value.startsWith("http") ? { target:"_blank", rel:"noreferrer" } : {})}
+                      aria-label={`${key}: ${value.replace("https://","").replace("http://","")}`} className="social-link"
                       style={{display:"block",background:"rgba(0,0,0,0.3)",border:"1px solid rgba(255,255,255,0.07)",borderRadius:"10px",padding:"10px 14px",textDecoration:"none",transition:"all 0.2s"}}>
                       <div style={{display:"flex",alignItems:"center",gap:"8px"}}>
-                        <span style={{color:"rgba(0,255,180,0.6)",display:"inline-flex"}}>{SoIco && <SoIco size={16}/>}</span>
+                        <span aria-hidden="true" style={{color:"rgba(0,255,180,0.6)",display:"inline-flex"}}>{SoIco && <SoIco size={16}/>}</span>
                         <div>
                           <div style={{fontSize:"10px",letterSpacing:"0.15em",color:"rgba(0,255,180,0.6)",textTransform:"uppercase"}}>{key}</div>
                           <div style={{fontSize:"11px",color:"rgba(255,255,255,0.4)",marginTop:"1px"}}>{value.replace("https://","").replace("http://","")}</div>
