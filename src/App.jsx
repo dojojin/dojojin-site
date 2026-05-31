@@ -145,18 +145,18 @@ const PROJECTS = [
   { name:"Vigil Platform", emoji:"📹", color:"#00ffb4", status:"LIVE", statusColor:"#00ffb4", link:"https://dashboard.dojojin.tech",
     desc:"Multi-vendor CCTV analytics & management suite — รับ event จาก Bosch (MQTT/ONVIF Profile M), Hikvision (ISAPI), Dahua (CGI VCA) และ ONVIF ทั่วไป ในแดชบอร์ดเดียว: real-time monitoring, LINE alerts, branded reports, demographic face analytics, license ผูกเครื่องด้วย Ed25519",
     tech:["NodeJS","Express","PostgreSQL","MQTT / EMQX","ONVIF","Docker","Cloudflare"] },
-  { name:"Vigil Mobile", emoji:"📱", color:"#00b4ff", status:"IN DEV", statusColor:"#f59e0b",
-    desc:"React Native companion app ของ Vigil Platform — ดู camera overview, live snapshot, online/offline status, alert badges และ real-time events ผ่าน WebSocket รองรับ iOS + Android",
+  { name:"Vigil Mobile", emoji:"📱", color:"#00b4ff", status:"BETA", statusColor:"#00b4ff", link:"https://dashboard.dojojin.tech",
+    desc:"React Native companion app ของ Vigil Platform — auth, camera overview, live snapshot, online/offline status, alert badges และ real-time events ผ่าน WebSocket (singleton + backoff) รองรับ iOS + Android",
     tech:["React Native","Expo SDK 54","Expo Router","Zustand","Axios","WebSocket"] },
-  { name:"ANPR / Vehicle Detection", emoji:"🚗", color:"#a78bfa", status:"DEPLOYED", statusColor:"#00ffb4",
-    desc:"License plate recognition ด้วย Hikvision ISAPI + Elasticsearch เก็บ log entry/exit ยานพาหนะแบบ real-time",
-    tech:["Python","OpenCV","YOLO","Elasticsearch","Hikvision ISAPI","C++"] },
+  { name:"ANPR / Vehicle Detection", emoji:"🚗", color:"#a78bfa", status:"IN VIGIL", statusColor:"#00ffb4", link:"https://dashboard.dojojin.tech",
+    desc:"License plate / vehicle detection — ส่วนหนึ่งของ Vigil Platform: Hikvision ISAPI + Dahua line-crossing, เก็บ log entry/exit ยานพาหนะแบบ real-time",
+    tech:["Python","OpenCV","YOLO","Hikvision ISAPI","Dahua CGI"] },
   { name:"AI OCR Pipeline", emoji:"📄", color:"#f59e0b", status:"LIVE", statusColor:"#00ffb4",
     desc:"ระบบสแกนและ extract ข้อมูลจากเอกสารภาษาไทยด้วย computer vision + AI models ลด manual data entry",
     tech:["Python","OpenCV","Stack AI","FFmpeg","DeepSeek"] },
-  { name:"Crowd Density Analytics", emoji:"👥", color:"#ff4466", status:"LIVE", statusColor:"#00ffb4",
-    desc:"ตรวจสอบความหนาแน่นของฝูงชน real-time ผ่าน computer vision ส่ง alert เมื่อเกิน threshold ผ่าน MQTT",
-    tech:["YOLO","OpenCV / CV2","Python","MQTT","NodeJS","FFmpeg"] },
+  { name:"Crowd Density Analytics", emoji:"👥", color:"#ff4466", status:"IN VIGIL", statusColor:"#00ffb4", link:"https://dashboard.dojojin.tech",
+    desc:"ตรวจความหนาแน่นฝูงชน + demographic face analytics — ส่วนหนึ่งของ Vigil Platform ส่ง alert เมื่อเกิน threshold ผ่าน LINE/MQTT",
+    tech:["YOLO","OpenCV / CV2","Python","MQTT","NodeJS"] },
 ];
 const CASE_STUDIES = [
   {
@@ -402,12 +402,12 @@ function KonamiPopup({ onClose }) {
         <div style={{marginBottom:"16px",display:"flex",justifyContent:"center",color:"#00ffb4"}}><Ico e="🎮" size={56}/></div>
         <div style={{fontSize:"13px",letterSpacing:"0.3em",color:"rgba(0,255,180,0.7)",marginBottom:"8px"}}>KONAMI CODE UNLOCKED</div>
         <div style={{fontSize:"22px",fontWeight:"800",color:"#fff",marginBottom:"20px"}}>ULTRA CHAOS MODE</div>
-        <div style={{fontSize:"12px",color:"rgba(255,255,255,0.5)",lineHeight:"1.9",marginBottom:"28px",fontFamily:"monospace"}}>
+        <div style={{fontSize:"12px",color:"rgba(255,255,255,0.62)",lineHeight:"1.9",marginBottom:"28px",fontFamily:"monospace"}}>
           คุณค้นพบ secret ที่ซ่อนอยู่ใน codebase<br/>
           เหมือนที่ YOLO ค้นพบ bug ใน prod ทุกวัน<br/>
           <span style={{color:"#00ffb4"}}>// ชีวิตนี้ก็คือ Easter Egg หนึ่งชิ้น</span>
         </div>
-        <div style={{background:"rgba(0,0,0,0.5)",border:"1px solid rgba(0,255,180,0.2)",borderRadius:"12px",padding:"14px 18px",marginBottom:"24px",fontFamily:"monospace",fontSize:"11px",color:"rgba(255,255,255,0.4)",textAlign:"left"}}>
+        <div style={{background:"rgba(0,0,0,0.5)",border:"1px solid rgba(0,255,180,0.2)",borderRadius:"12px",padding:"14px 18px",marginBottom:"24px",fontFamily:"monospace",fontSize:"11px",color:"rgba(255,255,255,0.55)",textAlign:"left"}}>
           <span style={{color:"#00ffb4"}}>$</span> sudo grant --all-permissions dojoman<br/>
           <span style={{color:"rgba(255,255,255,0.25)"}}>&gt; Permission denied</span><br/>
           <span style={{color:"#ff4466"}}>&gt; ERROR: life.exe crashed (again)</span>
@@ -565,7 +565,7 @@ function MotionNotif() {
     <div style={{position:"fixed",top:"70px",left:"50%",transform:"translateX(-50%)",zIndex:8000,background:"rgba(255,0,0,0.1)",border:"1px solid rgba(255,68,102,0.6)",borderRadius:"12px",padding:"10px 20px",backdropFilter:"blur(16px)",display:"flex",alignItems:"center",gap:"10px",whiteSpace:"nowrap",fontFamily:"monospace",animation:"toastIn 0.3s ease"}}>
       <span style={{width:"8px",height:"8px",borderRadius:"50%",background:"#ff4466",flexShrink:0,animation:"statusBlink 0.5s infinite",display:"inline-block"}}/>
       <span style={{fontSize:"12px",color:"rgba(255,68,102,0.9)",letterSpacing:"0.1em"}}>MOTION DETECTED</span>
-      <span style={{fontSize:"11px",color:"rgba(255,255,255,0.5)"}}>{notif}</span>
+      <span style={{fontSize:"11px",color:"rgba(255,255,255,0.62)"}}>{notif}</span>
     </div>
   );
 }
@@ -695,7 +695,7 @@ function StatBar({ label, value, color="#00ffb4" }) {
   return (
     <div style={{marginBottom:"14px"}}>
       <div style={{display:"flex",justifyContent:"space-between",marginBottom:"6px"}}>
-        <span style={{fontSize:"12px",fontFamily:"monospace",color:"rgba(255,255,255,0.5)"}}>{label}</span>
+        <span style={{fontSize:"12px",fontFamily:"monospace",color:"rgba(255,255,255,0.62)"}}>{label}</span>
         <span style={{fontSize:"12px",fontFamily:"monospace",color}}>{value}%</span>
       </div>
       <div style={{height:"4px",background:"rgba(255,255,255,0.05)",borderRadius:"2px",overflow:"hidden"}}>
@@ -719,7 +719,7 @@ function NowSection() {
         {NOW_ITEMS.map((item,i) => (
           <div key={i} style={{display:"flex",alignItems:"center",gap:"8px",background:"rgba(0,0,0,0.25)",borderRadius:"9px",padding:"7px 10px"}}>
             <span style={{flexShrink:0,display:"inline-flex"}}><Ico e={item.icon} size={14}/></span>
-            <div style={{flex:1,minWidth:0,fontSize:"11px",color:"rgba(255,255,255,0.5)",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{item.task}</div>
+            <div style={{flex:1,minWidth:0,fontSize:"11px",color:"rgba(255,255,255,0.62)",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{item.task}</div>
             <div style={{fontSize:"8px",padding:"2px 6px",borderRadius:"5px",fontWeight:"700",letterSpacing:"0.08em",background:`${item.color}18`,color:item.color,border:`1px solid ${item.color}33`,flexShrink:0}}>{item.status}</div>
           </div>
         ))}
@@ -747,7 +747,7 @@ function DevConfession() {
           <div style={{fontSize:"10px",color:"rgba(255,255,255,0.25)",letterSpacing:"0.15em"}}>// confession #{idx+1}/{CONFESSIONS.length}</div>
         </div>
       </div>
-      <div style={{fontSize:"12px",color:"rgba(255,255,255,0.5)",lineHeight:"1.75",fontFamily:"monospace",opacity:fade?1:0,transition:"opacity 0.35s ease",minHeight:"36px"}}>
+      <div style={{fontSize:"12px",color:"rgba(255,255,255,0.62)",lineHeight:"1.75",fontFamily:"monospace",opacity:fade?1:0,transition:"opacity 0.35s ease",minHeight:"36px"}}>
         {CONFESSIONS[idx]}
       </div>
     </div>
@@ -784,7 +784,7 @@ function CaseStudiesSection() {
               ].map(([label, text]) => (
                 <div key={label} style={{marginBottom:"13px"}}>
                   <div style={{fontSize:"10px",letterSpacing:"0.16em",color:"rgba(255,255,255,0.28)",marginBottom:"5px"}}>{label.toUpperCase()}</div>
-                  <p style={{fontSize:"12px",lineHeight:1.75,color:"rgba(255,255,255,0.5)",margin:0}}>{text}</p>
+                  <p style={{fontSize:"12px",lineHeight:1.75,color:"rgba(255,255,255,0.62)",margin:0}}>{text}</p>
                 </div>
               ))}
               <div style={{display:"flex",flexWrap:"wrap",gap:"5px",paddingTop:"4px"}}>
@@ -816,7 +816,7 @@ function WhatIBuildSection() {
               <div style={{width:"38px",height:"38px",borderRadius:"11px",background:`${item.color}12`,border:`1px solid ${item.color}33`,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}><Ico e={item.icon} size={18}/></div>
               <div>
                 <h2 style={{fontSize:"13px",margin:"0 0 7px",color:"rgba(255,255,255,0.88)",lineHeight:1.35}}>{item.title}</h2>
-                <p style={{fontSize:"11px",lineHeight:1.75,color:"rgba(255,255,255,0.45)",margin:0}}>{item.desc}</p>
+                <p style={{fontSize:"11px",lineHeight:1.75,color:"rgba(255,255,255,0.6)",margin:0}}>{item.desc}</p>
               </div>
             </div>
           </article>
@@ -856,7 +856,7 @@ function WorkWithMeSection({ onGuestbook }) {
         <div>
           <div style={{fontSize:"11px",letterSpacing:"0.22em",color:"rgba(0,255,180,0.65)",fontWeight:"800",marginBottom:"8px"}}>WORK_WITH_ME.exe</div>
           <h2 style={{fontSize:"22px",lineHeight:1.25,margin:"0 0 10px",color:"rgba(255,255,255,0.9)"}}>มีระบบแปลก ๆ ที่ต้องทำให้มันใช้งานจริง?</h2>
-          <p style={{fontSize:"13px",lineHeight:1.85,color:"rgba(255,255,255,0.5)",margin:"0 0 14px",maxWidth:"760px"}}>
+          <p style={{fontSize:"13px",lineHeight:1.85,color:"rgba(255,255,255,0.62)",margin:"0 0 14px",maxWidth:"760px"}}>
             ส่งโจทย์มาได้ทั้ง dashboard, camera analytics, automation, backend/API, mobile companion app หรือ infra ที่ต้องแกะจาก log ตอนระบบเริ่มงอแง
           </p>
           <div style={{display:"flex",flexWrap:"wrap",gap:"7px"}}>
@@ -899,9 +899,9 @@ function ProjectsPage() {
               </div>
               {proj.link && <a href={proj.link} target="_blank" rel="noreferrer" style={{fontSize:"10px",color:proj.color,border:`1px solid ${proj.color}33`,borderRadius:"8px",padding:"4px 10px",textDecoration:"none",letterSpacing:"0.1em",background:`${proj.color}08`,whiteSpace:"nowrap"}}>VISIT ↗</a>}
             </div>
-            <p style={{fontSize:"12px",color:"rgba(255,255,255,0.45)",lineHeight:"1.8",margin:"0 0 16px",minHeight:"54px"}}>{proj.desc}</p>
+            <p style={{fontSize:"12px",color:"rgba(255,255,255,0.6)",lineHeight:"1.8",margin:"0 0 16px",minHeight:"54px"}}>{proj.desc}</p>
             <div style={{display:"flex",flexWrap:"wrap",gap:"5px"}}>
-              {proj.tech.map((t,j) => <span key={j} style={{fontSize:"10px",padding:"2px 8px",borderRadius:"5px",background:"rgba(255,255,255,0.04)",border:"1px solid rgba(255,255,255,0.08)",color:"rgba(255,255,255,0.4)"}}>{t}</span>)}
+              {proj.tech.map((t,j) => <span key={j} style={{fontSize:"10px",padding:"2px 8px",borderRadius:"5px",background:"rgba(255,255,255,0.04)",border:"1px solid rgba(255,255,255,0.08)",color:"rgba(255,255,255,0.55)"}}>{t}</span>)}
             </div>
           </div>
         ))}
@@ -1006,7 +1006,7 @@ function BiographyPage() {
           {strengths.map((item) => (
             <div key={item} style={{background:"rgba(0,0,0,0.24)",border:"1px solid rgba(255,255,255,0.06)",borderRadius:"12px",padding:"12px 14px",display:"flex",gap:"9px",alignItems:"flex-start"}}>
               <span style={{color:"#00ffb4",fontSize:"10px",marginTop:"4px",flexShrink:0}}>▸</span>
-              <span style={{fontSize:"12px",lineHeight:1.75,color:"rgba(255,255,255,0.5)"}}>{item}</span>
+              <span style={{fontSize:"12px",lineHeight:1.75,color:"rgba(255,255,255,0.62)"}}>{item}</span>
             </div>
           ))}
         </div>
@@ -1032,7 +1032,7 @@ function BiographyPage() {
                   <div style={{fontSize:"14px",fontWeight:"700",color:"rgba(255,255,255,0.9)"}}>{exp.role}</div>
                   <div style={{fontSize:"11px",color:exp.color,marginTop:"2px",letterSpacing:"0.08em"}}>{exp.period}</div>
                 </div>
-                <div style={{width:"26px",height:"26px",borderRadius:"6px",flexShrink:0,background:"rgba(255,255,255,0.04)",border:"1px solid rgba(255,255,255,0.08)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"12px",color:"rgba(255,255,255,0.4)",transition:"transform 0.25s",transform:isOpen?"rotate(180deg)":"rotate(0deg)"}}>▾</div>
+                <div style={{width:"26px",height:"26px",borderRadius:"6px",flexShrink:0,background:"rgba(255,255,255,0.04)",border:"1px solid rgba(255,255,255,0.08)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"12px",color:"rgba(255,255,255,0.55)",transition:"transform 0.25s",transform:isOpen?"rotate(180deg)":"rotate(0deg)"}}>▾</div>
               </div>
               {isOpen && (
                 <div style={{padding:"0 20px 20px 76px"}} className="bio-body">
@@ -1501,13 +1501,32 @@ export default function DevChaosProfile() {
           </div>
         </div>
 
+        <div style={{maxWidth:"1280px",margin:"0 auto",padding:"0 32px 14px"}}>
+          <div style={{display:"flex",flexWrap:"wrap",alignItems:"center",gap:"16px",justifyContent:"space-between"}}>
+            <div style={{flex:"1 1 440px",minWidth:0}}>
+              <p style={{fontSize:"13px",lineHeight:1.7,color:"rgba(255,255,255,0.68)",margin:"0 0 10px"}}>
+                สร้าง <strong style={{color:"#00ffb4",fontWeight:700}}>CCTV analytics หลายยี่ห้อ</strong> (Bosch · Hikvision · Dahua · ONVIF), real-time event systems และ infra — ตั้งแต่ ingester → dashboard → mobile, รันจริงบน production
+              </p>
+              <div style={{display:"flex",flexWrap:"wrap",gap:"6px"}}>
+                {["4 camera vendors","Production-deployed","Real-time MQTT / WebSocket","Ed25519 licensed"].map((k) => (
+                  <span key={k} style={{fontSize:"10px",padding:"4px 10px",borderRadius:"999px",background:"rgba(0,255,180,0.07)",border:"1px solid rgba(0,255,180,0.22)",color:"rgba(0,255,180,0.85)",letterSpacing:"0.04em"}}>{k}</span>
+                ))}
+              </div>
+            </div>
+            <div style={{display:"flex",gap:"8px",flexShrink:0}}>
+              <button onClick={() => setActivePage("projects")} style={{padding:"10px 18px",borderRadius:"11px",background:"rgba(0,255,180,0.12)",border:"1px solid rgba(0,255,180,0.4)",color:"#00ffb4",fontSize:"12px",fontWeight:"800",letterSpacing:"0.06em",cursor:"pointer",fontFamily:"inherit",whiteSpace:"nowrap"}}>ดูผลงาน →</button>
+              <a href="mailto:dojojin@gmail.com" style={{padding:"10px 18px",borderRadius:"11px",background:"rgba(255,255,255,0.04)",border:"1px solid rgba(255,255,255,0.14)",color:"rgba(255,255,255,0.75)",fontSize:"12px",fontWeight:"800",letterSpacing:"0.06em",textDecoration:"none",whiteSpace:"nowrap",display:"inline-flex",alignItems:"center"}}>ติดต่อ</a>
+            </div>
+          </div>
+        </div>
+
         <div className="term-wrap">
           <div style={{background:"rgba(0,0,0,0.5)",border:"1px solid rgba(0,255,180,0.1)",borderRadius:"12px",padding:"14px 18px"}}>
             <div style={{color:"rgba(0,255,180,0.35)",marginBottom:"8px",fontSize:"10px",letterSpacing:"0.2em"}}>TERMINAL // dojoman@dojojin.tech:~$</div>
             <TerminalLine text="whoami"                                                          delay={0}    color="#00ffb4"               prefix="$"/>
-            <TerminalLine text={`> ${profile.name} — ${profile.title}`}                         delay={600}  color="rgba(255,255,255,0.4)" prefix=""/>
+            <TerminalLine text={`> ${profile.name} — ${profile.title}`}                         delay={600}  color="rgba(255,255,255,0.55)" prefix=""/>
             <TerminalLine text="cat quote.txt"                                                   delay={1400} color="#a78bfa"               prefix="$"/>
-            <TerminalLine text={`> "${profile.quote}"`}                                          delay={2200} color="rgba(255,255,255,0.4)" prefix=""/>
+            <TerminalLine text={`> "${profile.quote}"`}                                          delay={2200} color="rgba(255,255,255,0.55)" prefix=""/>
             <TerminalLine text="docker ps --filter status=running"                               delay={4000} color="#00b4ff"               prefix="$"/>
             <TerminalLine text="> life   RUNNING (barely)   0.0.0.0:443->443/tcp   uptime: งง" delay={4800} color="rgba(255,255,255,0.3)" prefix=""/>
           </div>
@@ -1633,7 +1652,7 @@ export default function DevChaosProfile() {
                         <span aria-hidden="true" style={{color:"rgba(0,255,180,0.6)",display:"inline-flex"}}>{SoIco && <SoIco size={16}/>}</span>
                         <div>
                           <div style={{fontSize:"10px",letterSpacing:"0.15em",color:"rgba(0,255,180,0.6)",textTransform:"uppercase"}}>{key}</div>
-                          <div style={{fontSize:"11px",color:"rgba(255,255,255,0.4)",marginTop:"1px"}}>{value.replace("https://","").replace("http://","")}</div>
+                          <div style={{fontSize:"11px",color:"rgba(255,255,255,0.55)",marginTop:"1px"}}>{value.replace("https://","").replace("http://","")}</div>
                         </div>
                       </div>
                     </a>
@@ -1644,11 +1663,11 @@ export default function DevChaosProfile() {
 
               <div style={{background:"rgba(255,68,102,0.04)",border:"1px solid rgba(255,68,102,0.15)",borderRadius:"16px",padding:"18px"}}>
                 <div style={{fontSize:"12px",fontWeight:"700",color:"#ff4466",marginBottom:"8px",letterSpacing:"0.1em",display:"flex",alignItems:"center",gap:"6px"}}><Ico e="⚠" size={13}/>SYS STATUS</div>
-                <div style={{fontSize:"12px",color:"rgba(255,255,255,0.45)",lineHeight:"1.6"}}>
-                  Infrastructure ทำงานด้วย Docker + Cloudflare + <span style={{color:"#f59e0b"}}>ความหวัง</span>
+                <div style={{fontSize:"12px",color:"rgba(255,255,255,0.6)",lineHeight:"1.6"}}>
+                  dojojin.tech รันด้วย nginx + Cloudflare Tunnel (systemd) + <span style={{color:"#f59e0b"}}>ความหวัง</span>
                 </div>
                 <div style={{marginTop:"10px",display:"grid",gridTemplateColumns:"1fr 1fr",gap:"6px"}}>
-                  {[{label:"Docker",ok:true},{label:"Nginx",ok:false},{label:"Cloudflare",ok:true},{label:"Life.exe",ok:false}].map(s => (
+                  {[{label:"nginx",ok:true},{label:"cloudflared",ok:true},{label:"systemd",ok:true},{label:"Life.exe",ok:false}].map(s => (
                     <div key={s.label} style={{background:s.ok?"rgba(0,255,180,0.05)":"rgba(255,68,102,0.05)",border:`1px solid ${s.ok?"rgba(0,255,180,0.15)":"rgba(255,68,102,0.15)"}`,borderRadius:"8px",padding:"6px 8px",display:"flex",alignItems:"center",gap:"6px"}}>
                       <div style={{width:"6px",height:"6px",borderRadius:"50%",background:s.ok?"#00ffb4":"#ff4466",animation:!s.ok?"statusBlink 1s infinite":"none",flexShrink:0}}/>
                       <span style={{fontSize:"10px",color:s.ok?"rgba(0,255,180,0.7)":"rgba(255,68,102,0.7)"}}>{s.label}</span>
@@ -1662,7 +1681,7 @@ export default function DevChaosProfile() {
 
               <div style={{background:"rgba(120,80,255,0.04)",border:"1px solid rgba(120,80,255,0.2)",borderRadius:"16px",padding:"18px",animation:"rgb-border 4s ease-in-out infinite"}}>
                 <div style={{fontSize:"28px",color:"rgba(120,80,255,0.35)",fontFamily:"serif",lineHeight:1}}>"</div>
-                <div style={{fontSize:"12px",color:"rgba(255,255,255,0.5)",lineHeight:"1.7",marginTop:"4px"}}>{profile.quote}</div>
+                <div style={{fontSize:"12px",color:"rgba(255,255,255,0.62)",lineHeight:"1.7",marginTop:"4px"}}>{profile.quote}</div>
                 <div style={{fontSize:"10px",color:"rgba(120,80,255,0.5)",marginTop:"10px",letterSpacing:"0.1em"}}>— Mr. Dojo-mAn, ตอน 2am</div>
               </div>
 
@@ -1697,7 +1716,7 @@ export default function DevChaosProfile() {
                 <button onClick={() => window.open("https://dojojin.tech","_blank")} style={{padding:"12px 28px",borderRadius:"12px",background:"rgba(0,255,180,0.12)",border:"1px solid rgba(0,255,180,0.4)",color:"#00ffb4",fontSize:"13px",fontWeight:"700",cursor:"pointer",letterSpacing:"0.1em",fontFamily:"inherit"}}>
                   Deploy To Production 🚀
                 </button>
-                <button onClick={() => setActivePage("bio")} style={{padding:"12px 28px",borderRadius:"12px",background:"rgba(255,255,255,0.04)",border:"1px solid rgba(255,255,255,0.1)",color:"rgba(255,255,255,0.45)",fontSize:"13px",cursor:"pointer",letterSpacing:"0.05em",fontFamily:"inherit"}}>
+                <button onClick={() => setActivePage("bio")} style={{padding:"12px 28px",borderRadius:"12px",background:"rgba(255,255,255,0.04)",border:"1px solid rgba(255,255,255,0.1)",color:"rgba(255,255,255,0.6)",fontSize:"13px",cursor:"pointer",letterSpacing:"0.05em",fontFamily:"inherit"}}>
                   cat biography.md
                 </button>
                 <button onClick={() => setActivePage("projects")} style={{padding:"12px 28px",borderRadius:"12px",background:"rgba(120,80,255,0.08)",border:"1px solid rgba(120,80,255,0.3)",color:"#a78bfa",fontSize:"13px",cursor:"pointer",letterSpacing:"0.05em",fontFamily:"inherit"}}>
