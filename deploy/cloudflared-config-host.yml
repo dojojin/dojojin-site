@@ -19,7 +19,6 @@ ingress:
   - hostname: ai.dojojin.tech
     service: http://127.0.0.1:3000
 
-  # docs.dojojin.tech — เพิ่มเมื่อ Phase 5 ของ DOCS-SETUP.md
   - hostname: docs.dojojin.tech
     service: http://127.0.0.1:80
 
