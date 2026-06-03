@@ -48,6 +48,9 @@ nginx :80   (server_name dojojin.tech → root /var/www/dojojin-site)
 | `/home/kiseki/dojojin-site/src/cloudflared` | binary cloudflared (39MB, ELF) |
 | `/var/www/dojojin-site` | docroot ที่ nginx เสิร์ฟ (ไฟล์ build) |
 | `/etc/nginx/conf.d/dojojin-site.conf` | nginx server block ของ dojojin.tech |
+| `/etc/nginx/conf.d/dojojin-docs.conf` | nginx server block ของ docs.dojojin.tech |
+| `/home/kiseki/dojojin-docs` | โค้ด VitePress docs (repo แยก) — deploy ด้วย `bash deploy.sh` |
+| `/var/www/dojojin-docs` | docroot ที่ nginx เสิร์ฟ (VitePress build) |
 | `/home/kiseki/.cloudflared/config.yml` | config เดิม (สำหรับ **docker** — ใช้ host.docker.internal) |
 | `/home/kiseki/.cloudflared/config-host.yml` | **config ใหม่สำหรับรันบน host** (ชี้ 127.0.0.1) |
 | `/home/kiseki/.cloudflared/f6684909-...json` | credentials ของ tunnel |
@@ -129,6 +132,10 @@ ingress:
     service: http://127.0.0.1:80
   - hostname: ssh.dojojin.tech
     service: ssh://127.0.0.1:22
+  - hostname: ai.dojojin.tech
+    service: http://127.0.0.1:3000
+  - hostname: docs.dojojin.tech
+    service: http://127.0.0.1:80
   - service: http_status:404
 ```
 
@@ -329,4 +336,87 @@ cd ~/dojojin-backup && bash restore.sh
 `/var/www/dojojin-site` (+SELinux context) → nginx → กัน split-brain → ติดตั้ง systemd service → verify
 
 > คู่มือย้ายเครื่องแยกตาม OS (**Fedora/Nobara · Ubuntu/Debian · Windows**) ดู [`deploy/MIGRATE.md`](./deploy/MIGRATE.md)
-> — bundle เป็นของลับ อยู่นอก repo **ห้าม commit**
+
+---
+
+## 9. docs.dojojin.tech — VitePress Documentation Site (2026-06-04)
+
+### Architecture
+
+```
+ผู้ใช้ทั่วโลก
+   │  https://docs.dojojin.tech
+   ▼
+Cloudflare Edge (CNAME → tunnel f6684909, Proxied ON)
+   │  Cloudflare Tunnel (QUIC) — ingress เดียวกับ dojojin.tech
+   ▼
+cloudflared → nginx :80 (server_name docs.dojojin.tech → root /var/www/dojojin-docs)
+   ▼
+ไฟล์ static VitePress build (~/dojojin-docs/docs/.vitepress/dist/)
+```
+
+### ไฟล์สำคัญ
+
+| พาธ | หน้าที่ |
+|-----|---------|
+| `~/dojojin-docs/` | source code (VitePress project, repo แยก) |
+| `~/dojojin-docs/docs/` | markdown content |
+| `~/dojojin-docs/docs/.vitepress/config.js` | VitePress config (title, nav, sidebar) |
+| `~/dojojin-docs/deploy.sh` | build + deploy script |
+| `/var/www/dojojin-docs/` | docroot nginx (VitePress static build) |
+| `/etc/nginx/conf.d/dojojin-docs.conf` | nginx server block (template: `deploy/nginx-dojojin-docs.conf`) |
+
+### Deploy / Update content
+
+```bash
+cd ~/dojojin-docs
+bash deploy.sh
+# build → rsync → /var/www/dojojin-docs/ → verify HTTP 200
+```
+
+### nginx config (`/etc/nginx/conf.d/dojojin-docs.conf`)
+
+```nginx
+server {
+    listen 80;
+    server_name docs.dojojin.tech;
+    root /var/www/dojojin-docs;
+    index index.html;
+    error_page 404 /404.html;
+    location / {
+        try_files $uri $uri/ $uri.html =404;
+    }
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
+    add_header Referrer-Policy "strict-origin-when-cross-origin";
+    add_header Permissions-Policy "camera=(), microphone=(), geolocation=()";
+}
+```
+
+### Cloudflare DNS
+
+| Type | Name | Target | Proxy |
+|------|------|--------|-------|
+| CNAME | docs | `f6684909-a7d7-4b0e-9d29-2328d52c1135.cfargotunnel.com` | ON |
+
+### ย้ายเครื่อง
+
+`~/dojojin-docs/` มี git repo แยก — ต้อง clone หรือ copy ไปด้วยตอนย้ายเครื่อง
+
+```bash
+# หลัง clone dojojin-docs บนเครื่องใหม่:
+sudo mkdir -p /var/www/dojojin-docs
+sudo chown -R nginx:nginx /var/www/dojojin-docs
+command -v restorecon >/dev/null && sudo restorecon -RF /var/www/dojojin-docs  # Fedora/Nobara
+sudo cp deploy/nginx-dojojin-docs.conf /etc/nginx/conf.d/dojojin-docs.conf
+sudo nginx -t && sudo systemctl reload nginx
+# เพิ่ม ingress docs.dojojin.tech ใน ~/.cloudflared/config-host.yml แล้ว restart cloudflared
+bash ~/dojojin-docs/deploy.sh  # build + rsync + verify
+```
+
+### Verify
+
+```bash
+curl -sI https://docs.dojojin.tech/ | head -1
+curl -s -o /dev/null -w "HTTP %{http_code}\n" -H "Host: docs.dojojin.tech" http://127.0.0.1:80/
+```
