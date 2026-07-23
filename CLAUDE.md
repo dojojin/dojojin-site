@@ -33,85 +33,47 @@ npm run lint       # ESLint
 | `src/main.jsx` | entry point |
 | `vite.config.js` | manualChunks (react/firebase) + `server.host`/`allowedHosts` |
 | `firestore.rules` | security rules ของ guestbook |
-| `.env.local` | `VITE_OWNER_EMAILS` = อีเมลที่ลบคอมเมนต์ได้ (dojojin@gmail.com) |
-| `src/cloudflared` | binary cloudflared (ใช้ทำ tunnel — ไม่ควร commit) |
+| `.env.local` | `VITE_OWNER_EMAILS` = อีเมลที่ลบคอมเมนต์ได้ (dojojin@gmail.com) — **local/dev เท่านั้น**; prod ตั้งใน Cloudflare Pages dashboard |
 
 ## Environment / Config
 
 - `VITE_OWNER_EMAILS` — รายชื่ออีเมล Google (คั่นด้วย comma) ที่มีสิทธิ์ลบคอมเมนต์ guestbook
-- `vite.config.js > server`:
-  - `host: true` — ฟังทั้ง IPv4 + IPv6 (จำเป็นเมื่อ proxy/tunnel ต่อผ่าน 127.0.0.1)
-  - `allowedHosts: ['.trycloudflare.com']` — อนุญาตให้ tunnel host เข้าถึง dev server
+  - **สำคัญ:** prefix `VITE_` = ฝังตอน build → บน prod ต้องตั้งใน **Cloudflare Pages → Settings → Environment variables** (CI ไม่มี `.env.local` ที่ถูก gitignore)
+- `vite.config.js > server` (สำหรับ dev เท่านั้น): `host: true` + `allowedHosts: ['.trycloudflare.com']` — ไว้เปิด dev server ผ่าน Cloudflare quick tunnel ตอนพัฒนา ไม่เกี่ยวกับ prod
 
 ---
 
 ## การ Deploy (production) — DOJOJIN.TECH
 
-**สถาปัตยกรรม:**
-```
-dojojin.tech → Cloudflare → cloudflared (named tunnel f6684909, รันบน host ผ่าน systemd)
-            → nginx :80 (server_name dojojin.tech, root /var/www/dojojin-site) → ไฟล์ build (dist/)
-```
-> **ไม่ใช้ docker** สำหรับ deploy — รัน cloudflared เป็น binary บน host โดยตรง
+Production เสิร์ฟบน **Cloudflare Pages** (Git integration) — **deploy = `git push origin main`**
+Cloudflare build จาก repo ให้เอง ไม่มี server/nginx/tunnel ให้ดูแล
 
-**ขั้นตอน deploy เว็บใหม่:**
+**Cloudflare Pages settings (ตั้งครั้งเดียวใน dashboard):**
+- Build command: `npm run build`
+- Build output directory: `dist`
+- Production branch: `main` (branch/PR อื่น ได้ preview URL อัตโนมัติ)
+- Environment variables → `VITE_OWNER_EMAILS` (ดูด้านล่าง)
+
+**Firestore rules** deploy แยกผ่าน Firebase (ไม่เกี่ยวกับ Pages):
 ```bash
-npm run build
-sudo rsync -a --delete dist/ /var/www/dojojin-site/
-sudo chown -R nginx:nginx /var/www/dojojin-site
-sudo systemctl reload nginx          # ถ้าแก้ nginx config
+firebase deploy --only firestore:rules
 ```
-
-**ไฟล์ระบบที่เกี่ยวข้อง:**
-- `/etc/nginx/conf.d/dojojin-site.conf` — server block (root → `/var/www/dojojin-site`)
-- `/var/www/dojojin-site` — docroot (ไฟล์ build)
-- `~/.cloudflared/config-host.yml` — config cloudflared **สำหรับ host** (ชี้ `127.0.0.1`, ห้ามใช้ `config.yml` เดิมที่เป็นของ docker)
-- `/usr/local/bin/cloudflared` — binary ของ systemd service
-- `/etc/systemd/system/cloudflared-dojojin.service` — service ทำให้ tunnel รันถาวร
-
-**คุม tunnel (systemd):**
-```bash
-sudo systemctl status  cloudflared-dojojin.service
-sudo systemctl restart cloudflared-dojojin.service
-journalctl -u cloudflared-dojojin.service -n 50 --no-pager
-```
-
-**สคริปต์ใน `deploy/` (version-controlled):**
-- `install-tunnel.sh` — ติดตั้ง tunnel เป็น systemd service (`sudo bash deploy/install-tunnel.sh`)
-- `backup.sh` — สร้าง migration bundle ของลับ → `~/dojojin-backup` (`~/.cloudflared` + `.env.local`)
-- `restore.sh` — กู้คืนทั้งระบบบนเครื่องใหม่ (clone→build→nginx→SELinux→systemd→verify)
-- `MIGRATE.md` — คู่มือย้ายเครื่องครบทุก OS (Fedora/Nobara · Ubuntu/Debian · Windows)
-- `nginx-dojojin-site.conf` / `cloudflared-config-host.yml` / `cloudflared-dojojin.service` — สำเนา config จริง
-
-**ย้ายเครื่อง:** `bash deploy/backup.sh` → คัดลอก `~/dojojin-backup` ไปเครื่องใหม่ → `bash restore.sh`
-(ของลับอยู่ใน bundle นอก repo — **ห้าม commit**)
 
 ---
 
-## Troubleshooting (สรุปจากปัญหาจริงที่เคยเจอ — รายละเอียดเต็มใน DEPLOYMENT.md)
+## Troubleshooting
 
 | อาการ | สาเหตุ | วิธีแก้ |
 |-------|--------|--------|
-| `dojojin.tech` → **530** | tunnel ไม่ connect (ไม่มี cloudflared ต่อ tunnel f6684909) | start `cloudflared-dojojin.service` (อย่าลืม: ไม่ต้องแก้ DNS/ไม่ต้องลบอะไรใน Cloudflare) |
-| → **502** | tunnel ต่อ origin ไม่ได้ | เช็ค nginx รันไหม / `host: true` (Vite ฟัง IPv4) / พอร์ต |
-| → **404 (จาก cloudflare)** | cloudflared โหลด ingress catch-all `http_status:404` จาก `~/.cloudflared/config.yml` ทับ | ใช้ `--config` ชี้ config ที่ถูกต้อง (host) หรือ config เปล่า |
-| dev server → **404 ผ่าน tunnel** | Vite block host ภายนอก | `allowedHosts` ใน vite.config.js |
-| nginx เสิร์ฟหน้า Fedora test page | curl ด้วย Host ไม่ตรง `server_name` → ตก default server | ทดสอบด้วย `curl -H "Host: dojojin.tech" http://127.0.0.1:80/` |
-
-**กฎทอง:** 530=ปัญหาที่ tunnel · 502=ปัญหาที่ origin/nginx · 404=ปัญหาที่ ingress/docroot
-
-**เช็คเร็ว:**
-```bash
-curl -sI https://dojojin.tech/ | head -1                                   # online ไหม
-curl -s -o /dev/null -w "%{http_code}\n" -H "Host: dojojin.tech" http://127.0.0.1:80/   # nginx ok ไหม
-curl -s http://127.0.0.1:20241/metrics | grep -E 'total_requests|request_errors'        # tunnel เห็น request ไหม
-```
+| owner mode ลบคอมเมนต์ไม่ได้บน prod | ไม่ได้ตั้ง `VITE_OWNER_EMAILS` ใน Pages (CI ไม่มี `.env.local`) | ตั้งใน Pages → Settings → Environment variables แล้ว re-deploy |
+| build fail บน Pages | node version / lockfile ไม่ตรง | ตั้ง `NODE_VERSION` ใน Pages env, commit `package-lock.json` เข้า repo |
+| push แล้วเว็บไม่อัปเดต | Pages build ยังไม่เสร็จ/ล้ม | ดู log ที่ Pages → Deployments |
 
 ---
 
 ## ข้อควรระวัง
 
-- **docker vs host:** มี `~/.cloudflared/config.yml` (ของ docker, ใช้ `host.docker.internal`) กับ `config-host.yml` (ของ host, ใช้ `127.0.0.1`) — **อย่าสลับกัน** การรันบน host ด้วย config ของ docker จะ 502
-- **split-brain:** ถ้า cloudflared container ใน docker (ai-stack, `restart:always`) รัน tunnel เดียวกันพร้อม host จะเกิด 502 เป็นช่วงๆ → ปิด container เดิม: `sudo docker rm -f cloudflared`
-- **อย่า commit `src/cloudflared`** (binary 39MB) — ควรอยู่ใน `.gitignore`
+- **`VITE_*` = ฝังตอน build** → ค่า prod ต้องตั้งใน **Cloudflare Pages dashboard** ไม่ใช่ `.env.local` (ถูก gitignore, CI ไม่เห็น)
+- push ขึ้น `main` = deploy prod ทันที — ระวังของยังไม่พร้อม (ใช้ branch/PR เพื่อ preview ก่อน)
+- ไม่มี client-side router (SPA หน้าเดียว) — ไม่ต้องมี `_redirects`/rewrite rule
 - ทั้งแอปอยู่ใน `App.jsx` ไฟล์เดียว ระวัง merge conflict เวลาแก้
