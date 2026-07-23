@@ -1390,6 +1390,8 @@ export default function DevChaosProfile() {
         ::-webkit-scrollbar-thumb { background:rgba(0,255,180,0.3); border-radius:2px; }
 
         .main-grid    { display:grid; grid-template-columns:1fr 1fr 320px; gap:20px; max-width:1280px; margin:0 auto; padding:32px; }
+        /* ponytail: grid items default to min-width:auto, so a long unbreakable child (a monospace terminal line) forces the 1fr track wider than the viewport and cards get clipped on mobile. Let tracks shrink below content size. */
+        .main-grid > *, .main-grid aside > * { min-width:0; }
 	        .case-section { max-width:1280px; margin:0 auto 24px; padding:0 32px 8px; }
         .header-inner { max-width:1280px; margin:0 auto; padding:24px 32px 16px; display:flex; gap:20px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
         .term-wrap    { max-width:1280px; margin:0 auto; padding:0 32px 16px; }
