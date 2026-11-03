@@ -4,6 +4,7 @@ import { loadFirebase } from "./firebase";
 import {
   SiDocker, SiCloudflare, SiNginx, SiOllama, SiOpencv, SiFfmpeg, SiPython,
   SiCplusplus, SiNodedotjs, SiExpress, SiReact, SiLinux, SiUltralytics,
+  SiRust, SiTypescript, SiTailscale,
   SiGooglegemini, SiDiscord, SiGithub, SiFacebook,
 } from "react-icons/si";
 import {
@@ -42,6 +43,7 @@ const TECH_META = {
   "Nginx":            { C:SiNginx,         color:"#009639", url:"https://nginx.org", cat:"infra" },
   "Reverse Proxy":    { C:LuShuffle,       color:"#a78bfa", cat:"infra" },
   "Linux Server":     { C:SiLinux,         color:"#ffffff", url:"https://kernel.org", cat:"infra" },
+  "Tailscale":        { C:SiTailscale,     color:"#ffffff", url:"https://tailscale.com", cat:"infra" },
   // AI Models
   "OpenWebUI":        { C:LuMonitor,       color:"#ffffff", url:"https://openwebui.com", cat:"ai" },
   "Ollama":           { C:SiOllama,        color:"#ffffff", url:"https://ollama.com", cat:"ai" },
@@ -61,6 +63,8 @@ const TECH_META = {
   // Backend / Web
   "Python":           { C:SiPython,        color:"#3776AB", url:"https://www.python.org", cat:"backend" },
   "C++":              { C:SiCplusplus,     color:"#00599C", url:"https://isocpp.org", cat:"backend" },
+  "Rust":             { C:SiRust,          color:"#DEA584", url:"https://www.rust-lang.org", cat:"backend" },
+  "TypeScript":       { C:SiTypescript,    color:"#3178C6", url:"https://www.typescriptlang.org", cat:"backend" },
   "NodeJS":           { C:SiNodedotjs,     color:"#5FA04E", url:"https://nodejs.org", cat:"backend" },
   "ExpressJS":        { C:SiExpress,       color:"#ffffff", url:"https://expressjs.com", cat:"backend" },
   "React":            { C:SiReact,         color:"#61DAFB", url:"https://react.dev", cat:"backend" },
@@ -143,7 +147,7 @@ const NOW_ITEMS = [
 ];
 const PROJECTS = [
   { name:"Vigil Platform", emoji:"📹", color:"#00ffb4", status:"LIVE", statusColor:"#00ffb4", link:"https://dashboard.dojojin.tech",
-    desc:"Multi-vendor CCTV analytics & management suite — รับ event จาก Bosch (MQTT/ONVIF Profile M), Hikvision (ISAPI), Dahua (CGI VCA) และ ONVIF ทั่วไป ในแดชบอร์ดเดียว: real-time monitoring, LINE alerts, branded reports, demographic face analytics, license ผูกเครื่องด้วย Ed25519",
+    desc:"Multi-vendor CCTV analytics & management suite — รับ event จาก Bosch (MQTT/ONVIF Profile M), Hikvision (ISAPI), Dahua (CGI VCA) และ ONVIF ทั่วไป ในแดชบอร์ดเดียว: real-time monitoring, LINE alerts, branded reports, demographic face analytics, แจ้งเตือนผ่าน LINE และ Telegram",
     tech:["NodeJS","Express","PostgreSQL","MQTT / EMQX","ONVIF","Docker","Cloudflare"] },
   { name:"Vigil Mobile", emoji:"📱", color:"#00b4ff", status:"BETA", statusColor:"#00b4ff", link:"https://dashboard.dojojin.tech",
     desc:"React Native companion app ของ Vigil Platform — auth, camera overview, live snapshot, online/offline status, alert badges และ real-time events ผ่าน WebSocket (singleton + backoff) รองรับ iOS + Android",
@@ -151,6 +155,9 @@ const PROJECTS = [
   { name:"ANPR / Vehicle Detection", emoji:"🚗", color:"#a78bfa", status:"IN VIGIL", statusColor:"#00ffb4", link:"https://dashboard.dojojin.tech",
     desc:"License plate / vehicle detection — ส่วนหนึ่งของ Vigil Platform: Hikvision ISAPI + Dahua line-crossing, เก็บ log entry/exit ยานพาหนะแบบ real-time",
     tech:["Python","OpenCV","YOLO","Hikvision ISAPI","Dahua CGI"] },
+  { name:"HippoCraft", emoji:"🦛", color:"#2bb673", status:"INTERNAL", statusColor:"#f59e0b", link:"https://docs.dojojin.tech/projects/hippocraft",
+    desc:"โปรแกรมอ่านและแก้ไข PDF เขียนด้วย Rust ทั้งตัว ต่อยอดจาก PdfCraft — แก้ข้อความไทยในไฟล์เดิมโดยคงฟอนต์เดิม ตัดคำด้วย ICU ฝังฟอนต์ไทยแบบ subset OCR ภาษาไทยที่รันบนเครื่อง และเมนูไทยทั้งโปรแกรม ใช้ได้ทั้ง macOS, Windows และในเบราว์เซอร์ผ่าน WebAssembly",
+    tech:["Rust","WebAssembly","PaddleOCR","HarfBuzz","egui"] },
   { name:"AI OCR Pipeline", emoji:"📄", color:"#f59e0b", status:"PAUSED", statusColor:"#f59e0b",
     desc:"Internal testing tool (Google Apps Script) — สแกนและ extract ข้อมูลจากเอกสารภาษาไทยด้วย AI ลด manual data entry · พิสูจน์ว่าใช้งานได้จริงแล้ว ตอนนี้พักไว้ก่อน",
     tech:["Google Apps Script","AI OCR","Stack AI","DeepSeek"] },
@@ -166,7 +173,7 @@ const CASE_STUDIES = [
     color: "#00ffb4",
     problem: "กล้องหลายยี่ห้อ (Bosch, Hikvision, Dahua, ONVIF) ส่ง event คนละ protocol — ทีม security ต้องเห็น motion, line-crossing, intrusion และ face capture แบบ real-time ในที่เดียว",
     solution: "สร้าง multi-vendor ingester (Bosch MQTT/ONVIF Profile M · Hikvision ISAPI alert stream · Dahua CGI VCA) ที่ normalize ทุก event ลงตารางเดียว แล้วต่อ alert engine, LINE notification, branded reports และ operational dashboard",
-    result: "จากกล้องต่างยี่ห้อกลายเป็น operations platform เดียว: morning briefing, offline alerts, health report และ demographic analytics — ใช้งานจริงบน production (license ผูกเครื่อง Ed25519)",
+    result: "จากกล้องต่างยี่ห้อกลายเป็น operations platform เดียว: morning briefing, offline alerts, health report และ demographic analytics — ใช้งานจริงบน production",
     stack: ["Bosch", "Hikvision", "Dahua", "ONVIF", "MQTT", "PostgreSQL"],
   },
   {
