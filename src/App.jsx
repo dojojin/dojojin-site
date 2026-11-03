@@ -146,23 +146,23 @@ const NOW_ITEMS = [
   { task:"ทะเลาะกับ nginx 502 (อีกรอบ)",               icon:"🟩", status:"ONGOING",  color:"#ff4466" },
 ];
 const PROJECTS = [
-  { name:"Vigil Platform", emoji:"📹", color:"#00ffb4", status:"LIVE", statusColor:"#00ffb4", link:"https://dashboard.dojojin.tech",
-    desc:"Multi-vendor CCTV analytics & management suite — รับ event จาก Bosch (MQTT/ONVIF Profile M), Hikvision (ISAPI), Dahua (CGI VCA) และ ONVIF ทั่วไป ในแดชบอร์ดเดียว: real-time monitoring, LINE alerts, branded reports, demographic face analytics, แจ้งเตือนผ่าน LINE และ Telegram",
+  { name:"Vigil Platform", emoji:"📹", color:"#00ffb4", status:"LIVE", statusColor:"#00ffb4", link:"https://docs.dojojin.tech/projects/vigil-platform",
+    desc:"Multi-vendor CCTV analytics & management suite — รับ event จาก Bosch (MQTT/ONVIF Profile M), Hikvision (ISAPI), Dahua (CGI VCA) และ ONVIF ทั่วไป ในแดชบอร์ดเดียว: real-time monitoring, branded reports, demographic face analytics, แจ้งเตือนผ่าน LINE และ Telegram",
     tech:["NodeJS","Express","PostgreSQL","MQTT / EMQX","ONVIF","Docker","Cloudflare"] },
-  { name:"Vigil Mobile", emoji:"📱", color:"#00b4ff", status:"BETA", statusColor:"#00b4ff", link:"https://dashboard.dojojin.tech",
+  { name:"Vigil Mobile", emoji:"📱", color:"#00b4ff", status:"BETA", statusColor:"#00b4ff", link:"https://docs.dojojin.tech/projects/vigil-mobile",
     desc:"React Native companion app ของ Vigil Platform — auth, camera overview, live snapshot, online/offline status, alert badges และ real-time events ผ่าน WebSocket (singleton + backoff) รองรับ iOS + Android",
     tech:["React Native","Expo SDK 54","Expo Router","Zustand","Axios","WebSocket"] },
-  { name:"ANPR / Vehicle Detection", emoji:"🚗", color:"#a78bfa", status:"IN VIGIL", statusColor:"#00ffb4", link:"https://dashboard.dojojin.tech",
+  { name:"ANPR / Vehicle Detection", emoji:"🚗", color:"#a78bfa", status:"IN VIGIL", statusColor:"#00ffb4", link:"https://docs.dojojin.tech/projects/vigil-platform#license-plate-recognition-lpr",
     desc:"License plate / vehicle detection — ส่วนหนึ่งของ Vigil Platform: Hikvision ISAPI + Dahua line-crossing, เก็บ log entry/exit ยานพาหนะแบบ real-time",
     tech:["Python","OpenCV","YOLO","Hikvision ISAPI","Dahua CGI"] },
   { name:"HippoCraft", emoji:"🦛", color:"#2bb673", status:"INTERNAL", statusColor:"#f59e0b", link:"https://docs.dojojin.tech/projects/hippocraft",
     desc:"โปรแกรมอ่านและแก้ไข PDF เขียนด้วย Rust ทั้งตัว ต่อยอดจาก PdfCraft — แก้ข้อความไทยในไฟล์เดิมโดยคงฟอนต์เดิม ตัดคำด้วย ICU ฝังฟอนต์ไทยแบบ subset OCR ภาษาไทยที่รันบนเครื่อง และเมนูไทยทั้งโปรแกรม ใช้ได้ทั้ง macOS, Windows และในเบราว์เซอร์ผ่าน WebAssembly",
     tech:["Rust","WebAssembly","PaddleOCR","HarfBuzz","egui"] },
-  { name:"AI OCR Pipeline", emoji:"📄", color:"#f59e0b", status:"PAUSED", statusColor:"#f59e0b",
+  { name:"AI OCR Pipeline", emoji:"📄", color:"#f59e0b", status:"PAUSED", statusColor:"#f59e0b", link:"https://docs.dojojin.tech/projects/ai-ocr-pipeline",
     desc:"Internal testing tool (Google Apps Script) — สแกนและ extract ข้อมูลจากเอกสารภาษาไทยด้วย AI ลด manual data entry · พิสูจน์ว่าใช้งานได้จริงแล้ว ตอนนี้พักไว้ก่อน",
     tech:["Google Apps Script","AI OCR","Stack AI","DeepSeek"] },
-  { name:"Crowd Density Analytics", emoji:"👥", color:"#ff4466", status:"IN VIGIL", statusColor:"#00ffb4", link:"https://dashboard.dojojin.tech",
-    desc:"ตรวจความหนาแน่นฝูงชน + demographic face analytics — ส่วนหนึ่งของ Vigil Platform ส่ง alert เมื่อเกิน threshold ผ่าน LINE/MQTT",
+  { name:"Crowd Density Analytics", emoji:"👥", color:"#ff4466", status:"IN VIGIL", statusColor:"#00ffb4", link:"https://docs.dojojin.tech/projects/vigil-platform#event-management-and-analytics",
+    desc:"ตรวจความหนาแน่นฝูงชน + demographic face analytics — ส่วนหนึ่งของ Vigil Platform นับคนจากกล้องที่รองรับ ทำเป็นกราฟ density over time และ heatmap รายชั่วโมง",
     tech:["YOLO","OpenCV / CV2","Python","MQTT","NodeJS"] },
 ];
 const CASE_STUDIES = [
@@ -876,6 +876,7 @@ function WorkWithMeSection({ onGuestbook }) {
           <a href="https://facebook.com/dojojin" target="_blank" rel="noreferrer" className="social-link" style={{textAlign:"center",textDecoration:"none",padding:"11px 14px",borderRadius:"11px",background:"rgba(0,255,180,0.1)",border:"1px solid rgba(0,255,180,0.35)",color:"#00ffb4",fontSize:"12px",fontWeight:"800",letterSpacing:"0.08em"}}>MESSAGE</a>
           <button onClick={onGuestbook} style={{padding:"11px 14px",borderRadius:"11px",background:"rgba(255,255,255,0.04)",border:"1px solid rgba(255,255,255,0.1)",color:"rgba(255,255,255,0.55)",fontSize:"12px",fontFamily:"inherit",cursor:"pointer",letterSpacing:"0.08em"}}>GUESTBOOK</button>
           <a href="https://github.com/dojojin/" target="_blank" rel="noreferrer" className="social-link" style={{textAlign:"center",textDecoration:"none",padding:"11px 14px",borderRadius:"11px",background:"rgba(120,80,255,0.08)",border:"1px solid rgba(120,80,255,0.28)",color:"#a78bfa",fontSize:"12px",fontWeight:"800",letterSpacing:"0.08em"}}>GITHUB</a>
+          <a href="https://docs.dojojin.tech" target="_blank" rel="noreferrer" className="social-link" style={{textAlign:"center",textDecoration:"none",padding:"11px 14px",borderRadius:"11px",background:"rgba(0,180,255,0.08)",border:"1px solid rgba(0,180,255,0.28)",color:"#00b4ff",fontSize:"12px",fontWeight:"800",letterSpacing:"0.08em"}}>DOCS</a>
         </div>
       </div>
     </section>
@@ -1549,6 +1550,10 @@ export default function DevChaosProfile() {
                 <span style={{fontSize:"13px"}}>{tab.icon}</span>{tab.label}
               </button>
             ))}
+            <a href="https://docs.dojojin.tech" target="_blank" rel="noreferrer" className="nav-btn"
+              style={{padding:"10px 22px",borderBottom:"2px solid transparent",color:"rgba(255,255,255,0.38)",fontSize:"12px",fontWeight:"600",letterSpacing:"0.1em",textDecoration:"none",display:"flex",alignItems:"center",gap:"6px",marginLeft:"auto",whiteSpace:"nowrap"}}>
+              <span className="nav-icon" style={{fontSize:"13px"}}>📖</span>docs ↗
+            </a>
           </div>
         </div>
       </header>
