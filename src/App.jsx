@@ -14,7 +14,7 @@ import {
   LuFileText, LuSettings, LuWrench, LuBug, LuRefreshCcw, LuCoffee, LuRocket,
   LuClipboard, LuFlame, LuGamepad2, LuMoon, LuZap, LuActivity, LuMessageSquare,
   LuInbox, LuEye, LuBrain, LuGlobe, LuLinkedin, LuLanguages, LuLayoutDashboard,
-  LuShuffle, LuScanLine, LuFileScan, LuMonitor, LuSparkles,
+  LuShuffle, LuFileScan, LuMonitor, LuSparkles,
 } from "react-icons/lu";
 
 /* ══════ SVG ICONS ══════ */
@@ -58,8 +58,6 @@ const TECH_META = {
   "FFmpeg":           { C:SiFfmpeg,        color:"#3bb14a", url:"https://ffmpeg.org", cat:"cv" },
   "Video Analytics":  { C:LuVideo,         color:"#00ffb4", cat:"cv" },
   "Vehicle Detection":{ C:LuCar,           color:"#a78bfa", cat:"cv" },
-  "Crowd Density":    { C:LuUsers,         color:"#ff4466", cat:"cv" },
-  "License Plate":    { C:LuScanLine,      color:"#00b4ff", cat:"cv" },
   "AI OCR":           { C:LuFileScan,      color:"#f59e0b", cat:"cv" },
   // Backend / Web
   "Python":           { C:SiPython,        color:"#3776AB", url:"https://www.python.org", cat:"backend" },
@@ -84,20 +82,20 @@ const TECH_CATEGORIES = [
 const CHAOS_TITLES = [
   "DOJOJIN.TECH | กล้อง ONLINE • ชีวิต TIMEOUT 💀",
   "DOJOJIN.TECH | YOLO detected: bug in prod 🎯",
-  "DOJOJIN.TECH | MQTT connected, สมองไม่ connected 🧠",
+  "DOJOJIN.TECH | กล้อง connected, สมองไม่ connected 🧠",
   "DOJOJIN.TECH | docker ps → life.exe: Exited (1) 🐳",
-  "DOJOJIN.TECH | Bosch sees all 👁️ แต่ nginx ยัง 502",
+  "DOJOJIN.TECH | กล้องเห็นทุกอย่าง 👁️ แต่ nginx ยัง 502",
   "DOJOJIN.TECH | git push -f เมื่อกี้ ขอโทษ 🙏",
   "DOJOJIN.TECH | RAM: 2% | CHAOS: 100% | HOPE: 0.01%",
-  "DOJOJIN.TECH | กล้อง 8100i จ้องอยู่นะ 🎥",
+  "DOJOJIN.TECH | กล้องวงจรปิดจ้องอยู่นะ 🎥",
   "DOJOJIN.TECH | Cloudflare Tunnel: อยู่...หรือเปล่า? ☁️",
   "DOJOJIN.TECH | deploy วันศุกร์ คือความกล้า 🚀",
   "DOJOJIN.TECH | OpenCV กำลังมองคุณอยู่ 📷",
   "DOJOJIN.TECH | coffee.exe still running ☕",
 ];
 const HIDDEN_TITLES = [
-  "👀 กล้อง Bosch มองคุณอยู่ ห้ามหนี",
-  "📡 MQTT ยังส่ง packet ให้คุณนะ",
+  "👀 กล้องวงจรปิด มองคุณอยู่ ห้ามหนี",
+  "📡 กล้องยังส่งภาพให้คุณนะ",
   "🎯 YOLO detected: tab abandonment",
   "💀 life.exe หยุดรอคุณแล้ว",
   "🔴 Motion detected! กลับมาดูก่อน!",
@@ -110,9 +108,9 @@ const OWNER_EMAILS = (import.meta.env.VITE_OWNER_EMAILS || "")
 const KONAMI = ["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"];
 const RANDOM_EVENTS = [
   { msg:"YOLO: person detected in Zone B",        icon:"🎯", color:"#00ffb4" },
-  { msg:"MQTT: bosch/cam/8100i motion event",     icon:"📡", color:"#00b4ff" },
-  { msg:"Camera 3: Crowd density HIGH",           icon:"👥", color:"#f59e0b" },
-  { msg:"ANPR: plate recognition success",        icon:"🔍", color:"#a78bfa" },
+  { msg:"CAM-01: motion event",     icon:"📡", color:"#00b4ff" },
+  { msg:"Camera 3: line crossing",           icon:"👥", color:"#f59e0b" },
+  { msg:"Camera 5: snapshot saved",        icon:"🔍", color:"#a78bfa" },
   { msg:"Docker: container restarted (3rd time)", icon:"🐳", color:"#ff4466" },
   { msg:"nginx: 502 Bad Gateway (classic)",       icon:"🟩", color:"#ff4466" },
   { msg:"Cloudflare: tunnel reconnecting...",     icon:"☁️", color:"#f59e0b" },
@@ -122,9 +120,9 @@ const RANDOM_EVENTS = [
 ];
 const MOTION_ALERTS = [
   "Motion detected ใกล้ตัวคุณ 🎥",
-  "Bosch 8100i: Zone A triggered 📷",
+  "CAM-01: Zone A triggered 📷",
   "กล้องกำลังจ้องอยู่ — ห้ามขยับ",
-  "Crowd density สูงผิดปกติ ⚠️",
+  "Zone B มีความเคลื่อนไหวผิดปกติ ⚠️",
   "YOLO: unknown object near camera",
 ];
 const CONFESSIONS = [
@@ -140,16 +138,16 @@ const CONFESSIONS = [
   "ส่ง git commit ว่า fix ทั้งที่แก้ 300 บรรทัด  ✅  เมื่อกี้",
 ];
 const NOW_ITEMS = [
-  { task:"Vigil Platform — multi-vendor CCTV analytics", icon:"📹", status:"BUILDING", color:"#00ffb4" },
-  { task:"Mobile app — Events screen via WebSocket",    icon:"📱", status:"NEXT UP",  color:"#00b4ff" },
-  { task:"Fix SESSION_SECRET หลัง server restart",      icon:"🔐", status:"PENDING",  color:"#f59e0b" },
-  { task:"Android snapshot → expo-image migration",     icon:"🤖", status:"TODO",     color:"#a78bfa" },
+  { task:"Vigil Platform — CCTV analytics", icon:"📹", status:"BUILDING", color:"#00ffb4" },
+  { task:"Vigil Mobile — พัฒนาต่อเนื่อง",    icon:"📱", status:"NEXT UP",  color:"#00b4ff" },
+  { task:"ย้ายเว็บ dojojin.tech ไป Astro",      icon:"🚀", status:"PENDING",  color:"#f59e0b" },
+  { task:"รีวิวหูฟังตัวต่อไป",     icon:"🤖", status:"TODO",     color:"#a78bfa" },
   { task:"ทะเลาะกับ nginx 502 (อีกรอบ)",               icon:"🟩", status:"ONGOING",  color:"#ff4466" },
 ];
 const WHAT_I_BUILD = [
   {
     title: "CCTV Analytics Dashboards",
-    desc: "รวม camera events, map, crowd density, vehicle detection และ alert feed ให้ทีมดูสถานะได้ในหน้าเดียว",
+    desc: "รวมสถานะกล้องและเหตุการณ์ให้ทีมดูได้ในหน้าเดียว",
     icon: "📹",
     color: "#00ffb4",
   },
@@ -161,7 +159,7 @@ const WHAT_I_BUILD = [
   },
   {
     title: "Computer Vision Pipelines",
-    desc: "ทำ detection/OCR/ANPR ตั้งแต่ preprocessing, model output, log storage ไปจนถึง dashboard",
+    desc: "ทำ detection/OCR ตั้งแต่ preprocessing, model output, log storage ไปจนถึง dashboard",
     icon: "🎯",
     color: "#a78bfa",
   },
@@ -186,8 +184,8 @@ const WHAT_I_BUILD = [
 ];
 const BUILD_LOG = [
   { date: "NOW", title: "Guestbook auth flow", detail: "เพิ่ม Google owner mode, Firestore guestbook และ visitor counter ให้เว็บ portfolio มี interaction จริง", color:"#00ffb4" },
-  { date: "WIP", title: "Mobile Events screen", detail: "ออกแบบ companion app สำหรับดู camera events และ alert stream ผ่าน WebSocket", color:"#00b4ff" },
-  { date: "OPS", title: "Vigil multi-vendor ingest", detail: "ต่อ event จาก Bosch/Hikvision/Dahua/ONVIF เข้าระบบ Vigil Platform และ log storage", color:"#a78bfa" },
+  { date: "WIP", title: "Vigil Mobile", detail: "พัฒนา companion app ของ Vigil Platform ต่อเนื่อง — รายละเอียดที่ docs.dojojin.tech", color:"#00b4ff" },
+  { date: "OPS", title: "Vigil Platform", detail: "ดูแลระบบ CCTV analytics ที่ใช้งานจริง — รายละเอียดที่ docs.dojojin.tech", color:"#a78bfa" },
   { date: "FIX", title: "Expo image migration", detail: "ไล่แก้ snapshot/image flow บน Android เพื่อให้ render ภาพนิ่งกว่าเดิม", color:"#f59e0b" },
   { date: "2AM", title: "Nginx + tunnel repair", detail: "debug reverse proxy, Cloudflare Tunnel และ service restart loop ที่ชอบพังตอนดึก", color:"#ff4466" },
 ];
@@ -213,13 +211,12 @@ function processCommand(raw) {
     "  date         bangkok time","  uptime       system uptime",
     "  docker ps    container status","  git log      commit history",
     "  git push -f  yolo push","  nginx -t     test config",
-    "  mqtt status  broker info","  cat [file]   read file",
+    "  cat [file]   read file",
     "  sudo [cmd]   nice try","  exit         ออกไม่ได้","  clear        clear screen",
   ].join("\n");
   if (["ls","ls -la","ls projects"].includes(cmd)) return [
     "drwxr-xr-x  vigil-platform/",
     "drwxr-xr-x  vigil-mobile/",
-    "drwxr-xr-x  anpr-system/",
     "drwxr-xr-x  ai-ocr-pipeline/",
     "-rw-r--r--  life.exe   [Exited(1)]",
     "-rwx------  coffee.sh  [Running forever]",
@@ -234,7 +231,7 @@ function processCommand(raw) {
     "life        dojoman/life   Up 20y (unhealthy)",
     "coffee      brew:espresso  Up 8h  (healthy) ☕",
     "nginx       nginx:latest   Restarting(502)",
-    "bosch-db    postgres:15    Up 3h  (healthy)",
+    "app-db      postgres       Up 3h  (healthy)",
   ].join("\n");
   if (["git log","git log --oneline"].includes(cmd)) return [
     "* a3f92b1 (HEAD) fix",
@@ -248,13 +245,12 @@ function processCommand(raw) {
   if (cmd === "git push") return "remote: rejected\nerror: failed to push\nhint: ลอง git push -f";
   if (["git push -f","git push --force"].includes(cmd)) return "remote: ok (god help us)\n3 colleagues unsubscribed";
   if (cmd === "nginx -t") return "nginx: [error] unknown directive \"work_please\"\ntest FAILED\n// it is always nginx";
-  if (cmd === "mqtt status") return "broker: dojojin.tech:1883  CONNECTED\ntopics: bosch/+/events\nmessages/today: 14,291\nlast event: motion_detected (0.3s ago)";
   if (cmd.startsWith("sudo")) return "Sorry, try again.\nSorry, try again.\nsudo: 3 incorrect password attempts";
   if (cmd.startsWith("cat ")) {
     const f = cmd.slice(4).trim();
     const files = {
-      "vigil.txt":"# Vigil Platform\nMulti-vendor CCTV analytics (Bosch/Hikvision/Dahua/ONVIF)\nStack: Express+PostgreSQL+MQTT/EMQX\nHost: Cloudflare Tunnel\nLicense: Ed25519 (machine-bound)\nStatus: LIVE",
-      "mobile.md":"# Vigil Mobile\nReact Native + Expo SDK 54 + Expo Router\nReal-time events via WebSocket\nStatus: IN DEV",
+      "vigil.txt":"# Vigil Platform\nCCTV analytics สำหรับองค์กร\nรายละเอียด: docs.dojojin.tech\nStatus: LIVE",
+      "mobile.md":"# Vigil Mobile\nแอปมือถือคู่ Vigil Platform\nรายละเอียด: docs.dojojin.tech\nStatus: BETA",
       "life.log":"[02:00] nginx: 502\n[02:15] docker restart\n[02:16] nginx: 502 (again)\n[03:45] it works (dont know why)\n[04:00] sleep",
       "quote.txt":"วันนึงจะไม่ต้องพิมพ์อะไรเองอีก\nแต่สุดท้ายยังต้องพิมพ์ git push เองอยู่ดี\n-- Mr. Dojo-mAn, 2am",
     };
@@ -468,7 +464,7 @@ function CCTVWidget() {
         </div>
       </div>
       <div style={{padding:"5px 8px",background:"rgba(0,0,0,0.4)",fontSize:"8px",color:"rgba(0,255,0,0.4)",letterSpacing:"0.1em",display:"flex",justifyContent:"space-between"}}>
-        <span>Bosch 8100i</span>
+        <span>CAM-01</span>
         <span style={{color:"rgba(0,255,180,0.5)"}}>ONLINE</span>
       </div>
     </div>
@@ -572,7 +568,7 @@ const KEYBOARD_KEYS = [
   "git","push","sudo","npm","pip","docker","nginx","ssh","curl","grep",
   "vim","nano","bash","zsh","cat","ls","cd","rm","ps","kill",
   "DOJOJIN",".TECH","DEV","CHAOS","BUILD","BREAK","REPEAT","DEPLOY",
-  "MQTT","BOSCH","YOLO","CCTV","8100i","OpenCV","FFmpeg","Tunnel",
+  "API","NVR","YOLO","CCTV","4K","OpenCV","FFmpeg","Tunnel",
 ];
 
 function KeyboardTicker({ reverse = false }) {
@@ -582,7 +578,7 @@ function KeyboardTicker({ reverse = false }) {
       <div style={{display:"flex",gap:"8px",width:"max-content",animation:`${reverse?"tickerR":"ticker"} 60s linear infinite`}}>
         {keys.map((key, i) => {
           const isSp  = ["DOJOJIN",".TECH","DEV","CHAOS","BUILD","BREAK","REPEAT","DEPLOY"].includes(key);
-          const isPr  = ["MQTT","BOSCH","YOLO","CCTV","8100i","OpenCV","FFmpeg","Tunnel"].includes(key);
+          const isPr  = ["API","NVR","YOLO","CCTV","4K","OpenCV","FFmpeg","Tunnel"].includes(key);
           const isCmd = ["git","push","sudo","npm","pip","docker","nginx","ssh","curl","grep","vim","nano","bash","zsh","cat","ls","cd","rm","ps","kill"].includes(key);
           return (
             <span key={i} style={{
@@ -1481,10 +1477,10 @@ export default function DevChaosProfile() {
           <div style={{display:"flex",flexWrap:"wrap",alignItems:"center",gap:"16px",justifyContent:"space-between"}}>
             <div style={{flex:"1 1 440px",minWidth:0}}>
               <p style={{fontSize:"13px",lineHeight:1.7,color:"rgba(255,255,255,0.68)",margin:"0 0 10px"}}>
-                สร้าง <strong style={{color:"#00ffb4",fontWeight:700}}>CCTV analytics หลายยี่ห้อ</strong> (Bosch · Hikvision · Dahua · ONVIF), real-time event systems และ infra — ตั้งแต่ ingester → dashboard → mobile, รันจริงบน production
+                สร้าง <strong style={{color:"#00ffb4",fontWeight:700}}>CCTV analytics หลายยี่ห้อ</strong>, real-time event systems และ infra — ตั้งแต่ ingester → dashboard → mobile, รันจริงบน production
               </p>
               <div style={{display:"flex",flexWrap:"wrap",gap:"6px"}}>
-                {["4 camera vendors","Production-deployed","Real-time MQTT / WebSocket","Ed25519 licensed"].map((k) => (
+                {["CCTV analytics","Production-deployed","Self-hosted AI","Photographer"].map((k) => (
                   <span key={k} style={{fontSize:"10px",padding:"4px 10px",borderRadius:"999px",background:"rgba(0,255,180,0.07)",border:"1px solid rgba(0,255,180,0.22)",color:"rgba(0,255,180,0.85)",letterSpacing:"0.04em"}}>{k}</span>
                 ))}
               </div>

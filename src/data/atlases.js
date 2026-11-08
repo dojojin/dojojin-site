@@ -1,8 +1,9 @@
-// Price Atlas pages under /data/. Shared by scripts/patch-atlas.mjs (head metadata, strip)
-// and src/pages/data/index.astro (cards). Stats are counted from each atlas's own data
+// Price Atlas pages, served at /data/<slug>/ (type data, topic gadget). Shared by scripts/patch-atlas.mjs (head metadata, strip)
+// and the topic pages / home feed (src/lib/feed.js). Stats are counted from each atlas's own data
 // (window.__ATLAS__) — update them when a new atlas version is dropped in.
 export const ATLASES = [
   {
+    topic: 'gadget', type: 'data',
     slug: 'iphone-price-atlas',
     short: 'iPhone Price Atlas',
     title: 'iPhone Thai Price Atlas — ราคาเปิดตัวในไทยทุกรุ่น',
@@ -13,6 +14,7 @@ export const ATLASES = [
     updated: '2026-10-21',
   },
   {
+    topic: 'gadget', type: 'data',
     slug: 'galaxy-s-price-atlas',
     short: 'Galaxy S Price Atlas',
     title: 'Galaxy S Thai Price Atlas — ราคาเปิดตัวในไทยทุกรุ่น',
@@ -20,9 +22,10 @@ export const ATLASES = [
     brand: 'Samsung',
     models: 46, years: '2010–2026', photos: 45,
     thbMin: 19900, thbMax: 66900,
-    updated: '2026-10',
+    updated: '2026-10-01',
   },
   {
+    topic: 'gadget', type: 'data',
     slug: 'vivo-x-price-atlas',
     short: 'vivo X Price Atlas',
     title: 'vivo X Thai Price Atlas — ราคาเปิดตัวในไทยทุกรุ่น',
@@ -30,6 +33,6 @@ export const ATLASES = [
     brand: 'vivo',
     models: 63, years: '2012–2026', photos: 9,
     thbMin: 12990, thbMax: 79999,
-    updated: '2026-10',
+    updated: '2026-10-01',
   },
 ];

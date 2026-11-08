@@ -1,18 +1,18 @@
-// Turn a standalone "Price Atlas" HTML file into a page of dojojin.tech/data/.
+// Turn a standalone "Price Atlas" HTML file into a page of dojojin.tech/<type>/<slug>/ (type from src/data/atlases.js, i.e. /data/).
 // The atlas's own scripts and design are left untouched; we only:
 //   1. apply data corrections from src/data/atlas-corrections/<slug>.json to window.__ATLAS__
 //      (each entry's `old` must equal the current value, otherwise the script stops)
 //   2. rewrite <head> metadata (canonical/og/twitter point at dojojin.tech, site favicon)
 //   3. add a small responsive CSS patch (tested at 390 / 768 / 1280)
-//   4. add the site top bar (same menu as src/layouts/Base.astro, "Data" active)
+//   4. add the site top bar (same menu as src/layouts/Base.astro, the atlas's type (Data) active)
 //      and a "ที่มาของรูป" link in the atlas's own menu
 //
 // Usage: node scripts/patch-atlas.mjs
 // Input : _sources/data/<slug>.html + _sources/data/<slug>.og.png   (local, gitignored)
-// Output: public/data/<slug>/index.html + public/data/<slug>/og.png
+// Output: public/<type>/<slug>/index.html + public/<type>/<slug>/og.png
 import { readFileSync, writeFileSync, mkdirSync, copyFileSync, existsSync } from 'node:fs';
 import { ATLASES } from '../src/data/atlases.js';
-import { NAV, DOCS_URL } from '../src/data/site.js';
+import { NAV } from '../src/data/site.js';
 
 const SITE = 'https://dojojin.tech';
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
@@ -96,6 +96,9 @@ const PATCH_CSS = `
 .sheet, .year-row, .cards, .card, .card > * { min-width: 0; }
 .cards { grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); }
 .card > .sub, .card > span { max-width: 100%; }
+/* same page width + side gutter as the rest of the site (atlas default: 1280px, fixed 16px) */
+.wrap { max-width: 1600px; padding-left: max(clamp(16px, 4vw, 64px), env(safe-area-inset-left, 0px));
+  padding-right: max(clamp(16px, 4vw, 64px), env(safe-area-inset-right, 0px)); }
 @media (max-width: 760px) {
   .bar .wrap { flex-wrap: wrap; row-gap: 6px; }
   .bar .nav { order: 3; flex: 1 1 100%; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
@@ -104,6 +107,15 @@ const PATCH_CSS = `
 }
 /* dojojin.tech: site top bar (mirrors .site-bar in src/styles/site.css) */
 body { margin: 0; }  /* browser default 8px would inset the top bar */
+/* both bars stay pinned: site bar at the very top, the atlas's own bar right under it.
+   --dj-h is the site bar's live height (set by the small script injected with the bar). */
+.dj-bar { position: sticky; top: 0; z-index: 60; }
+.bar { top: var(--dj-h, 0px) !important; }
+html { scroll-padding-top: calc(var(--dj-h, 0px) + 72px); }
+@media (max-width: 760px) {
+  .bar { position: static !important; }   /* phones: pin only the site bar, keep the screen for content */
+  html { scroll-padding-top: calc(var(--dj-h, 0px) + 12px); }
+}
 .dj-bar { background: #fff; border-bottom: 1px solid #e4e4e0; font: 400 14px/1.6 'Noto Sans Thai', 'IBM Plex Sans Thai', system-ui, sans-serif; }
 .dj-bar * { box-sizing: border-box; }
 .dj-wrap { max-width: 1600px; margin: 0 auto; padding: 12px clamp(16px, 4vw, 64px);
@@ -122,19 +134,23 @@ body { margin: 0; }  /* browser default 8px would inset the top bar */
 }
 `;
 
-const TOP_BAR = `
+const topBar = (active) => `
 <div class="dj-bar">
   <div class="dj-wrap">
     <a class="dj-brand" href="/"><img src="/favicon.svg" alt="" width="28" height="28">DOJOJIN.TECH</a>
     <div class="dj-nav" role="navigation" aria-label="เมนูหลัก">
-      ${NAV.map(([id, href, label]) => `<a href="${href}"${id === 'data' ? ' aria-current="page"' : ''}>${label}</a>`).join('')}
-      <a href="${DOCS_URL}" rel="noopener">Docs</a>
+      ${NAV.map(([id, href, label]) => `<a href="${href}"${id === active ? ' aria-current="page"' : ''}>${label}</a>`).join('')}
     </div>
   </div>
-</div>`;
+</div>
+<script>
+  (() => { const b = document.querySelector('.dj-bar');
+    const set = () => document.documentElement.style.setProperty('--dj-h', b.offsetHeight + 'px');
+    set(); new ResizeObserver(set).observe(b); })();
+</script>`;
 
 function patchPage(html, a) {
-  const url = `${SITE}/data/${a.slug}/`;
+  const url = `${SITE}/${a.type}/${a.slug}/`;
   // drop metadata that pointed at the upload host (or was wrong, e.g. og:title = file name)
   html = html.replace(/\s*<meta\s+(?:property="og:[^"]*"|name="twitter:[^"]*"|name="description")[^>]*>/g, '');
   html = html.replace(/\s*<link\s+rel="(?:canonical|icon)"[^>]*>/g, '');
@@ -160,7 +176,7 @@ function patchPage(html, a) {
 `;
   if (!/<\/head>/i.test(html) || !/<body[^>]*>/i.test(html)) throw new Error(`${a.slug}: no </head> or <body>`);
   html = html.replace(/<\/head>/i, `${head}</head>`);
-  html = html.replace(/<body([^>]*)>/i, (m) => `${m}${TOP_BAR}`);
+  html = html.replace(/<body([^>]*)>/i, (m) => `${m}${topBar(a.type)}`);
   // the atlas's own section menu: add a direct link to the photo credits
   const navEnd = html.indexOf('</nav>', html.indexOf('class="nav"'));
   if (navEnd < 0) throw new Error(`${a.slug}: atlas nav not found`);
@@ -169,7 +185,7 @@ function patchPage(html, a) {
 }
 
 for (const a of ATLASES) {
-  const out = `public/data/${a.slug}`;
+  const out = `public/${a.type}/${a.slug}`;
   mkdirSync(out, { recursive: true });
   const { html: data, models, count } = patchData(readFileSync(`_sources/data/${a.slug}.html`, 'utf8'), a.slug);
   const html = patchPage(data, a);

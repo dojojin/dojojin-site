@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import { CommentsPage } from '../App.jsx';
+---
+<Base title="Guestbook" description="สมุดเยี่ยมของ DOJOJIN.TECH — ทักทาย ถามคำถาม หรือฝากข้อความไว้ได้" active="guestbook">
+  <section class="hero">
+    <div class="wrap" style="grid-template-columns:1fr">
+      <div class="hero__text">
+        <span class="kicker">Guestbook</span>
+        <h1>สมุดเยี่ยม</h1>
+        <p class="lead">ฝากข้อความไว้ได้เลยครับ ใส่ชื่อกับข้อความก็โพสต์ได้ ไม่ต้องสมัครสมาชิก</p>
+      </div>
+    </div>
+  </section>
+  <main class="wrap layout" style="grid-template-columns:1fr">
+    <div class="guestbook-panel">
+      <CommentsPage client:only="react" />
+    </div>
+  </main>
+</Base>
+
+<style is:global>
+  /* the guestbook is the original dark terminal-style component from /lab */
+  .guestbook-panel { background: #030b14; color: #fff; border-radius: var(--radius-lg); overflow: hidden;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace; min-height: 320px; }
+  .guestbook-panel .bio-wrap { max-width: 1280px; margin: 0 auto; padding: 32px; }
+  @media (max-width: 640px) { .guestbook-panel .bio-wrap { padding: 14px 12px; } }
+</style>

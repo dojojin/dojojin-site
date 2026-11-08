@@ -1,14 +1,16 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
-import { CATEGORIES } from './data/site.js';
+import { TOPICS, TYPES } from './data/site.js';
 
-// One review = src/content/reviews/<category>/<slug>.mdx (+ optional <slug>.shots.json)
-const reviews = defineCollection({
-  loader: glob({ pattern: '**/*.mdx', base: './src/content/reviews' }),
+// One post = src/content/posts/<type>/<slug>.mdx  (type folder must match the `type` field) (+ optional <slug>.shots.json / .spec.json)
+const posts = defineCollection({
+  loader: glob({ pattern: '**/*.mdx', base: './src/content/posts' }),
   schema: z.object({
     title: z.string(),
-    category: z.enum(Object.keys(CATEGORIES)),
+    topic: z.enum(Object.keys(TOPICS)),
+    type: z.enum(Object.keys(TYPES)),
+    tags: z.array(z.string()).default([]),
     date: z.coerce.date(),
     description: z.string(),
     lead: z.string(),
@@ -21,4 +23,4 @@ const reviews = defineCollection({
   }),
 });
 
-export const collections = { reviews };
+export const collections = { posts };

@@ -1,0 +1,48 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostCard from '../../components/PostCard.astro';
+import { TYPES, TOPICS } from '../../data/site.js';
+import { getFeed } from '../../lib/feed.js';
+
+// One page per menu section (Review / ความรู้ / Data).
+export function getStaticPaths() {
+  return Object.keys(TYPES).map((type) => ({ params: { type } }));
+}
+const { type } = Astro.params;
+const t = TYPES[type];
+const items = await getFeed(type);
+const topics = Object.keys(TOPICS).filter((k) => items.some((i) => i.topic === k));
+---
+<Base title={t.name} description={t.blurb} active={type}>
+  <section class="hero">
+    <div class="wrap" style="grid-template-columns:1fr">
+      <div class="hero__text">
+        <span class="kicker">{t.name}</span>
+        <h1>{t.name}</h1>
+        <p class="lead">{t.blurb}</p>
+      </div>
+    </div>
+  </section>
+  <main class="wrap layout" style="grid-template-columns:1fr">
+    <div class="content">
+      {items.length === 0 && <p class="empty">ยังไม่มีบทความในหมวดนี้</p>}
+      {topics.length > 1 && (
+        <div class="filters" role="group" aria-label="กรองตามหัวข้อ">
+          <button type="button" aria-pressed="true" data-filter="">ทั้งหมด <span>{items.length}</span></button>
+          {topics.map((k) => <button type="button" aria-pressed="false" data-filter={k}>{TOPICS[k].name} <span>{items.filter((i) => i.topic === k).length}</span></button>)}
+        </div>
+      )}
+      <div class="gallery">{items.map((i) => <PostCard item={i} />)}</div>
+    </div>
+  </main>
+</Base>
+
+<script>
+  const btns = document.querySelectorAll('[data-filter]');
+  btns.forEach((b) => b.addEventListener('click', () => {
+    btns.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    document.querySelectorAll('.gallery > [data-topic]').forEach((card) => {
+      card.hidden = !!b.dataset.filter && card.dataset.topic !== b.dataset.filter;
+    });
+  }));
+</script>

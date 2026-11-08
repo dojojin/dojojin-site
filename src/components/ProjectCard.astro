@@ -1,0 +1,15 @@
+---
+// One project teaser from PROJECT_TEASERS (src/data/site.js). Status is shown as text + colour, never colour alone.
+const { project: p } = Astro.props;
+const STATUS = { LIVE: 1, BETA: 2, 'IN VIGIL': 2, INTERNAL: 3, PAUSED: 4 };
+const tier = STATUS[p.status] ?? 3;
+---
+<article class="grade-card project">
+  <div class="project__head">
+    <h3>{p.name}</h3>
+    <span class={`badge tier-${tier}`}><svg class="icon" aria-hidden="true"><use href="#icon-dot" /></svg>{p.status}</span>
+  </div>
+  <p>{p.desc}</p>
+  {p.tech && <ul class="chips">{p.tech.map((t) => <li>{t}</li>)}</ul>}
+  {p.link && <a class="more" href={p.link} rel="noopener">เอกสารฉบับเต็ม <svg class="icon" aria-hidden="true"><use href="#icon-next" /></svg></a>}
+</article>

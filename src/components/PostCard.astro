@@ -1,12 +1,13 @@
 ---
-// Card linking to one review (used on review listings and the home page).
-const { review, sub } = Astro.props;
-const d = review.data;
+// Card for one feed item (src/lib/feed.js): a post or a Price Atlas. Badge = topic (the menu section is the type).
+import { TOPICS } from '../data/site.js';
+const { item: i } = Astro.props;
 ---
-<a class="shot" href={`/reviews/${review.id}/`}>
-  <div class="shot__img"><img src={d.cover} width="1600" height="1200" loading="lazy" alt="" /></div>
+<a class="shot" href={i.href} data-topic={i.topic}>
+  <div class="shot__img"><img src={i.cover} width={i.coverW} height={i.coverH} loading="lazy" alt="" style={`aspect-ratio:${i.coverW}/${i.coverH}`} /></div>
   <div class="shot__body">
-    <div class="shot__label">{d.title}</div>
-    <span class="meta">{sub ?? d.description}</span>
+    <span class="type-badge">{TOPICS[i.topic]?.name ?? i.topic}</span>
+    <div class="shot__label">{i.title}</div>
+    <span class="meta">{i.sub}</span>
   </div>
 </a>

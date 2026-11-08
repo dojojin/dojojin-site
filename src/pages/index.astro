@@ -1,7 +1,41 @@
 ---
-// Temporary home — replaced by the formal home page in Task 4.
 import Base from '../layouts/Base.astro';
+import PostCard from '../components/PostCard.astro';
+import { SITE, TYPES, PROFILE } from '../data/site.js';
+import { getFeed } from '../lib/feed.js';
+
+const feed = await getFeed();
+// One section per menu type, same order as the menu; empty types are skipped.
+const sections = Object.entries(TYPES).map(([type, t]) => ({ type, t, items: feed.filter((i) => i.type === type) })).filter((s) => s.items.length);
 ---
 <Base active="home">
-  <main class="wrap layout"><div class="content"><p class="empty">กำลังสร้างหน้าแรก · <a href="/lab/">/lab</a></p></div></main>
+  <section class="hero">
+    <div class="wrap" style="grid-template-columns:1fr">
+      <div class="hero__text">
+        <span class="kicker">{SITE.name}</span>
+        <h1>{SITE.tagline}</h1>
+        <p class="lead">{SITE.description}</p>
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap layout" style="grid-template-columns:1fr">
+    <div class="content">
+      {sections.map(({ type, t, items }) => (
+        <section class="section">
+          <div class="section-head">
+            <h2>{t.name}</h2>
+            <a class="more" href={`/${type}/`}>ดูทั้งหมด ({items.length}) <svg class="icon" aria-hidden="true"><use href="#icon-next" /></svg></a>
+          </div>
+          <p class="meta" style="margin:0 0 var(--space-2)">{t.blurb}</p>
+          <div class="gallery">{items.slice(0, 3).map((i) => <PostCard item={i} />)}</div>
+        </section>
+      ))}
+
+      <section class="section author">
+        <p>เขียนโดย <strong>{PROFILE.handle}</strong> — {PROFILE.intro}</p>
+        <a class="more" href="/projects/">ผลงานและประวัติ <svg class="icon" aria-hidden="true"><use href="#icon-next" /></svg></a>
+      </section>
+    </div>
+  </main>
 </Base>

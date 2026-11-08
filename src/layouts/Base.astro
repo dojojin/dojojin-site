@@ -2,18 +2,18 @@
 import '../styles/site.css';
 import Icons from '../components/Icons.astro';
 import { EasterEggs } from '../App.jsx';
-import { PROFILE, DOCS_URL, NAV } from '../data/site.js';
+import { PROFILE, NAV, SITE } from '../data/site.js';
 
 const {
   title,
-  description = 'Portfolio และรีวิวของ DOJOJIN.TECH — System Engineer สาย CCTV analytics, computer vision, real-time event systems และ infra พร้อมรีวิว Charger และหูฟัง',
+  description = SITE.description,
   image = '/og-image.png',
   active,
   ogType = 'website',
 } = Astro.props;
 
 const siteName = 'DOJOJIN.TECH';
-const fullTitle = title ? `${title} — ${siteName}` : `${siteName} — System Engineer / Infrastructure`;
+const fullTitle = title ? `${title} — ${siteName}` : `${siteName} — ${SITE.tagline}`;
 const ogTitle = title ?? fullTitle;
 const url = new URL(Astro.url.pathname, Astro.site).href;
 const ogImage = new URL(image, Astro.site).href;
@@ -28,7 +28,7 @@ const jsonLd = {
       url: 'https://dojojin.tech/',
       jobTitle: 'System Engineer / Infrastructure Engineer',
       description: 'System Engineer สาย CCTV analytics, computer vision, real-time event systems และ infrastructure',
-      knowsAbout: ['CCTV Analytics', 'Computer Vision', 'Real-time Systems', 'MQTT', 'ONVIF', 'Docker', 'Nginx', 'Cloudflare Tunnel', 'React', 'Node.js', 'Python', 'React Native'],
+      knowsAbout: ['CCTV', 'Computer Vision', 'Infrastructure', 'Self-hosted AI', 'Photography', 'Consumer electronics'],
       sameAs: Object.values(PROFILE.socials).map((u) => u.replace(/\/$/, '')),
     },
     {
@@ -81,7 +81,6 @@ const jsonLd = {
       </span>
       <nav class="site-nav" aria-label="เมนูหลัก">
         {nav.map(([id, href, label]) => <a href={href} aria-current={active === id ? 'page' : undefined}>{label}</a>)}
-        <a href={DOCS_URL} rel="noopener">Docs</a>
       </nav>
     </div>
   </header>
