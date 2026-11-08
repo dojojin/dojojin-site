@@ -1,0 +1,24 @@
+---
+// Spec sheet. groups: [{ title, rows: [[label, value | value[], source?]] }]
+// source (optional) = where a value came from when it is not the reviewer's own text, e.g. "คู่มือ", "กล่อง", "แอป".
+const { groups, legend } = Astro.props;
+---
+<div class="spec-grid">
+  {groups.map((g) => (
+    <article class="grade-card">
+      <h3>{g.title}</h3>
+      <table class="spec"><tbody>
+        {g.rows.map(([label, value, source]) => (
+          <tr>
+            <th scope="row">{label}</th>
+            <td>
+              {Array.isArray(value) ? <ul>{value.map((v) => <li>{v}</li>)}</ul> : value}
+              {source && <span class="src-tag">{source}</span>}
+            </td>
+          </tr>
+        ))}
+      </tbody></table>
+    </article>
+  ))}
+</div>
+{legend && <p class="fineprint">{legend}</p>}

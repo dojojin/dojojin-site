@@ -38,9 +38,7 @@ const toc = headings.filter((h) => h.depth === 2);
     <main class="content"><Content /></main>
   </div>
 
-  {d.sourceUrl && (
-    <div class="wrap source">
-      โพสต์ต้นฉบับ: <a href={d.sourceUrl} rel="noopener">Facebook · Dojo-mAn Fotographer</a> · ภาพทั้งหมด © Dojo-mAn Photographer
-    </div>
-  )}
+  <div class="wrap source">
+    {d.sourceUrl && <>โพสต์ต้นฉบับ: <a href={d.sourceUrl} rel="noopener">Facebook · Dojo-mAn Fotographer</a> · </>}ภาพทั้งหมด © Dojo-mAn Photographer
+  </div>
 </Base>

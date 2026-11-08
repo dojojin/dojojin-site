@@ -1,17 +1,28 @@
 ---
 // Photo gallery + <dialog> viewer. shots: array of shot objects (see a *.shots.json next to a review).
+// Shot fields — required: id, src, w, h, alt, summary. Optional: title, fit ('contain' for screenshots),
+// readings [[k,v]], verdict [tier,label], score [[name,val,sub,tier,label]], caution,
+// analysis [p], analysisTitle, screen [[k,v]], screenTitle, group (consecutive shots with the same
+// group get their own heading + grid; a group made only of fit:'contain' shots renders as phone cards).
 // note: optional fine print under every photo's details (e.g. how a value was judged).
 const { shots, note } = Astro.props;
 ---
-<div class="gallery"></div>
+<div class="galleries"></div>
 
 <dialog class="viewer" aria-labelledby="viewer-title">
   <div class="viewer__grid">
     <div class="viewer__stage">
       <img src="" alt="">
       <span class="viewer__count"></span>
+      <button class="btn-icon viewer__stage-close" type="button" data-close aria-label="ปิด"><svg class="icon"><use href="#icon-close"/></svg></button>
       <button class="btn-icon viewer__nav viewer__nav--prev" type="button" aria-label="รูปก่อนหน้า"><svg class="icon"><use href="#icon-prev"/></svg></button>
       <button class="btn-icon viewer__nav viewer__nav--next" type="button" aria-label="รูปถัดไป"><svg class="icon"><use href="#icon-next"/></svg></button>
+      <div class="viewer__zoom" role="toolbar" aria-label="ซูมรูป">
+        <button class="btn-icon" type="button" data-zoom="out" aria-label="ย่อ" title="ย่อ (-)"><svg class="icon"><use href="#icon-zoom-out"/></svg></button>
+        <button class="viewer__zoom-level" type="button" data-zoom="reset" aria-label="กลับขนาดปกติ" title="กลับขนาดปกติ (0)" data-zoom-level>100%</button>
+        <button class="btn-icon" type="button" data-zoom="in" aria-label="ขยาย" title="ขยาย (+)"><svg class="icon"><use href="#icon-zoom-in"/></svg></button>
+        <button class="btn-icon" type="button" data-focus aria-label="ซ่อน/แสดงรายละเอียด" aria-pressed="false" title="ซ่อน/แสดงรายละเอียด"><svg class="icon"><use href="#icon-panel"/></svg></button>
+      </div>
     </div>
     <div class="viewer__panel">
       <div class="viewer__head">
@@ -31,7 +42,7 @@ const { shots, note } = Astro.props;
 // Reads the JSON data block with id="shots", fills .gallery, drives dialog.viewer.
 // Data is author-written (trusted), so template strings are fine here.
 const shots = JSON.parse(document.getElementById('shots').textContent);
-const gallery = document.querySelector('.gallery');
+const gallery = document.querySelector('.galleries');
 const dlg = document.querySelector('.viewer');
 const $ = (sel) => dlg.querySelector(sel);
 const icon = (id) => `<svg class="icon" aria-hidden="true"><use href="#${id}"/></svg>`;
@@ -39,39 +50,54 @@ const badge = ([tier, label]) =>
   `<span class="badge tier-${tier}">${icon(tier === 5 ? 'icon-alert' : 'icon-dot')}${label}</span>`;
 let current = 0;
 
-gallery.innerHTML = shots.map((s, i) => `
-  <button class="shot" type="button" data-i="${i}" aria-label="ดูรายละเอียดรูป ${s.id}">
+const card = (s, i) => `
+  <button class="shot${s.fit === 'contain' ? ' shot--contain' : ''}" type="button" data-i="${i}" aria-label="ดูรายละเอียดรูป ${s.title ?? s.id}">
     <div class="shot__img">
       <img src="${s.src}" width="${s.w}" height="${s.h}" loading="lazy" alt="${s.alt}">
       <span class="shot__hint">${icon('icon-expand')}รายละเอียด</span>
     </div>
     <div class="shot__body">
-      <div class="shot__label">${s.id}</div>
-      <dl class="readings">${s.readings.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
+      <div class="shot__label">${s.title ?? s.id}</div>
+      ${s.readings
+        ? `<dl class="readings">${s.readings.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>`
+        : `<span class="meta">${s.summary}</span>`}
     </div>
-  </button>`).join('');
+  </button>`;
+// split into runs of consecutive shots sharing a group
+const groups = [];
+shots.forEach((s, i) => {
+  const last = groups[groups.length - 1];
+  if (last && last.name === (s.group ?? '')) last.items.push(i);
+  else groups.push({ name: s.group ?? '', items: [i] });
+});
+gallery.innerHTML = groups.map((g) => {
+  const screens = g.items.every((i) => shots[i].fit === 'contain');
+  return `${g.name ? `<h3 class="gallery__title">${g.name}</h3>` : ''}
+    <div class="gallery${screens ? ' gallery--screens' : ''}">${g.items.map((i) => card(shots[i], i)).join('')}</div>`;
+}).join('');
 
 function show(i) {
   current = (i + shots.length) % shots.length;
   const s = shots[current];
   const img = $('.viewer__stage img');
   img.src = s.src; img.alt = s.alt; img.width = s.w; img.height = s.h;
+  dlg.classList.toggle('viewer--tall', s.fit === 'contain');
+  resetZoom();
   $('.viewer__count').textContent = `${current + 1} / ${shots.length}`;
-  $('#viewer-title').textContent = `รูป ${s.id}`;
-  $('[data-verdict]').innerHTML = badge(s.verdict);
+  $('#viewer-title').textContent = s.title ?? `รูป ${s.id}`;
+  $('[data-verdict]').innerHTML = s.verdict ? badge(s.verdict) : '';
   $('[data-dyn]').innerHTML = `
     <p class="viewer__summary">${s.summary}</p>
-    <table class="scorecard">
+    ${s.score ? `<table class="scorecard">
       <thead><tr><th>เกณฑ์</th><th>ค่า</th><th></th></tr></thead>
       <tbody>${s.score.map(([name, val, sub, tier, label]) => `
         <tr><td>${name}</td><td><span class="val">${val}</span>${sub ? `<span class="sub">${sub}</span>` : ''}</td><td>${badge([tier, label])}</td></tr>`).join('')}
       </tbody>
-    </table>
+    </table>` : ''}
     ${s.caution ? `<div class="caution">${icon('icon-alert')}<span>${s.caution}</span></div>` : ''}
-    <h3>อ่านจากรูปนี้</h3>
-    ${s.analysis.map((p) => `<p>${p}</p>`).join('')}
-    <h3>ค่าบนหน้าจอ</h3>
-    <ul class="legend">${s.screen.map(([k, v]) => `<li><b>${k}</b><span>${v}</span></li>`).join('')}</ul>`;
+    ${s.analysis ? `<h3>${s.analysisTitle ?? 'อ่านจากรูปนี้'}</h3>${s.analysis.map((p) => `<p>${p}</p>`).join('')}` : ''}
+    ${s.screen ? `<h3>${s.screenTitle ?? 'ค่าบนหน้าจอ'}</h3>
+    <ul class="legend">${s.screen.map(([k, v]) => `<li><b>${k}</b><span>${v}</span></li>`).join('')}</ul>` : ''}`;
   $('.viewer__panel').scrollTop = 0;
 }
 
@@ -83,10 +109,96 @@ gallery.addEventListener('click', (e) => {
 });
 $('.viewer__nav--prev').addEventListener('click', () => show(current - 1));
 $('.viewer__nav--next').addEventListener('click', () => show(current + 1));
-$('[data-close]').addEventListener('click', () => dlg.close());
+dlg.querySelectorAll('[data-close]').forEach((b) => b.addEventListener('click', () => dlg.close()));
 dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); }); // backdrop
 dlg.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowLeft') show(current - 1);
   if (e.key === 'ArrowRight') show(current + 1);
+  if (e.key === '+' || e.key === '=') zoomTo(z.s * 1.5);
+  if (e.key === '-') zoomTo(z.s / 1.5);
+  if (e.key === '0') resetZoom();
 });
+
+// ---- zoom & pan: transform on the image; wheel / dbl-click / drag / pinch / buttons ----
+const stage = $('.viewer__stage');
+const zimg = $('.viewer__stage img');
+const ZMAX = 5;
+const z = { s: 1, x: 0, y: 0 };
+function applyZoom() {
+  const r = stage.getBoundingClientRect();
+  const mx = ((z.s - 1) * r.width) / 2, my = ((z.s - 1) * r.height) / 2; // keep the image over the stage
+  z.x = Math.min(mx, Math.max(-mx, z.x));
+  z.y = Math.min(my, Math.max(-my, z.y));
+  zimg.style.transform = z.s === 1 ? '' : `translate(${z.x}px, ${z.y}px) scale(${z.s})`;
+  stage.classList.toggle('is-zoomed', z.s > 1);
+  $('[data-zoom-level]').textContent = `${Math.round(z.s * 100)}%`;
+}
+// zoom to scale s keeping the point under (cx, cy) fixed; default = stage centre
+function zoomTo(s, cx, cy) {
+  const r = stage.getBoundingClientRect();
+  const px = (cx ?? r.left + r.width / 2) - (r.left + r.width / 2);
+  const py = (cy ?? r.top + r.height / 2) - (r.top + r.height / 2);
+  const s2 = Math.min(ZMAX, Math.max(1, s));
+  z.x = px - ((px - z.x) * s2) / z.s;
+  z.y = py - ((py - z.y) * s2) / z.s;
+  z.s = s2;
+  applyZoom();
+}
+function resetZoom() { z.s = 1; z.x = 0; z.y = 0; applyZoom(); }
+
+$('[data-zoom="in"]').addEventListener('click', () => zoomTo(z.s * 1.5));
+$('[data-zoom="out"]').addEventListener('click', () => zoomTo(z.s / 1.5));
+$('[data-zoom="reset"]').addEventListener('click', resetZoom);
+$('[data-focus]').addEventListener('click', (e) => {
+  const on = dlg.classList.toggle('viewer--focus');
+  e.currentTarget.setAttribute('aria-pressed', String(on));
+  requestAnimationFrame(applyZoom); // stage size changed
+});
+stage.addEventListener('wheel', (e) => {
+  e.preventDefault();
+  zoomTo(z.s * Math.exp(-e.deltaY * 0.0015), e.clientX, e.clientY);
+}, { passive: false });
+stage.addEventListener('dblclick', (e) => {
+  if (e.target.closest('button')) return;
+  zoomTo(z.s > 1 ? 1 : 2.5, e.clientX, e.clientY);
+});
+
+const pts = new Map();
+let pinch = null, swipe = null;
+stage.addEventListener('pointerdown', (e) => {
+  if (e.target.closest('button')) return;
+  stage.setPointerCapture(e.pointerId);
+  pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  swipe = pts.size === 1 ? { x: e.clientX, y: e.clientY } : null;
+  if (pts.size === 2) {
+    const [a, b] = [...pts.values()];
+    pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), s: z.s };
+  }
+});
+stage.addEventListener('pointermove', (e) => {
+  const p = pts.get(e.pointerId);
+  if (!p) return;
+  const dx = e.clientX - p.x, dy = e.clientY - p.y;
+  p.x = e.clientX; p.y = e.clientY;
+  if (pts.size === 2 && pinch) {
+    const [a, b] = [...pts.values()];
+    zoomTo((pinch.s * Math.hypot(a.x - b.x, a.y - b.y)) / pinch.d, (a.x + b.x) / 2, (a.y + b.y) / 2);
+  } else if (z.s > 1) {
+    z.x += dx; z.y += dy; applyZoom();
+  }
+});
+function pointerEnd(e) {
+  if (!pts.has(e.pointerId)) return;
+  pts.delete(e.pointerId);
+  if (pts.size < 2) pinch = null;
+  // swipe left/right to change photo when not zoomed (touch-friendly)
+  if (swipe && z.s === 1 && pts.size === 0) {
+    const dx = e.clientX - swipe.x, dy = e.clientY - swipe.y;
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) show(current + (dx < 0 ? 1 : -1));
+  }
+  if (pts.size === 0) swipe = null;
+}
+stage.addEventListener('pointerup', pointerEnd);
+stage.addEventListener('pointercancel', pointerEnd);
+window.addEventListener('resize', () => { if (dlg.open) applyZoom(); });
 </script>

@@ -28,3 +28,6 @@ src/cloudflared
 
 # Astro
 .astro/
+
+# Original review material (full-size photos with EXIF/GPS, source text, manuals) — local only
+_sources/
