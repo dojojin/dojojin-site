@@ -73,8 +73,8 @@ firebase deploy --only firestore:rules
 
 ## เนื้อหา: เมนู / หมวด / tag
 
-- **เมนู = ประเภท** (`TYPES` ใน `src/data/site.js`): Review · ความรู้ · Data → บทความอยู่ที่ `src/content/posts/<review|knowledge>/<slug>.mdx` = URL `/<type>/<slug>/`
-- **หมวด** (`topic`, 1 ต่อบทความ, `TOPICS`): สมาร์ทโฟน · หูฟัง & เสียง · ชาร์จ & พลังงาน · กล้อง & ถ่ายภาพ · Infra & AI
+- **เมนู = ประเภท** (`TYPES` ใน `src/data/site.js`): Review · ความรู้ · กิน & เที่ยว (`eat`) · Data → บทความอยู่ที่ `src/content/posts/<review|knowledge|eat>/<slug>.mdx` = URL `/<type>/<slug>/`
+- **หมวด** (`topic`, 1 ต่อบทความ, `TOPICS`): สมาร์ทโฟน · หูฟัง & เสียง · ชาร์จ & พลังงาน · กล้อง & ถ่ายภาพ · Infra & AI · ร้านอาหาร
 - **tags** (หลายอัน, `TAGS`): แบรนด์ / ชนิดสินค้า / เทคนิค — **ต้องอยู่ในรายชื่อ `TAGS` เท่านั้น** (build ล้มถ้าไม่มี) กันสะกดซ้ำซ้อน; tag ใหม่ = เพิ่มใน `TAGS` ก่อน · หน้า `/tag/<key>/` สร้างเอง
 - **ไฟล์ต้นฉบับ** (รูปเต็มมี GPS, ข้อความโพสต์, คู่มือ) → `_sources/posts/<type>/<slug>/` · `_sources/data/` · `_sources/projects/<slug>/` (gitignored, ห้าม commit)
 - **รูปบนเว็บ** → `public/media/posts/<type>/<slug>/` (ย่อ ≤1600px, ล้าง EXIF/GPS, ตรวจภาพหน้าจอว่าไม่มีแผนที่/พิกัด/ข้อมูลส่วนตัว) · โปรเจกต์ → `public/media/projects/<slug>/`

@@ -12,6 +12,7 @@ export const SITE = {
 export const TYPES = {
   review: { name: "Review", blurb: "รีวิวอุปกรณ์จากการใช้งานจริง พร้อมรูปและผลวัด" },
   knowledge: { name: "ความรู้", blurb: "อธิบายเรื่องเทคนิคให้เข้าใจง่าย — ใช้ตัดสินใจเลือกซื้อและใช้งานได้จริง" },
+  eat: { name: "กิน & เที่ยว", blurb: "รีวิวร้านอาหาร ร้านกาแฟ และสถานที่ที่ไปมาเอง จ่ายเงินเอง" },
   data: { name: "Data", blurb: "ชุดข้อมูลอ้างอิง — ราคาเปิดตัวในไทยและสเปกระดับชิ้นส่วนของมือถือทุกรุ่น" },
 };
 // Categories (field `topic`, exactly one per post) — badge on cards; filter chips appear in a menu section
@@ -22,6 +23,7 @@ export const TOPICS = {
   power: { name: "ชาร์จ & พลังงาน" },
   photo: { name: "กล้อง & ถ่ายภาพ" },
   "infra-ai": { name: "Infra & AI" },
+  restaurant: { name: "ร้านอาหาร" },
 };
 // Tags (field `tags`, any number) — brand / product kind / technique. Only tags listed here are allowed
 // (the build fails otherwise), so the same thing never ends up under two spellings. Each has a page at /tag/<key>/.
@@ -32,6 +34,7 @@ export const TAGS = {
   price: "ราคา",
   hoco: "HOCO", powerbank: "Power Bank", "retro-game": "เกมย้อนยุค",
   oppo: "OPPO", dynaudio: "Dynaudio", anc: "ANC", lhdc: "LHDC",
+  "northern-thai": "อาหารเหนือ", suphanburi: "สุพรรณบุรี",
 };
 
 // Main menu — used by src/layouts/Base.astro and by scripts/patch-atlas.mjs (top bar on atlas pages).
@@ -39,6 +42,7 @@ export const NAV = [
   ["home", "/", "Home"],
   ["review", "/review/", "Review"],
   ["knowledge", "/knowledge/", "ความรู้"],
+  ["eat", "/eat/", "กิน & เที่ยว"],
   ["data", "/data/", "Data"],
   ["projects", "/projects/", "Projects"],
   ["guestbook", "/guestbook/", "Guestbook"],
