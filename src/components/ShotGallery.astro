@@ -1,5 +1,34 @@
+---
+// Photo gallery + <dialog> viewer. shots: array of shot objects (see a *.shots.json next to a review).
+// note: optional fine print under every photo's details (e.g. how a value was judged).
+const { shots, note } = Astro.props;
+---
+<div class="gallery"></div>
+
+<dialog class="viewer" aria-labelledby="viewer-title">
+  <div class="viewer__grid">
+    <div class="viewer__stage">
+      <img src="" alt="">
+      <span class="viewer__count"></span>
+      <button class="btn-icon viewer__nav viewer__nav--prev" type="button" aria-label="รูปก่อนหน้า"><svg class="icon"><use href="#icon-prev"/></svg></button>
+      <button class="btn-icon viewer__nav viewer__nav--next" type="button" aria-label="รูปถัดไป"><svg class="icon"><use href="#icon-next"/></svg></button>
+    </div>
+    <div class="viewer__panel">
+      <div class="viewer__head">
+        <h2 id="viewer-title"></h2>
+        <span data-verdict></span>
+        <button class="btn-icon" type="button" data-close aria-label="ปิด" autofocus><svg class="icon"><use href="#icon-close"/></svg></button>
+      </div>
+      <div data-dyn></div>
+      {note && <p class="fineprint">{note}</p>}
+    </div>
+  </div>
+</dialog>
+
+<script type="application/json" id="shots" is:inline set:html={JSON.stringify(shots)}></script>
+<script>
 // Shared photo viewer for review pages.
-// Page supplies: <script type="application/json" id="shots">[...]</script>, a .gallery, and a dialog.viewer.
+// Reads the JSON data block with id="shots", fills .gallery, drives dialog.viewer.
 // Data is author-written (trusted), so template strings are fine here.
 const shots = JSON.parse(document.getElementById('shots').textContent);
 const gallery = document.querySelector('.gallery');
@@ -60,3 +89,4 @@ dlg.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowLeft') show(current - 1);
   if (e.key === 'ArrowRight') show(current + 1);
 });
+</script>

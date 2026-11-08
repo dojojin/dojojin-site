@@ -1,0 +1,49 @@
+---
+// The owner's 4 charger criteria. Thresholds and wording are the owner's — do not edit values here
+// without the owner's say-so. Named slots carry the per-review notes under each table.
+import GradeTable from './GradeTable.astro';
+const T = (tier, label, val, desc) => ({ tier, label, val, desc });
+const rippleMv = [
+  T(1, 'ดีมาก', '< 30mV', '(ไม่เกิน 40)'),
+  T(2, 'ดี', '40–50mV'),
+  T(3, 'พอใช้', '50–100mV'),
+  T(4, 'แก้ขัด', '100–200mV', 'ใช้งานแก้ขัดครั้งคราวพอได้'),
+  T(5, 'อันตราย', '> 200mV', 'ไม่ควรใช้'),
+];
+const freq = [
+  T(1, 'ดีมาก', '> 150kHz'),
+  T(2, 'ดี', '100–150kHz'),
+  T(3, 'พอใช้', '65–100kHz'),
+  T(4, 'แก้ขัด', '30–65kHz', 'ใช้งานแก้ขัดครั้งคราวพอได้'),
+  T(5, 'อันตราย', '< 30kHz', 'ไม่ควรใช้เด็ดขาด ไม่วงจรเสื่อมก็ของเก๊'),
+];
+const pct = [
+  T(1, 'ดีมาก', '≤ 0.5%', 'เอาไรมาใช้งานก็ดีหมด'),
+  T(2, 'ดี', '0.5–1%', 'ใช้งานทั่วไป'),
+  T(3, 'พอใช้', '1–3%', 'พอใช้งานได้แต่หลีกเลี่ยงอุปกรณ์ sensitive'),
+  T(4, 'แก้ขัด', '3–5%', 'ใช้งานแก้ขัดครั้งคราวพอได้ เริ่มเสี่ยงอุปกรณ์เสียหาย'),
+  T(5, 'อันตราย', '> 5%', 'ไม่ควรใช้เด็ดขาด'),
+];
+const acc = [
+  T(1, 'ดีมาก', '< ±1%', '5V → 4.95–5.05V'),
+  T(2, 'ดี', '±3%', '5V → 4.85–5.15V'),
+  T(3, 'พอใช้', '±5%', '5V → 4.75–5.25V'),
+  T(4, 'ไม่ควรใช้', '±5–10%', '5V → 4.5–5.5V'),
+  T(5, 'อันตราย', '> ±10%', 'ถ้าฝืนใช้พังแน่ๆ'),
+];
+---
+<ol class="criteria">
+  <li><a href="#ripple-mv">VBUS Ripple (Absolute mV)</a></li>
+  <li><a href="#switching-freq">Switching Frequency</a></li>
+  <li><a href="#ripple-pct">Ripple เป็น % ของ Vbus</a></li>
+  <li><a href="#voltage-acc">Voltage Accuracy</a></li>
+</ol>
+<div class="grade-grid">
+  <GradeTable id="ripple-mv" title="1. VBUS Ripple (Absolute mV) P-P" rows={rippleMv}><slot name="ripple-mv" /></GradeTable>
+  <GradeTable id="switching-freq" title="2. Switching Frequency" rows={freq}><slot name="switching-freq" /></GradeTable>
+  <GradeTable id="ripple-pct" title="3. Ripple เป็น % ของ Vbus" rows={pct}>
+    <div class="formula">Ripple % = (Ripple mV ÷ Vbus mV) × 100</div>
+    <slot name="ripple-pct" />
+  </GradeTable>
+  <GradeTable id="voltage-acc" title="4. Voltage Accuracy" sub="(ยกตัวอย่างจากไฟ 5V)" rows={acc}><slot name="voltage-acc" /></GradeTable>
+</div>

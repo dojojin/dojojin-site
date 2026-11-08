@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import ReviewCard from '../../../components/ReviewCard.astro';
+import { CATEGORIES } from '../../../data/site.js';
+
+export function getStaticPaths() {
+  return Object.keys(CATEGORIES).map((category) => ({ params: { category } }));
+}
+
+const { category } = Astro.params;
+const name = CATEGORIES[category];
+const items = (await getCollection('reviews', (r) => !r.data.draft && r.data.category === category))
+  .sort((a, b) => b.data.date - a.data.date);
+---
+<Base title={`รีวิว${name}`} description={`รีวิว${name}จาก DOJOJIN.TECH — วัดจริง มีรูปผลวัดทุกตัว`} active="reviews">
+  <section class="hero">
+    <div class="wrap" style="grid-template-columns:1fr">
+      <div class="hero__text">
+        <nav class="crumbs" aria-label="breadcrumb"><a href="/reviews/">Reviews</a> / {name}</nav>
+        <h1>{name}</h1>
+      </div>
+    </div>
+  </section>
+  <main class="wrap layout" style="grid-template-columns:1fr">
+    <div class="content">
+      {items.length === 0 && <p class="empty">ยังไม่มีรีวิวในหมวดนี้</p>}
+      <div class="gallery">{items.map((r) => <ReviewCard review={r} />)}</div>
+    </div>
+  </main>
+</Base>

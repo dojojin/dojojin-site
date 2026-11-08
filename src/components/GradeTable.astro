@@ -1,0 +1,17 @@
+---
+// One grading card. rows: [{ tier, label, val, desc? }]; default slot = notes under the table.
+import Badge from './Badge.astro';
+const { id, title, sub, rows } = Astro.props;
+---
+<article class="grade-card" id={id}>
+  <h3>{title} {sub && <small>{sub}</small>}</h3>
+  <table class="grades"><tbody>
+    {rows.map((r) => (
+      <tr>
+        <td><Badge tier={r.tier} label={r.label} /></td>
+        <td><span class="val">{r.val}</span>{r.desc && <span class="desc">{r.desc}</span>}</td>
+      </tr>
+    ))}
+  </tbody></table>
+  <slot />
+</article>

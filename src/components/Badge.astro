@@ -1,0 +1,5 @@
+---
+// Tier badge: colour + icon + text label (never colour alone). tier: 1 ดีมาก … 5 อันตราย
+const { tier, label } = Astro.props;
+---
+<span class={`badge tier-${tier}`}><svg class="icon" aria-hidden="true"><use href={tier === 5 ? '#icon-alert' : '#icon-dot'} /></svg>{label}</span>

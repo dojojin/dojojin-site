@@ -301,3 +301,6 @@ img { max-width: 100%; height: auto; display: block; }
   .site-bar .wrap { flex-wrap: wrap; row-gap: var(--space-2); }
   .site-nav { width: 100%; flex-wrap: wrap; overflow: visible; margin-left: calc(-1 * var(--space-3)); }
 }
+.crumbs { font-size: var(--fs-caption); }
+.hero .crumbs { display: block; margin-bottom: var(--space-3); }
+.criteria--plain li::before { display: none; }

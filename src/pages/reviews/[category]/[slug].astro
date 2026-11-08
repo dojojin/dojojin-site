@@ -1,0 +1,46 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import { CATEGORIES } from '../../../data/site.js';
+
+export async function getStaticPaths() {
+  const all = await getCollection('reviews', (r) => !r.data.draft);
+  return all.map((entry) => {
+    const [category, slug] = entry.id.split('/');
+    return { params: { category, slug }, props: { entry } };
+  });
+}
+
+const { entry } = Astro.props;
+const { Content, headings } = await render(entry);
+const d = entry.data;
+const toc = headings.filter((h) => h.depth === 2);
+---
+<Base title={d.title} description={d.description} image={d.cover} active="reviews" ogType="article">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero__text">
+        <nav class="crumbs" aria-label="breadcrumb"><a href="/reviews/">Reviews</a> / <a href={`/reviews/${d.category}/`}>{CATEGORIES[d.category]}</a></nav>
+        <span class="kicker">{d.kicker}</span>
+        <h1>{d.title}</h1>
+        <p class="lead">{d.lead}</p>
+        <p class="meta">{d.meta} · {d.date.toLocaleDateString('th-TH', { dateStyle: 'long' })}</p>
+      </div>
+      <figure class="hero__media"><img src={d.cover} width="1600" height="1200" alt={d.coverAlt} /></figure>
+    </div>
+  </section>
+
+  <div class="wrap layout">
+    <nav class="toc" aria-label="สารบัญ">
+      <b>ในบทความนี้</b>
+      <ol>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
+    </nav>
+    <main class="content"><Content /></main>
+  </div>
+
+  {d.sourceUrl && (
+    <div class="wrap source">
+      โพสต์ต้นฉบับ: <a href={d.sourceUrl} rel="noopener">Facebook · Dojo-mAn Fotographer</a> · ภาพทั้งหมด © Dojo-mAn Photographer
+    </div>
+  )}
+</Base>
