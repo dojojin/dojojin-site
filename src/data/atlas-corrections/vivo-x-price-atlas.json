@@ -1,0 +1,224 @@
+[
+  {
+    "id": "vivo-x9s",
+    "path": "released",
+    "op": "set",
+    "old": "2017-07-08",
+    "new": "2017-07-20",
+    "why": "July 8 was the X9s Plus sale date; the standard X9s went on sale July 20 (dates swapped between the two models).",
+    "source": "https://www.gizbot.com/amphtml/mobile/news/vivo-x9s-plus-dual-selfie-cameras-specs-price-release-date-042333.html",
+    "snippet": "The X9s Plus will debut on sale starting from July 8 ... the registrations for the X9s will debut on July 14 ... the same will go on sale starting from July 20",
+    "checked": "2026-11-08, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x9s-plus",
+    "path": "released",
+    "op": "set",
+    "old": "2017-07-20",
+    "new": "2017-07-08",
+    "why": "The X9s Plus went on sale July 8, 2017 (date was swapped with the X9s).",
+    "source": "https://www.gizbot.com/amphtml/mobile/news/vivo-x9s-plus-dual-selfie-cameras-specs-price-release-date-042333.html",
+    "snippet": "The X9s Plus will debut on sale starting from July 8",
+    "checked": "2026-11-08, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x20-plus-ud",
+    "path": "released",
+    "op": "set",
+    "old": "2018-01-24",
+    "new": "2018-02-01",
+    "why": "Jan 24, 2018 was the official launch; China sales started Feb 1.",
+    "source": "https://www.androidos.in/2018/01/vivo-x20-plus-ud-china-launch/",
+    "snippet": "According to Vivo, the X20 Plus UD will go on sale starting February 1 in China.",
+    "checked": "2026-11-08, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x20",
+    "path": "tiers",
+    "op": "add",
+    "old": null,
+    "new": {
+      "gb": 128,
+      "ram": 4,
+      "thb": null,
+      "usd": 3398,
+      "usd_contract": false,
+      "variant": null
+    },
+    "why": "A 128GB X20 was priced at CNY 3398 at launch; the slice notes the tier but lacks it.",
+    "source": "https://www.fonearena.com/blog/230246/vivo-x20-and-x20-plus-with-fhd-full-screen-display-snapdragon-660-dual-rear-cameras-announced.html",
+    "snippet": "3398 yuan (US$ 515 / Rs. 33448 approx.) for the special edition 128GB version.",
+    "checked": "2026-11-08, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x60",
+    "path": "tiers[gb=256&ram=12].usd",
+    "op": "set",
+    "old": 4198,
+    "new": 3998,
+    "why": "IT Home launch report lists the X60 12GB+256GB China price as 3998 yuan, not 4198.",
+    "source": "https://www.ithome.com/0/527/437.htm",
+    "snippet": "12GB+256GB: 3998 元",
+    "checked": "2026-11-08, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x70-pro",
+    "path": "tiers[gb=256&ram=12].usd",
+    "op": "set",
+    "old": 4999,
+    "new": 4799,
+    "why": "IT Home launch report lists the X70 Pro 12GB+256GB China price as 4799 yuan.",
+    "source": "https://www.ithome.com/0/574/546.htm",
+    "snippet": "12GB+256GB：4799 元",
+    "checked": "2026-11-08, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x70-pro",
+    "path": "tiers[gb=256&ram=8].usd",
+    "op": "set",
+    "old": 4699,
+    "new": 4599,
+    "why": "IT Home launch report lists the X70 Pro 8GB+256GB China price as 4599 yuan.",
+    "source": "https://www.ithome.com/0/574/546.htm",
+    "snippet": "8GB+256GB：4599 元",
+    "checked": "2026-11-08, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x70-pro",
+    "path": "tiers[gb=512&ram=12].usd",
+    "op": "set",
+    "old": 5499,
+    "new": 5299,
+    "why": "IT Home launch report lists the X70 Pro 12GB+512GB China price as 5299 yuan.",
+    "source": "https://www.ithome.com/0/574/546.htm",
+    "snippet": "12GB+512GB：5299 元",
+    "checked": "2026-11-08, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x50-pro-plus",
+    "path": "tiers",
+    "op": "add",
+    "old": null,
+    "new": {
+      "gb": 256,
+      "ram": 8,
+      "thb": null,
+      "usd": 5498,
+      "usd_contract": false,
+      "variant": null
+    },
+    "why": "X50 Pro+ also had an 8GB+256GB China tier at 5498 yuan, missing from the dataset.",
+    "source": "https://www.ithome.com/0/496/875.htm",
+    "snippet": "8GB+256GB 版价格为 5498 元，",
+    "checked": "2026-11-08, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x200-pro",
+    "path": "released",
+    "op": "set",
+    "old": "2024-10-25",
+    "new": "2024-10-19",
+    "why": "ithome's launch article gives 19 Oct 2024 as the China sale date for X200 Pro (25 Oct is the Pro mini).",
+    "source": "https://www.ithome.com/0/802/267.htm",
+    "snippet": "vivo X200 Pro 12GB+256GB 版 5299 元 16GB+512GB 版 5999 元 16GB+1TB 版 6499 元 16GB+1TB 版卫星通信版 6799 元 将于 10 月 19 日正式发售",
+    "checked": "2026-11-08, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x200",
+    "path": "charging",
+    "op": "set",
+    "old": "90 W wired; wireless not confirmed for Thai variant",
+    "new": "90 W wired; no wireless",
+    "why": "Droidsans Thai launch article states wireless charging is only on the X200 Pro, not the X200.",
+    "source": "https://droidsans.com/vivo-x200-x200-pro-th-launch/",
+    "snippet": "พร้อมชาร์จไว 90W และชาร์จไร้สาย 30W (ไร้สายจะได้เฉพาะ X200 Pro เท่านั้น)",
+    "checked": "2026-11-08, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500-pro",
+    "path": "tiers",
+    "op": "add",
+    "old": null,
+    "new": {
+      "gb": 512,
+      "ram": 16,
+      "thb": null,
+      "usd": 7999,
+      "usd_contract": false,
+      "variant": null
+    },
+    "why": "China launch price list includes a 16GB+512GB tier at 7999 yuan missing from the slice.",
+    "source": "https://tech.ifeng.com/c/8woFQ41OHZa",
+    "snippet": "12GB+256GB 版 6499 元 12GB+512GB 版 7499 元 16GB+512GB 版 7999 元 12GB+1TB 版 8499 元 16GB+1TB 版 8999 元",
+    "checked": "2026-11-08, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500-pro",
+    "path": "tiers",
+    "op": "add",
+    "old": null,
+    "new": {
+      "gb": 1024,
+      "ram": 16,
+      "thb": null,
+      "usd": 8999,
+      "usd_contract": false,
+      "variant": null
+    },
+    "why": "China launch price list includes a 16GB+1TB tier at 8999 yuan missing from the slice.",
+    "source": "https://tech.ifeng.com/c/8woFQ41OHZa",
+    "snippet": "12GB+1TB 版 8499 元 16GB+1TB 版 8999 元",
+    "checked": "2026-11-08, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500-pro",
+    "path": "ram",
+    "op": "set",
+    "old": "12 GB",
+    "new": "12/16 GB",
+    "why": "China launch offers 16GB RAM tiers (16+512, 16+1TB) as well as 12GB.",
+    "source": "https://tech.ifeng.com/c/8woFQ41OHZa",
+    "snippet": "16GB+512GB 版 7999 元",
+    "checked": "2026-11-08, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x200t",
+    "path": "tiers[gb=0].ram",
+    "op": "set",
+    "old": null,
+    "new": 12,
+    "why": "Placeholder tier's RAM; launch tier is 12GB + 256GB.",
+    "source": "https://www.fonearena.com/blog/474167/vivo-x200t-price-india-specifications.html",
+    "snippet": "priced at Rs. 59,999 for the 12GB + 256GB model",
+    "checked": "2026-11-08, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x200t",
+    "path": "tiers[gb=0].gb",
+    "op": "set",
+    "old": 0,
+    "new": 256,
+    "why": "Placeholder tier; X200T launched in India in 12+256 and 12+512 (no Thai/China price, so thb/usd stay null).",
+    "source": "https://www.fonearena.com/blog/474167/vivo-x200t-price-india-specifications.html",
+    "snippet": "priced at Rs. 59,999 for the 12GB + 256GB model and the 12GB + 512GB model costs Rs. 69,999.",
+    "checked": "2026-11-08, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x200t",
+    "path": "tiers",
+    "op": "add",
+    "old": null,
+    "new": {
+      "gb": 512,
+      "ram": 12,
+      "thb": null,
+      "usd": null,
+      "usd_contract": false,
+      "variant": null
+    },
+    "why": "X200T is also sold in a 12GB + 512GB tier (India-only; no Thai/China price).",
+    "source": "https://www.fonearena.com/blog/474167/vivo-x200t-price-india-specifications.html",
+    "snippet": "the 12GB + 512GB model costs Rs. 69,999.",
+    "checked": "2026-11-08, source re-fetched and quoted"
+  }
+]

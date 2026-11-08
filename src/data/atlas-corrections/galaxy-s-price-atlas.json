@@ -1,0 +1,46 @@
+[
+  {
+    "id": "galaxy-s5",
+    "path": "th_launch",
+    "op": "set",
+    "old": null,
+    "new": "2014-04-11",
+    "why": "Thai launch date was missing; Samsung Thailand put the S5 on sale on 11 April 2014.",
+    "source": "https://www.siamphone.com/news/35828",
+    "snippet": "Samsung Galaxy S5 เปิดราคาขายในไทย 23,800 บาท เริ่มขาย 11 เมษายนนี้ … เตรียมวางจำหน่ายวันแรก 11 เมษายนนี้",
+    "checked": "2026-11-08, source re-fetched and quoted"
+  },
+  {
+    "id": "galaxy-s25-edge",
+    "path": "released",
+    "op": "set",
+    "old": "2025-05-29",
+    "new": "2025-05-30",
+    "why": "General availability was 30 May 2025.",
+    "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S25",
+    "snippet": "S25 Edge: May 30, 2025 … launched at Galaxy Unpacked on May 13, 2025, and later released on May 30",
+    "checked": "2026-11-08, source re-fetched and quoted"
+  },
+  {
+    "id": "galaxy-s26",
+    "path": "th_launch",
+    "op": "set",
+    "old": "2026-03",
+    "new": "2026-03-11",
+    "why": "Exact Thai on-sale date (month was known, day was missing).",
+    "source": "https://www.thaimobilecenter.com/content/samsung-galaxy-s26-series-launch.asp",
+    "snippet": "เปิดให้สั่งจองล่วงหน้าตั้งแต่วันนี้ - 10 มีนาคม 2026 พร้อมวางจำหน่ายอย่างเป็นทางการในวันที่ 11 มีนาคม 2026",
+    "checked": "2026-11-08, source re-fetched and quoted"
+  },
+  {
+    "id": "galaxy-s26-plus",
+    "path": "th_launch",
+    "op": "set",
+    "old": "2026-03",
+    "new": "2026-03-11",
+    "why": "Exact Thai on-sale date (month was known, day was missing).",
+    "source": "https://www.thaimobilecenter.com/content/samsung-galaxy-s26-series-launch.asp",
+    "snippet": "เปิดให้สั่งจองล่วงหน้าตั้งแต่วันนี้ - 10 มีนาคม 2026 พร้อมวางจำหน่ายอย่างเป็นทางการในวันที่ 11 มีนาคม 2026",
+    "checked": "2026-11-08, source re-fetched and quoted"
+  }
+]
