@@ -1,0 +1,43 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const all = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+  return all.map((entry) => ({ params: { slug: entry.id }, props: { entry, all } }));
+}
+const { entry, all } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+const STATUS = { LIVE: 1, BETA: 2, INTERNAL: 3, PAUSED: 4 };
+---
+<Base title={d.name} description={d.summary} active="projects" image={d.icon}>
+  <section class="hero">
+    <div class="wrap" style="grid-template-columns:1fr">
+      <div class="hero__text">
+        <nav class="crumbs" aria-label="breadcrumb"><a href="/projects/">Projects</a> / {d.name}</nav>
+        <h1 class="project-title">{d.icon && <img src={d.icon} width="56" height="56" alt="" />}{d.name}
+          <span class={`badge tier-${STATUS[d.status]}`}><svg class="icon" aria-hidden="true"><use href="#icon-dot" /></svg>{d.status}</span></h1>
+        <p class="lead">{d.summary}</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap layout">
+    <nav class="toc project-menu" aria-label="โปรเจกต์ทั้งหมด">
+      <b>โปรเจกต์</b>
+      <ol>{all.map((p) => <li><a href={`/projects/${p.id}/`} aria-current={p.id === entry.id ? 'page' : undefined}>{p.data.name}</a></li>)}</ol>
+      {d.facts.length > 0 && (
+        <dl class="facts">{d.facts.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}</dl>
+      )}
+    </nav>
+    <main class="content">
+      {d.facts.length > 0 && <dl class="facts facts--top">{d.facts.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}</dl>}
+      <Content />
+      <nav class="project-menu--inline" aria-label="โปรเจกต์อื่น">
+        <b>โปรเจกต์อื่น</b>
+        <ul class="taglinks">{all.filter((p) => p.id !== entry.id).map((p) => <li><a href={`/projects/${p.id}/`}>{p.data.name}</a></li>)}</ul>
+      </nav>
+    </main>
+  </div>
+</Base>

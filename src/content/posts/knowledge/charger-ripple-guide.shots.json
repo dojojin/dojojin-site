@@ -1,7 +1,7 @@
 [
   {
     "id": "A",
-    "src": "/reviews/charger/img/img_1763.jpg",
+    "src": "/media/posts/knowledge/charger-ripple-guide/img_1763.jpg",
     "w": 1600,
     "h": 1200,
     "alt": "POWER-Z VBUS Ripple: 201.2kHz 22mV 9.164V 1.060A",
@@ -79,7 +79,7 @@
   },
   {
     "id": "B",
-    "src": "/reviews/charger/img/img_20260401_213816.jpg",
+    "src": "/media/posts/knowledge/charger-ripple-guide/img_20260401_213816.jpg",
     "w": 1600,
     "h": 1205,
     "alt": "POWER-Z VBUS Ripple: 123.0kHz 34mV 20.238V 1.140A",
@@ -157,7 +157,7 @@
   },
   {
     "id": "C",
-    "src": "/reviews/charger/img/img_20260401_213344.jpg",
+    "src": "/media/posts/knowledge/charger-ripple-guide/img_20260401_213344.jpg",
     "w": 1600,
     "h": 1205,
     "alt": "POWER-Z VBUS Ripple: 2.0kHz 38mV 8.555V 1.279A",
@@ -236,7 +236,7 @@
   },
   {
     "id": "D",
-    "src": "/reviews/charger/img/img_20260401_213042.jpg",
+    "src": "/media/posts/knowledge/charger-ripple-guide/img_20260401_213042.jpg",
     "w": 1600,
     "h": 1205,
     "alt": "POWER-Z VBUS Ripple: 56.6kHz 221mV 8.924V 1.402A",
@@ -314,7 +314,7 @@
   },
   {
     "id": "E",
-    "src": "/reviews/charger/img/img_20260401_153335.jpg",
+    "src": "/media/posts/knowledge/charger-ripple-guide/img_20260401_153335.jpg",
     "w": 1600,
     "h": 1200,
     "alt": "POWER-Z VBUS Ripple: 56.6kHz 368mV 4.511V 1.018A",
@@ -392,7 +392,7 @@
   },
   {
     "id": "F",
-    "src": "/reviews/charger/img/img_20260401_221111.jpg",
+    "src": "/media/posts/knowledge/charger-ripple-guide/img_20260401_221111.jpg",
     "w": 1600,
     "h": 1205,
     "alt": "POWER-Z VBUS Ripple: 70.3kHz 593mV 4.858V 1.342A",

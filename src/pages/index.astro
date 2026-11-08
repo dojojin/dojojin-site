@@ -10,12 +10,30 @@ const sections = Object.entries(TYPES).map(([type, t]) => ({ type, t, items: fee
 ---
 <Base active="home">
   <section class="hero">
-    <div class="wrap" style="grid-template-columns:1fr">
+    <div class="wrap home-hero">
       <div class="hero__text">
         <span class="kicker">{SITE.name}</span>
         <h1>{SITE.tagline}</h1>
         <p class="lead">{SITE.description}</p>
+        <ul class="pillars">
+          {Object.entries(TYPES).map(([type, t]) => (
+            <li><a href={`/${type}/`}><b>{t.name} <span>{feed.filter((i) => i.type === type).length}</span></b><span>{t.blurb}</span></a></li>
+          ))}
+        </ul>
       </div>
+      <aside class="author-card" aria-label="ผู้เขียน">
+        <div class="author-card__head">
+          <img src="/favicon.svg" width="56" height="56" alt="" />
+          <div><b>{PROFILE.handle}</b><span>{PROFILE.name}</span></div>
+        </div>
+        <p>{PROFILE.intro}</p>
+        <p>เว็บนี้คือที่เก็บสิ่งที่ผมลองเอง วัดเอง และอยากเล่าให้คนอื่นเข้าใจง่าย ๆ ทุกตัวเลขมีที่มา และทุกรูปบอกที่มาชัดเจน</p>
+        <ul class="socials">
+          <li><a href="/projects/">ผลงานของผม</a></li>
+          <li><a href={`mailto:${PROFILE.email}`}>ติดต่อ</a></li>
+          <li><a href={PROFILE.socials.facebook} rel="noopener">Facebook</a></li>
+        </ul>
+      </aside>
     </div>
   </section>
 
@@ -32,10 +50,6 @@ const sections = Object.entries(TYPES).map(([type, t]) => ({ type, t, items: fee
         </section>
       ))}
 
-      <section class="section author">
-        <p>เขียนโดย <strong>{PROFILE.handle}</strong> — {PROFILE.intro}</p>
-        <a class="more" href="/projects/">ผลงานและประวัติ <svg class="icon" aria-hidden="true"><use href="#icon-next" /></svg></a>
-      </section>
     </div>
   </main>
 </Base>

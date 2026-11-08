@@ -23,4 +23,17 @@ const posts = defineCollection({
   }),
 });
 
-export const collections = { posts };
+// One project = src/content/projects/<slug>.mdx → /projects/<slug>/ (no external docs links: everything lives here)
+const projects = defineCollection({
+  loader: glob({ pattern: '*.mdx', base: './src/content/projects' }),
+  schema: z.object({
+    name: z.string(),
+    status: z.enum(['LIVE', 'BETA', 'INTERNAL', 'PAUSED']),
+    summary: z.string(),          // one or two sentences, shown on cards and as the page lead
+    order: z.number(),            // position in the projects menu
+    icon: z.string().optional(),
+    facts: z.array(z.tuple([z.string(), z.string()])).default([]), // short label/value pairs for the side box
+  }),
+});
+
+export const collections = { posts, projects };

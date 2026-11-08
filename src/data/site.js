@@ -30,6 +30,8 @@ export const TAGS = {
   tws: "TWS", "open-ear": "Open-ear",
   gan: "GaN", ripple: "Ripple", "usb-pd": "USB-PD",
   price: "ราคา",
+  hoco: "HOCO", powerbank: "Power Bank", "retro-game": "เกมย้อนยุค",
+  oppo: "OPPO", dynaudio: "Dynaudio", anc: "ANC", lhdc: "LHDC",
 };
 
 // Main menu — used by src/layouts/Base.astro and by scripts/patch-atlas.mjs (top bar on atlas pages).
@@ -52,32 +54,18 @@ export const PROFILE = {
   socials: { github: "https://github.com/dojojin/", facebook: "https://facebook.com/dojojin", linkedin: "https://linkedin.com/in/prakasit" },
 };
 
-// Formal /projects page: teasers only. Full detail stays on docs.dojojin.tech.
-export const PROJECT_TEASERS = [
-  { name: "Vigil Platform", status: "LIVE", link: `${DOCS_URL}/projects/vigil-platform`,
-    desc: "ระบบรวมกล้องวงจรปิดหลายยี่ห้อมาวิเคราะห์และจัดการในจอเดียว ใช้งานจริงในองค์กร" },
-  { name: "Vigil Mobile", status: "BETA", link: `${DOCS_URL}/projects/vigil-mobile`,
-    desc: "แอปมือถือ iOS และ Android คู่กับ Vigil Platform ดูสถานะกล้องและการแจ้งเตือนได้ทุกที่" },
-  { name: "HippoCraft", status: "INTERNAL", link: `${DOCS_URL}/projects/hippocraft`,
-    desc: "โปรแกรมอ่านและแก้ไข PDF เขียนด้วย Rust แก้ข้อความภาษาไทยในไฟล์ได้โดยคงฟอนต์เดิม" },
-  { name: "AI Stack", status: "INTERNAL", link: `${DOCS_URL}/projects/ai-stack`,
-    desc: "ระบบ AI (Local LLM) ที่รันในเครื่องเองทั้งหมด ไม่ส่งข้อมูลออกนอก ไม่มีค่าใช้จ่ายรายครั้ง" },
-  { name: "AI OCR Pipeline", status: "PAUSED", link: `${DOCS_URL}/projects/ai-ocr-pipeline`,
-    desc: "ทดลองดึงข้อมูลจากเอกสารภาษาไทยอัตโนมัติด้วย AI — พักไว้ชั่วคราว" },
-];
-
 // ---- below: data shared with the old site at /lab (src/App.jsx). Not used on the formal pages. ----
 export const PROJECTS = [
-  { name:"Vigil Platform", emoji:"📹", color:"#00ffb4", status:"LIVE", statusColor:"#00ffb4", link:`${DOCS_URL}/projects/vigil-platform`,
+  { name:"Vigil Platform", emoji:"📹", color:"#00ffb4", status:"LIVE", statusColor:"#00ffb4", link:"/projects/vigil-platform/",
     desc:"ระบบรวมกล้องวงจรปิดหลายยี่ห้อมาวิเคราะห์และจัดการในจอเดียว ใช้งานจริงในองค์กร — รายละเอียดอยู่ในเอกสาร",
     tech:["CCTV analytics"] },
-  { name:"Vigil Mobile", emoji:"📱", color:"#00b4ff", status:"BETA", statusColor:"#00b4ff", link:`${DOCS_URL}/projects/vigil-mobile`,
+  { name:"Vigil Mobile", emoji:"📱", color:"#00b4ff", status:"BETA", statusColor:"#00b4ff", link:"/projects/vigil-mobile/",
     desc:"แอปมือถือ iOS และ Android คู่กับ Vigil Platform ดูสถานะกล้องและการแจ้งเตือนได้ทุกที่",
     tech:["iOS","Android"] },
-  { name:"HippoCraft", emoji:"🦛", color:"#2bb673", status:"INTERNAL", statusColor:"#f59e0b", link:`${DOCS_URL}/projects/hippocraft`,
+  { name:"HippoCraft", emoji:"🦛", color:"#2bb673", status:"INTERNAL", statusColor:"#f59e0b", link:"/projects/hippocraft/",
     desc:"โปรแกรมอ่านและแก้ไข PDF เขียนด้วย Rust แก้ข้อความภาษาไทยในไฟล์ได้โดยคงฟอนต์เดิม",
     tech:["Rust","WebAssembly","PaddleOCR","HarfBuzz","egui"] },
-  { name:"AI OCR Pipeline", emoji:"📄", color:"#f59e0b", status:"PAUSED", statusColor:"#f59e0b", link:`${DOCS_URL}/projects/ai-ocr-pipeline`,
+  { name:"AI OCR Pipeline", emoji:"📄", color:"#f59e0b", status:"PAUSED", statusColor:"#f59e0b", link:"/projects/ai-ocr-pipeline/",
     desc:"ทดลองดึงข้อมูลจากเอกสารภาษาไทยอัตโนมัติด้วย AI — พักไว้ชั่วคราว",
     tech:["Google Apps Script","AI OCR"] },
 ];

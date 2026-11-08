@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import logoSvg from "./favicon.svg?url";
 import { loadFirebase } from "./firebase";
-import { PROJECTS, CASE_STUDIES, EXPERIENCES, DOCS_URL } from "./data/site.js";
+import { PROJECTS, CASE_STUDIES, EXPERIENCES } from "./data/site.js";
 import {
   SiDocker, SiCloudflare, SiNginx, SiOllama, SiOpencv, SiFfmpeg, SiPython,
   SiCplusplus, SiNodedotjs, SiExpress, SiReact, SiLinux, SiUltralytics,
@@ -184,8 +184,8 @@ const WHAT_I_BUILD = [
 ];
 const BUILD_LOG = [
   { date: "NOW", title: "Guestbook auth flow", detail: "เพิ่ม Google owner mode, Firestore guestbook และ visitor counter ให้เว็บ portfolio มี interaction จริง", color:"#00ffb4" },
-  { date: "WIP", title: "Vigil Mobile", detail: "พัฒนา companion app ของ Vigil Platform ต่อเนื่อง — รายละเอียดที่ docs.dojojin.tech", color:"#00b4ff" },
-  { date: "OPS", title: "Vigil Platform", detail: "ดูแลระบบ CCTV analytics ที่ใช้งานจริง — รายละเอียดที่ docs.dojojin.tech", color:"#a78bfa" },
+  { date: "WIP", title: "Vigil Mobile", detail: "พัฒนา companion app ของ Vigil Platform ต่อเนื่อง — รายละเอียดที่ /projects/", color:"#00b4ff" },
+  { date: "OPS", title: "Vigil Platform", detail: "ดูแลระบบ CCTV analytics ที่ใช้งานจริง — รายละเอียดที่ /projects/", color:"#a78bfa" },
   { date: "FIX", title: "Expo image migration", detail: "ไล่แก้ snapshot/image flow บน Android เพื่อให้ render ภาพนิ่งกว่าเดิม", color:"#f59e0b" },
   { date: "2AM", title: "Nginx + tunnel repair", detail: "debug reverse proxy, Cloudflare Tunnel และ service restart loop ที่ชอบพังตอนดึก", color:"#ff4466" },
 ];
@@ -249,8 +249,8 @@ function processCommand(raw) {
   if (cmd.startsWith("cat ")) {
     const f = cmd.slice(4).trim();
     const files = {
-      "vigil.txt":"# Vigil Platform\nCCTV analytics สำหรับองค์กร\nรายละเอียด: docs.dojojin.tech\nStatus: LIVE",
-      "mobile.md":"# Vigil Mobile\nแอปมือถือคู่ Vigil Platform\nรายละเอียด: docs.dojojin.tech\nStatus: BETA",
+      "vigil.txt":"# Vigil Platform\nCCTV analytics สำหรับองค์กร\nรายละเอียด: dojojin.tech/projects/vigil-platform/\nStatus: LIVE",
+      "mobile.md":"# Vigil Mobile\nแอปมือถือคู่ Vigil Platform\nรายละเอียด: dojojin.tech/projects/vigil-mobile/\nStatus: BETA",
       "life.log":"[02:00] nginx: 502\n[02:15] docker restart\n[02:16] nginx: 502 (again)\n[03:45] it works (dont know why)\n[04:00] sleep",
       "quote.txt":"วันนึงจะไม่ต้องพิมพ์อะไรเองอีก\nแต่สุดท้ายยังต้องพิมพ์ git push เองอยู่ดี\n-- Mr. Dojo-mAn, 2am",
     };
@@ -821,7 +821,7 @@ function WorkWithMeSection({ onGuestbook }) {
           <a href="https://facebook.com/dojojin" target="_blank" rel="noreferrer" className="social-link" style={{textAlign:"center",textDecoration:"none",padding:"11px 14px",borderRadius:"11px",background:"rgba(0,255,180,0.1)",border:"1px solid rgba(0,255,180,0.35)",color:"#00ffb4",fontSize:"12px",fontWeight:"800",letterSpacing:"0.08em"}}>MESSAGE</a>
           <button onClick={onGuestbook} style={{padding:"11px 14px",borderRadius:"11px",background:"rgba(255,255,255,0.04)",border:"1px solid rgba(255,255,255,0.1)",color:"rgba(255,255,255,0.55)",fontSize:"12px",fontFamily:"inherit",cursor:"pointer",letterSpacing:"0.08em"}}>GUESTBOOK</button>
           <a href="https://github.com/dojojin/" target="_blank" rel="noreferrer" className="social-link" style={{textAlign:"center",textDecoration:"none",padding:"11px 14px",borderRadius:"11px",background:"rgba(120,80,255,0.08)",border:"1px solid rgba(120,80,255,0.28)",color:"#a78bfa",fontSize:"12px",fontWeight:"800",letterSpacing:"0.08em"}}>GITHUB</a>
-          <a href={DOCS_URL} target="_blank" rel="noreferrer" className="social-link" style={{textAlign:"center",textDecoration:"none",padding:"11px 14px",borderRadius:"11px",background:"rgba(0,180,255,0.08)",border:"1px solid rgba(0,180,255,0.28)",color:"#00b4ff",fontSize:"12px",fontWeight:"800",letterSpacing:"0.08em"}}>DOCS</a>
+          <a href="/projects/" className="social-link" style={{textAlign:"center",textDecoration:"none",padding:"11px 14px",borderRadius:"11px",background:"rgba(0,180,255,0.08)",border:"1px solid rgba(0,180,255,0.28)",color:"#00b4ff",fontSize:"12px",fontWeight:"800",letterSpacing:"0.08em"}}>PROJECTS</a>
         </div>
       </div>
     </section>
@@ -1512,9 +1512,9 @@ export default function DevChaosProfile() {
                 <span style={{fontSize:"13px"}}>{tab.icon}</span>{tab.label}
               </button>
             ))}
-            <a href={DOCS_URL} target="_blank" rel="noreferrer" className="nav-btn"
+            <a href="/projects/" className="nav-btn"
               style={{padding:"10px 22px",borderBottom:"2px solid transparent",color:"rgba(255,255,255,0.38)",fontSize:"12px",fontWeight:"600",letterSpacing:"0.1em",textDecoration:"none",display:"flex",alignItems:"center",gap:"6px",marginLeft:"auto",whiteSpace:"nowrap"}}>
-              <span className="nav-icon" style={{fontSize:"13px"}}>📖</span>docs ↗
+              <span className="nav-icon" style={{fontSize:"13px"}}>📖</span>projects
             </a>
           </div>
         </div>

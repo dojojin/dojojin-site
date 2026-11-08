@@ -2,7 +2,7 @@
   {
     "id": "1",
     "title": "กล่องด้านหน้า",
-    "src": "/reviews/headphones/shokz-opendots-one/box-front.jpg",
+    "src": "/media/posts/review/shokz-opendots-one/box-front.jpg",
     "w": 1600,
     "h": 1205,
     "alt": "กล่อง Shokz OpenDots One ด้านหน้า พร้อมสัญลักษณ์รับประกัน 2 ปี",
@@ -17,7 +17,7 @@
   {
     "id": "2",
     "title": "กล่องด้านหลัง",
-    "src": "/reviews/headphones/shokz-opendots-one/box-back.jpg",
+    "src": "/media/posts/review/shokz-opendots-one/box-back.jpg",
     "w": 1600,
     "h": 1205,
     "alt": "ด้านหลังกล่อง แสดงโลโก้ Qi, Dolby Audio, รับประกัน 2 ปี และ Bluetooth",
@@ -63,7 +63,7 @@
   {
     "id": "3",
     "title": "กล่องชั้นใน",
-    "src": "/reviews/headphones/shokz-opendots-one/box-inner.jpg",
+    "src": "/media/posts/review/shokz-opendots-one/box-inner.jpg",
     "w": 1600,
     "h": 1205,
     "alt": "กล่องชั้นในสีขาวปั๊มโลโก้ Shokz นูน",
@@ -78,7 +78,7 @@
   {
     "id": "4",
     "title": "เปิดกล่อง",
-    "src": "/reviews/headphones/shokz-opendots-one/case-wrapped.jpg",
+    "src": "/media/posts/review/shokz-opendots-one/case-wrapped.jpg",
     "w": 1600,
     "h": 1205,
     "alt": "เคสชาร์จวางในถาด ห่อด้วยกระดาษไขที่มีภาพวิธีสวมใส่",
@@ -93,7 +93,7 @@
   {
     "id": "5",
     "title": "ภาพวิธีสวมใส่บนกระดาษห่อ",
-    "src": "/reviews/headphones/shokz-opendots-one/case-wrapped-top.jpg",
+    "src": "/media/posts/review/shokz-opendots-one/case-wrapped-top.jpg",
     "w": 1600,
     "h": 1204,
     "alt": "มุมบนของเคสที่ห่อกระดาษ เห็นภาพการหนีบหูฟังที่ขอบใบหู",
@@ -108,7 +108,7 @@
   {
     "id": "6",
     "title": "เคสชาร์จ",
-    "src": "/reviews/headphones/shokz-opendots-one/case-closed.jpg",
+    "src": "/media/posts/review/shokz-opendots-one/case-closed.jpg",
     "w": 1600,
     "h": 1205,
     "alt": "เคสชาร์จทรงรีฝาโลหะสีเงินอมทอง วางบนใบคู่มือ",
@@ -123,7 +123,7 @@
   {
     "id": "7",
     "title": "หูฟังในเคส",
-    "src": "/reviews/headphones/shokz-opendots-one/case-open.jpg",
+    "src": "/media/posts/review/shokz-opendots-one/case-open.jpg",
     "w": 1600,
     "h": 1205,
     "alt": "เปิดฝาเคส หูฟังสองข้างวางอยู่ในช่อง ไฟสถานะสีเขียว",
@@ -157,7 +157,7 @@
   {
     "id": "8",
     "title": "เคสในแสงธรรมชาติ",
-    "src": "/reviews/headphones/shokz-opendots-one/case-daylight.jpg",
+    "src": "/media/posts/review/shokz-opendots-one/case-daylight.jpg",
     "w": 1600,
     "h": 1205,
     "alt": "เคสชาร์จ Shokz วางบนผ้าสีเหลือง ในแสงธรรมชาติ",
@@ -172,7 +172,7 @@
   {
     "id": "9",
     "title": "เทียบขนาดเคส",
-    "src": "/reviews/headphones/shokz-opendots-one/case-size-compare.jpg",
+    "src": "/media/posts/review/shokz-opendots-one/case-size-compare.jpg",
     "w": 1600,
     "h": 1205,
     "alt": "เคส Shokz วางเทียบกับเคสหูฟัง TWS อีกรุ่นในเคสใส",
@@ -187,7 +187,7 @@
   {
     "id": "10",
     "title": "ซองพกพา",
-    "src": "/reviews/headphones/shokz-opendots-one/carry-pouch.jpg",
+    "src": "/media/posts/review/shokz-opendots-one/carry-pouch.jpg",
     "w": 1600,
     "h": 1205,
     "alt": "ซองผ้าสีดำขอบซิปสีเขียว พร้อมห่วงคาราบิเนอร์",
@@ -202,7 +202,7 @@
   {
     "id": "11",
     "title": "แอป: หน้าหลัก",
-    "src": "/reviews/headphones/shokz-opendots-one/app-home.jpg",
+    "src": "/media/posts/review/shokz-opendots-one/app-home.jpg",
     "w": 720,
     "h": 2363,
     "fit": "contain",
@@ -229,7 +229,7 @@
   {
     "id": "12",
     "title": "แอป: Custom EQ",
-    "src": "/reviews/headphones/shokz-opendots-one/app-eq-custom.jpg",
+    "src": "/media/posts/review/shokz-opendots-one/app-eq-custom.jpg",
     "w": 720,
     "h": 1560,
     "fit": "contain",
@@ -268,7 +268,7 @@
   {
     "id": "13",
     "title": "แอป: MultiPoint",
-    "src": "/reviews/headphones/shokz-opendots-one/app-multipoint.jpg",
+    "src": "/media/posts/review/shokz-opendots-one/app-multipoint.jpg",
     "w": 720,
     "h": 1560,
     "fit": "contain",
@@ -284,7 +284,7 @@
   {
     "id": "14",
     "title": "แอป: Find My Earbuds",
-    "src": "/reviews/headphones/shokz-opendots-one/app-find.jpg",
+    "src": "/media/posts/review/shokz-opendots-one/app-find.jpg",
     "w": 720,
     "h": 1560,
     "fit": "contain",
