@@ -1,0 +1,355 @@
+[
+ {
+  "id": "1",
+  "title": "กล่องด้านหน้า",
+  "src": "/media/posts/review/roseselsa-earfree-i5/box-front.jpg",
+  "w": 1600,
+  "h": 1200,
+  "group": "แกะกล่อง",
+  "alt": "กล่อง EARFREE i5 ด้านหน้า พิมพ์ 48dB, 54ms, LDAC และ 10H/50H",
+  "summary": "48dB · 54ms · LDAC · 10H/50H",
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "ด้านหน้ากล่องพิมพ์ตัวเลขหลักไว้ครบ: ตัดเสียง 48dB ที่ 4000Hz, Game Mode 54ms, รองรับ LDAC และแบต 10H / 50H",
+   "มีโลโก้ HR2 (Topological Diaphragm), LLR และ ELC"
+  ],
+  "screenTitle": "ข้อความบนกล่อง",
+  "screen": [
+   [
+    "ANC",
+    "48dB Noise Reduction · 4000Hz"
+   ],
+   [
+    "Latency",
+    "54ms"
+   ],
+   [
+    "Codec",
+    "LDAC"
+   ],
+   [
+    "แบต",
+    "10H / 50H"
+   ]
+  ],
+  "caution": "หนังสือเดินทางที่วางอยู่ข้างกล่องถูกเบลอไว้"
+ },
+ {
+  "id": "2",
+  "title": "กล่องด้านหลัง",
+  "src": "/media/posts/review/roseselsa-earfree-i5/box-back.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "แกะกล่อง",
+  "alt": "ด้านหลังกล่อง EARFREE i5 จุดขาย 5 ข้อและของในกล่อง",
+  "summary": "ไดรเวอร์ 12mm, ไมค์ GoerTek, ต่อ 2 เครื่อง",
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "จุดขายบนกล่อง: ไดรเวอร์ 12mm Topologic Diaphragm (HR2), บอดี้อะลูมิเนียม CNC, ไมค์ GoerTek พร้อม DNN AI, ต่อได้ 2 เครื่อง และทรงที่ออกแบบให้ใส่พอดีหู",
+   "ของในกล่องตามที่พิมพ์ไว้: หูฟัง, เคสชาร์จ, จุกหู S/M/L, สาย USB-C และคู่มือ ผู้ผลิตคือ Chengdu Rose Technics Co., Ltd."
+  ],
+  "caution": "หนังสือเดินทางที่อยู่มุมซ้ายล่างถูกเบลอไว้"
+ },
+ {
+  "id": "3",
+  "title": "ของในกล่อง",
+  "src": "/media/posts/review/roseselsa-earfree-i5/box-contents.jpg",
+  "w": 1205,
+  "h": 1600,
+  "group": "แกะกล่อง",
+  "alt": "เปิดกล่อง เห็นเคส หูฟัง จุกหูสำรอง สาย USB-C และคู่มือ",
+  "summary": "จุกหูสำรอง สาย USB-C คู่มือ",
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "ในกล่องมีเคสชาร์จ หูฟังสองข้าง จุกหูซิลิโคนสำรองหลายขนาด สาย USB-C และคู่มือ EARFREE"
+  ]
+ },
+ {
+  "id": "4",
+  "title": "เคสด้านหน้า",
+  "src": "/media/posts/review/roseselsa-earfree-i5/case-front.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ตัวเคสและหูฟัง",
+  "alt": "เคสชาร์จทรงสี่เหลี่ยมสีเทาเข้ม มีโลโก้ ROSESELSA",
+  "summary": "เคสโลหะทรงสี่เหลี่ยม",
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "เคสทรงสี่เหลี่ยมมุมมน สีเทาเข้ม ด้านหน้ามีโลโก้ ROSESELSA และไฟสถานะจุดเล็ก"
+  ]
+ },
+ {
+  "id": "5",
+  "title": "เคสในมือ",
+  "src": "/media/posts/review/roseselsa-earfree-i5/case-in-hand.jpg",
+  "w": 1205,
+  "h": 1600,
+  "group": "ตัวเคสและหูฟัง",
+  "alt": "ถือเคสชาร์จ EARFREE i5 ในมือ",
+  "summary": "ผิวโลหะด้าน",
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "ในแสงอีกแบบ เคสออกโทนเทาอมเขียว ผิวเป็นโลหะด้าน"
+  ]
+ },
+ {
+  "id": "6",
+  "title": "เคสบนกล่อง",
+  "src": "/media/posts/review/roseselsa-earfree-i5/case-on-box.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ตัวเคสและหูฟัง",
+  "alt": "เคสชาร์จวางบนกล่อง EARFREE",
+  "summary": "ขนาดเคสเทียบกับกล่อง",
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "เคสวางบนกล่อง เห็นสัดส่วนเคสเทียบกับตัวอักษรบนกล่อง"
+  ]
+ },
+ {
+  "id": "7",
+  "title": "ฝาเคส",
+  "src": "/media/posts/review/roseselsa-earfree-i5/case-lid.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ตัวเคสและหูฟัง",
+  "alt": "ฝาเคสมีตัวอักษร EARFREE INTERNATIONAL5",
+  "summary": "ฝาพิมพ์ EARFREE",
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "บนฝาเคสพิมพ์ EARFREE INTERNATIONAL5"
+  ]
+ },
+ {
+  "id": "8",
+  "title": "ใต้เคส",
+  "src": "/media/posts/review/roseselsa-earfree-i5/case-bottom-label.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ตัวเคสและหูฟัง",
+  "alt": "ใต้เคสมีช่อง USB-C วงกลมสีเข้ม และข้อความรุ่น",
+  "summary": "USB-C · 500mAh · Input 5V 0.4A",
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "ใต้เคสมีช่อง USB-C และวงกลมสีเข้มข้างช่องชาร์จ ข้อความระบุรุ่น EARFREE i5 และความจุแบตเคส"
+  ],
+  "screenTitle": "ข้อความใต้เคส",
+  "screen": [
+   [
+    "รุ่น",
+    "EARFREE i5"
+   ],
+   [
+    "Input",
+    "5V ⎓ 0.4A"
+   ],
+   [
+    "Output",
+    "5V ⎓ 0.08A × 2"
+   ],
+   [
+    "Capacity",
+    "500mAh 3.7V 1.85Wh"
+   ],
+   [
+    "FCC ID",
+    "2BCSS-EARFREEI5"
+   ]
+  ]
+ },
+ {
+  "id": "9",
+  "title": "หูฟังในเคส",
+  "src": "/media/posts/review/roseselsa-earfree-i5/case-open.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ตัวเคสและหูฟัง",
+  "alt": "เปิดฝาเคส หูฟังสีเทาสองข้างพร้อมจุกหูสีขาว",
+  "summary": "มีตัวอักษร L / R บนหูฟัง",
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "เปิดฝาแล้วเห็นหูฟังสองข้าง ตัวหูฟังมีตัวอักษร L และ R บอกข้าง จุกหูเป็นซิลิโคนสีขาวขุ่น"
+  ]
+ },
+ {
+  "id": "10",
+  "title": "ตัวหูฟัง",
+  "src": "/media/posts/review/roseselsa-earfree-i5/earbuds.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ตัวเคสและหูฟัง",
+  "alt": "หูฟังสองข้างวางหน้าเคส เห็นก้านและจุกหู",
+  "summary": "หูฟังแบบมีก้าน",
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "หูฟังเป็นทรงมีก้าน ตัวหูฟังสีเทาเงา จุกหูซิลิโคนสีขาวขุ่น วางบนกล่องที่พิมพ์ 48dB, 54ms และ 10H / 50H"
+  ]
+ },
+ {
+  "id": "11",
+  "title": "แอป: หน้าหลัก",
+  "src": "/media/posts/review/roseselsa-earfree-i5/app-home.jpg",
+  "w": 738,
+  "h": 1600,
+  "fit": "contain",
+  "group": "ภาพหน้าจอแอป RoseLink",
+  "alt": "หน้าหลักแอป แสดงแบต L / R / เคส และ Noise Control",
+  "summary": "แบตทุกชิ้น และโหมดเสียง 4 แบบ",
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "แอปแสดงชื่ออุปกรณ์ว่า EarFeel-i5 พร้อมแบตข้างซ้าย ข้างขวา และเคส (ในภาพ 100% / 100% / 84%)",
+   "Noise Control มี 4 โหมด: Anc, Wind, Normal และ Trans ถัดลงมาเป็น Super Master EQ และ Game Mode"
+  ]
+ },
+ {
+  "id": "12",
+  "title": "แอป: โหมด Trans",
+  "src": "/media/posts/review/roseselsa-earfree-i5/app-home-trans.jpg",
+  "w": 738,
+  "h": 1600,
+  "fit": "contain",
+  "group": "ภาพหน้าจอแอป RoseLink",
+  "alt": "หน้าหลักขณะเลือก Trans มีเมนู Transparency Level",
+  "summary": "ปรับระดับ Transparency ได้",
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "เมื่อเลือก Trans จะมีเมนู Transparency Level เพิ่มขึ้นมาให้ปรับรูปแบบเสียงรอบข้าง"
+  ]
+ },
+ {
+  "id": "13",
+  "title": "แอป: การตั้งค่า",
+  "src": "/media/posts/review/roseselsa-earfree-i5/app-settings.jpg",
+  "w": 738,
+  "h": 1600,
+  "fit": "contain",
+  "group": "ภาพหน้าจอแอป RoseLink",
+  "alt": "รายการตั้งค่า Game Mode, Dual Device, Lossless Audio, Find Device",
+  "summary": "Dual Device, Lossless Audio, Find Device",
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "เมนูมี Game Mode, Dual Device Connection (เปิดอยู่), Lossless Audio Protocol, Find Device, Touch Settings, Lab Features, ภาษาเสียงหูฟัง และ Firmware Upgrade"
+  ]
+ },
+ {
+  "id": "14",
+  "title": "แอป: ระดับ ANC",
+  "src": "/media/posts/review/roseselsa-earfree-i5/app-anc.jpg",
+  "w": 738,
+  "h": 1600,
+  "fit": "contain",
+  "group": "ภาพหน้าจอแอป RoseLink",
+  "alt": "หน้าต่างเลือกระดับตัดเสียง Deep, Moderate, Light",
+  "summary": "ANC 3 ระดับ",
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "เลือกระดับตัดเสียงได้ 3 แบบ: Deep (เครื่องบิน รถไฟฟ้า), Moderate (ถนน ห้าง) และ Light (บ้าน ออฟฟิศ)"
+  ]
+ },
+ {
+  "id": "15",
+  "title": "แอป: ระดับ Transparency",
+  "src": "/media/posts/review/roseselsa-earfree-i5/app-transparency.jpg",
+  "w": 738,
+  "h": 1600,
+  "fit": "contain",
+  "group": "ภาพหน้าจอแอป RoseLink",
+  "alt": "หน้าต่างเลือก Standard, Voice, Comfort Transparency",
+  "summary": "Transparency 3 แบบ",
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "Standard ให้เสียงรอบข้างมากที่สุด, Voice ลดเสียงรอบข้างแล้วเน้นเสียงคน, Comfort ลดความดังของเสียงรอบข้างลง"
+  ]
+ },
+ {
+  "id": "16",
+  "title": "แอป: Super Master EQ",
+  "src": "/media/posts/review/roseselsa-earfree-i5/app-eq.jpg",
+  "w": 738,
+  "h": 1600,
+  "fit": "contain",
+  "group": "ภาพหน้าจอแอป RoseLink",
+  "alt": "หน้าต่างเลือก EQ POP, HiFi, ROCK, LIGHT",
+  "summary": "EQ 4 preset ไม่มี Custom",
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "มีให้เลือก 4 preset คือ POP, HiFi, ROCK และ LIGHT ไม่มีหน้าให้ปรับ EQ เอง"
+  ]
+ },
+ {
+  "id": "17",
+  "title": "แอป: Lossless Audio",
+  "src": "/media/posts/review/roseselsa-earfree-i5/app-codec.jpg",
+  "w": 738,
+  "h": 1600,
+  "fit": "contain",
+  "group": "ภาพหน้าจอแอป RoseLink",
+  "alt": "หน้าต่างเลือก AAC/SBC หรือ LDAC",
+  "summary": "สลับ AAC/SBC กับ LDAC",
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "เลือก codec ได้จากแอปโดยตรง ระหว่าง AAC/SBC กับ LDAC ในภาพยังเลือก AAC/SBC อยู่"
+  ]
+ },
+ {
+  "id": "18",
+  "title": "แอป: ตั้งค่าปุ่ม",
+  "src": "/media/posts/review/roseselsa-earfree-i5/app-controls.jpg",
+  "w": 738,
+  "h": 1600,
+  "fit": "contain",
+  "group": "ภาพหน้าจอแอป RoseLink",
+  "alt": "หน้า Earphone Control ตั้งคำสั่งการแตะของหูข้างซ้าย",
+  "summary": "แตะ 1 / 2 / 3 ครั้ง และกดค้าง",
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "ตั้งได้แยกข้าง ค่าที่เห็นของข้างซ้าย: แตะ 1 ครั้ง = ไม่มีคำสั่ง, 2 ครั้ง = Play/Pause, 3 ครั้ง = Previous Track, กดค้าง = Voice Assistant",
+   "มีสวิตช์ Touch Switch เปิดหรือปิดการสัมผัสทั้งหมด"
+  ]
+ },
+ {
+  "id": "19",
+  "title": "แอป: Lab Features",
+  "src": "/media/posts/review/roseselsa-earfree-i5/app-lab.jpg",
+  "w": 738,
+  "h": 1600,
+  "fit": "contain",
+  "group": "ภาพหน้าจอแอป RoseLink",
+  "alt": "หน้า Lab Features มี In-ear Detection",
+  "summary": "ตรวจจับการสวมใส่",
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "In-ear Detection เปิดอยู่ ใต้ลงมาเป็นการตั้งระดับเสียงแจ้งเตือน และการตั้งค่าสัมผัสของ Noise Cancelling"
+  ]
+ },
+ {
+  "id": "20",
+  "title": "แอป: Find Device",
+  "src": "/media/posts/review/roseselsa-earfree-i5/app-find.jpg",
+  "w": 738,
+  "h": 1600,
+  "fit": "contain",
+  "group": "ภาพหน้าจอแอป RoseLink",
+  "alt": "หน้า Find Device มีปุ่มส่งเสียงข้างซ้ายและขวา",
+  "summary": "ส่งเสียงหาหูฟังทีละข้าง",
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "กดปุ่ม L หรือ R เพื่อให้หูฟังข้างนั้นส่งเสียง แอปเตือนว่าไม่ควรใส่หูฟังระหว่างค้นหา"
+  ]
+ },
+ {
+  "id": "21",
+  "title": "แอป: หน้าจอนาฬิกา",
+  "src": "/media/posts/review/roseselsa-earfree-i5/app-ambient.jpg",
+  "w": 738,
+  "h": 1600,
+  "fit": "contain",
+  "group": "ภาพหน้าจอแอป RoseLink",
+  "alt": "หน้าจอในแอปที่มีนาฬิกาตัวใหญ่ ภาพภูเขาหิมะ และปุ่มไอคอน",
+  "summary": "นาฬิกาและปุ่มไอคอนเสียง",
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "หน้าจอนี้แสดงเวลาและวันที่ตัวใหญ่บนพื้นภาพภูเขา มีปุ่มหยุดชั่วคราวและแถวไอคอน เช่น เปลวไฟและถ้วยกาแฟ"
+  ]
+ }
+]

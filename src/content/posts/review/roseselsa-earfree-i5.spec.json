@@ -1,0 +1,59 @@
+[
+  {
+    "title": "ทั่วไป",
+    "rows": [
+      ["รุ่น", "ROSESELSA EARFREE i5", "กล่อง"],
+      ["ผู้ผลิต", "Chengdu Rose Technics Co., Ltd. · ผลิตในจีน", "กล่อง"],
+      ["Type", "TWS In-Ears แบบมีก้าน", "ผู้รีวิว"],
+      ["Material", "Aerospace-grade Aluminum Alloy (CNC Anodized), ABS", "กล่อง"],
+      ["IP Rating", "IP55", "ผู้รีวิว"],
+      ["ในกล่อง", ["หูฟัง 2 ข้าง", "เคสชาร์จ", "จุกหู S/M/L", "สาย USB-C", "คู่มือ"], "กล่อง"]
+    ]
+  },
+  {
+    "title": "เสียง",
+    "rows": [
+      ["Driver", "12 มม. HR2 Topologic Diaphragm (DLC Dynamic)", "กล่อง"],
+      ["Chipset", "Cadence HiFi 5 DSP", "ผู้รีวิว"],
+      ["Impedance", "32 Ω", "ผู้รีวิว"],
+      ["Power Output", "15 mW", "ผู้รีวิว"],
+      ["Frequency Response", "14 Hz – 23,600 Hz", "ผู้รีวิว"],
+      ["EQ", "4 Preset: POP, HiFi, ROCK, LIGHT (ปรับเองไม่ได้)", "แอป"],
+      ["Hybrid ANC", "ตัดเสียงได้ 48dB ช่วงความถี่ 4000Hz", "กล่อง"],
+      ["ANC Mode", "Deep / Moderate / Light", "แอป"],
+      ["Transparency Mode", "Standard / Voice / Comfort", "แอป"],
+      ["โหมดเสียงลม", "Wind (แยกจาก ANC)", "แอป"]
+    ]
+  },
+  {
+    "title": "การเชื่อมต่อ",
+    "rows": [
+      ["Bluetooth®", "5.3", "ผู้รีวิว"],
+      ["CODEC", "LDAC (Hi-Res), AAC, SBC, mSBC", "ผู้รีวิว"],
+      ["เลือก Codec", "สลับ AAC/SBC กับ LDAC ได้ในแอป", "แอป"],
+      ["Latency", "54ms (Game Mode)", "กล่อง"],
+      ["Multipoint", "เชื่อมต่อพร้อมกัน 2 เครื่อง", "กล่อง"],
+      ["แอป", "RoseLink (iOS / Android) บอก % แบตทั้งหูฟังและเคส", "กล่อง"]
+    ]
+  },
+  {
+    "title": "ไมโครโฟนและการควบคุม",
+    "rows": [
+      ["Microphone", "4 ตัว (2 ตัว/ข้าง) GoerTek + AI Neural Network Noise Canceling", "ผู้รีวิว"],
+      ["การควบคุม", "แตะ 1 / 2 / 3 ครั้ง และกดค้าง ตั้งแยกข้างได้ · ไม่มีสไลด์ปรับเสียง", "แอป"],
+      ["Wear Detection", "In-ear Detection (ถอดหูฟังแล้วเพลงหยุด)", "แอป"],
+      ["Find my earbuds", "มี ส่งเสียงทีละข้าง", "แอป"]
+    ]
+  },
+  {
+    "title": "แบตเตอรี่และการชาร์จ",
+    "rows": [
+      ["Battery (Earpiece)", "40 mAh ต่อข้าง", "ผู้รีวิว"],
+      ["Battery (Case)", "500 mAh 3.7V 1.85Wh", "ฉลาก"],
+      ["ฟังเพลงต่อเนื่อง", "10 ชั่วโมงต่อการชาร์จ 1 ครั้ง", "กล่อง"],
+      ["รวมเคสชาร์จ", "50 ชั่วโมง", "กล่อง"],
+      ["ทดสอบจริง", "เปิด LDAC + ANC ฟังได้ราว 6 ชั่วโมง", "ผู้รีวิว"],
+      ["ไฟเข้าเคส", "USB-C 5V ⎓ 0.4A", "ฉลาก"]
+    ]
+  }
+]
