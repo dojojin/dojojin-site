@@ -71,6 +71,17 @@ firebase deploy --only firestore:rules
 
 ---
 
+## Data (Price Atlas)
+
+หน้า `/data/<slug>/` เป็นไฟล์ HTML เดี่ยวที่ session vigil-central สร้าง (ข้อมูล+สคริปต์ในไฟล์) — **ห้ามแก้ไฟล์ใน `public/data/` ตรงๆ**
+
+- ต้นฉบับเก็บที่ `_sources/data/<slug>.html` + `<slug>.og.png` (gitignored)
+- รัน `node scripts/patch-atlas.mjs` → เขียน `public/data/<slug>/index.html` + `og.png` (แก้ `<head>`/og ให้ชี้ dojojin.tech, CSS แก้ responsive, แถบ `DOJOJIN.TECH / Data` + ลิงก์ “ที่มาของรูป”)
+- รายชื่อ + ตัวเลขบนการ์ด `/data/` อยู่ที่ `src/data/atlases.js` (นับจาก `window.__ATLAS__` ในไฟล์ — อัปเดตเมื่อได้ไฟล์เวอร์ชันใหม่)
+- รูปเครื่องทุกรูปต้องมีผู้ถ่าย + สัญญาอนุญาต + ลิงก์ไฟล์ต้นฉบับ (Wikimedia Commons) ก่อนขึ้นเว็บ
+
+---
+
 ## Responsive design (บังคับทุกหน้า)
 
 มือถือ (≤768px) สำคัญเท่า desktop เสมอ — ถ้าคำสั่งไหนจะทำให้มือถือแย่ลง ให้บอกก่อนทำ

@@ -2,7 +2,7 @@
 import '../styles/site.css';
 import Icons from '../components/Icons.astro';
 import { EasterEggs } from '../App.jsx';
-import { PROFILE, DOCS_URL } from '../data/site.js';
+import { PROFILE, DOCS_URL, NAV } from '../data/site.js';
 
 const {
   title,
@@ -17,13 +17,7 @@ const fullTitle = title ? `${title} — ${siteName}` : `${siteName} — System E
 const ogTitle = title ?? fullTitle;
 const url = new URL(Astro.url.pathname, Astro.site).href;
 const ogImage = new URL(image, Astro.site).href;
-const nav = [
-  ['home', '/', 'Home'],
-  ['projects', '/projects/', 'Projects'],
-  ['reviews', '/reviews/', 'Reviews'],
-  ['about', '/about/', 'About'],
-  ['guestbook', '/guestbook/', 'Guestbook'],
-];
+const nav = NAV;
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [

@@ -1,5 +1,16 @@
 // Shared site data: read by the formal Astro pages and by the /lab React app (src/App.jsx).
-export const DOCS_URL = import.meta.env.PUBLIC_DOCS_URL || "https://docs.dojojin.tech";
+// import.meta.env exists under Vite/Astro; plain Node (scripts/) gets the production default.
+export const DOCS_URL = import.meta.env?.PUBLIC_DOCS_URL || "https://docs.dojojin.tech";
+
+// Main menu — used by src/layouts/Base.astro and by scripts/patch-atlas.mjs (top bar on /data/ atlas pages).
+export const NAV = [
+  ["home", "/", "Home"],
+  ["projects", "/projects/", "Projects"],
+  ["reviews", "/reviews/", "Reviews"],
+  ["data", "/data/", "Data"],
+  ["about", "/about/", "About"],
+  ["guestbook", "/guestbook/", "Guestbook"],
+];
 
 export const PROFILE = {
   name: "Prakasit Rochanavipart",
