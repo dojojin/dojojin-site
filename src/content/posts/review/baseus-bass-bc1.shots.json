@@ -1,0 +1,589 @@
+[
+  {
+    "id": "1",
+    "title": "พัสดุที่ส่งมา",
+    "src": "/media/posts/review/baseus-bass-bc1/parcel.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "กล่องพัสดุไปรษณีย์ไทย ข้อมูลผู้ส่งและผู้รับถูกเบลอไว้",
+    "summary": "กล่องพัสดุที่ได้รับ",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "กล่องพัสดุส่งผ่านไปรษณีย์ไทย ข้อมูลผู้ส่ง ผู้รับ ที่อยู่ และเลขพัสดุบนฉลากถูกเบลอไว้เพื่อความเป็นส่วนตัว"
+    ],
+    "group": "แกะกล่อง"
+  },
+  {
+    "id": "2",
+    "title": "กล่องด้านหน้า",
+    "src": "/media/posts/review/baseus-bass-bc1/box-front.jpg",
+    "w": 1205,
+    "h": 1600,
+    "fit": "contain",
+    "alt": "กล่อง Baseus Bass BC1 ด้านหน้า ตัวอักษร OPEN EAR และภาพหูฟังกับเคสสีขาว",
+    "summary": "จุดขาย 4 ข้อบนหน้ากล่อง",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "กล่องแบบแขวนสีขาวขอบเหลือง ด้านหน้าเขียนตัวใหญ่ว่า OPEN EAR พร้อมชื่อรุ่น Baseus Bass BC1 Open-Ear True Wireless Earbuds",
+      "มุมล่างขวามีไอคอนจุดขาย 4 ข้อ"
+    ],
+    "screenTitle": "ข้อความบนกล่อง/ฉลาก",
+    "screen": [
+      [
+        "Ergonomic",
+        "Stable Fit"
+      ],
+      [
+        "12mm",
+        "Super-Bass Driver"
+      ],
+      [
+        "38-Hour",
+        "Battery Life"
+      ],
+      [
+        "4-Mic AI",
+        "Clear Calls"
+      ]
+    ],
+    "group": "แกะกล่อง"
+  },
+  {
+    "id": "3",
+    "title": "กล่องมุมเฉียง",
+    "src": "/media/posts/review/baseus-bass-bc1/box-front-angle.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "กล่อง Baseus Bass BC1 วางเอียง ด้านหลังเป็นกล่อง BP1 Pro",
+    "summary": "วางคู่กับกล่อง BP1 Pro",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "กล่อง BC1 มุมเฉียง ด้านหลังคือกล่องของ Baseus Bass BP1 Pro อีกรุ่นที่รีวิวไว้"
+    ],
+    "group": "แกะกล่อง"
+  },
+  {
+    "id": "4",
+    "title": "BC1 คู่กับ BP1 Pro",
+    "src": "/media/posts/review/baseus-bass-bc1/box-with-bp1-pro.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "กล่อง Baseus Bass BC1 วางข้างกล่อง Baseus Bass BP1 Pro",
+    "summary": "สองรุ่นจาก Baseus ที่รีวิวคู่กัน",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ซ้ายคือ Bass BC1 แบบ Open-Ear ขวาคือ Bass BP1 Pro แบบ In-Ear ทั้งสองกล่องใช้ดีไซน์ขาว-เหลืองแบบเดียวกัน"
+    ],
+    "group": "แกะกล่อง"
+  },
+  {
+    "id": "5",
+    "title": "กล่องด้านข้าง: Tri-Curve Ergonomic Clip",
+    "src": "/media/posts/review/baseus-bass-bc1/box-side-clip.jpg",
+    "w": 1205,
+    "h": 1600,
+    "fit": "contain",
+    "alt": "ด้านข้างกล่องสีเหลือง ภาพหูฟังหนีบบนใบหู และ QR code โหลดแอป",
+    "summary": "คลิปโค้งสามช่วง และ QR โหลดแอป",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ด้านข้างกล่องอธิบาย Tri-Curve Ergonomic Clip ว่าช่วยลดเสียงรั่วและเพิ่มความมั่นคงเวลาใส่ (Minimizes sound leakage and maximizes wear stability)",
+      "ด้านล่างมี QR code สำหรับดาวน์โหลด Baseus App"
+    ],
+    "group": "แกะกล่อง"
+  },
+  {
+    "id": "6",
+    "title": "กล่องด้านข้าง: IP55",
+    "src": "/media/posts/review/baseus-bass-bc1/box-side-ip55.jpg",
+    "w": 1205,
+    "h": 1600,
+    "fit": "contain",
+    "alt": "ด้านข้างกล่องสีเหลือง ชื่อรุ่นหลายภาษา และสัญลักษณ์ IP55",
+    "summary": "กันเหงื่อและละอองน้ำ IP55",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ด้านบนเป็นชื่อสินค้าหลายภาษา ด้านล่างระบุ IP55 Sweat-and-splash resistant for worry-free workouts",
+      "มีกรอบ Complies with IMDA Standards (สิงคโปร์) ด้วย"
+    ],
+    "group": "แกะกล่อง"
+  },
+  {
+    "id": "7",
+    "title": "กล่องด้านหลัง",
+    "src": "/media/posts/review/baseus-bass-bc1/box-back.jpg",
+    "w": 1205,
+    "h": 1600,
+    "fit": "contain",
+    "alt": "ด้านหลังกล่อง Baseus Bass BC1 จุดขายหลายภาษา สติกเกอร์ผู้นำเข้า และข้อมูลผู้ผลิต",
+    "summary": "จุดขาย, รุ่น PM153, ผลิต 2025-06",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ด้านหลังมีจุดขายหลายภาษา และสติกเกอร์ภาษาไทยของผู้นำเข้า (บริษัท ที แอนด์ ซี จำกัด) ส่วนล่างระบุชื่อรุ่น Baseus Open-Ear TWS Earbuds, Model PM153 และผู้ผลิต Shenzhen Baseus Technology Co., Ltd.",
+      "สติกเกอร์ขูดตรวจสอบของแท้ (Scrape and Check) ถูกเบลอไว้ เพราะมีหมายเลขประจำสินค้า"
+    ],
+    "screenTitle": "ข้อความบนกล่อง/ฉลาก",
+    "screen": [
+      [
+        "จุดขาย",
+        "Baseus Rapid Charge (BSR) for extended playtime"
+      ],
+      [
+        "",
+        "0.06s Baseus dual-channel low latency technology"
+      ],
+      [
+        "",
+        "Physical buttons, no accidental touches"
+      ],
+      [
+        "",
+        "Seamless multipoint connection for two devices"
+      ],
+      [
+        "Production Date",
+        "2025-06"
+      ]
+    ],
+    "group": "แกะกล่อง"
+  },
+  {
+    "id": "8",
+    "title": "เคสในถาด",
+    "src": "/media/posts/review/baseus-bass-bc1/case-in-tray.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "เคสชาร์จสีขาวทรงรีวางในถาดกระดาษ ข้างๆ เป็น Quick Start Guide",
+    "summary": "เคสทรงรีสีขาว ผิวมัน",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "เคสชาร์จวางในถาดกระดาษสีขาว ฝาเคสเป็นพลาสติกผิวมัน มีโลโก้ Baseus นูนบนฝา และจุดไฟสถานะด้านหน้า"
+    ],
+    "group": "แกะกล่อง"
+  },
+  {
+    "id": "9",
+    "title": "ของในกล่อง",
+    "src": "/media/posts/review/baseus-bass-bc1/unboxing-contents.jpg",
+    "w": 1600,
+    "h": 1200,
+    "alt": "ของในกล่อง: เคสในถาด, Quick Start Guide, ใบคำเตือน, สาย USB-C และแผ่นสติกเกอร์",
+    "summary": "หูฟัง เคส สายชาร์จ คู่มือ และสติกเกอร์",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ของในกล่องมีเคสพร้อมหูฟัง, Quick Start Guide, ใบคำเตือนความปลอดภัย, สายชาร์จ USB-C สีขาว และแผ่นสติกเกอร์ลาย Leo's Gift"
+    ],
+    "group": "แกะกล่อง"
+  },
+  {
+    "id": "10",
+    "title": "เคสในถาด (ใกล้)",
+    "src": "/media/posts/review/baseus-bass-bc1/case-in-tray-close.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "ภาพใกล้เคสชาร์จสีขาวในถาด",
+    "summary": "ฝาเคสมีโลโก้ Baseus นูน",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ภาพใกล้ฝาเคส เห็นโลโก้ Baseus แบบนูนในเนื้อพลาสติก และรอยต่อระหว่างฝากับตัวเคส"
+    ],
+    "group": "แกะกล่อง"
+  },
+  {
+    "id": "11",
+    "title": "เคสในมือ",
+    "src": "/media/posts/review/baseus-bass-bc1/case-in-hand.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "เคสชาร์จ Baseus Bass BC1 วางบนฝ่ามือ",
+    "summary": "เคสใหญ่ประมาณฝ่ามือ",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "วางบนฝ่ามือให้เห็นขนาดเคส ซึ่งผู้รีวิวมองว่าใหญ่ไปหน่อย และหาเคสสวยๆ มาใส่ไม่ค่อยมี"
+    ],
+    "group": "ตัวเคส"
+  },
+  {
+    "id": "12",
+    "title": "เทียบเคสกับ BP1 Pro",
+    "src": "/media/posts/review/baseus-bass-bc1/case-vs-bp1-pro.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "เคส BC1 สีขาว วางข้างเคส BP1 Pro สีดำ",
+    "summary": "BC1 (ขาว) กับ BP1 Pro (ดำ)",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "เคสของ BC1 (ขวา) ทรงกลมมนกว่า ส่วนเคสของ BP1 Pro (ซ้าย) ทรงเหลี่ยมมน ทั้งสองรุ่นมีโลโก้ Baseus บนฝา"
+    ],
+    "group": "ตัวเคส"
+  },
+  {
+    "id": "13",
+    "title": "เทียบเคสในมือ",
+    "src": "/media/posts/review/baseus-bass-bc1/case-vs-bp1-pro-hand.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "ถือเคส BC1 สีขาวและเคส BP1 Pro สีดำไว้ในมือเดียวกัน",
+    "summary": "ขนาดเคสสองรุ่นในมือ",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ถือสองเคสไว้ในมือเดียวกันเพื่อเทียบขนาด เคส BC1 ป่องและกว้างกว่าเล็กน้อย"
+    ],
+    "group": "ตัวเคส"
+  },
+  {
+    "id": "14",
+    "title": "พอร์ต USB-C",
+    "src": "/media/posts/review/baseus-bass-bc1/case-usb-c.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "ด้านหลังเคส BC1 มีพอร์ต USB-C ใต้ตัวอักษร baseus",
+    "summary": "พอร์ตชาร์จอยู่ด้านหลังเคส",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "พอร์ต USB-C อยู่ด้านหลังเคส ใต้ตัวอักษร baseus ผู้รีวิวมองว่าเวลาวางชาร์จวางลำบาก"
+    ],
+    "group": "ตัวเคส"
+  },
+  {
+    "id": "15",
+    "title": "พอร์ต USB-C (อีกมุม)",
+    "src": "/media/posts/review/baseus-bass-bc1/case-usb-c-2.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "ด้านหลังเคส BC1 มุมตรง เห็นพอร์ต USB-C",
+    "summary": "มุมตรงของพอร์ต USB-C",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "มุมตรงของด้านหลังเคส ช่อง USB-C อยู่กลางตัวเคสพอดี"
+    ],
+    "group": "ตัวเคส"
+  },
+  {
+    "id": "16",
+    "title": "เปิดฝาเคส",
+    "src": "/media/posts/review/baseus-bass-bc1/case-open.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "เปิดฝาเคส หูฟังสองข้างวางอยู่ในช่อง",
+    "summary": "หูฟังวางในเคสพร้อมฟิล์มกันรอย",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "เปิดฝาแล้วหูฟังสองข้างวางอยู่ในช่อง ก้านโค้งของหูฟังพาดอยู่ด้านบน ในภาพยังมีฟิล์มสีฟ้าติดมาจากโรงงาน"
+    ],
+    "group": "ตัวเคส"
+  },
+  {
+    "id": "17",
+    "title": "ฉลากในฝาเคส",
+    "src": "/media/posts/review/baseus-bass-bc1/label-case.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "ข้อความฉลากในฝาเคส: Model PM153, ความจุเคส 500mAh/1.85Wh และเครื่องหมายรับรอง",
+    "summary": "รุ่น PM153, เคส 500mAh",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ฉลากในฝาเคสระบุชื่อ Baseus Open-Ear TWS Earbuds รุ่น PM153 และเครื่องหมาย CE, UKCA, เครื่องหมายรับรองญี่ปุ่น",
+      "หมายเลข SN ถูกเบลอไว้"
+    ],
+    "screenTitle": "ข้อความบนกล่อง/ฉลาก",
+    "screen": [
+      [
+        "Model No.",
+        "PM153"
+      ],
+      [
+        "FCC ID",
+        "2A482-PM153"
+      ],
+      [
+        "Charging case capacity",
+        "500mAh / 1.85Wh"
+      ],
+      [
+        "Input",
+        "5V ⎓ 480mA"
+      ],
+      [
+        "Output",
+        "5V ⎓ 130mA (65mA per port)"
+      ]
+    ],
+    "group": "ตัวเคส"
+  },
+  {
+    "id": "18",
+    "title": "เทียบด้านหลังกับเคส oraimo",
+    "src": "/media/posts/review/baseus-bass-bc1/case-vs-oraimo-back.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "ด้านหลังเคสสองใบ: เคส oraimo ขอบเงินทางซ้าย และเคส BC1 ทางขวา",
+    "summary": "ทั้งสองเคสใช้ USB-C ด้านหลัง",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "เทียบด้านหลังกับเคสหูฟัง open-ear ของ oraimo (ซ้าย ขอบสีเงิน) ทั้งคู่วางพอร์ต USB-C ไว้ด้านหลังเหมือนกัน"
+    ],
+    "group": "ตัวเคส"
+  },
+  {
+    "id": "19",
+    "title": "เปิดฝาเทียบกับ oraimo",
+    "src": "/media/posts/review/baseus-bass-bc1/case-vs-oraimo-open.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "เปิดฝาเคส oraimo ทางซ้ายและเคส BC1 ทางขวา หูฟังวางอยู่ในเคสทั้งสอง",
+    "summary": "เปิดฝาเทียบกับเคส oraimo",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "เปิดฝาเทียบกันสองรุ่น เคส oraimo (ซ้าย) มีขอบโลหะสีเงิน ส่วนเคส BC1 (ขวา) เป็นพลาสติกสีขาวทั้งใบ",
+      "หมายเลข S/N และ QR บนฉลากในฝาเคส oraimo ถูกเบลอไว้"
+    ],
+    "group": "ตัวเคส"
+  },
+  {
+    "id": "20",
+    "title": "เคสกับกล่อง",
+    "src": "/media/posts/review/baseus-bass-bc1/case-on-stand.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "เคส BC1 วางบนขาตั้งสีฟ้า ข้างกล่องสินค้า ด้านหน้ามีนามบัตรผู้รีวิว",
+    "summary": "เคส กล่อง และนามบัตรผู้รีวิว",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "เคสวางบนขาตั้งข้างกล่องสินค้า ด้านหน้าเป็นนามบัตร Dojo-X ของผู้รีวิว (ที่อยู่ เบอร์โทร อีเมล และ QR ถูกเบลอไว้)"
+    ],
+    "group": "ตัวเคส"
+  },
+  {
+    "id": "21",
+    "title": "เปิดฝาเคส (โต๊ะทำงาน)",
+    "src": "/media/posts/review/baseus-bass-bc1/case-open-card.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "เปิดฝาเคส BC1 หูฟังอยู่ในช่อง ด้านหลังเป็นนามบัตรและกล่อง",
+    "summary": "หูฟังในเคส มุมหน้าตรง",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "เปิดฝาเคสมุมหน้าตรง เห็นหูฟังสองข้างวางเรียงในช่อง และฉลากในฝาเคส",
+      "ข้อมูลติดต่อบนนามบัตรด้านหลังถูกเบลอไว้"
+    ],
+    "group": "ตัวเคส"
+  },
+  {
+    "id": "22",
+    "title": "หูฟังพร้อมฟิล์ม",
+    "src": "/media/posts/review/baseus-bass-bc1/buds-protective-film.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "หูฟังสองข้างที่ยังมีฟิล์มสีฟ้าติดอยู่",
+    "summary": "ฟิล์มสีฟ้ากันรอยจากโรงงาน",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ตัวหูฟังมีฟิล์มสีฟ้าติดมาจากโรงงาน ต้องลอกออกก่อนใช้งาน เห็นช่องลำโพงที่ปลายลูกกลมด้วย"
+    ],
+    "group": "ตัวหูฟัง"
+  },
+  {
+    "id": "23",
+    "title": "หูฟังด้านข้าง",
+    "src": "/media/posts/review/baseus-bass-bc1/buds-film-side.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "หูฟังสองข้างวางบนผ้า เห็นก้านโค้ง C-Ring และฟิล์มสีฟ้า",
+    "summary": "ก้านโค้ง C-Ring เชื่อมสองส่วน",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "หูฟังแต่ละข้างแบ่งเป็นสองส่วน คือลูกกลมที่มีลำโพง และตัวเครื่องทรงรีที่มีปุ่ม เชื่อมกันด้วยก้านโค้ง C-Ring ที่หนีบขอบใบหู"
+    ],
+    "group": "ตัวหูฟัง"
+  },
+  {
+    "id": "24",
+    "title": "ช่องลำโพง",
+    "src": "/media/posts/review/baseus-bass-bc1/buds-speaker-grille.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "หูฟังวางบนผ้า เห็นตะแกรงลำโพงทรงรีบนลูกกลม",
+    "summary": "ตะแกรงลำโพงทรงรี",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ลูกกลมด้านหน้ามีตะแกรงลำโพงทรงรี ส่วนตัวเครื่องทรงรีมีจุดสีเงินสองจุด (จุดสัมผัสสำหรับชาร์จในเคส)"
+    ],
+    "group": "ตัวหูฟัง"
+  },
+  {
+    "id": "25",
+    "title": "ปุ่มกด",
+    "src": "/media/posts/review/baseus-bass-bc1/bud-button.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "ภาพใกล้ตัวเครื่องทรงรีของหูฟัง เห็นปุ่มกดทรงรีด้านข้าง",
+    "summary": "ปุ่มกด Physical",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ด้านข้างตัวเครื่องมีปุ่มกดทรงรีแบบกดจริง ไม่ใช่ระบบสัมผัส จึงไม่ต้องกลัวแตะพลาด"
+    ],
+    "group": "ตัวหูฟัง"
+  },
+  {
+    "id": "26",
+    "title": "หูฟังคู่",
+    "src": "/media/posts/review/baseus-bass-bc1/buds-pair.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "หูฟังสองข้างวางคู่กันบนผ้า หลังลอกฟิล์มแล้ว",
+    "summary": "หูฟังหลังลอกฟิล์ม",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "หูฟังสองข้างหลังลอกฟิล์มออก ผิวเป็นพลาสติกสีขาวนวล ก้านโค้งเป็น TPU ยืดหยุ่น"
+    ],
+    "group": "ตัวหูฟัง"
+  },
+  {
+    "id": "27",
+    "title": "หูฟังนอกเคส",
+    "src": "/media/posts/review/baseus-bass-bc1/buds-out-card.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "หูฟังสองข้างวางข้างเคสที่เปิดฝา ด้านหลังเป็นนามบัตร",
+    "summary": "หูฟังข้างเคส เห็นขนาดเทียบกัน",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "หูฟังสองข้างวางข้างเคส เห็นขนาดเทียบกับเคสได้ชัด",
+      "ข้อมูลติดต่อและ QR บนนามบัตรถูกเบลอไว้"
+    ],
+    "group": "ตัวหูฟัง"
+  },
+  {
+    "id": "28",
+    "title": "แอป: หน้าหูฟัง (บน)",
+    "src": "/media/posts/review/baseus-bass-bc1/app-home-1.jpg",
+    "w": 909,
+    "h": 1600,
+    "fit": "contain",
+    "alt": "หน้าหูฟัง Bass BC1 ในแอป Baseus แสดงแบตซ้ายขวา Spatial Acoustics EQ mode และ Bass Boost",
+    "summary": "แบตหูฟัง, Spatial Acoustics, EQ, Bass Boost",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "หน้าหูฟังแสดงแบตเตอรี่ซ้ายและขวาเป็นเปอร์เซ็นต์ (100% / 100%) แต่ไม่แสดงแบตของเคส",
+      "ส่วน Sound control มี Spatial Acoustics (Normal, Music, Cinema), EQ mode (ในภาพคือ Baseus Classic) และสวิตช์ Bass Boost ที่เปิดเป็นค่าเริ่มต้น"
+    ],
+    "group": "ภาพหน้าจอแอป Baseus"
+  },
+  {
+    "id": "29",
+    "title": "แอป: หน้าหูฟัง (ล่าง)",
+    "src": "/media/posts/review/baseus-bass-bc1/app-home-2.jpg",
+    "w": 909,
+    "h": 1600,
+    "fit": "contain",
+    "alt": "ส่วนล่างของหน้าหูฟัง เมนู Other: Dual-Device Connection, Low Latency Mode, Gesture Setting, Find headphones, Settings",
+    "summary": "เมนู Other: Dual-Device, Low Latency",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ส่วน Other มี Dual-Device Connection (เชื่อมต่อสองเครื่องพร้อมกัน), Low Latency Mode, Gesture Setting, Find headphones และ Settings",
+      "ไม่มีหน้าจัดการเลือกเครื่องที่เชื่อมต่อ ตรงกับข้อสังเกตของผู้รีวิว"
+    ],
+    "group": "ภาพหน้าจอแอป Baseus"
+  },
+  {
+    "id": "30",
+    "title": "แอป: Customize EQ",
+    "src": "/media/posts/review/baseus-bass-bc1/app-eq-custom.jpg",
+    "w": 738,
+    "h": 1600,
+    "fit": "contain",
+    "alt": "หน้าปรับ EQ เอง 8 แบนด์ 100Hz ถึง 10kHz ช่วง ±6 dB preset ชื่อ test",
+    "summary": "EQ 8 แบนด์ ปรับได้ ±6 dB",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "Customize EQ ปรับได้ 8 แบนด์ แต่ละแบนด์ขยับได้ประมาณ ±6 dB สร้าง preset ใหม่ได้ด้วยปุ่ม +"
+    ],
+    "screenTitle": "ค่าในภาพ",
+    "screen": [
+      [
+        "100Hz",
+        "+6"
+      ],
+      [
+        "200Hz",
+        "+6"
+      ],
+      [
+        "400Hz",
+        "+4"
+      ],
+      [
+        "800Hz",
+        "+3"
+      ],
+      [
+        "1kHz",
+        "−4"
+      ],
+      [
+        "3kHz",
+        "−1"
+      ],
+      [
+        "6kHz",
+        "+2"
+      ],
+      [
+        "10kHz",
+        "0"
+      ]
+    ],
+    "group": "ภาพหน้าจอแอป Baseus"
+  },
+  {
+    "id": "31",
+    "title": "แอป: Gesture Setting",
+    "src": "/media/posts/review/baseus-bass-bc1/app-gestures.jpg",
+    "w": 1477,
+    "h": 1600,
+    "fit": "contain",
+    "alt": "หน้าตั้งค่าปุ่ม Tap, Double-tap, Press-hold และ Tap 3 times แยกซ้ายขวา",
+    "summary": "ตั้งค่าปุ่มแยกซ้าย-ขวาได้",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ตั้งคำสั่งปุ่มได้ 4 แบบ แยกข้างซ้ายและขวา ค่าในภาพเป็นดังนี้"
+    ],
+    "screenTitle": "ค่าในภาพ",
+    "screen": [
+      [
+        "Tap",
+        "Play/Pause (ซ้าย/ขวา)"
+      ],
+      [
+        "Double-tap",
+        "Next (ซ้าย/ขวา)"
+      ],
+      [
+        "Press-hold",
+        "ซ้าย Volume− / ขวา Volume+"
+      ],
+      [
+        "Tap 3 times",
+        "Previous (ซ้าย/ขวา)"
+      ]
+    ],
+    "group": "ภาพหน้าจอแอป Baseus"
+  },
+  {
+    "id": "32",
+    "title": "แอป: Find headphones",
+    "src": "/media/posts/review/baseus-bass-bc1/app-find-map.jpg",
+    "w": 1477,
+    "h": 1600,
+    "fit": "contain",
+    "alt": "หน้าค้นหาหูฟังบนแผนที่ ภาพถูกเบลอทั้งหมดเพราะแสดงตำแหน่ง",
+    "summary": "ค้นหาบนแผนที่ (เบลอตำแหน่ง)",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "หน้า Find headphones แสดงตำแหน่งล่าสุดที่หูฟังตัดการเชื่อมต่อบนแผนที่ สลับใช้ Google Maps หรือ Baidu Maps ได้ และมีปุ่มส่งเสียงหาหูฟังที่มุมขวาบน",
+      "ภาพนี้ถูกเบลอทั้งหมดเพราะแผนที่และที่อยู่ระบุตำแหน่งได้"
+    ],
+    "group": "ภาพหน้าจอแอป Baseus"
+  }
+]

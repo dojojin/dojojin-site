@@ -1,0 +1,70 @@
+[
+  {
+    "title": "ทั่วไป",
+    "rows": [
+      ["รุ่น", "Baseus Bass BC1 (Model No. PM153)", "ฉลาก"],
+      ["Type", "Open-Ear (Clip-on) True Wireless Earbuds", "กล่อง"],
+      ["Material", "พลาสติก + TPU C-Ring (ยืดหยุ่น)", "ผู้รีวิว"],
+      ["IP Rating", "IP55 (Sweat-and-splash resistant)", "กล่อง"],
+      ["Weight", "5.3 กรัมต่อข้าง", "ผู้รีวิว"],
+      ["สี (เครื่องที่รีวิว)", "Stellar White", "กล่อง"],
+      ["FCC ID", "2A482-PM153", "ฉลาก"],
+      ["ผู้ผลิต", "Shenzhen Baseus Technology Co., Ltd · ผลิตในจีน · Production Date 2025-06", "กล่อง"],
+      ["ในกล่อง", ["หูฟัง 2 ข้าง", "เคสชาร์จ", "สายชาร์จ USB-C", "Quick Start Guide และใบคำเตือน", "สติกเกอร์ Leo's Gift"], "ผู้รีวิว"]
+    ]
+  },
+  {
+    "title": "เสียง",
+    "rows": [
+      ["Driver Size", "12mm Dynamic Driver (Super-Bass Driver)", "กล่อง"],
+      ["Technology", ["Bass Boost", "Spatial Acoustics (Normal / Music / Cinema)", "Multipoint 2 Device Connection"], "แอป"],
+      ["EQ Preset", "6 โหมด: Baseus Classic, Hi-Fi Live, Jazz, Treble Boost, Acoustic, Rock Classic", "ผู้รีวิว"],
+      ["Custom EQ", "8 แบนด์ (100Hz, 200Hz, 400Hz, 800Hz, 1kHz, 3kHz, 6kHz, 10kHz) ช่วง ±6 dB", "แอป"],
+      ["ANC", "ไม่มีระบบ ANC", "ผู้รีวิว"],
+      ["Transparency", "ไม่มีระบบ Transparency", "ผู้รีวิว"]
+    ]
+  },
+  {
+    "title": "การเชื่อมต่อ",
+    "rows": [
+      ["Bluetooth®", "6.0", "ผู้รีวิว"],
+      ["CODEC", "SBC, AAC", "ผู้รีวิว"],
+      ["Latency", "0.06 วินาที (dual-channel low latency)", "กล่อง"],
+      ["Game Mode", "มี (Low Latency Mode ผ่าน App)", "แอป"],
+      ["Dual Connections", "รองรับ (Multipoint 2 เครื่อง) แต่ไม่มีระบบจัดการเชื่อมต่อระหว่างเครื่อง", "แอป"],
+      ["Google FastPair", "ไม่รองรับ", "ผู้รีวิว"],
+      ["Microsoft Swift Pair", "ไม่รองรับ", "ผู้รีวิว"],
+      ["APP", "Baseus App (iOS / Android) บอกเปอร์เซ็นต์แบตเตอรี่เฉพาะตัวหูฟัง แต่ตัวเคสไม่บอก", "แอป"]
+    ]
+  },
+  {
+    "title": "ไมโครโฟนและการควบคุม",
+    "rows": [
+      ["Microphone", "4 ตัว (ด้านหน้าและด้านข้างของหูฟัง) + AI ENC", "กล่อง"],
+      ["การควบคุม", "ปุ่มกดแบบ Physical: กด 1 ที, 2 ที, 3 ที และกดค้าง", "แอป"],
+      ["ตั้งค่าในแอป (ตามภาพ)", "กด 1 ที Play/Pause · 2 ที Next · 3 ที Previous · กดค้าง ซ้าย Volume− / ขวา Volume+", "แอป"],
+      ["Wear Detection", "ไม่มี", "ผู้รีวิว"],
+      ["Eartips Fit Test", "ไม่มี", "ผู้รีวิว"]
+    ]
+  },
+  {
+    "title": "แบตเตอรี่และการชาร์จ",
+    "rows": [
+      ["Battery (Earpiece)", "40 mAh", "ผู้รีวิว"],
+      ["Battery (Case)", "500 mAh / 1.85 Wh", "ฉลาก"],
+      ["ฟังเพลงต่อเนื่อง", "7.5 ชั่วโมง", "ผู้รีวิว"],
+      ["ใช้งานสูงสุดรวมเคสชาร์จ", "38 ชั่วโมง", "กล่อง"],
+      ["Quick Charge", "ชาร์จ 15 นาที ฟังได้ 2 ชั่วโมง", "ผู้รีวิว"],
+      ["Charging Hours", "หูฟัง ~1.5 ชม., เคส ~1.5 ชม.", "ผู้รีวิว"],
+      ["Port Charge", "USB-C อยู่ด้านหลังเคส", "ผู้รีวิว"],
+      ["Input / Output (เคส)", "5V ⎓ 480mA / 5V ⎓ 130mA (65mA per port)", "ฉลาก"]
+    ]
+  },
+  {
+    "title": "ค้นหาหูฟัง",
+    "rows": [
+      ["Find my earbuds (by sound)", "มี ค้นหาหูฟังได้ด้วยการส่งเสียง", "ผู้รีวิว"],
+      ["Find my earbuds (by Maps)", "มี (Google Maps / Baidu Maps) แต่ต้อง sign-in ตัว application ก่อน", "แอป"]
+    ]
+  }
+]
