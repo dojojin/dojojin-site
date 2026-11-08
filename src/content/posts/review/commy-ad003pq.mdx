@@ -1,0 +1,129 @@
+---
+title: "COMMY AD003PQ หัวชาร์จ 33W"
+topic: power
+type: review
+tags: [commy, usb-pd]
+date: 2024-03-14 # photo date — replace with the FB post date from the owner
+description: "หัวชาร์จ 33W สองช่อง (A + C) ราคา 429 บาท เสียบช่องเดียวจ่ายเต็ม 30W จริง แต่เสียบพร้อมกันสองช่อง ไฟตกเหลือไม่ถึง 2W"
+kicker: "#MiniReview · Charger"
+lead: "หัวชาร์จ 33W ตัวเล็ก ราคาไม่แพง เสียบช่องเดียวจ่ายเต็มสเปก แต่ถ้าชาร์จพร้อมกันสองช่อง พังพินาศ"
+meta: "Dojo-mAn Fotographer · ซื้อมาใช้เอง วัดเอง"
+cover: "/media/posts/review/commy-ad003pq/ports.jpg"
+coverAlt: "หัวชาร์จ COMMY 33W ช่อง USB-A และ USB-C"
+---
+import SpecTable from '../../../components/SpecTable.astro';
+import ShotGallery from '../../../components/ShotGallery.astro';
+import shots from './commy-ad003pq.shots.json';
+import spec from './commy-ad003pq.spec.json';
+
+<section class="section">
+
+## Short Brief
+
+<div class="split">
+<div class="prose">
+
+ใครสนใจก็ตามไปตำกันได้ครับ ไม่แพงเลย ราคา 429 บาท มี 2 ช่องชาร์จ คือ Type-A และ Type-C
+
+- ตัวเล็กพกง่าย จ่ายไฟแรงถึง 30W (PD)
+- จ่ายไฟได้เต็มวัตต์จริง 30W ถ้าเสียบช่อง Type-C ช่องเดียว (วัดได้ 29.1W)
+- เสียบช่อง Type-A ก็จ่ายไฟได้ตามสเปก
+- ถ้าชาร์จพร้อมกันสองช่อง พังพินาศ สเปกเขียนไว้ 5V 4A (20W) แต่ใช้งานจริงจ่ายไฟเหลือแค่ 1.56W
+
+</div>
+<div class="proscons proscons--stack">
+  <div class="pros">
+    <h3><svg class="icon" aria-hidden="true"><use href="#icon-dot" /></svg>จุดเด่น</h3>
+    <ul>
+      <li>ราคา 429 บาท</li>
+      <li>ช่อง C จ่าย 30W ได้จริง</li>
+      <li>โปรโตคอลครบ: PD 3.0, PPS, QC4+, Huawei FCP/SCP, Samsung AFC</li>
+      <li>ตัวเล็ก ลาย Rainbow น่ารัก</li>
+    </ul>
+  </div>
+  <div class="cons">
+    <h3><svg class="icon" aria-hidden="true"><use href="#icon-alert" /></svg>ข้อสังเกต</h3>
+    <ul>
+      <li>เสียบสองช่องพร้อมกัน ไฟตกเหลือ 5V และจ่ายได้ไม่ถึง 2W</li>
+      <li>ไม่พอสำหรับ MacBook หรือ iPad</li>
+      <li>ขาปลั๊กพับไม่ได้</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## Specification
+
+<SpecTable groups={spec} legend="ป้ายบอกที่มาของข้อมูล: ฉลาก = ฉลากบนตัวเครื่อง · กล่อง = ข้างกล่อง · ตัวเครื่อง = ดูจากตัวเครื่องจริง · มิเตอร์ = วัดเองด้วย POWER-Z · ผู้รีวิว = ราคาที่ซื้อจริง" />
+
+</section>
+
+<section class="section">
+
+## ผลวัดจริง
+
+<div class="grade-grid">
+  <article class="grade-card">
+    <h3>ช่อง C ช่องเดียว</h3>
+    <p><b>20.22V × 1.44A = 29.1W</b> ผ่าน PD 3.0 จ่ายเต็ม 30W จริง</p>
+  </article>
+  <article class="grade-card">
+    <h3>ช่อง A ช่องเดียว</h3>
+    <p><b>11.83V × 1.44A = 17.0W</b> ผ่าน QC 2.0 12V ชาร์จเร็วได้ (กำลังขึ้นกับเครื่องที่ชาร์จ)</p>
+  </article>
+  <article class="grade-card">
+    <h3>เสียบพร้อมกัน A + C</h3>
+    <p><b>1.56W และ 0.0075W</b> ทั้งสองช่องตกเหลือ 5V ไม่มีชาร์จเร็ว ห่างจาก 20W บนฉลากมาก</p>
+  </article>
+</div>
+
+<div class="note" style="margin-top:var(--space-6)">
+
+### 33W มาจากไหน ทำไมวัดได้ 30W
+
+กำลัง 33W บนกล่องได้จากโหมด **PPS 11V 3A** เท่านั้น ซึ่งใช้กับมือถือที่รองรับ PPS (เช่น Samsung 25W) ส่วน PD แบบแรงดันคงที่สูงสุดคือ 30W (15V 2A หรือ 20V 1.5A) ผลวัด 29.1W จึงถือว่าเต็มสเปก
+
+</div>
+
+</section>
+
+<section class="section">
+
+## สรุป ควรซื้อไหม?
+
+<div class="proscons">
+<div class="pros">
+  <h3><svg class="icon" aria-hidden="true"><use href="#icon-dot" /></svg>เหมาะกับคุณ ถ้า</h3>
+  <p>ชอบหัวชาร์จเล็ก ๆ พกง่าย และไม่ต้องการไฟแรงมาก เช่นชาร์จ iPhone หรือ Android ทีละเครื่อง</p>
+</div>
+<div class="cons">
+  <h3><svg class="icon" aria-hidden="true"><use href="#icon-alert" /></svg>อาจไม่เหมาะ ถ้า</h3>
+  <p>มีอุปกรณ์หลายตัวที่ต้องชาร์จพร้อมกัน มีพาวเวอร์แบงก์ขนาดใหญ่ MacBook หรือ iPad</p>
+</div>
+</div>
+
+<p class="prose">อยากรู้ว่าไฟจากหัวชาร์จ "เรียบ" แค่ไหน อ่านต่อได้ที่ <a href="/knowledge/charger-ripple-guide/">คู่มืออ่านค่า Ripple ของหัวชาร์จ</a></p>
+
+</section>
+
+<section class="section">
+
+## ภาพประกอบ
+
+<p class="prose">กดที่รูปเพื่อดูคำอธิบาย</p>
+
+<ShotGallery shots={shots} />
+
+</section>
+
+<section class="section">
+
+## ช่องทางการจัดจำหน่าย
+
+<p class="prose">ซื้อมาใช้เอง รีวิวเอง ปะลิงก์ให้เพื่ออำนวยความสะดวกครับ: <a href="https://shope.ee/4AcQq5nkIh" rel="noopener">Shopee</a></p>
+
+</section>

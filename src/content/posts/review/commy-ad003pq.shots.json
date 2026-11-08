@@ -1,0 +1,307 @@
+[
+  {
+    "id": "1",
+    "title": "กล่องด้านหน้า",
+    "src": "/media/posts/review/commy-ad003pq/box-front.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "กล่อง COMMY 33W PD+QC 4.0 รุ่น Commy Love Limited Edition",
+    "summary": "ลาย Rainbow รุ่น Limited Edition"
+  },
+  {
+    "id": "2",
+    "title": "สเปกข้างกล่อง",
+    "src": "/media/posts/review/commy-ad003pq/box-spec.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "SPECIFICATIONS ข้างกล่อง COMMY 33W",
+    "summary": "รายการโปรโตคอลแยกตามช่อง",
+    "screenTitle": "ข้อความข้างกล่อง",
+    "screen": [
+      [
+        "Output",
+        "33W Max"
+      ],
+      [
+        "USB-C",
+        "5V3A, 9V3A, 12V2.5A, 15V2A, 20V1.5A · PPS 3.3–11V3A, 3.3–16V2A"
+      ],
+      [
+        "USB-A",
+        "5V3A, 9V3A, 12V2.5A, 20V1.5A"
+      ],
+      [
+        "USB-A + USB-C",
+        "5V4A"
+      ],
+      [
+        "USB-C protocol",
+        "FCP / SCP / PD3.0 / PPS / Apple 2.4A / Samsung 2A / QC4.0 / QC3.0 / QC2.0"
+      ],
+      [
+        "USB-A protocol",
+        "AFC / FCP / SCP / Apple 2.4A / Samsung 2A / QC3.0 / QC2.0"
+      ]
+    ]
+  },
+  {
+    "id": "3",
+    "title": "หน้าต่างกล่อง",
+    "src": "/media/posts/review/commy-ad003pq/box-window.jpg",
+    "w": 1200,
+    "h": 1600,
+    "group": "แกะกล่อง",
+    "alt": "กล่องมีหน้าต่างเห็นตัวหัวชาร์จ",
+    "summary": "กล่องมีหน้าต่างเห็นตัวหัวชาร์จ",
+    "fit": "contain"
+  },
+  {
+    "id": "4",
+    "title": "ฉลากบนตัวเครื่อง",
+    "src": "/media/posts/review/commy-ad003pq/label.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเครื่อง",
+    "alt": "ฉลาก AD003PQ ใต้ขาปลั๊ก",
+    "summary": "ข้อความตรงกับข้างกล่อง",
+    "analysis": [
+      "จุดที่ต้องดูคือบรรทัดสุดท้าย: USB-A + USB-C Output 5.0V 4.0A แปลว่าเสียบพร้อมกันสองช่อง ทั้งคู่จะถูกลดเหลือ 5V รวมกัน 20W ไม่มีชาร์จเร็วเลย"
+    ]
+  },
+  {
+    "id": "5",
+    "title": "ช่องชาร์จ",
+    "src": "/media/posts/review/commy-ad003pq/ports.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเครื่อง",
+    "alt": "ช่อง USB-A (QC 4.0) และ USB-C (PD) 33W",
+    "summary": "สองช่อง: A และ C"
+  },
+  {
+    "id": "6",
+    "title": "ตัวเครื่อง",
+    "src": "/media/posts/review/commy-ad003pq/top.jpg",
+    "w": 1200,
+    "h": 1600,
+    "group": "ตัวเครื่อง",
+    "alt": "หัวชาร์จ COMMY สีขาวโลโก้ Rainbow",
+    "summary": "ตัวเล็ก ขาปลั๊กพับไม่ได้",
+    "fit": "contain"
+  },
+  {
+    "id": "7",
+    "title": "เทียบขนาด",
+    "src": "/media/posts/review/commy-ad003pq/size.jpg",
+    "w": 1200,
+    "h": 1600,
+    "group": "ตัวเครื่อง",
+    "alt": "หัวชาร์จวางข้างฟิกเกอร์",
+    "summary": "ตัวเล็กพกง่าย",
+    "fit": "contain"
+  },
+  {
+    "id": "8",
+    "title": "Auto detection ช่อง C",
+    "src": "/media/posts/review/commy-ad003pq/detect-c.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ผลวัดด้วยมิเตอร์",
+    "alt": "POWER-Z ตรวจโปรโตคอลช่อง USB-C",
+    "summary": "PD3.0 30W, PPS, QC4+ ครบตามกล่อง",
+    "readings": [
+      [
+        "PD",
+        "3.0 30W + PPS"
+      ],
+      [
+        "QC",
+        "3+ / 4+"
+      ],
+      [
+        "Huawei",
+        "FCP 5/9/12V · SCP 30W"
+      ],
+      [
+        "Samsung",
+        "AFC 5V, 9V"
+      ]
+    ]
+  },
+  {
+    "id": "9",
+    "title": "Auto detection ช่อง A",
+    "src": "/media/posts/review/commy-ad003pq/detect-a.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ผลวัดด้วยมิเตอร์",
+    "alt": "POWER-Z ตรวจโปรโตคอลช่อง USB-A",
+    "summary": "ช่อง A ไม่มี PD แต่มี QC3+, SCP, FCP, AFC",
+    "readings": [
+      [
+        "QC3+",
+        "5/9/12/20V · 3.6–20V"
+      ],
+      [
+        "Huawei",
+        "FCP 5/9/12V · SCP 30W"
+      ],
+      [
+        "Samsung",
+        "AFC 5V, 9V"
+      ],
+      [
+        "อื่น ๆ",
+        "DCP · Apple 2.4A"
+      ]
+    ]
+  },
+  {
+    "id": "10",
+    "title": "PD 3.0 30W",
+    "src": "/media/posts/review/commy-ad003pq/detect-pd.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ผลวัดด้วยมิเตอร์",
+    "alt": "รายการแรงดัน PD ที่หัวชาร์จประกาศ",
+    "summary": "ตรงกับฉลากทุกค่า",
+    "readings": [
+      [
+        "Fixed",
+        "5V 3A · 9V 3A"
+      ],
+      [
+        "Fixed",
+        "12V 2.5A · 15V 2A · 20V 1.5A"
+      ],
+      [
+        "PPS",
+        "3.3–11V 3A · 3.3–16V 2A"
+      ]
+    ]
+  },
+  {
+    "id": "11",
+    "title": "จ่ายจริง 29W",
+    "src": "/media/posts/review/commy-ad003pq/pd-30w-load.jpg",
+    "w": 1200,
+    "h": 1600,
+    "group": "ผลวัดด้วยมิเตอร์",
+    "alt": "POWER-Z วัดได้ 20.22V 1.44A 29.10W",
+    "summary": "เสียบช่อง C ช่องเดียว จ่ายไฟได้เต็ม 30W จริง",
+    "fit": "contain",
+    "readings": [
+      [
+        "แรงดัน",
+        "20.22V"
+      ],
+      [
+        "กระแส",
+        "1.439A"
+      ],
+      [
+        "กำลัง",
+        "29.10W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.0 30W"
+      ]
+    ],
+    "verdict": [
+      1,
+      "ผ่าน"
+    ]
+  },
+  {
+    "id": "12",
+    "title": "ช่อง A จ่ายจริง",
+    "src": "/media/posts/review/commy-ad003pq/usba-qc2-load.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ผลวัดด้วยมิเตอร์",
+    "alt": "POWER-Z วัดช่อง A ได้ 11.83V 1.44A 16.97W ด้วย QC2.0 12V",
+    "summary": "ช่อง A ชาร์จเร็วได้ตามสเปก",
+    "readings": [
+      [
+        "แรงดัน",
+        "11.83V"
+      ],
+      [
+        "กระแส",
+        "1.435A"
+      ],
+      [
+        "กำลัง",
+        "16.97W"
+      ],
+      [
+        "โปรโตคอล",
+        "QC2.0 12V"
+      ]
+    ],
+    "verdict": [
+      2,
+      "ผ่าน"
+    ],
+    "analysis": [
+      "กำลัง 17W ขึ้นกับว่าเครื่องที่ชาร์จขอไฟเท่าไร ไม่ได้แปลว่าช่อง A จ่ายได้แค่นี้ ที่สำคัญคือขึ้น 12V ชาร์จเร็วได้จริง"
+    ]
+  },
+  {
+    "id": "13",
+    "title": "เสียบพร้อมกันสองช่อง",
+    "src": "/media/posts/review/commy-ad003pq/dual-port.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ผลวัดด้วยมิเตอร์",
+    "alt": "มิเตอร์สองตัววัดตอนเสียบพร้อมกัน ได้ 1.56W และ 0.0075W (เบลอหน้าจอ iPad แล้ว)",
+    "summary": "สเปกเขียน 5V 4A (20W) แต่จ่ายจริงแค่ 1.56W",
+    "readings": [
+      [
+        "มิเตอร์ตัวที่ 1",
+        "4.89V 0.32A 1.56W"
+      ],
+      [
+        "มิเตอร์ตัวที่ 2",
+        "4.975V 0.0015A 0.0075W"
+      ],
+      [
+        "โปรโตคอล",
+        "N/A (ไม่มีชาร์จเร็ว)"
+      ]
+    ],
+    "verdict": [
+      4,
+      "ไม่ผ่าน"
+    ],
+    "caution": "เสียบพร้อมกันสองช่อง หัวชาร์จตัดเหลือ 5V และจ่ายไฟได้แทบไม่มี",
+    "analysis": [
+      "เมื่อเสียบสองช่อง ทั้งสองช่องตกลงมาที่ 5V และไม่มีโปรโตคอลชาร์จเร็ว (N/A)",
+      "ตัวหนึ่งได้ 1.56W อีกตัวแทบเป็นศูนย์ ห่างจาก 20W ที่เขียนบนฉลากมาก ใช้งานจริงควรเสียบทีละช่อง",
+      "เบลอหน้าจอ iPad ด้านขวาแล้ว เพราะมีชื่อคนใน notification"
+    ]
+  },
+  {
+    "id": "14",
+    "title": "ในมือ",
+    "src": "/media/posts/review/commy-ad003pq/hand-logo.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเครื่อง",
+    "alt": "หัวชาร์จ COMMY ในฝ่ามือ",
+    "summary": "เล็กกว่าฝ่ามือ"
+  },
+  {
+    "id": "15",
+    "title": "ด้านหลัง",
+    "src": "/media/posts/review/commy-ad003pq/hand-heart.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเครื่อง",
+    "alt": "ด้านหลังเป็นรูปหัวใจสีรุ้ง",
+    "summary": "ลาย Commy Love"
+  }
+]
