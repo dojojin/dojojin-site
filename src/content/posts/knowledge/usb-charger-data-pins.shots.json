@@ -1,0 +1,314 @@
+[
+  {
+    "id": "1",
+    "title": "ที่ชาร์จ 12W ปลอม",
+    "src": "/media/posts/knowledge/usb-charger-data-pins/fake-12w-label.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ของปลอมดูยังไง",
+    "alt": "ฉลากที่ชาร์จ 12W USB Power Adapter ปลอม เขียน Designed in California และ Company Inc.",
+    "summary": "ปลอมแน่นอน ดูจากคำผิดบนฉลาก",
+    "analysis": [
+      "ของแท้เขียนว่า \"Designed by Apple in California Assembled in China\" แต่ตัวนี้ไม่มีคำว่า by Apple",
+      "คำผิดเพียบ: \"Company Inc.\" แทน Apple Inc., \"technologie equipment\", \"Flextoics\" และรุ่น A5224 (ที่ชาร์จ 12W ของ Apple คือรุ่น A1401)",
+      "ตัวหนังสือคมชัดเกินไป ของแท้พิมพ์สีอ่อน ๆ ซีด ๆ"
+    ],
+    "verdict": [
+      4,
+      "ปลอม"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "สติกเกอร์รับประกัน",
+    "src": "/media/posts/knowledge/usb-charger-data-pins/fake-sticker.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ของปลอมดูยังไง",
+    "alt": "ที่ชาร์จทรง Apple มีสติกเกอร์ IMP 2018 ติดอยู่",
+    "summary": "ของแท้ไม่มีสติกเกอร์แบบนี้",
+    "analysis": [
+      "ที่ชาร์จของ Apple ไม่ติดสติกเกอร์รับประกันของร้าน ถ้าเจอแบบนี้ให้สงสัยไว้ก่อน (ร้านบางร้านอาจติดเองได้ จึงควรดูฉลากประกอบด้วย)"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "ที่ชาร์จทรง Apple",
+    "src": "/media/posts/knowledge/usb-charger-data-pins/adapter-apple21.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ผลวัด D+/D- (ปี 2018)",
+    "alt": "POWER-Z: D+ 2.81V, D− 2.09V, 5.20V มิเตอร์ระบุ Apple 2.1A",
+    "summary": "ค่านี้คือสัญญาณ Apple 2.1A ไม่ใช่ไฟรั่ว",
+    "readings": [
+      [
+        "D+",
+        "2.81V"
+      ],
+      [
+        "D−",
+        "2.09V"
+      ],
+      [
+        "VBUS",
+        "5.20V"
+      ],
+      [
+        "มิเตอร์ระบุ",
+        "Apple 2.1A"
+      ]
+    ],
+    "analysis": [
+      "D+ กับ D− ต่างกัน (2.7V / 2.0V) เป็นการตั้งใจ ที่ชาร์จใช้แรงดันคู่นี้บอก iPhone/iPad ว่าดึงได้ 2.1A ไม่ใช่ไฟรั่วหรือของอันตราย มิเตอร์เองก็อ่านออกมาว่า Apple 2.1A",
+      "5.20V ยังอยู่ในช่วงปกติของ USB (ราว 4.75–5.25V) ที่ชาร์จหลายรุ่นตั้งไว้สูงนิดหน่อยเพื่อชดเชยแรงดันที่ตกในสาย"
+    ]
+  },
+  {
+    "id": "4",
+    "title": "HOCO ที่ชาร์จรถ (ช่อง 1)",
+    "src": "/media/posts/knowledge/usb-charger-data-pins/hoco-apple24.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ผลวัด D+/D- (ปี 2018)",
+    "alt": "POWER-Z: D+ 2.74V, D− 2.73V, 5.22V มิเตอร์ระบุ Apple 2.4A และ DCP 1.5A",
+    "summary": "สัญญาณ Apple 2.4A",
+    "readings": [
+      [
+        "D+",
+        "2.74V"
+      ],
+      [
+        "D−",
+        "2.73V"
+      ],
+      [
+        "VBUS",
+        "5.22V"
+      ],
+      [
+        "มิเตอร์ระบุ",
+        "Apple 2.4A · DCP 1.5A"
+      ]
+    ],
+    "analysis": [
+      "D+ และ D− ประมาณ 2.7V ทั้งคู่ คือสัญญาณ Apple 2.4A (ระดับเดียวกับที่ชาร์จ iPad 12W)"
+    ]
+  },
+  {
+    "id": "5",
+    "title": "HOCO ที่ชาร์จรถ (ช่อง 2)",
+    "src": "/media/posts/knowledge/usb-charger-data-pins/hoco-apple21.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ผลวัด D+/D- (ปี 2018)",
+    "alt": "POWER-Z: D+ 2.78V, D− 2.08V, 5.15V มิเตอร์ระบุ Apple 2.1A",
+    "summary": "ช่องนี้ตั้งสัญญาณ Apple 2.1A ปกติ",
+    "readings": [
+      [
+        "D+",
+        "2.78V"
+      ],
+      [
+        "D−",
+        "2.08V"
+      ],
+      [
+        "VBUS",
+        "5.15V"
+      ],
+      [
+        "มิเตอร์ระบุ",
+        "Apple 2.1A"
+      ]
+    ],
+    "analysis": [
+      "ค่า 2.7V / 2.0V คือสัญญาณ Apple 2.1A ที่ตั้งใจทำ ไม่ใช่ไฟรั่ว"
+    ]
+  },
+  {
+    "id": "6",
+    "title": "HOCO ที่ชาร์จรถ (ช่อง 3)",
+    "src": "/media/posts/knowledge/usb-charger-data-pins/hoco-dcp.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ผลวัด D+/D- (ปี 2018)",
+    "alt": "POWER-Z: D+ 1.66V, D− 1.66V, 5.15V มิเตอร์ระบุ DCP 1.5A",
+    "summary": "อีกช่องเป็นแบบ DCP",
+    "readings": [
+      [
+        "D+",
+        "1.66V"
+      ],
+      [
+        "D−",
+        "1.66V"
+      ],
+      [
+        "VBUS",
+        "5.15V"
+      ],
+      [
+        "มิเตอร์ระบุ",
+        "DCP 1.5A"
+      ]
+    ],
+    "analysis": [
+      "ที่ชาร์จรถตัวเดียวมีหลายช่องที่ตั้งสัญญาณต่างกัน ช่องหนึ่งสำหรับ Apple ช่องหนึ่งสำหรับมือถือทั่วไป ไม่ได้แปลว่าวงจรรั่ว"
+    ]
+  },
+  {
+    "id": "7",
+    "title": "ปลั๊ก USB Panasonic ในร้าน",
+    "src": "/media/posts/knowledge/usb-charger-data-pins/panasonic-socket.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ผลวัด D+/D- (ปี 2018)",
+    "alt": "เต้ารับ USB Panasonic ติดผนังร้าน เขียน 5V 2A USB Charge Only",
+    "summary": "ปลั๊ก USB ในร้านกาแฟ / ฟาสต์ฟู้ด เขียน 2A"
+  },
+  {
+    "id": "8",
+    "title": "Panasonic: D+/D−",
+    "src": "/media/posts/knowledge/usb-charger-data-pins/panasonic-dcp.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ผลวัด D+/D- (ปี 2018)",
+    "alt": "POWER-Z: D+ 1.67V, D− 1.66V, 5.03V มิเตอร์ระบุ DCP 1.5A",
+    "summary": "D+ เท่ากับ D− แบบ DCP",
+    "readings": [
+      [
+        "D+",
+        "1.67V"
+      ],
+      [
+        "D−",
+        "1.66V"
+      ],
+      [
+        "VBUS",
+        "5.03V"
+      ],
+      [
+        "มิเตอร์ระบุ",
+        "DCP 1.5A"
+      ]
+    ],
+    "analysis": [
+      "ช่องแบบ DCP ต่อขา D+ กับ D− เข้าหากัน ไม่มีเส้นทางข้อมูล เป็นสัญญาณที่ดีว่าใช้ชาร์จอย่างเดียว",
+      "แต่การวัดแรงดันอย่างเดียวพิสูจน์ไม่ได้ 100% ว่าไม่มีการดักข้อมูล ถ้ากังวลให้ใช้หัวชาร์จของตัวเอง หรือสาย/อะแดปเตอร์แบบชาร์จอย่างเดียว"
+    ]
+  },
+  {
+    "id": "9",
+    "title": "Panasonic: Auto Enumerate",
+    "src": "/media/posts/knowledge/usb-charger-data-pins/panasonic-enumerate.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ผลวัด D+/D- (ปี 2018)",
+    "alt": "POWER-Z Auto Enumerate ขึ้น USB-DCP-5V-1.5A",
+    "summary": "มิเตอร์อ่านสัญญาณได้ DCP 1.5A",
+    "analysis": [
+      "Auto Enumerate คือการอ่านสัญญาณที่ช่องประกาศ ไม่ได้ลองดึงกระแสจริง จึงบอกไม่ได้ว่าช่องนี้จ่ายได้ 2A ตามที่เขียนหรือไม่ ต้องต่อโหลดแล้ววัดถึงจะรู้",
+      "DCP ย่อมาจาก Dedicated Charging Port (ช่องสำหรับชาร์จอย่างเดียว) ไม่ใช่ Direct Current Power"
+    ]
+  },
+  {
+    "id": "10",
+    "title": "COMMY ช่อง QC 3.0",
+    "src": "/media/posts/knowledge/usb-charger-data-pins/commy-qc3.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ผลวัด D+/D- (ปี 2018)",
+    "alt": "POWER-Z: D+ 0.72V, D− 3.05V, 5.18V 0.76A มิเตอร์ระบุ QC3.0",
+    "summary": "D+ ≈ 0.6V / D− ≈ 3.3V คือมือถือคุยโปรโตคอล QC 3.0",
+    "readings": [
+      [
+        "D+",
+        "0.72V"
+      ],
+      [
+        "D−",
+        "3.05V"
+      ],
+      [
+        "VBUS",
+        "5.18V"
+      ],
+      [
+        "กระแส",
+        "0.76A"
+      ],
+      [
+        "มิเตอร์ระบุ",
+        "QC 3.0"
+      ]
+    ],
+    "analysis": [
+      "ตอนชาร์จ QC 3.0 มือถือเป็นฝ่ายตั้งแรงดันที่ D+/D− เพื่อสั่งให้หัวชาร์จปรับไฟ VBUS ขึ้นลง D+ ไม่ได้ \"เติมไฟ\" ให้มือถือ ไฟที่ชาร์จจริงมาทาง VBUS เท่านั้น",
+      "QC 3.0 ปรับแรงดันได้ราว 3.6–12V ทีละ 200mV"
+    ]
+  },
+  {
+    "id": "11",
+    "title": "COMMY ช่อง AUTO-ID",
+    "src": "/media/posts/knowledge/usb-charger-data-pins/commy-autoid.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ผลวัด D+/D- (ปี 2018)",
+    "alt": "POWER-Z: D+ 0.76V, D− 0.76V, 5.19V 1.42A 7.34W มิเตอร์ระบุ DCP 1.5A",
+    "summary": "ชาร์จ Xperia XZ Premium ได้ 1.42A",
+    "readings": [
+      [
+        "D+",
+        "0.76V"
+      ],
+      [
+        "D−",
+        "0.76V"
+      ],
+      [
+        "VBUS",
+        "5.19V"
+      ],
+      [
+        "กระแส",
+        "1.415A"
+      ],
+      [
+        "มิเตอร์ระบุ",
+        "DCP 1.5A"
+      ]
+    ],
+    "analysis": [
+      "D+ เท่ากับ D− แบบ DCP ขณะชาร์จจริง มือถือดึงได้ 1.42A ช่อง AUTO-ID เป็นช่องที่ปรับสัญญาณตามเครื่องที่เสียบ ไม่รองรับ QC"
+    ]
+  },
+  {
+    "id": "12",
+    "title": "ROMOSS PH-50 Pro",
+    "src": "/media/posts/knowledge/usb-charger-data-pins/romoss-ph50.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ผลวัด D+/D- (ปี 2018)",
+    "alt": "POWER-Z: D+ 2.71V, D− 2.70V, 5.02V มิเตอร์ระบุ Apple 2.4A และ DCP 1.5A",
+    "summary": "พาวเวอร์แบงก์ ROMOSS ตั้งสัญญาณ Apple 2.4A",
+    "readings": [
+      [
+        "D+",
+        "2.71V"
+      ],
+      [
+        "D−",
+        "2.70V"
+      ],
+      [
+        "VBUS",
+        "5.02V"
+      ],
+      [
+        "มิเตอร์ระบุ",
+        "Apple 2.4A · DCP 1.5A"
+      ]
+    ]
+  }
+]
