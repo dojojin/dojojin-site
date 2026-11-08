@@ -5,6 +5,7 @@ import { initializeApp } from "firebase/app";
 import {
   getFirestore, doc, collection, onSnapshot, query, orderBy,
   addDoc, deleteDoc, runTransaction, serverTimestamp,
+  setDoc, getDoc, getDocs, increment, limit,
 } from "firebase/firestore";
 import {
   getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut,
@@ -30,6 +31,7 @@ export function init() {
     // firestore
     doc, collection, onSnapshot, query, orderBy,
     addDoc, deleteDoc, runTransaction, serverTimestamp,
+    setDoc, getDoc, getDocs, increment, limit,
     // auth
     onAuthStateChanged, signInWithPopup, signOut,
   };

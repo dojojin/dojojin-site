@@ -14,6 +14,8 @@ const mixed = (items, n = 3) => {
   for (const i of items) if (!seen.has(i.topic)) { seen.add(i.topic); picks.push(i); }
   return [...picks, ...items.filter((i) => !picks.includes(i))].slice(0, n).sort((a, b) => b.date - a.date);
 };
+// Titles for the client-side "ยอดนิยม" box (filled from Firestore page views by ViewCounter).
+const titles = Object.fromEntries(feed.map((i) => [i.href, i.title]));
 ---
 <Base active="home">
   <section class="hero">
@@ -40,6 +42,11 @@ const mixed = (items, n = 3) => {
           <li><a href={`mailto:${PROFILE.email}`}>ติดต่อ</a></li>
           <li><a href={PROFILE.socials.facebook} rel="noopener">Facebook</a></li>
         </ul>
+        <p class="visitors" data-visitors hidden>ผู้เข้าชมเว็บ <b></b> ครั้ง</p>
+        <div class="popular" data-popular={JSON.stringify(titles)} hidden>
+          <b>ยอดนิยม</b>
+          <ol></ol>
+        </div>
       </aside>
     </div>
   </section>

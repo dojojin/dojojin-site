@@ -20,11 +20,22 @@ service cloud.firestore {
       allow delete: if isOwner();
     }
 
+    // Counters: anyone may add exactly 1 — never set, reset or jump the number.
+    function countOnly() {
+      return request.resource.data.keys().hasOnly(['count']) && request.resource.data.count is int;
+    }
+
     match /meta/visitors {
       allow read: if true;
-      allow create, update: if request.resource.data.keys().hasOnly(['count'])
-        && request.resource.data.count is int
-        && request.resource.data.count >= 0;
+      allow create: if countOnly() && request.resource.data.count == 1;
+      allow update: if countOnly() && request.resource.data.count == resource.data.count + 1;
+    }
+
+    // One doc per page path ("review__oppo-enco-x3s", "home"), incremented once per session.
+    match /pageviews/{pageId} {
+      allow read: if true;
+      allow create: if pageId.matches('^[A-Za-z0-9_.-]{1,120}$') && countOnly() && request.resource.data.count == 1;
+      allow update: if countOnly() && request.resource.data.count == resource.data.count + 1;
     }
 
     match /{document=**} {

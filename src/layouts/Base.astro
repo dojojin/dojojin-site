@@ -1,6 +1,7 @@
 ---
 import '../styles/site.css';
 import Icons from '../components/Icons.astro';
+import ViewCounter from '../components/ViewCounter.astro';
 import { EasterEggs } from '../App.jsx';
 import { PROFILE, NAV, SITE } from '../data/site.js';
 
@@ -10,6 +11,8 @@ const {
   image = '/og-image.png',
   active,
   ogType = 'website',
+  schema = [],      // extra JSON-LD nodes for this page (BlogPosting, BreadcrumbList, …)
+  noindex = false,  // thin pages (404, single-post tags) stay out of search results
 } = Astro.props;
 
 const siteName = 'DOJOJIN.TECH';
@@ -38,6 +41,7 @@ const jsonLd = {
       inLanguage: 'th',
       author: { '@type': 'Person', name: PROFILE.name },
     },
+    ...schema,
   ],
 };
 ---
@@ -50,6 +54,7 @@ const jsonLd = {
   <title>{fullTitle}</title>
   <meta name="description" content={description} />
   <meta name="author" content="Mr. Dojo-mAn (Prakasit)" />
+  <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
   <link rel="canonical" href={url} />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="sitemap" href="/sitemap-index.xml" />
@@ -94,5 +99,6 @@ const jsonLd = {
     </div>
   </footer>
   <EasterEggs client:only="react" />
+  <ViewCounter />
 </body>
 </html>

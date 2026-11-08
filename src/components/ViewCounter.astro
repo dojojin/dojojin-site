@@ -1,0 +1,48 @@
+---
+// Page-view counter (Firestore `pageviews/{id}`): +1 once per browser session per page, then fills
+// [data-views] (post pages), [data-visitors] and [data-popular] (home) when they exist on the page.
+// The site-wide visitor total (`meta/visitors`) is still incremented by EasterEggs in App.jsx.
+// Rules allow exactly +1 per write; until firestore.rules is deployed the writes just fail quietly.
+---
+<script>
+  import { loadFirebase } from '../firebase.js';
+  const idOf = (path) => path.replace(/^\/+|\/+$/g, '').replace(/\//g, '__') || 'home';
+  const fmt = (n) => n.toLocaleString('th-TH');
+  loadFirebase().then(async ({ db, doc, collection, setDoc, getDoc, getDocs, query, orderBy, limit, increment }) => {
+    const id = idOf(location.pathname);
+    const key = `dojojin_pv:${id}`;
+    const ref = doc(db, 'pageviews', id);
+    try {
+      if (!sessionStorage.getItem(key)) {
+        sessionStorage.setItem(key, '1');
+        await setDoc(ref, { count: increment(1) }, { merge: true });
+      }
+    } catch { /* rules not deployed yet, or offline */ }
+
+    const views = document.querySelector('[data-views]');
+    if (views) {
+      const s = await getDoc(ref).catch(() => null);
+      if (s?.exists()) { views.querySelector('b').textContent = fmt(s.data().count); views.hidden = false; }
+    }
+    const visitors = document.querySelector('[data-visitors]');
+    if (visitors) {
+      const s = await getDoc(doc(db, 'meta', 'visitors')).catch(() => null);
+      if (s?.exists()) { visitors.querySelector('b').textContent = fmt(s.data().count); visitors.hidden = false; }
+    }
+    const popular = document.querySelector('[data-popular]');
+    if (popular) {
+      const titles = JSON.parse(popular.dataset.popular);
+      const snap = await getDocs(query(collection(db, 'pageviews'), orderBy('count', 'desc'), limit(20))).catch(() => null);
+      const top = (snap?.docs ?? []).map((d) => ({ href: '/' + d.id.replace(/__/g, '/') + '/', n: d.data().count }))
+        .filter((x) => titles[x.href]).slice(0, 5);
+      if (top.length) {
+        popular.querySelector('ol').replaceChildren(...top.map((x) => {
+          const li = document.createElement('li'), a = document.createElement('a'), n = document.createElement('span');
+          a.href = x.href; a.textContent = titles[x.href]; n.textContent = `${fmt(x.n)} ครั้ง`;
+          li.append(a, n); return li;
+        }));
+        popular.hidden = false;
+      }
+    }
+  }).catch(() => {});
+</script>

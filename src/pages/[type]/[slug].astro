@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import { TYPES, TOPICS, TAGS } from '../../data/site.js';
+import { TYPES, TOPICS, TAGS, PROFILE } from '../../data/site.js';
 
 export async function getStaticPaths() {
   const all = await getCollection('posts', (p) => !p.data.draft);
@@ -15,8 +15,34 @@ const { entry } = Astro.props;
 const { Content, headings } = await render(entry);
 const d = entry.data;
 const toc = headings.filter((h) => h.depth === 2);
+const url = new URL(Astro.url.pathname, Astro.site).href;
+const abs = (u) => new URL(u, Astro.site).href;
+const schema = [
+  {
+    '@type': 'BlogPosting',
+    headline: d.title,
+    description: d.description,
+    image: abs(d.cover),
+    datePublished: d.date.toISOString().slice(0, 10),
+    inLanguage: 'th',
+    url,
+    mainEntityOfPage: url,
+    keywords: d.tags.map((t) => TAGS[t]).join(', '),
+    articleSection: `${TYPES[d.type].name} · ${TOPICS[d.topic].name}`,
+    author: { '@type': 'Person', name: PROFILE.name, alternateName: PROFILE.handle, url: abs('/') },
+    publisher: { '@type': 'Person', name: PROFILE.name },
+  },
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: abs('/') },
+      { '@type': 'ListItem', position: 2, name: TYPES[d.type].name, item: abs(`/${d.type}/`) },
+      { '@type': 'ListItem', position: 3, name: d.title, item: url },
+    ],
+  },
+];
 ---
-<Base title={d.title} description={d.description} image={d.cover} active={d.type} ogType="article">
+<Base title={d.title} description={d.description} image={d.cover} active={d.type} ogType="article" schema={schema}>
   <section class="hero">
     <div class="wrap">
       <div class="hero__text">
@@ -24,7 +50,7 @@ const toc = headings.filter((h) => h.depth === 2);
         <span class="kicker">{d.kicker}</span>
         <h1>{d.title}</h1>
         <p class="lead">{d.lead}</p>
-        <p class="meta">{d.meta} · {d.date.toLocaleDateString('th-TH', { dateStyle: 'long' })}</p>
+        <p class="meta">{d.meta} · {d.date.toLocaleDateString('th-TH', { dateStyle: 'long' })}<span data-views hidden> · เข้าชม <b></b> ครั้ง</span></p>
         {d.tags.length > 0 && <ul class="taglinks" aria-label="tags">{d.tags.map((t) => <li><a href={`/tag/${t}/`}>#{TAGS[t]}</a></li>)}</ul>}
       </div>
       <figure class="hero__media"><img src={d.cover} width="1600" height="1200" alt={d.coverAlt} /></figure>
