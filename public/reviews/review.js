@@ -1,0 +1,62 @@
+// Shared photo viewer for review pages.
+// Page supplies: <script type="application/json" id="shots">[...]</script>, a .gallery, and a dialog.viewer.
+// Data is author-written (trusted), so template strings are fine here.
+const shots = JSON.parse(document.getElementById('shots').textContent);
+const gallery = document.querySelector('.gallery');
+const dlg = document.querySelector('.viewer');
+const $ = (sel) => dlg.querySelector(sel);
+const icon = (id) => `<svg class="icon" aria-hidden="true"><use href="#${id}"/></svg>`;
+const badge = ([tier, label]) =>
+  `<span class="badge tier-${tier}">${icon(tier === 5 ? 'icon-alert' : 'icon-dot')}${label}</span>`;
+let current = 0;
+
+gallery.innerHTML = shots.map((s, i) => `
+  <button class="shot" type="button" data-i="${i}" aria-label="ดูรายละเอียดรูป ${s.id}">
+    <div class="shot__img">
+      <img src="${s.src}" width="${s.w}" height="${s.h}" loading="lazy" alt="${s.alt}">
+      <span class="shot__hint">${icon('icon-expand')}รายละเอียด</span>
+    </div>
+    <div class="shot__body">
+      <div class="shot__label">${s.id}</div>
+      <dl class="readings">${s.readings.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
+    </div>
+  </button>`).join('');
+
+function show(i) {
+  current = (i + shots.length) % shots.length;
+  const s = shots[current];
+  const img = $('.viewer__stage img');
+  img.src = s.src; img.alt = s.alt; img.width = s.w; img.height = s.h;
+  $('.viewer__count').textContent = `${current + 1} / ${shots.length}`;
+  $('#viewer-title').textContent = `รูป ${s.id}`;
+  $('[data-verdict]').innerHTML = badge(s.verdict);
+  $('[data-dyn]').innerHTML = `
+    <p class="viewer__summary">${s.summary}</p>
+    <table class="scorecard">
+      <thead><tr><th>เกณฑ์</th><th>ค่า</th><th></th></tr></thead>
+      <tbody>${s.score.map(([name, val, sub, tier, label]) => `
+        <tr><td>${name}</td><td><span class="val">${val}</span>${sub ? `<span class="sub">${sub}</span>` : ''}</td><td>${badge([tier, label])}</td></tr>`).join('')}
+      </tbody>
+    </table>
+    ${s.caution ? `<div class="caution">${icon('icon-alert')}<span>${s.caution}</span></div>` : ''}
+    <h3>อ่านจากรูปนี้</h3>
+    ${s.analysis.map((p) => `<p>${p}</p>`).join('')}
+    <h3>ค่าบนหน้าจอ</h3>
+    <ul class="legend">${s.screen.map(([k, v]) => `<li><b>${k}</b><span>${v}</span></li>`).join('')}</ul>`;
+  $('.viewer__panel').scrollTop = 0;
+}
+
+gallery.addEventListener('click', (e) => {
+  const b = e.target.closest('.shot');
+  if (!b) return;
+  show(+b.dataset.i);
+  dlg.showModal();
+});
+$('.viewer__nav--prev').addEventListener('click', () => show(current - 1));
+$('.viewer__nav--next').addEventListener('click', () => show(current + 1));
+$('[data-close]').addEventListener('click', () => dlg.close());
+dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); }); // backdrop
+dlg.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') show(current - 1);
+  if (e.key === 'ArrowRight') show(current + 1);
+});
