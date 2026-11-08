@@ -34,8 +34,8 @@ export const TAGS = {
   price: "ราคา",
   hoco: "HOCO", powerbank: "Power Bank", "retro-game": "เกมย้อนยุค",
   oppo: "OPPO", dynaudio: "Dynaudio", anc: "ANC", lhdc: "LHDC",
-  "northern-thai": "อาหารเหนือ", suphanburi: "สุพรรณบุรี",
-  orsen: "ORSEN", commy: "COMMY", slimq: "SlimQ",
+  "northern-thai": "อาหารเหนือ", suphanburi: "สุพรรณบุรี", "thai-food": "อาหารไทย", cafe: "คาเฟ่",
+  orsen: "ORSEN", commy: "COMMY", slimq: "SlimQ", realme: "realme",
 };
 
 // Main menu — used by src/layouts/Base.astro and by scripts/patch-atlas.mjs (top bar on atlas pages).
