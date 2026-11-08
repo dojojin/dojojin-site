@@ -42,7 +42,6 @@ const titles = Object.fromEntries(feed.map((i) => [i.href, i.title]));
           <li><a href={`mailto:${PROFILE.email}`}>ติดต่อ</a></li>
           <li><a href={PROFILE.socials.facebook} rel="noopener">Facebook</a></li>
         </ul>
-        <p class="visitors" data-visitors hidden>ผู้เข้าชมเว็บ <b></b> ครั้ง</p>
         <div class="popular" data-popular={JSON.stringify(titles)} hidden>
           <b>ยอดนิยม</b>
           <ol></ol>
