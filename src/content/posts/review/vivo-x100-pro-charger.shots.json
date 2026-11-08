@@ -1,0 +1,191 @@
+[
+  {
+    "id": "1",
+    "title": "ฉลาก vivo FlashCharge 120W",
+    "src": "/media/posts/review/vivo-x100-pro-charger/label.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเครื่อง",
+    "alt": "ฉลากหัวชาร์จ vivo FlashCharge 120W รุ่น V12060L1H1-TL",
+    "summary": "120W ผ่าน VFCP ส่วน PD/PPS สูงสุด 100W",
+    "screenTitle": "ข้อความบนฉลาก",
+    "screen": [
+      [
+        "Model",
+        "V12060L1H1-TL"
+      ],
+      [
+        "Input",
+        "100–240V 50/60Hz 3A"
+      ],
+      [
+        "Output",
+        "5V 3A 15W · 9V 2A 18W · 11V 6A max 66W · 20V 6A max 120W"
+      ],
+      [
+        "PDO",
+        "5V 3A · 9V 3A · 12V 3A · 15V 3A · 20V 5A max 100W"
+      ],
+      [
+        "PPS",
+        "5.0–20.0V 5.0A max 100W"
+      ],
+      [
+        "มาตรฐาน",
+        "TIS 62368 Part 1-2563"
+      ]
+    ],
+    "analysis": [
+      "120W ได้เฉพาะโปรโตคอลของ vivo เอง (20V 6A) ส่วนมาตรฐานกลาง USB PD และ PPS ได้สูงสุด 100W (20V 5A)"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Auto detection",
+    "src": "/media/posts/review/vivo-x100-pro-charger/detect-auto.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ผลวัด",
+    "alt": "POWER-Z ตรวจพบ UFCS 33W, QC2.0, PD3.0 100W PPS QC5 และ DCP",
+    "summary": "รองรับทั้งโปรโตคอลกลางและ UFCS",
+    "readings": [
+      [
+        "PD",
+        "3.0 100W + PPS"
+      ],
+      [
+        "QC",
+        "2.0 (5V, 9V) · QC5"
+      ],
+      [
+        "UFCS",
+        "33W"
+      ],
+      [
+        "อื่น ๆ",
+        "DCP"
+      ]
+    ],
+    "analysis": [
+      "UFCS คือมาตรฐานชาร์จเร็วกลางของจีนที่หลายแบรนด์ใช้ร่วมกัน"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "รายการ PD 100W",
+    "src": "/media/posts/review/vivo-x100-pro-charger/detect-pd.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ผลวัด",
+    "alt": "POWER-Z แสดง PD3.0 100W: 5/9/12/15V 3A, 20V 5A, PPS 5–20V 5A",
+    "summary": "PPS 5A ถึง 20V",
+    "readings": [
+      [
+        "Fixed",
+        "5 / 9 / 12 / 15V 3A"
+      ],
+      [
+        "Fixed",
+        "20V 5A"
+      ],
+      [
+        "PPS",
+        "5.00–20.00V 5.00A"
+      ]
+    ],
+    "analysis": [
+      "PPS 5A ทำให้ Samsung ที่ชาร์จเร็ว 45W ใช้หัวชาร์จนี้ได้"
+    ]
+  },
+  {
+    "id": "4",
+    "title": "หัวชาร์จ vivo ผ่าน VFCP",
+    "src": "/media/posts/review/vivo-x100-pro-charger/vivo-vfcp-82w.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ผลวัด",
+    "alt": "POWER-Z วัดได้ 17.64V 4.63A 81.70W โปรโตคอล VFCP 85.4W",
+    "summary": "ชาร์จ X100 Pro ผ่าน VFCP ได้ราว 82W",
+    "readings": [
+      [
+        "แรงดัน",
+        "17.64V"
+      ],
+      [
+        "กระแส",
+        "4.631A"
+      ],
+      [
+        "กำลัง",
+        "81.70W"
+      ],
+      [
+        "โปรโตคอล",
+        "VFCP 85.4W (17.81V 4.80A)"
+      ]
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Baseus PD 100W",
+    "src": "/media/posts/review/vivo-x100-pro-charger/baseus-pd-82w.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ผลวัด",
+    "alt": "POWER-Z วัดได้ 17.81V 4.61A 82.05W ผ่าน PD3.0 PPS",
+    "summary": "หัวชาร์จ PD ทั่วไปก็ชาร์จ X100 Pro ได้เท่ากัน",
+    "readings": [
+      [
+        "แรงดัน",
+        "17.81V"
+      ],
+      [
+        "กระแส",
+        "4.608A"
+      ],
+      [
+        "กำลัง",
+        "82.05W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.0 82W (PPS 18.00V 4.60A)"
+      ]
+    ],
+    "analysis": [
+      "X100 Pro ขอ PPS ราว 18V 4.6A จากหัวชาร์จ PD ได้กำลังพอ ๆ กับใช้ VFCP ของ vivo เอง"
+    ]
+  },
+  {
+    "id": "6",
+    "title": "สายในกล่อง (e-marker)",
+    "src": "/media/posts/review/vivo-x100-pro-charger/cable-emarker.jpg",
+    "w": 1600,
+    "h": 860,
+    "group": "ผลวัด",
+    "alt": "POWER-Z อ่าน e-marker ของสาย vivo: Passive cable, 20V 5A, USB 2.0 only",
+    "summary": "สาย vivo แท้ แต่ e-marker บอกแค่ 5A",
+    "readings": [
+      [
+        "Vendor",
+        "VIVO (0x2d95)"
+      ],
+      [
+        "Supply",
+        "20V 5A"
+      ],
+      [
+        "Speed",
+        "USB 2.0 only"
+      ],
+      [
+        "Type",
+        "Passive Cable"
+      ]
+    ],
+    "analysis": [
+      "ในมาตรฐาน USB PD ช่องบอกกระแสของ e-marker มีให้เลือกแค่ 3A หรือ 5A เท่านั้น สายที่ทำมาให้รับได้ 6A จึงต้องประกาศเป็น 5A",
+      "กระแส 6A ใช้ได้เฉพาะตอนคุยด้วยโปรโตคอลของ vivo เอง"
+    ]
+  }
+]

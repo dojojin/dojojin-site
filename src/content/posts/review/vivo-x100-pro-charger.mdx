@@ -1,0 +1,94 @@
+---
+title: "หัวชาร์จที่แถมกับ vivo X100 Pro (FlashCharge 120W)"
+topic: power
+type: review
+tags: [vivo, usb-pd]
+date: 2024-08-13 # label photo date — owner may give the exact FB post date
+description: "หัวชาร์จ vivo FlashCharge 120W ที่มาในกล่อง X100 Pro ชาร์จได้ peak 87W ผ่าน VFCP และรองรับ PD 100W + PPS 5A ทำให้ใช้กับมือถือยี่ห้ออื่นได้ด้วย"
+kicker: "#MiniReview · Charger"
+lead: "ทดสอบหัวชาร์จที่แถมมากับ vivo X100 Pro เทียบกับหัวชาร์จ PD 100W ทั่วไป ผลคือได้ไฟพอ ๆ กัน และหัวชาร์จของ vivo ก็ใช้กับมือถือยี่ห้ออื่นได้ดี"
+meta: "Dojo-mAn Fotographer · วัดเองด้วย POWER-Z KM003C"
+cover: "/media/posts/review/vivo-x100-pro-charger/label.jpg"
+coverAlt: "ฉลากหัวชาร์จ vivo FlashCharge 120W"
+---
+import SpecTable from '../../../components/SpecTable.astro';
+import ShotGallery from '../../../components/ShotGallery.astro';
+import shots from './vivo-x100-pro-charger.shots.json';
+import spec from './vivo-x100-pro-charger.spec.json';
+
+<section class="section">
+
+## Short Brief
+
+<div class="split">
+<div class="prose">
+
+ก่อนทดสอบ X100 Pro มีแบตเหลือ 5%
+
+- ชาร์จด้วยหัวชาร์จที่มาในกล่อง ไฟวิ่งไป peak ที่ **87W** ด้วยโปรโตคอล **VFCP** (vivo FlashCharge)
+- สลับไปชาร์จด้วย **Baseus PD 100W** ไฟวิ่งไปเท่ากัน peak ที่ **87W** ด้วยโปรโตคอล **PD 3.0** (PPS)
+- แปลว่า X100 Pro รองรับมาตรฐานกลางอย่าง PD และ PPS ด้วย ใครมีสาย 5A กับหัวชาร์จ PD (PPS) ก็ชาร์จไวได้เหมือนกัน ตรงนี้ดีมากครับสำหรับ vivo
+
+</div>
+<div class="proscons proscons--stack">
+  <div class="pros">
+    <h3><svg class="icon" aria-hidden="true"><use href="#icon-dot" /></svg>จุดเด่น</h3>
+    <ul>
+      <li>VFCP สูงสุด 120W ตามฉลาก</li>
+      <li>PD 100W และ PPS 5–20V 5A ใช้กับโน้ตบุ๊กและมือถือยี่ห้ออื่นได้</li>
+      <li>Samsung S23 Ultra / S24 Ultra ชาร์จได้ระดับ 40W เพราะรองรับ PPS 5A</li>
+      <li>มี มอก. 62368</li>
+    </ul>
+  </div>
+  <div class="cons">
+    <h3><svg class="icon" aria-hidden="true"><use href="#icon-alert" /></svg>ข้อสังเกต</h3>
+    <ul>
+      <li>วัดไม่ได้ว่า VFCP จ่ายได้ 120W จริงไหม</li>
+      <li>ใช้กับหัวชาร์จ PD ทั่วไปได้ไฟพอ ๆ กัน จึงไม่จำเป็นต้องพกหัวของ vivo เสมอ</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## Specification
+
+<SpecTable groups={spec} legend="ป้ายบอกที่มาของข้อมูล: ฉลาก = ฉลากบนหัวชาร์จ · มิเตอร์ = วัดเองด้วย POWER-Z KM003C · ผู้รีวิว = จากการใช้งานจริง" />
+
+</section>
+
+<section class="section">
+
+## ข้อสังเกต
+
+<div class="grade-grid">
+  <article class="grade-card">
+    <h3>วัด 120W ไม่ได้</h3>
+    <p>มิเตอร์ตรวจเจอ VFCP ได้ แต่สั่งบังคับเปิดโหมดนี้เพื่อทดสอบเองไม่ได้ และ POWER-Z KM003C รับกระแสได้สูงสุด 6A ตามคู่มือ ส่วน 120W ต้องใช้ 20V 6A ซึ่งชนเพดานเครื่องวัดพอดี ที่วัดได้จึงเป็นกำลังที่ X100 Pro ดึงจริงตอนนั้น (ราว 82–87W)</p>
+  </article>
+  <article class="grade-card">
+    <h3>ใช้กับมือถือยี่ห้ออื่น</h3>
+    <p>หัวชาร์จนี้ประกาศ PPS 5–20V 5A ใครมี Samsung S23 Ultra หรือ S24 Ultra เอาไปชาร์จได้ไฟระดับ 40W เลย เพราะรองรับ PPS 5A (Programmable Power Supply)</p>
+  </article>
+  <article class="grade-card">
+    <h3>สาย 6A แต่ e-marker บอก 5A</h3>
+    <p>e-marker บอกว่าสายเป็นของ vivo แท้ รับไฟ 20V 5A ทั้งที่สายเขียนว่ารับ 6A คำตอบคือในมาตรฐาน USB PD ช่องบอกกระแสของ e-marker มีให้เลือกแค่ 3A หรือ 5A สายที่รับได้ 6A จึงต้องประกาศเป็น 5A และกระแส 6A ใช้ได้เฉพาะตอนคุยด้วยโปรโตคอลของ vivo เอง</p>
+  </article>
+</div>
+
+<p class="prose">อ่านเพิ่ม: <a href="/review/slimq-f100/">SlimQ F100</a> ที่ชาร์จ vivo X300 Pro ผ่าน VFCP ได้เหมือนกัน · <a href="/knowledge/charger-ripple-guide/">คู่มืออ่านค่า Ripple ของหัวชาร์จ</a></p>
+
+</section>
+
+<section class="section">
+
+## ภาพประกอบ
+
+<p class="prose">กดที่รูปเพื่อดูค่าที่วัดได้และคำอธิบาย</p>
+
+<ShotGallery shots={shots} />
+
+</section>
