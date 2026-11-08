@@ -8,56 +8,59 @@
 
 ## ภาพรวม
 
-Personal portfolio + interactive guestbook ของ DOJOJIN.TECH
-มีหน้าโชว์โปรเจกต์วิศวกรรม, เอฟเฟกต์ CCTV/terminal, visitor counter, และ guestbook real-time บน Firestore
+เว็บความรู้ + รีวิวของ DOJOJIN.TECH (Dojo-mAn) สร้างด้วย **Astro** (static) — เมนูตามประเภท:
+Home · Review · ความรู้ · กิน & เที่ยว · Data · Projects · Guestbook · เว็บเก่าแบบ CCTV/terminal เก็บไว้ที่ `/lab`
 
-**Tech stack:** React 19 · Vite 5 · Firebase (App/Auth/Firestore) · Tailwind/PostCSS · ESLint (React Hooks)
-ทั้งแอปอยู่ใน `src/App.jsx` ไฟล์เดียว (~108KB) — **ไม่มี client-side router** (เป็น SPA หน้าเดียว เสิร์ฟ static ได้เลย)
+**Tech stack:** Astro 7 (MDX, sitemap, React island) · React 19 (เฉพาะ `/lab` + guestbook) · Firebase (Auth/Firestore) · Node 22 (`.node-version`)
 
 ## คำสั่งหลัก
 
 ```bash
-npm install        # ติดตั้ง dependencies
-npm run dev        # dev server → http://localhost:5173
-npm run build      # build production → dist/
-npm run preview    # พรีวิวไฟล์ build
-npm run lint       # ESLint
+npm install
+npm run dev        # http://localhost:4321
+npm run build      # → dist/ (static)
+npm run preview    # เสิร์ฟ dist/
+npm run lint
+node scripts/patch-atlas.mjs   # สร้างหน้า Price Atlas ใหม่ (ดูหัวข้อ Data)
 ```
 
 ## โครงสร้างไฟล์สำคัญ
 
 | ไฟล์ | หน้าที่ |
 |------|---------|
-| `src/App.jsx` | ทั้งแอป (UI, guestbook, effects) |
-| `src/firebase.js` | init Firebase App/Auth/Firestore |
-| `src/main.jsx` | entry point |
-| `vite.config.js` | manualChunks (react/firebase) + `server.host`/`allowedHosts` |
+| `src/data/site.js` | TYPES (เมนู), TOPICS (หมวด), TAGS (รายชื่อ tag), NAV, PROFILE, ข้อมูล /lab |
+| `src/content/posts/<type>/<slug>.mdx` | บทความ (+ `.shots.json`, `.spec.json`) |
+| `src/content/projects/<slug>.mdx` | หน้าโปรเจกต์ (Vigil = teaser เท่านั้น, business confidential) |
+| `src/content.config.js` | schema ของ content (tag นอกรายชื่อ = build ล้ม) |
+| `src/pages/` | routes: `[type]/`, `[type]/[slug]`, `tag/`, `projects/`, `guestbook`, `lab`, `404` |
+| `src/components/` | ShotGallery (modal ซูมได้), SpecTable, PostCard, … |
+| `src/App.jsx` | เว็บเก่า (React) ใช้ที่ `/lab` + guestbook + easter eggs |
+| `src/styles/site.css` | token + layout ทั้งเว็บ |
 | `firestore.rules` | security rules ของ guestbook |
-| `.env.local` | `VITE_OWNER_EMAILS` = อีเมลที่ลบคอมเมนต์ได้ (dojojin@gmail.com) — **local/dev เท่านั้น**; prod ตั้งใน Cloudflare Pages dashboard |
 
 ## Environment / Config
 
-- `VITE_OWNER_EMAILS` — รายชื่ออีเมล Google (คั่นด้วย comma) ที่มีสิทธิ์ลบคอมเมนต์ guestbook
-  - **สำคัญ:** prefix `VITE_` = ฝังตอน build → บน prod ต้องตั้งใน **Cloudflare Pages → Settings → Environment variables** (CI ไม่มี `.env.local` ที่ถูก gitignore)
-- `vite.config.js > server` (สำหรับ dev เท่านั้น): `host: true` + `allowedHosts: ['.trycloudflare.com']` — ไว้เปิด dev server ผ่าน Cloudflare quick tunnel ตอนพัฒนา ไม่เกี่ยวกับ prod
+- `VITE_OWNER_EMAILS` — อีเมลที่ลบคอมเมนต์ guestbook ได้ (ฝังตอน build) → ตั้งใน **Cloudflare Pages → Settings → Environment variables ทั้ง Production และ Preview**; `.env.local` ใช้แค่ในเครื่อง
+- `PUBLIC_DOCS_URL` — (ไม่บังคับ) ชี้ลิงก์ docs ใน `/lab` ไปเครื่อง local ตอนทดสอบ
+- Firebase Auth → **Authorized domains** ต้องมี `dojojin.tech` (และโดเมน `*.pages.dev` ของ preview ถ้าจะทดสอบ sign-in บน preview)
 
 ---
 
 ## การ Deploy (production) — DOJOJIN.TECH
 
-Production เสิร์ฟบน **Cloudflare Pages** (Git integration) — **deploy = `git push origin main`**
-Cloudflare build จาก repo ให้เอง ไม่มี server/nginx/tunnel ให้ดูแล
+Cloudflare Pages (Git integration) — **deploy = `git push origin main`** · branch อื่นได้ preview URL อัตโนมัติ
 
-**Cloudflare Pages settings (ตั้งครั้งเดียวใน dashboard):**
-- Build command: `npm run build`
-- Build output directory: `dist`
-- Production branch: `main` (branch/PR อื่น ได้ preview URL อัตโนมัติ)
-- Environment variables → `VITE_OWNER_EMAILS` (ดูด้านล่าง)
+| Pages setting | ค่า |
+|---|---|
+| Framework preset | Astro (หรือ None) |
+| Build command | `npm run build` |
+| Build output | `dist` |
+| Node | อ่านจาก `.node-version` (22.23.1) |
+| Production branch | `main` |
 
-**Firestore rules** deploy แยกผ่าน Firebase (ไม่เกี่ยวกับ Pages):
-```bash
-firebase deploy --only firestore:rules
-```
+Firestore rules deploy แยก: `firebase deploy --only firestore:rules`
+
+**Rollback:** Pages → Deployments → เลือก deploy ก่อนหน้า → *Rollback* (ทันที) · โค้ดเว็บเก่าอยู่ที่ tag `pre-astro-backup`
 
 ---
 
@@ -65,8 +68,9 @@ firebase deploy --only firestore:rules
 
 | อาการ | สาเหตุ | วิธีแก้ |
 |-------|--------|--------|
-| owner mode ลบคอมเมนต์ไม่ได้บน prod | ไม่ได้ตั้ง `VITE_OWNER_EMAILS` ใน Pages (CI ไม่มี `.env.local`) | ตั้งใน Pages → Settings → Environment variables แล้ว re-deploy |
-| build fail บน Pages | node version / lockfile ไม่ตรง | ตั้ง `NODE_VERSION` ใน Pages env, commit `package-lock.json` เข้า repo |
+| owner mode ลบคอมเมนต์ไม่ได้ | ไม่ได้ตั้ง `VITE_OWNER_EMAILS` ใน Pages (environment นั้น) | ตั้งแล้ว re-deploy |
+| sign-in guestbook บน preview ไม่ได้ | โดเมน `*.pages.dev` ไม่อยู่ใน Firebase Authorized domains | เพิ่มใน Firebase console |
+| build ล้มเรื่อง tag | tag ในบทความไม่อยู่ใน `TAGS` | เพิ่มใน `src/data/site.js` ก่อน |
 | push แล้วเว็บไม่อัปเดต | Pages build ยังไม่เสร็จ/ล้ม | ดู log ที่ Pages → Deployments |
 
 ---
@@ -124,7 +128,7 @@ firebase deploy --only firestore:rules
 
 ## ข้อควรระวัง
 
-- **`VITE_*` = ฝังตอน build** → ค่า prod ต้องตั้งใน **Cloudflare Pages dashboard** ไม่ใช่ `.env.local` (ถูก gitignore, CI ไม่เห็น)
-- push ขึ้น `main` = deploy prod ทันที — ระวังของยังไม่พร้อม (ใช้ branch/PR เพื่อ preview ก่อน)
-- ไม่มี client-side router (SPA หน้าเดียว) — ไม่ต้องมี `_redirects`/rewrite rule
-- ทั้งแอปอยู่ใน `App.jsx` ไฟล์เดียว ระวัง merge conflict เวลาแก้
+- push ขึ้น `main` = deploy prod ทันที — ใช้ branch เพื่อดู preview ก่อน และ **ต้องได้คำสั่งเจ้าของก่อน push ทุกครั้ง**
+- `_sources/` (รูปเต็มมี GPS, ไฟล์ต้นฉบับ) gitignored — ห้าม commit
+- Vigil Platform / Vigil Mobile เป็น business confidential — ห้ามใส่ vendor/protocol/architecture ทั้งหน้าทางการและ `/lab`
+- `VITE_*` ฝังตอน build → ค่า prod/preview ตั้งใน Cloudflare dashboard

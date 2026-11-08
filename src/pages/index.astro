@@ -7,6 +7,13 @@ import { getFeed } from '../lib/feed.js';
 const feed = await getFeed();
 // One section per menu type, same order as the menu; empty types are skipped.
 const sections = Object.entries(TYPES).map(([type, t]) => ({ type, t, items: feed.filter((i) => i.type === type) })).filter((s) => s.items.length);
+// Home shows 3 cards per type, mixed across categories: newest of each topic first (feed is newest-first),
+// then the rest by date — so one busy category (e.g. chargers) can't fill the whole row.
+const mixed = (items, n = 3) => {
+  const seen = new Set(), picks = [];
+  for (const i of items) if (!seen.has(i.topic)) { seen.add(i.topic); picks.push(i); }
+  return [...picks, ...items.filter((i) => !picks.includes(i))].slice(0, n).sort((a, b) => b.date - a.date);
+};
 ---
 <Base active="home">
   <section class="hero">
@@ -46,7 +53,7 @@ const sections = Object.entries(TYPES).map(([type, t]) => ({ type, t, items: fee
             <a class="more" href={`/${type}/`}>ดูทั้งหมด ({items.length}) <svg class="icon" aria-hidden="true"><use href="#icon-next" /></svg></a>
           </div>
           <p class="meta" style="margin:0 0 var(--space-2)">{t.blurb}</p>
-          <div class="gallery">{items.slice(0, 3).map((i) => <PostCard item={i} />)}</div>
+          <div class="gallery">{mixed(items).map((i) => <PostCard item={i} />)}</div>
         </section>
       ))}
 
