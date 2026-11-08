@@ -1,0 +1,895 @@
+[
+  {
+    "id": "1",
+    "title": "กล่อง",
+    "src": "/media/posts/review/slimq-f100/box-front.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "กล่อง SlimQ สีเทาเข้ม",
+    "summary": "กล่องเรียบ ๆ โลโก้ส้ม Make Charging Easier & Faster"
+  },
+  {
+    "id": "2",
+    "title": "หลังกล่อง",
+    "src": "/media/posts/review/slimq-f100/box-back.jpg",
+    "w": 1600,
+    "h": 1204,
+    "group": "แกะกล่อง",
+    "alt": "สเปกหลังกล่อง SlimQ F100",
+    "summary": "สเปก รายชื่ออุปกรณ์ที่รองรับ และมาตรฐาน",
+    "screenTitle": "ข้อความหลังกล่อง",
+    "screen": [
+      [
+        "Model",
+        "F100"
+      ],
+      [
+        "GaN Chip",
+        "Navitas GaNFast 6117"
+      ],
+      [
+        "Type C",
+        "PD3.0, PPS, QC2.0–4.0, FCP, SCP, AFC, SFCP, PE"
+      ],
+      [
+        "Type A",
+        "QC2.0/3.0, FCP, SCP, AFC, SFCP, PE"
+      ],
+      [
+        "Input",
+        "AC 100V–240V 50/60Hz 1.2A"
+      ],
+      [
+        "Type C1/C2",
+        "Max 100W"
+      ],
+      [
+        "Type A1/A2",
+        "5V 4.5A / 4.5V 5A / 9V 3A / 12V 2.5A"
+      ],
+      [
+        "Size / Weight",
+        "70 × 68.5 × 29 มม. · 205 กรัม"
+      ]
+    ],
+    "analysis": [
+      "ไฟเข้าบนกล่องเขียน 1.2A แต่ฉลากบนตัวเครื่องเขียน 2A ผมยึดตามฉลากบนตัวเครื่อง"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "คู่มือ",
+    "src": "/media/posts/review/slimq-f100/manual.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "แกะกล่อง",
+    "alt": "คู่มือ SlimQ F100 และการ์ดแบรนด์ วางข้างหัวชาร์จ",
+    "summary": "We believe chargers should be made small, powerful, multi-ports and good looking"
+  },
+  {
+    "id": "4",
+    "title": "ด้านหน้า",
+    "src": "/media/posts/review/slimq-f100/front.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเครื่อง",
+    "alt": "หัวชาร์จ SlimQ หน้าผ้าสีเทาเข้ม โลโก้สีแดง",
+    "summary": "หน้าเป็นผิวผ้า ไม่เหมือนหัวชาร์จทั่วไป",
+    "analysis": [
+      "หน้าเครื่องหุ้มผิวลายผ้าสีเทาเข้ม โลโก้สีแดงมุมขวาล่าง ดูเป็นของแต่งโต๊ะมากกว่าหัวชาร์จ"
+    ]
+  },
+  {
+    "id": "5",
+    "title": "ช่องชาร์จ",
+    "src": "/media/posts/review/slimq-f100/ports.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเครื่อง",
+    "alt": "ช่อง USB-A สองช่องสีส้ม และ USB-C สองช่อง",
+    "summary": "4 ช่อง: USB-A × 2 · USB-C × 2"
+  },
+  {
+    "id": "6",
+    "title": "ขาปลั๊กพับได้",
+    "src": "/media/posts/review/slimq-f100/side-prongs.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเครื่อง",
+    "alt": "ด้านข้างหัวชาร์จ ขาปลั๊กพับเก็บ",
+    "summary": "ขาปลั๊กพับเก็บได้ พกใส่กระเป๋าไม่ขูดของ"
+  },
+  {
+    "id": "7",
+    "title": "ฉลาก",
+    "src": "/media/posts/review/slimq-f100/label.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเครื่อง",
+    "alt": "ฉลาก SlimQ 100W GaN Charger รุ่น F100",
+    "summary": "สเปกบนตัวเครื่องและมาตรฐานที่ผ่าน",
+    "screenTitle": "ข้อความบนฉลาก",
+    "screen": [
+      [
+        "Model",
+        "F100"
+      ],
+      [
+        "Input",
+        "100–240V 50/60Hz 2A"
+      ],
+      [
+        "Output",
+        "Max 100W"
+      ],
+      [
+        "USB C1/C2",
+        "Max 100W, PD3.0, PPS · 5V/9V/12V/15V 3A, 20V 5A, 5V 4.5A, 4.5V 5A"
+      ],
+      [
+        "USB A1/A2",
+        "Max 30W, QC3.0 · 5V 4.5A, 4.5V 5A, 9V 3A, 12V 2.5A"
+      ],
+      [
+        "มาตรฐาน",
+        "CE, FCC, UKCA, PSE, CQC, RoHS · GaNFast"
+      ]
+    ]
+  },
+  {
+    "id": "8",
+    "title": "วางบนโน้ตบุ๊ก",
+    "src": "/media/posts/review/slimq-f100/on-laptop.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเครื่อง",
+    "alt": "SlimQ วางบนโน้ตบุ๊ก",
+    "summary": "ขนาดราว 7 × 7 ซม. หนา 2.9 ซม."
+  },
+  {
+    "id": "9",
+    "title": "Auto detection",
+    "src": "/media/posts/review/slimq-f100/detect-auto.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตรวจโปรโตคอล",
+    "alt": "POWER-Z ตรวจโปรโตคอลช่อง USB-C",
+    "summary": "PD3.0 100W, PPS, QC5 และโปรโตคอลมือถือครบ",
+    "readings": [
+      [
+        "PD",
+        "3.0 100W + PPS"
+      ],
+      [
+        "QC",
+        "3.0 · QC5"
+      ],
+      [
+        "Huawei",
+        "FCP · SCP"
+      ],
+      [
+        "อื่น ๆ",
+        "AFC · SFCP · DCP SAM 2A · Apple 2.4A"
+      ]
+    ],
+    "analysis": [
+      "มิเตอร์เจอ QC5 ด้วย ซึ่งกล่องเขียนไว้แค่ QC2.0–4.0"
+    ]
+  },
+  {
+    "id": "10",
+    "title": "รายการ PD 100W",
+    "src": "/media/posts/review/slimq-f100/detect-pd.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตรวจโปรโตคอล",
+    "alt": "POWER-Z แสดง PD3.0 100W",
+    "summary": "20V 5A และ PPS กว้างถึง 21V",
+    "readings": [
+      [
+        "Fixed",
+        "5 / 9 / 12 / 15V 3A"
+      ],
+      [
+        "Fixed",
+        "20V 5A"
+      ],
+      [
+        "PPS",
+        "3.3–21V 3A"
+      ]
+    ],
+    "analysis": [
+      "PPS ไปได้ถึง 21V ที่ 3A (สูงสุดราว 63W) กว้างกว่าหัวชาร์จทั่วไปที่ PPS มักหยุดที่ 11V หรือ 16V",
+      "20V 5A = 100W ต้องใช้สาย USB-C 5A ที่มี e-marker"
+    ]
+  },
+  {
+    "id": "11",
+    "title": "Huawei SCP 40W",
+    "src": "/media/posts/review/slimq-f100/detect-scp.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตรวจโปรโตคอล",
+    "alt": "POWER-Z แสดง SCP 40W",
+    "summary": "SCP 3.3–12V สูงสุด 4A",
+    "readings": [
+      [
+        "SCP",
+        "40W"
+      ],
+      [
+        "แรงดัน",
+        "3.3–12V"
+      ],
+      [
+        "กระแส",
+        "สูงสุด 4A"
+      ]
+    ]
+  },
+  {
+    "id": "12",
+    "title": "ชาร์จ MacBook 91W",
+    "src": "/media/posts/review/slimq-f100/laptop-91w.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ชาร์จ MacBook",
+    "alt": "POWER-Z วัดได้ 20.33V 4.48A 91.16W ใช้สาย 140W",
+    "summary": "ชาร์จ MacBook ได้ 91W",
+    "readings": [
+      [
+        "แรงดัน",
+        "20.334V"
+      ],
+      [
+        "กระแส",
+        "4.483A"
+      ],
+      [
+        "กำลัง",
+        "91.16W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.1 EPR (Pos 5)"
+      ]
+    ],
+    "analysis": [
+      "มิเตอร์ขึ้น PD3.1 EPR เพราะ MacBook รองรับ PD 3.1 แต่แรงดันจริงยังเป็น 20V (โปรไฟล์ที่ 5) ไม่ใช่ EPR 28V ขึ้นไป หัวชาร์จตัวนี้สูงสุด 20V 5A ตามฉลาก"
+    ]
+  },
+  {
+    "id": "13",
+    "title": "ชาร์จ MacBook (มุมกว้าง)",
+    "src": "/media/posts/review/slimq-f100/laptop-91w-wide.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ชาร์จ MacBook",
+    "alt": "SlimQ ต่อ MacBook ผ่านมิเตอร์ 91.18W",
+    "summary": "SlimQ ต่อ MacBook ผ่านมิเตอร์ 91.18W",
+    "readings": [
+      [
+        "แรงดัน",
+        "20.337V"
+      ],
+      [
+        "กระแส",
+        "4.484A"
+      ],
+      [
+        "กำลัง",
+        "91.18W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.1 EPR (Pos 5)"
+      ]
+    ]
+  },
+  {
+    "id": "14",
+    "title": "โปรไฟล์ 100W",
+    "src": "/media/posts/review/slimq-f100/laptop-100w.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "จ่ายไฟ 20V (ไม่เห็นอุปกรณ์ในรูป)",
+    "alt": "POWER-Z วัดได้ 20.35V 4.52A 91.9W โปรไฟล์ 20V 5A",
+    "summary": "ขอ 20V 5A ได้จริง จ่ายจริง 91.9W",
+    "readings": [
+      [
+        "แรงดัน",
+        "20.347V"
+      ],
+      [
+        "กระแส",
+        "4.517A"
+      ],
+      [
+        "กำลัง",
+        "91.91W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.0 100W (FIX 20V 5A)"
+      ]
+    ],
+    "verdict": [
+      1,
+      "ดีมาก"
+    ],
+    "analysis": [
+      "กำลังที่วัดได้คืออุปกรณ์ดึงจริงตอนนั้น ไม่ใช่เพดานของหัวชาร์จ",
+      "แรงดัน 20.35V สูงกว่า 20V ราว 1.7% ยังอยู่ในเกณฑ์"
+    ]
+  },
+  {
+    "id": "15",
+    "title": "20V 84W",
+    "src": "/media/posts/review/slimq-f100/laptop-84w.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "จ่ายไฟ 20V (ไม่เห็นอุปกรณ์ในรูป)",
+    "alt": "POWER-Z วัดได้ 20.31V 4.18A 83.55W",
+    "summary": "POWER-Z วัดได้ 20.31V 4.18A 83.55W",
+    "readings": [
+      [
+        "แรงดัน",
+        "20.313V"
+      ],
+      [
+        "กระแส",
+        "4.182A"
+      ],
+      [
+        "กำลัง",
+        "83.55W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.0 (Pos 5)"
+      ]
+    ]
+  },
+  {
+    "id": "16",
+    "title": "20V 82W",
+    "src": "/media/posts/review/slimq-f100/laptop-82w.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "จ่ายไฟ 20V (ไม่เห็นอุปกรณ์ในรูป)",
+    "alt": "POWER-Z วัดได้ 20.31V 4.03A 81.92W",
+    "summary": "POWER-Z วัดได้ 20.31V 4.03A 81.92W",
+    "readings": [
+      [
+        "แรงดัน",
+        "20.313V"
+      ],
+      [
+        "กระแส",
+        "4.032A"
+      ],
+      [
+        "กำลัง",
+        "81.92W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.1 EPR (Pos 5)"
+      ]
+    ]
+  },
+  {
+    "id": "17",
+    "title": "พาวเวอร์แบงก์ โปรไฟล์ 94W",
+    "src": "/media/posts/review/slimq-f100/laptop-94w-profile.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ชาร์จพาวเวอร์แบงก์",
+    "alt": "POWER-Z วัดได้ 19.96V 4.08A 81.58W ขณะชาร์จพาวเวอร์แบงก์ โปรไฟล์ 20V 4.71A",
+    "summary": "พาวเวอร์แบงก์ขอ 20V 4.71A (94W) หัวชาร์จจ่ายให้ได้ วัดได้ 81.6W",
+    "readings": [
+      [
+        "แรงดัน",
+        "19.958V"
+      ],
+      [
+        "กระแส",
+        "4.083A"
+      ],
+      [
+        "กำลัง",
+        "81.58W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.0 94W (FIX 20V 4.71A)"
+      ]
+    ]
+  },
+  {
+    "id": "18",
+    "title": "พาวเวอร์แบงก์ 60W (มุมกว้าง)",
+    "src": "/media/posts/review/slimq-f100/laptop-60w-wide.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ชาร์จพาวเวอร์แบงก์",
+    "alt": "SlimQ ชาร์จพาวเวอร์แบงก์ด้วยสายถักสีขาว มิเตอร์ 60.00W",
+    "summary": "ชาร์จพาวเวอร์แบงก์ที่ขอ 20V 3A",
+    "readings": [
+      [
+        "แรงดัน",
+        "19.995V"
+      ],
+      [
+        "กระแส",
+        "3.000A"
+      ],
+      [
+        "กำลัง",
+        "60.00W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.0 60W (FIX 20V 3A)"
+      ]
+    ]
+  },
+  {
+    "id": "19",
+    "title": "พาวเวอร์แบงก์ 60W",
+    "src": "/media/posts/review/slimq-f100/laptop-60w.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ชาร์จพาวเวอร์แบงก์",
+    "alt": "POWER-Z วัดได้ 20.00V 3.00A 60.00W ขณะชาร์จพาวเวอร์แบงก์",
+    "summary": "จ่าย 60W นิ่ง แรงดันตรง 20V",
+    "readings": [
+      [
+        "แรงดัน",
+        "19.995V"
+      ],
+      [
+        "กระแส",
+        "3.000A"
+      ],
+      [
+        "กำลัง",
+        "59.995W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.0 60W (FIX 20V 3A)"
+      ]
+    ],
+    "verdict": [
+      1,
+      "ดีมาก"
+    ]
+  },
+  {
+    "id": "20",
+    "title": "S25 Ultra PPS 38W",
+    "src": "/media/posts/review/slimq-f100/phone-pps-38w.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ชาร์จมือถือ",
+    "alt": "Samsung Galaxy S25 Ultra · POWER-Z วัดได้ 13.00V 2.93A 38.05W ผ่าน PPS",
+    "summary": "มือถือขอ PPS ราว 13–14V 3A",
+    "readings": [
+      [
+        "แรงดัน",
+        "13.004V"
+      ],
+      [
+        "กระแส",
+        "2.926A"
+      ],
+      [
+        "กำลัง",
+        "38.05W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.0 41W (PPS 13.92V 3A)"
+      ]
+    ]
+  },
+  {
+    "id": "21",
+    "title": "S25 Ultra PPS 39W",
+    "src": "/media/posts/review/slimq-f100/phone-pps-39w.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ชาร์จมือถือ",
+    "alt": "Samsung Galaxy S25 Ultraวางข้างหัวชาร์จ มิเตอร์ 39.18W",
+    "summary": "มือถือวางข้างหัวชาร์จ มิเตอร์ 39.18W",
+    "readings": [
+      [
+        "แรงดัน",
+        "13.385V"
+      ],
+      [
+        "กระแส",
+        "2.928A"
+      ],
+      [
+        "กำลัง",
+        "39.18W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.0 47W (PPS)"
+      ]
+    ]
+  },
+  {
+    "id": "22",
+    "title": "S25 Ultra PPS 39W (2)",
+    "src": "/media/posts/review/slimq-f100/phone-pps-39w-b.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ชาร์จมือถือ",
+    "alt": "Samsung Galaxy S25 Ultra · หัวชาร์จวางบนคู่มือ มิเตอร์ 39.33W",
+    "summary": "หัวชาร์จวางบนคู่มือ มิเตอร์ 39.33W",
+    "readings": [
+      [
+        "แรงดัน",
+        "13.436V"
+      ],
+      [
+        "กระแส",
+        "2.928A"
+      ],
+      [
+        "กำลัง",
+        "39.33W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.0 47W (PPS)"
+      ]
+    ]
+  },
+  {
+    "id": "23",
+    "title": "S25 Ultra PPS 40W",
+    "src": "/media/posts/review/slimq-f100/phone-pps-40w.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ชาร์จมือถือ",
+    "alt": "Samsung Galaxy S25 Ultra · POWER-Z วัดได้ 13.50V 2.93A 39.61W",
+    "summary": "PPS คุมกระแสไว้ที่ 3A ตามที่หัวชาร์จประกาศ",
+    "readings": [
+      [
+        "แรงดัน",
+        "13.504V"
+      ],
+      [
+        "กระแส",
+        "2.933A"
+      ],
+      [
+        "กำลัง",
+        "39.61W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.0 47W (PPS 15.86V 3A)"
+      ]
+    ],
+    "analysis": [
+      "กระแสนิ่งที่ 2.93A ตลอดชุดภาพ เพราะ PPS ของตัวนี้ให้สูงสุด 3A มือถือจึงปรับแรงดันขึ้นแทน"
+    ]
+  },
+  {
+    "id": "24",
+    "title": "S25 Ultra PPS ~40W (ชุดที่ 2)",
+    "src": "/media/posts/review/slimq-f100/phone-pps-45w.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ชาร์จมือถือ",
+    "alt": "Samsung Galaxy S25 Ultra · POWER-Z วัดได้ 13.61V 2.93A 39.88W",
+    "summary": "POWER-Z วัดได้ 13.61V 2.93A 39.88W",
+    "readings": [
+      [
+        "แรงดัน",
+        "13.614V"
+      ],
+      [
+        "กระแส",
+        "2.930A"
+      ],
+      [
+        "กำลัง",
+        "39.88W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.0 45W (PPS 16.24V 3A)"
+      ]
+    ]
+  },
+  {
+    "id": "25",
+    "title": "S25 Ultra PPS ~40W (ชุดที่ 2)",
+    "src": "/media/posts/review/slimq-f100/phone-pps-46w.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ชาร์จมือถือ",
+    "alt": "Samsung Galaxy S25 Ultra · POWER-Z วัดได้ 13.61V 2.93A 39.90W",
+    "summary": "POWER-Z วัดได้ 13.61V 2.93A 39.90W",
+    "readings": [
+      [
+        "แรงดัน",
+        "13.608V"
+      ],
+      [
+        "กระแส",
+        "2.932A"
+      ],
+      [
+        "กำลัง",
+        "39.90W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.0 46W (PPS 15.52V 3A)"
+      ]
+    ]
+  },
+  {
+    "id": "26",
+    "title": "S25 Ultra PPS ~40W (ชุดที่ 2)",
+    "src": "/media/posts/review/slimq-f100/phone-pps-47w.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ชาร์จมือถือ",
+    "alt": "Samsung Galaxy S25 Ultra · POWER-Z วัดได้ 13.66V 2.93A 40.07W",
+    "summary": "POWER-Z วัดได้ 13.66V 2.93A 40.07W",
+    "readings": [
+      [
+        "แรงดัน",
+        "13.659V"
+      ],
+      [
+        "กระแส",
+        "2.933A"
+      ],
+      [
+        "กำลัง",
+        "40.07W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.0 47W (PPS)"
+      ]
+    ]
+  },
+  {
+    "id": "27",
+    "title": "S25 Ultra PPS ~40W (ชุดที่ 2)",
+    "src": "/media/posts/review/slimq-f100/phone-pps-47w-b.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ชาร์จมือถือ",
+    "alt": "Samsung Galaxy S25 Ultra · POWER-Z วัดได้ 13.66V 2.93A 40.06W",
+    "summary": "ชาร์จที่ราว 40W นิ่งทั้งชุด",
+    "readings": [
+      [
+        "แรงดัน",
+        "13.665V"
+      ],
+      [
+        "กระแส",
+        "2.931A"
+      ],
+      [
+        "กำลัง",
+        "40.06W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.0 47W (PPS)"
+      ]
+    ]
+  },
+  {
+    "id": "28",
+    "title": "PD 15V",
+    "src": "/media/posts/review/slimq-f100/pd-15v.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ชาร์จมือถือ",
+    "alt": "POWER-Z วัดได้ 15.17V 1.10A 16.68W",
+    "summary": "แรงดันคงที่ 15V ตรง",
+    "readings": [
+      [
+        "แรงดัน",
+        "15.171V"
+      ],
+      [
+        "กระแส",
+        "1.100A"
+      ],
+      [
+        "กำลัง",
+        "16.68W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.0 45W (FIX 15V 3A)"
+      ]
+    ]
+  },
+  {
+    "id": "29",
+    "title": "PPS 25W",
+    "src": "/media/posts/review/slimq-f100/pps-25w.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ชาร์จมือถือ",
+    "alt": "POWER-Z วัดได้ 8.87V 2.72A 24.19W",
+    "summary": "PPS 25W แบบ Samsung",
+    "readings": [
+      [
+        "แรงดัน",
+        "8.867V"
+      ],
+      [
+        "กระแส",
+        "2.717A"
+      ],
+      [
+        "กำลัง",
+        "24.19W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.0 25W (PPS 9.20V 2.80A)"
+      ]
+    ]
+  },
+  {
+    "id": "30",
+    "title": "PD 5V",
+    "src": "/media/posts/review/slimq-f100/pd-5v.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ชาร์จมือถือ",
+    "alt": "POWER-Z วัดได้ 5.22V 2.41A 12.57W",
+    "summary": "5V ปกติ",
+    "readings": [
+      [
+        "แรงดัน",
+        "5.215V"
+      ],
+      [
+        "กระแส",
+        "2.411A"
+      ],
+      [
+        "กำลัง",
+        "12.57W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.0 15W (FIX 5V 3A)"
+      ]
+    ]
+  },
+  {
+    "id": "31",
+    "title": "PPS 23W",
+    "src": "/media/posts/review/slimq-f100/pps-23w.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ชาร์จมือถือ",
+    "alt": "POWER-Z วัดได้ 13.39V 1.60A 21.39W",
+    "summary": "POWER-Z วัดได้ 13.39V 1.60A 21.39W",
+    "readings": [
+      [
+        "แรงดัน",
+        "13.389V"
+      ],
+      [
+        "กระแส",
+        "1.598A"
+      ],
+      [
+        "กำลัง",
+        "21.39W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.0 23W (PPS 14.14V 1.65A)"
+      ]
+    ]
+  },
+  {
+    "id": "32",
+    "title": "PD 15V 25W",
+    "src": "/media/posts/review/slimq-f100/pd-15v-25w.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ชาร์จมือถือ",
+    "alt": "POWER-Z วัดได้ 15.20V 1.63A 24.84W",
+    "summary": "POWER-Z วัดได้ 15.20V 1.63A 24.84W",
+    "readings": [
+      [
+        "แรงดัน",
+        "15.197V"
+      ],
+      [
+        "กระแส",
+        "1.635A"
+      ],
+      [
+        "กำลัง",
+        "24.84W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.0 (Pos 4)"
+      ]
+    ]
+  },
+  {
+    "id": "33",
+    "title": "vivo X300 Pro · VFCP 54.4W",
+    "src": "/media/posts/review/slimq-f100/vfcp-48w.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "vivo X300 Pro (VFCP)",
+    "alt": "vivo X300 Pro · POWER-Z วัดได้ 8.80V 5.51A 48.53W โปรโตคอล VFCP 54.4W",
+    "summary": "มิเตอร์รายงาน VFCP กระแสสูงถึง 5.5A",
+    "readings": [
+      [
+        "แรงดัน",
+        "8.800V"
+      ],
+      [
+        "กระแส",
+        "5.514A"
+      ],
+      [
+        "กำลัง",
+        "48.53W"
+      ],
+      [
+        "โปรโตคอล",
+        "VFCP 54.4W (9.96V 5.50A)"
+      ]
+    ]
+  },
+  {
+    "id": "34",
+    "title": "vivo X300 Pro · VFCP 49W",
+    "src": "/media/posts/review/slimq-f100/vfcp-49w.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "vivo X300 Pro (VFCP)",
+    "alt": "vivo X300 Pro · POWER-Z วัดได้ 8.91V 5.50A 49.00W",
+    "summary": "POWER-Z วัดได้ 8.91V 5.50A 49.00W",
+    "readings": [
+      [
+        "แรงดัน",
+        "8.909V"
+      ],
+      [
+        "กระแส",
+        "5.500A"
+      ],
+      [
+        "กำลัง",
+        "49.00W"
+      ],
+      [
+        "โปรโตคอล",
+        "VFCP 54.4W (9.96V 5.50A)"
+      ]
+    ]
+  }
+]

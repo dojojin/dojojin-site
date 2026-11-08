@@ -1,0 +1,170 @@
+---
+title: "SlimQ F100 หัวชาร์จ GaN 100W 4 ช่อง"
+topic: power
+type: review
+tags: [slimq, gan, usb-pd]
+date: 2025-12-03 # photo date — replace with the FB post date from the owner
+description: "หัวชาร์จ GaN 100W 4 ช่อง (C × 2, A × 2) หน้าผ้าเท่ ๆ ขาพับได้ PD 20V 5A จ่ายจริง 91.9W PPS กว้างถึง 21V 3A ชาร์จได้ทั้งโน้ตบุ๊กและมือถือ"
+kicker: "#MiniReview · Charger"
+lead: "หัวชาร์จ GaN 100W 4 ช่อง ขนาด 7 × 7 ซม. หน้าผ้าดูเท่ ชาร์จ MacBook ได้ 91W ชาร์จ Galaxy S25 Ultra ได้นิ่ง ๆ ที่ 40W"
+meta: "Dojo-mAn Fotographer · ซื้อมาใช้เอง วัดเอง"
+cover: "/media/posts/review/slimq-f100/front.jpg"
+coverAlt: "หัวชาร์จ SlimQ F100 หน้าผ้าสีเทาเข้ม โลโก้สีแดง ถืออยู่ในมือ"
+---
+import SpecTable from '../../../components/SpecTable.astro';
+import ShotGallery from '../../../components/ShotGallery.astro';
+import shots from './slimq-f100.shots.json';
+import spec from './slimq-f100.spec.json';
+
+<section class="section">
+
+## Short Brief
+
+<div class="split">
+<div class="prose">
+
+สำหรับคนขี้เกียจอ่านยาว ๆ: หัวชาร์จ GaN 100W มีให้เสียบถึง 4 ช่อง หน้าตาไม่เหมือนหัวชาร์จทั่วไป เพราะหน้าเครื่องหุ้มผิวผ้า ขาปลั๊กพับได้ พกง่าย ชาร์จได้ทั้งโน้ตบุ๊ก มือถือ และพาวเวอร์แบงก์ วัดมาให้แล้วจ่ายไฟได้ตามสเปกจริง
+
+- จ่ายไฟแรงถึง 100W (PD 20V 5A) วัดจริงได้ 91.9W
+- ช่อง USB-C1 และ C2 สูงสุด 100W
+- ช่อง USB-A1 และ A2 สูงสุด 30W (QC 3.0)
+- PPS กว้าง 3.3–21V 3A ชาร์จ Samsung Galaxy S25 Ultra ได้นิ่ง ๆ ราว 40W
+- vivo X300 Pro ชาร์จเร็วผ่าน VFCP ได้ราว 49W
+- ใช้ชิป Navitas GaNFast
+
+</div>
+<div class="proscons proscons--stack">
+  <div class="pros">
+    <h3><svg class="icon" aria-hidden="true"><use href="#icon-dot" /></svg>จุดเด่น</h3>
+    <ul>
+      <li>100W จริง ชาร์จ MacBook ได้ 91W</li>
+      <li>4 ช่อง (C × 2, A × 2)</li>
+      <li>PPS ถึง 21V, Huawei SCP 40W, QC, AFC ครบ</li>
+      <li>ขาพับได้ หน้าผ้าดูดี</li>
+      <li>แรงดันแม่น ต่างจากค่ามาตรฐานไม่เกิน 2%</li>
+      <li>ใช้งานจริงไม่ร้อน สบาย ๆ</li>
+    </ul>
+  </div>
+  <div class="cons">
+    <h3><svg class="icon" aria-hidden="true"><use href="#icon-alert" /></svg>ข้อสังเกต</h3>
+    <ul>
+      <li>ฉลากไม่บอกการแบ่งไฟเมื่อเสียบหลายช่อง</li>
+      <li>ตัวค่อนข้างใหญ่ (7 × 7 × 2.9 ซม.)</li>
+      <li>หนัก 205 กรัม มากกว่า <a href="/review/orsen-c102t/">ORSEN C102T</a> (165 กรัม) ที่เป็น 100W เหมือนกัน</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## Specification
+
+<SpecTable groups={spec} legend="ป้ายบอกที่มาของข้อมูล: ฉลาก = ฉลากบนตัวเครื่อง · กล่อง = หลังกล่อง · ตัวเครื่อง = ดูจากตัวเครื่องจริง · มิเตอร์ = วัดเองด้วย POWER-Z" />
+
+</section>
+
+<section class="section">
+
+## ผลวัดจริง
+
+<div class="grade-grid">
+  <article class="grade-card">
+    <h3>MacBook / 20V</h3>
+    <p><b>20.35V × 4.52A = 91.9W</b> ผ่านโปรไฟล์ 20V 5A ชาร์จ MacBook ได้ 91W</p>
+  </article>
+  <article class="grade-card">
+    <h3>พาวเวอร์แบงก์</h3>
+    <p><b>20.00V × 3.00A = 60.0W</b> เป๊ะ และเมื่อพาวเวอร์แบงก์ขอ 20V 4.71A (94W) วัดได้ 81.6W</p>
+  </article>
+  <article class="grade-card">
+    <h3>Galaxy S25 Ultra (PPS)</h3>
+    <p><b>13.0–13.7V × 2.93A ≈ 38–40W</b> นิ่งทั้งชุด กระแสถูกคุมที่ 3A ตามที่หัวชาร์จประกาศ ส่วนโหมด PPS 25W ได้ 24.2W</p>
+  </article>
+  <article class="grade-card">
+    <h3>vivo X300 Pro (VFCP)</h3>
+    <p><b>8.8–8.9V × 5.5A ≈ 48.5–49.0W</b> ผ่านโปรโตคอล VFCP 54.4W ของ vivo ซึ่งไม่ได้อยู่ในรายการบนกล่อง</p>
+  </article>
+  <article class="grade-card">
+    <h3>ความแม่นของแรงดัน</h3>
+    <p>5V → 5.22V · 15V → 15.17–15.20V · 20V → 19.96–20.35V ทุกค่าต่างจากมาตรฐานไม่เกิน 2% (5V มีโหลด 2.4A)</p>
+  </article>
+</div>
+
+<div class="note" style="margin-top:var(--space-6)">
+
+### ข้อจำกัดของเครื่องวัด
+
+วัดด้วย **POWER-Z KM003C** ซึ่งรับแรงดันได้ 0–50V และกระแสได้สูงสุด **6A** (ตามคู่มือ ChargerLAB) โหมดชาร์จเร็วที่ใช้กระแสเกิน 6A จึงวัดผ่านเครื่องนี้ไม่ได้ ค่าที่เห็นในรีวิวคือกำลังที่อุปกรณ์ดึงจริงตอนวัด ไม่ใช่เพดานของหัวชาร์จ ตอนชาร์จ vivo X300 Pro กระแส 5.5A อยู่ใกล้เพดานนี้แล้ว
+
+</div>
+
+<div class="note" style="margin-top:var(--space-6)">
+
+### PPS 21V 3A แปลว่าอะไร
+
+PPS คือโหมดที่มือถือขอแรงดันละเอียดทีละ 20mV ได้เอง หัวชาร์จทั่วไปมักให้ PPS ถึง 11V หรือ 16V แต่ตัวนี้ให้ถึง **21V ที่ 3A** มือถือที่ขอแรงดันสูงได้จึงชาร์จเร็วได้แม้กระแสถูกจำกัดที่ 3A อย่าง Galaxy S25 Ultra ที่ขอ PPS ราว 13–16V แล้วได้ราว 40W
+
+</div>
+
+</section>
+
+<section class="section">
+
+## การชาร์จ
+
+<div class="grade-grid">
+  <article class="grade-card">
+    <h3>มือถือ</h3>
+    <p>มือถือที่รองรับ PD และ PPS ใช้ได้หมด Galaxy S25 Ultra ได้ราว 40W vivo X300 Pro ใช้ VFCP ได้ราว 49W Huawei ใช้ SCP ได้ถึง 40W นอกจากนี้ยังมี QC (มิเตอร์เจอถึง QC5), AFC, SFCP และ MediaTek PE ตามกล่อง</p>
+  </article>
+  <article class="grade-card">
+    <h3>Laptop / Notebook</h3>
+    <p>MacBook Air, MacBook Pro และโน้ตบุ๊กที่ชาร์จผ่าน USB-C ได้หมด วัดจริงชาร์จ MacBook ได้ 91W แต่ไม่พอสำหรับโน้ตบุ๊กเกมมิ่ง ใช้สาย USB-C ที่รองรับ 5A (100W ขึ้นไป) ถึงจะได้ไฟเต็ม</p>
+  </article>
+  <article class="grade-card">
+    <h3>วัสดุ</h3>
+    <p>หน้าเครื่องหุ้มผิวผ้า โลโก้สีแดง ขอบพลาสติกด้าน ขาปลั๊กพับเก็บได้ ช่อง USB-A สีส้ม แยกจากช่อง C ชัดเจน ใช้งานจริงไม่ร้อนเลยครับ สบาย ๆ น่าจะเพราะตัว Charger ค่อนข้างใหญ่ ระบายความร้อนได้ดี</p>
+  </article>
+</div>
+
+</section>
+
+<section class="section">
+
+## สรุป ควรซื้อไหม?
+
+<div class="proscons">
+<div class="pros">
+  <h3><svg class="icon" aria-hidden="true"><use href="#icon-dot" /></svg>เหมาะกับคุณ ถ้า</h3>
+  <p>อยากได้หัวชาร์จตัวเดียวที่ชาร์จโน้ตบุ๊ก มือถือ และอุปกรณ์อื่นได้ครบ 4 ช่อง และชอบหน้าตาที่ไม่เหมือนใคร</p>
+</div>
+<div class="cons">
+  <h3><svg class="icon" aria-hidden="true"><use href="#icon-alert" /></svg>อาจไม่เหมาะ ถ้า</h3>
+  <p>ต้องการหัวชาร์จ 100W ที่เล็กและเบาที่สุด ตัวนี้ค่อนข้างใหญ่และหนัก 205 กรัม</p>
+</div>
+</div>
+
+<p class="prose">อยากรู้ว่าไฟจากหัวชาร์จ "เรียบ" แค่ไหน อ่านต่อได้ที่ <a href="/knowledge/charger-ripple-guide/">คู่มืออ่านค่า Ripple ของหัวชาร์จ</a></p>
+
+</section>
+
+<section class="section">
+
+## ภาพประกอบ
+
+<p class="prose">กดที่รูปเพื่อดูคำอธิบายและค่าที่วัดได้</p>
+
+<ShotGallery shots={shots} />
+
+</section>
+
+<section class="section">
+
+## ช่องทางการจัดจำหน่าย
+
+<p class="prose">ซื้อมาใช้เอง รีวิวเอง ปะลิงก์ให้เพื่ออำนวยความสะดวกครับ: <a href="https://slimq.life/th/products/100w-usb-c-pd-charger" rel="noopener">เว็บไซต์ SlimQ (ภาษาไทย)</a> ใน Shopee ไม่มีขาย</p>
+
+</section>
