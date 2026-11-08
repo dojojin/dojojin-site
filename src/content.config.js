@@ -1,7 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
-import { TOPICS, TYPES } from './data/site.js';
+import { TOPICS, TYPES, TAGS } from './data/site.js';
 
 // One post = src/content/posts/<type>/<slug>.mdx  (type folder must match the `type` field) (+ optional <slug>.shots.json / .spec.json)
 const posts = defineCollection({
@@ -10,7 +10,7 @@ const posts = defineCollection({
     title: z.string(),
     topic: z.enum(Object.keys(TOPICS)),
     type: z.enum(Object.keys(TYPES)),
-    tags: z.array(z.string()).default([]),
+    tags: z.array(z.enum(Object.keys(TAGS))).default([]),
     date: z.coerce.date(),
     description: z.string(),
     lead: z.string(),

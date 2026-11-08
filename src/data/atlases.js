@@ -1,9 +1,9 @@
-// Price Atlas pages, served at /data/<slug>/ (type data, topic gadget). Shared by scripts/patch-atlas.mjs (head metadata, strip)
+// Price Atlas pages, served at /data/<slug>/ (type data, category smartphone). Shared by scripts/patch-atlas.mjs (head metadata, strip)
 // and the topic pages / home feed (src/lib/feed.js). Stats are counted from each atlas's own data
 // (window.__ATLAS__) — update them when a new atlas version is dropped in.
 export const ATLASES = [
   {
-    topic: 'gadget', type: 'data',
+    topic: 'smartphone', type: 'data', tags: ['apple', 'price'],
     slug: 'iphone-price-atlas',
     short: 'iPhone Price Atlas',
     title: 'iPhone Thai Price Atlas — ราคาเปิดตัวในไทยทุกรุ่น',
@@ -14,7 +14,7 @@ export const ATLASES = [
     updated: '2026-10-21',
   },
   {
-    topic: 'gadget', type: 'data',
+    topic: 'smartphone', type: 'data', tags: ['samsung', 'price'],
     slug: 'galaxy-s-price-atlas',
     short: 'Galaxy S Price Atlas',
     title: 'Galaxy S Thai Price Atlas — ราคาเปิดตัวในไทยทุกรุ่น',
@@ -25,7 +25,7 @@ export const ATLASES = [
     updated: '2026-10-01',
   },
   {
-    topic: 'gadget', type: 'data',
+    topic: 'smartphone', type: 'data', tags: ['vivo', 'price'],
     slug: 'vivo-x-price-atlas',
     short: 'vivo X Price Atlas',
     title: 'vivo X Thai Price Atlas — ราคาเปิดตัวในไทยทุกรุ่น',

@@ -1,0 +1,32 @@
+---
+import Base from '../../layouts/Base.astro';
+import { TAGS, TOPICS } from '../../data/site.js';
+import { getFeed } from '../../lib/feed.js';
+
+const feed = await getFeed();
+const used = Object.entries(TAGS).map(([k, label]) => [k, label, feed.filter((i) => i.tags.includes(k)).length]).filter(([, , n]) => n > 0);
+const cats = Object.entries(TOPICS).map(([k, t]) => [t.name, feed.filter((i) => i.topic === k).length]).filter(([, n]) => n > 0);
+---
+<Base title="Tags" description="หมวดและ tag ทั้งหมดบน DOJOJIN.TECH — แบรนด์ ชนิดสินค้า และเทคนิค">
+  <section class="hero">
+    <div class="wrap" style="grid-template-columns:1fr">
+      <div class="hero__text">
+        <span class="kicker">Tags</span>
+        <h1>หมวดและ tag</h1>
+        <p class="lead">หมวดบอกว่าบทความพูดถึงอะไร ส่วน tag บอกแบรนด์ ชนิดสินค้า และเทคนิค กด tag เพื่อดูทุกบทความที่เกี่ยวข้อง</p>
+      </div>
+    </div>
+  </section>
+  <main class="wrap layout" style="grid-template-columns:1fr">
+    <div class="content">
+      <section class="section">
+        <h2>หมวด</h2>
+        <ul class="chips chips--lg">{cats.map(([name, n]) => <li>{name} <span>{n}</span></li>)}</ul>
+      </section>
+      <section class="section">
+        <h2>Tags</h2>
+        <ul class="taglinks">{used.map(([k, label, n]) => <li><a href={`/tag/${k}/`}>#{label} <span>{n}</span></a></li>)}</ul>
+      </section>
+    </div>
+  </main>
+</Base>

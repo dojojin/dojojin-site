@@ -1,13 +1,15 @@
 ---
-// Card for one feed item (src/lib/feed.js): a post or a Price Atlas. Badge = topic (the menu section is the type).
-import { TOPICS } from '../data/site.js';
-const { item: i } = Astro.props;
+// Card for one feed item (src/lib/feed.js): a post or a Price Atlas.
+// Badge = category. showType: also name the menu section (used on /tag/ pages, which mix sections).
+import { TOPICS, TAGS, TYPES } from '../data/site.js';
+const { item: i, showType = false } = Astro.props;
 ---
 <a class="shot" href={i.href} data-topic={i.topic}>
   <div class="shot__img"><img src={i.cover} width={i.coverW} height={i.coverH} loading="lazy" alt="" style={`aspect-ratio:${i.coverW}/${i.coverH}`} /></div>
   <div class="shot__body">
-    <span class="type-badge">{TOPICS[i.topic]?.name ?? i.topic}</span>
+    <span class="type-badge">{showType && `${TYPES[i.type].name} · `}{TOPICS[i.topic]?.name ?? i.topic}</span>
     <div class="shot__label">{i.title}</div>
     <span class="meta">{i.sub}</span>
+    {i.tags?.length > 0 && <span class="tags-line">{i.tags.map((t) => `#${TAGS[t]}`).join(' ')}</span>}
   </div>
 </a>

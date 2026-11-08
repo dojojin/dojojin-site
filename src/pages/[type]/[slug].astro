@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import { TYPES, TOPICS } from '../../data/site.js';
+import { TYPES, TOPICS, TAGS } from '../../data/site.js';
 
 export async function getStaticPaths() {
   const all = await getCollection('posts', (p) => !p.data.draft);
@@ -25,6 +25,7 @@ const toc = headings.filter((h) => h.depth === 2);
         <h1>{d.title}</h1>
         <p class="lead">{d.lead}</p>
         <p class="meta">{d.meta} · {d.date.toLocaleDateString('th-TH', { dateStyle: 'long' })}</p>
+        {d.tags.length > 0 && <ul class="taglinks" aria-label="tags">{d.tags.map((t) => <li><a href={`/tag/${t}/`}>#{TAGS[t]}</a></li>)}</ul>}
       </div>
       <figure class="hero__media"><img src={d.cover} width="1600" height="1200" alt={d.coverAlt} /></figure>
     </div>

@@ -14,11 +14,22 @@ export const TYPES = {
   knowledge: { name: "ความรู้", blurb: "อธิบายเรื่องเทคนิคให้เข้าใจง่าย — ใช้ตัดสินใจเลือกซื้อและใช้งานได้จริง" },
   data: { name: "Data", blurb: "ชุดข้อมูลอ้างอิง — ราคาเปิดตัวในไทยและสเปกระดับชิ้นส่วนของมือถือทุกรุ่น" },
 };
-// Topics = what a post is about (badge on cards; filter chips appear once a section has more than one topic).
+// Categories (field `topic`, exactly one per post) — badge on cards; filter chips appear in a menu section
+// once it holds more than one category.
 export const TOPICS = {
-  gadget: { name: "Gadget" },
-  photo: { name: "ถ่ายภาพ" },
+  smartphone: { name: "สมาร์ทโฟน" },
+  audio: { name: "หูฟัง & เสียง" },
+  power: { name: "ชาร์จ & พลังงาน" },
+  photo: { name: "กล้อง & ถ่ายภาพ" },
   "infra-ai": { name: "Infra & AI" },
+};
+// Tags (field `tags`, any number) — brand / product kind / technique. Only tags listed here are allowed
+// (the build fails otherwise), so the same thing never ends up under two spellings. Each has a page at /tag/<key>/.
+export const TAGS = {
+  apple: "Apple", samsung: "Samsung", vivo: "vivo", shokz: "Shokz",
+  tws: "TWS", "open-ear": "Open-ear",
+  gan: "GaN", ripple: "Ripple", "usb-pd": "USB-PD",
+  price: "ราคา",
 };
 
 // Main menu — used by src/layouts/Base.astro and by scripts/patch-atlas.mjs (top bar on atlas pages).
