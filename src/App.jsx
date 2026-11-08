@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import logoSvg from "./favicon.svg";
+import logoSvg from "./favicon.svg?url";
 import { loadFirebase } from "./firebase";
 import {
   SiDocker, SiCloudflare, SiNginx, SiOllama, SiOpencv, SiFfmpeg, SiPython,

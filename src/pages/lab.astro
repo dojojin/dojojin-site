@@ -1,0 +1,19 @@
+---
+// The original single-page site, kept whole as one React island.
+import App from '../App.jsx';
+import '../index.css';
+---
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#0a1628" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>DOJOJIN.TECH // lab</title>
+</head>
+<body style="margin:0;background:#030b14">
+  <App client:only="react" />
+</body>
+</html>
