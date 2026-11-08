@@ -1,0 +1,69 @@
+[
+  {
+    "title": "ทั่วไป",
+    "rows": [
+      ["รุ่น", "Baseus Bass BP1 Pro In-Ear True Wireless Earbuds (Model No. PM132)", "ฉลาก"],
+      ["Type", "TWS In-Ears", "กล่อง"],
+      ["Material", "ABS (Acrylonitrile Butadiene Styrene) + PC (Polycarbonate)", "ผู้รีวิว"],
+      ["IP Rating", "IP55 (Dust-and-Water Resistant)", "กล่อง"],
+      ["Weight", "น้ำหนักต่อข้าง 4.1g", "ผู้รีวิว"],
+      ["สี (เครื่องที่รีวิว)", "Cosmic Black", "กล่อง"],
+      ["FCC ID", "2A482-PM132", "ฉลาก"],
+      ["ผู้ผลิต", "Shenzhen Baseus Technology Co., Ltd · ผลิตในจีน · Production Date 2025-07", "กล่อง"],
+      ["ราคา", "899 บาท (บางช่วงอาจได้ 500-600 บาท)", "ผู้รีวิว"],
+      ["ในกล่อง", ["หูฟัง 2 ข้าง", "เคสชาร์จ", "จุกหูฟัง 5 ขนาด (รวมคู่ที่ติดมากับหูฟัง)", "สาย USB-A to USB-C", "Quick Start Guide"], "ผู้รีวิว"]
+    ]
+  },
+  {
+    "title": "เสียง",
+    "rows": [
+      ["Driver Size", "Dynamic Driver (ไม่ได้ระบุขนาดมา)", "ผู้รีวิว"],
+      ["Technology", ["Spatial Acoustics (Normal / Music / Cinema)", "Dynamic Sound (Normal / Bass Boost / Dynamic Balance)"], "แอป"],
+      ["EQ Preset", "7 แบบ: Baseus Classic, Deep Bass, Hi-Fi Live, Jazz, Classical, Treble Boost, Acoustic", "แอป"],
+      ["Custom EQ", "8 แบนด์ (100Hz, 200Hz, 400Hz, 800Hz, 1kHz, 3kHz, 6kHz, 10kHz) ช่วง ±6 dB", "แอป"],
+      ["ANC", "Adaptive Hybrid ANC ตัดเสียงได้ -50dB", "กล่อง"],
+      ["ANC Mode", "Adaptive, Indoor, Outdoor, Commuting + Custom (ปรับเอง 5 ระดับ) ", "แอป"],
+      ["ANC ค่าเริ่มต้น", "Commuting (ต้องเปิด Adaptive ผ่าน Baseus App)", "กล่อง"],
+      ["Transparency", "มี (Ambient sound: Normal / Transparency / Noise reduction)", "แอป"]
+    ]
+  },
+  {
+    "title": "การเชื่อมต่อ",
+    "rows": [
+      ["Bluetooth®", "version 6 + BRC (Bluetooth Ranging Channel)", "ผู้รีวิว"],
+      ["CODEC", "SBC, AAC, LDAC (Hi-Res)", "ผู้รีวิว"],
+      ["LDAC", "เปิดในแอป เมื่อเปิดแล้ว Dual-Device, Spatial Audio และ Low-Latency จะถูกปิด · แอประบุว่าไม่รองรับบน iOS", "แอป"],
+      ["Game Mode / Latency", "58ms (Low Latency Mode ในแอป)", "ผู้รีวิว"],
+      ["Dual Connections", "รองรับการเชื่อมต่อ 2 เครื่องพร้อมกัน", "แอป"],
+      ["APP", "Baseus App (iOS / Android) บอกเปอร์เซ็นต์แบตเตอรี่ ทั้งตัวหูฟัง และ เคสชาร์จ", "แอป"]
+    ]
+  },
+  {
+    "title": "ไมโครโฟนและการควบคุม",
+    "rows": [
+      ["Microphone", "6 ตัว (3 ตัว/ข้าง: FB-Mic, FF-Mic, Talk-Mic) + AI Noise Reduction", "กล่อง"],
+      ["การควบคุม", "แตะ 1 ที, 2 ที, 3 ที และแตะค้าง (ไม่มีบีบ หรือสไลด์)", "แอป"],
+      ["Wear Detection", "ไม่มี", "ผู้รีวิว"]
+    ]
+  },
+  {
+    "title": "แบตเตอรี่และการชาร์จ",
+    "rows": [
+      ["Battery (Earpiece)", "60 mAh", "ผู้รีวิว"],
+      ["Battery (Case)", "600 mAh / 2.22 Wh", "ฉลาก"],
+      ["ฟังเพลงต่อเนื่อง", "12 ชั่วโมงต่อการชาร์จ 1 ครั้ง", "ผู้รีวิว"],
+      ["ใช้งานสูงสุดรวมเคสชาร์จ", "55 ชั่วโมง (ผู้รีวิวระบุว่าเป็นค่าตอน ANC: OFF)", "กล่อง"],
+      ["Charging Hours", "ระยะเวลาชาร์จจนเต็ม = 1.5 ชั่วโมง", "ผู้รีวิว"],
+      ["Quick Charge", "ชาร์จ 10 นาที เล่นได้ 2.5 ชั่วโมง", "ผู้รีวิว"],
+      ["Port Charge", "USB-C", "ผู้รีวิว"],
+      ["Input / Output (เคส)", "5V ⎓ 1A / 3.8-5V ⎓ 320mA (160mA per port)", "ฉลาก"]
+    ]
+  },
+  {
+    "title": "ค้นหาหูฟัง",
+    "rows": [
+      ["Find my earbuds (by sound)", "มี ส่งเสียงทีละข้าง (Call L / Call R)", "แอป"],
+      ["Find my earbuds (by Maps)", "มี (Google Maps / Baidu Maps) แสดงตำแหน่งล่าสุด ต้อง login แอปก่อน", "แอป"]
+    ]
+  }
+]

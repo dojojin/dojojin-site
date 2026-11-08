@@ -1,0 +1,578 @@
+[
+  {
+    "id": "1",
+    "title": "กล่องด้านหน้า",
+    "src": "/media/posts/review/baseus-bp1-pro/box-front.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "กล่อง Baseus Bass BP1 Pro ด้านหน้า แถบเหลืองแสดงจุดขาย และโลโก้ Hi-Res Audio Wireless",
+    "summary": "จุดขาย 4 ข้อ และโลโก้ Hi-Res",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "กล่องแบบแขวน ด้านหน้ามีแถบสีเหลืองแสดงจุดขาย มุมขวาบนมีโลโก้ Hi-Res Audio Wireless และมุมขวาล่างมีป้าย BASS"
+    ],
+    "screenTitle": "ข้อความบนกล่อง/ฉลาก",
+    "screen": [
+      [
+        "-50dB",
+        "Adaptive Hybrid ANC"
+      ],
+      [
+        "55-Hour",
+        "Battery Life"
+      ],
+      [
+        "6-Mic AI",
+        "Clear Calls"
+      ],
+      [
+        "IP55",
+        "Splash-Resistant"
+      ]
+    ],
+    "group": "แกะกล่อง"
+  },
+  {
+    "id": "2",
+    "title": "กล่องด้านหลัง",
+    "src": "/media/posts/review/baseus-bp1-pro/box-back.jpg",
+    "w": 1205,
+    "h": 1600,
+    "fit": "contain",
+    "alt": "ด้านหลังกล่อง BP1 Pro แสดง ANC -50dB, 55 Hrs, ตำแหน่งไมค์ 6 ตัว และ IP55",
+    "summary": "ตำแหน่งไมค์ และค่าเริ่มต้นของ ANC",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ด้านหลังมีภาพตำแหน่งไมค์ FB-Mic, FF-Mic และ Talk-Mic พร้อมสติกเกอร์ภาษาไทยของผู้นำเข้า (บริษัท ที แอนด์ ซี จำกัด)",
+      "หมายเหตุบนกล่องบอกว่าค่าเริ่มต้นของ ANC คือโหมด Commuting ถ้าต้องการ Adaptive ต้องเปิดผ่าน Baseus App",
+      "สติกเกอร์ขูดตรวจสอบของแท้ (Scrape and Check) ถูกเบลอไว้ เพราะมีหมายเลขประจำสินค้า"
+    ],
+    "screenTitle": "ข้อความบนกล่อง/ฉลาก",
+    "screen": [
+      [
+        "ANC",
+        "-50dB Adaptive Hybrid ANC"
+      ],
+      [
+        "แบต",
+        "55 Hrs Long-Lasting Playtime"
+      ],
+      [
+        "ไมค์",
+        "6-Mic AI Clear Calls"
+      ],
+      [
+        "กันน้ำ",
+        "IP55 Dust-and-Water Resistant"
+      ],
+      [
+        "สี",
+        "Cosmic Black"
+      ],
+      [
+        "Production Date",
+        "2025-07"
+      ]
+    ],
+    "group": "แกะกล่อง"
+  },
+  {
+    "id": "3",
+    "title": "กล่องด้านล่าง",
+    "src": "/media/posts/review/baseus-bp1-pro/box-bottom.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "ด้านล่างกล่อง เครื่องหมาย CE, UKCA, ตัวแทน UK/EU และสัญลักษณ์รีไซเคิล",
+    "summary": "เครื่องหมายรับรองและตัวแทนในยุโรป",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ด้านล่างกล่องมีเครื่องหมาย CE และ UKCA ข้อมูลตัวแทนในสหราชอาณาจักรและยุโรป (UK REP / EU REP) และสัญลักษณ์การแยกขยะบรรจุภัณฑ์",
+      "มีไอคอนอะแดปเตอร์ชาร์จ 2.5–5 W"
+    ],
+    "group": "แกะกล่อง"
+  },
+  {
+    "id": "4",
+    "title": "ของในกล่อง",
+    "src": "/media/posts/review/baseus-bp1-pro/unboxing-contents.jpg",
+    "w": 1600,
+    "h": 1200,
+    "alt": "ของในกล่อง: จุกหูฟังสำรอง, เคสในถาด, สาย USB และ Quick Start Guide",
+    "summary": "จุกหูฟัง, สายชาร์จ, คู่มือ",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ในกล่องมีจุกหูฟังสำรอง 4 คู่ (รวมคู่ที่ติดหูฟังเป็น 5 ขนาด), เคสพร้อมหูฟัง, สายชาร์จ USB-A to USB-C สีดำ และ Quick Start Guide"
+    ],
+    "group": "แกะกล่อง"
+  },
+  {
+    "id": "5",
+    "title": "จุกหูฟังสำรอง",
+    "src": "/media/posts/review/baseus-bp1-pro/eartips.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "จุกหูฟังซิลิโคนสีดำ 8 ชิ้นวางบนกล่อง",
+    "summary": "จุกสำรอง 4 คู่ หลายขนาด",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "จุกซิลิโคนสีดำ 4 คู่ไล่ขนาด เมื่อรวมคู่ที่ติดมากับหูฟังจะเป็น 5 ขนาดตามที่ผู้รีวิวบอก"
+    ],
+    "group": "แกะกล่อง"
+  },
+  {
+    "id": "6",
+    "title": "เคสในถาด",
+    "src": "/media/posts/review/baseus-bp1-pro/case-in-tray.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "เคสชาร์จสีดำในถาดกระดาษ โลโก้ Baseus บนฝา",
+    "summary": "เคสสีดำผิวด้าน",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "เคสสีดำผิวด้านวางในถาดกระดาษ ฝาเคสมีโลโก้ Baseus สีดำเงา"
+    ],
+    "group": "แกะกล่อง"
+  },
+  {
+    "id": "7",
+    "title": "พอร์ต USB-C",
+    "src": "/media/posts/review/baseus-bp1-pro/case-usb-c.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "เคสสีดำวางบนกล่อง ด้านหลังมีพอร์ต USB-C",
+    "summary": "พอร์ตชาร์จ USB-C ด้านหลัง",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "พอร์ตชาร์จเป็น USB-C อยู่ด้านหลังเคส"
+    ],
+    "group": "ตัวเคส"
+  },
+  {
+    "id": "8",
+    "title": "เคสในมือ",
+    "src": "/media/posts/review/baseus-bp1-pro/case-in-hand.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "เคส BP1 Pro สีดำวางบนฝ่ามือ",
+    "summary": "ขนาดเคสในมือ",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "วางบนฝ่ามือให้เห็นขนาด เคสทรงเหลี่ยมมน ด้านหน้ามีจุดไฟสถานะ"
+    ],
+    "group": "ตัวเคส"
+  },
+  {
+    "id": "9",
+    "title": "เปิดฝาเคส",
+    "src": "/media/posts/review/baseus-bp1-pro/case-open.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "เปิดฝาเคสสีดำ หูฟังสองข้างวางอยู่ในช่อง",
+    "summary": "หูฟังก้านยาววางในเคส",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "เปิดฝาแล้วเห็นหูฟังแบบมีก้าน ตัวหูฟังผิวเงา ส่วนก้านผิวด้าน มีตัวอักษร baseus บนก้าน"
+    ],
+    "group": "ตัวเคส"
+  },
+  {
+    "id": "10",
+    "title": "ฉลากในฝาเคส",
+    "src": "/media/posts/review/baseus-bp1-pro/label-case.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "ข้อความฉลากในฝาเคส: Model PM132, ความจุเคส 600mAh/2.22Wh, Input 5V 1A",
+    "summary": "รุ่น PM132, เคส 600mAh",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ฉลากในฝาเคสระบุชื่อ Baseus Bass BP1 Pro In-Ear True Wireless Earbuds รุ่น PM132 และที่อยู่ผู้ผลิต",
+      "ความจุเคสบนฉลากคือ 600mAh/2.22Wh",
+      "หมายเลข SN ถูกเบลอไว้"
+    ],
+    "screenTitle": "ข้อความบนกล่อง/ฉลาก",
+    "screen": [
+      [
+        "Model No.",
+        "PM132"
+      ],
+      [
+        "FCC ID",
+        "2A482-PM132"
+      ],
+      [
+        "Charging case capacity",
+        "600mAh / 2.22Wh"
+      ],
+      [
+        "Input",
+        "5V ⎓ 1A"
+      ],
+      [
+        "Output",
+        "3.8-5V ⎓ 320mA (160mA per port)"
+      ]
+    ],
+    "group": "ตัวเคส"
+  },
+  {
+    "id": "11",
+    "title": "ใช้งานคู่กับมือถือ",
+    "src": "/media/posts/review/baseus-bp1-pro/case-with-phone.jpg",
+    "w": 1600,
+    "h": 1200,
+    "alt": "เคส BP1 Pro วางบนกล่อง ข้างมือถือที่เล่นเพลง JUMP ของ BLACKPINK",
+    "summary": "ฟังเพลงจากมือถือ",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "เคสวางบนกล่อง ข้างๆ เป็นมือถือที่กำลังเล่นเพลง JUMP ของ BLACKPINK"
+    ],
+    "group": "ตัวเคส"
+  },
+  {
+    "id": "12",
+    "title": "หูฟังในเคส (ใกล้)",
+    "src": "/media/posts/review/baseus-bp1-pro/buds-in-case-closeup.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "ภาพใกล้หูฟังวางในเคส เห็นก้านพิมพ์ baseus",
+    "summary": "ก้านหูฟังในช่องเคส",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "หูฟังวางลงช่องในเคส ก้านหันขึ้นด้านบน เห็นตัวอักษร baseus บนก้าน"
+    ],
+    "group": "ตัวเคส"
+  },
+  {
+    "id": "13",
+    "title": "เคสกับกล่อง",
+    "src": "/media/posts/review/baseus-bp1-pro/box-and-case.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "เคส BP1 Pro วางพิงกล่องบนผ้าสีเหลือง ด้านหน้ามีนามบัตรผู้รีวิว",
+    "summary": "เคสกับกล่องในแสงธรรมชาติ",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "เคสวางพิงกล่องในแสงธรรมชาติ ด้านหน้าเป็นนามบัตรของผู้รีวิว (ข้อมูลติดต่อถูกเบลอไว้)"
+    ],
+    "group": "ตัวเคส"
+  },
+  {
+    "id": "14",
+    "title": "เคสในแสงธรรมชาติ",
+    "src": "/media/posts/review/baseus-bp1-pro/case-closeup.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "ภาพใกล้เคสสีดำบนผ้าสีเหลือง",
+    "summary": "สีจริงของเคส",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ในแสงธรรมชาติ เคสเป็นสีดำอมน้ำเงินเล็กน้อย ผิวด้าน",
+      "ข้อมูลติดต่อบนนามบัตรมุมขวาล่างถูกเบลอไว้"
+    ],
+    "group": "ตัวเคส"
+  },
+  {
+    "id": "15",
+    "title": "เคสกับกล่อง (แนวตั้ง)",
+    "src": "/media/posts/review/baseus-bp1-pro/box-and-case-portrait.jpg",
+    "w": 1205,
+    "h": 1600,
+    "fit": "contain",
+    "alt": "เคส BP1 Pro วางหน้ากล่องสินค้าแนวตั้ง",
+    "summary": "เคสหน้ากล่องสินค้า",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ภาพแนวตั้งของเคสคู่กับกล่อง QR บนนามบัตรด้านล่างถูกเบลอไว้"
+    ],
+    "group": "ตัวเคส"
+  },
+  {
+    "id": "16",
+    "title": "เปิดฝาในแสงธรรมชาติ",
+    "src": "/media/posts/review/baseus-bp1-pro/case-open-daylight.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "เปิดฝาเคสสีดำ หูฟังวางในช่อง บนผ้าสีเหลือง",
+    "summary": "หูฟังในเคส แสงธรรมชาติ",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "เปิดฝาเคสในแสงธรรมชาติ ตัวหูฟังผิวเงาสะท้อนแสง ในฝาเคสมีฉลากรุ่น",
+      "ข้อมูลติดต่อและ QR บนนามบัตรถูกเบลอไว้"
+    ],
+    "group": "ตัวเคส"
+  },
+  {
+    "id": "17",
+    "title": "ก้านหูฟัง",
+    "src": "/media/posts/review/baseus-bp1-pro/bud-stem.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "ภาพใกล้ก้านหูฟังสีดำ มีตัวอักษร baseus และวงกลมที่ปลายก้าน",
+    "summary": "ก้านมีโลโก้ และจุดแตะทรงกลม",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ก้านหูฟังผิวด้านพิมพ์ตัวอักษร baseus ที่ปลายก้านมีวงกลมนูน ตัวหูฟังส่วนบนเป็นพลาสติกผิวเงา"
+    ],
+    "group": "ตัวหูฟัง"
+  },
+  {
+    "id": "18",
+    "title": "หูฟังคู่",
+    "src": "/media/posts/review/baseus-bp1-pro/buds-pair.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "หูฟังสองข้างวางบนผ้า เห็นจุกหูฟังและท่อนำเสียง",
+    "summary": "หูฟังพร้อมจุก",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "หูฟังสองข้างวางคู่กัน ข้างหนึ่งหันจุกออกให้เห็นท่อนำเสียงที่ค่อนข้างยาว"
+    ],
+    "group": "ตัวหูฟัง"
+  },
+  {
+    "id": "19",
+    "title": "ท่อนำเสียง",
+    "src": "/media/posts/review/baseus-bp1-pro/bud-nozzle.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "ภาพมาโครท่อนำเสียงที่ถอดจุกออก เห็นตะแกรงกันฝุ่น",
+    "summary": "ตะแกรงที่ปลายท่อนำเสียง",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ถอดจุกออกให้เห็นปลายท่อนำเสียงที่มีตะแกรงกันฝุ่น"
+    ],
+    "group": "ตัวหูฟัง"
+  },
+  {
+    "id": "20",
+    "title": "ท่อนำเสียง (อีกมุม)",
+    "src": "/media/posts/review/baseus-bp1-pro/bud-nozzle-2.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "ภาพมาโครท่อนำเสียงอีกมุม",
+    "summary": "ปลายท่อนำเสียงอีกมุม",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "มุมเฉียงของท่อนำเสียง เห็นขอบนูนรอบปลายท่อที่ใช้ยึดจุกหูฟัง"
+    ],
+    "group": "ตัวหูฟัง"
+  },
+  {
+    "id": "21",
+    "title": "หูฟังด้านข้าง",
+    "src": "/media/posts/review/baseus-bp1-pro/bud-side.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "หูฟังที่ถอดจุกวางบนกล่อง เห็นท่อนำเสียงและจุดสัมผัสสีเงินที่ปลายก้าน",
+    "summary": "ท่อนำเสียงยาว จุดชาร์จที่ปลายก้าน",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ด้านข้างหูฟังที่ถอดจุกแล้ว เห็นท่อนำเสียงยื่นยาวออกมา ผู้รีวิวบอกว่าท่อยาวนี้ทำให้ใส่นานแล้วเจ็บหู แต่ช่วยเรื่องเบส",
+      "ปลายก้านมีจุดสัมผัสสีเงินสำหรับชาร์จในเคส"
+    ],
+    "group": "ตัวหูฟัง"
+  },
+  {
+    "id": "22",
+    "title": "ท่อนำเสียงด้านข้าง",
+    "src": "/media/posts/review/baseus-bp1-pro/bud-nozzle-side.jpg",
+    "w": 1600,
+    "h": 1205,
+    "alt": "ภาพใกล้ด้านข้างท่อนำเสียงของหูฟังสีดำ",
+    "summary": "ความยาวท่อนำเสียง",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ด้านข้างของท่อนำเสียงที่ถอดจุก เห็นความยาวของท่อที่ยื่นออกจากตัวหูฟัง"
+    ],
+    "group": "ตัวหูฟัง"
+  },
+  {
+    "id": "23",
+    "title": "แอป: หน้าแรก",
+    "src": "/media/posts/review/baseus-bp1-pro/app-home.jpg",
+    "w": 738,
+    "h": 1600,
+    "fit": "contain",
+    "alt": "หน้าแรก Baseus App แสดงอุปกรณ์ Bass BP1 Pro แบตซ้าย-ขวา 100%",
+    "summary": "รายการอุปกรณ์ในแอป",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "หน้าแรกแสดงอุปกรณ์ที่จับคู่ไว้ (Bass BP1 Pro) พร้อมแบตซ้ายและขวา",
+      "ชื่อบัญชีผู้ใช้ถูกเบลอไว้"
+    ],
+    "group": "ภาพหน้าจอแอป Baseus"
+  },
+  {
+    "id": "24",
+    "title": "แอป: หน้าหูฟัง (บน)",
+    "src": "/media/posts/review/baseus-bp1-pro/app-device-1.jpg",
+    "w": 738,
+    "h": 1600,
+    "fit": "contain",
+    "alt": "หน้าหูฟัง Bass BP1 Pro แสดงแบตซ้าย เคส ขวา, Ambient sound และ Spatial Acoustics",
+    "summary": "แบตหูฟังและเคส, Ambient sound",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "แสดงแบตเตอรี่หูฟังซ้าย 100%, เคส 80% และหูฟังขวา 100% (แอปบอก % แบตของเคสด้วย)",
+      "Ambient sound มี Normal, Transparency และ Noise reduction (ในภาพตั้งเป็น Adaptive) ถัดลงมาเป็น Spatial Acoustics (Normal, Music, Cinema)"
+    ],
+    "group": "ภาพหน้าจอแอป Baseus"
+  },
+  {
+    "id": "25",
+    "title": "แอป: หน้าหูฟัง (ล่าง)",
+    "src": "/media/posts/review/baseus-bp1-pro/app-device-2.jpg",
+    "w": 738,
+    "h": 1600,
+    "fit": "contain",
+    "alt": "ส่วนล่างของหน้าหูฟัง: Dynamic Sound, EQ mode และเมนู Other รวมถึง LDAC",
+    "summary": "Dynamic Sound, EQ, LDAC",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "Dynamic Sound มี Normal, Bass Boost และ Dynamic Balance (ในภาพเลือก Dynamic Balance) EQ mode ตั้งเป็น Hi-Fi Live",
+      "เมนู Other มี Dual-Device Connection, Low Latency Mode, LDAC, Gesture Setting, Find headphones และ Settings"
+    ],
+    "group": "ภาพหน้าจอแอป Baseus"
+  },
+  {
+    "id": "26",
+    "title": "แอป: EQ mode",
+    "src": "/media/posts/review/baseus-bp1-pro/app-eq-presets.jpg",
+    "w": 738,
+    "h": 1600,
+    "fit": "contain",
+    "alt": "หน้าเลือก EQ preset 7 แบบ และปุ่ม Custom",
+    "summary": "EQ preset 7 แบบ",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "เลือก EQ preset ได้ 7 แบบ และสร้างแบบกำหนดเองด้วยปุ่ม Custom ในภาพเลือก Hi-Fi Live"
+    ],
+    "screenTitle": "ค่าในภาพ",
+    "screen": [
+      [
+        "Preset",
+        "Baseus Classic, Deep Bass, Hi-Fi Live, Jazz, Classical, Treble Boost, Acoustic"
+      ]
+    ],
+    "group": "ภาพหน้าจอแอป Baseus"
+  },
+  {
+    "id": "27",
+    "title": "แอป: Noise reduction settings",
+    "src": "/media/posts/review/baseus-bp1-pro/app-anc-modes.jpg",
+    "w": 738,
+    "h": 1600,
+    "fit": "contain",
+    "alt": "หน้าเลือกโหมด ANC: Adaptive, Indoor, Outdoor, Commuting และ Custom",
+    "summary": "ANC 4 โหมด + Custom",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "เลือกโหมดตัดเสียงได้ 4 แบบ คือ Adaptive, Indoor, Outdoor, Commuting และมี Custom ให้ปรับเอง ผู้รีวิวเลือก Adaptive"
+    ],
+    "group": "ภาพหน้าจอแอป Baseus"
+  },
+  {
+    "id": "28",
+    "title": "แอป: Gesture Setting (บน)",
+    "src": "/media/posts/review/baseus-bp1-pro/app-gestures-1.jpg",
+    "w": 909,
+    "h": 1600,
+    "fit": "contain",
+    "alt": "หน้าตั้งค่าการแตะ Tap และ Double-tap แยกซ้ายขวา",
+    "summary": "ตั้งค่าการแตะแยกซ้าย-ขวา",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ตั้งคำสั่งการแตะแยกข้างซ้ายและขวาได้ ค่าในภาพเป็นค่าที่ผู้รีวิวตั้งไว้"
+    ],
+    "screenTitle": "ค่าในภาพ",
+    "screen": [
+      [
+        "Tap",
+        "Play/Pause (ซ้าย/ขวา)"
+      ],
+      [
+        "Double-tap",
+        "ซ้าย Volume− / ขวา Play/Pause"
+      ]
+    ],
+    "group": "ภาพหน้าจอแอป Baseus"
+  },
+  {
+    "id": "29",
+    "title": "แอป: Gesture Setting (ล่าง)",
+    "src": "/media/posts/review/baseus-bp1-pro/app-gestures-2.jpg",
+    "w": 909,
+    "h": 1600,
+    "fit": "contain",
+    "alt": "ส่วนล่างของหน้าตั้งค่าการแตะ: Double-tap, Press-hold และ Tap 3 times",
+    "summary": "แตะค้าง และแตะ 3 ครั้ง",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ส่วนล่างของหน้าเดียวกัน (ในแอปมีหัวข้อ Double-tap ซ้ำสองครั้ง)"
+    ],
+    "screenTitle": "ค่าในภาพ",
+    "screen": [
+      [
+        "Double-tap (หัวข้อที่สอง)",
+        "ซ้าย Volume− / ขวา Volume+"
+      ],
+      [
+        "Press-hold",
+        "ซ้าย Empty / ขวา Ambient sound"
+      ],
+      [
+        "Tap 3 times",
+        "Mobile Voice Assistant (ซ้าย/ขวา)"
+      ]
+    ],
+    "group": "ภาพหน้าจอแอป Baseus"
+  },
+  {
+    "id": "30",
+    "title": "แอป: Customize EQ (Android และ iOS)",
+    "src": "/media/posts/review/baseus-bp1-pro/app-eq-custom.jpg",
+    "w": 1448,
+    "h": 1600,
+    "fit": "contain",
+    "alt": "หน้าปรับ EQ เอง 8 แบนด์ บน Android (ซ้าย) และ iOS ภาษาไทย (ขวา)",
+    "summary": "EQ 8 แบนด์ ทั้ง Android และ iOS",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "Customize EQ ปรับได้ 8 แบนด์ ช่วงประมาณ ±6 dB ภาพซ้ายเป็นแอปบน Android (preset Light) ภาพขวาเป็นแอปบน iOS เมนูภาษาไทย (preset Test)",
+      "ผู้รีวิวบอกว่าปรับแล้วระดับเสียงลดลง ไม่ Balance เหมือน preset ที่ Baseus เซ็ตมา"
+    ],
+    "group": "ภาพหน้าจอแอป Baseus"
+  },
+  {
+    "id": "31",
+    "title": "แอป: LDAC (Android และ iOS)",
+    "src": "/media/posts/review/baseus-bp1-pro/app-ldac.jpg",
+    "w": 1448,
+    "h": 1600,
+    "fit": "contain",
+    "alt": "หน้า LDAC บน Android (ซ้าย) และ iOS ภาษาไทย (ขวา) พร้อมคำอธิบายข้อจำกัด",
+    "summary": "เปิด LDAC แล้วฟีเจอร์อื่นถูกปิด",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "เมื่อเปิด LDAC แล้ว Dual-Device Connection, Spatial Audio และ Low-Latency Mode จะถูกปิด และจะเปลี่ยนไปใช้โหมดตัดเสียงอีกแบบแทน",
+      "หมายเหตุในแอปบอกเองว่า LDAC ไม่รองรับบนอุปกรณ์ iOS แต่แอปบน iOS (ภาพขวา) ก็ยังมีเมนูนี้ให้เปิด"
+    ],
+    "group": "ภาพหน้าจอแอป Baseus"
+  },
+  {
+    "id": "32",
+    "title": "แอป: Find headphones",
+    "src": "/media/posts/review/baseus-bp1-pro/app-find-map.jpg",
+    "w": 1477,
+    "h": 1600,
+    "fit": "contain",
+    "alt": "หน้าค้นหาหูฟังบนแผนที่ ภาพถูกเบลอยกเว้นเมนู Call L / Call R",
+    "summary": "ส่งเสียงหาทีละข้าง (เบลอแผนที่)",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "หน้า Find headphones แสดงตำแหน่งล่าสุดที่หูฟังตัดการเชื่อมต่อบนแผนที่ และกดส่งเสียงหาหูฟังทีละข้างได้ (Call L / Call R)",
+      "แผนที่และที่อยู่ถูกเบลอทั้งหมดเพราะระบุตำแหน่งได้"
+    ],
+    "group": "ภาพหน้าจอแอป Baseus"
+  }
+]
