@@ -1,0 +1,302 @@
+[
+  {
+    "id": "1",
+    "title": "ในกำมือ",
+    "src": "/media/posts/review/orsen-c102t/hand-front.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเครื่อง",
+    "alt": "ORSEN 100W GaN ถืออยู่ในมือ",
+    "summary": "100W แต่ตัวเล็กพอ ๆ กับฝ่ามือ",
+    "analysis": [
+      "บอดี้สีเงินเทา มุมตัดเหลี่ยม พิมพ์ 100W GaN ชัดเจน",
+      "ขนาดตามร้านค้า 3.1 × 7.3 × 4.5 ซม. หนัก 165 กรัม"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "จับด้านข้าง",
+    "src": "/media/posts/review/orsen-c102t/hand-grip.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเครื่อง",
+    "alt": "ORSEN C102T ถือด้านข้าง",
+    "summary": "บางพอจะใส่กระเป๋าเสื้อได้"
+  },
+  {
+    "id": "3",
+    "title": "ด้านหน้า",
+    "src": "/media/posts/review/orsen-c102t/front.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเครื่อง",
+    "alt": "ORSEN C102T วางบนโต๊ะ",
+    "summary": "วัสดุดูแน่นหนา ผิวด้าน ไม่เก็บรอยนิ้วมือ"
+  },
+  {
+    "id": "4",
+    "title": "ช่องชาร์จ",
+    "src": "/media/posts/review/orsen-c102t/ports.jpg",
+    "w": 1200,
+    "h": 1600,
+    "group": "ตัวเครื่อง",
+    "alt": "ช่อง USB-C C1, C2 และ USB-A",
+    "summary": "ช่องบนสุด C1 คือช่องหลักที่ได้ไฟมากสุด",
+    "fit": "contain",
+    "analysis": [
+      "C1 อยู่บนสุด มีไอคอนโน้ตบุ๊ก = ช่องสำหรับเครื่องที่กินไฟมาก",
+      "เสียบหลายช่องพร้อมกัน C1 ยังได้ 65W เสมอ แต่ C2 กับ A จะถูกลดไฟลง ดูตารางในหัวข้อสเปก"
+    ]
+  },
+  {
+    "id": "5",
+    "title": "ฉลากใต้เครื่อง",
+    "src": "/media/posts/review/orsen-c102t/label.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเครื่อง",
+    "alt": "ฉลากสเปก ORSEN C102T",
+    "summary": "สเปกทุกช่องและการแบ่งไฟเมื่อเสียบพร้อมกัน",
+    "screenTitle": "ข้อความบนฉลาก",
+    "screen": [
+      [
+        "ผู้ผลิต",
+        "Shenzhen Eloop Technology Co., Ltd"
+      ],
+      [
+        "Input",
+        "AC100–240V 50/60Hz 1.8A MAX · Total 100W MAX"
+      ],
+      [
+        "USB A",
+        "4.5V5A, 5V3A, 5V4.5A, 9V2A, 12V1.5A · 22.5W MAX"
+      ],
+      [
+        "Type C1 / C2",
+        "5V3A, 9V3A, 12V3A, 15V3A, 20V5A · 100W MAX"
+      ],
+      [
+        "C1+C2",
+        "65W + 30W"
+      ],
+      [
+        "C1+A",
+        "65W + 22.5W"
+      ],
+      [
+        "C2+A",
+        "15W (5V/3A)"
+      ],
+      [
+        "C1+C2+A",
+        "65W + 15W (5V/3A)"
+      ]
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Auto detection ช่อง C",
+    "src": "/media/posts/review/orsen-c102t/detect-auto.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ผลวัดด้วยมิเตอร์",
+    "alt": "POWER-Z ตรวจโปรโตคอลช่อง USB-C",
+    "summary": "รองรับครบทั้ง PD, PPS, QC4+, SCP, FCP, AFC",
+    "readings": [
+      [
+        "PD",
+        "3.0 100W"
+      ],
+      [
+        "อื่น ๆ",
+        "PPS, QC4+"
+      ],
+      [
+        "Huawei",
+        "FCP, SCP"
+      ],
+      [
+        "Samsung",
+        "AFC, 2A"
+      ]
+    ],
+    "analysis": [
+      "มิเตอร์ตรวจพบ FCP, SCP, AFC, QC3.0, SFCP, PD3.0 100W พร้อม PPS และ QC4+, DCP Samsung 2A และ Apple 2.4A"
+    ]
+  },
+  {
+    "id": "7",
+    "title": "PD 3.0 100W",
+    "src": "/media/posts/review/orsen-c102t/detect-pd.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ผลวัดด้วยมิเตอร์",
+    "alt": "รายการแรงดัน PD ที่หัวชาร์จประกาศ",
+    "summary": "20V 5A = 100W และ PPS 5A",
+    "readings": [
+      [
+        "Fixed",
+        "5 / 9 / 12 / 15V 3A"
+      ],
+      [
+        "Fixed",
+        "20V 5A"
+      ],
+      [
+        "PPS",
+        "3.3–11V 5A"
+      ]
+    ],
+    "analysis": [
+      "20V 5A คือ 100W เต็ม ต้องใช้สาย USB-C ที่รองรับ 5A (มีชิป e-marker) ถึงจะได้ไฟเต็ม",
+      "PPS 3.3–11V 5A คือสิ่งที่ Samsung Super Fast Charging 2.0 (45W) ต้องใช้"
+    ]
+  },
+  {
+    "id": "8",
+    "title": "Huawei SCP 40W",
+    "src": "/media/posts/review/orsen-c102t/detect-scp.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ผลวัดด้วยมิเตอร์",
+    "alt": "POWER-Z แสดง SCP 40W",
+    "summary": "ชาร์จเร็วของ Huawei สูงสุด 40W",
+    "readings": [
+      [
+        "SCP",
+        "40W"
+      ],
+      [
+        "แรงดัน",
+        "3.3–12V"
+      ],
+      [
+        "กระแส",
+        "สูงสุด 4A"
+      ]
+    ]
+  },
+  {
+    "id": "9",
+    "title": "Huawei FCP",
+    "src": "/media/posts/review/orsen-c102t/detect-fcp.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ผลวัดด้วยมิเตอร์",
+    "alt": "POWER-Z แสดง FCP 24W",
+    "summary": "FCP 5V / 9V / 12V ที่ 2A",
+    "readings": [
+      [
+        "FCP",
+        "24W"
+      ],
+      [
+        "Fixed",
+        "5 / 9 / 12V 2A"
+      ]
+    ]
+  },
+  {
+    "id": "10",
+    "title": "Samsung AFC",
+    "src": "/media/posts/review/orsen-c102t/detect-afc.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ผลวัดด้วยมิเตอร์",
+    "alt": "POWER-Z แสดง AFC 24W",
+    "summary": "AFC สำหรับ Samsung รุ่นที่ไม่รองรับ PPS",
+    "readings": [
+      [
+        "AFC",
+        "24W"
+      ],
+      [
+        "Fixed",
+        "5 / 9 / 12V 2A"
+      ]
+    ]
+  },
+  {
+    "id": "11",
+    "title": "ช่อง USB-A",
+    "src": "/media/posts/review/orsen-c102t/usba-enumerate.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ผลวัดด้วยมิเตอร์",
+    "alt": "POWER-Z ตรวจโปรโตคอลช่อง USB-A",
+    "summary": "ช่อง A รองรับชาร์จเร็วครบ แต่สูงสุด 22.5W",
+    "readings": [
+      [
+        "Apple",
+        "2.4A"
+      ],
+      [
+        "QC",
+        "2.0 / 3.0 (9V, 12V)"
+      ],
+      [
+        "Samsung AFC",
+        "9V, 12V"
+      ],
+      [
+        "Huawei",
+        "FCP 9V 2A · SCP 4.5V 5A"
+      ]
+    ],
+    "analysis": [
+      "สีเขียวคือรองรับ ส่วน QC2 20V เป็นสีเทา = ไม่รองรับ ตรงกับฉลากที่ช่อง A สูงสุด 12V"
+    ]
+  },
+  {
+    "id": "12",
+    "title": "เทียบหัวชาร์จ 120W",
+    "src": "/media/posts/review/orsen-c102t/vs-120w.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "เทียบขนาด",
+    "alt": "ORSEN วางบนหัวชาร์จ GaN 120W อีกตัว",
+    "summary": "GaN รุ่นใหม่เล็กกว่ารุ่นก่อนเยอะ"
+  },
+  {
+    "id": "13",
+    "title": "เทียบหัวชาร์จหลายรุ่น",
+    "src": "/media/posts/review/orsen-c102t/vs-chargers.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "เทียบขนาด",
+    "alt": "ORSEN 100W เทียบกับหัวชาร์จ ORSEN สีขาว Apple, Baseus และ Huawei",
+    "summary": "เล็กสุดในกลุ่มเมื่อเทียบกำลังไฟ"
+  },
+  {
+    "id": "14",
+    "title": "เทียบความหนา",
+    "src": "/media/posts/review/orsen-c102t/vs-size.jpg",
+    "w": 1200,
+    "h": 1600,
+    "group": "เทียบขนาด",
+    "alt": "ORSEN วางคู่หัวชาร์จสีขาวรุ่นเก่า",
+    "summary": "ขนาดพกง่ายขึ้นแยะ",
+    "fit": "contain"
+  },
+  {
+    "id": "15",
+    "title": "เทียบกับมือถือ",
+    "src": "/media/posts/review/orsen-c102t/vs-phone.jpg",
+    "w": 1200,
+    "h": 1600,
+    "group": "เทียบขนาด",
+    "alt": "ORSEN C102T วางข้าง Samsung Galaxy Ultra",
+    "summary": "สูงไม่ถึงครึ่งของมือถือ",
+    "fit": "contain"
+  },
+  {
+    "id": "16",
+    "title": "ใช้งานจริง",
+    "src": "/media/posts/review/orsen-c102t/desk.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเครื่อง",
+    "alt": "ORSEN C102T ต่อสายชาร์จบนโต๊ะ",
+    "summary": "ใช้งานจริงร้อนบ้างตอนจ่ายไฟหนัก แต่โดยรวมโอเค"
+  }
+]
