@@ -1,0 +1,105 @@
+---
+import '../styles/site.css';
+import Icons from '../components/Icons.astro';
+import { EasterEggs } from '../App.jsx';
+import { PROFILE, DOCS_URL } from '../data/site.js';
+
+const {
+  title,
+  description = 'Portfolio และรีวิวของ DOJOJIN.TECH — System Engineer สาย CCTV analytics, computer vision, real-time event systems และ infra พร้อมรีวิว Charger และหูฟัง',
+  image = '/og-image.png',
+  active,
+  ogType = 'website',
+} = Astro.props;
+
+const siteName = 'DOJOJIN.TECH';
+const fullTitle = title ? `${title} — ${siteName}` : `${siteName} — System Engineer / Infrastructure`;
+const ogTitle = title ?? fullTitle;
+const url = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL(image, Astro.site).href;
+const nav = [
+  ['home', '/', 'Home'],
+  ['projects', '/projects/', 'Projects'],
+  ['reviews', '/reviews/', 'Reviews'],
+  ['about', '/about/', 'About'],
+  ['guestbook', '/guestbook/', 'Guestbook'],
+];
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      name: PROFILE.name,
+      alternateName: 'Mr. Dojo-mAn',
+      url: 'https://dojojin.tech/',
+      jobTitle: 'System Engineer / Infrastructure Engineer',
+      description: 'System Engineer สาย CCTV analytics, computer vision, real-time event systems และ infrastructure',
+      knowsAbout: ['CCTV Analytics', 'Computer Vision', 'Real-time Systems', 'MQTT', 'ONVIF', 'Docker', 'Nginx', 'Cloudflare Tunnel', 'React', 'Node.js', 'Python', 'React Native'],
+      sameAs: Object.values(PROFILE.socials).map((u) => u.replace(/\/$/, '')),
+    },
+    {
+      '@type': 'WebSite',
+      name: siteName,
+      url: 'https://dojojin.tech/',
+      inLanguage: 'th',
+      author: { '@type': 'Person', name: PROFILE.name },
+    },
+  ],
+};
+---
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <meta name="author" content="Mr. Dojo-mAn (Prakasit)" />
+  <link rel="canonical" href={url} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="sitemap" href="/sitemap-index.xml" />
+
+  <meta property="og:type" content={ogType} />
+  <meta property="og:site_name" content={siteName} />
+  <meta property="og:title" content={ogTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={url} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:locale" content="th_TH" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={ogTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&family=JetBrains+Mono:wght@500;600&display=swap" />
+</head>
+<body>
+  <Icons />
+  <header class="site-bar">
+    <div class="wrap">
+      <span class="brand">
+        <button class="brand__logo" type="button" data-logo aria-label="DOJOJIN logo"><img src="/favicon.svg" alt="" width="28" height="28" /></button>
+        <a class="site-bar__brand" href="/">{siteName}</a>
+      </span>
+      <nav class="site-nav" aria-label="เมนูหลัก">
+        {nav.map(([id, href, label]) => <a href={href} aria-current={active === id ? 'page' : undefined}>{label}</a>)}
+        <a href={DOCS_URL} rel="noopener">Docs</a>
+      </nav>
+    </div>
+  </header>
+
+  <slot />
+
+  <footer class="source site-footer">
+    <div class="wrap">
+      <span>© {new Date().getFullYear()} {siteName} · {PROFILE.name}</span>
+      <a href="/lab/">/lab</a>
+    </div>
+  </footer>
+  <EasterEggs client:only="react" />
+</body>
+</html>
