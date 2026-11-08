@@ -67,7 +67,7 @@ export const PROJECTS = [
   { name:"Vigil Mobile", emoji:"📱", color:"#00b4ff", status:"BETA", statusColor:"#00b4ff", link:"/projects/vigil-mobile/",
     desc:"แอปมือถือ iOS และ Android คู่กับ Vigil Platform ดูสถานะกล้องและการแจ้งเตือนได้ทุกที่",
     tech:["iOS","Android"] },
-  { name:"HippoCraft", emoji:"🦛", color:"#2bb673", status:"INTERNAL", statusColor:"#f59e0b", link:"/projects/hippocraft/",
+  { name:"HippoCraft", emoji:"🦛", color:"#2bb673", status:"BETA", statusColor:"#f59e0b", link:"/projects/hippocraft/",
     desc:"โปรแกรมอ่านและแก้ไข PDF เขียนด้วย Rust แก้ข้อความภาษาไทยในไฟล์ได้โดยคงฟอนต์เดิม",
     tech:["Rust","WebAssembly","PaddleOCR","HarfBuzz","egui"] },
   { name:"AI OCR Pipeline", emoji:"📄", color:"#f59e0b", status:"PAUSED", statusColor:"#f59e0b", link:"/projects/ai-ocr-pipeline/",
