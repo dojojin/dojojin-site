@@ -1,0 +1,70 @@
+[
+  {
+    "title": "ทั่วไป",
+    "rows": [
+      ["รุ่น", "OPPO Enco X3s (Model ETED1)", "ฉลาก"],
+      ["Type", "TWS In-Ears"],
+      ["ผู้ผลิต", "Guangdong OPPO Mobile Telecommunications Corp., Ltd · ผลิตในจีน", "ฉลาก"],
+      ["Material", "พลาสติก + ซิลิโคน"],
+      ["IP Rating", "IP55 (ตัวหูฟัง · เคสชาร์จไม่กันน้ำ)", "OPPO"],
+      ["น้ำหนัก", "4.73 ± 0.2 กรัม/ข้าง · รวมเคส 49.02 ± 1 กรัม", "OPPO"],
+      ["ขนาด", "หูฟัง 31.0 × 20.6 × 24.2 มม. · เคส 65.4 × 52.4 × 25.3 มม.", "OPPO"],
+      ["ราคา", "4,999 บาท (ราคาเปิดตัว) · ยังไม่วางขายแยกอย่างเป็นทางการในไทย มาเป็นของแถม Find X9 Pro"]
+    ]
+  },
+  {
+    "title": "เสียง",
+    "rows": [
+      ["Driver", "11mm + 6mm dual dynamic drivers"],
+      ["Sensitivity", "118 ± 1.3 dB @ 1mW", "OPPO"],
+      ["Frequency response", "15 Hz – 40 kHz", "OPPO"],
+      ["Technology", ["Sound Tuning by Dynaudio", "Dual Drivers + Dual DAC", "OPPO Alive Audio (เสียงรอบทิศทาง ไม่มี head tracking)", "Golden Sound 2.0 (จูนเสียงตามหูผู้ฟัง)", "LHDC 5.0 Hi-Res (สูงสุด 192kHz / 1Mbps)"]],
+      ["EQ", "4 preset (Ultimate Sound, Pure Vocals, Thundering Bass, Dynaudio Featured) + Custom 6 แบนด์"],
+      ["ANC", "ตัดเสียงได้ลึกสุด 55dB · ครอบคลุมความถี่ถึง 5500Hz · 4 โหมด (High, Moderate, Low, Auto)", "OPPO"],
+      ["Transparency", "2 โหมด: Adaptive (ปรับอัตโนมัติ) และ Transparency"]
+    ]
+  },
+  {
+    "title": "การเชื่อมต่อ",
+    "rows": [
+      ["Bluetooth®", "5.4 · ระยะ 10 เมตร", "OPPO"],
+      ["CODEC", "LHDC 5.0, AAC, SBC", "OPPO"],
+      ["Latency", "~47ms · มี Game Mode (Low Latency Mode ผ่านแอป)"],
+      ["Multipoint", "เชื่อมต่อพร้อมกัน 2 เครื่อง (Dual Connection)", "OPPO"],
+      ["Google Fast Pair", "รองรับ"],
+      ["Microsoft Swift Pair", "รองรับ"],
+      ["แอป", "HeyMelody (Android / iOS)", "OPPO"]
+    ]
+  },
+  {
+    "title": "ไมโครโฟนและการควบคุม",
+    "rows": [
+      ["Microphone", "3 ตัว/ข้าง (รวม 6) + AI ENC", "OPPO"],
+      ["", ["Feedforward Mic: ด้านข้างส่วนบน จับเสียงรอบข้าง", "Feedback Mic: ด้านในหู จับเสียงสะท้อน", "Talk Mic: ด้านข้างส่วนล่าง ใกล้ปาก จับเสียงพูด"]],
+      ["การควบคุม", "แตะ 1 / 2 / 3 ครั้ง, แตะค้าง และสไลด์ (ปรับเสียงหรือเปลี่ยนเพลง) ตั้งค่าเองได้ในแอป"],
+      ["Eartips Fit Test", "มี"],
+      ["Wear Detection", "หยุดเพลงอัตโนมัติเมื่อถอดหูฟัง"]
+    ]
+  },
+  {
+    "title": "แบตเตอรี่ (เปิดเสียง 50%)",
+    "rows": [
+      ["Battery", "หูฟัง 62 mAh · เคส 530 mAh (2.0617 Wh)", "ฉลาก"],
+      ["AAC, ปิด ANC", "11 ชม. · รวมเคส 45 ชม.", "OPPO"],
+      ["AAC, เปิด ANC", "6 ชม. · รวมเคส 24 ชม.", "OPPO"],
+      ["LHDC 5.0, ปิด ANC", "9 ชม. · รวมเคส 37 ชม.", "OPPO"],
+      ["LHDC 5.0, เปิด ANC", "5.5 ชม. · รวมเคส 22 ชม.", "OPPO"],
+      ["คุยสาย", "ปิด ANC 6 ชม. (รวมเคส 24) · เปิด ANC 4 ชม. (รวมเคส 17)", "OPPO"],
+      ["ชาร์จเต็ม", "หูฟัง ~50 นาที · หูฟัง + เคส ~80 นาที", "OPPO"],
+      ["ไฟเข้าเคส", "USB-C 5.0V ⎓ 1.5A", "ฉลาก"],
+      ["Quick Charge", "ชาร์จ 10 นาที ฟังได้ ~2 ชั่วโมง"]
+    ]
+  },
+  {
+    "title": "ค้นหาหูฟัง",
+    "rows": [
+      ["Find my earbuds (เสียง)", "มี ผ่านแอป HeyMelody"],
+      ["Find my earbuds (แผนที่)", "มี ผ่าน Find Hub ของ Google (เครื่องที่มี Google Mobile Services)"]
+    ]
+  }
+]
