@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 const { tag } = Astro.params;
 const items = await getFeed(undefined, tag);
 ---
-<Base title={`#${TAGS[tag]}`} description={`บทความที่ติด tag ${TAGS[tag]} บน DOJOJIN.TECH`}>
+<Base title={`#${TAGS[tag]}`} description={`รวมรีวิวและบทความความรู้เกี่ยวกับ ${TAGS[tag]} บน DOJOJIN.TECH ทุกตัวเลขวัดจริง ทุกรูปถ่ายเอง (${items.length} บทความ)`} noindex={items.length < 2}>
   <section class="hero">
     <div class="wrap" style="grid-template-columns:1fr">
       <div class="hero__text">

@@ -13,7 +13,7 @@ const t = TYPES[type];
 const items = await getFeed(type);
 const topics = Object.keys(TOPICS).filter((k) => items.some((i) => i.topic === k));
 ---
-<Base title={t.name} description={t.blurb} active={type}>
+<Base title={t.name} description={`${t.blurb} · รวมทุกบทความในหมวด ${t.name} ของ DOJOJIN.TECH`} active={type}>
   <section class="hero">
     <div class="wrap" style="grid-template-columns:1fr">
       <div class="hero__text">
