@@ -1,0 +1,89 @@
+---
+import Base from '../../layouts/Base.astro';
+
+// HippoCraft downloads. Links on upl.dojojin.tech never change (they always serve the newest build);
+// only VERSION / DATE below change with a release (source: the owner's release page + README).
+const VERSION = '0.18.1-th23.2d.b4603';
+const DATE = '9 พฤศจิกายน 2569';
+const U = (id) => `https://upl.dojojin.tech/pub/fil/${id}`;
+const platforms = [
+  {
+    os: 'Windows 10 / 11',
+    tip: 'ดับเบิลคลิก .msi แล้วเลือก Only for me (ไม่ต้องเป็น admin) · ถ้ามีหน้าต่างเตือน กด More info › Run anyway',
+    files: [
+      ['x64', '.msi', 'PC ทั่วไป', U('ux5v3u46'), true],
+      ['x64 Portable', '.zip', 'ไม่ต้องติดตั้ง', U('zozagraa')],
+      ['x86 32 บิต', '.msi', 'Windows รุ่นเก่า', U('1xfrmles')],
+      ['x86 Portable', '.zip', 'ไม่ต้องติดตั้ง', U('0nmen8mi')],
+      ['ARM64', '.msi', 'Surface / Snapdragon', U('oowxgic2')],
+      ['ARM64 Portable', '.zip', 'ไม่ต้องติดตั้ง', U('z1mlplfc')],
+    ],
+  },
+  {
+    os: 'macOS 11 ขึ้นไป',
+    tip: 'Universal: Apple Silicon และ Intel ในไฟล์เดียว · ถ้าเปิดไม่ได้ ไปที่ System Settings › Privacy & Security แล้วกด Open Anyway',
+    files: [
+      ['Universal', '.dmg', 'แอป', U('6uurxfs9'), true],
+      ['CLI', '.zip', 'ใช้ใน Terminal', U('6v7b686e')],
+    ],
+  },
+  {
+    os: 'Linux x86_64',
+    tip: 'glibc 2.39 ขึ้นไป (Ubuntu 24.04, Mint 22, Fedora 40, Debian 13) · AppImage: chmod +x แล้วเปิดได้เลย',
+    files: [
+      ['AppImage', '', 'ทุก distro · ใหม่', U('ptgs762t'), true],
+      ['.deb', '', 'Ubuntu / Mint', U('8pvbdxyu')],
+      ['CLI', '.tar.gz', 'สำหรับเซิร์ฟเวอร์', U('48o09gkd')],
+      ['AppImage .zsync', '', 'อัปเดตแบบ delta', U('bl6fe65b')],
+    ],
+  },
+];
+---
+<Base title="ดาวน์โหลด HippoCraft" description={`ดาวน์โหลด HippoCraft ${VERSION} โปรแกรมอ่านและแก้ไข PDF ภาษาไทย สำหรับ Windows, macOS, Linux หรือใช้ผ่านเว็บ pdf.dojojin.tech ไฟล์ไม่ขึ้นคลาวด์`} active="projects" image="/media/projects/hippocraft/icon.png">
+  <section class="hero">
+    <div class="wrap" style="grid-template-columns:1fr">
+      <div class="hero__text">
+        <a class="crumbs" href="/projects/hippocraft/">Projects / HippoCraft</a>
+        <h1 class="project-title"><img src="/media/projects/hippocraft/icon.png" width="56" height="56" alt="" />ดาวน์โหลด HippoCraft</h1>
+        <p class="lead">สาบานว่าจะไม่ทำ PDF ของคุณพัง · โปรแกรมอ่านและแก้ไข PDF ที่เข้าใจภาษาไทยจริง ๆ</p>
+        <p class="dl-version"><span>รุ่น <b>{VERSION}</b></span><span class="badge tier-2"><svg class="icon" aria-hidden="true"><use href="#icon-dot" /></svg>Beta</span><span>{DATE}</span></p>
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap layout" style="grid-template-columns:1fr">
+    <div class="content dl">
+      <section class="dl-web">
+        <div>
+          <h2>ใช้ผ่านเว็บ ไม่ต้องติดตั้ง</h2>
+          <p>ลงทะเบียนก่อนใช้ · ไฟล์ PDF ทำงานในเบราว์เซอร์ของคุณ ไม่ถูกอัปโหลด</p>
+        </div>
+        <a class="dl-btn dl-btn--primary" href="https://pdf.dojojin.tech" rel="noopener">เปิด pdf.dojojin.tech</a>
+      </section>
+
+      {platforms.map((p) => (
+        <section class="dl-os">
+          <h2>{p.os}</h2>
+          <p class="dl-tip">{p.tip}</p>
+          <ul class="dl-list">
+            {p.files.map(([name, ext, note, href, main]) => (
+              <li><a class={`dl-btn${main ? ' dl-btn--primary' : ''}`} href={href} rel="noopener">
+                <b>{name}{ext && <span> {ext}</span>}</b><small>{note}</small>
+              </a></li>
+            ))}
+          </ul>
+        </section>
+      ))}
+
+      <section class="dl-notes">
+        <h2>ข้อมูลเพิ่มเติม</h2>
+        <ul>
+          <li>ลิงก์ไม่เปลี่ยน เป็นรุ่นล่าสุดเสมอ · ชื่อไฟล์บอกรุ่น เช่น <code>hippocraft-{VERSION}-windows-x64.msi</code> เลขหลัง b ยิ่งมากยิ่งใหม่ · หน้า About ในโปรแกรมบอกเลขเดียวกัน</li>
+          <li>ตรวจไฟล์: <a href={U('31uv7uyu')} rel="noopener">SHA256SUMS</a> (ทุกระบบ) · <a href={U('k1i2lpys')} rel="noopener">README / ประวัติรุ่น</a></li>
+          <li>มีอะไรใหม่ในรุ่นนี้ และงานที่กำลังทำ ดูที่ <a href="/projects/hippocraft/">หน้าโปรเจกต์ HippoCraft</a></li>
+          <li>HippoCraft · Dojo-mAn's Edition · พัฒนาต่อจาก <a href="https://github.com/storytold/pdfcraft" rel="noopener">PdfCraft</a> · สัญญาอนุญาต MIT OR Apache-2.0</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+</Base>
