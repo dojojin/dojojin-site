@@ -1,0 +1,65 @@
+[
+  {
+    "id": "1",
+    "title": "กล่อง SoundPEATS T3 Pro",
+    "src": "/media/posts/review/soundpeats-t3-pro/box-front.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "กล่อง SoundPEATS T3 Pro สีดำ",
+    "summary": "SoundPEATS T3 Pro สีดำ"
+  },
+  {
+    "id": "2",
+    "title": "หลังกล่อง",
+    "src": "/media/posts/review/soundpeats-t3-pro/box-back.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "หลังกล่อง SoundPEATS T3 Pro ระบุ Bluetooth 5.4 แบตเตอรี่ 40mAh และ 450mAh",
+    "summary": "Bluetooth 5.4 · ฟังได้ ~7 ชม. (รวมเคส 28 ชม.)",
+    "screenTitle": "ข้อความหลังกล่อง",
+    "screen": [
+      [
+        "Bluetooth Version",
+        "V5.4"
+      ],
+      [
+        "Frequency Response Range",
+        "20Hz–20kHz"
+      ],
+      [
+        "Maximum Working Distance",
+        "10m"
+      ],
+      [
+        "Play Time",
+        "About 7 Hours (Up to 28 Hours with Charging Case)"
+      ],
+      [
+        "Battery Capacity",
+        "40mAh (Earbuds) / 450mAh (Charging Case)"
+      ]
+    ]
+  },
+  {
+    "id": "3",
+    "title": "เคสที่ได้มาฟรี",
+    "src": "/media/posts/review/soundpeats-t3-pro/case-red-cover.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "เคสชาร์จ SoundPEATS T3 Pro ใส่เคสซิลิโคนสีแดง วางบนใบเสร็จ 499 บาท",
+    "summary": "ได้เคสซิลิโคนมาฟรี ๆ · ใบเสร็จ 499 บาท"
+  },
+  {
+    "id": "4",
+    "title": "เปิดฝาเคส",
+    "src": "/media/posts/review/soundpeats-t3-pro/case-open.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "SoundPEATS T3 Pro เปิดฝาเคส หูฟังสีดำในเคสซิลิโคนสีแดง",
+    "summary": "หูฟังสีดำ ทรงก้านสั้น"
+  }
+]
