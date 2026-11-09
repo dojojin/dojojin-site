@@ -1,0 +1,134 @@
+[
+  {
+    "title": "ทั่วไป",
+    "rows": [
+      [
+        "รุ่น",
+        "soundcore Liberty 4 Pro (Model A3954)",
+        "ฉลาก"
+      ],
+      [
+        "Type",
+        "TWS In-Ears"
+      ],
+      [
+        "Driver",
+        "ACAA™ 4.0 (Astria Coaxial Acoustic Architecture) · 10.5mm + 4.6mm",
+        "ผู้ผลิต"
+      ],
+      [
+        "น้ำหนักหูฟังต่อข้าง",
+        "5.5 กรัม",
+        "ผู้รีวิว"
+      ],
+      [
+        "น้ำหนักเคสชาร์จ",
+        "51 กรัม",
+        "ผู้รีวิว"
+      ],
+      [
+        "ราคา",
+        "5,490 บาท (ร้าน Retina TH)",
+        "บิล"
+      ],
+      [
+        "ประกัน",
+        "18 เดือน",
+        "กล่อง"
+      ],
+      [
+        "ผลิตที่",
+        "Made in China",
+        "ฉลาก"
+      ]
+    ]
+  },
+  {
+    "title": "การเชื่อมต่อ",
+    "rows": [
+      [
+        "Bluetooth®",
+        "5.3",
+        "ร้านค้า"
+      ],
+      [
+        "CODEC",
+        "LDAC, AAC, SBC (เลือก LDAC ได้เฉพาะแอปบน Android)",
+        "แอป"
+      ],
+      [
+        "Hi-Res Audio Wireless",
+        "มี",
+        "กล่อง"
+      ],
+      [
+        "Multipoint",
+        "เชื่อมต่อพร้อมกัน 2 เครื่อง จัดการผ่านแอปได้ทั้ง iOS และ Android",
+        "แอป"
+      ],
+      [
+        "แอป",
+        "soundcore (iOS / Android)"
+      ]
+    ]
+  },
+  {
+    "title": "ANC และไมโครโฟน",
+    "rows": [
+      [
+        "ANC",
+        "Adaptive ANC 3.0 · 7-Sensor Precise Noise Cancelling",
+        "กล่อง"
+      ],
+      [
+        "",
+        [
+          "Noise Cancelling 5 ระดับ + Transparency 5 ระดับ",
+          "Airplane Mode ปรับตามความกดอากาศ (Barometer)",
+          "Wind Noise Reduction"
+        ],
+        "ผู้รีวิว"
+      ],
+      [
+        "Microphone",
+        "6 ตัว (ข้างละ 3 ตัว)",
+        "ผู้ผลิต"
+      ],
+      [
+        "การควบคุม",
+        "บีบ 1 / 2 / 3 ครั้ง, บีบค้าง และสไลด์ แยกซ้าย-ขวา",
+        "แอป"
+      ],
+      [
+        "เคสชาร์จ",
+        "มีจอ + แถบสัมผัส: ANC, Spatial Audio, Atmospheric, Find Device, Remote Camera",
+        "แอป"
+      ]
+    ]
+  },
+  {
+    "title": "แบตเตอรี่",
+    "rows": [
+      [
+        "Battery เคส",
+        "580mAh / 2.16Wh (rated 340mAh)",
+        "ฉลาก"
+      ],
+      [
+        "ปิด ANC",
+        "10 ชม. · รวมเคส 40 ชม.",
+        "กล่อง"
+      ],
+      [
+        "เปิด ANC",
+        "7.5 ชม.",
+        "ผู้รีวิว"
+      ],
+      [
+        "ไฟเข้าเคส",
+        "5V ⎓ 1A",
+        "ฉลาก"
+      ]
+    ]
+  }
+]
