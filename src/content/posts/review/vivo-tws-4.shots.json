@@ -1,0 +1,257 @@
+[
+  {
+    "id": "1",
+    "title": "กล่อง vivo TWS 4",
+    "src": "/media/posts/review/vivo-tws-4/box-figures.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "แกะกล่อง",
+    "alt": "กล่อง vivo TWS 4 สีขาว มีโลโก้ Golden Ears และ Hi-Res Audio Wireless วางบนโต๊ะพร้อมฟิกเกอร์แมวและหมี",
+    "summary": "กล่องรุ่นจีน โลโก้ Golden Ears + Hi-Res",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "หน้ากล่องมีโลโก้ Golden Ears (การรับรองเสียงของ vivo) และ Hi-Res Audio Wireless",
+      "รุ่นที่รีวิวเป็นรุ่นขายในจีน กล่องและเอกสารเป็นภาษาจีน",
+      "นามบัตรด้านล่างถูกเบลอไว้"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "กล่องด้านหน้า",
+    "src": "/media/posts/review/vivo-tws-4/box-front.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "กล่อง vivo TWS 4 ด้านหน้า ภาพหูฟังสีดำในเคสสีน้ำเงินเทา",
+    "summary": "หูฟังสีดำ เคสสีน้ำเงินเทา"
+  },
+  {
+    "id": "3",
+    "title": "กล่องด้านหลัง",
+    "src": "/media/posts/review/vivo-tws-4/box-back.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "ด้านหลังกล่อง vivo TWS 4 ภาษาจีน ระบุ S3 รุ่นที่ 2, 55dB, 45h และ 44ms",
+    "summary": "จุดขาย 4 ข้อ ภาษาจีน",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "หลังกล่องบอกจุดขาย 4 ข้อ และ QR สำหรับโหลดแอปหูฟัง (耳机APP) กับร้านค้าทางการของ vivo",
+      "หมายเหตุใต้ตาราง: ข้อมูลมาจากห้องแล็บของ vivo"
+    ],
+    "screenTitle": "ข้อความบนกล่อง (แปลจากภาษาจีน)",
+    "screen": [
+      [
+        "高保真 Hi-Fi 级音质",
+        "เสียงระดับ Hi-Fi · แพลตฟอร์มเสียง Qualcomm S3 รุ่นที่ 2 · ไดอะแฟรมเซรามิกทังสเตน"
+      ],
+      [
+        "55dB 深海降噪",
+        "ตัดเสียงรบกวนได้ 55dB"
+      ],
+      [
+        "45h 超长续航",
+        "ฟังต่อเนื่อง 11 ชม. รวมเคสสูงสุด 45 ชม."
+      ],
+      [
+        "44ms 全链路游戏低延迟",
+        "ดีเลย์ในเกม 44ms"
+      ]
+    ]
+  },
+  {
+    "id": "4",
+    "title": "หน้าหลักแอป",
+    "src": "/media/posts/review/vivo-tws-4/app-main.jpg",
+    "w": 720,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าหลักแอปหูฟัง vivo TWS 4 โหมดตัดเสียง DeepX และเมนูตั้งค่า",
+    "summary": "โหมดตัดเสียง, DeepX, ปุ่มลัด และโหมดเกม",
+    "fit": "contain",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "มีสวิตช์ 'การเล่นเกมด้วยเวลาแฝงต่ำ' (โหมดลด Latency) ในหน้าหลัก"
+    ]
+  },
+  {
+    "id": "5",
+    "title": "หน้าหลัก (ธีมมืด)",
+    "src": "/media/posts/review/vivo-tws-4/app-main-dark.jpg",
+    "w": 720,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าหลักแอป vivo TWS 4 ธีมมืด แสดงเครื่องที่เชื่อมต่ออยู่สองเครื่อง",
+    "summary": "เชื่อมต่อสองเครื่องพร้อมกัน",
+    "fit": "contain"
+  },
+  {
+    "id": "6",
+    "title": "สถานะการเชื่อมต่อ",
+    "src": "/media/posts/review/vivo-tws-4/app-connected.jpg",
+    "w": 720,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าแอปแสดงภาพเคสหูฟังและแบตเตอรี่ซ้าย 70% ขวา 71%",
+    "summary": "แสดงแบตหูฟังแต่ละข้าง",
+    "fit": "contain"
+  },
+  {
+    "id": "7",
+    "title": "ระดับตัดเสียงรบกวน",
+    "src": "/media/posts/review/vivo-tws-4/app-anc-levels.jpg",
+    "w": 720,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าเลือกเอฟเฟกต์การตัดเสียงรบกวน ปรับอัตโนมัติ ปานกลาง มาตรฐาน และสูง",
+    "summary": "ANC: อัตโนมัติ / ปานกลาง / มาตรฐาน / สูง",
+    "fit": "contain",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ระดับสูงมีให้เลือกตามสถานที่: ทั่วไป, เครื่องบิน, รถไฟใต้ดิน, ขนส่งสาธารณะ"
+    ]
+  },
+  {
+    "id": "8",
+    "title": "โหมดรับเสียงภายนอก",
+    "src": "/media/posts/review/vivo-tws-4/app-transparency.jpg",
+    "w": 720,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าเลือกเอฟเฟกต์การรับเสียงภายนอก มาตรฐาน และการปรับปรุงเสียง",
+    "summary": "Transparency: มาตรฐาน / ปรับปรุงเสียง",
+    "fit": "contain"
+  },
+  {
+    "id": "9",
+    "title": "DeepX stereo effect",
+    "src": "/media/posts/review/vivo-tws-4/app-deepx.jpg",
+    "w": 720,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าเลือก DeepX stereo effect 5 แบบ Standard, Clear voice, Mega bass, Clear high pitch, Immersive audiobooks",
+    "summary": "Preset เสียง 5 แบบ",
+    "fit": "contain"
+  },
+  {
+    "id": "10",
+    "title": "3D Pano (Spatial)",
+    "src": "/media/posts/review/vivo-tws-4/app-3d-pano.jpg",
+    "w": 720,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้า 3D Pano เปิดใช้งาน พร้อมโหมด Standard, Theater, Concert hall, Recording",
+    "summary": "เสียงรอบทิศทาง เลือกโหมดได้",
+    "fit": "contain"
+  },
+  {
+    "id": "11",
+    "title": "เสียงปรับตามช่วงอายุ",
+    "src": "/media/posts/review/vivo-tws-4/app-age-sound.jpg",
+    "w": 720,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าเอฟเฟกต์เสียงที่ปรับแต่งให้เหมาะกับหูมนุษย์ แยกตามอายุต่ำกว่า 30, 30-60 และมากกว่า 60 ปี",
+    "summary": "ปรับเสียงตามช่วงอายุ หรือสร้างเอง",
+    "fit": "contain"
+  },
+  {
+    "id": "12",
+    "title": "เลือก Codec",
+    "src": "/media/posts/review/vivo-tws-4/app-codec.jpg",
+    "w": 720,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าตั้งค่า High quality audio เลือก aptX Adaptive, LDAC, AAC หรือปิด",
+    "summary": "aptX Adaptive / LDAC / AAC",
+    "fit": "contain"
+  },
+  {
+    "id": "13",
+    "title": "โหมดการบันทึก",
+    "src": "/media/posts/review/vivo-tws-4/app-recording.jpg",
+    "w": 720,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าเลือกโหมดการบันทึกเสียง มาตรฐาน, HD และ 3 มิติ",
+    "summary": "บันทึกเสียง: มาตรฐาน / HD / 3 มิติ",
+    "fit": "contain"
+  },
+  {
+    "id": "14",
+    "title": "การเชื่อมต่อสองอุปกรณ์",
+    "src": "/media/posts/review/vivo-tws-4/app-dual-connection.jpg",
+    "w": 720,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าการจัดการการเชื่อมต่อสองรายการ แสดงรายชื่ออุปกรณ์ที่เคยจับคู่",
+    "summary": "จัดการเครื่องที่เชื่อมต่อ",
+    "fit": "contain"
+  },
+  {
+    "id": "15",
+    "title": "ทางลัด: บีบ",
+    "src": "/media/posts/review/vivo-tws-4/app-shortcut-tap.jpg",
+    "w": 720,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าการดำเนินการทางลัดแบบกด ตั้งค่าเล่น/หยุด รับ/วางสาย",
+    "summary": "บีบก้าน 1 ครั้ง / 2 ครั้ง",
+    "fit": "contain"
+  },
+  {
+    "id": "16",
+    "title": "ทางลัด: ปัด",
+    "src": "/media/posts/review/vivo-tws-4/app-shortcut-slide.jpg",
+    "w": 720,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าการดำเนินการทางลัดแบบปัด หูฟังซ้ายและขวาตั้งเป็นปรับระดับเสียง",
+    "summary": "ปัดก้านเพื่อปรับเสียง",
+    "fit": "contain"
+  },
+  {
+    "id": "17",
+    "title": "ทดสอบความพอดี",
+    "src": "/media/posts/review/vivo-tws-4/app-fit-test.jpg",
+    "w": 720,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าทดสอบความพอดีของหูฟัง",
+    "summary": "เช็กว่าจุกหูฟังแนบสนิท",
+    "fit": "contain"
+  },
+  {
+    "id": "18",
+    "title": "ป้องกันการสูญเสียการได้ยิน",
+    "src": "/media/posts/review/vivo-tws-4/app-hearing-protection.jpg",
+    "w": 720,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าการแจ้งเตือนเมื่อใส่หูฟังนานเกินไป พร้อมปรับเสียงแจ้งเตือน",
+    "summary": "เตือนเมื่อใส่นานเกินไป",
+    "fit": "contain"
+  },
+  {
+    "id": "19",
+    "title": "ธีมส่วนตัว",
+    "src": "/media/posts/review/vivo-tws-4/app-themes.jpg",
+    "w": 720,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าเลือกธีม popup ตอนเปิดเคส มีธีมแมวและหมา",
+    "summary": "ธีม popup ตอนเปิดเคส",
+    "fit": "contain"
+  },
+  {
+    "id": "20",
+    "title": "popup ธีมแมว",
+    "src": "/media/posts/review/vivo-tws-4/app-theme-popup.jpg",
+    "w": 720,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "popup เชื่อมต่อ vivo TWS 4 ธีมแมว แบตซ้ายขวา 100%",
+    "summary": "popup ตอนเชื่อมต่อ",
+    "fit": "contain"
+  }
+]
