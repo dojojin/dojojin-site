@@ -1,0 +1,48 @@
+[
+  {
+    "title": "ทั่วไป",
+    "rows": [
+      ["รุ่น", "EarFun Air Pro 4 (Model TW600)", "ฉลาก"],
+      ["Type", "TWS In-Ears"],
+      ["Chipset", "Qualcomm QCC3091 (Snapdragon Sound)", "ผู้ผลิต"],
+      ["Driver", "10mm composite dynamic driver", "ผู้ผลิต"],
+      ["กันน้ำ", "IPX5", "ผู้ผลิต"],
+      ["ผลิตที่", "Made in China", "ฉลาก"]
+    ]
+  },
+  {
+    "title": "การเชื่อมต่อ",
+    "rows": [
+      ["Bluetooth®", "5.4", "ผู้ผลิต"],
+      ["CODEC", ["aptX, aptX HD, aptX Adaptive, aptX Lossless", "Snapdragon Sound", "LDAC, AAC, SBC"], "ผู้รีวิว"],
+      ["LE Audio / Auracast", "รองรับ (เปิดในแอป · ใช้พร้อม Google Fast Pair ไม่ได้)", "แอป"],
+      ["Multipoint", "เชื่อมต่อพร้อมกัน 2 เครื่อง", "ผู้ผลิต"],
+      ["Latency", "ต่ำกว่า 50ms ในโหมด Game Mode (Low Latency)", "ผู้ผลิต"],
+      ["Google Fast Pair", "รองรับ", "แอป"],
+      ["แอป", "EarFun Audio (iOS / Android)"]
+    ]
+  },
+  {
+    "title": "ANC และไมโครโฟน",
+    "rows": [
+      ["ANC", "ตัดเสียงได้สูงสุด 50dB · Strong, Balance, AI Environment Adaptive, AI Ear Adaptive, Wind Noise Cancelling", "ผู้ผลิต"],
+      ["Ambient Sound", "Default / Natural", "แอป"],
+      ["Microphone", "6 ตัว (ข้างละ 3 ตัว)", "ผู้ผลิต"],
+      ["ตัดเสียงตอนคุยสาย", "Qualcomm cVc™ 8.0 + AI", "ผู้ผลิต"],
+      ["การควบคุม", "แตะ 1 / 2 / 3 ครั้ง และแตะค้าง แยกซ้าย-ขวา (ไม่มีสไลด์ / บีบ)", "แอป"],
+      ["ตรวจจับการสวมใส่", "มี (In-ear detection)", "แอป"]
+    ]
+  },
+  {
+    "title": "แบตเตอรี่",
+    "rows": [
+      ["Battery เคส", "3.7V 600mAh (2.22Wh)", "ฉลาก"],
+      ["ปิด ANC", "11 ชม. · รวมเคส 52 ชม.", "ผู้ผลิต"],
+      ["เปิด ANC", "7.5 ชม. · รวมเคส 35 ชม.", "ผู้ผลิต"],
+      ["ชาร์จเร็ว", "ชาร์จ 10 นาที ฟังได้ 2 ชม.", "ผู้ผลิต"],
+      ["ไฟเข้าเคส", "5V ⎓ 1A", "ฉลาก"],
+      ["ชาร์จเคส", "USB-C หรือชาร์จไร้สาย", "ผู้ผลิต"],
+      ["บอกแบต", "แยกเปอร์เซ็นต์ หูฟังซ้าย / ขวา และเคสชาร์จ", "แอป"]
+    ]
+  }
+]

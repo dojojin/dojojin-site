@@ -1,0 +1,168 @@
+[
+  {
+    "id": "1",
+    "title": "กล่อง EarFun Air Pro 4",
+    "src": "/media/posts/review/earfun-air-pro-4/box-front.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "กล่อง EarFun Air Pro 4 ULTRA ANC มีโลโก้ LDAC, aptX Adaptive, Hi-Res Audio Wireless และ Snapdragon Sound",
+    "summary": "กล่องบอกครบ: LDAC, aptX Adaptive, Hi-Res, Snapdragon Sound",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "หน้ากล่องมีโลโก้ LDAC, Qualcomm aptX Adaptive, Hi-Res Audio Wireless และ Snapdragon Sound",
+      "มีตรา VGP 2024 Summer Gold Award Winner"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "เคสเทียบกับ soundcore Liberty 4 Pro",
+    "src": "/media/posts/review/earfun-air-pro-4/case-vs-liberty.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "เคสชาร์จ EarFun Air Pro 4 สีขาววางข้างเคส soundcore Liberty 4 Pro",
+    "summary": "เคสเล็ก พกพาง่าย ขนาดใกล้เคียง Liberty 4 Pro"
+  },
+  {
+    "id": "3",
+    "title": "เปิดฝาเคส",
+    "src": "/media/posts/review/earfun-air-pro-4/case-open.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "EarFun Air Pro 4 เปิดฝาเคส หูฟังก้านสีเงินอยู่ในเคสสีขาว",
+    "summary": "หูฟังทรงก้าน ปลายก้านสีเงิน"
+  },
+  {
+    "id": "4",
+    "title": "ไฟส่องในเคส",
+    "src": "/media/posts/review/earfun-air-pro-4/case-light.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "ไฟในเคส EarFun Air Pro 4 ส่องหูฟังตอนเปิดฝา",
+    "summary": "มีไฟส่องหูฟังเวลาหยิบในที่มืด ชอบมากตรงนี้"
+  },
+  {
+    "id": "5",
+    "title": "ฉลากใต้เคส",
+    "src": "/media/posts/review/earfun-air-pro-4/case-label.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "ฉลากใต้เคส EarFun Air Pro 4 รุ่น TW600 แบตเตอรี่ 600mAh",
+    "summary": "Model TW600 · แบตเคส 3.7V 600mAh 2.22Wh",
+    "screenTitle": "ข้อความบนฉลาก",
+    "screen": [
+      [
+        "Model",
+        "TW600"
+      ],
+      [
+        "Input",
+        "5V ⎓ 1A"
+      ],
+      [
+        "Output",
+        "5V ⎓ 0.15A x 2"
+      ],
+      [
+        "Battery",
+        "3.7V, 600mAh, 2.22Wh"
+      ],
+      [
+        "ผลิตที่",
+        "Made in China"
+      ]
+    ]
+  },
+  {
+    "id": "6",
+    "title": "หน้าหลักและโหมด ANC / Ambient",
+    "src": "/media/posts/review/earfun-air-pro-4/app-home-anc.jpg",
+    "w": 1440,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป EarFun Audio",
+    "alt": "แอป EarFun Audio หน้าหลัก เลือก Noise Cancelling 5 แบบ และ Ambient Sound แบบ Default กับ Natural",
+    "summary": "ANC มี Strong (ค่าเริ่มต้น) + อีก 4 แบบ · Ambient Sound มี Default กับ Natural",
+    "fit": "contain"
+  },
+  {
+    "id": "7",
+    "title": "เมนูตั้งค่า",
+    "src": "/media/posts/review/earfun-air-pro-4/app-settings.jpg",
+    "w": 1422,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป EarFun Audio",
+    "alt": "แอป EarFun Audio เมนู Game Mode, In-ear detection, Equalizer, Factory Reset",
+    "summary": "มี Game Mode, In-ear detection และสั่ง Factory Reset ผ่านแอปได้",
+    "fit": "contain"
+  },
+  {
+    "id": "8",
+    "title": "EarFun Equalizer",
+    "src": "/media/posts/review/earfun-air-pro-4/app-eq.jpg",
+    "w": 1440,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป EarFun Audio",
+    "alt": "แอป EarFun Audio หน้า Equalizer มี Preset, Custom Equalizer และ My Sound Profile",
+    "summary": "Preset / ปรับเอง / My Sound Profile (ปรับจากการฟัง)",
+    "fit": "contain"
+  },
+  {
+    "id": "9",
+    "title": "My Sound Profile และ Custom EQ 10 แบนด์",
+    "src": "/media/posts/review/earfun-air-pro-4/app-sound-profile.jpg",
+    "w": 1479,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป EarFun Audio",
+    "alt": "แอป EarFun Audio หน้า My Sound Profile และ Custom Equalizer 10 แบนด์",
+    "summary": "ปรับ EQ เองได้ 10 แบนด์ (32Hz–16kHz)",
+    "fit": "contain"
+  },
+  {
+    "id": "10",
+    "title": "Customize Controls",
+    "src": "/media/posts/review/earfun-air-pro-4/app-controls.jpg",
+    "w": 1479,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป EarFun Audio",
+    "alt": "แอป EarFun Audio ตั้งค่าการแตะซ้ายและขวา",
+    "summary": "แตะ 1 / 2 / 3 ครั้ง และแตะค้าง แยกซ้าย-ขวา",
+    "fit": "contain"
+  },
+  {
+    "id": "11",
+    "title": "Find headphones และ Voice Prompt",
+    "src": "/media/posts/review/earfun-air-pro-4/app-find-voice.jpg",
+    "w": 1422,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป EarFun Audio",
+    "alt": "แอป EarFun Audio หน้าค้นหาหูฟังด้วยเสียง และเลือกภาษาเสียงพูด",
+    "summary": "สั่งหูฟังส่งเสียง · ภาษาอังกฤษ ญี่ปุ่น เยอรมัน จีน",
+    "fit": "contain"
+  },
+  {
+    "id": "12",
+    "title": "LE Audio และ Bluetooth audio quality",
+    "src": "/media/posts/review/earfun-air-pro-4/app-le-audio-codec.jpg",
+    "w": 1440,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป EarFun Audio",
+    "alt": "แอป EarFun Audio หน้า LE Audio, Auracast และเลือก LDAC หรือ aptX Adaptive Lossless",
+    "summary": "เลือก LDAC / aptX (Adaptive, Lossless) / Stable connection · มี LE Audio + Auracast",
+    "fit": "contain"
+  },
+  {
+    "id": "13",
+    "title": "Dual device และไมโครโฟน",
+    "src": "/media/posts/review/earfun-air-pro-4/app-dual-mic.jpg",
+    "w": 1440,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป EarFun Audio",
+    "alt": "แอป EarFun Audio หน้า Dual device connection และเลือกไมโครโฟน",
+    "summary": "ต่อ 2 เครื่องพร้อมกัน · เลือกไมค์อัตโนมัติ / ซ้าย / ขวา",
+    "fit": "contain"
+  }
+]
