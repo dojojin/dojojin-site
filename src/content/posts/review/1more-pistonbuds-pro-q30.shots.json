@@ -1,0 +1,287 @@
+[
+  {
+    "id": "1",
+    "title": "กล่องและเคสชาร์จ",
+    "src": "/media/posts/review/1more-pistonbuds-pro-q30/box-and-case.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "กล่อง 1MORE PistonBuds PRO Q30 สีดำ วางคู่กับเคสชาร์จที่เปิดฝา",
+    "summary": "กล่องสีดำ-เทา พร้อมเคสชาร์จสีดำ",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "หน้ากล่องระบุ QuietMax AI Noise Cancellation, 10mm DLC Dynamic Driver และ Spatial Audio"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "หน้ากล่อง",
+    "src": "/media/posts/review/1more-pistonbuds-pro-q30/box-front.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "หน้ากล่อง 1MORE PistonBuds PRO Q30 กับหูฟังสองข้างวางด้านหน้า",
+    "summary": "หูฟังทรงก้าน หัวสีทองแดง"
+  },
+  {
+    "id": "3",
+    "title": "หลังกล่อง (สเปก)",
+    "src": "/media/posts/review/1more-pistonbuds-pro-q30/box-back.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "หลังกล่อง 1MORE PistonBuds PRO Q30 แสดงตารางสเปก",
+    "summary": "สเปกจากหลังกล่อง ใช้เป็นที่มาในตาราง Specification",
+    "readings": [
+      [
+        "Bluetooth",
+        "5.3"
+      ],
+      [
+        "แบตหูฟัง / เคส",
+        "43 mAh / 410 mAh"
+      ],
+      [
+        "ANC OFF",
+        "7.5 ชม. (รวมเคส 30 ชม.)"
+      ],
+      [
+        "ANC ON",
+        "5 ชม. (รวมเคส 20 ชม.)"
+      ],
+      [
+        "น้ำหนัก",
+        "4.6 กรัม/ข้าง"
+      ]
+    ],
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ระยะเวลาเล่นวัดจาก AAC ที่ระดับเสียง 50% ตามที่กล่องระบุ"
+    ]
+  },
+  {
+    "id": "4",
+    "title": "สติกเกอร์ข้างกล่อง",
+    "src": "/media/posts/review/1more-pistonbuds-pro-q30/box-sticker.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "แกะกล่อง",
+    "alt": "สติกเกอร์ข้างกล่องระบุรุ่นและสี Black",
+    "summary": "สี Black · ผลิต 07/2024",
+    "caution": "เบลอหมายเลขเครื่อง (SN) ของกล่องไว้"
+  },
+  {
+    "id": "5",
+    "title": "ของในกล่อง",
+    "src": "/media/posts/review/1more-pistonbuds-pro-q30/box-contents.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "ของในกล่อง: เคสชาร์จ สาย USB-C คู่มือ และจุกหูฟังสำรอง",
+    "summary": "เคส สาย USB-C คู่มือ และจุกซิลิโคนสำรอง",
+    "caution": "เบลอ QR บนบัตรรับประกันไว้"
+  },
+  {
+    "id": "6",
+    "title": "สายชาร์จ",
+    "src": "/media/posts/review/1more-pistonbuds-pro-q30/cable.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "สายชาร์จ USB-A to USB-C สีดำ กับซองจุกหูฟังสำรอง",
+    "summary": "สาย USB-A to USB-C และจุกซิลิโคนอีกสองขนาด"
+  },
+  {
+    "id": "7",
+    "title": "เปิดเคส",
+    "src": "/media/posts/review/1more-pistonbuds-pro-q30/case-open.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "เคสชาร์จ 1MORE PistonBuds PRO Q30 เปิดฝา หูฟังสองข้างอยู่ในช่อง L และ R",
+    "summary": "หูฟังวางในเคส มีตัวอักษร L / R"
+  },
+  {
+    "id": "8",
+    "title": "เคสปิดฝา",
+    "src": "/media/posts/review/1more-pistonbuds-pro-q30/case-closed.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "เคสชาร์จสีดำ ฝาด้านบนมีโลโก้ 1MORE สีทองแดง",
+    "summary": "ฝาเคสมีโลโก้ 1MORE สีทองแดง ดูพรีเมี่ยม"
+  },
+  {
+    "id": "9",
+    "title": "ฉลากใต้เคส",
+    "src": "/media/posts/review/1more-pistonbuds-pro-q30/case-label.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "ฉลากใต้เคสชาร์จ ระบุรุ่น EC305 และความจุแบตเตอรี่ 410mAh",
+    "summary": "Model EC305 · เคส 410mAh 1.48Wh · Input 5V 0.5A",
+    "caution": "เบลอหมายเลขเครื่อง (SN) ไว้",
+    "screenTitle": "ข้อความบนฉลาก",
+    "screen": [
+      [
+        "Model",
+        "EC305"
+      ],
+      [
+        "Input",
+        "5V ⎓ 0.5A"
+      ],
+      [
+        "Output",
+        "5V ⎓ 0.25A"
+      ],
+      [
+        "Battery Capacity",
+        "410mAh 1.48Wh"
+      ],
+      [
+        "Production Date",
+        "07/2024"
+      ]
+    ]
+  },
+  {
+    "id": "10",
+    "title": "ตัวหูฟัง",
+    "src": "/media/posts/review/1more-pistonbuds-pro-q30/buds.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "หูฟัง PistonBuds PRO Q30 สองข้าง ก้านสีดำ หัวสีทองแดง",
+    "summary": "หนักข้างละ 4.6 กรัม"
+  },
+  {
+    "id": "11",
+    "title": "หูฟังคู่",
+    "src": "/media/posts/review/1more-pistonbuds-pro-q30/buds-pair.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "หูฟังสองข้างวางเอียงชนกัน ก้านมีโลโก้ 1MORE",
+    "summary": "ก้านสีดำด้าน หัวโลหะสีทองแดง"
+  },
+  {
+    "id": "12",
+    "title": "จุกหูฟัง",
+    "src": "/media/posts/review/1more-pistonbuds-pro-q30/buds-tip.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "หูฟังหันด้านจุกซิลิโคน เห็นตะแกรงช่องเสียง",
+    "summary": "จุกซิลิโคน ใส่สบาย ไม่เจ็บหู"
+  },
+  {
+    "id": "13",
+    "title": "หูฟังในเคส",
+    "src": "/media/posts/review/1more-pistonbuds-pro-q30/case-open-yellow.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "เคสเปิดฝา หูฟังสองข้างหัวสีทองแดงอยู่ในช่อง",
+    "summary": "หูฟังในเคสชาร์จ"
+  },
+  {
+    "id": "14",
+    "title": "เลือกสีหูฟัง",
+    "src": "/media/posts/review/1more-pistonbuds-pro-q30/app-color.jpg",
+    "w": 739,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าจอแอป 1MORE MUSIC ให้เลือกสีหูฟัง ขาว หรือ ดำ",
+    "summary": "แอปไม่ตรวจจับสีเอง ต้องเลือกเอง",
+    "fit": "contain"
+  },
+  {
+    "id": "15",
+    "title": "Listening modes",
+    "src": "/media/posts/review/1more-pistonbuds-pro-q30/app-anc.jpg",
+    "w": 739,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้า Home ของแอป แสดงแบตหูฟัง L/R และเคส พร้อมโหมด ANC: Strong, Mild, WNR, Adaptive",
+    "summary": "ANC 4 แบบ · บอก % แบตหูฟังและเคส",
+    "fit": "contain",
+    "caution": "เบลอรหัสท้ายชื่ออุปกรณ์ไว้"
+  },
+  {
+    "id": "16",
+    "title": "Preset EQ",
+    "src": "/media/posts/review/1more-pistonbuds-pro-q30/app-eq-preset.jpg",
+    "w": 739,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าจอ Presets EQs 12 แบบในแอป 1MORE MUSIC",
+    "summary": "Preset EQ 12 แบบ",
+    "fit": "contain"
+  },
+  {
+    "id": "17",
+    "title": "Custom EQ",
+    "src": "/media/posts/review/1more-pistonbuds-pro-q30/app-eq-custom.jpg",
+    "w": 739,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าจอ Custom EQs ปรับได้ 10 แบนด์",
+    "summary": "ปรับเองได้ 10 แบนด์",
+    "fit": "contain"
+  },
+  {
+    "id": "18",
+    "title": "Custom Settings",
+    "src": "/media/posts/review/1more-pistonbuds-pro-q30/app-controls.jpg",
+    "w": 739,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าจอตั้งค่าการแตะ Double Tap และ Triple Tap",
+    "summary": "ตั้งได้แค่แตะ 2 ครั้ง และแตะ 3 ครั้ง",
+    "fit": "contain"
+  },
+  {
+    "id": "19",
+    "title": "Experimental features",
+    "src": "/media/posts/review/1more-pistonbuds-pro-q30/app-dual.jpg",
+    "w": 720,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าจอ Experimental features มีสวิตช์ Dual-device connection",
+    "summary": "ต่อ 2 เครื่องต้องเปิดเองที่เมนูนี้",
+    "fit": "contain"
+  },
+  {
+    "id": "20",
+    "title": "Smart playback",
+    "src": "/media/posts/review/1more-pistonbuds-pro-q30/app-smart-playback.jpg",
+    "w": 720,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าจอ Smart playback เลือก Auto-Pause & Play",
+    "summary": "ถอดหูฟังแล้วเพลงหยุด ใส่กลับเพลงเล่นต่อ",
+    "fit": "contain"
+  },
+  {
+    "id": "21",
+    "title": "เมนูหลัก (Android)",
+    "src": "/media/posts/review/1more-pistonbuds-pro-q30/app-home.jpg",
+    "w": 720,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้า Home ของแอปบน Android มี Spatial Audio, Low-latency และ Soothing sounds",
+    "summary": "Spatial Audio · Low-latency · Soothing sounds",
+    "fit": "contain"
+  },
+  {
+    "id": "22",
+    "title": "Soothing sounds",
+    "src": "/media/posts/review/1more-pistonbuds-pro-q30/app-soothing.jpg",
+    "w": 1600,
+    "h": 711,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าจอ Soothing sounds รวมเสียงธรรมชาติหลายแบบให้เลือก",
+    "summary": "เสียงผ่อนคลายหลายแบบ แต่ loop สั้นไปหน่อย"
+  }
+]

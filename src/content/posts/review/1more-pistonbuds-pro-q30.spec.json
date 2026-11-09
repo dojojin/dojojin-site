@@ -1,0 +1,169 @@
+[
+  {
+    "title": "ทั่วไป",
+    "rows": [
+      [
+        "รุ่น",
+        "1MORE PistonBuds PRO Q30 (Model EC305)",
+        "กล่อง"
+      ],
+      [
+        "Type",
+        "TWS In-Ears"
+      ],
+      [
+        "ผู้ผลิต",
+        "Tiinlab Corporation (万魔声学) · ผลิตในจีน · Production Date 07/2024",
+        "ฉลาก"
+      ],
+      [
+        "สี (เครื่องที่รีวิว)",
+        "Black",
+        "กล่อง"
+      ],
+      [
+        "น้ำหนัก",
+        "หูฟัง 4.6 กรัม/ข้าง · เคส 34.8 กรัม · รวมกล่อง 44 กรัม",
+        "กล่อง"
+      ],
+      [
+        "ขนาด",
+        "หูฟัง 21 × 26 × 29 มม. · เคส 24 × 43 × 62 มม.",
+        "กล่อง"
+      ],
+      [
+        "กันน้ำ",
+        "IPX5",
+        "ผู้ผลิต"
+      ]
+    ]
+  },
+  {
+    "title": "เสียง",
+    "rows": [
+      [
+        "Driver",
+        "10mm Diamond-Like Carbon (DLC) Dynamic Driver",
+        "กล่อง"
+      ],
+      [
+        "Speaker Impedance",
+        "16Ω",
+        "กล่อง"
+      ],
+      [
+        "Technology",
+        [
+          "QuietMax™ AI Noise Cancellation",
+          "Spatial Audio (Surround Sound)"
+        ],
+        "กล่อง"
+      ],
+      [
+        "EQ",
+        "12 Preset (Studio, Bass reducer, Bass booster, Acoustic, Classical, Podcast, Deep, Electronic, Hip-Hop, Lounge, Pop, Vocal booster) + Custom EQ 10 แบนด์",
+        "แอป"
+      ],
+      [
+        "ANC",
+        "ตัดเสียงได้ 42dB",
+        "ผู้รีวิว"
+      ],
+      [
+        "ANC Mode",
+        "Strong, Mild, WNR (Wind Noise Reduction), Adaptive",
+        "แอป"
+      ],
+      [
+        "Transparency",
+        "มี (Transparent)",
+        "แอป"
+      ]
+    ]
+  },
+  {
+    "title": "การเชื่อมต่อ",
+    "rows": [
+      [
+        "Bluetooth®",
+        "5.3 · ระยะ 10 เมตร · HFP / A2DP / AVRCP",
+        "กล่อง"
+      ],
+      [
+        "CODEC",
+        "SBC, AAC (ไม่รองรับ Hi-Res)",
+        "ผู้รีวิว"
+      ],
+      [
+        "Game Mode / Latency",
+        "80ms (Low-latency ในแอป)",
+        "ผู้ผลิต"
+      ],
+      [
+        "Dual-device connection",
+        "รองรับ 2 เครื่อง (ต้องเปิดเองในเมนู Experimental features)",
+        "แอป"
+      ],
+      [
+        "แอป",
+        "1MORE MUSIC (iOS / Android) บอกเปอร์เซ็นต์แบตเตอรี่ ทั้งตัวหูฟัง และ เคสชาร์จ",
+        "แอป"
+      ]
+    ]
+  },
+  {
+    "title": "ไมโครโฟนและการควบคุม",
+    "rows": [
+      [
+        "Microphone",
+        "3 ตัว/ข้าง (รวม 6 ตัว) + AI",
+        "ผู้ผลิต"
+      ],
+      [
+        "การควบคุม",
+        "แตะ 2 ครั้ง และแตะ 3 ครั้ง (ตั้งค่าได้ในแอป)",
+        "แอป"
+      ],
+      [
+        "Wear Detection",
+        "มี (Smart Playback: Auto-Pause & Play)",
+        "แอป"
+      ]
+    ]
+  },
+  {
+    "title": "แบตเตอรี่และการชาร์จ (AAC, เสียง 50%)",
+    "rows": [
+      [
+        "Battery",
+        "หูฟัง 43 mAh/ข้าง · เคส 410 mAh (1.48 Wh)",
+        "ฉลาก"
+      ],
+      [
+        "ANC: ON",
+        "5 ชั่วโมงต่อการชาร์จ 1 ครั้ง · รวมเคส 20 ชั่วโมง",
+        "กล่อง"
+      ],
+      [
+        "ANC: OFF",
+        "7.5 ชั่วโมงต่อการชาร์จ 1 ครั้ง · รวมเคส 30 ชั่วโมง",
+        "กล่อง"
+      ],
+      [
+        "Quick Charge",
+        "ชาร์จ 10 นาที ฟังได้ 2 ชั่วโมง",
+        "ผู้ผลิต"
+      ],
+      [
+        "เวลาชาร์จ",
+        "หูฟัง 1 ชั่วโมง · เคส 2 ชั่วโมง",
+        "กล่อง"
+      ],
+      [
+        "ไฟเข้าเคส",
+        "USB-C 5V ⎓ 0.5A",
+        "ฉลาก"
+      ]
+    ]
+  }
+]
