@@ -16,6 +16,7 @@ plan.json — one entry per photo to publish (photos not listed are skipped):
 - Output: public/media/posts/<type>/<slug>/<name>.jpg — EXIF-rotated, long side ≤1600, JPEG q84, no EXIF/GPS.
 - Every blurred image is also written to /tmp/dojojin-intake/<slug>/blur-<name>.jpg: LOOK at each one.
 """
+import runpy
 import json, sys
 from pathlib import Path
 from PIL import Image, ImageFilter, ImageOps
@@ -49,6 +50,7 @@ def main():
         print(f'{e["name"]}.jpg  {im.size[0]}x{im.size[1]}  ← {hits[0].name}' + ('  [blurred]' if e.get('blur') else ''))
     left = [p.name for p in out_dir.glob('*.jpg') if Image.open(p).getexif()]
     print('EXIF left:', left or 'none')
+    runpy.run_path(str(Path(__file__).with_name('thumbs.py')))  # 800px WebP twins for cards/grids
 
 
 if __name__ == '__main__':
