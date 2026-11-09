@@ -1,0 +1,278 @@
+[
+  {
+    "id": "1",
+    "title": "กล่องด้านหน้า",
+    "src": "/media/posts/review/realme-buds-t310/box-front.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "แกะกล่อง",
+    "alt": "กล่อง realme Buds T310 สีเหลือง ภาพหูฟังสีดำในเคส",
+    "summary": "กล่องสีเหลือง สี Vibrant Black"
+  },
+  {
+    "id": "2",
+    "title": "ฉลากหลังกล่อง",
+    "src": "/media/posts/review/realme-buds-t310/box-back.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "แกะกล่อง",
+    "alt": "ฉลากหลังกล่อง realme Buds T310 ระบุรุ่น RMA2303 น้ำหนัก 4.2g ต่อข้าง และ Bluetooth V5.4",
+    "summary": "รุ่น RMA2303 · 4.2g ต่อข้าง · Bluetooth 5.4",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ฉลากหลายภาษา (อังกฤษ อินโดนีเซีย ไทย เวียดนาม) ผู้นำเข้าในไทยคือ บริษัท โปรทา จำกัด",
+      "สติกเกอร์ร้านค้าเขียนว่า 'OL @ Realme T310 Stylish Black'",
+      "บาร์โค้ดหมายเลขเครื่อง (SN) ถูกเบลอไว้"
+    ],
+    "screenTitle": "ข้อความบนฉลาก",
+    "screen": [
+      [
+        "รุ่น",
+        "RMA2303"
+      ],
+      [
+        "สี",
+        "สีดำ (VIBRANT BLACK)"
+      ],
+      [
+        "น้ำหนัก",
+        "4.2g (ต่อข้าง)"
+      ],
+      [
+        "ขนาดสินค้า",
+        "3.07 x 2.02 x 2.36 cm"
+      ],
+      [
+        "วันที่ผลิต",
+        "2024-11"
+      ],
+      [
+        "Bluetooth",
+        "V5.4 · 2402MHz ~ 2480MHz"
+      ]
+    ]
+  },
+  {
+    "id": "3",
+    "title": "ข้างกล่อง",
+    "src": "/media/posts/review/realme-buds-t310/box-side.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "แกะกล่อง",
+    "alt": "ข้างกล่อง realme Buds T310 ไอคอน Bluetooth 5.4, Dual Device Connection และ 360 Spatial Audio Effect",
+    "summary": "Bluetooth 5.4 · Dual Device · 360° Spatial Audio"
+  },
+  {
+    "id": "4",
+    "title": "ของในกล่อง",
+    "src": "/media/posts/review/realme-buds-t310/unboxing.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "แกะกล่อง realme Buds T310 มีเคสหูฟังสีดำและสาย USB-C",
+    "summary": "เคส + สาย USB-C"
+  },
+  {
+    "id": "5",
+    "title": "คู่มือและจุกหูฟัง",
+    "src": "/media/posts/review/realme-buds-t310/manual-eartips.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "เคส realme Buds T310 วางบนคู่มือ พร้อมถุงจุกหูฟังสำรอง",
+    "summary": "จุกซิลิโคนสำรองอีกสองขนาด"
+  },
+  {
+    "id": "6",
+    "title": "กล่องคู่กับเคส",
+    "src": "/media/posts/review/realme-buds-t310/box-and-case.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "แกะกล่อง",
+    "alt": "กล่อง realme Buds T310 วางคู่กับเคสหูฟังสีดำ",
+    "summary": "เคสผิวด้าน"
+  },
+  {
+    "id": "7",
+    "title": "เคสในมือ",
+    "src": "/media/posts/review/realme-buds-t310/case-hand.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "เคส realme Buds T310 สีดำผิวด้านบนฝ่ามือ",
+    "summary": "เคสผิวด้าน ขนาดพกง่าย"
+  },
+  {
+    "id": "8",
+    "title": "หูฟังนอกเคส",
+    "src": "/media/posts/review/realme-buds-t310/earbuds-out.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "หูฟัง realme Buds T310 สองข้างวางหน้าเคสที่เปิดฝา",
+    "summary": "ก้านหูฟังผิวด้าน หัวหูฟังผิวเงา"
+  },
+  {
+    "id": "9",
+    "title": "หูฟังข้างเดียว",
+    "src": "/media/posts/review/realme-buds-t310/earbud-hand.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "หูฟัง realme Buds T310 ข้างเดียววางบนฝ่ามือ",
+    "summary": "ขนาดหูฟังเทียบมือ"
+  },
+  {
+    "id": "10",
+    "title": "เปิดฝาเคส",
+    "src": "/media/posts/review/realme-buds-t310/box-case-open.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "เคส realme Buds T310 เปิดฝาบนขาตั้ง ข้างกล่องสีเหลือง",
+    "summary": "หูฟังสองข้างในเคส"
+  },
+  {
+    "id": "11",
+    "title": "เปิดฝาเคส (ใกล้)",
+    "src": "/media/posts/review/realme-buds-t310/case-open-stand.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "ภาพใกล้เคส realme Buds T310 เปิดฝา หูฟังอยู่ในช่อง",
+    "summary": "หัวหูฟังผิวเงา"
+  },
+  {
+    "id": "12",
+    "title": "หูฟังในเคส",
+    "src": "/media/posts/review/realme-buds-t310/case-open-close.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "ภาพใกล้หูฟัง realme Buds T310 ในเคส มีตัวอักษร L และ R",
+    "summary": "มีตัวอักษร L / R บนหูฟัง"
+  },
+  {
+    "id": "13",
+    "title": "ใบส่งสินค้า",
+    "src": "/media/posts/review/realme-buds-t310/receipt.jpg",
+    "w": 1200,
+    "h": 1600,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "ใบส่งสินค้าจาก Com7 รายการ realme T310 ราคา 1,699 บาท วางหน้าเคสหูฟัง",
+    "summary": "ราคา 1,699 บาท",
+    "fit": "contain",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ใบส่งสินค้าจาก Com7 รายการ 'OL@ Realme T310 Stylish Black' จำนวน 1 ราคา 1,699 บาท",
+      "เลขที่เอกสาร ชื่อ ที่อยู่ เลขผู้เสียภาษี และหมายเลขเครื่อง (S/N) ถูกเบลอไว้"
+    ]
+  },
+  {
+    "id": "14",
+    "title": "หน้าหลักแอป realme Link",
+    "src": "/media/posts/review/realme-buds-t310/app-home.jpg",
+    "w": 738,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าหลักแอป realme Link แสดงแบตหูฟังและเคส 100% โหมด Noise control และ Sound effects",
+    "summary": "แบตหูฟัง + เคส · Noise control · Sound effects",
+    "fit": "contain"
+  },
+  {
+    "id": "15",
+    "title": "Transparency",
+    "src": "/media/posts/review/realme-buds-t310/app-transparency.jpg",
+    "w": 738,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้า Transparency เปิด Enhance voices และ Wind noise reduction",
+    "summary": "เปิด Enhance voices + Wind noise reduction",
+    "fit": "contain",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ผู้รีวิวแนะนำให้เปิดทั้งสองตัวตามภาพ"
+    ]
+  },
+  {
+    "id": "16",
+    "title": "ระดับ ANC",
+    "src": "/media/posts/review/realme-buds-t310/app-anc-levels.jpg",
+    "w": 738,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าเลือกระดับ Noise cancellation Max, Moderate และ Mild",
+    "summary": "ANC 3 แบบ: Max / Moderate / Mild",
+    "fit": "contain"
+  },
+  {
+    "id": "17",
+    "title": "EQ mode",
+    "src": "/media/posts/review/realme-buds-t310/app-eq-mode.jpg",
+    "w": 738,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้า EQ mode มี Serenade, Original sound, Pure Bass, Deep Bass และ Custom",
+    "summary": "4 Preset + Custom",
+    "fit": "contain"
+  },
+  {
+    "id": "18",
+    "title": "Custom EQ",
+    "src": "/media/posts/review/realme-buds-t310/app-custom-eq.jpg",
+    "w": 738,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้า Custom EQ 6 แบนด์ 62Hz ถึง 16kHz ช่วง ±6dB",
+    "summary": "6 แบนด์ (62, 250, 1k, 4k, 8k, 16k) ±6dB",
+    "fit": "contain",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ชื่ออุปกรณ์ในแถบแจ้งเตือนถูกเบลอไว้"
+    ]
+  },
+  {
+    "id": "19",
+    "title": "Dynamic audio",
+    "src": "/media/posts/review/realme-buds-t310/app-dynamic-audio.jpg",
+    "w": 738,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้า Dynamic audio ปรับ Low, Med, High freq ช่วง -5 ถึง 5",
+    "summary": "ปรับ Low / Med / High ได้ -5 ถึง 5",
+    "fit": "contain"
+  },
+  {
+    "id": "20",
+    "title": "Spatial Audio",
+    "src": "/media/posts/review/realme-buds-t310/app-spatial.jpg",
+    "w": 738,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้า Spatial Audio เปิดใช้งาน",
+    "summary": "เสียงรอบทิศทาง (บางแอปเท่านั้น)",
+    "fit": "contain"
+  },
+  {
+    "id": "21",
+    "title": "Button settings",
+    "src": "/media/posts/review/realme-buds-t310/app-buttons.jpg",
+    "w": 738,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้า Button settings แตะสองที แตะสามที และแตะค้าง ทั้งข้างซ้ายและขวา",
+    "summary": "แตะ 2 ที / 3 ที / แตะค้าง",
+    "fit": "contain"
+  },
+  {
+    "id": "22",
+    "title": "MindFlow",
+    "src": "/media/posts/review/realme-buds-t310/app-mindflow.jpg",
+    "w": 738,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้า MindFlow เสียงแวดล้อม เช่น Warm sunrise, Summer seashore, Stormy, Meditation, Coffee shop",
+    "summary": "เสียงแวดล้อมช่วยโฟกัส",
+    "fit": "contain"
+  }
+]
