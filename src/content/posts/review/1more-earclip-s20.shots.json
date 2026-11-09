@@ -1,0 +1,229 @@
+[
+  {
+    "id": "1",
+    "title": "หน้ากล่อง",
+    "src": "/media/posts/review/1more-earclip-s20/box-front.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "หน้ากล่อง 1MORE Ear Clip S20 สีฟ้า พร้อมโลโก้ Hi-Res Audio Wireless",
+    "summary": "มีโลโก้ Hi-Res Audio Wireless"
+  },
+  {
+    "id": "2",
+    "title": "หลังกล่อง (สเปก)",
+    "src": "/media/posts/review/1more-earclip-s20/box-back.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "หลังกล่อง 1MORE Ear Clip S20 แสดงสเปก",
+    "summary": "Bluetooth 5.4 · 11mm · ไม่มีหัวชาร์จในกล่อง",
+    "readings": [
+      [
+        "Bluetooth",
+        "5.4"
+      ],
+      [
+        "เวลาชาร์จหูฟัง / เคส",
+        "1.5 / 2 ชั่วโมง"
+      ],
+      [
+        "Speaker Impedance",
+        "16Ω"
+      ],
+      [
+        "Case Input",
+        "5V ⎓ 1A"
+      ]
+    ],
+    "caution": "เบลอหมายเลขเครื่อง (SN) ไว้"
+  },
+  {
+    "id": "3",
+    "title": "ข้างกล่อง",
+    "src": "/media/posts/review/1more-earclip-s20/box-side.jpg",
+    "w": 1200,
+    "h": 1600,
+    "group": "แกะกล่อง",
+    "alt": "ข้างกล่องมีไอคอน 4-Mic AI ENC, Bass Enhancement, IPX5 และ Bluetooth 5.4",
+    "summary": "4-Mic AI ENC · IPX5 · Bluetooth 5.4 · LDAC",
+    "fit": "contain"
+  },
+  {
+    "id": "4",
+    "title": "เปิดกล่อง",
+    "src": "/media/posts/review/1more-earclip-s20/box-open.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "เปิดกล่อง เห็นเคสชาร์จสีฟ้าวางในถาด",
+    "summary": "เคสสีฟ้าวางในถาดกระดาษ"
+  },
+  {
+    "id": "5",
+    "title": "เคสในกล่อง",
+    "src": "/media/posts/review/1more-earclip-s20/case-in-box.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "เคสชาร์จ 1MORE สีฟ้าวางในถาด",
+    "summary": "เคสทรงกลมมน ผิวด้าน"
+  },
+  {
+    "id": "6",
+    "title": "เปิดเคสครั้งแรก",
+    "src": "/media/posts/review/1more-earclip-s20/case-open-in-box.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "เคสเปิดฝา หูฟัง Clip-on สองข้างสีฟ้าเงาอยู่ในช่อง",
+    "summary": "หูฟังแบบหนีบหู ตัวเงาสีฟ้า",
+    "caution": "เบลอตัวอักษรหมายเลขเครื่องในเคสไว้"
+  },
+  {
+    "id": "7",
+    "title": "ตัวหูฟัง",
+    "src": "/media/posts/review/1more-earclip-s20/bud-hand.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "ถือหูฟัง Clip-on สองข้าง เห็นตะแกรงลำโพง",
+    "summary": "ขนาดเล็ก เบาเหมือนไม่ได้ใส่"
+  },
+  {
+    "id": "8",
+    "title": "เทียบขนาดกับมือ",
+    "src": "/media/posts/review/1more-earclip-s20/bud-palm.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "หูฟัง Clip-on หนึ่งข้างวางบนฝ่ามือ",
+    "summary": "ข้างละ ~7 กรัม"
+  },
+  {
+    "id": "9",
+    "title": "สะพานโค้ง c-bridge",
+    "src": "/media/posts/review/1more-earclip-s20/bud-palm-2.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "หูฟัง Clip-on บนฝ่ามือ เห็นสะพานโค้งเชื่อมสองส่วน",
+    "summary": "สะพานโค้งนิกเกิล-ไทเทเนียม หนีบหูได้มั่นคง"
+  },
+  {
+    "id": "10",
+    "title": "เคสปิดฝา",
+    "src": "/media/posts/review/1more-earclip-s20/case-closed.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "เคสชาร์จสีฟ้าวางบนโน้ตบุ๊ก",
+    "summary": "เคสเล็ก ชาร์จผ่าน USB-C"
+  },
+  {
+    "id": "11",
+    "title": "เปิดเคส",
+    "src": "/media/posts/review/1more-earclip-s20/case-open.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "เคสชาร์จเปิดฝาวางบนโน้ตบุ๊ก",
+    "summary": "หูฟังในเคสชาร์จ"
+  },
+  {
+    "id": "12",
+    "title": "กล่องกับเคส",
+    "src": "/media/posts/review/1more-earclip-s20/box-and-case.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "เคสชาร์จเปิดฝาวางหน้ากล่อง ไฟสถานะสีเขียว",
+    "summary": "ไฟสถานะสีเขียวที่หน้าเคส",
+    "caution": "เบลอข้อมูลติดต่อบนนามบัตร และหมายเลขเครื่องไว้"
+  },
+  {
+    "id": "13",
+    "title": "หูฟังในเคส",
+    "src": "/media/posts/review/1more-earclip-s20/case-open-front.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "เคสเปิดฝา หูฟังสองข้างช่อง L และ R",
+    "summary": "ช่อง L / R ชัดเจน",
+    "caution": "เบลอตัวอักษรหมายเลขเครื่องในเคสไว้"
+  },
+  {
+    "id": "14",
+    "title": "ฉลากในฝาเคส",
+    "src": "/media/posts/review/1more-earclip-s20/case-label.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "ฉลากในฝาเคสระบุ Battery Capacity 400 mAh 1.48Wh",
+    "summary": "เคส 400 mAh 1.48Wh · Input 5V 1.0A",
+    "screenTitle": "ข้อความบนฉลาก",
+    "screen": [
+      [
+        "Model",
+        "S20-"
+      ],
+      [
+        "Input",
+        "5V ⎓ 1.0A"
+      ],
+      [
+        "Output",
+        "5V ⎓ 0.2A"
+      ],
+      [
+        "Battery Capacity",
+        "400 mAh 1.48Wh"
+      ],
+      [
+        "Production Date",
+        "02/2025"
+      ]
+    ]
+  },
+  {
+    "id": "15",
+    "title": "เลือกสีหูฟัง",
+    "src": "/media/posts/review/1more-earclip-s20/app-color.jpg",
+    "w": 1600,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าจอแอปให้เลือกสีหูฟัง",
+    "summary": "แอปไม่ตรวจจับสีเอง ต้องเลือกเอง"
+  },
+  {
+    "id": "16",
+    "title": "หน้าหลักและการควบคุม",
+    "src": "/media/posts/review/1more-earclip-s20/app-controls.jpg",
+    "w": 1600,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าแอปแสดงแบตหูฟัง L/R และเคส กับหน้า Custom Settings ของการแตะ",
+    "summary": "บอก % แบตหูฟังและเคส · แตะ 2 / 3 ครั้ง และแตะค้าง"
+  },
+  {
+    "id": "17",
+    "title": "Preset EQ",
+    "src": "/media/posts/review/1more-earclip-s20/app-eq.jpg",
+    "w": 738,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าจอ Presets EQs 6 แบบ",
+    "summary": "EQ 6 แบบ ปรับเองไม่ได้",
+    "fit": "contain"
+  },
+  {
+    "id": "18",
+    "title": "Settings และ Shortcuts",
+    "src": "/media/posts/review/1more-earclip-s20/app-settings.jpg",
+    "w": 1600,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้า Settings และ Shortcuts มี Gaming Mode และ High-definition Codec (LDAC)",
+    "summary": "Gaming Mode และสวิตช์ LDAC"
+  }
+]

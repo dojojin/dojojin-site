@@ -1,0 +1,52 @@
+[
+  {
+    "title": "ทั่วไป",
+    "rows": [
+      ["รุ่น", "1MORE Ear Clip S20 (Model S20-)", "กล่อง"],
+      ["Type", "TWS Open-ear แบบ Clip-on (หนีบหู) · Nickel-titanium c-bridge", "กล่อง"],
+      ["ผู้ผลิต", "Tiinlab Corporation · ผลิตในจีน · Production Date 02/2025", "ฉลาก"],
+      ["สี (เครื่องที่รีวิว)", "Blue", "กล่อง"],
+      ["น้ำหนัก", "7 กรัม/ข้าง", "ผู้รีวิว"],
+      ["กันน้ำ", "IPX5", "กล่อง"],
+      ["อุปกรณ์ที่ใช้ทดสอบ", ["Samsung Galaxy S25 Ultra", "Apple iPhone 13 Pro"], "ผู้รีวิว"]
+    ]
+  },
+  {
+    "title": "เสียง",
+    "rows": [
+      ["Driver", "11mm composite diaphragm", "กล่อง"],
+      ["Speaker Impedance", "16Ω", "กล่อง"],
+      ["Technology", ["BALANCE AIR+", "Bass Enhancement and Directional Sound", "Hi-Res Audio Wireless (LDAC)"], "กล่อง"],
+      ["EQ", "6 Preset (Studio, Bass reducer, Bass booster, Voice Enhancement, Classical, Pop) · ปรับเองไม่ได้", "แอป"],
+      ["ANC", "ไม่มี (หูฟังแบบ open-ear)", "กล่อง"]
+    ]
+  },
+  {
+    "title": "การเชื่อมต่อ",
+    "rows": [
+      ["Bluetooth®", "5.4 · ระยะ 10 เมตร · HFP / A2DP / AVRCP", "กล่อง"],
+      ["CODEC", "SBC, AAC, LDAC", "ผู้รีวิว"],
+      ["LDAC", "เปิดในแอป (High-definition Codec) แอปเตือนว่าอาจมีดีเลย์หรือหลุดได้", "แอป"],
+      ["Game Mode", "มี (Gaming Mode: Low-latency connection)", "แอป"],
+      ["Multipoint", "ไม่รองรับการเชื่อมต่อพร้อมกันสองเครื่อง", "ผู้รีวิว"],
+      ["แอป", "1MORE MUSIC (iOS / Android) บอกเปอร์เซ็นต์แบตเตอรี่ ทั้งตัวหูฟัง และ เคสชาร์จ", "แอป"]
+    ]
+  },
+  {
+    "title": "ไมโครโฟนและการควบคุม",
+    "rows": [
+      ["Microphone", "4 ตัว (2 ตัว/ข้าง) + AI ENC", "กล่อง"],
+      ["การควบคุม", "แตะ 2 ครั้ง, แตะ 3 ครั้ง (ตั้งค่าได้) และแตะค้าง = Voice Control", "แอป"]
+    ]
+  },
+  {
+    "title": "แบตเตอรี่และการชาร์จ",
+    "rows": [
+      ["Battery (Case)", "400 mAh (1.48 Wh)", "ฉลาก"],
+      ["ฟังเพลงต่อเนื่อง", "7 ชั่วโมงต่อการชาร์จ 1 ครั้ง · รวมเคส 30 ชั่วโมง", "ผู้รีวิว"],
+      ["Quick Charge", "ชาร์จ 10 นาที ฟังได้ 2 ชั่วโมง", "ผู้รีวิว"],
+      ["เวลาชาร์จ", "หูฟัง 1.5 ชั่วโมง · เคส 2 ชั่วโมง", "กล่อง"],
+      ["ไฟเข้าเคส", "USB-C 5V ⎓ 1A · หัวชาร์จแนะนำ 2-5W", "กล่อง"]
+    ]
+  }
+]
