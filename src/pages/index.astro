@@ -18,33 +18,35 @@ const mixed = (items, n = 3) => {
 const titles = Object.fromEntries(feed.map((i) => [i.href, i.title]));
 ---
 <Base active="home">
-  <section class="hero">
-    <div class="wrap home-hero">
-      <div class="hero__text">
+  <section class="hero me">
+    <div class="wrap me__grid">
+      <div class="me__text">
+        <p class="me__who"><img src="/favicon.svg" width="40" height="40" alt="" /><span>รีวิวที่จริงใจในมุมมองผม</span></p>
         <h1>{SITE.tagline}</h1>
-        <p class="lead">{SITE.description}</p>
-        <ul class="pillars">
-          {Object.entries(TYPES).map(([type, t]) => (
-            <li><a href={`/${type}/`}><b>{t.name} <span>{feed.filter((i) => i.type === type).length}</span></b><span>{t.blurb}</span></a></li>
-          ))}
+        <p class="lead">ผม ปอ Dojo-mAn คนธรรมดาที่ชอบถ่ายรูป รีวิวของโน่นนี่นั่นที่ซื้อมาใช้เอง ชอบท่องเที่ยว ไปแสวงหาร้านอาหารอร่อย ๆ ที่ไปชิมเอง จ่ายเงินเอง และเรื่องไอทีที่อยากเล่าให้เข้าใจง่าย ๆ</p>
+        <ul class="me__promise">
+          <li><b>ซื้อจริง ใช้จริง</b><span>ใช้งานจริงก่อนเขียนทุกรีวิว</span></li>
+          <li><b>วัดเอง</b><span>หัวชาร์จวัดด้วยมิเตอร์ ทุกตัวเลขบอกที่มา</span></li>
+          <li><b>ถ่ายเองทุกรูป</b><span>Dojo-mAn Fotographer</span></li>
+          <li><b>ไปเอง จ่ายเอง</b><span>ร้านอาหารและคาเฟ่</span></li>
         </ul>
+        <nav class="me__go" aria-label="หมวด">
+          {Object.entries(TYPES).map(([type, t]) => (
+            <a href={`/${type}/`}>{t.name} <span>{feed.filter((i) => i.type === type).length}</span></a>
+          ))}
+        </nav>
       </div>
-      <aside class="author-card" aria-label="ผู้เขียน">
-        <div class="author-card__head">
-          <img src="/favicon.svg" width="56" height="56" alt="" />
-          <div><b>{PROFILE.handle}</b><span>{PROFILE.name}</span></div>
+      <aside class="me__side">
+        <div class="popular" data-popular={JSON.stringify(titles)} hidden>
+          <b>คนอ่านเยอะสุด</b>
+          <ol></ol>
         </div>
-        <p>{PROFILE.intro}</p>
-        <p>เว็บนี้คือที่เก็บสิ่งที่ผมลองเอง วัดเอง และอยากเล่าให้คนอื่นเข้าใจง่าย ๆ ทุกตัวเลขมีที่มา และทุกรูปบอกที่มาชัดเจน</p>
+        <p class="me__about">{PROFILE.intro}</p>
         <ul class="socials">
           <li><a href="/projects/">ผลงานของผม</a></li>
           <li><a href={`mailto:${PROFILE.email}`}>ติดต่อ</a></li>
           <li><a href={PROFILE.socials.facebook} rel="noopener">Facebook</a></li>
         </ul>
-        <div class="popular" data-popular={JSON.stringify(titles)} hidden>
-          <b>ยอดนิยม</b>
-          <ol></ol>
-        </div>
       </aside>
     </div>
   </section>

@@ -4,7 +4,7 @@ export const DOCS_URL = import.meta.env?.PUBLIC_DOCS_URL || "https://docs.dojoji
 
 export const SITE = {
   name: "DOJOJIN.TECH",
-  tagline: "ซื้อเอง ใช้เอง วัดเอง แล้วเล่าให้เข้าใจง่าย",
+  tagline: "ซื้อจริง ใช้เอง ไปเอง แล้วมาเล่าให้ฟัง",
   description: "เว็บรีวิว ความรู้ และข้อมูลเทคโนโลยีโดย Dojo-mAn — อุปกรณ์ ถ่ายภาพ และ infra/AI อธิบายให้เข้าใจง่าย พร้อมผลวัดและรูปจริง",
 };
 
@@ -57,7 +57,7 @@ export const PROFILE = {
   handle: "Dojo-mAn",
   title: "System Engineer",
   // public intro: no client/vendor/architecture detail (Vigil is business-confidential; details live on docs only)
-  intro: "System Engineer สายกล้องวงจรปิด, infrastructure และ AI ทำงานด้านระบบมาตั้งแต่ปี 2003 และเป็นช่างภาพในชื่อ Dojo-mAn Fotographer",
+  intro: "System Engineer สายระบบรักษาความปลอดภัย, network infrastructure และ AI ทำงานด้านระบบมาตั้งแต่ปี 2003 และเป็นช่างภาพในชื่อ Dojo-mAn Fotographer เคยทำมือถือ i-mobile เคยเป็นเด็กปั๊ม และเด็กเสิร์ฟ",
   email: "dojojin@gmail.com",
   socials: { github: "https://github.com/dojojin/", facebook: "https://facebook.com/dojojin", linkedin: "https://linkedin.com/in/prakasit" },
 };

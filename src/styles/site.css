@@ -582,3 +582,53 @@ a.grade-card.project:hover { border-color: var(--accent); }
 }
 .hero-links { display: flex; flex-wrap: wrap; gap: var(--space-4); margin: var(--space-4) 0 0; font-weight: 600; }
 .hero-links a { text-decoration: none; }
+
+/* ---------- HippoCraft downloads ---------- */
+.dl-version { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-4); margin: var(--space-2) 0 0; color: var(--text-secondary); font-size: var(--fs-caption); }
+.dl-version b { font-family: var(--font-mono); color: var(--text-primary); }
+.dl { display: grid; gap: var(--space-12); }
+.dl h2 { margin: 0 0 var(--space-2); }
+.dl-web { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-4);
+  padding: var(--space-6) 0; border-block: 2px solid var(--accent); }
+.dl-web p { margin: 0; color: var(--text-secondary); }
+.dl-tip { margin: 0 0 var(--space-4); color: var(--text-secondary); font-size: var(--fs-caption); max-width: var(--measure); }
+.dl-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); }
+.dl-btn { display: flex; flex-direction: column; gap: 0; padding: var(--space-3) var(--space-4); border-radius: var(--radius);
+  border: 1px solid var(--border-hairline); color: var(--text-primary); text-decoration: none; line-height: 1.5; }
+.dl-btn b span { font-family: var(--font-mono); font-weight: 600; color: var(--text-secondary); }
+.dl-btn small { color: var(--text-secondary); font-size: var(--fs-caption); }
+.dl-btn:hover { border-color: var(--accent); color: var(--accent); }
+.dl-btn--primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.dl-btn--primary b span, .dl-btn--primary small { color: var(--on-accent); opacity: .85; }
+.dl-btn--primary:hover { background: var(--accent-muted); color: var(--on-accent); }
+.dl-web .dl-btn { font-weight: 700; }
+.dl-notes ul { margin: 0; padding-left: 1.1em; color: var(--text-secondary); line-height: 1.8; }
+.dl-notes code { font-size: var(--fs-caption); word-break: break-all; }
+
+/* ---------- Home hero: who I am + what this site promises ---------- */
+.me__grid { display: grid; gap: var(--space-8); }
+.me__text { min-width: 0; }
+.me__who { display: flex; align-items: center; gap: var(--space-3); margin: 0 0 var(--space-4); color: var(--text-secondary); }
+.me__who img { border-radius: 10px; }
+.me__who b { color: var(--text-primary); }
+.me h1 { font-size: var(--fs-display); line-height: 1.25; margin: 0 0 var(--space-4); }
+.me .lead { margin: 0 0 var(--space-6); max-width: 52ch; }
+.me__promise { list-style: none; margin: 0 0 var(--space-6); padding: 0; display: grid; gap: var(--space-4) var(--space-6);
+  grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 640px; }
+.me__promise li { border-left: 3px solid var(--accent); padding-left: var(--space-3); min-width: 0; }
+.me__promise b { display: block; font-size: var(--fs-h2); line-height: 1.4; }
+.me__promise span { display: block; font-size: var(--fs-caption); color: var(--text-secondary); line-height: 1.5; }
+.me__go { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.me__go a { padding: var(--space-2) var(--space-4); border: 1px solid var(--border-hairline); border-radius: 999px; text-decoration: none;
+  color: var(--text-primary); font-weight: 600; }
+.me__go a:hover { border-color: var(--accent); color: var(--accent); }
+.me__go span { font-family: var(--font-mono); font-size: var(--fs-caption); color: var(--accent); margin-left: var(--space-1); }
+.me__side { min-width: 0; display: grid; gap: var(--space-4); align-content: start; }
+.me__side .popular { margin: 0; padding: 0; border: 0; }
+.me__about { margin: 0; font-size: var(--fs-caption); color: var(--text-secondary); line-height: 1.7; }
+.me__side .socials { margin: 0; }
+@media (min-width: 900px) {
+  .me__grid { grid-template-columns: minmax(0, 1.7fr) minmax(260px, 1fr); align-items: start; }
+  .me__side { border-left: 1px solid var(--border-hairline); padding-left: var(--space-8); }
+}
+@media (max-width: 899px) { .me__side { border-top: 1px solid var(--border-hairline); padding-top: var(--space-6); } }
