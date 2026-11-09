@@ -1,0 +1,59 @@
+[
+  {
+    "title": "ทั่วไป",
+    "rows": [
+      ["รุ่น", "CMF Buds Pro 2 (CMF by Nothing)", "กล่อง"],
+      ["Type", "TWS In-Ears", "ผู้รีวิว"],
+      ["การรับรอง", "Hi-Res Audio Wireless, LDAC", "กล่อง"],
+      ["IP Rating", "IP55", "ผู้รีวิว"],
+      ["สี (เครื่องที่รีวิว)", "Blue และ Orange (ซื้อมาสองเครื่อง คนละช่วงเวลา)", "ผู้รีวิว"],
+      ["ราคา", "2,399 บาท", "บิล"]
+    ]
+  },
+  {
+    "title": "เสียง",
+    "rows": [
+      ["Driver Size", "11mm bass + 6mm tweeter drivers", "ผู้รีวิว"],
+      ["Technology", ["Clear Voice Technology 2.0", "Wind-Noise Reduction 2.0", "Ultra Bass Technology 2.0", "DIRAC Sound Audio"], "ผู้รีวิว"],
+      ["EQ", "6 Preset (DIRAC OPTEO, Pop, Rock, Classical, Electronic, Enhance Vocals) + 1 Custom (3 แกน: Bass / Mid / Treble)", "แอป"],
+      ["Ultra Bass", "เพิ่มเบสได้ 5 ระดับ", "ผู้รีวิว"],
+      ["Spatial Audio", "มี (Fixed / Off) · 360 Spatial Audio Effect", "แอป"],
+      ["ANC", "ตัดเสียงได้ 50dB", "ผู้รีวิว"],
+      ["ANC Mode", "4 ระดับ: High, Mid, Low, Adaptive", "แอป"],
+      ["Transparency", "มี", "แอป"]
+    ]
+  },
+  {
+    "title": "การเชื่อมต่อ",
+    "rows": [
+      ["Bluetooth®", "version 5.3", "ผู้รีวิว"],
+      ["CODEC", "AAC, SBC, LDAC", "ผู้รีวิว"],
+      ["Game Mode", "Low lag mode · Delay 45ms", "ผู้รีวิว"],
+      ["Dual Connections", "รองรับการต่อพร้อมกัน 2 เครื่อง", "แอป"],
+      ["Fast Pair", "Google Fast Pair, Microsoft Swift Pair", "ผู้รีวิว"],
+      ["APP", "Nothing X (iOS / Android) บอกเปอร์เซ็นต์แบตเตอรี่ ทั้งตัวหูฟัง และ เคสชาร์จ", "แอป"]
+    ]
+  },
+  {
+    "title": "ไมโครโฟนและการควบคุม",
+    "rows": [
+      ["Microphone", "6 ตัว (ข้างละ 3 ตัว) + AI + ENC", "ผู้รีวิว"],
+      ["การควบคุม", "ปุ่มหมุน (Knob Dial) บนเคส ปรับเสียง + กด Play/Pause · ตัวหูฟังแตะควบคุม (ไม่มีสไลด์ / บีบ)", "ผู้รีวิว"],
+      ["Wear Detection", "มี (In-ear detection)", "แอป"],
+      ["อื่นๆ", "Ear tip fit test, Find my earbuds", "แอป"]
+    ]
+  },
+  {
+    "title": "แบตเตอรี่และการชาร์จ",
+    "rows": [
+      ["Port Charge", "USB-C", "ผู้รีวิว"],
+      ["ฟังเพลงต่อเนื่อง (ANC: ON)", "6.5 ชั่วโมงต่อการชาร์จ 1 ครั้ง", "ผู้รีวิว"],
+      ["คุยสายต่อเนื่อง (ANC: ON)", "4.8 ชั่วโมงต่อการชาร์จ 1 ครั้ง", "ผู้รีวิว"],
+      ["ใช้งานสูงสุดรวมเคสชาร์จ (ANC: ON)", "25 ชั่วโมง", "ผู้รีวิว"],
+      ["ฟังเพลงต่อเนื่อง (ANC: OFF)", "11 ชั่วโมงต่อการชาร์จ 1 ครั้ง", "ผู้รีวิว"],
+      ["คุยสายต่อเนื่อง (ANC: OFF)", "6 ชั่วโมงต่อการชาร์จ 1 ครั้ง", "ผู้รีวิว"],
+      ["ใช้งานสูงสุดรวมเคสชาร์จ (ANC: OFF)", "43 ชั่วโมง", "ผู้รีวิว"],
+      ["Quick Charge", "ชาร์จ 10 นาที เล่นเพลงได้ 7 ชั่วโมง (ANC: OFF)", "ผู้รีวิว"]
+    ]
+  }
+]
