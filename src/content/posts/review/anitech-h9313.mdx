@@ -1,0 +1,157 @@
+---
+title: "anitech H9313 ปลั๊กพกพา 1 เต้ารับ + USB 3 ช่อง"
+topic: power
+type: review
+tags: [anitech, power-strip, ripple]
+date: 2026-11-09 # photo date — replace with the FB post date from the owner
+reading: "4.80V · 1.49A · 7.08W" # highest live reading in the photos (POWER-Z), shown on cards
+description: "ปลั๊กพกพา anitech H9313 ราคา 269 บาท มอก. 2432-2555 สาย H05VV-F 1.2 เมตร ต่อพ่วงหัวชาร์จดีงาม แต่ช่อง USB มีแค่ 5V DCP และ ripple สูงเกิน 280mV"
+kicker: "#MiniReview · Charger"
+lead: "อยากได้สายพ่วงไว้ต่อหัวชาร์จ เลยแสวงหาปลั๊กที่มีแบรนด์ มีมาตรฐาน ได้ตัวนี้มา 269 บาท ฝั่งไฟบ้านดีงาม ส่วนช่อง USB ใช้แค่แก้ขัด"
+meta: "Dojo-mAn Fotographer · ซื้อมาใช้เอง วัดเอง"
+cover: "/media/posts/review/anitech-h9313/front.jpg"
+coverAlt: "ปลั๊กพกพา anitech H9313 สีฟ้า"
+---
+import SpecTable from '../../../components/SpecTable.astro';
+import ShotGallery from '../../../components/ShotGallery.astro';
+import shots from './anitech-h9313.shots.json';
+import spec from './anitech-h9313.spec.json';
+
+<section class="section">
+
+## Short Brief
+
+<div class="split">
+<div class="prose">
+
+ที่มาก็คือ ผมอยากได้สายพ่วงกับหัวชาร์จรุ่นนึง เลยแสวงหา Plug ที่มารองรับได้ และมีแบรนด์มีมาตรฐานที่ดี เลยจัดมาครับ . . . ใครสนใจก็ตามไปตำกันได้ครับ ไม่แพงเลย
+
+- Model : H9313
+- ราคา : 269 บาท
+- มี 3 ช่องชาร์จ: Type-A = 1 Port · Type-C = 2 Ports
+- Protocol มาตรฐานกลาง : DCP 1.5A
+
+</div>
+<div class="proscons proscons--stack">
+  <div class="pros">
+    <h3><svg class="icon" aria-hidden="true"><use href="#icon-dot" /></svg>จุดเด่น</h3>
+    <ul>
+      <li>ราคา 269 บาท มี มอก. 2432-2555 ชุดสายพ่วง</li>
+      <li>สายไฟมาตรฐาน 60227 IEC 53 / H05VV-F ยาว 1.2 เมตร</li>
+      <li>มีขั้วดิน ม่านนิรภัย สวิตช์ตัดไฟเกิน</li>
+      <li>ตัวเล็ก มีสายรัดเก็บสาย พกเดินทางง่าย</li>
+    </ul>
+  </div>
+  <div class="cons">
+    <h3><svg class="icon" aria-hidden="true"><use href="#icon-alert" /></svg>ข้อสังเกต</h3>
+    <ul>
+      <li>USB มีแค่ 5V DCP ไม่มีชาร์จเร็ว</li>
+      <li>วัดจริงได้ราว 7W ต่อช่อง</li>
+      <li>Ripple ช่อง Type-C 284–336mV เกินเกณฑ์ 200mV</li>
+      <li>ไม่ระบุขนาดทองแดงของสาย</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## Specification
+
+<SpecTable groups={spec} legend="ป้ายบอกที่มาของข้อมูล: ฉลาก = ฉลากบนตัวเครื่อง · กล่อง = แพ็กเกจ · ตัวเครื่อง = ดูจากตัวเครื่องจริง · มิเตอร์ = วัดเองด้วย POWER-Z · ผู้รีวิว = ราคาที่ซื้อจริง" />
+
+</section>
+
+<section class="section">
+
+## ผลวัดจริง
+
+<div class="grade-grid">
+  <article class="grade-card">
+    <h3>ช่อง Type-C (ชาร์จ iPad Air 4)</h3>
+    <p><b>4.80V × 1.49A = 7.08W</b> ผ่าน DCP ตอนไม่มีโหลดแรงดันอยู่ที่ 4.73V ต่ำกว่า 5V อยู่ 5.4%</p>
+  </article>
+  <article class="grade-card">
+    <h3>ช่อง Type-A (ชาร์จ iPad Air 4)</h3>
+    <p><b>4.83V × 1.42A = 6.86W</b> มิเตอร์อ่านเป็น DCP 1.5A ไม่มีโปรโตคอลชาร์จเร็ว</p>
+  </article>
+  <article class="grade-card">
+    <h3>VBUS Ripple (Type-C)</h3>
+    <p>ชาร์จ iPad Air 4 วัดแยกสองช่อง: <b>284mV (5.95%)</b> และ <b>336mV (6.98%)</b> เกินเส้น 200mV และ 5% ทั้งสองช่อง ระดับ 5 ตามเกณฑ์ของเว็บนี้</p>
+  </article>
+  <article class="grade-card">
+    <h3>สายไฟ</h3>
+    <p><b>60227 IEC 53 · H05VV-F · 300/500V</b> สายอ่อนหุ้ม PVC มาตรฐานสากล เกรดใช้งานทั่วไป ถูกประเภทสำหรับปลั๊กพ่วงในบ้าน</p>
+  </article>
+</div>
+
+<div class="note" style="margin-top:var(--space-6)">
+
+### Ripple สูงแปลว่าอะไร
+
+ripple คือไฟที่แกว่งขึ้นลงบนสาย USB หัวชาร์จดี ๆ อยู่ต่ำกว่า 40mV ส่วนช่อง USB ตัวนี้แกว่ง 284–336mV ผลที่มีงานวิจัยรองรับชัดที่สุดคือ **จอสัมผัสเพี้ยน (ghost touch)** ตอนเสียบชาร์จ ([Rohde & Schwarz](https://scdn.rohde-schwarz.com/ur/pws/dl_downloads/dl_application/pdfs/Analyzing_common_mode_ac_en_5215-9048-92_v0100.pdf)) มือถือมีวงจรกรองไฟของตัวเองอยู่แล้ว จึงไม่ได้แปลว่าเครื่องพังทันที แต่เป็นสัญญาณว่าวงจรกรองไฟของช่อง USB ทำมาแบบประหยัด อ่านเกณฑ์ได้ที่ [หัวชาร์จแบบไหนดี หรือไม่ดี?](/knowledge/charger-ripple-guide/)
+
+</div>
+
+<div class="note" style="margin-top:var(--space-4)">
+
+### รหัสบนสายไฟ 60227 IEC 53 / H05VV-F
+
+- **60227 IEC 53** สายไฟอ่อนหุ้มฉนวน PVC มีเปลือก PVC เกรดใช้งานทั่วไป (ไทยใช้ใน มอก. 11)
+- **300/500V** ทนแรงดันระหว่างสายกับดิน 300V และระหว่างสาย 500V
+- **H05VV-F** H = มาตรฐานยุโรป (Harmonised) · 05 = 300/500V · V V = ฉนวนและเปลือก PVC · F = แกนทองแดงฝอย งอได้
+- สาย H05VV-F ผลิต 0.75–4 mm² ขนาด 1.0 mm² รับได้ราว 10–15A ตาม datasheet ผู้ผลิต ([Nexans](https://www.nexans.no/en/products/Building-Wires-and-Cables/Standard-wires-and-cables/Standard-Installation-cables-and-wires/PL---PMH/H05VV-F-%28C-536932484.html), [RR Kabel](https://www.rrkabel.com/products/h03-h05vvh2-f-h03-h05vv-f/)) ตัวนี้ไม่ได้ระบุขนาดไว้ จึงไม่ควรเสียบเครื่องทำความร้อนกินไฟเต็ม 2,200W ต่อเนื่องนาน ๆ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## สรุปสั้นๆ
+
+<div class="prose">
+
+ฝั่งไฟบ้านคือดีงาม มี มอก. สายไฟมีมาตรฐาน มีสายดิน เอาไว้ต่อพ่วงหัวชาร์จดี ๆ ให้สายยาวขึ้นตามที่ตั้งใจไว้ ส่วนช่อง USB ทั้ง 3 ช่องให้แค่ 5V แบบ DCP ไฟก็ไม่ค่อยสะอาด เหมาะกับพัดลมหรือหลอดไฟ ชาร์จมือถือแก้ขัดได้แต่ช้ามาก ถ้าเป็นมือถือหรือแท็บเล็ต เสียบหัวชาร์จดี ๆ เข้าเต้ารับแทนดีกว่าครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## สรุป ควรซื้อไหม?
+
+<div class="proscons">
+<div class="pros">
+  <h3><svg class="icon" aria-hidden="true"><use href="#icon-dot" /></svg>เหมาะกับคุณ ถ้า</h3>
+  <p>ใครชอบปลั๊กสภาพดี ๆ สายไฟมีมาตรฐาน เพื่อเอาไว้ต่อพ่วงเพิ่มความยาวของหัวชาร์จ คือดีงาม</p>
+</div>
+<div class="cons">
+  <h3><svg class="icon" aria-hidden="true"><use href="#icon-alert" /></svg>อาจไม่เหมาะ ถ้า</h3>
+  <p>ถ้าคุณใช้อุปกรณ์ทั่วไปแค่ชิ้นเดียว ตามสเปกที่โฆษณาเขียนไว้ว่า 3.4A และรองรับแรงดันไฟ 5V หรือ 17W แต่ความเป็นจริง อุปกรณ์ทั่วไปจะมี Protocol ชัดเจน ซึ่งผมยังไม่เจอตัวไหนที่ใช้ Protocol DCP และใช้ไฟเท่านี้ เพราะฉะนั้น ถ้าเอาอุปกรณ์ทั่วไปมาใช้กับพอร์ตนี้ จะได้ไฟอยู่ 5V 2.4A = 12W เท่านั้น (วัดจริงได้ราว 7W ต่อช่อง) Port มันแชร์กัน ถ้าใช้ครบ 3 Port กระแสรวมก็อาจจะถึงตามที่โฆษณาได้ครับ</p>
+  <p>เพราะฉะนั้นช่องนี้ถ้าผมแนะนำ เอาไว้เสียบพัดลม หรือหลอดไฟน่าจะเหมาะสุด ไม่น่าจะเหมาะกับการชาร์จอุปกรณ์มือถือปัจจุบันเท่าไหร่ แต่ใช้แก้ขัดได้ครับ (แต่ชาร์จช้ามาก ๆ นะครับ)</p>
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ภาพประกอบ
+
+<p class="prose">กดที่รูปเพื่อดูคำอธิบาย</p>
+
+<ShotGallery shots={shots} />
+
+</section>
+
+<section class="section">
+
+## ช่องทางการจัดจำหน่าย
+
+<p class="prose">ซื้อมาใช้เอง รีวิวเอง ปะลิงก์ให้เพื่ออำนวยความสะดวกครับ: <a href="https://s.shopee.co.th/7pugcP1tBo" rel="noopener">Shopee</a></p>
+
+</section>

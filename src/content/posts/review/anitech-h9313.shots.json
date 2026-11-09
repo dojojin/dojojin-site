@@ -1,0 +1,481 @@
+[
+  {
+    "id": "1",
+    "title": "แพ็กเกจด้านหน้า",
+    "src": "/media/posts/review/anitech-h9313/box-front.jpg",
+    "w": 1200,
+    "h": 1600,
+    "group": "แกะกล่อง",
+    "alt": "แพ็กเกจ anitech H9313 Let's Travel สีฟ้า",
+    "summary": "H9313 รุ่น Let's Travel: 1 เต้ารับ + USB 3 ช่อง สาย 1.2 ม. 2,200W",
+    "fit": "contain",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ด้านหน้าบอกจุดขายครบ: USB-A 1 ช่อง, USB-C 2 ช่อง, สายยาว 1.2 เมตร, รับไฟสูงสุด 2,200W",
+      "USB ทั้ง 3 ช่องใช้ไฟร่วมกัน รวม 3.4A หรือ 17W (5V อย่างเดียว)",
+      "รับประกัน 3 ปี และประกันความเสียหาย 100,000 บาท"
+    ],
+    "screenTitle": "ข้อความบนแพ็กเกจ",
+    "screen": [
+      [
+        "รุ่น",
+        "H9313"
+      ],
+      [
+        "USB",
+        "Type-A × 1 · Type-C × 2 · รวม 3.4A 17W"
+      ],
+      [
+        "สาย",
+        "1.2 เมตร"
+      ],
+      [
+        "กำลังสูงสุด",
+        "2,200W"
+      ]
+    ]
+  },
+  {
+    "id": "2",
+    "title": "แพ็กเกจด้านหลัง",
+    "src": "/media/posts/review/anitech-h9313/box-back.jpg",
+    "w": 1202,
+    "h": 1600,
+    "group": "แกะกล่อง",
+    "alt": "ด้านหลังแพ็กเกจ anitech H9313 สเปกและตัวอย่างการใช้งาน",
+    "summary": "สเปก 10A 250V 2,200W มอก. 2432-2555 และตัวอย่างเครื่องที่ใช้ได้ / ไม่ควรใช้",
+    "fit": "contain",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "ผู้ผลิตยกตัวอย่างไว้ชัด: PC + โน้ตบุ๊ก + ปริ้นเตอร์ + เราเตอร์ รวม 1,035W ใช้ได้ ส่วนหม้อทอด + หม้อหุงข้าว + ไมโครเวฟ + เตารีด รวม 4,100W ห้ามใช้",
+      "มีสวิตช์ single-pole พร้อมตัดไฟเมื่อโหลดเกิน มีสายดิน และม่านนิรภัย",
+      "ผลิตในจีน นำเข้าโดยบริษัท สมาร์ท ไอดี กรุ๊ป วันผลิต 10/06/2026"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "ตัวปลั๊ก",
+    "src": "/media/posts/review/anitech-h9313/front.jpg",
+    "w": 1205,
+    "h": 1600,
+    "group": "ตัวเครื่อง",
+    "alt": "anitech H9313 สีฟ้า มีสายรัด Let's Travel",
+    "summary": "เต้ารับ 1 ช่อง USB 3 ช่อง สายรัดเก็บสายในตัว",
+    "fit": "contain"
+  },
+  {
+    "id": "4",
+    "title": "ด้านข้าง",
+    "src": "/media/posts/review/anitech-h9313/side.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเครื่อง",
+    "alt": "anitech H9313 วางนอน เห็นช่อง USB และเต้ารับ",
+    "summary": "ขนาดเล็ก 6.1 × 12.6 × 4.3 ซม. พกใส่กระเป๋าได้"
+  },
+  {
+    "id": "5",
+    "title": "ช่อง USB",
+    "src": "/media/posts/review/anitech-h9313/usb-ports.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเครื่อง",
+    "alt": "ช่อง USB-C 2 ช่องและ USB-A 1 ช่อง เขียน Total 5V 3.4A",
+    "summary": "Total 5V 3.4A = 3 ช่องใช้ไฟร่วมกัน ไม่มีชาร์จเร็ว",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "คำว่า Total 5V 3.4A ข้างช่องคือรวมทุกช่อง ไม่ใช่ช่องละ 3.4A",
+      "ไม่มี PD หรือ QC ได้แค่ 5V"
+    ]
+  },
+  {
+    "id": "6",
+    "title": "สวิตช์",
+    "src": "/media/posts/review/anitech-h9313/switch.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเครื่อง",
+    "alt": "สวิตช์เปิดปิดและไฟสถานะสีแดงของ anitech H9313",
+    "summary": "สวิตช์ตัวเดียวคุมทั้งเต้ารับและ USB มีตัดไฟเกิน"
+  },
+  {
+    "id": "7",
+    "title": "เต้ารับ",
+    "src": "/media/posts/review/anitech-h9313/socket.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเครื่อง",
+    "alt": "เต้ารับ 3 ขา มีขั้วดินและม่านนิรภัย",
+    "summary": "เต้ารับแบบ 3 ขา มีขั้วดิน รองรับปลั๊กขากลมและขาแบน"
+  },
+  {
+    "id": "8",
+    "title": "ฉลากบนเต้ารับ",
+    "src": "/media/posts/review/anitech-h9313/socket-label.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเครื่อง",
+    "alt": "ฉลาก Total 10A 250V Max 2200W IP20 Model H9313",
+    "summary": "10A / 250V · สูงสุด 2,200W · IP20",
+    "screenTitle": "ข้อความบนฉลาก",
+    "screen": [
+      [
+        "Total",
+        "10A / 250V~"
+      ],
+      [
+        "Max",
+        "2200W · IP20"
+      ],
+      [
+        "Model",
+        "H9313"
+      ]
+    ]
+  },
+  {
+    "id": "9",
+    "title": "ฉลาก มอก.",
+    "src": "/media/posts/review/anitech-h9313/tis-label.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตัวเครื่อง",
+    "alt": "ฉลาก TIS 2432-2555 SMART ID GROUP LTD.",
+    "summary": "มอก. 2432-2555 มาตรฐานชุดสายพ่วงของไทย",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "มอก. 2432-2555 คือมาตรฐานเต้าเสียบและเต้ารับ: ชุดสายพ่วง เป็นมาตรฐานบังคับสำหรับปลั๊กพ่วงที่ขายในไทย"
+    ]
+  },
+  {
+    "id": "10",
+    "title": "ใต้ตัวเครื่อง",
+    "src": "/media/posts/review/anitech-h9313/bottom.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเครื่อง",
+    "alt": "ฉลากนูนใต้ anitech H9313 Technical Parameters",
+    "summary": "250V · 10A · 2,200W · Overload protection · IP20 · Made in China"
+  },
+  {
+    "id": "11",
+    "title": "รหัสบนสาย (1)",
+    "src": "/media/posts/review/anitech-h9313/cable-iec53.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "สายไฟ",
+    "alt": "สายไฟพิมพ์ 60227 IEC 53 300/500V",
+    "summary": "60227 IEC 53: สายอ่อนหุ้ม PVC เกรดใช้งานทั่วไป",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "60227 IEC 53 คือสายไฟอ่อนหุ้มฉนวน PVC มีเปลือก PVC ตามมาตรฐาน IEC 60227 (ไทยใช้ใน มอก. 11)",
+      "300/500V ทนแรงดันระหว่างสายกับดิน 300V ระหว่างสาย 500V ไฟบ้าน 220V สบาย ๆ"
+    ]
+  },
+  {
+    "id": "12",
+    "title": "รหัสบนสาย (2)",
+    "src": "/media/posts/review/anitech-h9313/cable-h05vvf.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "สายไฟ",
+    "alt": "สายไฟพิมพ์ 300/500V H05VV-F",
+    "summary": "H05VV-F: สายมาตรฐานยุโรป แกนทองแดงฝอย งอได้",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "H = Harmonised (มาตรฐานยุโรป) · 05 = 300/500V · V V = ฉนวนและเปลือก PVC · F = แกนทองแดงฝอย งอได้",
+      "สายพิมพ์รหัสครบแบบนี้เป็นสัญญาณของสายที่ผลิตตามมาตรฐาน แต่บนสายและกล่องไม่ได้บอกขนาดทองแดง (mm²)"
+    ]
+  },
+  {
+    "id": "13",
+    "title": "เสียบรางปลั๊ก",
+    "src": "/media/posts/review/anitech-h9313/plug-in-strip.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ใช้งานจริง",
+    "alt": "หัวปลั๊ก anitech H9313 เสียบเข้ารางปลั๊ก",
+    "summary": "หัวปลั๊ก 2 ขากลม + ขาดิน"
+  },
+  {
+    "id": "14",
+    "title": "ต่อพ่วงหัวชาร์จ",
+    "src": "/media/posts/review/anitech-h9313/with-charger.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ใช้งานจริง",
+    "alt": "หัวชาร์จเสียบบน anitech H9313 บนโต๊ะทำงาน",
+    "summary": "ใช้ต่อหัวชาร์จให้สายยาวขึ้น ตามที่ตั้งใจซื้อมา"
+  },
+  {
+    "id": "15",
+    "title": "Auto detection",
+    "src": "/media/posts/review/anitech-h9313/typec-detect.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "วัดช่อง Type-C",
+    "alt": "POWER-Z Auto detection ช่อง Type-C เจอแค่ DCP",
+    "summary": "เจอแค่ DCP ไม่มี PD / QC",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "DCP (Dedicated Charging Port) คือโหมดชาร์จพื้นฐานของ USB ที่ 5V อุปกรณ์จะดึงไฟได้ตามที่วงจรจ่ายไหว"
+    ]
+  },
+  {
+    "id": "16",
+    "title": "ไม่มีโหลด",
+    "src": "/media/posts/review/anitech-h9313/typec-idle.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "วัดช่อง Type-C",
+    "alt": "POWER-Z ช่อง Type-C 4.732V 0.069A",
+    "summary": "4.732V ตอนแทบไม่มีโหลด",
+    "readings": [
+      [
+        "แรงดัน",
+        "4.732V"
+      ],
+      [
+        "กระแส",
+        "0.069A"
+      ],
+      [
+        "โปรโตคอล",
+        "DCP"
+      ]
+    ],
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "4.732V ต่ำกว่า 5V อยู่ 5.4% เกินช่วง ±5% เล็กน้อย"
+    ]
+  },
+  {
+    "id": "17",
+    "title": "ชาร์จ iPad Air 4",
+    "src": "/media/posts/review/anitech-h9313/typec-load.jpg",
+    "w": 1205,
+    "h": 1600,
+    "group": "วัดช่อง Type-C",
+    "alt": "POWER-Z ช่อง Type-C 4.798V 1.485A 7.08W DCP ชาร์จ iPad Air 4",
+    "summary": "4.80V × 1.49A = 7.08W",
+    "fit": "contain",
+    "readings": [
+      [
+        "อุปกรณ์",
+        "iPad Air 4"
+      ],
+      [
+        "แรงดัน",
+        "4.798V"
+      ],
+      [
+        "กระแส",
+        "1.485A"
+      ],
+      [
+        "กำลัง",
+        "7.08W"
+      ],
+      [
+        "โปรโตคอล",
+        "DCP"
+      ]
+    ]
+  },
+  {
+    "id": "18",
+    "title": "VBUS Ripple Type-C ช่องแรก",
+    "src": "/media/posts/review/anitech-h9313/typec-ripple-1.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "วัดช่อง Type-C",
+    "alt": "POWER-Z VBUS Ripple: 111.3kHz 284mV 4.771V 1.477A",
+    "summary": "ช่อง C แรก: ripple 284mV เกินเกณฑ์ 200mV",
+    "readings": [
+      [
+        "อุปกรณ์",
+        "iPad Air 4"
+      ],
+      [
+        "Freq",
+        "111.3kHz"
+      ],
+      [
+        "Ripple",
+        "284mV"
+      ],
+      [
+        "Vbus",
+        "4.771V"
+      ],
+      [
+        "Current",
+        "1.477A"
+      ]
+    ],
+    "verdict": [
+      5,
+      "อันตราย"
+    ],
+    "score": [
+      [
+        "Ripple",
+        "284mV",
+        "",
+        5,
+        "อันตราย"
+      ],
+      [
+        "Switching Freq",
+        "111.3kHz",
+        "",
+        2,
+        "ดี"
+      ],
+      [
+        "Ripple %",
+        "5.95%",
+        "284mV ÷ 4.771V",
+        5,
+        "อันตราย"
+      ],
+      [
+        "Voltage Accuracy",
+        "−4.6%",
+        "4.771V จาก 5V",
+        3,
+        "พอใช้"
+      ]
+    ],
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "หนามแหลมสูงสม่ำเสมอที่สเกล 250mV ต่อช่อง ▲297 ▼282"
+    ]
+  },
+  {
+    "id": "19",
+    "title": "VBUS Ripple Type-C ช่องที่สอง",
+    "src": "/media/posts/review/anitech-h9313/typec-ripple-2.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "วัดช่อง Type-C",
+    "alt": "POWER-Z VBUS Ripple: 56.6kHz 336mV 4.814V 1.481A",
+    "summary": "ช่อง C ที่สอง: ripple 336mV คิดเป็น 6.98%",
+    "readings": [
+      [
+        "อุปกรณ์",
+        "iPad Air 4"
+      ],
+      [
+        "Freq",
+        "56.6kHz"
+      ],
+      [
+        "Ripple",
+        "336mV"
+      ],
+      [
+        "Vbus",
+        "4.814V"
+      ],
+      [
+        "Current",
+        "1.481A"
+      ]
+    ],
+    "verdict": [
+      5,
+      "อันตราย"
+    ],
+    "score": [
+      [
+        "Ripple",
+        "336mV",
+        "",
+        5,
+        "อันตราย"
+      ],
+      [
+        "Switching Freq",
+        "56.6kHz",
+        "",
+        4,
+        "แก้ขัด"
+      ],
+      [
+        "Ripple %",
+        "6.98%",
+        "336mV ÷ 4.814V",
+        5,
+        "อันตราย"
+      ],
+      [
+        "Voltage Accuracy",
+        "−3.7%",
+        "4.814V จาก 5V",
+        3,
+        "พอใช้"
+      ]
+    ],
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "▲347 ▼333 ใกล้กันมาก แปลว่าแกว่งแรงแบบนี้ตลอด ไม่ใช่กระชากครั้งเดียว"
+    ]
+  },
+  {
+    "id": "20",
+    "title": "Auto Enumerate",
+    "src": "/media/posts/review/anitech-h9313/typea-detect.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "วัดช่อง Type-A",
+    "alt": "POWER-Z รุ่นเก่า Auto Enumerate ช่อง USB-A",
+    "summary": "ไล่ทดสอบโปรโตคอลชาร์จเร็ว ไม่มีตัวไหนผ่าน"
+  },
+  {
+    "id": "21",
+    "title": "ชาร์จ iPad Air 4",
+    "src": "/media/posts/review/anitech-h9313/typea-load.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "วัดช่อง Type-A",
+    "alt": "POWER-Z ช่อง USB-A 4.8293V 1.4199A 6.8572W DCP 1.5A ชาร์จ iPad Air 4",
+    "summary": "4.83V × 1.42A = 6.86W · DCP 1.5A",
+    "readings": [
+      [
+        "อุปกรณ์",
+        "iPad Air 4"
+      ],
+      [
+        "แรงดัน",
+        "4.829V"
+      ],
+      [
+        "กระแส",
+        "1.420A"
+      ],
+      [
+        "กำลัง",
+        "6.86W"
+      ],
+      [
+        "โปรโตคอล",
+        "DCP 1.5A"
+      ]
+    ],
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "D+ และ D− เท่ากันที่ 1.91V มิเตอร์อ่านเป็น DCP 1.5A"
+    ]
+  },
+  {
+    "id": "22",
+    "title": "ไม่มีโหลด",
+    "src": "/media/posts/review/anitech-h9313/typea-idle.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "วัดช่อง Type-A",
+    "alt": "POWER-Z ช่อง USB-A 4.789V ไม่มีกระแส",
+    "summary": "4.789V ตอนไม่มีโหลด"
+  }
+]

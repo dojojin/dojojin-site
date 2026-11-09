@@ -39,6 +39,7 @@ export const TAGS = {
   baseus: "Baseus", oraimo: "oraimo", roseselsa: "ROSESELSA",
   "1more": "1MORE", cmf: "CMF by Nothing", earfun: "EarFun", huawei: "HUAWEI", isuper: "iSUPER",
   soundcore: "soundcore", soundpeats: "SoundPEATS", tozo: "TOZO", "clip-on": "Clip-on",
+  anitech: "anitech", "power-strip": "ปลั๊กไฟ / สายพ่วง",
 };
 
 // Main menu — used by src/layouts/Base.astro and by scripts/patch-atlas.mjs (top bar on atlas pages).
