@@ -1,0 +1,314 @@
+[
+  {
+    "id": "1",
+    "title": "หน้ากล่อง",
+    "src": "/media/posts/review/isuper-sound-pro-max/box-front.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "หน้ากล่อง iSUPER SOUND PRO Max True Wireless Smart Earbuds",
+    "summary": "กล่องสีขาว รูปหูฟังสีดำในเคส"
+  },
+  {
+    "id": "2",
+    "title": "หลังกล่อง (สเปก)",
+    "src": "/media/posts/review/isuper-sound-pro-max/box-back.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "หลังกล่อง iSUPER SOUND PRO Max แสดงสเปกภาษาไทย",
+    "summary": "สเปกภาษาไทยบนหลังกล่อง",
+    "readings": [
+      [
+        "Bluetooth",
+        "5.3"
+      ],
+      [
+        "ฟังเพลง",
+        "8.5 ชั่วโมง"
+      ],
+      [
+        "สแตนด์บาย",
+        "45 ชั่วโมง"
+      ],
+      [
+        "เวลาชาร์จ",
+        "2 ชั่วโมง"
+      ],
+      [
+        "Input",
+        "5V ⎓ 400mA"
+      ],
+      [
+        "Codec",
+        "LDAC, SBC, AAC"
+      ]
+    ],
+    "caution": "เบลอบาร์โค้ดหมายเลขเครื่องไว้",
+    "analysisTitle": "รายละเอียด",
+    "analysis": [
+      "บนกล่องพิมพ์ Codec ว่า ACC ซึ่งน่าจะหมายถึง AAC"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "ข้างกล่อง",
+    "src": "/media/posts/review/isuper-sound-pro-max/box-side.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "ข้างกล่องมีไอคอน 12mm Dynamic Driver, Adaptive ANC 46dB, Hi-Res Audio, LDAC, 6 Mic AI Noise Cancellation, Gaming Mode 68ms, 45Hour Standby",
+    "summary": "12mm · ANC 46dB · LDAC · 6 Mic · Gaming Mode 68ms"
+  },
+  {
+    "id": "4",
+    "title": "เปิดกล่อง",
+    "src": "/media/posts/review/isuper-sound-pro-max/case-in-box.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "เคสชาร์จสีเงินวางอยู่ในฟองน้ำในกล่อง",
+    "summary": "เคสสีเงินเงา โลโก้ ISUPER"
+  },
+  {
+    "id": "5",
+    "title": "เปิดเคสครั้งแรก",
+    "src": "/media/posts/review/isuper-sound-pro-max/case-open-in-box.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "เคสเปิดฝาในกล่อง หูฟังมีแถบสติกเกอร์ REMOVE",
+    "summary": "หูฟังมีแถบสติกเกอร์ให้ดึงออกก่อนใช้งาน"
+  },
+  {
+    "id": "6",
+    "title": "คู่มือ",
+    "src": "/media/posts/review/isuper-sound-pro-max/manual.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "กล่อง เคส และคู่มือวิธีเชื่อมต่อแอป iSuper Play",
+    "summary": "คู่มือภาษาไทย พร้อม QR โหลดแอป iSUPER PLAY",
+    "caution": "เบลอบาร์โค้ดหมายเลขเครื่อง และข้อมูลติดต่อบนนามบัตรไว้"
+  },
+  {
+    "id": "7",
+    "title": "วิธีควบคุมในคู่มือ",
+    "src": "/media/posts/review/isuper-sound-pro-max/manual-close.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "แกะกล่อง",
+    "alt": "คู่มือภาษาไทยอธิบายการแตะเพื่อควบคุม",
+    "summary": "คู่มือภาษาไทยอธิบายการควบคุมแต่ละแบบ"
+  },
+  {
+    "id": "8",
+    "title": "เคสชาร์จ",
+    "src": "/media/posts/review/isuper-sound-pro-max/case-closed.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "เคสชาร์จ iSUPER สีเงินไล่เฉด",
+    "summary": "เคสขนาดเล็ก พกง่าย"
+  },
+  {
+    "id": "9",
+    "title": "ด้านหน้าเคส",
+    "src": "/media/posts/review/isuper-sound-pro-max/case-front.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "เคสชาร์จ iSUPER ด้านหน้า มีไฟสถานะดวงเล็ก",
+    "summary": "ดูไฟสถานะที่เคสแทน % แบต"
+  },
+  {
+    "id": "10",
+    "title": "เคสบนซองผ้า",
+    "src": "/media/posts/review/isuper-sound-pro-max/case-pouch.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "เคสชาร์จ iSUPER วางบนซองผ้า",
+    "summary": "เคสเล็ก พกติดตัวตลอด"
+  },
+  {
+    "id": "11",
+    "title": "หูฟังในเคส",
+    "src": "/media/posts/review/isuper-sound-pro-max/case-open.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "เคสเปิดฝา หูฟังสีดำ ก้านเงาอยู่ในช่อง",
+    "summary": "หูฟังทรงก้าน ก้านเงา",
+    "caution": "เบลอ QR บนนามบัตรไว้"
+  },
+  {
+    "id": "12",
+    "title": "ตัวหูฟัง",
+    "src": "/media/posts/review/isuper-sound-pro-max/buds.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "หูฟัง iSUPER SOUND PRO Max สองข้างวางหน้าเคส",
+    "summary": "หนักข้างละ 4 กรัม (iSUPER)"
+  },
+  {
+    "id": "13",
+    "title": "พอร์ตชาร์จ",
+    "src": "/media/posts/review/isuper-sound-pro-max/box-back-case.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "ด้านหลังเคสมีพอร์ต USB-C และปุ่ม วางหน้ากล่อง",
+    "summary": "ชาร์จผ่าน USB-C",
+    "caution": "เบลอบาร์โค้ดหมายเลขเครื่อง และนามบัตรไว้"
+  },
+  {
+    "id": "14",
+    "title": "ใช้งานจริง",
+    "src": "/media/posts/review/isuper-sound-pro-max/case-phone.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "เคส iSUPER วางข้างมือถือที่เปิดเพลงอยู่",
+    "summary": "ใช้คู่กับมือถือ Android"
+  },
+  {
+    "id": "15",
+    "title": "Status",
+    "src": "/media/posts/review/isuper-sound-pro-max/app-status.jpg",
+    "w": 738,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้า Status ในแอป iSUPER PLAY แสดงแบตหูฟังซ้ายขวา 100%",
+    "summary": "บอก % แบตเฉพาะหูฟัง ไม่บอกของเคส",
+    "fit": "contain"
+  },
+  {
+    "id": "16",
+    "title": "Transparency",
+    "src": "/media/posts/review/isuper-sound-pro-max/app-transparency.jpg",
+    "w": 738,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้า Sound แสดงโหมด Transparency level 4 และ Vocal enhancement",
+    "summary": "แนะนำ Transparency level 4 + Vocal enhancement",
+    "fit": "contain"
+  },
+  {
+    "id": "17",
+    "title": "ANC (1)",
+    "src": "/media/posts/review/isuper-sound-pro-max/app-anc-1.jpg",
+    "w": 738,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้า Sound โหมด Noise canceling แบบ Adaptive, Indoor, Commuting",
+    "summary": "Adaptive · Indoor · Commuting",
+    "fit": "contain"
+  },
+  {
+    "id": "18",
+    "title": "ANC (2)",
+    "src": "/media/posts/review/isuper-sound-pro-max/app-anc-2.jpg",
+    "w": 738,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้า Sound โหมด Noise canceling แบบ Noisy และ Anti-wind noise",
+    "summary": "Noisy · Anti-wind noise",
+    "fit": "contain"
+  },
+  {
+    "id": "19",
+    "title": "Custom EQ",
+    "src": "/media/posts/review/isuper-sound-pro-max/app-eq-custom.jpg",
+    "w": 738,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้า EQ and advanced setting ปรับได้ 10 แบนด์",
+    "summary": "Preset 6 แบบ + ปรับเอง 10 แบนด์",
+    "fit": "contain"
+  },
+  {
+    "id": "20",
+    "title": "การควบคุม",
+    "src": "/media/posts/review/isuper-sound-pro-max/app-controls.jpg",
+    "w": 738,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้า Settings ตั้งค่า Touch, Double touch, Triple touch",
+    "summary": "แตะ 1 ครั้งปิดไว้เป็นค่าเริ่มต้น",
+    "fit": "contain"
+  },
+  {
+    "id": "21",
+    "title": "Settings",
+    "src": "/media/posts/review/isuper-sound-pro-max/app-settings.jpg",
+    "w": 738,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้า Settings มี Gaming mode, Sleeping Mode, LDAC Switch, Dual Device Connection",
+    "summary": "เปิด LDAC แล้วจะปิด Dual device connection",
+    "fit": "contain"
+  },
+  {
+    "id": "22",
+    "title": "More settings",
+    "src": "/media/posts/review/isuper-sound-pro-max/app-more.jpg",
+    "w": 738,
+    "h": 1600,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้า More settings เปลี่ยนชื่ออุปกรณ์ รีเซ็ต และข้อมูลอุปกรณ์",
+    "summary": "ไม่มี Fitting Test และตัวจัดการการเชื่อมต่อ",
+    "fit": "contain"
+  },
+  {
+    "id": "23",
+    "title": "SOUND PRO Max",
+    "src": "/media/posts/review/isuper-sound-pro-max/maker-01.jpg",
+    "w": 1600,
+    "h": 1600,
+    "group": "ภาพจาก iSUPER",
+    "alt": "ภาพโปรโมต iSUPER SOUND PRO Max สีดำ",
+    "summary": "ภาพจาก iSUPER"
+  },
+  {
+    "id": "24",
+    "title": "Dynamic Driver 12mm",
+    "src": "/media/posts/review/isuper-sound-pro-max/maker-driver.jpg",
+    "w": 1600,
+    "h": 1600,
+    "group": "ภาพจาก iSUPER",
+    "alt": "ภาพโปรโมตไดรเวอร์ Dynamic ขนาด 12 มิลลิเมตร",
+    "summary": "ภาพจาก iSUPER: ไดรเวอร์ 12mm"
+  },
+  {
+    "id": "25",
+    "title": "ไมค์ 6 ตัว + ENC",
+    "src": "/media/posts/review/isuper-sound-pro-max/maker-mics.jpg",
+    "w": 1600,
+    "h": 1600,
+    "group": "ภาพจาก iSUPER",
+    "alt": "ภาพโปรโมตตำแหน่ง Feedback Mic, Feedforward Mic และ Main Mic",
+    "summary": "ภาพจาก iSUPER: ตำแหน่งไมค์ 3 ตัวต่อข้าง"
+  },
+  {
+    "id": "26",
+    "title": "แบตเตอรี่",
+    "src": "/media/posts/review/isuper-sound-pro-max/maker-battery.jpg",
+    "w": 1600,
+    "h": 1600,
+    "group": "ภาพจาก iSUPER",
+    "alt": "ภาพโปรโมตแบตเตอรี่ 350mAh ANC OFF 8.5/34 ชม. ANC ON 7.5/30 ชม.",
+    "summary": "ภาพจาก iSUPER: เคส 350mAh ใช้งานรวม 34 ชม."
+  },
+  {
+    "id": "27",
+    "title": "Multipoint และ Game Mode",
+    "src": "/media/posts/review/isuper-sound-pro-max/maker-features.jpg",
+    "w": 1600,
+    "h": 1600,
+    "group": "ภาพจาก iSUPER",
+    "alt": "ภาพโปรโมต Multipoint 2 อุปกรณ์ แอป iSUPER Play และ Game Mode 80ms",
+    "summary": "ภาพจาก iSUPER: Game Mode เขียน 80ms ขณะที่ข้างกล่องเขียน 68ms"
+  }
+]

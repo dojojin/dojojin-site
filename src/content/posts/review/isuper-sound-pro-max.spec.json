@@ -1,0 +1,59 @@
+[
+  {
+    "title": "ทั่วไป",
+    "rows": [
+      ["รุ่น", "iSUPER SOUND PRO Max (Model: SOUND PRO Max)", "กล่อง"],
+      ["Type", "TWS In-Ears"],
+      ["แบรนด์", "iSUPER (แบรนด์คนไทย)", "ผู้รีวิว"],
+      ["น้ำหนัก", "4 กรัม/ข้าง", "ผู้ผลิต"],
+      ["ราคา", "ราคายืนพื้น 1,2xx - 1,3xx บาท (บางช่วงอาจต่ำกว่าพัน)", "ผู้รีวิว"]
+    ]
+  },
+  {
+    "title": "เสียง",
+    "rows": [
+      ["Driver", "12mm Dynamic Driver", "กล่อง"],
+      ["Diaphragm", "Diamond-Like Carbon (DLC)", "ผู้รีวิว"],
+      ["Technology", ["360° Stereo Sound", "Spatial sound effects (Surround Sound)", "Hi-Res Audio Wireless (LDAC)"], "ผู้ผลิต"],
+      ["EQ", "6 Preset (Default, Pop, Heavy Bass, Rock, Soft, Classic) + Custom EQ 10 แบนด์", "แอป"],
+      ["ANC", "Adaptive ANC ตัดเสียงได้ 46dB", "กล่อง"],
+      ["ANC Mode", "Adaptive, Indoor, Commuting, Noisy, Anti-wind noise", "แอป"],
+      ["Transparency", "ปรับได้ 6 ระดับ + Vocal enhancement", "ผู้รีวิว"]
+    ]
+  },
+  {
+    "title": "การเชื่อมต่อ",
+    "rows": [
+      ["Bluetooth®", "5.3 · ระยะ 10 เมตร · HSP / HFP / A2DP / AVRCP", "กล่อง"],
+      ["CODEC", "LDAC, SBC, AAC", "กล่อง"],
+      ["LDAC", "เปิดในแอป เมื่อเปิดแล้วจะปิด Dual device connection และ spatial audio", "แอป"],
+      ["Game Mode / Latency", "68ms (หน้าภาพโปรโมตของ iSUPER เขียน 80ms)", "กล่อง"],
+      ["Dual Device Connection", "รองรับ 2 เครื่องพร้อมกัน (ต้องเปิดเอง)", "แอป"],
+      ["แอป", "iSUPER PLAY (iOS / Android) · บอกเปอร์เซ็นต์แบตหูฟัง L / R (ไม่บอกของเคส)", "แอป"]
+    ]
+  },
+  {
+    "title": "ไมโครโฟนและการควบคุม",
+    "rows": [
+      ["Microphone", "6 ตัว (3 ตัว/ข้าง) + AI ENC", "กล่อง"],
+      ["", ["Main Mic: รับเสียงพูดของผู้ใช้งาน", "Feedforward Mic: รับเสียงจากภายนอก", "Feedback Mic: ลดเสียงสะท้อน (ในช่องหู)"], "ผู้ผลิต"],
+      ["การควบคุม", "แตะ 1 ครั้ง (ค่าเริ่มต้นปิดไว้), แตะ 2 ครั้ง, แตะ 3 ครั้ง ตั้งค่าได้ในแอป", "แอป"],
+      ["Wear Detection", "มี", "แอป"],
+      ["Sleeping Mode", "ปิดการสัมผัสทั้งหมด ยกเลิกเองเมื่อเก็บเข้าเคส", "แอป"],
+      ["ปิดอัตโนมัติ", "Timing power-off และ Disconnect and power off (ค่าเริ่มต้น 5 นาที)", "แอป"]
+    ]
+  },
+  {
+    "title": "แบตเตอรี่และการชาร์จ",
+    "rows": [
+      ["Battery (Case)", "350 mAh", "ผู้ผลิต"],
+      ["Battery (Earbud)", "35 mAh", "ผู้รีวิว"],
+      ["ANC: ON", "7.5 ชั่วโมงต่อการชาร์จ 1 ครั้ง · รวมเคส 30 ชั่วโมง", "ผู้ผลิต"],
+      ["ANC: OFF", "8.5 ชั่วโมงต่อการชาร์จ 1 ครั้ง · รวมเคส 34 ชั่วโมง", "ผู้ผลิต"],
+      ["Standby", "45 ชั่วโมง", "กล่อง"],
+      ["เวลาชาร์จ", "2 ชั่วโมง", "กล่อง"],
+      ["Quick Charge", "ชาร์จ 10 นาที ฟังได้ 2 ชั่วโมง", "ผู้รีวิว"],
+      ["Port Charge", "USB-C · 5V ⎓ 400mA", "กล่อง"]
+    ]
+  }
+]
