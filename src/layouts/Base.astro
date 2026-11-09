@@ -50,7 +50,8 @@ const jsonLd = {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0f1218" media="(prefers-color-scheme: dark)" />
   <title>{fullTitle}</title>
   <meta name="description" content={description} />
   <meta name="author" content="Mr. Dojo-mAn (Prakasit)" />
@@ -72,9 +73,14 @@ const jsonLd = {
   <meta name="twitter:image" content={ogImage} />
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
+  <script is:inline>
+    // Theme before first paint: saved choice, else the device setting (no flash of the wrong theme).
+    (() => { let t; try { t = localStorage.getItem('theme'); } catch {}
+      document.documentElement.dataset.theme = t || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&family=JetBrains+Mono:wght@500;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;600;700&family=JetBrains+Mono:wght@500;600&display=swap" />
 </head>
 <body>
   <Icons />
@@ -84,7 +90,11 @@ const jsonLd = {
         <button class="brand__logo" type="button" data-logo aria-label="DOJOJIN logo"><img src="/favicon.svg" alt="" width="28" height="28" /></button>
         <a class="site-bar__brand" href="/">{siteName}</a>
       </span>
-      <span class="site-visitors" data-visitors hidden title="ผู้เข้าชมเว็บทั้งหมด"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><b></b> visitors</span>
+      <span class="site-tools">
+        <span class="site-visitors" data-visitors hidden title="ผู้เข้าชมเว็บทั้งหมด"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><b></b> visitors</span>
+        <a class="tool-btn" href="/search/" aria-label="ค้นหา" title="ค้นหา"><svg class="icon" aria-hidden="true"><use href="#icon-search" /></svg></a>
+        <button class="tool-btn" type="button" data-theme-toggle aria-label="สลับโหมดมืด/สว่าง" title="สลับโหมดมืด/สว่าง"><svg class="icon icon--dark" aria-hidden="true"><use href="#icon-moon" /></svg><svg class="icon icon--light" aria-hidden="true"><use href="#icon-sun" /></svg></button>
+      </span>
       <nav class="site-nav" aria-label="เมนูหลัก">
         {nav.map(([id, href, label]) => <a href={href} aria-current={active === id ? 'page' : undefined}>{label}</a>)}
       </nav>
@@ -92,6 +102,17 @@ const jsonLd = {
   </header>
 
   <slot />
+  <script is:inline>
+    (() => {
+      const root = document.documentElement, mq = matchMedia('(prefers-color-scheme: dark)');
+      const saved = () => { try { return localStorage.getItem('theme'); } catch { return null; } };
+      document.querySelector('[data-theme-toggle]')?.addEventListener('click', () => {
+        const t = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = t; try { localStorage.setItem('theme', t); } catch {}
+      });
+      mq.addEventListener('change', (e) => { if (!saved()) root.dataset.theme = e.matches ? 'dark' : 'light'; });
+    })();
+  </script>
 
   <footer class="source site-footer">
     <div class="wrap">

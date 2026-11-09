@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import { TYPES, TOPICS, TAGS, PROFILE } from '../../data/site.js';
+import { srcset } from '../../lib/thumb.js';
 
 export async function getStaticPaths() {
   const all = await getCollection('posts', (p) => !p.data.draft);
@@ -53,7 +54,7 @@ const schema = [
         <p class="meta">{d.meta} · {d.date.toLocaleDateString('th-TH', { dateStyle: 'long' })}<span data-views hidden> · เข้าชม <b></b> ครั้ง</span></p>
         {d.tags.length > 0 && <ul class="taglinks" aria-label="tags">{d.tags.map((t) => <li><a href={`/tag/${t}/`}>#{TAGS[t]}</a></li>)}</ul>}
       </div>
-      <figure class="hero__media"><img src={d.cover} width="1600" height="1200" alt={d.coverAlt} /></figure>
+      <figure class="hero__media"><img src={d.cover} srcset={srcset(d.cover)} sizes="(max-width: 768px) 100vw, 45vw" width="1600" height="1200" alt={d.coverAlt} /></figure>
     </div>
   </section>
 

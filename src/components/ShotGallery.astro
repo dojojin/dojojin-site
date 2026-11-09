@@ -53,7 +53,7 @@ let current = 0;
 const card = (s, i) => `
   <button class="shot${s.fit === 'contain' ? ' shot--contain' : ''}" type="button" data-i="${i}" aria-label="ดูรายละเอียดรูป ${s.title ?? s.id}">
     <div class="shot__img">
-      <img src="${s.src}" width="${s.w}" height="${s.h}" loading="lazy" alt="${s.alt}">
+      <img src="${s.src}"${/^\/media\/.*\.jpg$/.test(s.src) ? ` srcset="${s.src.replace(/\.jpg$/, '.800.webp')} 800w, ${s.src} 1600w" sizes="(max-width: 768px) 100vw, 33vw"` : ''} width="${s.w}" height="${s.h}" loading="lazy" alt="${s.alt}">
       <span class="shot__hint">${icon('icon-expand')}รายละเอียด</span>
     </div>
     <div class="shot__body">

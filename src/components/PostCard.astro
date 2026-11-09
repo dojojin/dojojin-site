@@ -2,13 +2,15 @@
 // Card for one feed item (src/lib/feed.js): a post or a Price Atlas.
 // Badge = category. showType: also name the menu section (used on /tag/ pages, which mix sections).
 import { TOPICS, TAGS, TYPES } from '../data/site.js';
+import { srcset } from '../lib/thumb.js';
 const { item: i, showType = false } = Astro.props;
 ---
-<a class="shot" href={i.href} data-topic={i.topic}>
-  <div class="shot__img"><img src={i.cover} width={i.coverW} height={i.coverH} loading="lazy" alt="" style={`aspect-ratio:${i.coverW}/${i.coverH}`} /></div>
+<a class="shot post-card" href={i.href} data-topic={i.topic}>
+  <div class="shot__img"><img src={i.cover} srcset={srcset(i.cover)} sizes="(max-width: 768px) 100vw, 33vw" width={i.coverW} height={i.coverH} loading="lazy" alt="" style={`aspect-ratio:${i.coverW}/${i.coverH}`} /></div>
   <div class="shot__body">
     <span class="type-badge">{showType && `${TYPES[i.type].name} · `}{TOPICS[i.topic]?.name ?? i.topic}</span>
     <div class="shot__label">{i.title}</div>
+    {i.reading && <span class="reading">วัดจริง {i.reading}</span>}
     <span class="meta">{i.sub}</span>
     {i.tags?.length > 0 && <span class="tags-line">{i.tags.map((t) => `#${TAGS[t]}`).join(' ')}</span>}
   </div>

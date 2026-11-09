@@ -4,7 +4,7 @@ export const DOCS_URL = import.meta.env?.PUBLIC_DOCS_URL || "https://docs.dojoji
 
 export const SITE = {
   name: "DOJOJIN.TECH",
-  tagline: "อธิบายเทคโนโลยีให้เข้าใจง่าย วัดจริง รีวิวจริง",
+  tagline: "ซื้อเอง ใช้เอง วัดเอง แล้วเล่าให้เข้าใจง่าย",
   description: "เว็บรีวิว ความรู้ และข้อมูลเทคโนโลยีโดย Dojo-mAn — อุปกรณ์ ถ่ายภาพ และ infra/AI อธิบายให้เข้าใจง่าย พร้อมผลวัดและรูปจริง",
 };
 
