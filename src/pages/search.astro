@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+import PostCard from '../components/PostCard.astro';
+import { getFeed } from '../lib/feed.js';
+
+// Static search: every post is on the page; typing hides the cards that don't match
+// (title, summary, category, tags). ?q= in the URL pre-fills it, so a search can be shared.
+const items = await getFeed();
+---
+<Base title="ค้นหา" description="ค้นหารีวิว ความรู้ ร้านอาหาร และข้อมูลทั้งหมดบน DOJOJIN.TECH" noindex>
+  <section class="hero">
+    <div class="wrap" style="grid-template-columns:1fr">
+      <div class="hero__text">
+        <h1>ค้นหา</h1>
+        <form class="search" role="search" action="/search/">
+          <svg class="icon" aria-hidden="true"><use href="#icon-search" /></svg>
+          <input type="search" name="q" placeholder="เช่น LDAC, หัวชาร์จ 100W, HUAWEI, สุพรรณบุรี" aria-label="คำค้นหา" autocomplete="off" autofocus />
+        </form>
+        <p class="meta" data-count aria-live="polite">ทั้งหมด {items.length} บทความ</p>
+      </div>
+    </div>
+  </section>
+  <main class="wrap layout" style="grid-template-columns:1fr">
+    <div class="content">
+      <div class="gallery">{items.map((i) => <PostCard item={i} showType />)}</div>
+      <p class="empty" data-empty hidden>ไม่พบบทความที่ตรงกับคำค้นหา</p>
+    </div>
+  </main>
+</Base>
+
+<script>
+  const input = document.querySelector('.search input');
+  const cards = [...document.querySelectorAll('.gallery > .shot')].map((el) => ({ el, text: el.textContent.toLowerCase() }));
+  const count = document.querySelector('[data-count]'), empty = document.querySelector('[data-empty]');
+  const run = () => {
+    const words = input.value.toLowerCase().split(/\s+/).filter(Boolean);
+    let n = 0;
+    for (const c of cards) { c.el.hidden = !words.every((w) => c.text.includes(w)); if (!c.el.hidden) n++; }
+    count.textContent = words.length ? `พบ ${n} จาก ${cards.length} บทความ` : `ทั้งหมด ${cards.length} บทความ`;
+    empty.hidden = n > 0;
+    const url = new URL(location.href);
+    if (input.value) url.searchParams.set('q', input.value); else url.searchParams.delete('q');
+    history.replaceState(null, '', url);
+  };
+  input.value = new URLSearchParams(location.search).get('q') ?? '';
+  input.addEventListener('input', run);
+  document.querySelector('.search').addEventListener('submit', (e) => { e.preventDefault(); run(); });
+  run();
+</script>

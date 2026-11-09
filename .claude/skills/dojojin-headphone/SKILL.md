@@ -30,4 +30,6 @@ Blur in app screens: account name, Find-my map/address, device MAC. Blur on boxe
 
 ## Page sections
 
+After the post: add one row to `src/data/headphones.js` (feeds `/compare/headphones/`).
+
 Short Brief (+ จุดเด่น / ข้อสังเกต) → ประวัติแบรนด์แบบย่อ (only if in post.txt) → Specification → คุณภาพเสียง (grade-cards Bass / Midrange / Treble) → EQ → Microphone → การเชื่อมต่อ/แอป → สรุป → ภาพประกอบ → ช่องทางการจัดจำหน่าย.

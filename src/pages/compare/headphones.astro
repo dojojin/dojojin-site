@@ -1,0 +1,56 @@
+---
+import Base from '../../layouts/Base.astro';
+import { HEADPHONES } from '../../data/headphones.js';
+
+const dash = (v) => v ?? '–';
+const tags = (h) => [h.anc ? 'anc' : '', /LDAC/.test(h.codec ?? '') ? 'ldac' : '', h.fit === 'Clip-on' ? 'clip' : ''].join(' ');
+const filters = [['', 'ทั้งหมด'], ['anc', 'มี ANC'], ['ldac', 'รองรับ LDAC'], ['clip', 'Open-ear / Clip-on']];
+const count = (f) => HEADPHONES.filter((h) => !f || tags(h).includes(f)).length;
+---
+<Base title="เทียบหูฟังทุกตัวที่รีวิว" description={`ตารางเทียบสเปกหูฟัง ${HEADPHONES.length} รุ่นที่ DOJOJIN.TECH รีวิวจากการใช้งานจริง — ANC, Codec, Bluetooth, แบตเตอรี่, กันน้ำ, น้ำหนัก และราคาที่ซื้อ`} active="review">
+  <section class="hero">
+    <div class="wrap" style="grid-template-columns:1fr">
+      <div class="hero__text">
+        <span class="kicker">Review · หูฟัง & เสียง</span>
+        <h1>เทียบหูฟังทุกตัวที่รีวิว</h1>
+        <p class="lead">{HEADPHONES.length} รุ่น ค่าจากตารางสเปกของแต่ละรีวิว (กล่อง · ผู้ผลิต · แอป · ผู้รีวิว) กดชื่อรุ่นเพื่ออ่านรีวิวและดูที่มาของตัวเลข</p>
+      </div>
+    </div>
+  </section>
+  <main class="wrap layout" style="grid-template-columns:1fr">
+    <div class="content">
+      <div class="filters" role="group" aria-label="กรองหูฟัง">
+        {filters.map(([f, label], i) => <button type="button" aria-pressed={String(i === 0)} data-hp-filter={f}>{label} <span>{count(f)}</span></button>)}
+      </div>
+      <table class="compare">
+        <thead>
+          <tr><th>รุ่น</th><th>ประเภท</th><th>ANC</th><th>Codec</th><th>Bluetooth</th><th>แบต (ชม.)</th><th>กันน้ำ</th><th>น้ำหนัก</th><th>ราคาที่ซื้อ</th></tr>
+        </thead>
+        <tbody>
+          {HEADPHONES.map((h) => (
+            <tr data-tags={tags(h)}>
+              <th scope="row"><a href={`/review/${h.slug}/`}>{h.name}</a></th>
+              <td data-label="ประเภท">{h.fit}</td>
+              <td data-label="ANC">{h.anc ?? 'ไม่มี'}</td>
+              <td data-label="Codec">{dash(h.codec)}</td>
+              <td data-label="Bluetooth">{dash(h.bt)}</td>
+              <td data-label="แบต (ชม.)" class="num">{h.battery[0]} · รวมเคส {h.battery[1]}</td>
+              <td data-label="กันน้ำ">{dash(h.ip)}</td>
+              <td data-label="น้ำหนัก" class="num">{h.weight ? `${h.weight} g` : '–'}</td>
+              <td data-label="ราคาที่ซื้อ" class="num">{h.price ? `${h.price.toLocaleString('en-US')} ฿` : '–'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="fineprint">แบต = ฟังต่อเนื่องต่อการชาร์จ 1 ครั้ง · รวมเคส (ปิด ANC, AAC) · น้ำหนักต่อข้าง · ราคาที่ผู้รีวิวซื้อจริง ณ ตอนนั้น · “–” = ไม่มีข้อมูลในรีวิว</p>
+    </div>
+  </main>
+</Base>
+
+<script>
+  const btns = document.querySelectorAll('[data-hp-filter]');
+  btns.forEach((b) => b.addEventListener('click', () => {
+    btns.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    document.querySelectorAll('.compare tbody tr').forEach((r) => { r.hidden = !!b.dataset.hpFilter && !r.dataset.tags.includes(b.dataset.hpFilter); });
+  }));
+</script>
