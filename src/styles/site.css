@@ -719,3 +719,11 @@ a.grade-card.project:hover { border-color: var(--accent); }
   max-width: min(90%, 60ch); margin: 0; padding: var(--space-2) var(--space-4); border-radius: var(--radius);
   background: rgb(0 0 0 / 0.65); color: #fff; font-size: var(--fs-caption); text-align: center;
 }
+/* post card: title link covers the card; the category badge is its own link on top */
+.post-card { position: relative; }
+.post-card__link { color: inherit; text-decoration: none; }
+.post-card__link::after { content: ""; position: absolute; inset: 0; }
+.post-card a.type-badge { position: relative; z-index: 1; text-decoration: none; }
+.post-card a.type-badge:hover { text-decoration: underline; }
+.post-card:has(.post-card__link:focus-visible) { outline: 3px solid var(--accent); outline-offset: 2px; }
+.post-card__link:focus-visible { outline: none; }

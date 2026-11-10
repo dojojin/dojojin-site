@@ -47,7 +47,7 @@ const schema = [
   <section class="hero">
     <div class="wrap">
       <div class="hero__text">
-        <nav class="crumbs" aria-label="breadcrumb"><a href={`/${d.type}/`}>{TYPES[d.type].name}</a> / {TOPICS[d.topic].name}</nav>
+        <nav class="crumbs" aria-label="breadcrumb"><a href={`/${d.type}/`}>{TYPES[d.type].name}</a> / <a href={`/topic/${d.topic}/`}>{TOPICS[d.topic].name}</a></nav>
         <span class="kicker">{d.kicker}</span>
         <h1>{d.title}</h1>
         <p class="lead">{d.lead}</p>

@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostCard from '../../components/PostCard.astro';
+import { TOPICS } from '../../data/site.js';
+import { getFeed } from '../../lib/feed.js';
+
+// One page per category (field `topic`) that has posts — linked from /tag/ and the post breadcrumb.
+export async function getStaticPaths() {
+  const feed = await getFeed();
+  return Object.keys(TOPICS).filter((t) => feed.some((i) => i.topic === t)).map((topic) => ({ params: { topic } }));
+}
+const { topic } = Astro.params;
+const items = (await getFeed()).filter((i) => i.topic === topic);
+const name = TOPICS[topic].name;
+---
+<Base title={name} description={`รวมบทความหมวด ${name} บน DOJOJIN.TECH (${items.length} บทความ)`} noindex={items.length < 2}>
+  <section class="hero">
+    <div class="wrap" style="grid-template-columns:1fr">
+      <div class="hero__text">
+        <nav class="crumbs" aria-label="breadcrumb"><a href="/tag/">หมวดและ tag</a></nav>
+        <h1>{name}</h1>
+        <p class="lead">{items.length} บทความในหมวดนี้</p>
+      </div>
+    </div>
+  </section>
+  <main class="wrap layout" style="grid-template-columns:1fr">
+    <div class="content">
+      <div class="gallery">{items.map((i) => <PostCard item={i} showType />)}</div>
+    </div>
+  </main>
+</Base>
