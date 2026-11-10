@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import PostCard from '../components/PostCard.astro';
 import { SITE, TYPES, PROFILE } from '../data/site.js';
 import { getFeed } from '../lib/feed.js';
+import { srcset } from '../lib/thumb.js';
 
 const feed = await getFeed();
 // One section per menu type, same order as the menu; empty types are skipped.
@@ -14,6 +15,21 @@ const mixed = (items, n = 3) => {
   for (const i of items) if (!seen.has(i.topic)) { seen.add(i.topic); picks.push(i); }
   return [...picks, ...items.filter((i) => !picks.includes(i))].slice(0, n).sort((a, b) => b.date - a.date);
 };
+// The 4 blocks at the top: what the site offers, one block each (newest post big + 3 more as a list).
+const HUB = ['news', 'review', 'knowledge'];   // top row: 3 blocks
+const PAIR = ['eat', 'data'];                    // second row: 2 blocks
+const block = (type) => {
+  const items = feed.filter((i) => i.type === type);
+  const picks = type === 'review' ? mixed(items, 4) : items.slice(0, 4);
+  return { type, t: TYPES[type], count: items.length, lead: picks[0], rest: picks.slice(1) };
+};
+const hub = HUB.filter((type) => TYPES[type]).map(block).filter((b) => b.lead);
+const pair = PAIR.filter((type) => TYPES[type]).map(block).filter((b) => b.lead);
+const others = sections.filter((s) => !HUB.includes(s.type) && !PAIR.includes(s.type));
+const day = (d) => d.toLocaleDateString('th-TH', { day: 'numeric', month: 'short', year: '2-digit' });
+// Spotlight (right of the hero): every post with a cover, shuffled in the browser on each visit.
+const spot = feed.map((i) => ({ href: i.href, title: i.title, cover: i.cover, kind: TYPES[i.type]?.name ?? '', sub: i.sub ?? '' }));
+const first = spot[0];
 // Titles for the client-side "ยอดนิยม" box (filled from Firestore page views by ViewCounter).
 const titles = Object.fromEntries(feed.map((i) => [i.href, i.title]));
 ---
@@ -21,14 +37,16 @@ const titles = Object.fromEntries(feed.map((i) => [i.href, i.title]));
   <section class="hero me">
     <div class="wrap me__grid">
       <div class="me__text">
-        <p class="me__who"><img src="/favicon.svg" width="40" height="40" alt="" /><span>รีวิวที่จริงใจในมุมมองผม</span></p>
-        <h1>{SITE.tagline}</h1>
-        <p class="lead">ผม ปอ Dojo-mAn คนธรรมดาที่ชอบถ่ายรูป รีวิวของโน่นนี่นั่นที่ซื้อมาใช้เอง ชอบท่องเที่ยว ไปแสวงหาร้านอาหารอร่อย ๆ ที่ไปชิมเอง จ่ายเงินเอง และเรื่องไอทีที่อยากเล่าให้เข้าใจง่าย ๆ</p>
+        <p class="me__who"><img src="/favicon.svg" width="40" height="40" alt="" /><span>รีวิว · ความรู้ · ข่าว · กิน & เที่ยว</span></p>
+        <h1 class="me__title"><span>ซื้อจริง ใช้จริง ไปจริง</span> <span>แล้วมาเล่าให้ฟัง</span></h1>
+        <p class="lead">ผม ปอ Dojo-mAn ชอบถ่ายรูป ชอบเที่ยว ชอบลองของใหม่ ๆ ที่นี่มีรีวิวของที่ซื้อมาใช้เอง ร้านอร่อยที่ไปจ่ายเงินเอง เรื่องไอทีที่เล่าให้เข้าใจง่าย และข่าวที่มีประโยชน์ที่อยากบอกต่อครับ</p>
         <ul class="me__promise">
           <li><b>ซื้อจริง ใช้จริง</b><span>ใช้งานจริงก่อนเขียนทุกรีวิว</span></li>
           <li><b>วัดเอง</b><span>หัวชาร์จวัดด้วยมิเตอร์ ทุกตัวเลขบอกที่มา</span></li>
-          <li><b>ถ่ายเองทุกรูป</b><span>Dojo-mAn Fotographer</span></li>
+          <li><b>รีวิวถ่ายเองทุกรูป</b><span>Dojo-mAn Fotographer</span></li>
           <li><b>ไปเอง จ่ายเอง</b><span>ร้านอาหารและคาเฟ่</span></li>
+          <li><b>คัดข่าวที่มีประโยชน์</b><span>ข่าวที่ผมสนใจ บอกแหล่งที่มาทุกข่าว</span></li>
+          <li><b>เล่าให้เข้าใจง่าย</b><span>เรื่องเทคนิคอธิบายแบบภาษาคนทั่วไป</span></li>
         </ul>
         <nav class="me__go" aria-label="หมวด">
           {Object.entries(TYPES).map(([type, t]) => (
@@ -36,24 +54,68 @@ const titles = Object.fromEntries(feed.map((i) => [i.href, i.title]));
           ))}
         </nav>
       </div>
-      <aside class="me__side">
-        <div class="popular" data-popular={JSON.stringify(titles)} hidden>
-          <b>คนอ่านเยอะสุด</b>
-          <ol></ol>
+      <aside class="me__side spot" aria-roledescription="carousel" aria-label="บทความแนะนำ สุ่มจากทั้งเว็บ" data-spot={JSON.stringify(spot)}>
+        <a class="spot__card" href={first.href} aria-live="polite">
+          <img src={first.cover} srcset={srcset(first.cover)} sizes="(max-width: 768px) 100vw, 36vw" width="1600" height="1200" alt="" />
+          <span class="spot__kind">{first.kind}</span>
+          <b class="spot__title">{first.title}</b>
+          <span class="spot__sub">{first.sub}</span>
+        </a>
+        <div class="spot__nav">
+          <span class="meta">สุ่มอ่านเรื่องอื่น</span>
+          <button class="btn-icon" type="button" data-spot-prev aria-label="เรื่องก่อนหน้า"><svg class="icon" aria-hidden="true"><use href="#icon-prev" /></svg></button>
+          <button class="btn-icon" type="button" data-spot-pause aria-label="หยุดเลื่อนอัตโนมัติ" aria-pressed="false"><span aria-hidden="true">❚❚</span></button>
+          <button class="btn-icon" type="button" data-spot-next aria-label="เรื่องถัดไป"><svg class="icon" aria-hidden="true"><use href="#icon-next" /></svg></button>
         </div>
-        <p class="me__about">{PROFILE.intro}</p>
-        <ul class="socials">
-          <li><a href="/projects/">ผลงานของผม</a></li>
-          <li><a href={`mailto:${PROFILE.email}`}>ติดต่อ</a></li>
-          <li><a href={PROFILE.socials.facebook} rel="noopener">Facebook</a></li>
-        </ul>
       </aside>
     </div>
   </section>
 
   <main class="wrap layout" style="grid-template-columns:1fr">
     <div class="content">
-      {sections.map(({ type, t, items }) => (
+      <section class="section hub hub--three" aria-label="เว็บนี้มีอะไรบ้าง">
+        {hub.map(({ type, t, count, lead, rest }) => (
+          <article class="hub__block">
+            <div class="section-head">
+              <h2>{t.name}</h2>
+              <a class="more" href={`/${type}/`}>ดูทั้งหมด ({count}) <svg class="icon" aria-hidden="true"><use href="#icon-next" /></svg></a>
+            </div>
+            <p class="meta">{t.blurb}</p>
+            <a class="hub__lead" href={lead.href}>
+              <img src={lead.cover} srcset={srcset(lead.cover)} sizes="(max-width: 768px) 100vw, 45vw" width={lead.coverW} height={lead.coverH} loading="lazy" alt="" />
+              <b>{lead.title}</b>
+              <span class="meta">{day(lead.date)}</span>
+            </a>
+            <ul class="hub__list">
+              {rest.map((i) => <li><a href={i.href}>{i.title}</a><span class="meta">{day(i.date)}</span></li>)}
+            </ul>
+          </article>
+        ))}
+      </section>
+
+      <section class="section hub hub--pair" aria-label="กิน & เที่ยว และข้อมูล">
+        {pair.map(({ type, t, count, lead, rest }) => (
+          <article class="hub__block">
+            <div class="section-head">
+              <h2>{t.name}</h2>
+              <a class="more" href={`/${type}/`}>ดูทั้งหมด ({count}) <svg class="icon" aria-hidden="true"><use href="#icon-next" /></svg></a>
+            </div>
+            <p class="meta">{t.blurb}</p>
+            <a class="hub__lead" href={lead.href}>
+              <img src={lead.cover} srcset={srcset(lead.cover)} sizes="(max-width: 768px) 100vw, 45vw" width={lead.coverW} height={lead.coverH} loading="lazy" alt="" />
+              <b>{lead.title}</b>
+              <span class="meta">{day(lead.date)}</span>
+            </a>
+            <ul class="hub__list">
+              {rest.map((i) => <li><a href={i.href}>{i.title}</a><span class="meta">{day(i.date)}</span></li>)}
+            </ul>
+          </article>
+        ))}
+      </section>
+
+
+
+      {others.map(({ type, t, items }) => (
         <section class="section">
           <div class="section-head">
             <h2>{t.name}</h2>
@@ -64,6 +126,52 @@ const titles = Object.fromEntries(feed.map((i) => [i.href, i.title]));
         </section>
       ))}
 
+      <section class="section me-more" aria-label="เกี่ยวกับผม">
+        <div class="popular" data-popular={JSON.stringify(titles)} hidden>
+          <b>คนอ่านเยอะสุด</b>
+          <ol></ol>
+        </div>
+        <div>
+          <p class="me__about">{PROFILE.intro}</p>
+          <ul class="socials">
+            <li><a href="/projects/">ผลงานของผม</a></li>
+            <li><a href={`mailto:${PROFILE.email}`}>ติดต่อ</a></li>
+            <li><a href={PROFILE.socials.facebook} rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+      </section>
+
     </div>
   </main>
 </Base>
+
+<script>
+  // Spotlight: shuffle every post, show one at a time; auto-advance every 6 s (not with reduced motion),
+  // paused while hovered/focused or by the pause button.
+  const box = document.querySelector('[data-spot]');
+  if (box) {
+    const list = JSON.parse(box.dataset.spot);
+    for (let i = list.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [list[i], list[j]] = [list[j], list[i]]; }
+    const card = box.querySelector('.spot__card'), img = card.querySelector('img');
+    const small = (src) => (/^\/media\/.*\.jpg$/.test(src) ? `${src.replace(/\.jpg$/, '.800.webp')} 800w, ${src} 1600w` : '');
+    let n = 0, timer = 0, hold = false, stopped = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const show = (k) => {
+      n = (k + list.length) % list.length; const it = list[n];
+      card.classList.remove('is-in'); void card.offsetWidth; card.classList.add('is-in');
+      card.href = it.href; img.src = it.cover; img.srcset = small(it.cover);
+      card.querySelector('.spot__kind').textContent = it.kind;
+      card.querySelector('.spot__title').textContent = it.title;
+      card.querySelector('.spot__sub').textContent = it.sub;
+      new Image().src = list[(n + 1) % list.length].cover;   // warm the next one
+    };
+    const tick = () => { clearInterval(timer); if (!stopped) timer = setInterval(() => { if (!hold) show(n + 1); }, 6000); };
+    const pause = box.querySelector('[data-spot-pause]');
+    const setPause = (v) => { stopped = v; pause.setAttribute('aria-pressed', String(v)); pause.setAttribute('aria-label', v ? 'เลื่อนอัตโนมัติต่อ' : 'หยุดเลื่อนอัตโนมัติ'); pause.firstElementChild.textContent = v ? '▶' : '❚❚'; tick(); };
+    box.querySelector('[data-spot-prev]').addEventListener('click', () => { show(n - 1); tick(); });
+    box.querySelector('[data-spot-next]').addEventListener('click', () => { show(n + 1); tick(); });
+    pause.addEventListener('click', () => setPause(!stopped));
+    box.addEventListener('mouseenter', () => (hold = true)); box.addEventListener('mouseleave', () => (hold = false));
+    box.addEventListener('focusin', () => (hold = true)); box.addEventListener('focusout', () => (hold = false));
+    show(0); setPause(stopped);
+  }
+</script>

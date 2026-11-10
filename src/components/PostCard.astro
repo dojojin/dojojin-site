@@ -5,7 +5,7 @@ import { TOPICS, TAGS, TYPES } from '../data/site.js';
 import { srcset } from '../lib/thumb.js';
 const { item: i, showType = false } = Astro.props;
 ---
-<a class="shot post-card" href={i.href} data-topic={i.topic}>
+<a class="shot post-card" href={i.href} data-topic={i.topic} data-news={i.news?.join(' ')}>
   <div class="shot__img"><img src={i.cover} srcset={srcset(i.cover)} sizes="(max-width: 768px) 100vw, 33vw" width={i.coverW} height={i.coverH} loading="lazy" alt="" style={`aspect-ratio:${i.coverW}/${i.coverH}`} /></div>
   <div class="shot__body">
     <span class="type-badge">{showType && `${TYPES[i.type].name} · `}{TOPICS[i.topic]?.name ?? i.topic}</span>

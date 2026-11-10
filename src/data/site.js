@@ -4,7 +4,7 @@ export const DOCS_URL = import.meta.env?.PUBLIC_DOCS_URL || "https://docs.dojoji
 
 export const SITE = {
   name: "DOJOJIN.TECH",
-  tagline: "ซื้อจริง ใช้เอง ไปเอง แล้วมาเล่าให้ฟัง",
+  tagline: "ซื้อจริง ใช้จริง ไปจริง แล้วมาเล่าให้ฟัง",
   description: "เว็บรีวิว ความรู้ และข้อมูลเทคโนโลยีโดย Dojo-mAn — อุปกรณ์ ถ่ายภาพ และ infra/AI อธิบายให้เข้าใจง่าย พร้อมผลวัดและรูปจริง",
 };
 
@@ -13,6 +13,7 @@ export const TYPES = {
   review: { name: "Review", blurb: "รีวิวอุปกรณ์จากการใช้งานจริง พร้อมรูปและผลวัด" },
   knowledge: { name: "ความรู้", blurb: "อธิบายเรื่องเทคนิคให้เข้าใจง่าย — ใช้ตัดสินใจเลือกซื้อและใช้งานได้จริง" },
   eat: { name: "กิน & เที่ยว", blurb: "รีวิวร้านอาหาร ร้านกาแฟ และสถานที่ที่ไปมาเอง จ่ายเงินเอง" },
+  news: { name: "ข่าว", blurb: "ข่าวเทคโนโลยี ยานยนต์ และเรื่องทั่วไป รวมข่าวประชาสัมพันธ์จากบริษัทต่าง ๆ" },
   data: { name: "Data", blurb: "ชุดข้อมูลอ้างอิง — ราคาเปิดตัวในไทยและสเปกระดับชิ้นส่วนของมือถือทุกรุ่น" },
 };
 // Categories (field `topic`, exactly one per post) — badge on cards; filter chips appear in a menu section
@@ -24,6 +25,8 @@ export const TOPICS = {
   photo: { name: "กล้อง & ถ่ายภาพ" },
   "infra-ai": { name: "Infra & AI" },
   restaurant: { name: "ร้านอาหาร" },
+  network: { name: "เน็ต & เครือข่าย" },
+  car: { name: "ยานยนต์" },
 };
 // Tags (field `tags`, any number) — brand / product kind / technique. Only tags listed here are allowed
 // (the build fails otherwise), so the same thing never ends up under two spellings. Each has a page at /tag/<key>/.
@@ -40,7 +43,16 @@ export const TAGS = {
   "1more": "1MORE", cmf: "CMF by Nothing", earfun: "EarFun", huawei: "HUAWEI", isuper: "iSUPER",
   soundcore: "soundcore", soundpeats: "SoundPEATS", tozo: "TOZO", "clip-on": "Clip-on",
   anitech: "anitech", "power-strip": "ปลั๊กไฟ / สายพ่วง",
+  "true-corp": "True", dtac: "dtac", "5g": "5G",
+  php: "PHP", security: "ความปลอดภัย",
+  openssh: "OpenSSH", wordpress: "WordPress", cctv: "กล้องวงจรปิด", onvif: "ONVIF",
+  xiaomi: "Xiaomi", redmagic: "REDMAGIC", motorola: "Motorola", nvidia: "NVIDIA", gaming: "เกม",
+  dunlop: "DUNLOP", honda: "Honda", tire: "ยางรถยนต์", ev: "EV", motorcycle: "มอเตอร์ไซค์", motorsport: "มอเตอร์สปอร์ต",
 };
+
+// Filter chips on /news/. "pr" = the post has a `pr` field (sending organisation); the rest = field `section`.
+// A press release also has a section, so it shows under both chips.
+export const NEWS_CHIPS = { pr: "ข่าวประชาสัมพันธ์", tech: "ข่าวเทคโนโลยี", security: "ความปลอดภัยไซเบอร์", auto: "ข่าววงการยานยนต์", general: "ข่าวทั่วไป" };
 
 // Main menu — used by src/layouts/Base.astro and by scripts/patch-atlas.mjs (top bar on atlas pages).
 export const NAV = [
@@ -48,6 +60,7 @@ export const NAV = [
   ["review", "/review/", "Review"],
   ["knowledge", "/knowledge/", "ความรู้"],
   ["eat", "/eat/", "กิน & เที่ยว"],
+  ["news", "/news/", "ข่าว"],
   ["data", "/data/", "Data"],
   ["projects", "/projects/", "Projects"],
   ["guestbook", "/guestbook/", "Guestbook"],

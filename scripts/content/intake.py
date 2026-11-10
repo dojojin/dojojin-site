@@ -27,10 +27,13 @@ def main():
     if not src.is_dir():
         sys.exit(f'not a folder: {src}')
     dst.mkdir(parents=True, exist_ok=True)
-    files = sorted(p for p in src.iterdir() if p.is_file())
+    # Recursive: TEMP folders often hold subfolders (Photos/, a Drive download). Copying only the top level
+    # and then deleting the whole TEMP tree lost a full photo set once (2026-11-10) — never again.
+    files = sorted(p for p in src.rglob('*') if p.is_file())
     for p in files:
-        shutil.copy2(p, dst / p.name)
-    bad = [p.name for p in files if sha(p) != sha(dst / p.name)]
+        (dst / p.relative_to(src)).parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(p, dst / p.relative_to(src))
+    bad = [str(p.relative_to(src)) for p in files if sha(p) != sha(dst / p.relative_to(src))]
     if bad:
         sys.exit(f'CHECKSUM MISMATCH, TEMP kept: {bad}')
     print(f'copied {len(files)} files → {dst.relative_to(REPO)} (sha256 match)')
@@ -38,7 +41,7 @@ def main():
         shutil.rmtree(src)
         print(f'removed {src}')
 
-    imgs = [p for p in sorted(dst.iterdir()) if p.suffix.lower() in ('.jpg', '.jpeg', '.png', '.webp')]
+    imgs = [p for p in sorted(dst.rglob('*')) if p.is_file() and p.suffix.lower() in ('.jpg', '.jpeg', '.png', '.webp')]
     for p in imgs:
         im = Image.open(p); ex = im.getexif()
         when = ex.get_ifd(0x8769).get(0x9003) or ex.get(0x0132) or '-'

@@ -1,0 +1,161 @@
+---
+title: "PHP2Shell ช่องโหว่ร้ายแรงใน PHP เจาะเว็บได้โดยไม่ต้องล็อกอิน อัปเดตเป็นเวอร์ชันไหน"
+topic: infra-ai
+type: news
+tags: [php, security]
+date: 2026-11-10
+section: security
+sourceName: "PHP (php.net) และ Malwarebytes Labs"
+sourceUrl: "https://www.php.net/archive/2026.php#2026-10-21-5"
+description: "PHP ออกแพตช์ฉุกเฉิน 21 ต.ค. 2569 ปิดช่องโหว่ CVE-2026-109618 และ CVE-2026-109619 (CVSS 9.2) ที่ให้ผู้โจมตีรันโค้ดบนเซิร์ฟเวอร์ได้ เวอร์ชันที่แก้แล้วคือ 8.5.12, 8.4.27, 8.3.36 และ 8.2.35 เจ้าของเว็บควรเช็กและอัปเดตทันที"
+kicker: "ข่าวความปลอดภัยไซเบอร์"
+lead: "PHP ภาษาที่อยู่เบื้องหลังเว็บไซต์จำนวนมาก ออกอัปเดตฉุกเฉินปิดช่องโหว่ร้ายแรง 2 ตัวที่เรียกรวมกันว่า PHP2Shell ผู้โจมตีอาจรันโค้ดบนเซิร์ฟเวอร์ได้โดยไม่ต้องล็อกอิน ถ้าคุณดูแลเว็บที่ใช้ PHP ผมแนะนำให้เช็กเวอร์ชันวันนี้เลยครับ"
+meta: "เรียบเรียงจากประกาศของ PHP และ Malwarebytes Labs · ช่องโหว่ประกาศเมื่อ 21 ตุลาคม 2569"
+cover: "/media/posts/news/php2shell/cover.jpg"
+coverAlt: "ภาพสรุป PHP2Shell ช่องโหว่ร้ายแรงใน PHP เวอร์ชันที่แก้แล้ว 8.5.12, 8.4.27, 8.3.36, 8.2.35 (ภาพประกอบสร้างด้วย AI)"
+---
+
+import ShotGallery from '../../../components/ShotGallery.astro';
+import shots from './php2shell.shots.json';
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="split">
+<div class="prose">
+
+วันที่ 21 ตุลาคม 2569 ทีม PHP ออกอัปเดตความปลอดภัยพร้อมกัน 4 เวอร์ชัน เพื่อปิดช่องโหว่ร้ายแรง 2 ตัว ทั้งสองตัวได้คะแนนความรุนแรง CVSS v4.0 เท่ากันที่ 9.2 จากเต็ม 10 ทีม PHP แจ้งล่วงหน้าตั้งแต่วันที่ 20 ตุลาคม และประกาศว่า "ผู้ใช้ PHP ทุกคนควรอัปเดตทันที"
+
+Malwarebytes ตั้งชื่อช่องโหว่ชุดนี้ว่า **PHP2Shell** พูดง่าย ๆ คือ ถ้าโจมตีสำเร็จ ผู้โจมตีอาจสั่งรันโค้ดบนเซิร์ฟเวอร์ได้โดยไม่ต้องล็อกอิน จากนั้นก็ขโมยข้อมูล แก้หน้าเว็บ หรือใช้เว็บที่คนเชื่อถือไปหลอกผู้เข้าชมด้วยหน้าฟิชชิงและไฟล์อันตรายได้
+
+ช่วงนี้ถ้าเห็นเว็บไหนขึ้นหน้า "ปิดปรับปรุง" ชั่วคราว ก็เพราะกำลังแพตช์กันอยู่ครับ เป็นเรื่องปกติ
+
+</div>
+<div class="note">
+
+### สรุปสั้น
+
+**CVE:** CVE-2026-109618, CVE-2026-109619
+
+**ความรุนแรง:** CVSS v4.0 9.2 ทั้งสองตัว
+
+**แก้แล้วใน:** PHP 8.5.12 · 8.4.27 · 8.3.36 · 8.2.35
+
+**PHP 8.1 หรือเก่ากว่า:** ทีม PHP ไม่ออกอัปเดตให้แล้ว
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ช่องโหว่ทั้งสองตัวคืออะไร
+
+<div class="grade-grid">
+  <article class="grade-card">
+    <h3>CVE-2026-109618</h3>
+    <p>ประกาศของ PHP บอกว่า ตอนที่ PHP จัดการกรณีหน่วยความจำไม่พอ (out-of-memory) มันอาจหยุดทำงานกลางคัน ทั้งที่ข้อมูลภายในของ request ยังตั้งค่าไม่ครบ แล้วขั้นตอนล้าง request ทีหลังก็เอาข้อมูลที่ไม่สมบูรณ์นั้นมาใช้เหมือนข้อมูลปกติ จนนำไปสู่การรันโค้ด (RCE)</p>
+  </article>
+  <article class="grade-card">
+    <h3>CVE-2026-109619</h3>
+    <p>สถานะภายในที่ผูกกับ request หนึ่ง อาจยังค้างอยู่ทั้งที่หน่วยความจำของมันถูกคืนไปแล้ว (stale global state) ซึ่งนำไปสู่การรันโค้ดได้เหมือนกัน</p>
+  </article>
+</div>
+
+<div class="prose">
+
+ตามที่ Malwarebytes รายงาน ทีม PHP ระบุว่า PHP ทุกเครื่องที่ให้บริการเว็บมีความเสี่ยง และบางการตั้งค่าอาจถูกโจมตีได้ก่อนที่โค้ดของเว็บไซต์จะเริ่มทำงานด้วยซ้ำ Malwarebytes ยังอ้างถึง CTO ของ Cloudflare ที่รายงานว่าเริ่มเห็นการโจมตีแล้ว และเตือนว่าการกันด้วย firewall เป็นแค่ทางแก้ชั่วคราว
+
+</div>
+
+</section>
+
+<section class="section">
+
+## เจ้าของเว็บต้องทำอะไร
+
+<div class="split">
+<div class="prose">
+
+**1. เช็กเวอร์ชัน PHP** บนเซิร์ฟเวอร์ด้วยคำสั่ง `php -v` หรือดูในหน้า `phpinfo()` ถ้าใช้โฮสติ้งก็ดูได้ในหน้าควบคุม (cPanel, DirectAdmin และอื่น ๆ)
+
+**2. อัปเดตให้ถึงเวอร์ชันที่แก้แล้วหรือใหม่กว่า** ถ้าใช้แพ็กเกจจาก Linux distro ให้ดูประกาศความปลอดภัยของ distro นั้นด้วย เพราะบาง distro แก้ช่องโหว่ไว้ในแพ็กเกจของตัวเอง เลขเวอร์ชันเลยอาจไม่ตรงกับของ php.net
+
+**3. ใช้โฮสติ้ง?** ถามผู้ให้บริการครับว่าติดตั้งแพตช์ **เสร็จแล้ว** ไม่ใช่แค่ "มีกำหนดจะทำ" และครบทุกเว็บที่เรามีหรือยัง
+
+**4. แพตช์ทันทีไม่ได้?** CERT-EU แนะนำให้พิจารณาแยกแอปที่เปิดสู่อินเทอร์เน็ตออกจากเครือข่ายสาธารณะไว้ก่อน หรือปิดบริการชั่วคราวจนกว่าจะแพตช์เสร็จ
+
+**5. ยังใช้ PHP 8.1 หรือเก่ากว่า?** ให้หาแพตช์จากผู้ให้บริการระบบปฏิบัติการ หรืออัปเกรดเป็นเวอร์ชันที่ยังได้รับการดูแล
+
+</div>
+<div class="note">
+
+### PHP เวอร์ชันที่ยังได้รับอัปเดตความปลอดภัย
+
+**8.5** ถึง 31 ธ.ค. 2029
+
+**8.4** ถึง 31 ธ.ค. 2028
+
+**8.3** ถึง 31 ธ.ค. 2027
+
+**8.2** ถึง 31 ธ.ค. 2026 (หมดอายุสิ้นปีนี้)
+
+ข้อมูลจาก <a href="https://www.php.net/supported-versions.php" rel="noopener">php.net/supported-versions</a>
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## คนทั่วไปที่เข้าเว็บต้องทำอะไร
+
+<div class="prose">
+
+ไม่ต้องติดตั้งอะไรในเครื่องตัวเองครับ เพราะ PHP ทำงานอยู่บนเซิร์ฟเวอร์ของเว็บไซต์ แต่ช่วงนี้ให้สังเกตหน่อย ถ้าเว็บที่ใช้ประจำมีเนื้อหาแปลก ๆ ให้ดาวน์โหลดไฟล์โดยที่เราไม่ได้ขอ พาไปหน้าอื่นเอง หรือขอให้ล็อกอินซ้ำหลายรอบ ให้ปิดหน้านั้นไปก่อนเลย
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ภาพประกอบ
+
+<ShotGallery shots={shots} />
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- ประกาศความปลอดภัยของ PHP (21 ต.ค. 2569): <a href="https://www.php.net/archive/2026.php#2026-10-21-5" rel="noopener">php.net/archive/2026</a>
+- Security Advisory บน GitHub: <a href="https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w" rel="noopener">GHSA-w8hw-w9fx-j79w</a> · <a href="https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp" rel="noopener">GHSA-6wmf-4rv5-p3rp</a>
+- Malwarebytes Labs: <a href="https://www.malwarebytes.com/blog/bugs/2026/10/php2shell-why-websites-are-going-offline-for-emergency-security-updates" rel="noopener">PHP2Shell: why websites are going offline for emergency security updates</a>
+- CERT-EU: <a href="https://cert.europa.eu/publications/security-advisories/2026-018/" rel="noopener">Security Advisory 2026-018</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพประกอบบทความ PHP2Shell: โลโก้ PHP ในเปลือกหอย: ภาพ: Malwarebytes Labs · <a href="https://www.malwarebytes.com/blog/bugs/2026/10/php2shell-why-websites-are-going-offline-for-emergency-security-updates" rel="noopener">www.malwarebytes.com</a>
+- ตุ๊กตาช้าง elePHPant: ภาพ: Wikimedia Commons: Atomic Taco (Seattle, USA) · <a href="https://commons.wikimedia.org/wiki/File:Heroku_elePHPant_(38171946464).jpg" rel="noopener">commons.wikimedia.org</a>
+
+ภาพทั้งหมดใช้ประกอบข่าว (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+- ภาพปก: ภาพประกอบสร้างด้วย AI (Codex image generation) โดย DOJOJIN.TECH ไม่ใช่ภาพเหตุการณ์จริง
+
+</section>

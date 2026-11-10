@@ -30,7 +30,7 @@ const schema = [
     mainEntityOfPage: url,
     keywords: d.tags.map((t) => TAGS[t]).join(', '),
     articleSection: `${TYPES[d.type].name} · ${TOPICS[d.topic].name}`,
-    author: { '@type': 'Person', name: PROFILE.name, alternateName: PROFILE.handle, url: abs('/') },
+    author: d.pr ? { '@type': 'Organization', name: d.pr } : { '@type': 'Person', name: PROFILE.name, alternateName: PROFILE.handle, url: abs('/') },
     publisher: { '@type': 'Person', name: PROFILE.name },
   },
   {
@@ -67,6 +67,6 @@ const schema = [
   </div>
 
   <div class="wrap source">
-    {d.sourceUrl && <>โพสต์ต้นฉบับ: <a href={d.sourceUrl} rel="noopener">Facebook · Dojo-mAn Fotographer</a> · </>}ภาพทั้งหมด © Dojo-mAn Photographer
+    {d.pr ? <>ข่าวประชาสัมพันธ์จาก {d.pr} · เนื้อหาและภาพจากผู้ส่งข่าว</> : d.sourceName ? <>ที่มา: <a href={d.sourceUrl} rel="noopener">{d.sourceName}</a> · เรียบเรียงโดย DOJOJIN.TECH</> : <>{d.sourceUrl && <>โพสต์ต้นฉบับ: <a href={d.sourceUrl} rel="noopener">Facebook · Dojo-mAn Fotographer</a> · </>}ภาพทั้งหมด © Dojo-mAn Photographer</>}
   </div>
 </Base>

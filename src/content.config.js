@@ -20,6 +20,9 @@ const posts = defineCollection({
     cover: z.string(),
     coverAlt: z.string(),
     sourceUrl: z.string().url().optional(),
+    sourceName: z.string().optional(), // news we summarise ourselves: who published the original (link = sourceUrl)
+    pr: z.string().optional(), // news only: organisation that sent the press release
+    section: z.enum(['tech', 'security', 'auto', 'general']).optional(), // news only: chip on /news/ (NEWS_CHIPS)
     draft: z.boolean().default(false),
   }),
 });

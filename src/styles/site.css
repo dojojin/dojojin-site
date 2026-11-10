@@ -113,6 +113,12 @@ img { max-width: 100%; height: auto; display: block; }
 .layout { display: grid; gap: var(--space-8); padding-block: var(--space-12) var(--space-16); }
 .toc { display: none; }
 .content { min-width: 0; }
+.content a { overflow-wrap: anywhere; } /* long bare URLs (sources lists) must wrap on phones */
+/* "แหล่งข้อมูล" / "ที่มาของภาพ" in news: reference only, not the story — small and muted */
+.section.sources { font-size: var(--fs-caption); color: var(--text-secondary); }
+.section.sources h2 { font-size: var(--fs-body); }
+.section.sources li, .section.sources li p { margin: 0; line-height: 1.6; }
+.section.sources ul { margin-block: var(--space-2); }
 .prose { max-width: var(--measure); }
 .prose p, .content > p { margin: 0 0 var(--space-4); }
 .section { padding-top: var(--space-8); margin-top: var(--space-8); border-top: 1px solid var(--border-hairline); }
@@ -229,6 +235,7 @@ img { max-width: 100%; height: auto; display: block; }
 [data-verdict] { margin-right: auto; }
 .viewer__head h2 { font-size: var(--fs-h1); margin: 0; line-height: 1.3; }
 .viewer__summary { font-weight: 600; margin: 0 0 var(--space-4); }
+.viewer__credit { font-size: var(--fs-caption); color: var(--text-secondary); margin: var(--space-4) 0 0; overflow-wrap: anywhere; }
 .viewer h3 { font-size: var(--fs-body); margin: var(--space-6) 0 var(--space-2); }
 .viewer p { margin: 0 0 var(--space-3); }
 .scorecard { width: 100%; border-collapse: collapse; font-size: var(--fs-caption); }
@@ -632,3 +639,52 @@ a.grade-card.project:hover { border-color: var(--accent); }
   .me__side { border-left: 1px solid var(--border-hairline); padding-left: var(--space-8); }
 }
 @media (max-width: 899px) { .me__side { border-top: 1px solid var(--border-hairline); padding-top: var(--space-6); } }
+
+/* Home blocks. Column count must match the row: top row = 3 blocks (ข่าว · Review · ความรู้), never 2+1,
+   so 1 column until 1024px then 3; second row = 2 blocks (กิน & เที่ยว · Data), 2 columns from 769px. */
+.hub { display: grid; gap: var(--space-6); grid-template-columns: 1fr; }
+@media (min-width: 769px) { .hub--pair { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) {
+  .hub--three { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
+  .hub--three .hub__lead b { font-size: var(--fs-body); }
+  .hub--three .hub__list li { flex-direction: column; gap: 0; }   /* narrow block: date goes under the title */
+  .hub--three .hub__block > .meta { min-height: 2lh; }          /* blurbs wrap to 1 or 2 lines: keep images level */
+}
+.hub--pair .hub__block > .meta { min-height: 2lh; }
+.hub__block { min-width: 0; display: flex; flex-direction: column; background: var(--surface-elevated);
+  border: 1px solid var(--border-hairline); border-radius: var(--radius-lg); padding: var(--space-4); }
+.hub__block > .meta { margin: 0 0 var(--space-3); }
+.hub__lead { display: grid; gap: var(--space-1); text-decoration: none; color: inherit; }
+.hub__lead img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--radius); background: var(--surface-sunken); }
+.hub__lead b { font-size: var(--fs-h2); line-height: 1.4; margin-top: var(--space-2); }
+.hub__lead:hover b { color: var(--accent); }
+.hub__list { list-style: none; margin: var(--space-3) 0 0; padding: 0; }
+.hub__list li { display: flex; justify-content: space-between; gap: var(--space-3); align-items: baseline;
+  padding: var(--space-2) 0; border-top: 1px solid var(--border-hairline); min-width: 0; }
+.hub__list a { min-width: 0; line-height: 1.5; text-decoration: none; color: inherit; }
+.hub__list a:hover { color: var(--accent); }
+.hub__list .meta { flex: none; white-space: nowrap; }
+
+/* Home spotlight (right of the hero): one random post at a time */
+.spot { align-content: start; }
+.spot__card { display: grid; gap: var(--space-2); text-decoration: none; color: inherit; }
+.spot__card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-lg); background: var(--surface-sunken); }
+.spot__kind { font-size: var(--fs-caption); font-weight: 600; color: var(--accent); }
+.spot__title { font-size: var(--fs-h2); line-height: 1.4; }
+.spot__card:hover .spot__title { color: var(--accent); }
+.spot__sub { font-size: var(--fs-caption); color: var(--text-secondary); line-height: 1.6;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.spot__card.is-in { animation: spot-in .45s ease; }
+@keyframes spot-in { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .spot__card.is-in { animation: none; } }
+.spot__nav { display: flex; align-items: center; gap: var(--space-2); }
+.spot__nav .meta { margin-right: auto; }
+.spot__nav span[aria-hidden] { font-size: 12px; line-height: 1; }
+/* Home: popular + about, moved below the 4 blocks */
+.me-more { display: grid; gap: var(--space-6); }
+@media (min-width: 769px) { .me-more { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; } }
+.me-more .popular { margin: 0; padding: 0; border: 0; }
+
+/* Home headline: keep each phrase whole, balance the two lines (Thai has no spaces to break on) */
+.me__title { text-wrap: balance; }
+.me__title span { display: inline-block; }

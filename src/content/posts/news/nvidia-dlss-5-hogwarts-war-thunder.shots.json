@@ -1,0 +1,46 @@
+[
+  {
+    "id": "1",
+    "title": "Hogwarts Legacy: DLSS 5 ปิด",
+    "src": "/media/posts/news/nvidia-dlss-5-hogwarts-war-thunder/press-1.jpg",
+    "w": 1600,
+    "h": 900,
+    "group": "ภาพจาก NVIDIA",
+    "alt": "ภาพเกม Hogwarts Legacy ปราสาทบนเนินเขา มีตัวละครขี่ไม้กวาด ป้ายมุมล่างซ้ายเขียนว่า DLSS 5 Off",
+    "summary": "ฉากในเกม Hogwarts Legacy ตอนปิด DLSS 5 ไว้เป็นภาพตั้งต้นสำหรับเทียบครับ",
+    "credit": "ภาพ: NVIDIA · <a href=\"https://www.nvidia.com/en-us/geforce/news/hogwarts-legacy-war-thunder-dlss-5-3d-guided-neural-rendering/\" rel=\"noopener\">nvidia.com</a>"
+  },
+  {
+    "id": "2",
+    "title": "Hogwarts Legacy: DLSS 5 เปิด",
+    "src": "/media/posts/news/nvidia-dlss-5-hogwarts-war-thunder/press-2.jpg",
+    "w": 1600,
+    "h": 900,
+    "group": "ภาพจาก NVIDIA",
+    "alt": "ภาพฉากเดียวกันของ Hogwarts Legacy ป้ายมุมล่างขวาเขียนว่า DLSS 5 On",
+    "summary": "ฉากเดียวกันตอนเปิด DLSS 5 เอาไปเทียบกับภาพก่อนหน้าเพื่อดูว่าภาพต่างกันตรงไหนครับ ภาพนี้เป็นภาพโปรโมตของ NVIDIA เอง",
+    "credit": "ภาพ: NVIDIA · <a href=\"https://www.nvidia.com/en-us/geforce/news/hogwarts-legacy-war-thunder-dlss-5-3d-guided-neural-rendering/\" rel=\"noopener\">nvidia.com</a>"
+  },
+  {
+    "id": "3",
+    "title": "War Thunder: DLSS 5 ปิด",
+    "src": "/media/posts/news/nvidia-dlss-5-hogwarts-war-thunder/press-3.jpg",
+    "w": 1600,
+    "h": 900,
+    "group": "ภาพจาก NVIDIA",
+    "alt": "ภาพเกม War Thunder รถถังบนทางโคลน มีต้นไม้ด้านหลัง ป้ายมุมล่างซ้ายเขียนว่า DLSS 5 Off",
+    "summary": "ฉากในเกม War Thunder ตอนปิด DLSS 5 เป็นภาพตั้งต้นสำหรับเทียบครับ",
+    "credit": "ภาพ: NVIDIA · <a href=\"https://www.nvidia.com/en-us/geforce/news/hogwarts-legacy-war-thunder-dlss-5-3d-guided-neural-rendering/\" rel=\"noopener\">nvidia.com</a>"
+  },
+  {
+    "id": "4",
+    "title": "War Thunder: DLSS 5 เปิด",
+    "src": "/media/posts/news/nvidia-dlss-5-hogwarts-war-thunder/press-4.jpg",
+    "w": 1600,
+    "h": 900,
+    "group": "ภาพจาก NVIDIA",
+    "alt": "ภาพฉากเดียวกันของ War Thunder ป้ายมุมล่างขวาเขียนว่า DLSS 5 On",
+    "summary": "ฉากเดียวกันของ War Thunder ตอนเปิด DLSS 5 ให้เทียบกับภาพก่อนหน้า เป็นภาพโปรโมตของ NVIDIA เองครับ",
+    "credit": "ภาพ: NVIDIA · <a href=\"https://www.nvidia.com/en-us/geforce/news/hogwarts-legacy-war-thunder-dlss-5-3d-guided-neural-rendering/\" rel=\"noopener\">nvidia.com</a>"
+  }
+]

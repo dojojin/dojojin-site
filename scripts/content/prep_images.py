@@ -32,7 +32,7 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
     check = Path('/tmp/dojojin-intake') / Path(post).name
     check.mkdir(parents=True, exist_ok=True)
-    files = [p for p in src_dir.iterdir() if p.suffix.lower() in ('.jpg', '.jpeg', '.png', '.webp')]
+    files = [p for p in src_dir.rglob('*') if p.is_file() and p.suffix.lower() in ('.jpg', '.jpeg', '.png', '.webp')]
     for e in json.loads(Path(sys.argv[2]).read_text()):
         hits = [p for p in files if e['src'] in p.name]
         if len(hits) != 1:

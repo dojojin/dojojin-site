@@ -1,0 +1,39 @@
+[
+  {
+    "id": "1",
+    "title": "iPhone Duo สีสตาร์ไวต์และไนต์สกาย",
+    "src": "/media/posts/news/iphone-duo-used-price/apple-colors.jpg",
+    "w": 980,
+    "h": 551,
+    "group": "ภาพจาก Apple",
+    "alt": "iPhone Duo สี่เครื่อง หันหน้าและหันหลัง สีสตาร์ไวต์และไนต์สกาย",
+    "summary": "ภาพจาก Apple แสดง iPhone Duo สี่เครื่อง ทั้งด้านหน้าและด้านหลัง ในสีสตาร์ไวต์และไนต์สกาย ไว้ดูว่าเครื่องจริงหน้าตาเป็นอย่างไรครับ",
+    "credit": "ภาพ: Apple · <a href=\"https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/\" rel=\"noopener\">apple.com</a>"
+  },
+  {
+    "id": "2",
+    "title": "พับและกางออก",
+    "src": "/media/posts/news/iphone-duo-used-price/apple-displays.jpg",
+    "w": 980,
+    "h": 551,
+    "group": "ภาพจาก Apple",
+    "alt": "มือสองข้างถือ iPhone Duo เครื่องหนึ่งพับอยู่ อีกเครื่องกางออก",
+    "summary": "ภาพจาก Apple แสดงเครื่องที่พับอยู่และเครื่องที่กางออก ให้เห็นว่ามันเป็นมือถือพับได้ที่กางเป็นจอใหญ่ครับ",
+    "credit": "ภาพ: Apple · <a href=\"https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/\" rel=\"noopener\">apple.com</a>"
+  },
+  {
+    "id": "3",
+    "title": "จอด้านในของ iPhone Duo ที่มีเส้นแตกพาดขวาง",
+    "src": "/media/posts/news/iphone-duo-used-price/img-1.jpg",
+    "w": 1500,
+    "h": 750,
+    "group": "ภาพประกอบ",
+    "alt": "ภาพถ่ายสองภาพของ iPhone Duo ที่จอด้านในมีเส้นสว่างพาดตามแนวนอน",
+    "summary": "ภาพจากผู้ใช้ที่รายงานว่าจอด้านในของ iPhone Duo มีเส้นสว่างพาดตามแนวนอนครับ นี่คือปัญหาจอที่ข่าวนี้พูดถึง และเป็นเหตุผลที่ควรเช็กจอให้ดีก่อนซื้อเครื่องมือสอง",
+    "credit": "ภาพ: 9to5Mac (Benjamin Mayo) · <a href=\"https://9to5mac.com/2026/10/25/iphone-duo-displays-cracking/\" rel=\"noopener\">9to5mac.com</a>",
+    "analysis": [
+      "ภาพซ้ายเป็นเครื่องที่เปิดจออยู่ มีเส้นสว่างพาดขวางผ่านหน้าจอ ส่วนภาพขวาเป็นหน้าจอล็อกที่มีเส้นสว่างตัดผ่านตรงกลางค่อนล่าง ในสองภาพเส้นเป็นแนวนอนคล้ายกัน",
+      "ภาพเหล่านี้เป็นของผู้ใช้ที่ส่งมา ผมไม่ได้ยืนยันเองว่าเกิดจากสาเหตุอะไรครับ"
+    ]
+  }
+]

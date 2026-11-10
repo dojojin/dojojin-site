@@ -2,7 +2,7 @@
 // Photo gallery + <dialog> viewer. shots: array of shot objects (see a *.shots.json next to a review).
 // Shot fields — required: id, src, w, h, alt, summary. Optional: title, fit ('contain' for screenshots),
 // readings [[k,v]], verdict [tier,label], score [[name,val,sub,tier,label]], caution,
-// analysis [p], analysisTitle, screen [[k,v]], screenTitle, group (consecutive shots with the same
+// analysis [p], analysisTitle, credit (small source line, may contain <a>), screen [[k,v]], screenTitle, group (consecutive shots with the same
 // group get their own heading + grid; a group made only of fit:'contain' shots renders as phone cards).
 // note: optional fine print under every photo's details (e.g. how a value was judged).
 const { shots, note } = Astro.props;
@@ -97,7 +97,8 @@ function show(i) {
     ${s.caution ? `<div class="caution">${icon('icon-alert')}<span>${s.caution}</span></div>` : ''}
     ${s.analysis ? `<h3>${s.analysisTitle ?? 'อ่านจากรูปนี้'}</h3>${s.analysis.map((p) => `<p>${p}</p>`).join('')}` : ''}
     ${s.screen ? `<h3>${s.screenTitle ?? 'ค่าบนหน้าจอ'}</h3>
-    <ul class="legend">${s.screen.map(([k, v]) => `<li><b>${k}</b><span>${v}</span></li>`).join('')}</ul>` : ''}`;
+    <ul class="legend">${s.screen.map(([k, v]) => `<li><b>${k}</b><span>${v}</span></li>`).join('')}</ul>` : ''}
+    ${s.credit ? `<p class="viewer__credit">${s.credit}</p>` : ''}`;
   $('.viewer__panel').scrollTop = 0;
 }
 
