@@ -641,7 +641,7 @@ a.grade-card.project:hover { border-color: var(--accent); }
 @media (max-width: 899px) { .me__side { border-top: 1px solid var(--border-hairline); padding-top: var(--space-6); } }
 
 /* Home blocks. Column count must match the row: top row = 3 blocks (ข่าว · Review · ความรู้), never 2+1,
-   so 1 column until 1024px then 3; second row = 2 blocks (กิน & เที่ยว · Data), 2 columns from 769px. */
+   so 1 column until 1024px then 3; second row = 2 blocks (ท่องเที่ยว · Data), 2 columns from 769px. */
 .hub { display: grid; gap: var(--space-6); grid-template-columns: 1fr; }
 @media (min-width: 769px) { .hub--pair { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 1024px) {
@@ -690,3 +690,32 @@ a.grade-card.project:hover { border-color: var(--accent); }
 .me__title span { display: inline-block; }
 .section.sources .prose > p { margin-top: var(--space-4); } /* "editorial use" note sits apart from the credit list */
 .prose.grid-note { margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--border-hairline); } /* note paragraph placed under a card grid */
+
+/* ---------- photo wall (ShotGallery layout="photos" / photoGroups, ท่องเที่ยว) ---------- */
+.galleries--photos .gallery__title, .gallery__title--photos { display: flex; align-items: baseline; gap: var(--space-3); margin-top: var(--space-12); }
+.gallery__count { font-size: var(--fs-caption); font-weight: 400; color: var(--text-secondary); }
+.photo-wall { display: grid; gap: var(--space-2); margin-top: var(--space-4); grid-template-columns: repeat(auto-fill, minmax(min(46%, 200px), 1fr)); }
+.tile {
+  all: unset; box-sizing: border-box; position: relative; display: block; min-width: 0; cursor: zoom-in;
+  aspect-ratio: 1; overflow: hidden; border-radius: var(--radius); background: var(--surface-sunken);
+}
+.tile:first-child { grid-column: span 2; grid-row: span 2; }
+.tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
+.tile:hover img { transform: scale(1.04); }
+.tile:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.tile__cap {
+  position: absolute; inset: auto 0 0 0; padding: var(--space-6) var(--space-3) var(--space-2);
+  background: linear-gradient(transparent, rgb(0 0 0 / 0.65)); color: #fff; font-size: var(--fs-caption); line-height: 1.4;
+  opacity: 0; transition: opacity .2s ease;
+}
+.tile:hover .tile__cap, .tile:focus-visible .tile__cap { opacity: 1; }
+@media (hover: none) { .tile__cap { opacity: 1; } }
+/* photo posts: full-screen photo, controls at the bottom, no text panel */
+.viewer--photo { width: 100vw; height: 100dvh; max-width: none; max-height: none; border-radius: 0; }
+.viewer--photo .viewer__stage img { position: absolute; inset: 0; width: 100%; height: 100%; max-height: none; object-fit: contain; }
+.viewer--photo [data-focus] { display: none; }
+.viewer__cap {
+  position: absolute; left: 50%; bottom: calc(var(--space-16) + var(--space-2)); transform: translateX(-50%); z-index: 2;
+  max-width: min(90%, 60ch); margin: 0; padding: var(--space-2) var(--space-4); border-radius: var(--radius);
+  background: rgb(0 0 0 / 0.65); color: #fff; font-size: var(--fs-caption); text-align: center;
+}

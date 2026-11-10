@@ -5,15 +5,18 @@
 // analysis [p], analysisTitle, credit (small source line, may contain <a>), screen [[k,v]], screenTitle, group (consecutive shots with the same
 // group get their own heading + grid; a group made only of fit:'contain' shots renders as phone cards).
 // note: optional fine print under every photo's details (e.g. how a value was judged).
-const { shots, note } = Astro.props;
+// layout="photos": full-screen viewer without the text panel (a shot's optional `caption` shows over the photo); photo-wall tiles (no card text, square crops, group heading with count) for photo-heavy posts.
+// photoGroups=['บรรยากาศ', …]: only those groups get the photo wall + full-screen viewer; other groups keep cards + detail panel.
+const { shots, note, layout, photoGroups = [] } = Astro.props;
 ---
-<div class="galleries"></div>
+<div class={layout === 'photos' ? 'galleries galleries--photos' : 'galleries'} data-photo-groups={JSON.stringify(photoGroups)}></div>
 
-<dialog class="viewer" aria-labelledby="viewer-title">
+<dialog class={layout === 'photos' ? 'viewer viewer--photo viewer--focus' : 'viewer'} aria-labelledby="viewer-title">
   <div class="viewer__grid">
     <div class="viewer__stage">
       <img src="" alt="">
       <span class="viewer__count"></span>
+      <p class="viewer__cap" hidden></p>
       <button class="btn-icon viewer__stage-close" type="button" data-close aria-label="ปิด"><svg class="icon"><use href="#icon-close"/></svg></button>
       <button class="btn-icon viewer__nav viewer__nav--prev" type="button" aria-label="รูปก่อนหน้า"><svg class="icon"><use href="#icon-prev"/></svg></button>
       <button class="btn-icon viewer__nav viewer__nav--next" type="button" aria-label="รูปถัดไป"><svg class="icon"><use href="#icon-next"/></svg></button>
@@ -50,6 +53,15 @@ const badge = ([tier, label]) =>
   `<span class="badge tier-${tier}">${icon(tier === 5 ? 'icon-alert' : 'icon-dot')}${label}</span>`;
 let current = 0;
 
+const photos = gallery.classList.contains('galleries--photos');
+const photoGroups = JSON.parse(gallery.dataset.photoGroups || '[]');
+const isPhoto = (s) => photos || photoGroups.includes(s.group);
+const thumb = (s, sizes) => `<img src="${s.src}"${/^\/media\/.*\.jpg$/.test(s.src) ? ` srcset="${s.src.replace(/\.jpg$/, '.800.webp')} 800w, ${s.src} 1600w" sizes="${sizes}"` : ''} width="${s.w}" height="${s.h}" loading="lazy" alt="${s.alt}">`;
+const tile = (s, i) => `
+  <button class="tile" type="button" data-i="${i}" aria-label="ดูรูป ${s.title ?? s.id}">
+    ${thumb(s, '(max-width: 768px) 50vw, 25vw')}
+    ${s.title ? `<span class="tile__cap">${s.title}</span>` : ''}
+  </button>`;
 const card = (s, i) => `
   <button class="shot${s.fit === 'contain' ? ' shot--contain' : ''}" type="button" data-i="${i}" aria-label="ดูรายละเอียดรูป ${s.title ?? s.id}">
     <div class="shot__img">
@@ -71,6 +83,9 @@ shots.forEach((s, i) => {
   else groups.push({ name: s.group ?? '', items: [i] });
 });
 gallery.innerHTML = groups.map((g) => {
+  if (isPhoto(shots[g.items[0]])) return `
+    ${g.name ? `<h3 class="gallery__title gallery__title--photos">${g.name} <span class="gallery__count">${g.items.length} รูป</span></h3>` : ''}
+    <div class="photo-wall">${g.items.map((i) => tile(shots[i], i)).join('')}</div>`;
   const screens = g.items.every((i) => shots[i].fit === 'contain');
   return `${g.name ? `<h3 class="gallery__title">${g.name}</h3>` : ''}
     <div class="gallery${screens ? ' gallery--screens' : ''}">${g.items.map((i) => card(shots[i], i)).join('')}</div>`;
@@ -82,8 +97,10 @@ function show(i) {
   const img = $('.viewer__stage img');
   img.src = s.src; img.alt = s.alt; img.width = s.w; img.height = s.h;
   dlg.classList.toggle('viewer--tall', s.fit === 'contain');
+  if (photoGroups.length) { const ph = isPhoto(s); dlg.classList.toggle('viewer--photo', ph); dlg.classList.toggle('viewer--focus', ph); }
   resetZoom();
   $('.viewer__count').textContent = `${current + 1} / ${shots.length}`;
+  const cap = $('.viewer__cap'); cap.textContent = s.caption ?? ''; cap.hidden = !s.caption; // photo posts: only shots that need words
   $('#viewer-title').textContent = s.title ?? `รูป ${s.id}`;
   $('[data-verdict]').innerHTML = s.verdict ? badge(s.verdict) : '';
   $('[data-dyn]').innerHTML = `
@@ -103,7 +120,7 @@ function show(i) {
 }
 
 gallery.addEventListener('click', (e) => {
-  const b = e.target.closest('.shot');
+  const b = e.target.closest('.shot, .tile');
   if (!b) return;
   show(+b.dataset.i);
   dlg.showModal();
