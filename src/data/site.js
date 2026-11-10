@@ -27,6 +27,7 @@ export const TOPICS = {
   restaurant: { name: "ร้านอาหาร" },
   network: { name: "เน็ต & เครือข่าย" },
   car: { name: "ยานยนต์" },
+  software: { name: "ซอฟต์แวร์" },
 };
 // Tags (field `tags`, any number) — brand / product kind / technique. Only tags listed here are allowed
 // (the build fails otherwise), so the same thing never ends up under two spellings. Each has a page at /tag/<key>/.
@@ -48,6 +49,9 @@ export const TAGS = {
   openssh: "OpenSSH", wordpress: "WordPress", cctv: "กล้องวงจรปิด", onvif: "ONVIF",
   xiaomi: "Xiaomi", redmagic: "REDMAGIC", motorola: "Motorola", nvidia: "NVIDIA", gaming: "เกม",
   dunlop: "DUNLOP", honda: "Honda", tire: "ยางรถยนต์", ev: "EV", motorcycle: "มอเตอร์ไซค์", motorsport: "มอเตอร์สปอร์ต",
+  hippocraft: "HippoCraft", pdf: "PDF",
+  google: "Google", chrome: "Chrome", axis: "Axis", vms: "VMS", mercular: "Mercular", "data-breach": "ข้อมูลรั่ว",
+  android: "Android", foldable: "มือถือจอพับ", tablet: "แท็บเล็ต", ai: "AI", anthropic: "Anthropic", meta: "Meta", gpu: "GPU",
 };
 
 // Filter chips on /news/. "pr" = the post has a `pr` field (sending organisation); the rest = field `section`.

@@ -688,3 +688,5 @@ a.grade-card.project:hover { border-color: var(--accent); }
 /* Home headline: keep each phrase whole, balance the two lines (Thai has no spaces to break on) */
 .me__title { text-wrap: balance; }
 .me__title span { display: inline-block; }
+.section.sources .prose > p { margin-top: var(--space-4); } /* "editorial use" note sits apart from the credit list */
+.prose.grid-note { margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--border-hairline); } /* note paragraph placed under a card grid */

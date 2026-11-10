@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1",
+    "title": "Galaxy A34 5G",
+    "src": "/media/posts/news/one-ui-9-android-17-galaxy-rollout/img-1.jpg",
+    "w": 1600,
+    "h": 898,
+    "group": "ภาพจาก SamMobile",
+    "alt": "มือถือ Galaxy A34 5G สีเขียวอ่อนด้านหลัง ถือในมือ",
+    "summary": "ภาพ Galaxy A34 5G ที่ SamMobile ใช้ประกอบข่าวอัปเดต One UI 9.0 ของรุ่นนี้ เป็นภาพเครื่องทั่วไปครับ ไม่ใช่ภาพหน้าจออัปเดต",
+    "credit": "ภาพ: Abhijeet Mishra / SamMobile · <a href=\"https://www.sammobile.com/news/galaxy-a34-one-ui-9-0-android-17-update-goes-global/\" rel=\"noopener\">sammobile.com</a>"
+  },
+  {
+    "id": "2",
+    "title": "หน้า One UI 9.0 พร้อมปุ่ม Check for updates",
+    "src": "/media/posts/news/one-ui-9-android-17-galaxy-rollout/img-2.jpg",
+    "w": 1200,
+    "h": 673,
+    "group": "ภาพจาก SamMobile",
+    "alt": "มือถือ Galaxy ถือในมือ จอแสดงโลโก้ One UI 9.0 และปุ่ม Check for updates",
+    "summary": "ภาพประกอบจอ One UI 9.0 บนมือถือ Galaxy S26 Ultra มีปุ่ม Check for updates ซึ่งเป็นแนวทางเดียวกับการกดเช็กอัปเดตในเครื่องของเราครับ",
+    "credit": "ภาพ: Abhijeet Mishra / SamMobile · <a href=\"https://www.sammobile.com/news/samsung-galaxy-phone-tablet-one-ui-9-0-android-17-eligibility/\" rel=\"noopener\">sammobile.com</a>"
+  },
+  {
+    "id": "3",
+    "title": "One UI 9.0 บนมือถือ Galaxy",
+    "src": "/media/posts/news/one-ui-9-android-17-galaxy-rollout/img-3.jpg",
+    "w": 1200,
+    "h": 675,
+    "group": "ภาพจาก SamMobile",
+    "alt": "มือถือ Galaxy เอียงในมือ จอแสดงข้อความ One UI 9.0",
+    "summary": "ภาพประกอบหน้าจอ One UI 9.0 ที่ SamMobile ใช้กับข่าวอัปเดตของ XCover 7 Pro ไม่ใช่ภาพของ XCover จริงครับ",
+    "credit": "ภาพ: Abhijeet Mishra / SamMobile · <a href=\"https://www.sammobile.com/news/samsung-updates-galaxy-xcover-7-pro-with-one-ui-9-0/\" rel=\"noopener\">sammobile.com</a>"
+  }
+]

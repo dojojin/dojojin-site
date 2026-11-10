@@ -1,0 +1,18 @@
+[
+  { "id": "1", "title": "แก้ข้อความไทยในเอกสารเดิม", "src": "/media/projects/hippocraft/thai-edit.jpg", "w": 1600, "h": 1000,
+    "alt": "เครื่องมือแก้ไข PDF เป็นภาษาไทย เปิดคู่กับบันทึกการประชุมภาษาไทย",
+    "summary": "คลิกที่ย่อหน้าไทยแล้วพิมพ์แก้ได้เลย ฟอนต์ไทยฝังในไฟล์ถูกต้อง",
+    "credit": "ภาพหน้าจอ: HippoCraft · DOJOJIN.TECH" },
+  { "id": "2", "title": "เปิดเอกสารภาษาไทย", "src": "/media/projects/hippocraft/thai-document.jpg", "w": 1600, "h": 1000,
+    "alt": "HippoCraft เปิดบันทึกการประชุมภาษาไทย เมนูทั้งหมดเป็นภาษาไทย",
+    "summary": "เมนูเป็นภาษาไทยทุกเมนู สระและวรรณยุกต์อยู่ถูกที่",
+    "credit": "ภาพหน้าจอ: HippoCraft · DOJOJIN.TECH" },
+  { "id": "3", "title": "อ่านเอกสารสแกนภาษาไทย", "src": "/media/projects/hippocraft/thai-ocr.jpg", "w": 1600, "h": 1000,
+    "alt": "หน้าต่าง Recognize Text บนหน้าสแกนภาษาไทย",
+    "summary": "ให้โปรแกรมอ่านหน้าสแกนภาษาไทย แล้วค้นหาและก๊อปข้อความได้ ทำงานบนเครื่องทั้งหมด",
+    "credit": "ภาพหน้าจอ: HippoCraft · DOJOJIN.TECH" },
+  { "id": "4", "title": "จัดหน้าแบบการ์ด", "src": "/media/projects/hippocraft/page-cards.jpg", "w": 1600, "h": 1000,
+    "alt": "จัดหน้าเอกสารแบบการ์ด",
+    "summary": "ย้าย หมุน ลบหน้า เหมือนวางการ์ดบนโต๊ะ",
+    "credit": "ภาพหน้าจอ: HippoCraft · DOJOJIN.TECH" }
+]
