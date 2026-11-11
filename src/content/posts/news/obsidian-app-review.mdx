@@ -15,8 +15,6 @@ cover: "/media/posts/news/obsidian-app-review/cover.jpg"
 coverAlt: "ภาพหน้าเว็บ obsidian.md แสดงข้อความ Sharpen your thinking และหน้าต่างแอป Obsidian บนคอมพิวเตอร์กับบนมือถือ"
 ---
 
-import ShotGallery from '../../../components/ShotGallery.astro';
-import shots from './obsidian-app-review.shots.json';
 
 <section class="section">
 
@@ -49,6 +47,7 @@ Obsidian เป็นแอปจดโน้ตที่เว็บไซต�
 
 ## ดียังไง
 
+<div class="split">
 <div class="prose">
 
 - **โน้ตเชื่อมถึงกัน** ลิงก์จากโน้ตหนึ่งไปอีกโน้ตได้ และมี graph view ให้ดูภาพรวมว่าความรู้เราเชื่อมกันยังไง
@@ -58,6 +57,10 @@ Obsidian เป็นแอปจดโน้ตที่เว็บไซต�
 - **Sync แบบเข้ารหัสปลายทาง** (ถ้าอยากซิงก์หลายเครื่อง ต้องเสียเงินเพิ่ม) และ **Publish** ไว้ทำโน้ตเป็นเว็บไซต์
 - **ฝั่งมือถือ** มีแถบเครื่องมือปรับได้ การดึงลงเพื่อเรียกคำสั่งด่วน แถบข้างบน iPad และเก็บ vault บน iCloud ได้ ตามที่ App Store เขียนไว้
 
+ในภาพเป็นโน้ตบน iPhone โหมดมืด มีลิงก์ไปหาโน้ตอื่นเป็นรายการ นี่คือหัวใจของ Obsidian คือโน้ตเชื่อมถึงกัน (ภาพจาก App Store) ตอนแก้โน้ต ลิงก์จะแสดงเป็น [[Kyoto]] และเช็กลิสต์ซ้อนกันได้ครับ
+
+</div>
+<figure class="news-fig news-fig--tall news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/obsidian-app-review/img-1.jpg" width="900" height="1600" loading="lazy" alt="ภาพหน้าจอ Obsidian บน iPhone โหมดมืด โน้ตชื่อ Evergreen notes turn ideas into objects that you can manipulate มีแท็ก #evergreen และลิงก์ไปโน้ตอื่น" /></div><figcaption><span class="news-fig__credit">ภาพ: Dynalist Inc. (Obsidian) · <a href="https://apps.apple.com/th/app/obsidian-connected-notes/id1557175442" rel="noopener">apps.apple.com</a></span></figcaption></figure>
 </div>
 
 </section>
@@ -67,6 +70,7 @@ Obsidian เป็นแอปจดโน้ตที่เว็บไซต�
 ## ราคาและแพลตฟอร์ม
 
 <div class="split">
+<figure class="split-fig"><img src="/media/posts/news/obsidian-app-review/igv-1.jpg" width="1600" height="1400" loading="lazy" alt="อินโฟกราฟิกราคา เป็นดอลลาร์สหรัฐ ตัวแอปฟรีไม่จำกัดการใช้งาน Sync 4 ดอลลาร์ต่อผู้ใช้ต่อเดือนถ้าจ่ายรายปี หรือ 5 ดอลลาร์ถ้าจ่ายรายเดือน Publish 8 ดอลลาร์ต่อเว็บไซต์ต่อเดือนถ้าจ่ายรายปี หรือ 10 ดอลลาร์ถ้าจ่ายรายเดือน ไลเซนส์เชิงพาณิชย์ (ไม่บังคับ) 50 ดอลลาร์ต่อผู้ใช้ต่อปี" /></figure>
 <div class="prose">
 
 ตัวแอปฟรีโดยไม่จำกัดการใช้งาน หน้าราคาของ Obsidian ระบุว่าใช้ที่ทำงานก็ไม่ต้องจ่ายค่าไลเซนส์เชิงพาณิชย์ แต่ขอให้องค์กรที่ใช้ทำงานช่วยซื้อเพื่อสนับสนุนทีมพัฒนา ส่วนบริการเสริมเสียเงินแยก
@@ -74,17 +78,6 @@ Obsidian เป็นแอปจดโน้ตที่เว็บไซต�
 **ดาวน์โหลด:** <a href="https://obsidian.md/download" rel="noopener">obsidian.md/download</a>
 
 แพลตฟอร์มที่ผมยืนยันได้จากหน้าที่อ่าน คือ Windows และ Linux (ปุ่มดาวน์โหลดบนเว็บ) กับ iPhone, iPad, iPod touch และ Apple Vision บน App Store หน้าเว็บมีลิงก์ "More platforms" และหน้า Mobile ซึ่งผมไม่ได้ไล่อ่านรายละเอียดเพิ่ม จึงไม่ขอระบุแพลตฟอร์มอื่นครับ
-
-</div>
-<div class="note">
-
-### ราคาบริการเสริม (ดอลลาร์สหรัฐ)
-
-**Sync:** 4 ดอลลาร์ต่อผู้ใช้ต่อเดือน (จ่ายรายปี) หรือ 5 ดอลลาร์ (จ่ายรายเดือน)
-
-**Publish:** 8 ดอลลาร์ต่อเว็บไซต์ต่อเดือน (จ่ายรายปี) หรือ 10 ดอลลาร์ (จ่ายรายเดือน)
-
-**ไลเซนส์เชิงพาณิชย์ (ไม่บังคับ):** 50 ดอลลาร์ต่อผู้ใช้ต่อปี
 
 </div>
 </div>
@@ -98,7 +91,7 @@ Obsidian เป็นแอปจดโน้ตที่เว็บไซต�
 <div class="split">
 <div class="prose">
 
-Changelog ของรุ่นเดสก์ท็อป 1.15.0 (2 พฤศจิกายน 2569) ที่เด่น ๆ
+Changelog ของรุ่นเดสก์ท็อป 1.15.0 (2 พฤศจิกายน 2569) ที่เด่น ๆ มีดังนี้
 
 - **ไดอะแกรม Mermaid ใหม่** ใช้ไลบรารี Pele รองรับไวยากรณ์ Mermaid 12.1.0 วาดเร็วขึ้น ใช้สีและฟอนต์ตามธีม ย่อให้พอดีความกว้างของโน้ต ซูมและเลื่อนได้
 - **Bases** ลากจัดลำดับตัวกรองได้ ค้นหาแจ้งเมื่อผลถูกจำกัด เช่น "Showing 10 of 40" และปรับขนาดช่อง formula ได้
@@ -111,11 +104,14 @@ Changelog ของรุ่นเดสก์ท็อป 1.15.0 (2 พฤศ�
 ฝั่ง App Store ไทย รุ่น 1.15.0 บอกว่า Quick Capture อัดเสียงและถอดเป็นข้อความได้ (ต้อง iOS 26) พร้อม action บน Spotlight และ Siri, ส่งออก PDF บนมือถือ, จัดตัวกรอง Bases ใหม่บนโทรศัพท์ และลากแท็บข้ามกลุ่มแท็บได้
 
 </div>
-<div class="note">
+<figure class="split-fig"><img src="/media/posts/news/obsidian-app-review/igv-2.jpg" width="1600" height="1400" loading="lazy" alt="อินโฟกราฟิกสำหรับนักพัฒนาปลั๊กอิน Obsidian ไม่รวม Mermaid มาแล้ว เปลี่ยนมาใช้ Pele มีตัวแปร CSS --mermaid-* ใหม่ ปลั๊กอินที่จับชื่อ token ของโค้ดบรรทัดเดิมอาจพลาดโทเค็นปิด ควรอ่าน changelog ฉบับเต็ม" /></figure>
+</div>
 
-### สำหรับนักพัฒนาปลั๊กอิน
+<div class="split">
+<figure class="news-fig news-fig--tall news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/obsidian-app-review/img-3.jpg" width="900" height="1600" loading="lazy" alt="ภาพหน้าจอ Obsidian บน iPhone ขณะแก้โน้ต 2023 Japan Trip Planning มีแถบเครื่องมือเหนือคีย์บอร์ด" /></div><figcaption><span class="news-fig__credit">ภาพ: Dynalist Inc. (Obsidian) · <a href="https://apps.apple.com/th/app/obsidian-connected-notes/id1557175442" rel="noopener">apps.apple.com</a></span></figcaption></figure>
+<div class="prose">
 
-Obsidian ไม่รวม Mermaid มาแล้ว หันมาใช้ Pele มีตัวแปร CSS `--mermaid-*` ใหม่ ปลั๊กอินที่จับชื่อ token ของโค้ดบรรทัดเดิมอาจพลาดโทเค็นปิด ควรอ่าน changelog ฉบับเต็มครับ
+ในภาพเป็นตอนแก้โน้ตบน iPhone ครับ มีแถบเครื่องมือเหนือคีย์บอร์ด สำหรับลิงก์ แนบไฟล์ แท็ก หัวข้อ ตัวหนา และตัวเอียง (ภาพจาก App Store)
 
 </div>
 </div>
@@ -126,7 +122,10 @@ Obsidian ไม่รวม Mermaid มาแล้ว หันมาใช้ 
 
 ## ใครควรใช้
 
+<div class="split">
 <div class="prose">
+
+ในภาพเป็นโหมดสว่างของ Obsidian บน iPhone อ่านง่ายแบบหน้ากระดาษ (ภาพจาก App Store) ส่วนคนที่น่าจะเหมาะกับแอปนี้คือ
 
 - คนที่จดโน้ต ความรู้ หรืองานเขียนเยอะ และอยากให้ข้อมูลอยู่ในมือเราเอง
 - คนที่ชอบเชื่อมความคิดเป็นเครือข่าย ไม่ใช่แค่โฟลเดอร์
@@ -134,14 +133,8 @@ Obsidian ไม่รวม Mermaid มาแล้ว หันมาใช้ 
 - ถ้าอยากได้แอปจดโน้ตที่เปิดแล้วใช้ได้ทันทีโดยไม่ต้องตั้งค่า อาจต้องใช้เวลาทำความรู้จักสักพักครับ
 
 </div>
-
-</section>
-
-<section class="section">
-
-## ภาพประกอบ
-
-<ShotGallery shots={shots} />
+<figure class="news-fig news-fig--tall news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/obsidian-app-review/img-2.jpg" width="900" height="1600" loading="lazy" alt="ภาพหน้าจอ Obsidian บน iPhone โหมดสว่าง โน้ตชื่อ Writing is telepathy มีแท็ก #evergreen หัวข้อและรายการ bullet" /></div><figcaption><span class="news-fig__credit">ภาพ: Dynalist Inc. (Obsidian) · <a href="https://apps.apple.com/th/app/obsidian-connected-notes/id1557175442" rel="noopener">apps.apple.com</a></span></figcaption></figure>
+</div>
 
 </section>
 
@@ -167,6 +160,7 @@ Obsidian ไม่รวม Mermaid มาแล้ว หันมาใช้ 
 
 - ภาพปก: ภาพ: Obsidian (ภาพหน้าจอเว็บไซต์) · <a href="https://obsidian.md" rel="noopener">obsidian.md</a>
 - ภาพหน้าจอแอป 3 ภาพ: ภาพ: Dynalist Inc. (Obsidian) ภาพหน้าจอจาก App Store · <a href="https://apps.apple.com/th/app/obsidian-connected-notes/id1557175442" rel="noopener">apps.apple.com</a>
+- อินโฟกราฟิก: ภาพประกอบจาก DOJOJIN.TECH จากข้อมูลในข่าวนี้
 
 ภาพใช้ประกอบการแนะนำ (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
 

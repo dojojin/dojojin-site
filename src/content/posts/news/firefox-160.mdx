@@ -15,9 +15,6 @@ cover: "/media/posts/news/firefox-160/cover.jpg"
 coverAlt: "ส่วนหัวของหน้า Release Notes ของ Firefox โลโก้ Firefox บนพื้นสีม่วงกับข้อความ See what's new in Firefox! และมาสคอตจิ้งจอก"
 ---
 
-import ShotGallery from '../../../components/ShotGallery.astro';
-import shots from './firefox-160.shots.json';
-
 <section class="section">
 
 ## เกิดอะไรขึ้น
@@ -30,17 +27,14 @@ Mozilla ปล่อย Firefox 160.0 ให้ผู้ใช้ช่อง Re
 หน้าประกาศไม่มีหัวข้อ "Changed" ในรุ่นนี้ครับ
 
 </div>
-<div class="note">
+<figure class="split-fig"><img src="/media/posts/news/firefox-160/igv-1.jpg" width="1600" height="1400" loading="lazy" alt="สรุปสั้น Firefox 160.0 วันที่ปล่อย 10 พฤศจิกายน 2569 แก้ช่องโหว่ 99 CVE แบ่งเป็นสูง 57 ปานกลาง 24 ต่ำ 18 ประกาศความปลอดภัย MFSA 2026-125" /></figure>
+</div>
 
-### สรุปสั้น
+<div class="split">
+<figure class="news-fig news-fig--tall news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/firefox-160/img-1.jpg" width="1000" height="1400" loading="lazy" alt="หน้า Release Notes ของ Firefox 160.0 พื้นสีม่วง ข้อความ See what's new in Firefox และวันที่ November 10, 2026 พร้อมหัวข้อ New" /></div><figcaption><span class="news-fig__credit">ภาพ: Mozilla (ภาพหน้าจอ) · <a href="https://www.firefox.com/en-US/firefox/160.0/releasenotes/" rel="noopener">firefox.com</a></span></figcaption></figure>
+<div class="prose">
 
-**รุ่น:** Firefox 160.0
-
-**วันที่ปล่อย:** 10 พฤศจิกายน 2569
-
-**ช่องโหว่ที่แก้:** 99 CVE (สูง 57 · ปานกลาง 24 · ต่ำ 18)
-
-**ประกาศความปลอดภัย:** MFSA 2026-125
+ในภาพคือส่วนบนของหน้า Release Notes ครับ บอกรุ่น 160.0 ช่อง Firefox Release และวันที่ 10 พฤศจิกายน 2569 แล้วเริ่มหัวข้อ New ด้วยการปรับความเร็ว PiP
 
 </div>
 </div>
@@ -51,10 +45,28 @@ Mozilla ปล่อย Firefox 160.0 ให้ผู้ใช้ช่อง Re
 
 ## ของใหม่ (New)
 
+<div class="split">
 <div class="prose">
 
 - **ปรับความเร็วใน Picture-in-Picture** หน้าต่างวิดีโอลอย (PiP) เลือกความเร็วได้ตั้งแต่ 0.25x ถึง 2.0x ตัวเลือกนี้ขึ้นเฉพาะตอนหน้าต่างขนาดกลางขึ้นไป
+
+ในภาพคือเมนู Playback speed ในหน้าต่างวิดีโอลอย มีปุ่มลัดความเร็วและแถบเลื่อนปรับละเอียดครับ (Release Notes ระบุช่วง 0.25x ถึง 2.0x)
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/firefox-160/img-2.jpg" width="1494" height="938" loading="lazy" alt="หน้าต่าง Picture-in-Picture ของ Firefox 160 เปิดเมนู Playback speed มีตัวเลือก 0.75x, 1.0x, 1.25x, 1.5x และ 2.0x พร้อมแถบเลื่อน" /></div><figcaption><span class="news-fig__credit">ภาพ: Mozilla (ภาพประกอบใน Release Notes) · <a href="https://www.firefox.com/en-US/firefox/160.0/releasenotes/" rel="noopener">firefox.com</a></span></figcaption></figure>
+</div>
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/firefox-160/img-3.jpg" width="1600" height="1007" loading="lazy" alt="ภาพจาก Release Notes ของ Firefox 160 แสดงเอกสาร Google Docs ที่มี Mini Window ลอยอยู่ 3 หน้าต่าง คือ บทความวิกิพีเดีย แผนที่ OpenStreetMap และตัวจับเวลา" /></div><figcaption><span class="news-fig__credit">ภาพ: Mozilla (ภาพประกอบใน Release Notes) · <a href="https://www.firefox.com/en-US/firefox/160.0/releasenotes/" rel="noopener">firefox.com</a></span></figcaption></figure>
+<div class="prose">
+
 - **Mini Window** ย้ายแท็บหรือบางส่วนของหน้าเว็บไปอยู่ในหน้าต่างเล็กที่ลอยอยู่บนสุดเสมอ ตอนนี้เป็นรุ่นเริ่มต้น และ Mozilla ขอความเห็นจากผู้ใช้
+
+ตัวอย่างในภาพจาก Mozilla ทำงานอยู่ในเอกสารหลัก แล้วเปิดวิกิ แผนที่ และตัวจับเวลาลอยไว้มุมจอ ไม่ต้องสลับแท็บไปมาครับ
+
+</div>
+</div>
+
 - **ลากประวัติไปเปิดแท็บ** ลากรายการจากแถบประวัติด้านข้างไปวางบนแถบแท็บ จะเปิดเป็นแท็บใหม่
 - **เมนูของแถบที่อยู่** ถ้าข้อความที่คัดลอกมาเป็นคำค้น จะขึ้น "Paste and Search" แทน "Paste and Go"
 - **สูตรคณิตศาสตร์ใน PDF** หน้าที่บันทึกเป็น PDF จะทำให้เนื้อหา MathML อ่านออกเสียงด้วยโปรแกรมอ่านหน้าจอได้
@@ -62,8 +74,6 @@ Mozilla ปล่อย Firefox 160.0 ให้ผู้ใช้ช่อง Re
 - **เสียงในไฟล์ MKV** เล่นไฟล์ Matroska ที่ใช้เสียงแบบ FLAC, MP3 หรือ PCM ได้
 - **WebGL บน macOS** ใช้ Metal ของ Apple ซึ่งอาจช่วยให้บางเว็บลื่นขึ้น
 - **Smart Window (ทยอยปล่อย)** ฟีเจอร์ Organize Tabs ที่ช่วยเสนอและตั้งชื่อกลุ่มแท็บ ใช้ภาษาฝรั่งเศสได้แล้ว
-
-</div>
 
 </section>
 
@@ -85,13 +95,7 @@ Mozilla ปล่อย Firefox 160.0 ให้ผู้ใช้ช่อง Re
 - แก้ช่องโหว่ความปลอดภัยหลายรายการ (ดูหัวข้อถัดไป)
 
 </div>
-<div class="note">
-
-### Enterprise
-
-ข้อมูลสำหรับองค์กรอยู่ในเอกสาร Enterprise Release Notes ของรุ่น 160 และรายการเปลี่ยนนโยบาย (policy) อยู่ใน changelog ของ Firefox admin docs ลิงก์อยู่ท้ายบทความ ในหน้าหลักไม่ได้ลงรายละเอียดเพิ่มครับ
-
-</div>
+<figure class="split-fig"><img src="/media/posts/news/firefox-160/igv-2.jpg" width="1600" height="1400" loading="lazy" alt="Enterprise ข้อมูลสำหรับองค์กรอยู่ใน Enterprise Release Notes ของรุ่น 160 และ changelog รายการเปลี่ยนนโยบาย (policy) ของ Firefox admin docs หน้าหลักไม่ได้ลงรายละเอียดเพิ่ม ลิงก์อยู่ท้ายบทความ" /></figure>
 </div>
 
 </section>
@@ -101,18 +105,12 @@ Mozilla ปล่อย Firefox 160.0 ให้ผู้ใช้ช่อง Re
 ## สำหรับนักพัฒนา (Developer)
 
 <div class="split">
+<figure class="split-fig"><img src="/media/posts/news/firefox-160/igv-3.jpg" width="1600" height="1400" loading="lazy" alt="ภาษาไทยอยู่ใน 40 ภาษาหรือไม่ SpeechRecognition รองรับ 40 ภาษา แต่ Release Notes และหน้า MDN ไม่ได้ระบุรายชื่อ จึงยืนยันไม่ได้ว่ามีภาษาไทย" /></figure>
 <div class="prose">
 
-- **SpeechRecognition (Web Speech API)** รองรับแล้ว เป็นการแปลงเสียงเป็นข้อความแบบเรียลไทม์ทำงานบนเครื่อง รองรับ 40 ภาษา หน้า MDN บอกว่าใช้ได้บนเดสก์ท็อป ไม่รองรับบน Android และไม่รองรับการรู้จำเสียงผ่านคลาวด์
+- **SpeechRecognition (Web Speech API)** รองรับแล้ว เป็นการแปลงเสียงเป็นข้อความแบบเรียลไทม์ ทำงานบนเครื่อง รองรับ 40 ภาษา หน้า MDN บอกว่าใช้ได้บนเดสก์ท็อป ไม่รองรับบน Android และไม่รองรับการรู้จำเสียงผ่านคลาวด์
 - `::-webkit-input-placeholder` เป็นชื่อเรียกอีกชื่อของ `::placeholder`
 - ข้อมูลฉบับเต็มอยู่ที่หน้า Developer Information ของ MDN
-
-</div>
-<div class="note">
-
-### ภาษาไทยอยู่ใน 40 ภาษาหรือไม่
-
-ทั้งหน้า Release Notes และหน้า MDN บอกแค่จำนวน 40 ภาษา ไม่ได้ระบุรายชื่อ ผมจึงยืนยันไม่ได้ว่ามีภาษาไทยหรือไม่ครับ
 
 </div>
 </div>
@@ -126,7 +124,7 @@ Mozilla ปล่อย Firefox 160.0 ให้ผู้ใช้ช่อง Re
 <div class="split">
 <div class="prose">
 
-Release Notes เขียนสั้น ๆ ว่ามี "various security fixes" และชี้ไปที่ประกาศ MFSA 2026-125 ลงวันที่ 10 พฤศจิกายน 2569 ซึ่งรวม CVE 99 รายการ แก้ใน Firefox 160 ทั้งหมด CVE คือเลขประจำตัวของช่องโหว่ที่ใช้อ้างอิงตรงกันทั่วโลก
+Release Notes เขียนสั้น ๆ ว่ามี "various security fixes" และชี้ไปที่ประกาศ MFSA 2026-125 ลงวันที่ 10 พฤศจิกายน 2569 ซึ่งรวม CVE 99 รายการ และแก้ใน Firefox 160 ครบทั้งหมด CVE คือเลขประจำตัวของช่องโหว่ที่ใช้อ้างอิงตรงกันทั่วโลก
 
 ผมไล่อ่านทุกรายการแล้ว สรุปเป็นกลุ่มได้ดังนี้
 
@@ -134,24 +132,10 @@ Release Notes เขียนสั้น ๆ ว่ามี "various security 
 - **ระดับปานกลาง 24 รายการ** เช่น information disclosure ใน Private Browsing, Layout, Form Controls และ Address Bar, spoofing ใน DOM security, site isolation หลายจุด, WebGPU, WebRTC, WebRender และ clickjacking ใน Autofill ของ Firefox for Android (CVE-2026-124911)
 - **ระดับต่ำ 18 รายการ** เช่น spoofing ใน Address Bar, JIT miscompilation ใน JavaScript engine, mitigation bypass ใน Add-ons Manager และ File Handling, information disclosure ใน RLBox และ Marionette, privilege escalation ใน Nimbus Desktop Client
 
-ผู้รายงานส่วนใหญ่คือทีม Mozilla เอง มีหลายรายการที่รายงานโดย OpenAI Codex Security (kylebot) และมีนักวิจัยภายนอกอีกหลายคน ตามที่ประกาศระบุไว้ ประกาศไม่ได้บอกในหน้าที่ผมอ่านว่ามีช่องโหว่ไหนถูกโจมตีจริง และข้ามเลข CVE-2026-124916 ไปครับ
+ผู้รายงานส่วนใหญ่คือทีม Mozilla เอง มีหลายรายการที่รายงานโดย OpenAI Codex Security (kylebot) และมีนักวิจัยภายนอกอีกหลายคน ตามที่ประกาศระบุไว้ ในหน้าที่ผมอ่าน ประกาศไม่ได้บอกว่ามีช่องโหว่ไหนถูกโจมตีจริง และมีเลข CVE-2026-124916 ที่ข้ามไปครับ
 
 </div>
-<div class="note">
-
-### จำนวนตามระดับ
-
-**สูง (High):** 57
-
-**ปานกลาง (Moderate):** 24
-
-**ต่ำ (Low):** 18
-
-**รวม:** 99 CVE
-
-รายการเต็มพร้อมคำอธิบายแต่ละข้ออยู่ที่ MFSA 2026-125
-
-</div>
+<figure class="split-fig"><img src="/media/posts/news/firefox-160/igv-4.jpg" width="1600" height="1400" loading="lazy" alt="ช่องโหว่ตามระดับ รวม 99 CVE สูง (High) 57 ปานกลาง (Moderate) 24 ต่ำ (Low) 18 รายการเต็มอยู่ที่ MFSA 2026-125" /></figure>
 </div>
 
 </section>
@@ -161,6 +145,7 @@ Release Notes เขียนสั้น ๆ ว่ามี "various security 
 ## อัปเดตยังไง
 
 <div class="split">
+<figure class="split-fig"><img src="/media/posts/news/firefox-160/igv-5.jpg" width="1600" height="1400" loading="lazy" alt="ก่อนอัปเดต Mini Window ลองเล่นดูก่อน เพราะ Mozilla บอกว่าเป็นรุ่นเริ่มต้น ผู้ดูแลระบบองค์กรควรอ่านเอกสาร Enterprise ของรุ่น 160 ก่อนปล่อยให้ทั้งองค์กรอัปเดต" /></figure>
 <div class="prose">
 
 ปกติ Firefox อัปเดตตัวเองเบื้องหลังอยู่แล้ว ถ้าอยากเช็กเอง
@@ -172,24 +157,7 @@ Release Notes เขียนสั้น ๆ ว่ามี "various security 
 ถ้าไม่มีเมนู Help ให้กดปุ่มเมนูมุมขวาบน แล้วเลือก Help ครับ ส่วนผู้ใช้ Linux ที่ติดตั้งจากตัวจัดการแพ็กเกจของระบบ ให้อัปเดตผ่านระบบนั้น หน้า Release Notes มีปุ่มดาวน์โหลดสำหรับ Linux 64-bit และ ARM64 ด้วย
 
 </div>
-<div class="note">
-
-### ข้อควรรู้
-
-ถ้าใช้ฟีเจอร์ใหม่อย่าง Mini Window ลองเล่นดูก่อน เพราะ Mozilla บอกว่าเป็นรุ่นเริ่มต้น
-
-ผู้ดูแลระบบองค์กรควรอ่านเอกสาร Enterprise ของรุ่น 160 ก่อนปล่อยให้ทั้งองค์กรอัปเดต
-
 </div>
-</div>
-
-</section>
-
-<section class="section">
-
-## ภาพประกอบ
-
-<ShotGallery shots={shots} />
 
 </section>
 
@@ -216,6 +184,7 @@ Release Notes เขียนสั้น ๆ ว่ามี "various security 
 
 - ภาพปก: ภาพหน้าจอส่วนหัวของหน้า Release Notes · ภาพ Mini Window และภาพ PiP: ภาพ: Mozilla (ภาพประกอบใน Release Notes) · <a href="https://www.firefox.com/en-US/firefox/160.0/releasenotes/" rel="noopener">firefox.com</a>
 - ภาพหน้า Release Notes: ภาพ: Mozilla (ภาพหน้าจอ) · <a href="https://www.firefox.com/en-US/firefox/160.0/releasenotes/" rel="noopener">firefox.com</a>
+- อินโฟกราฟิก: ภาพประกอบจาก DOJOJIN.TECH จากข้อมูลในข่าวนี้
 
 ภาพใช้ประกอบข่าว (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
 

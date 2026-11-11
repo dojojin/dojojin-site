@@ -13,8 +13,6 @@ cover: "/media/posts/news/hippocraft-0-18-1/cover.jpg"
 coverAlt: "HippoCraft รุ่นลงเครื่อง 0.18.1 ดาวน์โหลดได้แล้ว ทั้ง Windows, macOS และ Linux"
 ---
 
-import ShotGallery from '../../../components/ShotGallery.astro';
-import shots from './hippocraft-0-18-1.shots.json';
 
 <section class="section">
 
@@ -28,20 +26,27 @@ import shots from './hippocraft-0-18-1.shots.json';
 ไฟล์ทำงานอยู่ในเครื่องของเราเอง ไม่ถูกอัปโหลดขึ้นคลาวด์ เหมาะกับเอกสารในบริษัทที่ไม่อยากส่งออกไปข้างนอก
 
 </div>
-<div class="note">
+<figure class="split-fig"><img src="/media/posts/news/hippocraft-0-18-1/igv-1.jpg" width="1600" height="1400" loading="lazy" alt="HippoCraft รุ่น 0.18.1 (0.18.1-th23.2d.b4603) ออกเมื่อ 9 พ.ย. 2569 สถานะ Beta ใช้ได้บน Windows, macOS, Linux และเว็บ" /></figure>
+</div>
 
-### รุ่นนี้
+<div class="split">
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/projects/hippocraft/thai-edit.jpg" width="1600" height="1000" loading="lazy" alt="เครื่องมือแก้ไข PDF เป็นภาษาไทย เปิดคู่กับบันทึกการประชุมภาษาไทย" /></div><figcaption><span class="news-fig__credit">ภาพหน้าจอ: HippoCraft · DOJOJIN.TECH</span></figcaption></figure>
+<div class="prose">
 
-**เลขรุ่น:** 0.18.1-th23.2d.b4603
-
-**ออกเมื่อ:** 9 พ.ย. 2569
-
-**สถานะ:** Beta
-
-**ใช้ได้บน:** Windows · macOS · Linux · เว็บ
+ในภาพคือหน้าต่างแก้ไข PDF ภาษาไทย เปิดคู่กับบันทึกการประชุมภาษาไทย คลิกที่ข้อความแล้วพิมพ์แก้ได้เลย สระกับวรรณยุกต์อยู่ที่เดิมครับ
 
 </div>
 </div>
+
+<div class="split">
+<div class="prose">
+
+ส่วนในภาพคือหน้าต่าง Recognize Text ใช้กับหน้าสแกนภาษาไทย ให้โปรแกรมอ่านตัวหนังสือจากภาพ แล้วเอาไปแก้ต่อหรือแปลงเป็น Word ได้ครับ
+
+</div>
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/projects/hippocraft/thai-ocr.jpg" width="1600" height="1000" loading="lazy" alt="หน้าต่าง Recognize Text บนหน้าสแกนภาษาไทย" /></div><figcaption><span class="news-fig__credit">ภาพหน้าจอ: HippoCraft · DOJOJIN.TECH</span></figcaption></figure>
+</div>
+
 
 </section>
 
@@ -68,26 +73,25 @@ import shots from './hippocraft-0-18-1.shots.json';
   </article>
 </div>
 
+<div class="split">
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/projects/hippocraft/page-cards.jpg" width="1600" height="1000" loading="lazy" alt="จัดหน้าเอกสารแบบการ์ด" /></div><figcaption><span class="news-fig__credit">ภาพหน้าจอ: HippoCraft · DOJOJIN.TECH</span></figcaption></figure>
 <div class="prose">
+
+ส่วนการจัดหน้าเอกสาร ย้าย หมุน หรือลบหน้า ทำแบบวางการ์ดบนโต๊ะได้เลยครับ
 
 รุ่นนี้ยังตามทันต้นฉบับ PdfCraft 0.18.1 (รวม 0.17.0 และ 0.18.0) และเพิ่ม Linux แบบ AppImage ให้ด้วย ส่วนที่ยังทำไม่ได้คือปรับระยะห่างตัวอักษรเฉพาะบางคำ ถ้ากดไป โปรแกรมจะบอกเหตุผลเป็นภาษาไทยครับ
 
 </div>
+</div>
 
 </section>
 
-<section class="section">
-
-## ภาพหน้าจอ
-
-<ShotGallery shots={shots} />
-
-</section>
 
 <section class="section">
 
 ## ใช้งานยังไง
 
+<div class="split">
 <div class="prose">
 
 - **ใช้ผ่านเว็บ** ไม่ต้องลงโปรแกรม ลงทะเบียนที่ <a href="https://pdf.dojojin.tech" rel="noopener">pdf.dojojin.tech</a> (รองรับ 50 คน) ไฟล์ยังทำงานในเบราว์เซอร์บนเครื่องเรา ไม่ถูกอัปโหลด
@@ -96,8 +100,24 @@ import shots from './hippocraft-0-18-1.shots.json';
 
 ลองใช้แล้วเจอปัญหา หรืออยากให้เพิ่มอะไร บอกผมได้ที่ <a href="/guestbook/">Guestbook</a> ครับ
 
+เมนูทั้งหมดเป็นภาษาไทย เปิดเอกสารไทยแล้วสระและวรรณยุกต์อยู่ถูกที่ครับ
+
+</div>
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/projects/hippocraft/thai-document.jpg" width="1600" height="1000" loading="lazy" alt="HippoCraft เปิดบันทึกการประชุมภาษาไทย เมนูทั้งหมดเป็นภาษาไทย" /></div><figcaption><span class="news-fig__credit">ภาพหน้าจอ: HippoCraft · DOJOJIN.TECH</span></figcaption></figure>
 </div>
 
 <p class="hero-links"><a href="/hippocraft/downloads/">ไปหน้าดาวน์โหลด HippoCraft</a></p>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- อินโฟกราฟิก: ภาพประกอบจาก DOJOJIN.TECH จากข้อมูลในข่าวนี้
+
+</div>
 
 </section>

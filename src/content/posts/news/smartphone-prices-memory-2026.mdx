@@ -12,11 +12,9 @@ kicker: "ข่าวเทคโนโลยี · มือถือ"
 lead: "ปีนี้หลายคนรู้สึกว่ามือถือแพงขึ้น ต้นเหตุหลักไม่ใช่กล้องหรือชิป แต่คือหน่วยความจำ ผมรวบรวมตัวเลขจากบริษัทวิจัยตลาดพร้อมวันที่ของแต่ละแหล่งมาให้ดู"
 meta: "เรียบเรียงจาก TrendForce, Counterpoint Research และสื่อที่รายงานต่อ · ข้อมูล ณ 10 พฤศจิกายน 2569"
 cover: "/media/posts/news/smartphone-prices-memory-2026/cover.jpg"
-coverAlt: "ภาพสรุปราคามือถือปี 2569 แพงขึ้นเพราะหน่วยความจำ (ภาพประกอบสร้างด้วย AI)"
+coverAlt: "ภาพสรุปราคามือถือปี 2569 แพงขึ้นเพราะหน่วยความจำ (ภาพประกอบ)"
 ---
 
-import ShotGallery from '../../../components/ShotGallery.astro';
-import shots from './smartphone-prices-memory-2026.shots.json';
 
 <section class="section">
 
@@ -25,21 +23,19 @@ import shots from './smartphone-prices-memory-2026.shots.json';
 <div class="split">
 <div class="prose">
 
-หน่วยความจำในมือถือมี 2 แบบ คือ **DRAM** (แรม ที่ใช้ทำงานชั่วคราว) และ **NAND** (ที่เก็บข้อมูลถาวร) ตอนนี้ทั้งสองอย่างแพงขึ้นมาก เพราะเซิร์ฟเวอร์ AI ดูดกำลังผลิตไปเป็นจำนวนมาก ของที่เหลือให้มือถือจึงน้อยลงและแพงขึ้น
+หน่วยความจำในมือถือมี 2 แบบ คือ **DRAM** (แรม ที่ใช้ทำงานชั่วคราว) และ **NAND** (ที่เก็บข้อมูลถาวร) ตอนนี้ทั้งสองอย่างแพงขึ้นมาก เพราะเซิร์ฟเวอร์ AI ดูดกำลังผลิตไปมาก ส่วนที่เหลือให้มือถือจึงน้อยลงและแพงขึ้น
 
-TrendForce รายงานเมื่อ 14 พฤษภาคม 2569 ว่าราคาสัญญา DRAM มือถือยังขึ้นต่อในไตรมาส 2 ปีนี้ ผู้ผลิตเริ่มลดรุ่นความจุสูง และหน่วยความจำกินสัดส่วนต้นทุนเครื่องเกิน 20% จากเดิมราว 10 ถึง 15%
+TrendForce รายงานเมื่อ 14 พฤษภาคม 2569 ว่าราคาสัญญา DRAM มือถือยังขึ้นต่อในไตรมาส 2 ปีนี้ ผู้ผลิตเริ่มลดรุ่นความจุสูง และหน่วยความจำกินสัดส่วนต้นทุนเครื่องเกิน 20% จากเดิมราว 10 ถึง 15% ตารางของ TrendForce ด้านล่างบอกว่าไตรมาส 1 ราคาสัญญาขึ้นราว 58-63% และคาดว่าไตรมาส 2 จะขึ้นอีก 70-83% ขึ้นไป ตัวเลขไตรมาส 2 เป็นการคาดการณ์ ไม่ใช่ราคาจริงครับ
 
 </div>
-<div class="note">
+<figure class="split-fig"><img src="/media/posts/news/smartphone-prices-memory-2026/igv-1.jpg" width="1600" height="1400" loading="lazy" alt="หน่วยความจำกินต้นทุนเครื่องมากขึ้น สัดส่วนต้นทุนเครื่องก่อนหน้านี้ราว 10 ถึง 15% ตอนนี้เกิน 20% ที่มา TrendForce 14 พ.ค. 2569" /></figure>
+</div>
 
-### ต้นทุนหน่วยความจำ
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/smartphone-prices-memory-2026/img-1.jpg" width="1080" height="560" loading="lazy" alt="ตารางของ TrendForce ราคาสัญญา LPDDR4X และ LPDDR5X ไตรมาส 1 ปี 2026 เพิ่ม 58-63% และไตรมาส 2 เพิ่ม 70-83% ขึ้นไป" /></div><figcaption><span class="news-fig__credit">ภาพ: TrendForce · <a href="https://www.trendforce.com/presscenter/news/20260514-13044.html" rel="noopener">trendforce.com</a></span></figcaption></figure>
+<div class="prose">
 
-**สัดส่วนต้นทุนเครื่อง**
-
-- ก่อนหน้านี้ ราว 10 ถึง 15%
-- ตอนนี้ เกิน 20%
-
-*TrendForce, 14 พ.ค. 2569*
+ในภาพคือตารางของ TrendForce ครับ ราคาสัญญา LPDDR4X และ LPDDR5X ไตรมาส 1 ปี 2026 เพิ่มราว 58-63% และไตรมาส 2 คาดว่าเพิ่ม 70-83% ขึ้นไป ตัวเลขไตรมาส 2 เป็นการคาดการณ์ ไม่ใช่ราคาจริง
 
 </div>
 </div>
@@ -79,17 +75,7 @@ BGR รายงานว่า Samsung ปรับราคา Galaxy S26 ใ�
 เป็นราคาในต่างประเทศนะครับ ราคาในไทยอาจไม่เท่ากัน ให้ดูราคาจากช่องทางจำหน่ายในไทยอีกที
 
 </div>
-<div class="note">
-
-### Galaxy S26 (สหรัฐฯ)
-
-**ส่วนใหญ่:** +100 ดอลลาร์
-
-**S26 Ultra 1TB:** +200 ดอลลาร์ เป็น 1,999.99 ดอลลาร์
-
-*BGR, ตุลาคม 2569*
-
-</div>
+<figure class="split-fig"><img src="/media/posts/news/smartphone-prices-memory-2026/igv-2.jpg" width="1600" height="1400" loading="lazy" alt="ราคา Galaxy S26 ในสหรัฐฯ ที่ Samsung ปรับขึ้น ส่วนใหญ่ขึ้น 100 ดอลลาร์ S26 Ultra 1TB ขึ้น 200 ดอลลาร์ เป็น 1,999.99 ดอลลาร์ เป็นราคาในต่างประเทศ ราคาในไทยอาจไม่เท่ากัน ที่มา BGR ตุลาคม 2569" /></figure>
 </div>
 
 </section>
@@ -105,14 +91,6 @@ BGR รายงานว่า Samsung ปรับราคา Galaxy S26 ใ�
 - **ยังไม่มีแหล่งข้อมูลหลักที่ยืนยันการขึ้นราคารอบใหม่ในเดือนพฤศจิกายน** ผมจึงไม่คาดเดาเรื่องนี้ ตัวเลขทั้งหมดในบทความคือสิ่งที่เกิดขึ้นแล้วตลอดปี
 
 </div>
-
-</section>
-
-<section class="section">
-
-## ภาพประกอบ
-
-<ShotGallery shots={shots} />
 
 </section>
 
@@ -137,8 +115,9 @@ BGR รายงานว่า Samsung ปรับราคา Galaxy S26 ใ�
 
 <div class="prose">
 
+- อินโฟกราฟิก: ภาพประกอบจาก DOJOJIN.TECH จากข้อมูลในข่าวนี้
 - ตารางคาดการณ์ราคาสัญญา DRAM มือถือ ไตรมาส 1-2 ปี 2569: ภาพ: TrendForce · <a href="https://www.trendforce.com/presscenter/news/20260514-13044.html" rel="noopener">www.trendforce.com</a>
-- ภาพปก: ภาพประกอบสร้างด้วย AI (Codex image generation) โดย DOJOJIN.TECH ไม่ใช่ภาพเหตุการณ์จริง
+- ภาพปก: ภาพประกอบจาก DOJOJIN.TECH
 
 ภาพทั้งหมดใช้ประกอบข่าว (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
 

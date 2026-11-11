@@ -1,0 +1,28 @@
+/* Shared look for DOJOJIN.TECH infographics (rendered to JPG by render-infographic.mjs). 640 CSS px wide, light theme. */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;600;700&display=swap');
+:root{--ink:#16201d;--muted:#5d6b66;--line:#e4e9e6;--green:#0f8a63;--green-bg:#e2f4ec;--blue:#2f6fde;--blue-bg:#e6efff;
+ --red:#d6453d;--red-bg:#fde9e7;--amber:#e19a16;--amber-bg:#fdf3dd;--violet:#7a4fd6;--violet-bg:#efe8ff;--paper:#fbfcfb}
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:640px;font-family:'IBM Plex Sans Thai',sans-serif;color:var(--ink);background:var(--paper)}
+.ig{padding:28px 28px 20px;background:linear-gradient(165deg,#fff 0%,#f4faf7 60%,#eef3fc 100%);position:relative}
+.ig:before{content:"";position:absolute;inset:0 0 auto;height:7px;background:linear-gradient(90deg,var(--green),var(--blue))}
+.tag{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--green);background:var(--green-bg);border-radius:999px;padding:3px 12px}
+h2{font-size:30px;line-height:1.25;margin:10px 0 16px}
+.sub{font-size:16px;color:var(--muted);margin:-8px 0 16px}
+.stat{font-size:64px;font-weight:700;line-height:1;letter-spacing:-.01em}
+.stat small{font-size:22px;font-weight:600;margin-left:6px}
+.lbl{font-size:15px;font-weight:700;color:var(--muted);letter-spacing:.02em}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tile{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.tile .v{font-size:30px;font-weight:700;line-height:1.15}.tile .t{font-size:15px;color:var(--muted);margin-top:4px;line-height:1.4}
+.icon{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;margin-bottom:8px}
+.icon svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.bars{display:grid;gap:10px}.bar{display:grid;grid-template-columns:150px 1fr auto;gap:10px;align-items:center;font-size:16px}
+.bar .track{height:22px;background:#eef1ef;border-radius:999px;overflow:hidden}.bar .fill{height:100%;border-radius:999px}
+.bar b{font-size:17px}
+.pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:4px 12px;font-size:15px;font-weight:700}
+.row{display:flex;gap:12px;align-items:center}
+.foot{margin-top:16px;font-size:12px;color:#8a9691;display:flex;justify-content:space-between}
+.g{color:var(--green)}.b{color:var(--blue)}.r{color:var(--red)}.a{color:var(--amber)}.vio{color:var(--violet)}
+.bg-g{background:var(--green-bg);color:var(--green)}.bg-b{background:var(--blue-bg);color:var(--blue)}.bg-r{background:var(--red-bg);color:var(--red)}.bg-a{background:var(--amber-bg);color:var(--amber)}.bg-v{background:var(--violet-bg);color:var(--violet)}
+.f-g{background:var(--green)}.f-b{background:var(--blue)}.f-r{background:var(--red)}.f-a{background:var(--amber)}.f-v{background:var(--violet)}.f-n{background:#9aa6a1}

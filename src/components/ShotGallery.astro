@@ -73,6 +73,7 @@ const card = (s, i) => `
       ${s.readings
         ? `<dl class="readings">${s.readings.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>`
         : `<span class="meta">${s.summary}</span>`}
+      <div class="shot__more">${s.analysis?.length ? `<b>${s.analysisTitle ?? 'อ่านจากรูปนี้'}</b>${s.analysis.map((p) => `<p>${p}</p>`).join('')}` : ''}${s.credit ? `<p class="shot__credit">${s.credit}</p>` : ''}</div>
     </div>
   </button>`;
 // split into runs of consecutive shots sharing a group
@@ -87,7 +88,7 @@ gallery.innerHTML = groups.map((g) => {
     ${g.name ? `<h3 class="gallery__title gallery__title--photos">${g.name} <span class="gallery__count">${g.items.length} รูป</span></h3>` : ''}
     <div class="photo-wall">${g.items.map((i) => tile(shots[i], i)).join('')}</div>`;
   const screens = g.items.every((i) => shots[i].fit === 'contain');
-  return `${g.name ? `<h3 class="gallery__title">${g.name}</h3>` : ''}
+  return `${g.name && g.name !== 'ภาพประกอบ' ? `<h3 class="gallery__title">${g.name}</h3>` : ''}
     <div class="gallery${screens ? ' gallery--screens' : ''}">${g.items.map((i) => card(shots[i], i)).join('')}</div>`;
 }).join('');
 
@@ -120,6 +121,7 @@ function show(i) {
 }
 
 gallery.addEventListener('click', (e) => {
+  if (e.target.closest('a')) return; // credit links inside a card open normally
   const b = e.target.closest('.shot, .tile');
   if (!b) return;
   show(+b.dataset.i);

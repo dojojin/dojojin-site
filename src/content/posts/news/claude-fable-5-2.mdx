@@ -9,14 +9,11 @@ sourceName: "Anthropic และ TechCrunch"
 sourceUrl: "https://www.anthropic.com/claude-fable-and-mythos-5-2"
 description: "Anthropic ออก Claude Fable 5.2 เมื่อ 9 พ.ย. 2569 ราคา $8 ต่อล้านโทเค็นขาเข้า $40 ขาออก เร็วขึ้นถึง 30% ส่วน Mythos 5.2 เป็นโมเดลเดียวกันที่ถอดตัวกันบางส่วนออก เปิดให้เฉพาะผู้ผ่านการยืนยัน"
 kicker: "ข่าว AI"
-lead: "Anthropic ออกโมเดลรุ่น 5.2 สองตัวพร้อมกัน คือ Fable และ Mythos ผมสรุปให้ว่าอะไรเปลี่ยน ราคาเท่าไร คนทั่วไปและนักพัฒนาไทยได้อะไรบ้าง"
+lead: "Anthropic ออกโมเดลรุ่น 5.2 สองตัวพร้อมกัน คือ Fable และ Mythos ผมสรุปให้ว่าอะไรเปลี่ยน ราคาเท่าไร และคนทั่วไปกับนักพัฒนาไทยได้อะไรบ้างครับ"
 meta: "เรียบเรียงจากประกาศของ Anthropic และ TechCrunch · ข้อมูล ณ 10 พฤศจิกายน 2569"
 cover: "/media/posts/news/claude-fable-5-2/cover.jpg"
-coverAlt: "ภาพประกอบเครือข่ายเส้นแสงในศูนย์ข้อมูลมืด สื่อถึงโมเดล AI รุ่นใหม่ (ภาพประกอบสร้างด้วย AI)"
+coverAlt: "ภาพประกอบเครือข่ายเส้นแสงในศูนย์ข้อมูลมืด สื่อถึงโมเดล AI รุ่นใหม่ (ภาพประกอบ)"
 ---
-
-import ShotGallery from '../../../components/ShotGallery.astro';
-import shots from './claude-fable-5-2.shots.json';
 
 <section class="section">
 
@@ -29,22 +26,10 @@ import shots from './claude-fable-5-2.shots.json';
 
 Anthropic บอกว่า Fable 5.2 สร้างคำตอบเร็วขึ้นได้ถึง 30% เมื่อเทียบกับ Fable 5.1 และ Mythos 5.1 TechCrunch รายงานว่าราคาขาเข้าของ Fable ลดจากเดิม $10 เหลือ $8 ต่อล้านโทเค็น
 
-โทเค็น พูดง่าย ๆ คือหน่วยนับข้อความที่ AI อ่านและเขียน ใช้คิดเงินครับ
+โทเค็นคือหน่วยนับข้อความที่ AI อ่านและเขียน ใช้คิดเงินครับ
 
 </div>
-<div class="note">
-
-### สรุปสั้น
-
-**ราคาปกติ:** $8 ขาเข้า / $40 ขาออก ต่อล้านโทเค็น
-
-**Fast mode:** เร็วขึ้นได้ถึง 2.5 เท่า ราคา $16 / $80
-
-**Model ID:** `claude-fable-5-2`
-
-**มีบน:** Claude Platform, AWS, Google Cloud, Microsoft Azure
-
-</div>
+<figure class="split-fig"><img src="/media/posts/news/claude-fable-5-2/igv-1.jpg" width="1600" height="1400" loading="lazy" alt="ราคาต่อล้านโทเค็นของ Claude Fable 5.2 ราคาปกติ 8 ดอลลาร์ขาเข้า 40 ดอลลาร์ขาออก Fast mode เร็วขึ้นได้ถึง 2.5 เท่า ราคา 16 ดอลลาร์ขาเข้า 80 ดอลลาร์ขาออก Model ID claude-fable-5-2 มีบน Claude Platform, AWS, Google Cloud, Microsoft Azure" /></figure>
 </div>
 
 </section>
@@ -54,26 +39,14 @@ Anthropic บอกว่า Fable 5.2 สร้างคำตอบเร็�
 ## Fable กับ Mythos ต่างกันอย่างไร
 
 <div class="split">
+<figure class="split-fig"><img src="/media/posts/news/claude-fable-5-2/igv-2.jpg" width="1600" height="1513" loading="lazy" alt="ตัวเลขที่ Anthropic เลือกแสดง Fable 5.2 เทียบ Opus 5.5 FrontierSWE v2 เขียนโค้ดแบบ agent 69.9% เทียบ 62.3% AutomationBench งานธุรกิจ 51.4% เทียบ 42.5% OSWorld 2.1 ควบคุมคอมพิวเตอร์ 89.3% เทียบ 87.2% Humanity's Last Exam ใช้เครื่องมือ 74.2% เทียบ 67.7% ยังไม่มีการทดสอบจากภายนอก" /></figure>
 <div class="prose">
 
 Fable 5.2 มีตัวกันที่บล็อกงานเสี่ยงสูงด้านไซเบอร์และชีววิทยา ถ้าคำถามโดนบล็อก ระบบจะส่งไปให้โมเดลสำรองตอบแทน (Opus 4.8 สำหรับไซเบอร์ Opus 5 สำหรับชีววิทยา)
 
 Mythos 5.2 คือโมเดลเดียวกันที่ไม่มีตัวกันบางส่วนนั้น ผู้ใช้ต้องสมัครผ่านโปรแกรมยืนยันตัวตน ได้แก่ Cyber Verification Program สำหรับผู้เชี่ยวชาญด้านความปลอดภัย และ Life Sciences Verification Program สำหรับนักวิจัยชีวศาสตร์ ลูกค้า Claude Enterprise ใช้ Mythos 5.2 ผ่าน Claude Security ได้ด้วย ส่วน fast mode ของ Mythos เปิดเฉพาะองค์กรที่อยู่ในโปรแกรมยืนยัน
 
-ถ้าคุณไม่ได้ทำงานด้านนี้ ก็ใช้ Fable ตามปกติได้เลยครับ
-
-</div>
-<div class="note">
-
-### ตัวเลขที่ Anthropic เลือกแสดง (Fable 5.2 เทียบ Opus 5.5)
-
-**FrontierSWE v2 (เขียนโค้ดแบบ agent):** 69.9% เทียบ 62.3%
-
-**AutomationBench (งานธุรกิจ):** 51.4% เทียบ 42.5%
-
-**OSWorld 2.1 (ควบคุมคอมพิวเตอร์):** 89.3% เทียบ 87.2%
-
-**Humanity's Last Exam (ใช้เครื่องมือ):** 74.2% เทียบ 67.7%
+ถ้าไม่ได้ทำงานด้านนี้ ก็ใช้ Fable ตามปกติได้เลยครับ
 
 </div>
 </div>
@@ -84,6 +57,15 @@ Mythos 5.2 คือโมเดลเดียวกันที่ไม่ม
 
 </div>
 
+<div class="split">
+<div class="prose">
+
+ในภาพเป็นภาพประกอบเปรียบเทียบสองรุ่น Fable ใช้ได้ทั่วไป ส่วน Mythos เหมือนอยู่หลังประตูกระจก ต้องผ่านการยืนยันตัวตนก่อนครับ
+
+</div>
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/news/claude-fable-5-2/img-1.jpg" width="1600" height="1200" loading="lazy" alt="ภาพประกอบแถวเซิร์ฟเวอร์ในศูนย์ข้อมูล มีชุดหนึ่งอยู่หลังประตูกระจก (ภาพประกอบ)" /></div><figcaption><span class="news-fig__credit">ภาพประกอบจาก DOJOJIN.TECH</span></figcaption></figure>
+</div>
+
 </section>
 
 <section class="section">
@@ -91,6 +73,7 @@ Mythos 5.2 คือโมเดลเดียวกันที่ไม่ม
 ## คนใช้งานและนักพัฒนาได้อะไร
 
 <div class="split">
+<figure class="split-fig"><img src="/media/posts/news/claude-fable-5-2/igv-3.jpg" width="1600" height="1400" loading="lazy" alt="ที่ TechCrunch เล่าเพิ่ม ZDR Fable 5.2 ใช้กับนโยบายไม่เก็บข้อมูล (zero data retention) ของลูกค้าองค์กรได้ เรื่องความปลอดภัย Anthropic บอกว่าโมเดลสงสัยว่ากำลังถูกประเมินบ่อยขึ้น ทำให้คาดเดาพฤติกรรมจริงยากขึ้น" /></figure>
 <div class="prose">
 
 **ผู้ใช้ทั่วไป** ผู้สมัครแพ็กเกจเสียเงินบางแผนได้โควตา Fable เพิ่มในสัปดาห์นี้ (รีเซ็ตเพิ่ม 1-3 ครั้งตามอายุสมาชิก) และ Fable นับได้สูงสุด 50% ของโควตารายสัปดาห์บน Pro และที่นั่ง Team มาตรฐาน รายละเอียดดูที่หน้าประกาศของ Anthropic
@@ -100,24 +83,7 @@ Mythos 5.2 คือโมเดลเดียวกันที่ไม่ม
 Fast mode แพงเป็น 2 เท่า ใช้เมื่อความเร็วคุ้มกับเงินเท่านั้น เช่น งานที่มีคนรอผลอยู่ครับ
 
 </div>
-<div class="note">
-
-### ที่ TechCrunch เล่าเพิ่ม
-
-**ZDR:** Fable 5.2 ใช้กับนโยบายไม่เก็บข้อมูล (zero data retention) ของลูกค้าองค์กรได้
-
-**เรื่องความปลอดภัย:** Anthropic บอกว่าโมเดลสงสัยว่ากำลังถูกประเมินบ่อยขึ้น ทำให้คาดเดาพฤติกรรมจริงยากขึ้น
-
 </div>
-</div>
-
-</section>
-
-<section class="section">
-
-## ภาพประกอบ
-
-<ShotGallery shots={shots} />
 
 </section>
 
@@ -140,7 +106,8 @@ Fast mode แพงเป็น 2 เท่า ใช้เมื่อควา
 
 <div class="prose">
 
-- ภาพปกและภาพประกอบ: ภาพประกอบสร้างด้วย AI (Codex image generation) โดย DOJOJIN.TECH ไม่ใช่ภาพเหตุการณ์จริง
+- อินโฟกราฟิก: ภาพประกอบจาก DOJOJIN.TECH จากข้อมูลในข่าวนี้
+- ภาพปกและภาพประกอบ: ภาพประกอบจาก DOJOJIN.TECH
 
 </div>
 

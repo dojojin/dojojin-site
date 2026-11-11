@@ -3,6 +3,10 @@ import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import { TYPES, TOPICS, TAGS, PROFILE } from '../../data/site.js';
 import { srcset } from '../../lib/thumb.js';
+import ShareBar from '../../components/ShareBar.astro';
+import ZoomImages from '../../components/ZoomImages.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getFeed } from '../../lib/feed.js';
 
 export async function getStaticPaths() {
   const all = await getCollection('posts', (p) => !p.data.draft);
@@ -16,6 +20,11 @@ const { entry } = Astro.props;
 const { Content, headings } = await render(entry);
 const d = entry.data;
 const toc = headings.filter((h) => h.depth === 2);
+// Related: same menu section, ranked by shared tags (+1 for same topic), newest first on ties.
+const self = `/${entry.id}/`;
+const score = (i) => i.tags.filter((t) => d.tags.includes(t)).length + (i.topic === d.topic ? 1 : 0);
+const related = (await getFeed(d.type)).filter((i) => i.href !== self && score(i) > 0)
+  .sort((a, b) => score(b) - score(a) || b.date - a.date).slice(0, 3);
 const url = new URL(Astro.url.pathname, Astro.site).href;
 const abs = (u) => new URL(u, Astro.site).href;
 const schema = [
@@ -53,6 +62,7 @@ const schema = [
         <p class="lead">{d.lead}</p>
         <p class="meta">{d.meta} · {d.date.toLocaleDateString('th-TH', { dateStyle: 'long' })}<span data-views hidden> · เข้าชม <b></b> ครั้ง</span></p>
         {d.tags.length > 0 && <ul class="taglinks" aria-label="tags">{d.tags.map((t) => <li><a href={`/tag/${t}/`}>#{TAGS[t]}</a></li>)}</ul>}
+        <ShareBar url={url} title={d.title} />
       </div>
       <figure class="hero__media"><img src={d.cover} srcset={srcset(d.cover)} sizes="(max-width: 768px) 100vw, 45vw" width="1600" height="1200" alt={d.coverAlt} /></figure>
     </div>
@@ -63,9 +73,17 @@ const schema = [
       <b>ในบทความนี้</b>
       <ol>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
     </nav>
-    <main class="content"><Content /></main>
+    <main class="content" data-type={d.type}><Content /></main>
+    <ZoomImages />
   </div>
 
+  {related.length > 0 && (
+    <section class="wrap related" aria-labelledby="related-h">
+      <h2 id="related-h">อ่านต่อ</h2>
+      <div class="gallery">{related.map((i) => <PostCard item={i} />)}</div>
+    </section>
+  )}
+  <div class="wrap"><ShareBar url={url} title={d.title} class="share--end" /></div>
   <div class="wrap source">
     {d.pr ? <>ข่าวประชาสัมพันธ์จาก {d.pr} · เนื้อหาและภาพจากผู้ส่งข่าว</> : d.sourceName ? <>ที่มา: <a href={d.sourceUrl} rel="noopener">{d.sourceName}</a> · เรียบเรียงโดย DOJOJIN.TECH</> : <>{d.sourceUrl && <>โพสต์ต้นฉบับ: <a href={d.sourceUrl} rel="noopener">Facebook · Dojo-mAn Fotographer</a> · </>}ภาพทั้งหมด © Dojo-mAn Photographer</>}
   </div>

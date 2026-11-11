@@ -129,6 +129,8 @@ img { max-width: 100%; height: auto; display: block; }
 /* two-up text blocks */
 .split { display: grid; gap: var(--space-8); }
 .split > * { min-width: 0; }
+.split-fig { margin: 0; align-self: start; }
+.split-fig img { display: block; width: 100%; height: auto; border-radius: var(--radius, 12px); border: 1px solid var(--border-hairline); }
 
 /* callout */
 .note {
@@ -276,6 +278,16 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* footer */
+.share { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); margin-top: var(--space-4); }
+.share__label { font-size: var(--fs-caption); color: var(--text-secondary); font-weight: 600; margin-right: var(--space-1); }
+.share__btn { all: unset; box-sizing: border-box; cursor: pointer; display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-1) var(--space-3); border-radius: 999px; border: 1px solid var(--border-hairline); background: var(--surface-elevated);
+  font-size: var(--fs-caption); font-weight: 600; color: var(--text-primary); }
+.share__btn:hover { border-color: var(--accent); color: var(--accent); }
+.share__btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.related { padding-block: var(--space-8); border-top: 1px solid var(--border-hairline); }
+.related h2 { margin: 0 0 var(--space-4); }
+.share--end { justify-content: center; padding-block: var(--space-6); margin: 0; border-top: 1px solid var(--border-hairline); }
 .source { border-top: 1px solid var(--border-hairline); padding-block: var(--space-6); font-size: var(--fs-caption); color: var(--text-secondary); }
 
 /* ---------- breakpoints ---------- */
@@ -733,3 +745,61 @@ a.grade-card.project:hover { border-color: var(--accent); }
 .post-card a.type-badge:hover { text-decoration: underline; }
 .post-card:has(.post-card__link:focus-visible) { outline: 3px solid var(--accent); outline-offset: 2px; }
 .post-card__link:focus-visible { outline: none; }
+
+.shot__more { display: none; }
+/* News galleries (owner 2026-11-11): each illustration is a content row like the viewer — photo + title, summary,
+   "อ่านจากรูปนี้" and credit beside it, alternating sides; ≤768px stacks (photo on top, text below). */
+main[data-type="news"] .gallery { grid-template-columns: 1fr; gap: var(--space-8); }
+main[data-type="news"] .gallery > .shot { background: none; border: 0; box-shadow: none; overflow: visible; cursor: default; }
+main[data-type="news"] .gallery > .shot:hover { transform: none; }
+main[data-type="news"] .gallery > .shot .shot__img { cursor: zoom-in; border-radius: var(--radius-lg); overflow: hidden; background: var(--surface-stage); }
+main[data-type="news"] .gallery > .shot .shot__img img { aspect-ratio: auto; max-height: 520px; object-fit: contain; }
+main[data-type="news"] .gallery > .shot .shot__body { padding: var(--space-3) 0 0; }
+main[data-type="news"] .gallery > .shot .shot__label { font-size: var(--fs-h3, 1.15rem); line-height: 1.4; }
+main[data-type="news"] .gallery > .shot .meta { color: var(--text-primary); font-weight: 600; line-height: 1.7; font-size: var(--fs-body); }
+main[data-type="news"] .shot__more { display: block; margin-top: var(--space-3); line-height: 1.75; color: var(--text-secondary); font-size: var(--fs-body); }
+main[data-type="news"] .shot__more b { display: block; color: var(--text-primary); margin-top: var(--space-2); }
+main[data-type="news"] .shot__more p { margin: var(--space-1) 0 0; }
+main[data-type="news"] .shot__more .shot__credit { font-size: var(--fs-caption); margin-top: var(--space-3); }
+@media (min-width: 769px) {
+  main[data-type="news"] .gallery > .shot { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: var(--space-8); align-items: center; }
+  main[data-type="news"] .gallery > .shot:nth-child(even) .shot__img { order: 2; }
+  main[data-type="news"] .gallery > .shot .shot__body { padding: 0; }
+}
+
+/* Inline news photo (owner 2026-11-12: photos live inside the story, not in a gallery at the end).
+   <figure class="news-fig"><div class="news-fig__img"><img …></div>
+   <figcaption><b>title</b> summary <span class="news-fig__credit">ภาพ: … · <a>…</a></span></figcaption></figure>
+   Works full-width in .prose flow or as one side of a .split. */
+.news-fig { margin: var(--space-6) 0; }
+.split > .news-fig { margin: 0; align-self: start; }
+.news-fig__img img { display: block; width: 100%; height: auto; border-radius: var(--radius-lg); }
+.news-fig--tall .news-fig__img img { width: auto; max-width: 100%; max-height: 640px; }
+.news-fig figcaption { margin-top: var(--space-2); font-size: var(--fs-caption); line-height: 1.7; color: var(--text-secondary); }
+.news-fig figcaption b { color: var(--text-primary); margin-right: var(--space-1); }
+.news-fig__credit { display: block; margin-top: var(--space-1); }
+/* ≤768px: in every split the picture comes first, so each paragraph sits right under the image it talks about. */
+@media (max-width: 768px) {
+  .split > .split-fig, .split > .news-fig { order: -1; }
+}
+
+/* Zoom for text-heavy pictures (ZoomImages.astro) */
+.zoomable { position: relative; }
+.zoomable > img { cursor: zoom-in; }
+.zoom-btn { all: unset; box-sizing: border-box; position: absolute; right: var(--space-3); bottom: var(--space-3); width: 40px; height: 40px;
+  display: grid; place-items: center; border-radius: 999px; background: rgb(0 0 0 / .62); color: #fff; cursor: pointer; }
+.zoom-btn:hover { background: rgb(0 0 0 / .8); }
+.zoom-btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.zoomer { border: 0; padding: 0; margin: 0; width: 100vw; height: 100dvh; max-width: none; max-height: none; background: rgb(8 10 12 / .97); }
+.zoomer::backdrop { background: rgb(0 0 0 / .8); }
+.zoomer__stage { width: 100%; height: 100%; overflow: auto; display: grid; place-items: center; padding: var(--space-6); box-sizing: border-box; }
+.zoomer__stage img { max-width: 100%; max-height: calc(100dvh - 48px); width: auto; height: auto; cursor: zoom-in; border-radius: var(--radius); }
+.zoomer__stage.is-full { place-items: start center; }
+.zoomer__stage.is-full img { max-width: none; max-height: none; cursor: zoom-out; }
+.zoomer__close { all: unset; position: fixed; top: var(--space-4); right: var(--space-4); width: 44px; height: 44px; display: grid; place-items: center;
+  border-radius: 999px; background: rgb(255 255 255 / .16); color: #fff; font-size: 20px; cursor: pointer; z-index: 1; }
+.zoomer__close:hover { background: rgb(255 255 255 / .28); }
+.zoomer__close:focus-visible { outline: 3px solid var(--accent); }
+/* Two picture+text rows in a row need breathing room; a short paragraph sits level with the middle of its photo. */
+.split + .split { margin-top: var(--space-12); }
+@media (min-width: 769px) { .split:has(> .news-fig) { align-items: center; } }

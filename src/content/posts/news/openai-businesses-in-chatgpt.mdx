@@ -12,11 +12,9 @@ kicker: "ข่าว AI"
 lead: "OpenAI เปิดให้ธุรกิจเข้ามาเคลมโปรไฟล์ของตัวเองใน ChatGPT และดูสถิติว่าถูกพูดถึงบ่อยแค่ไหน ส่วนตัวแทนแชตของร้านค้ายังเปิดเฉพาะสหรัฐฯ ผมสรุปสิ่งที่ยืนยันได้ และบอกว่า SME ไทยทำอะไรได้บ้างครับ"
 meta: "เรียบเรียงจากฟีด RSS ของ OpenAI และสำนักข่าวต่างประเทศ 4 แห่ง · ข้อมูล ณ 11 พฤศจิกายน 2569"
 cover: "/media/posts/news/openai-businesses-in-chatgpt/cover.jpg"
-coverAlt: "แล็ปท็อปบนเคาน์เตอร์ไม้แสดงหน้าจอแชตแบบ ChatGPT พร้อมโลโก้ OpenAI มีเคาน์เตอร์ร้านค้าเล็ก ๆ เบลอเป็นฉากหลังในแสงอุ่น (ภาพประกอบสร้างด้วย AI)"
+coverAlt: "แล็ปท็อปบนเคาน์เตอร์ไม้แสดงหน้าจอแชตแบบ ChatGPT พร้อมโลโก้ OpenAI มีเคาน์เตอร์ร้านค้าเล็ก ๆ เบลอเป็นฉากหลังในแสงอุ่น (ภาพประกอบ)"
 ---
 
-import ShotGallery from '../../../components/ShotGallery.astro';
-import shots from './openai-businesses-in-chatgpt.shots.json';
 
 <section class="section">
 
@@ -30,17 +28,14 @@ import shots from './openai-businesses-in-chatgpt.shots.json';
 ตัวเลขที่สำนักข่าวอ้างจาก OpenAI คือ ChatGPT มีผู้ใช้ประมาณ 1.2 พันล้านคนต่อสัปดาห์ ธุรกิจจึงมีโอกาสถูกเห็นมาก แต่ก็ต้องดูเงื่อนไขด้านล่างด้วยครับ
 
 </div>
-<div class="note">
+<figure class="split-fig"><img src="/media/posts/news/openai-businesses-in-chatgpt/igv-1.jpg" width="1600" height="1400" loading="lazy" alt="อินโฟกราฟิกสรุป Businesses in ChatGPT แบบ beta ประกาศ 10 พฤศจิกายน 2569 มีส่วนหลัก 3 อย่างคือ Business Hub, Business Agents และ ChatGPT Ads เคลมโปรไฟล์ได้ในตลาดที่ ChatGPT ให้บริการ ส่วน Business Agents ใช้ได้เฉพาะสหรัฐฯ ก่อน" /></figure>
+</div>
 
-### สรุปสั้น
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/openai-businesses-in-chatgpt/img-1.jpg" width="1000" height="680" loading="lazy" alt="ภาพหน้าจอบทความ OpenAI launches ChatGPT Business Hub for companies ของ IT Brief Asia ลงวันที่ 11 พฤศจิกายน 2026 มีภาพประกอบคนยืนดูแดชบอร์ดและหน้าร้านค้า" /></div><figcaption><span class="news-fig__credit">ภาพ: IT Brief Asia (ภาพหน้าจอ) · <a href="https://itbrief.asia/story/openai-launches-chatgpt-business-hub-for-companies" rel="noopener">itbrief.asia</a></span></figcaption></figure>
+<div class="prose">
 
-**วันที่ประกาศ:** 10 พฤศจิกายน 2569 (beta)
-
-**ส่วนหลัก:** Business Hub · Business Agents · ChatGPT Ads
-
-**เคลมโปรไฟล์:** ในตลาดที่ ChatGPT ให้บริการ
-
-**Business Agents:** สหรัฐฯ เท่านั้นก่อน
+ผมอ้างอิงเรื่องนี้จากหลายสำนักข่าวต่างประเทศ ในภาพคือส่วนหัวของบทความ IT Brief Asia ที่รายงานเรื่อง Business Hub ใน ChatGPT ลงวันที่ 11 พฤศจิกายน 2569 ครับ
 
 </div>
 </div>
@@ -54,18 +49,12 @@ import shots from './openai-businesses-in-chatgpt.shots.json';
 <div class="split">
 <div class="prose">
 
-Business Hub คือหน้าจัดการของธุรกิจ ธุรกิจที่เข้าเงื่อนไขเคลมโปรไฟล์ของตัวเอง ยืนยันตัวตน แล้วแก้ข้อมูลสำคัญได้ และเพิ่มข้อมูลสินค้าพร้อมราคาและสถานะสินค้าพร้อมขายได้ด้วย
+Business Hub คือหน้าจัดการของธุรกิจ ธุรกิจที่เข้าเงื่อนไขเคลมโปรไฟล์ของตัวเอง ยืนยันตัวตน แล้วแก้ข้อมูลสำคัญได้ และเพิ่มข้อมูลสินค้า ราคา และสถานะว่าพร้อมขายได้ด้วย
 
-ลูกค้าองค์กรเดิมและผู้ลงโฆษณากับ OpenAI ไปทางตัวแทนของ OpenAI ส่วนร้านที่ใช้ Shopify เชื่อมร้านผ่าน Business Hub หรือหลังบ้าน Shopify เพื่อให้ยืนยันได้เร็วขึ้น
-
-</div>
-<div class="note">
-
-### ข้อควรรู้
-
-OpenAI ไม่ได้ตรวจสอบทุกรายละเอียดที่ธุรกิจกรอก และ ChatGPT ยังตัดสินใจแนะนำเองครับ
+ลูกค้าองค์กรเดิมและผู้ลงโฆษณากับ OpenAI ให้ติดต่อผ่านตัวแทนของ OpenAI ส่วนร้านที่ใช้ Shopify เชื่อมร้านผ่าน Business Hub หรือหลังบ้าน Shopify เพื่อให้ยืนยันได้เร็วขึ้น
 
 </div>
+<figure class="split-fig"><img src="/media/posts/news/openai-businesses-in-chatgpt/igv-2.jpg" width="1600" height="1400" loading="lazy" alt="อินโฟกราฟิกข้อควรรู้ ธุรกิจกรอกข้อมูลเอง ชื่อ ราคา สถานะสินค้า แล้ว OpenAI ไม่ได้ตรวจสอบทุกรายละเอียดที่กรอก ความถูกต้องเป็นหน้าที่ของร้าน และ ChatGPT ตัดสินใจแนะนำเอง เคลมแล้วไม่ได้รับประกันผล" /></figure>
 </div>
 
 </section>
@@ -75,24 +64,12 @@ OpenAI ไม่ได้ตรวจสอบทุกรายละเอี�
 ## สถิติรวม และเรื่องความเป็นส่วนตัว
 
 <div class="split">
+<figure class="split-fig"><img src="/media/posts/news/openai-businesses-in-chatgpt/igv-3.jpg" width="1600" height="1400" loading="lazy" alt="อินโฟกราฟิกสถิติที่ธุรกิจจะเห็นใน Business Hub คือ ถูกพูดถึงกี่ครั้ง คลิกเข้าเว็บกี่ครั้ง และหัวข้อที่พบบ่อยซึ่งเป็นธีมที่อ้างอิงเว็บไซต์ธุรกิจ ส่วนบทสนทนารายคนธุรกิจไม่เห็น" /></figure>
 <div class="prose">
 
 Business Hub ให้สถิติแบบรวมกลุ่ม ได้แก่ ChatGPT พูดถึงธุรกิจบ่อยแค่ไหน มีคนคลิกเข้าเว็บไซต์กี่ครั้ง และหัวข้อที่พบบ่อยในบทสนทนาที่อ้างถึงเว็บไซต์ของธุรกิจ
 
 ธุรกิจ**ไม่เห็นบทสนทนารายคน** และไม่เห็นแชตระหว่างผู้ใช้กับ Business Agent ตัวเลขจะขึ้นก็ต่อเมื่อมีการใช้งานถึงเกณฑ์ที่กำหนด ซึ่งสำนักข่าวที่ผมอ่านไม่ได้บอกว่าเกณฑ์คือเท่าไร
-
-</div>
-<div class="note">
-
-### สถิติที่ได้
-
-**ถูกพูดถึง:** กี่ครั้ง
-
-**คลิกเข้าเว็บ:** กี่ครั้ง
-
-**หัวข้อที่พบบ่อย:** ธีมที่อ้างอิงเว็บไซต์ธุรกิจ
-
-**บทสนทนารายคน:** ไม่เห็น
 
 </div>
 </div>
@@ -106,24 +83,14 @@ Business Hub ให้สถิติแบบรวมกลุ่ม ได้
 <div class="split">
 <div class="prose">
 
-เมื่อเคลมโปรไฟล์แล้ว ธุรกิจสร้าง ทดสอบ และเปิดใช้ Business Agent ได้ คือผู้ช่วย AI ของร้านที่ลูกค้าเปิดคุยได้จากโปรไฟล์ ถามเรื่องสินค้า เปรียบเทียบตัวเลือก โดยแชตกับ agent แยกจากแชตเดิมของผู้ใช้กับ ChatGPT
+เมื่อเคลมโปรไฟล์แล้ว ธุรกิจสร้าง ทดสอบ และเปิดใช้ Business Agent ได้ คือผู้ช่วย AI ของร้านที่ลูกค้าเปิดคุยได้จากโปรไฟล์ ใช้ถามเรื่องสินค้าและเปรียบเทียบตัวเลือก โดยแชตกับ agent แยกจากแชตเดิมของผู้ใช้กับ ChatGPT
 
 ตอนนี้ Business Agents ใช้ได้เฉพาะธุรกิจ eCommerce และบริการออนไลน์ที่เข้าเงื่อนไขใน**สหรัฐอเมริกา**เท่านั้น OpenAI บอกว่าจะขยายไปตลาดและประเภทธุรกิจอื่นต่อไป แต่ไม่ระบุว่าที่ไหนหรือเมื่อไร
 
 ธุรกิจจ่ายเงินสนับสนุน (sponsor) agent ของตัวเองให้เป็นปลายทางของ ChatGPT Ads ได้ โดยตำแหน่งที่จ่ายเงินจะมีป้ายบอกชัดเจนและแยกจากคำตอบปกติของ ChatGPT
 
 </div>
-<div class="note">
-
-### ข้อจำกัด
-
-**Agent:** สหรัฐฯ เท่านั้น
-
-**โฆษณา:** มีป้ายกำกับ แยกจากคำตอบ
-
-**ตัวเลขเกณฑ์สถิติ:** ไม่ได้ระบุ
-
-</div>
+<figure class="split-fig"><img src="/media/posts/news/openai-businesses-in-chatgpt/igv-4.jpg" width="1600" height="1400" loading="lazy" alt="อินโฟกราฟิกข้อจำกัด Business Agent ใช้ได้เฉพาะสหรัฐฯ ตอนนี้ โฆษณามีป้ายกำกับและแยกจากคำตอบปกติ ส่วนตัวเลขเกณฑ์สถิติไม่ได้ระบุ" /></figure>
 </div>
 
 </section>
@@ -133,6 +100,7 @@ Business Hub ให้สถิติแบบรวมกลุ่ม ได้
 ## แล้ว SME ไทยทำอะไรได้
 
 <div class="split">
+<figure class="split-fig"><img src="/media/posts/news/openai-businesses-in-chatgpt/igv-5.jpg" width="1600" height="1400" loading="lazy" alt="อินโฟกราฟิกเช็กลิสต์สำหรับ SME ไทย เว็บไซต์ต้องมีข้อมูลร้านถูกต้อง ราคาและสต็อกต้องตรงกับหน้าร้านจริง ส่วนประเทศไทยยืนยันไม่ได้ว่าเปิดแล้ว" /></figure>
 <div class="prose">
 
 - **เคลมโปรไฟล์:** สำนักข่าวรายงานว่าเคลมได้ "ในตลาดที่ ChatGPT ให้บริการ" ประเทศไทยน่าจะรวมอยู่ด้วย แต่แหล่งข่าวไม่ได้ระบุชื่อประเทศ ผมจึงยืนยันไม่ได้ และยังไม่ได้ลองเอง
@@ -142,26 +110,7 @@ Business Hub ให้สถิติแบบรวมกลุ่ม ได้
 - **อย่าคาดหวังเกินจริง:** เคลมแล้วไม่ได้รับประกันว่าจะถูกแนะนำมากขึ้นหรือขายได้มากขึ้น เพราะ ChatGPT ยังแนะนำเอง
 
 </div>
-<div class="note">
-
-### เช็กลิสต์สั้น ๆ
-
-**เว็บไซต์:** ข้อมูลร้านถูกต้อง
-
-**ราคา/สต็อก:** ตรงกับหน้าร้านจริง
-
-**ไทย:** ยืนยันไม่ได้ว่าเปิดแล้ว
-
 </div>
-</div>
-
-</section>
-
-<section class="section">
-
-## ภาพประกอบ
-
-<ShotGallery shots={shots} />
 
 </section>
 
@@ -188,7 +137,8 @@ Business Hub ให้สถิติแบบรวมกลุ่ม ได้
 <div class="prose">
 
 - ส่วนหัวบทความ OpenAI launches ChatGPT Business Hub for companies: ภาพ: IT Brief Asia (ภาพหน้าจอ) · <a href="https://itbrief.asia/story/openai-launches-chatgpt-business-hub-for-companies" rel="noopener">itbrief.asia</a>
-- ภาพปก: ภาพประกอบสร้างด้วย AI (Codex image generation) โดย DOJOJIN.TECH ไม่ใช่ภาพเหตุการณ์จริง
+- ภาพปก: ภาพประกอบจาก DOJOJIN.TECH
+- อินโฟกราฟิก: ภาพประกอบจาก DOJOJIN.TECH จากข้อมูลในข่าวนี้
 
 ภาพใช้ประกอบข่าว (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
 

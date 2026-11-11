@@ -12,11 +12,8 @@ kicker: "ข่าวความปลอดภัยไซเบอร์"
 lead: "Patch Tuesday เดือนนี้ตัวเลขใหญ่มาก 1,094 CVE และมี zero-day ของ Outlook ที่ถูกโจมตีจริงอยู่ 1 รายการ ผมรวมให้ว่า Windows 11 แต่ละรุ่นได้อะไร แก้อะไร และเราต้องทำอะไรบ้างครับ"
 meta: "เรียบเรียงจากหน้า MSRC, Windows release health และหน้า KB ของ Microsoft · ข้อมูล ณ 11 พฤศจิกายน 2569"
 cover: "/media/posts/news/microsoft-patch-tuesday-2026-11/cover.jpg"
-coverAlt: "แล็ปท็อป Windows 11 บนโต๊ะ หน้าจอแสดงโลโก้ Windows และแถบความคืบหน้า Windows Update ข้างกันเป็นมือถือที่มีไอคอน Outlook และโล่เตือนเล็ก ๆ (ภาพประกอบสร้างด้วย AI)"
+coverAlt: "แล็ปท็อป Windows 11 บนโต๊ะ หน้าจอแสดงโลโก้ Windows และแถบความคืบหน้า Windows Update ข้างกันเป็นมือถือที่มีไอคอน Outlook และโล่เตือนเล็ก ๆ (ภาพประกอบ)"
 ---
-
-import ShotGallery from '../../../components/ShotGallery.astro';
-import shots from './microsoft-patch-tuesday-2026-11.shots.json';
 
 <section class="section">
 
@@ -32,21 +29,7 @@ import shots from './microsoft-patch-tuesday-2026-11.shots.json';
 เรื่องที่ต้องรู้ก่อนคือ มีช่องโหว่ 1 รายการที่ Microsoft ติดป้าย "Exploitation Detected" คือพบว่าถูกโจมตีจริงแล้ว เป็นช่องโหว่ของ Outlook ครับ
 
 </div>
-<div class="note">
-
-### สรุปสั้น
-
-**วันที่ปล่อย:** 10 พฤศจิกายน 2569
-
-**จำนวน CVE:** 1,094 (ตามหน้า MSRC)
-
-**ถูกโจมตีจริง:** 1 รายการ คือ CVE-2026-124194 (Outlook)
-
-**Windows 11:** ทุกรุ่นที่ยังรองรับได้อัปเดตเดือนนี้
-
-**Windows 10 ESU:** มีอัปเดตเดือนนี้เช่นกัน
-
-</div>
+<figure class="split-fig"><img src="/media/posts/news/microsoft-patch-tuesday-2026-11/igv-1.jpg" width="1600" height="1400" loading="lazy" alt="สรุปสั้น Patch Tuesday 10 พฤศจิกายน 2569: จำนวน CVE 1,094 ตามหน้า MSRC ถูกโจมตีจริง 1 รายการ คือ CVE-2026-124194 (Outlook) Windows 11 ทุกรุ่นที่ยังรองรับได้อัปเดตเดือนนี้ Windows 10 ESU มีอัปเดตเดือนนี้เช่นกัน วันที่ปล่อย 10 พฤศจิกายน 2569" /></figure>
 </div>
 
 </section>
@@ -56,6 +39,7 @@ import shots from './microsoft-patch-tuesday-2026-11.shots.json';
 ## แก้ช่องโหว่ไหนบ้าง แยกตามผลิตภัณฑ์
 
 <div class="split">
+<figure class="split-fig"><img src="/media/posts/news/microsoft-patch-tuesday-2026-11/igv-2.jpg" width="1600" height="1430" loading="lazy" alt="แผนภูมิแท่งจำนวน CVE แยกตามตระกูล: Windows 726, Office 174, SQL Server 59, Developer Tools 53, SharePoint Server 27, Other 25, Azure 20, Exchange Server 9, Defender 1 รวม 1,094" /></figure>
 <div class="prose">
 
 ตารางของ MSRC แบ่งตามตระกูลผลิตภัณฑ์ ผมสรุปเป็นตัวเลขทางขวาครับ ภาพรวมคือ Windows มากที่สุดเกือบสองในสามของทั้งหมด รองลงมาคือ Office
@@ -65,31 +49,15 @@ import shots from './microsoft-patch-tuesday-2026-11.shots.json';
 ตัวเลขนี้คือจำนวนช่องโหว่ ไม่ใช่จำนวนอัปเดตที่เราต้องลง คนทั่วไปแค่กด Windows Update กับอัปเดต Office ก็ครอบคลุมส่วนที่เกี่ยวกับเครื่องเราแล้วครับ
 
 </div>
-<div class="note">
+</div>
 
-### จำนวน CVE แยกตามตระกูล
+<div class="split">
+<div class="prose">
 
-**Windows:** 726
-
-**Office:** 174
-
-**SQL Server:** 59
-
-**Developer Tools:** 53
-
-**SharePoint Server:** 27
-
-**Other:** 25
-
-**Azure:** 20
-
-**Exchange Server:** 9
-
-**Defender:** 1
-
-**รวม:** 1,094
+ในหน้าสรุปประจำเดือนของ Microsoft จะเห็นยอดรวม 1094 CVE แยกตามตระกูลผลิตภัณฑ์ และมีช่องโหว่เด่นเพียงรายการเดียวคือ CVE-2026-124194 ของ Outlook ที่ติดป้าย Exploitation Detected ครับ
 
 </div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/microsoft-patch-tuesday-2026-11/img-1.jpg" width="1000" height="940" loading="lazy" alt="หน้า MSRC November 2026 Security Updates เขียนว่า This release consists of 1094 Microsoft CVEs พร้อมตารางจำนวนช่องโหว่แยกตามผลิตภัณฑ์ และ CVE-2026-124194 ในหัวข้อ Notable CVEs" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft (ภาพหน้าจอ) · <a href="https://msrc.microsoft.com/update-guide/releaseNote/2026-Nov" rel="noopener">msrc.microsoft.com</a></span></figcaption></figure>
 </div>
 
 </section>
@@ -99,6 +67,7 @@ import shots from './microsoft-patch-tuesday-2026-11.shots.json';
 ## Zero-day ของ Outlook CVE-2026-124194
 
 <div class="split">
+<figure class="split-fig"><img src="/media/posts/news/microsoft-patch-tuesday-2026-11/igv-3.jpg" width="1600" height="1460" loading="lazy" alt="CVE-2026-124194 ช่องโหว่ Microsoft Office Outlook ประเภท Spoofing (การปลอมตัว) สถานะ Exploitation Detected ความรุนแรงสูงสุด Moderate เพิ่มใน CISA KEV 10 พฤศจิกายน 2569 คะแนน CVSS 6.5 (ฐาน) และ 6.2 (ชั่วขณะ) เปิดไฟล์อีเมลใน Outlook แล้วไม่เตือนตามปกติ ข้อมูลยืนยันตัวตนอาจรั่ว เจอปัญหาแบบ CWE-356 ตัวโปรแกรมไม่เตือนผู้ใช้ก่อนทำสิ่งที่ไม่ปลอดภัย Preview Pane ไม่ใช่ช่องทางโจมตี" /></figure>
 <div class="prose">
 
 รายการเดียวในหัวข้อ Notable CVEs คือ CVE-2026-124194 "Microsoft Outlook Spoofing Vulnerability" ที่ Microsoft ระบุว่า Exploitation Detected ผมอ่านหน้ารายละเอียดของ CVE นี้แล้ว สรุปได้ดังนี้
@@ -109,30 +78,9 @@ import shots from './microsoft-patch-tuesday-2026-11.shots.json';
 - ต้องมีคนเปิดไฟล์เอง (User Interaction Required) และ Microsoft ระบุว่า Preview Pane ไม่ใช่ช่องทางโจมตี แค่เลื่อนดูตัวอย่างอีเมลไม่น่าจะเข้าข่าย
 - คะแนน CVSS 6.5 (ฐาน) และ 6.2 (ชั่วขณะ) ระดับความรุนแรงสูงสุดที่ Microsoft ให้คือ Moderate ช่อง Publicly disclosed เขียนว่า No แต่ช่อง Exploited เขียนว่า Yes
 
-อ่านแล้วอาจรู้สึกว่าเบา เพราะระดับ Moderate แต่การที่ถูกโจมตีจริงแล้วทำให้ควรอัปเดตเร็วครับ NTLM คือวิธีพิสูจน์ตัวตนแบบเก่าของ Windows ถ้า hash หลุดอาจถูกเอาไปสวมรอยได้
+อ่านแล้วอาจรู้สึกว่าเบา เพราะระดับ Moderate แต่เมื่อถูกโจมตีจริงแล้ว ก็ควรอัปเดตเร็วครับ NTLM คือวิธีพิสูจน์ตัวตนแบบเก่าของ Windows ถ้า hash หลุดอาจถูกเอาไปสวมรอยได้
 
 วันเดียวกัน (10 พ.ย.) CISA หน่วยงานความปลอดภัยไซเบอร์ของสหรัฐฯ ใส่ CVE นี้ในลิสต์ KEV (Known Exploited Vulnerabilities) พร้อมอีก 5 รายการ ในชื่อ "Microsoft Office Outlook Missing User Interaction for Potentially Unsafe Action Vulnerability" ซึ่ง CISA เขียนว่าเป็นช่องโหว่ที่มีหลักฐานว่าถูกโจมตีจริง
-
-</div>
-<div class="note">
-
-### CVE-2026-124194
-
-**ผลิตภัณฑ์:** Microsoft Office Outlook
-
-**ประเภท:** Spoofing (การปลอมตัว)
-
-**ความรุนแรงสูงสุด:** Moderate
-
-**CVSS:** 6.5 (ฐาน) / 6.2 (ชั่วขณะ)
-
-**สถานะ:** Exploitation Detected
-
-**CISA KEV:** เพิ่มแล้ว 10 พ.ย. 2569
-
-**Preview Pane:** ไม่ใช่ช่องทางโจมตี
-
-**เจอปัญหาแบบไหน:** CWE-356 ตัวโปรแกรมไม่เตือนผู้ใช้ก่อนทำสิ่งที่ไม่ปลอดภัย
 
 </div>
 </div>
@@ -153,17 +101,7 @@ import shots from './microsoft-patch-tuesday-2026-11.shots.json';
 ตาราง MSRC บอกว่า Office มีช่องโหว่ที่แก้รอบนี้ 174 รายการ แต่ผมยังไม่ได้เปิดอ่านรายละเอียดทีละ CVE เลยไม่ขอสรุปว่าแต่ละตัวเกี่ยวกับโปรแกรมไหนครับ
 
 </div>
-<div class="note">
-
-### Office ที่ได้แพตช์ CVE นี้
-
-**Microsoft 365 Apps for Enterprise:** 32 บิต และ 64 บิต
-
-**Office LTSC 2024:** 32 บิต และ 64 บิต · build 16.0.17932.21140
-
-**Office LTSC 2021:** 32 บิต และ 64 บิต · build 16.0.14334.21048
-
-</div>
+<figure class="split-fig"><img src="/media/posts/news/microsoft-patch-tuesday-2026-11/igv-4.jpg" width="1600" height="1400" loading="lazy" alt="Office ที่ได้แพตช์ CVE นี้ 6 รายการ วันที่ 10 พฤศจิกายน 2569: Microsoft 365 Apps for Enterprise 32 บิตและ 64 บิต, Office LTSC 2024 32 บิตและ 64 บิต build 16.0.17932.21140, Office LTSC 2021 32 บิตและ 64 บิต build 16.0.14334.21048" /></figure>
 </div>
 
 </section>
@@ -173,6 +111,7 @@ import shots from './microsoft-patch-tuesday-2026-11.shots.json';
 ## Windows 11 แต่ละรุ่นได้ KB อะไร
 
 <div class="split">
+<figure class="split-fig"><img src="/media/posts/news/microsoft-patch-tuesday-2026-11/igv-5.jpg" width="1600" height="1543" loading="lazy" alt="เวอร์ชัน KB และ build ของ Windows: KB5132061 ใช้กับ 26H2 build 26300.9974, 25H2 build 26200.9974 และ 24H2 build 26100.9974; 26H1 KB5132059 build 28000.3501; 23H2 KB5131087 build 22631.7711; Windows 10 22H2 (ESU) KB5131096 build 19045.7846" /></figure>
 <div class="prose">
 
 ตารางบนหน้า Windows release health ระบุว่าทุกรุ่นของ Windows 11 ได้อัปเดต "2026-11 B" เมื่อ 10 พ.ย. 2569 KB คือเลขของบทความอัปเดต ใช้ค้นหาได้ตรงตัว
@@ -184,23 +123,15 @@ import shots from './microsoft-patch-tuesday-2026-11.shots.json';
 สถานะ Home และ Pro ตามหน้า release health คือ 24H2 และ 23H2 หมดช่วงอัปเดตแล้ว (End of updates) ส่วนที่ยังอยู่คือ 25H2 (ถึง 12 ต.ค. 2570) 26H1 (ถึง 14 มี.ค. 2571) และ 26H2 (ถึง 10 ต.ค. 2571) ครับ
 
 </div>
-<div class="note">
+</div>
 
-### เวอร์ชัน / KB / build
+<div class="split">
+<div class="prose">
 
-**26H2:** KB5132061 · build 26300.9974
-
-**26H1:** KB5132059 · build 28000.3501
-
-**25H2:** KB5132061 · build 26200.9974
-
-**24H2:** KB5132061 · build 26100.9974
-
-**23H2:** KB5131087 · build 22631.7711
-
-**Windows 10 22H2 (ESU):** KB5131096 · build 19045.7846
+เลข build ท้ายสุดของแต่ละรุ่นอยู่คอลัมน์ขวาสุดของตารางบนหน้า Windows release health ครับ
 
 </div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/microsoft-patch-tuesday-2026-11/img-2.jpg" width="920" height="522" loading="lazy" alt="ตาราง Windows 11 current versions by servicing option แสดงรุ่น 26H2, 26H1, 25H2, 24H2 และ 23H2 ทุกแถวลง Latest update 2026-11 B วันที่ 2026-11-10 พร้อมเลข build" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft (ภาพหน้าจอ) · <a href="https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information" rel="noopener">learn.microsoft.com</a></span></figcaption></figure>
 </div>
 
 </section>
@@ -210,6 +141,7 @@ import shots from './microsoft-patch-tuesday-2026-11.shots.json';
 ## อัปเดต Windows 11 มีอะไรใหม่และแก้อะไร
 
 <div class="split">
+<figure class="split-fig"><img src="/media/posts/news/microsoft-patch-tuesday-2026-11/igv-6.jpg" width="1600" height="1580" loading="lazy" alt="ข้อควรรู้เรื่อง KB: KB5132061 หน้าแยกเป็นแท็บ 25H2/26H2 กับ 24H2 รายการที่สรุปในข่าวอ่านจากแท็บ 25H2/26H2; KB5132059 (26H1) รวมการปรับปรุงจากพรีวิวเดือนที่แล้วและ OOB ตัวเดือนตุลาคม; KB5131087 (23H2) เป็นอัปเดตความปลอดภัยสุดท้ายของ 23H2 Enterprise และ Education; ไม่มีพรีวิวธันวาคม: ธ.ค. 2569 ไม่มีอัปเดตพรีวิว (non-security) เพราะเทศกาลปลายปี กลับมาปกติ ม.ค. 2570" /></figure>
 <div class="prose">
 
 ผมอ่านหน้า KB ของทั้งสามอัปเดตแล้ว จัดกลุ่มเป็นภาษาง่าย ๆ ให้ครับ ถ้าติดตั้งอัปเดตเก่าไว้แล้ว เครื่องจะโหลดเฉพาะส่วนใหม่
@@ -223,7 +155,7 @@ import shots from './microsoft-patch-tuesday-2026-11.shots.json';
 **ฟีเจอร์ใหม่ / การเตรียมระบบ**
 
 - Secure Boot เพิ่มข้อมูลระบุเครื่องที่มั่นใจสูงขึ้น เพื่อให้เครื่องมากขึ้นได้รับใบรับรอง Secure Boot ชุดใหม่อัตโนมัติ การแจกใบรับรองผ่าน Windows Update ยังทยอยทำต่อใน "หลายเดือนข้างหน้า"
-- ปรับกติกาเวลาออมแสง (DST) ของประเทศคิวบาสำหรับปี 2569-2570 (คิวบาอยู่ UTC-04:00 ไม่เปลี่ยนเวลาในพ.ย. 2569 และ มี.ค. 2570 แล้วกลับเป็น UTC-05:00 ในพ.ย. 2570)
+- ปรับกติกาเวลาออมแสง (DST) ของประเทศคิวบาสำหรับปี 2569-2570 (คิวบาอยู่ UTC-04:00 ไม่เปลี่ยนเวลาใน พ.ย. 2569 และ มี.ค. 2570 แล้วกลับเป็น UTC-05:00 ใน พ.ย. 2570)
 
 **แก้บั๊ก**
 
@@ -236,20 +168,9 @@ import shots from './microsoft-patch-tuesday-2026-11.shots.json';
 - Microsoft เขียนในทั้งสามหน้า KB ว่า "ไม่ทราบปัญหาใด ๆ กับอัปเดตนี้ในขณะนี้" (not currently aware of any issues)
 
 </div>
-<div class="note">
-
-### ข้อควรรู้เรื่อง KB
-
-**KB5132061:** หน้าแยกเป็นแท็บ 25H2/26H2 กับ 24H2 รายการที่ผมสรุปด้านซ้ายอ่านจากแท็บ 25H2/26H2
-
-**KB5132059 (26H1):** รวมการปรับปรุงจากพรีวิวเดือนที่แล้ว และ OOB ตัวเดือนตุลาคม
-
-**KB5131087 (23H2):** เป็นอัปเดตความปลอดภัยสุดท้ายของ 23H2 Enterprise และ Education
-
-**ไม่มีพรีวิวธันวาคม:** Microsoft ประกาศว่าเดือน ธ.ค. 2569 จะไม่มีอัปเดตพรีวิว (non-security) ช่วงปลายเดือน เพราะเทศกาลปลายปี จะกลับมาปกติ ม.ค. 2570
-
 </div>
-</div>
+
+
 
 </section>
 
@@ -293,17 +214,7 @@ import shots from './microsoft-patch-tuesday-2026-11.shots.json';
 Outlook รุ่นที่มากับ Microsoft 365 หรือ Office LTSC อัปเดตผ่านขั้นตอน Office ข้างบนเหมือนกัน ถ้าเป็นองค์กรที่ผู้ดูแลระบบคุมการอัปเดต ให้ถามทีมไอทีว่าแพตช์ของ CVE-2026-124194 ลงให้แล้วหรือยัง
 
 </div>
-<div class="note">
-
-### ข้อควรรู้
-
-บันทึกงานที่ค้างอยู่ก่อนกดรีสตาร์ตครับ
-
-ถ้ายังไม่เห็นอัปเดต ให้เปิดหน้า Windows Update ค้างไว้สักพักหรือลองใหม่ภายหลัง เพราะ Microsoft ทยอยปล่อยให้เครื่องต่าง ๆ
-
-ระหว่างรออัปเดต Outlook อย่าเปิดไฟล์อีเมลหรือไฟล์แนบจากคนที่ไม่รู้จัก โดยเฉพาะที่ไม่ได้คาดหวังว่าจะได้รับ
-
-</div>
+<figure class="split-fig"><img src="/media/posts/news/microsoft-patch-tuesday-2026-11/igv-7.jpg" width="1600" height="1400" loading="lazy" alt="ข้อควรรู้ก่อนอัปเดต 3 อย่าง: 1 บันทึกงานที่ค้างอยู่ก่อนกดรีสตาร์ต 2 ถ้ายังไม่เห็นอัปเดต ให้เปิดหน้า Windows Update ค้างไว้สักพักหรือลองใหม่ภายหลัง เพราะ Microsoft ทยอยปล่อยให้เครื่องต่าง ๆ 3 ระหว่างรออัปเดต Outlook อย่าเปิดไฟล์อีเมลหรือไฟล์แนบจากคนที่ไม่รู้จัก โดยเฉพาะที่ไม่ได้คาดหวังว่าจะได้รับ" /></figure>
 </div>
 
 </section>
@@ -319,14 +230,6 @@ Outlook รุ่นที่มากับ Microsoft 365 หรือ Office L
 - ข้อมูลทั้งหมดอ้างตามหน้าของ Microsoft และ CISA ที่ระบุในแหล่งข้อมูล ถ้า Microsoft แก้ไขหน้าในภายหลัง ข้อมูลอาจเปลี่ยนครับ
 
 </div>
-
-</section>
-
-<section class="section">
-
-## ภาพประกอบ
-
-<ShotGallery shots={shots} />
 
 </section>
 
@@ -354,7 +257,8 @@ Outlook รุ่นที่มากับ Microsoft 365 หรือ Office L
 
 - สรุป Security Updates เดือนพฤศจิกายน 2026: ภาพ: Microsoft (ภาพหน้าจอ) · <a href="https://msrc.microsoft.com/update-guide/releaseNote/2026-Nov" rel="noopener">msrc.microsoft.com</a>
 - ตาราง Windows 11 release information: ภาพ: Microsoft (ภาพหน้าจอ) · <a href="https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information" rel="noopener">learn.microsoft.com</a>
-- ภาพปก: ภาพประกอบสร้างด้วย AI (Codex image generation) โดย DOJOJIN.TECH ไม่ใช่ภาพเหตุการณ์จริง
+- อินโฟกราฟิก: ภาพประกอบจาก DOJOJIN.TECH จากข้อมูลในข่าวนี้
+- ภาพปก: ภาพประกอบจาก DOJOJIN.TECH
 
 ภาพใช้ประกอบข่าว (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
 

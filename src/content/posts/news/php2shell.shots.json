@@ -9,16 +9,5 @@
     "alt": "โลโก้ PHP ตัวอักษรสีดำบนรูปเปลือกหอยสีม่วง",
     "summary": "ภาพประกอบบทความของ Malwarebytes เป็นโลโก้ PHP อยู่ในเปลือกหอย สื่อถึงชื่อ PHP2Shell ที่เป็นช่องโหว่ใน PHP ครับ",
     "credit": "ภาพ: Malwarebytes Labs · <a href=\"https://www.malwarebytes.com/blog/bugs/2026/10/php2shell-why-websites-are-going-offline-for-emergency-security-updates\" rel=\"noopener\">malwarebytes.com</a>"
-  },
-  {
-    "id": "2",
-    "title": "ตุ๊กตาช้าง elePHPant",
-    "src": "/media/posts/news/php2shell/img-2.jpg",
-    "w": 1280,
-    "h": 960,
-    "group": "ภาพประกอบ",
-    "alt": "ตุ๊กตาช้างสีม่วงสัญลักษณ์ของภาษา PHP ตัวนี้มีโลโก้ Heroku บนลำตัว",
-    "summary": "ตุ๊กตาช้างสีม่วง elePHPant ซึ่งเป็นมาสคอตของภาษา PHP ใช้เป็นภาพประกอบให้รู้ว่า PHP คืออะไรครับ",
-    "credit": "ภาพ: Atomic Taco (Wikimedia Commons) · <a href=\"https://commons.wikimedia.org/wiki/File:Heroku_elePHPant_(38171946464).jpg\" rel=\"noopener\">commons.wikimedia.org</a>"
   }
 ]
