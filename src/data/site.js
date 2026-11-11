@@ -28,6 +28,7 @@ export const TOPICS = {
   network: { name: "เน็ต & เครือข่าย" },
   car: { name: "ยานยนต์" },
   software: { name: "ซอฟต์แวร์" },
+  computer: { name: "คอมพิวเตอร์ & แท็บเล็ต" },
 };
 // Tags (field `tags`, any number) — brand / product kind / technique. Only tags listed here are allowed
 // (the build fails otherwise), so the same thing never ends up under two spellings. Each has a page at /tag/<key>/.

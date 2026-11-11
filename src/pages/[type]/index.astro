@@ -37,17 +37,32 @@ const chips = Object.keys(names).filter((k) => type === 'news' || items.some((i)
         </div>
       )}
       <div class="gallery">{items.map((i) => <PostCard item={i} />)}</div>
+      <p class="more" hidden><button type="button" data-more></button></p>
     </div>
   </main>
 </Base>
 
 <script>
+  // Filter chips + "ดูเพิ่ม": first PAGE matching cards, then PAGE more per click; a new filter starts over.
+  // ponytail: all cards stay in the HTML (covers are lazy), split into /page/N/ URLs if a section passes a few hundred posts.
+  const PAGE = 12;
   const btns = document.querySelectorAll('[data-filter]');
   const key = document.querySelector('.filters')?.dataset.key;
+  const cards = [...document.querySelectorAll('.gallery > .post-card')];
+  const more = document.querySelector('[data-more]');
+  let filter = '', shown = PAGE;
+  const render = () => {
+    const match = cards.filter((c) => !filter || (c.dataset[key] ?? '').split(' ').includes(filter));
+    cards.forEach((c) => { c.hidden = true; });
+    match.slice(0, shown).forEach((c) => { c.hidden = false; });
+    const left = match.length - shown;
+    more.parentElement.hidden = left <= 0;
+    more.textContent = `ดูเพิ่มอีก ${Math.min(PAGE, left)} รายการ (เหลือ ${left})`;
+  };
   btns.forEach((b) => b.addEventListener('click', () => {
     btns.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
-    document.querySelectorAll('.gallery > .post-card').forEach((card) => {
-      card.hidden = !!b.dataset.filter && !(card.dataset[key] ?? '').split(' ').includes(b.dataset.filter);
-    });
+    filter = b.dataset.filter; shown = PAGE; render();
   }));
+  more.addEventListener('click', () => { shown += PAGE; render(); });
+  render();
 </script>

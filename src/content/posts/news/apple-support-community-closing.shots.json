@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "title": "หน้าแรกของ Apple Support Community พร้อมประกาศปิดเว็บ",
+    "src": "/media/posts/news/apple-support-community-closing/img-2.jpg",
+    "w": 1000,
+    "h": 520,
+    "group": "ภาพประกอบ",
+    "alt": "หน้า discussions.apple.com แสดงกล่องประกาศว่า Apple Support Community จะปิดถาวรวันที่ 20 พฤศจิกายน 2026 และไม่รับกระทู้ใหม่",
+    "summary": "ประกาศของ Apple ที่ขึ้นบนหน้าแรกของเว็บชุมชน บอกวันปิด การเป็นแบบอ่านอย่างเดียว และชี้ไปที่เว็บ Apple Support ครับ",
+    "credit": "ภาพ: Apple · <a href=\"https://discussions.apple.com/\" rel=\"noopener\">discussions.apple.com</a>",
+    "analysis": [
+      "ข้อความระบุว่าเว็บจะปิดถาวรวันที่ 20 พฤศจิกายน 2026 และตั้งแต่วันนี้ไม่รับโพสต์ใหม่",
+      "Apple แนะนำให้หาคำแนะนำและความช่วยเหลือที่เว็บ Apple Support อย่างเป็นทางการ"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "หน้าบริการช่วยเหลือของ Apple ประเทศไทย",
+    "src": "/media/posts/news/apple-support-community-closing/img-1.jpg",
+    "w": 1000,
+    "h": 760,
+    "group": "ภาพประกอบ",
+    "alt": "หน้า support.apple.com/th-th ภาษาไทย หัวข้อ บริการช่วยเหลือของ Apple เลือกผลิตภัณฑ์ iPhone, Mac, iPad, Watch และ AirPods",
+    "summary": "หน้าแรกบริการช่วยเหลือของ Apple เป็นภาษาไทย เลือกผลิตภัณฑ์ที่ใช้แล้วดูบทความวิธีแก้ปัญหาได้เลยครับ",
+    "credit": "ภาพ: Apple · <a href=\"https://support.apple.com/th-th\" rel=\"noopener\">support.apple.com</a>",
+    "analysis": [
+      "แถวไอคอนผลิตภัณฑ์ให้เริ่มเลือกจาก iPhone, Mac, iPad, Watch หรือ AirPods",
+      "ด้านล่างของหน้ามีเมนูอย่าง AppleCare และบริการซ่อม"
+    ]
+  }
+]

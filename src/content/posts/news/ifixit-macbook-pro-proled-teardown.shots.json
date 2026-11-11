@@ -1,0 +1,17 @@
+[
+  {"id":"1","title":"โลโก้แอปเปิลที่ถูกดึงออกจากฝาจอ","src":"/media/posts/news/ifixit-macbook-pro-proled-teardown/img-1.jpg","w":1600,"h":900,"group":"ภาพประกอบ",
+   "alt":"มือถือชิ้นส่วนโลโก้แอปเปิลที่ถอดออกจากฝาจอ MacBook Pro ที่ถูกแกะ ด้านล่างเห็นช่องโลโก้ว่างในฝา",
+   "summary":"iFixit ดึงชิ้นส่วนโลโก้ออกมาจากด้านหลังจอทั้งชิ้นครับ ชิ้นนี้คือส่วนที่ทำให้แอปเปิลบนฝาเรืองแสงได้",
+   "credit":"ภาพ: iFixit · <a href=\"https://www.ifixit.com/News/120152/we-tore-down-the-macbook-proled-xdr-and-found-the-secret-of-the-glowing-apple\" rel=\"noopener\">ifixit.com</a>",
+   "analysis":["ชิ้นโลโก้มีเฟล็กซ์ต่อออกมาด้านบน ส่วนแถบ LED อยู่ด้านหลังจอ","ในฝาด้านล่างเห็นช่องโลโก้ที่ชิ้นนี้ไปวางอยู่"]},
+  {"id":"2","title":"ชั้นวัสดุที่วางซ้อนอยู่เหนือโลโก้","src":"/media/posts/news/ifixit-macbook-pro-proled-teardown/img-2.jpg","w":1600,"h":900,"group":"ภาพประกอบ",
+   "alt":"มือแยกแผ่นชั้นบาง ๆ ที่ซ้อนอยู่เหนือโลโก้แอปเปิลออกมาเป็นชั้น ๆ ข้างแผงเฟล็กซ์ที่มีแถบ LED",
+   "summary":"iFixit แยกชั้นที่ซ้อนกันเหนือโลโก้ให้ดู มีชั้นสะท้อนแสงและชั้นกระจายแสงที่ทำให้ไฟ 4 จุดกลายเป็นแสงเรียบเดียวครับ",
+   "credit":"ภาพ: iFixit · <a href=\"https://www.ifixit.com/News/120152/we-tore-down-the-macbook-proled-xdr-and-found-the-secret-of-the-glowing-apple\" rel=\"noopener\">ifixit.com</a>",
+   "analysis":["ทางซ้ายคือแผงเฟล็กซ์ที่มีแถบ LED","ทางขวาคือชั้นโปร่งแสงที่ถูกแยกออกมาทีละชั้น"]},
+  {"id":"3","title":"คะแนนความซ่อมง่ายของ iFixit","src":"/media/posts/news/ifixit-macbook-pro-proled-teardown/img-3.jpg","w":400,"h":490,"fit":"contain","group":"คะแนน",
+   "alt":"ป้ายคะแนน Repairability ของ iFixit แสดงเลข 5",
+   "summary":"iFixit ให้ MacBook Pro PROLED XDR 5 จาก 10 ครับ",
+   "credit":"ภาพ: iFixit · <a href=\"https://www.ifixit.com/News/120152/we-tore-down-the-macbook-proled-xdr-and-found-the-secret-of-the-glowing-apple\" rel=\"noopener\">ifixit.com</a>",
+   "analysis":["คะแนน 5 จาก 10 สูงกว่ารุ่น M5 หนึ่งคะแนนตามที่ iFixit เขียนไว้"]}
+]

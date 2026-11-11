@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1",
+    "title": "MacRumors รายงานข่าว TSMC อนุมัติลงทุน AI",
+    "src": "/media/posts/news/tsmc-ai-investment-openai-anthropic/img-1.jpg",
+    "w": 640,
+    "h": 400,
+    "group": "ภาพประกอบ",
+    "alt": "หน้าบทความ MacRumors หัวข้อ Apple Chip Supplier TSMC Approves $1 Billion AI Investment ลงวันที่ 11 พฤศจิกายน 2026",
+    "summary": "ข่าวของ MacRumors ที่สรุปมติบอร์ด TSMC ไว้ว่าลงทุนได้ถึง 1 พันล้านดอลลาร์ใน OpenAI และ Anthropic ครับ ผมใช้ภาพนี้เป็นแหล่งรอง ส่วนตัวเลขในโพสต์อ้างตามมติบอร์ดที่ TSMC แจ้งไว้",
+    "credit": "ภาพ: MacRumors (ภาพหน้าจอ) · <a href=\"https://www.macrumors.com/2026/11/11/tsmc-approves-ai-investment/\" rel=\"noopener\">macrumors.com</a>",
+    "analysis": [
+      "MacRumors เขียนว่า TSMC ซื้อหุ้นได้สูงสุด 500 ล้านดอลลาร์ในแต่ละบริษัท",
+      "MacRumors บอกว่า TSMC ผลิตชิปของ Apple และ OpenAI กับ Anthropic กำลังพัฒนาชิปของตัวเอง"
+    ]
+  }
+]

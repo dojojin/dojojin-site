@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "title": "iPad mini รุ่นใหม่ (OLED) ที่ Apple เปิดตัวแล้ว",
+    "src": "/media/posts/news/ipad-air-2027-rumor/img-1.jpg",
+    "w": 1600,
+    "h": 1067,
+    "group": "ภาพจาก Apple",
+    "alt": "มือถือ iPad mini รุ่นใหม่ หน้าจอแสดงลายวอลเปเปอร์สีฟ้าม่วงบนพื้นหลังสีขาว",
+    "summary": "ภาพทางการของ iPad mini รุ่นใหม่ที่ Apple เปิดตัวเมื่อ 26 ตุลาคม 2569 ข่าวลือ iPad Air หลายข้อมาจากฟีเจอร์ของเครื่องนี้ครับ นี่เป็น iPad mini ไม่ใช่ iPad Air",
+    "credit": "ภาพ: Apple · <a href=\"https://www.apple.com/newsroom/2026/10/apple-gives-ipad-mini-its-biggest-update-ever/\" rel=\"noopener\">apple.com</a>",
+    "analysis": [
+      "iPad mini รุ่นนี้ใช้จอ OLED ขนาด 8.5 นิ้ว ชิป A20 Pro และกันน้ำ IP67 ตามที่ Apple ระบุ",
+      "ภาพนี้ไม่ใช่เครื่องในข่าวลือ เป็นเครื่องจริงที่ขายแล้ว"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "iPad Air รุ่นปัจจุบัน (M4)",
+    "src": "/media/posts/news/ipad-air-2027-rumor/cover.jpg",
+    "w": 980,
+    "h": 701,
+    "group": "ภาพจาก Apple",
+    "alt": "iPad Air รุ่น M4 ที่ขายอยู่ตอนนี้ หน้าจอแสดงหลายหน้าต่างพร้อมกัน",
+    "summary": "ภาพทางการของ iPad Air รุ่นปัจจุบันที่ใช้ชิป M4 (เปิดตัว 2 มีนาคม 2569) ไม่ใช่รุ่นในข่าวลือครับ",
+    "credit": "ภาพ: Apple · <a href=\"https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-ipad-air-powered-by-m4/\" rel=\"noopener\">apple.com</a>",
+    "analysis": [
+      "รุ่นปัจจุบันใช้ชิป M4 และโมเด็ม C1X ตามที่ Apple ระบุ",
+      "ข่าวลือบอกว่ารุ่นถัดไปจะเปลี่ยนดีไซน์และจอ"
+    ]
+  }
+]
