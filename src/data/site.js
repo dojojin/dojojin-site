@@ -52,6 +52,8 @@ export const TAGS = {
   hippocraft: "HippoCraft", pdf: "PDF",
   google: "Google", chrome: "Chrome", axis: "Axis", vms: "VMS", mercular: "Mercular", "data-breach": "ข้อมูลรั่ว",
   android: "Android", foldable: "มือถือจอพับ", tablet: "แท็บเล็ต", ai: "AI", anthropic: "Anthropic", meta: "Meta", gpu: "GPU",
+  nissan: "Nissan", "motor-show": "งานมอเตอร์โชว์", tax: "ภาษี",
+  microsoft: "Microsoft", windows: "Windows", openai: "OpenAI", amazon: "Amazon", firefox: "Firefox", app: "แอปแนะนำ", wearable: "อุปกรณ์สวมใส่", health: "สุขภาพ", "smart-home": "สมาร์ตโฮม", "social-media": "โซเชียลมีเดีย", "open-source": "โอเพนซอร์ส", pixel: "Pixel",
 };
 
 // Filter chips on /news/. "pr" = the post has a `pr` field (sending organisation); the rest = field `section`.

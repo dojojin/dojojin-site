@@ -1,0 +1,240 @@
+---
+title: "Apple ออกอัปเดตความปลอดภัย iOS 27.2.1 และทุกระบบ แก้ช่องโหว่ Bluetooth, AirPlay, iMessage"
+topic: infra-ai
+type: news
+tags: [apple, security]
+date: 2026-11-11
+section: security
+sourceName: "Apple Security Releases"
+sourceUrl: "https://support.apple.com/en-us/100100"
+description: "Apple ปล่อยอัปเดตความปลอดภัยเมื่อ 9 พ.ย. 2569 สำหรับ iPhone, iPad, Mac, Apple Watch และ Vision Pro แก้ช่องโหว่ 10 รายการ เช่น การจับคู่ Bluetooth, AirPlay, brotli และ iMessage Apple ไม่ระบุว่ามีรายการไหนถูกโจมตีจริง พร้อมตารางว่าเครื่องรุ่นไหนต้องลงรุ่นไหน"
+kicker: "ข่าวความปลอดภัยไซเบอร์"
+lead: "Apple ออกอัปเดตความปลอดภัยครบทั้ง iPhone, iPad, Mac, Apple Watch และ Vision Pro ในวันเดียว ประกาศของ Apple ไม่ได้บอกว่ามีช่องโหว่ไหนถูกโจมตีจริง แต่ควรอัปเดตอยู่ดี ผมสรุปว่าเครื่องของเราต้องลงรุ่นไหนและแก้อะไรบ้างครับ"
+meta: "เรียบเรียงจากประกาศความปลอดภัยของ Apple · ข้อมูล ณ 11 พฤศจิกายน 2569"
+cover: "/media/posts/news/apple-security-updates-2026-11-09/cover.jpg"
+coverAlt: "iPhone และ MacBook บนโต๊ะสีสว่าง หน้าจอแสดงหน้าอัปเดตซอฟต์แวร์พร้อมโลโก้ Apple และแถบสีฟ้า มีโล่สีเขียวอยู่ข้าง ๆ (ภาพประกอบสร้างด้วย AI)"
+---
+
+import ShotGallery from '../../../components/ShotGallery.astro';
+import shots from './apple-security-updates-2026-11-09.shots.json';
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="split">
+<div class="prose">
+
+วันที่ 9 พฤศจิกายน 2569 Apple ปล่อยอัปเดตความปลอดภัยพร้อมกัน 9 รายการ ครอบคลุม iPhone และ iPad (iOS และ iPadOS 27.2.1, 26.7.3 และ 18.7.12) Mac (macOS Golden Gate 27.2.1, Tahoe 26.7.3 และ Sequoia 15.8.3) Apple Watch (watchOS 27.2.1 และ 26.6.1) และ Apple Vision Pro (visionOS 27.2.1)
+
+รวมแล้วแก้ช่องโหว่ที่มี CVE ไม่ซ้ำกัน 10 รายการ CVE คือเลขประจำตัวของช่องโหว่ที่ใช้อ้างถึงตรงกันทั่วโลก ส่วนใหญ่เกี่ยวกับการเชื่อมต่อใกล้ตัว คือการจับคู่ Bluetooth และ AirPlay อีกส่วนคือ iMessage กลุ่ม
+
+เรื่องสำคัญที่สุดคือ ในทุกหน้าประกาศที่ผมเปิดอ่าน Apple ไม่ได้เขียนว่ามีช่องโหว่ไหน "อาจถูกใช้โจมตีแล้ว" ซึ่งต่างจากข่าว zero-day ที่ Apple ใส่ประโยคนี้ไว้ ดังนั้นรอบนี้เป็นอัปเดตประจำที่ควรลง ไม่ใช่เหตุด่วนที่มีการโจมตีจริงตามประกาศ
+
+</div>
+<div class="note">
+
+### สรุปสั้น
+
+**วันที่ปล่อย:** 9 พฤศจิกายน 2569
+
+**CVE ไม่ซ้ำกัน:** 10 รายการ
+
+**ถูกโจมตีจริงหรือไม่:** Apple ไม่ได้ระบุในประกาศ
+
+**ส่วนที่ถูกแก้:** AirPlay, App Intents, Bluetooth, brotli, CoreUtils, MediaRemote, Messages, rapportd
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## แก้อะไรบ้าง
+
+<div class="split">
+<div class="prose">
+
+ผมสรุปเป็นภาษาง่าย ๆ ตามที่ Apple อธิบายไว้ครับ
+
+- **Bluetooth (CVE-2026-113970)** ช่องโหว่ use-after-free คือโปรแกรมคืนหน่วยความจำไปแล้วแต่ยังมีส่วนอื่นเรียกใช้ ผู้โจมตีที่อยู่ในระยะ Bluetooth อาจทำให้หน่วยความจำของโปรแกรมเสียหายได้
+- **CoreUtils (CVE-2026-113965, CVE-2026-113964)** อุปกรณ์ Bluetooth ที่ไม่หวังดีอาจจับคู่กับเครื่องเราได้โดยไม่ต้องให้เรากดอนุมัติ และผู้โจมตีใกล้ ๆ อาจข้ามการจำกัดจำนวนครั้งที่ลองรหัสจับคู่ได้
+- **AirPlay และ rapportd (CVE-2026-113968, CVE-2026-113969)** ผู้โจมตีที่อยู่ในระยะ Bluetooth หรืออยู่ในเครือข่ายเดียวกัน อาจข้ามขีดจำกัดการลองรหัสจับคู่ AirPlay ได้ ซึ่งแปลว่าลองเดารหัสได้มากกว่าที่ควร
+- **brotli (CVE-2026-111497)** brotli คือไลบรารีบีบอัดข้อมูล ข้อมูลที่ถูกออกแบบมาไม่ดีอาจทำให้หน่วยความจำเสียหายได้
+- **Messages (CVE-2026-113961, CVE-2026-113960)** ผู้โจมตีจากระยะไกลอาจเข้ากลุ่ม iMessage แล้วรับข้อความได้ และคนที่ถูกเพิ่มเข้ากลุ่มอาจเห็นข้อความที่ส่งก่อนตัวเองเข้ามา
+- **App Intents (CVE-2026-113963)** แอปอาจเข้าถึงข้อมูลส่วนตัวของผู้ใช้ได้ (เฉพาะรุ่น 27.2.1)
+- **MediaRemote (CVE-2026-113971)** คนที่ถือเครื่องอยู่ในมืออาจจับคู่เครื่องกับ AirPlay receiver จากหน้าจอล็อกได้ (เฉพาะ iOS 18.7.12)
+
+ทุกรายการ Apple บอกว่าแก้ด้วยการเช็กเงื่อนไขให้ดีขึ้น ปรับการจัดการสถานะ หรือตรวจข้อมูลที่เข้ามาให้เข้มขึ้นครับ
+
+</div>
+<div class="note">
+
+### จำนวน CVE แต่ละอัปเดต
+
+**iOS/iPadOS 27.2.1:** 9
+
+**iOS/iPadOS 26.7.3:** 8
+
+**iOS/iPadOS 18.7.12:** 6
+
+**macOS Golden Gate 27.2.1:** 8
+
+**macOS Tahoe 26.7.3:** 8
+
+**macOS Sequoia 15.8.3:** 8
+
+**watchOS 27.2.1:** 9
+
+**watchOS 26.6.1:** 5
+
+**visionOS 27.2.1:** 9
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## เครื่องไหนได้รุ่นไหน
+
+<div class="split">
+<div class="prose">
+
+Apple แยกอัปเดตตามตระกูลระบบปฏิบัติการ เครื่องเดียวกันมักได้อัปเดตเฉพาะรุ่นที่ตรงกับตระกูลที่ลงอยู่ ดูตารางทางขวาแล้วเทียบกับเครื่องของเราได้เลยครับ
+
+หน้ารายการของ Apple ระบุชื่อรุ่นเครื่องให้เฉพาะ iPhone, iPad, Apple Watch และ Vision Pro ส่วน macOS Apple เขียนแค่ชื่อระบบ ไม่ได้ระบุรุ่น Mac ผมจึงไม่ลงรายชื่อรุ่น Mac ให้ครับ
+
+</div>
+<div class="note">
+
+### อัปเดตกับเครื่องที่รองรับ (ตามที่ Apple ระบุ)
+
+**iOS/iPadOS 27.2.1:** iPhone 11 ขึ้นไป · iPad Pro 12.9 นิ้ว รุ่น 4 ขึ้นไป · iPad Pro 11 นิ้ว รุ่น 2 ขึ้นไป · iPad Air รุ่น 4 ขึ้นไป · iPad รุ่น 9 ขึ้นไป · iPad mini รุ่น 6 ขึ้นไป
+
+**iOS/iPadOS 26.7.3:** iPhone 11 ขึ้นไป · iPad Pro 12.9 นิ้ว รุ่น 3 ขึ้นไป · iPad Pro 11 นิ้ว รุ่น 1 ขึ้นไป · iPad Air รุ่น 3 ขึ้นไป · iPad รุ่น 8 ขึ้นไป · iPad mini รุ่น 5 ขึ้นไป
+
+**iOS/iPadOS 18.7.12:** iPhone XS, iPhone XS Max, iPhone XR, iPad รุ่น 7
+
+**macOS:** Golden Gate 27.2.1 · Tahoe 26.7.3 · Sequoia 15.8.3
+
+**watchOS 27.2.1:** Apple Watch Series 9 ขึ้นไป
+
+**watchOS 26.6.1:** Apple Watch Series 6, 7, 8, SE (รุ่น 2) และ Ultra
+
+**visionOS 27.2.1:** Apple Vision Pro ทุกรุ่น
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ใช้เครื่องเก่า ต้องลงรุ่นไหน
+
+<div class="prose">
+
+- **iPhone XS, XS Max, XR และ iPad รุ่น 7** ลง iOS หรือ iPadOS **18.7.12** เครื่องกลุ่มนี้ไม่อยู่ในลิสต์ของ 27.2.1 และ 26.7.3 รุ่น 18.7.12 แก้ 6 รายการ ไม่มี brotli และ Messages แต่มี MediaRemote ที่รุ่นอื่นไม่มี
+- **iPad ที่เก่ากว่ารุ่นในลิสต์ 27.2.1 แต่ยังอยู่ในลิสต์ 26.7.3** เช่น iPad Air รุ่น 3 หรือ iPad รุ่น 8 ให้ลง **26.7.3**
+- **Apple Watch Series 6, 7, 8, SE (รุ่น 2) และ Ultra** ลง watchOS **26.6.1** ซึ่งแก้ 5 รายการ ส่วน Series 9 ขึ้นไปลง **27.2.1**
+- **Mac** ลงตามชื่อระบบที่ใช้อยู่ คือ Golden Gate 27.2.1, Tahoe 26.7.3 หรือ Sequoia 15.8.3 ถ้า Mac รุ่นไหนไม่ได้รับ macOS รุ่นเหล่านี้ ผมไม่พบข้อมูลในหน้าที่อ่านว่าจะมีอัปเดตให้หรือไม่
+- เครื่องที่ไม่อยู่ในลิสต์ใดเลย ผมไม่เห็นอัปเดตของรอบนี้ให้ ลองเช็กหน้า Apple security releases ว่ามีรุ่นอื่นของเครื่องนั้นหรือเปล่า
+
+</div>
+
+</section>
+
+<section class="section">
+
+## อัปเดตยังไง
+
+<div class="split">
+<div class="prose">
+
+**iPhone และ iPad**
+
+1. ต่อ Wi-Fi และชาร์จเครื่องไว้
+2. เปิด Settings (การตั้งค่า) แล้วเลือก General (ทั่วไป) แล้วเลือก Software Update (อัปเดตซอฟต์แวร์)
+3. ถ้ามีรุ่นใหม่ให้กด Update Now แล้วรอจนเครื่องรีสตาร์ต
+
+**Mac**
+
+1. เปิด System Settings (การตั้งค่าระบบ)
+2. เลือก General (ทั่วไป) แล้วเลือก Software Update (อัปเดตซอฟต์แวร์)
+3. กดอัปเดตตามที่ขึ้นมา แล้วรอเครื่องรีสตาร์ต
+
+**Apple Watch**
+
+เปิดแอป Watch บน iPhone ที่จับคู่ไว้ ไปที่ General แล้วเลือก Software Update ให้นาฬิกาชาร์จอยู่และอยู่ใกล้กับ iPhone ระหว่างอัปเดต ตัว iPhone ควรอัปเดตให้เสร็จก่อน
+
+</div>
+<div class="note">
+
+### ข้อควรรู้
+
+Apple เขียนไว้ในหน้ารายการว่า iOS, iPadOS, tvOS, watchOS และ visionOS เมื่ออัปเดตแล้ว ย้อนกลับไปรุ่นก่อนหน้าไม่ได้
+
+ถ้ายังไม่เห็นปุ่มอัปเดต ให้เปิดหน้า Software Update ค้างไว้สักพักหรือลองใหม่ภายหลังครับ
+
+หลังอัปเดตให้เปิดหน้าเดิมอีกครั้ง ถ้าเห็นข้อความว่าเป็นรุ่นล่าสุดแล้วก็เรียบร้อย
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ข้อควรรู้เพิ่มเติม
+
+<div class="prose">
+
+- ช่องโหว่ส่วนใหญ่ต้องการให้ผู้โจมตีอยู่ใกล้ (Bluetooth) หรืออยู่ในเครือข่ายเดียวกัน ที่ผู้คนพลุกพล่านจึงควรปิด Bluetooth หรือ AirPlay ที่ไม่ใช้ระหว่างรออัปเดต
+- ข่าวนี้ไม่ได้บอกว่ามีการโจมตีจริง ผมอ้างตามที่ Apple เขียนในหน้าประกาศเท่านั้น ถ้า Apple ปรับหน้าในภายหลัง ข้อมูลอาจเปลี่ยนได้ครับ
+- ถ้าดูแลเครื่องหลายเครื่องในบ้านหรือที่ทำงาน ให้เช็กทีละเครื่อง รวมถึงนาฬิกาและ iPad ที่ไม่ค่อยได้เปิด
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ภาพประกอบ
+
+<ShotGallery shots={shots} />
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- Apple Security Releases (รายการทั้งหมด): <a href="https://support.apple.com/en-us/100100" rel="noopener">support.apple.com</a>
+- iOS/iPadOS: <a href="https://support.apple.com/en-us/149715" rel="noopener">27.2.1</a> · <a href="https://support.apple.com/en-us/149716" rel="noopener">26.7.3</a> · <a href="https://support.apple.com/en-us/149717" rel="noopener">18.7.12</a>
+- macOS: <a href="https://support.apple.com/en-us/149718" rel="noopener">Golden Gate 27.2.1</a> · <a href="https://support.apple.com/en-us/149719" rel="noopener">Tahoe 26.7.3</a> · <a href="https://support.apple.com/en-us/149720" rel="noopener">Sequoia 15.8.3</a>
+- watchOS: <a href="https://support.apple.com/en-us/149722" rel="noopener">27.2.1</a> · <a href="https://support.apple.com/en-us/149723" rel="noopener">26.6.1</a> · visionOS: <a href="https://support.apple.com/en-us/149724" rel="noopener">27.2.1</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ประกาศความปลอดภัยของ iOS 27.2.1: ภาพ: Apple (ภาพหน้าจอ) · <a href="https://support.apple.com/en-us/149715" rel="noopener">support.apple.com</a>
+- รายการ Apple security releases: ภาพ: Apple (ภาพหน้าจอ) · <a href="https://support.apple.com/en-us/100100" rel="noopener">support.apple.com</a>
+- ภาพปก: ภาพประกอบสร้างด้วย AI (Codex image generation) โดย DOJOJIN.TECH ไม่ใช่ภาพเหตุการณ์จริง
+
+ภาพใช้ประกอบข่าว (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>

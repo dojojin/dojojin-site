@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "title": "หน้า Release Notes ของ Firefox 160.0",
+    "src": "/media/posts/news/firefox-160/img-1.jpg",
+    "w": 1000,
+    "h": 1400,
+    "fit": "contain",
+    "group": "ภาพประกอบ",
+    "alt": "หน้า Release Notes ของ Firefox 160.0 พื้นสีม่วง ข้อความ See what's new in Firefox และวันที่ November 10, 2026 พร้อมหัวข้อ New",
+    "summary": "ส่วนบนของหน้า Release Notes บอกรุ่น 160.0 ช่อง Firefox Release และวันที่ 10 พฤศจิกายน 2026 แล้วเริ่มหัวข้อ New ด้วยการปรับความเร็ว PiP ครับ",
+    "credit": "ภาพ: Mozilla (ภาพหน้าจอ) · <a href=\"https://www.firefox.com/en-US/firefox/160.0/releasenotes/\" rel=\"noopener\">firefox.com</a>",
+    "analysis": [
+      "ข้อความ Version 160.0, first offered to Release channel users on November 10, 2026",
+      "แถบด้านบนมีลิงก์แยกสำหรับ Desktop, Enterprise, Beta, Nightly, Android และ iOS"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "ปรับความเร็ววิดีโอใน Picture-in-Picture",
+    "src": "/media/posts/news/firefox-160/img-2.jpg",
+    "w": 1494,
+    "h": 938,
+    "group": "ภาพประกอบ",
+    "alt": "หน้าต่าง Picture-in-Picture ของ Firefox 160 เปิดเมนู Playback speed มีตัวเลือก 0.75x, 1.0x, 1.25x, 1.5x และ 2.0x พร้อมแถบเลื่อน",
+    "summary": "เมนู Playback speed ในหน้าต่างวิดีโอลอย มีปุ่มลัดความเร็วและแถบเลื่อนปรับละเอียดครับ (Release Notes ระบุช่วง 0.25x ถึง 2.0x)",
+    "credit": "ภาพ: Mozilla (ภาพประกอบใน Release Notes) · <a href=\"https://www.firefox.com/en-US/firefox/160.0/releasenotes/\" rel=\"noopener\">firefox.com</a>",
+    "analysis": [
+      "ตัวเลือกความเร็วขึ้นเฉพาะเมื่อหน้าต่าง PiP ขนาดกลางขึ้นไป"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Mini Window หน้าต่างเล็กลอยบนสุด",
+    "src": "/media/posts/news/firefox-160/img-3.jpg",
+    "w": 1600,
+    "h": 1007,
+    "group": "ภาพประกอบ",
+    "alt": "ภาพจาก Release Notes ของ Firefox 160 แสดงเอกสาร Google Docs ที่มี Mini Window ลอยอยู่ 3 หน้าต่าง คือ บทความวิกิพีเดีย แผนที่ OpenStreetMap และตัวจับเวลา",
+    "summary": "ตัวอย่าง Mini Window จาก Mozilla ทำงานในเอกสารหลัก แล้วเปิดวิกิ แผนที่ และตัวจับเวลาลอยไว้มุมจอ ไม่ต้องสลับแท็บไปมาครับ",
+    "credit": "ภาพ: Mozilla (ภาพประกอบใน Release Notes) · <a href=\"https://www.firefox.com/en-US/firefox/160.0/releasenotes/\" rel=\"noopener\">firefox.com</a>",
+    "analysis": [
+      "Mini Window ยังเป็นรุ่นเริ่มต้น Mozilla ขอความเห็นจากผู้ใช้",
+      "หน้าต่างเล็กจะลอยอยู่บนสุดเสมอ เหมาะกับการดูข้อมูลอ้างอิงระหว่างทำงาน"
+    ]
+  }
+]

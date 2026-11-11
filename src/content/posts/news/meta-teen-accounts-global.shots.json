@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "title": "หน้าจอแจ้งปรับการตั้งค่าความปลอดภัย",
+    "src": "/media/posts/news/meta-teen-accounts-global/img-1.jpg",
+    "w": 1600,
+    "h": 1393,
+    "group": "ภาพจาก Meta",
+    "alt": "หน้าจอ Instagram สองจอ จอซ้ายมีข้อความ We've updated your safety settings และปุ่ม Review updated settings จอขวามีเมนู Who can interact with you, What you see, Time management",
+    "summary": "ภาพของ Meta แสดงแจ้งเตือนปรับการตั้งค่าความปลอดภัยและเมนูสามหมวดของ Teen Account ครับ",
+    "analysis": [
+      "จอซ้ายคือหน้าฟีดที่มีแจ้งเตือนว่า Meta ปรับการตั้งค่าความปลอดภัยให้",
+      "จอขวาแสดงสามหมวด คือ ใครติดต่อได้ สิ่งที่เห็น และการจัดการเวลา ตรงกับสามเรื่องที่ Teen Accounts จำกัด"
+    ],
+    "credit": "ภาพ: Meta · <a href=\"https://about.fb.com/news/2026/11/expanding-teen-account-protections-to-teens-around-the-world/\" rel=\"noopener\">about.fb.com</a>"
+  },
+  {
+    "id": "2",
+    "title": "โพสต์ในฟีดอธิบายการตรวจอายุ",
+    "src": "/media/posts/news/meta-teen-accounts-global/img-2.jpg",
+    "w": 1600,
+    "h": 1395,
+    "group": "ภาพจาก Meta",
+    "alt": "หน้าจอ Instagram มีโพสต์ Featured for you ข้อความ We estimate age, apply protections, and verify age when needed และปุ่ม Learn More",
+    "summary": "ตัวอย่างโพสต์ในฟีด Instagram ที่อธิบายแนวทางตรวจอายุของ Meta ครับ",
+    "analysis": [
+      "ข้อความในภาพบอกว่า Instagram ประเมินอายุ ใส่การป้องกัน และยืนยันอายุเมื่อจำเป็น",
+      "มีปุ่ม Learn More ให้อ่านต่อ"
+    ],
+    "credit": "ภาพ: Meta · <a href=\"https://about.fb.com/news/2026/11/expanding-teen-account-protections-to-teens-around-the-world/\" rel=\"noopener\">about.fb.com</a>"
+  }
+]

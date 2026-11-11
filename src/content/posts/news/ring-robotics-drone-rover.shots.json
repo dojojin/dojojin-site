@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "title": "Ring Drone Cam",
+    "src": "/media/posts/news/ring-robotics-drone-rover/img-1.jpg",
+    "w": 1600,
+    "h": 900,
+    "group": "ภาพประกอบ",
+    "alt": "ภาพทางการของ Ring Drone Cam กล้องรักษาความปลอดภัยแบบบินในบ้าน",
+    "summary": "ภาพทางการของ Ring Drone Cam จากข่าวของ Amazon กล้องที่บินตรวจในบ้านเมื่อมีเหตุแจ้งเตือนครับ",
+    "credit": "ภาพ: Amazon / Ring · <a href=\"https://www.aboutamazon.com/news/devices/ring-drone-cam-rover-cam-security-robot\" rel=\"noopener\">aboutamazon.com</a>",
+    "analysis": [
+      "Amazon ระบุว่าบินตามเส้นทางที่ตั้งไว้ และกลับไปเก็บตัวเมื่อไม่ได้ใช้งาน"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Ring Rover Cam",
+    "src": "/media/posts/news/ring-robotics-drone-rover/img-2.jpg",
+    "w": 1600,
+    "h": 900,
+    "group": "ภาพประกอบ",
+    "alt": "ภาพทางการของ Ring Rover Cam หุ่นยนต์รักษาความปลอดภัยสำหรับธุรกิจ",
+    "summary": "ภาพทางการของ Ring Rover Cam หุ่นยนต์ลาดตระเวนสำหรับธุรกิจตามข่าวของ Amazon ครับ",
+    "credit": "ภาพ: Amazon / Ring · <a href=\"https://www.aboutamazon.com/news/devices/ring-drone-cam-rover-cam-security-robot\" rel=\"noopener\">aboutamazon.com</a>",
+    "analysis": [
+      "Amazon ระบุว่ามีกล้องแบบ periscope ยืดได้ ไซเรน และไฟบนตัวเครื่อง"
+    ]
+  }
+]

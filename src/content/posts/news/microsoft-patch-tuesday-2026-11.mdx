@@ -1,0 +1,363 @@
+---
+title: "Microsoft Patch Tuesday พ.ย. 2569 แก้ 1,094 CVE พร้อม Windows 11 อัปเดตใหม่ และ Outlook zero-day ที่ถูกโจมตีจริง"
+topic: software
+type: news
+tags: [microsoft, windows, security]
+date: 2026-11-11
+section: security
+sourceName: "Microsoft Security Response Center (MSRC)"
+sourceUrl: "https://msrc.microsoft.com/update-guide/releaseNote/2026-Nov"
+description: "Microsoft ปล่อย Patch Tuesday 10 พ.ย. 2569 แก้ 1,094 CVE รวมช่องโหว่ Outlook CVE-2026-124194 ที่ถูกโจมตีจริงและ CISA ใส่ลิสต์ KEV แล้ว พร้อมสรุปอัปเดต Windows 11 ทุกรุ่น สิ่งที่แก้ ปัญหาที่รู้ และวิธีอัปเดต Windows, Office และ Outlook"
+kicker: "ข่าวความปลอดภัยไซเบอร์"
+lead: "Patch Tuesday เดือนนี้ตัวเลขใหญ่มาก 1,094 CVE และมี zero-day ของ Outlook ที่ถูกโจมตีจริงอยู่ 1 รายการ ผมรวมให้ว่า Windows 11 แต่ละรุ่นได้อะไร แก้อะไร และเราต้องทำอะไรบ้างครับ"
+meta: "เรียบเรียงจากหน้า MSRC, Windows release health และหน้า KB ของ Microsoft · ข้อมูล ณ 11 พฤศจิกายน 2569"
+cover: "/media/posts/news/microsoft-patch-tuesday-2026-11/cover.jpg"
+coverAlt: "แล็ปท็อป Windows 11 บนโต๊ะ หน้าจอแสดงโลโก้ Windows และแถบความคืบหน้า Windows Update ข้างกันเป็นมือถือที่มีไอคอน Outlook และโล่เตือนเล็ก ๆ (ภาพประกอบสร้างด้วย AI)"
+---
+
+import ShotGallery from '../../../components/ShotGallery.astro';
+import shots from './microsoft-patch-tuesday-2026-11.shots.json';
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="split">
+<div class="prose">
+
+วันที่ 10 พฤศจิกายน 2569 เป็น Patch Tuesday ประจำเดือนของ Microsoft คือวันที่ออกอัปเดตความปลอดภัยทุกวันอังคารที่สองของเดือน หน้าสรุปของ MSRC เขียนไว้ตรง ๆ ว่า "This release consists of 1094 Microsoft CVEs" CVE คือเลขประจำตัวของช่องโหว่ที่ใช้อ้างถึงตรงกันทั่วโลก
+
+ผมนับซ้ำจากตารางในหน้าเดียวกันแล้ว ได้ 1,094 ตรงกับที่หน้าเขียน (ผลรวมของ Azure, Defender, Developer Tools, Exchange, Office, Other, SQL Server, SharePoint และ Windows) นอกจากนี้ Microsoft ยังนำ CVE ของผู้ผลิตอื่นมาประกาศซ้ำอีก 165 รายการ ซึ่งไม่ได้นับรวมใน 1,094 และไม่รวม CVE ของ Chrome
+
+เรื่องที่ต้องรู้ก่อนคือ มีช่องโหว่ 1 รายการที่ Microsoft ติดป้าย "Exploitation Detected" คือพบว่าถูกโจมตีจริงแล้ว เป็นช่องโหว่ของ Outlook ครับ
+
+</div>
+<div class="note">
+
+### สรุปสั้น
+
+**วันที่ปล่อย:** 10 พฤศจิกายน 2569
+
+**จำนวน CVE:** 1,094 (ตามหน้า MSRC)
+
+**ถูกโจมตีจริง:** 1 รายการ คือ CVE-2026-124194 (Outlook)
+
+**Windows 11:** ทุกรุ่นที่ยังรองรับได้อัปเดตเดือนนี้
+
+**Windows 10 ESU:** มีอัปเดตเดือนนี้เช่นกัน
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## แก้ช่องโหว่ไหนบ้าง แยกตามผลิตภัณฑ์
+
+<div class="split">
+<div class="prose">
+
+ตารางของ MSRC แบ่งตามตระกูลผลิตภัณฑ์ ผมสรุปเป็นตัวเลขทางขวาครับ ภาพรวมคือ Windows มากที่สุดเกือบสองในสามของทั้งหมด รองลงมาคือ Office
+
+คอลัมน์ "ประเภทอัปเดต" ในหน้า MSRC บอกว่า Defender, Developer Tools, Exchange Server, Office, SQL Server, SharePoint และ Windows เป็นอัปเดตแบบ Cumulative (สะสม ลงตัวล่าสุดตัวเดียวได้ของเก่าครบ ยกเว้น Office 2016 ตามที่หน้าเขียน) ส่วน Azure และ Other เป็นแบบรายตัว (Individual)
+
+ตัวเลขนี้คือจำนวนช่องโหว่ ไม่ใช่จำนวนอัปเดตที่เราต้องลง คนทั่วไปแค่กด Windows Update กับอัปเดต Office ก็ครอบคลุมส่วนที่เกี่ยวกับเครื่องเราแล้วครับ
+
+</div>
+<div class="note">
+
+### จำนวน CVE แยกตามตระกูล
+
+**Windows:** 726
+
+**Office:** 174
+
+**SQL Server:** 59
+
+**Developer Tools:** 53
+
+**SharePoint Server:** 27
+
+**Other:** 25
+
+**Azure:** 20
+
+**Exchange Server:** 9
+
+**Defender:** 1
+
+**รวม:** 1,094
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## Zero-day ของ Outlook CVE-2026-124194
+
+<div class="split">
+<div class="prose">
+
+รายการเดียวในหัวข้อ Notable CVEs คือ CVE-2026-124194 "Microsoft Outlook Spoofing Vulnerability" ที่ Microsoft ระบุว่า Exploitation Detected ผมอ่านหน้ารายละเอียดของ CVE นี้แล้ว สรุปได้ดังนี้
+
+- ผู้โจมตีส่งไฟล์ข้อความที่ออกแบบมาเป็นพิเศษให้เหยื่อ แล้วหลอกให้เปิดใน Outlook
+- เมื่อเปิดแล้ว Outlook อาจเชื่อมต่อไปยังเครือข่ายของผู้โจมตีโดยไม่แสดงคำเตือนเรื่องเนื้อหาจากภายนอกตามปกติ
+- ผลคือข้อมูลยืนยันตัวตนอาจรั่ว หน้า Microsoft ระบุว่าเป็น NTLMv2 hash ซึ่งผู้โจมตีเอาไปใช้ยืนยันตัวเป็นเราได้
+- ต้องมีคนเปิดไฟล์เอง (User Interaction Required) และ Microsoft ระบุว่า Preview Pane ไม่ใช่ช่องทางโจมตี แค่เลื่อนดูตัวอย่างอีเมลไม่น่าจะเข้าข่าย
+- คะแนน CVSS 6.5 (ฐาน) และ 6.2 (ชั่วขณะ) ระดับความรุนแรงสูงสุดที่ Microsoft ให้คือ Moderate ช่อง Publicly disclosed เขียนว่า No แต่ช่อง Exploited เขียนว่า Yes
+
+อ่านแล้วอาจรู้สึกว่าเบา เพราะระดับ Moderate แต่การที่ถูกโจมตีจริงแล้วทำให้ควรอัปเดตเร็วครับ NTLM คือวิธีพิสูจน์ตัวตนแบบเก่าของ Windows ถ้า hash หลุดอาจถูกเอาไปสวมรอยได้
+
+วันเดียวกัน (10 พ.ย.) CISA หน่วยงานความปลอดภัยไซเบอร์ของสหรัฐฯ ใส่ CVE นี้ในลิสต์ KEV (Known Exploited Vulnerabilities) พร้อมอีก 5 รายการ ในชื่อ "Microsoft Office Outlook Missing User Interaction for Potentially Unsafe Action Vulnerability" ซึ่ง CISA เขียนว่าเป็นช่องโหว่ที่มีหลักฐานว่าถูกโจมตีจริง
+
+</div>
+<div class="note">
+
+### CVE-2026-124194
+
+**ผลิตภัณฑ์:** Microsoft Office Outlook
+
+**ประเภท:** Spoofing (การปลอมตัว)
+
+**ความรุนแรงสูงสุด:** Moderate
+
+**CVSS:** 6.5 (ฐาน) / 6.2 (ชั่วขณะ)
+
+**สถานะ:** Exploitation Detected
+
+**CISA KEV:** เพิ่มแล้ว 10 พ.ย. 2569
+
+**Preview Pane:** ไม่ใช่ช่องทางโจมตี
+
+**เจอปัญหาแบบไหน:** CWE-356 ตัวโปรแกรมไม่เตือนผู้ใช้ก่อนทำสิ่งที่ไม่ปลอดภัย
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## Office และ Outlook ได้อัปเดตอะไร
+
+<div class="split">
+<div class="prose">
+
+หน้า MSRC ของ CVE-2026-124194 ลิสต์ผลิตภัณฑ์ที่ได้แพตช์ไว้ 6 รายการ ทั้งหมดวันที่ 10 พ.ย. 2569 ได้แก่ Microsoft 365 Apps for Enterprise (32 และ 64 บิต) และ Office LTSC 2024 กับ LTSC 2021 (32 และ 64 บิต) ผมไม่เห็นรายการ Outlook รุ่นอื่นในหน้านั้น ถ้าใช้ Office รุ่นที่ไม่อยู่ในลิสต์ ควรเช็กกับหน้า MSRC หรือผู้ดูแลระบบอีกที
+
+เลข build ที่หน้าระบุไว้คือ LTSC 2024 เป็น 16.0.17932.21140 และ LTSC 2021 เป็น 16.0.14334.21048 ส่วน Microsoft 365 Apps หน้านั้นให้ลิงก์ไปที่ aka.ms/OfficeSecurityReleases
+
+ตาราง MSRC บอกว่า Office มีช่องโหว่ที่แก้รอบนี้ 174 รายการ แต่ผมยังไม่ได้เปิดอ่านรายละเอียดทีละ CVE เลยไม่ขอสรุปว่าแต่ละตัวเกี่ยวกับโปรแกรมไหนครับ
+
+</div>
+<div class="note">
+
+### Office ที่ได้แพตช์ CVE นี้
+
+**Microsoft 365 Apps for Enterprise:** 32 บิต และ 64 บิต
+
+**Office LTSC 2024:** 32 บิต และ 64 บิต · build 16.0.17932.21140
+
+**Office LTSC 2021:** 32 บิต และ 64 บิต · build 16.0.14334.21048
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## Windows 11 แต่ละรุ่นได้ KB อะไร
+
+<div class="split">
+<div class="prose">
+
+ตารางบนหน้า Windows release health ระบุว่าทุกรุ่นของ Windows 11 ได้อัปเดต "2026-11 B" เมื่อ 10 พ.ย. 2569 KB คือเลขของบทความอัปเดต ใช้ค้นหาได้ตรงตัว
+
+- **26H2, 25H2 และ 24H2** ใช้ KB5132061 ตัวเดียวกัน
+- **26H1** ใช้ KB5132059 รุ่นนี้ Microsoft เขียนไว้ว่าออกแบบมาสำหรับเครื่องใหม่ที่วางตลาดตั้งแต่ต้นปี 2569 และไม่ได้เสนออัปเดตจาก 24H2 หรือ 25H2 ในเครื่องเดิม
+- **23H2** ใช้ KB5131087 และเป็นอัปเดตสุดท้ายของรุ่นนี้สำหรับ Enterprise และ Education (ดูหัวข้อถัดไป)
+
+สถานะ Home และ Pro ตามหน้า release health คือ 24H2 และ 23H2 หมดช่วงอัปเดตแล้ว (End of updates) ส่วนที่ยังอยู่คือ 25H2 (ถึง 12 ต.ค. 2570) 26H1 (ถึง 14 มี.ค. 2571) และ 26H2 (ถึง 10 ต.ค. 2571) ครับ
+
+</div>
+<div class="note">
+
+### เวอร์ชัน / KB / build
+
+**26H2:** KB5132061 · build 26300.9974
+
+**26H1:** KB5132059 · build 28000.3501
+
+**25H2:** KB5132061 · build 26200.9974
+
+**24H2:** KB5132061 · build 26100.9974
+
+**23H2:** KB5131087 · build 22631.7711
+
+**Windows 10 22H2 (ESU):** KB5131096 · build 19045.7846
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## อัปเดต Windows 11 มีอะไรใหม่และแก้อะไร
+
+<div class="split">
+<div class="prose">
+
+ผมอ่านหน้า KB ของทั้งสามอัปเดตแล้ว จัดกลุ่มเป็นภาษาง่าย ๆ ให้ครับ ถ้าติดตั้งอัปเดตเก่าไว้แล้ว เครื่องจะโหลดเฉพาะส่วนใหม่
+
+**ความปลอดภัย**
+
+- แก้ช่องโหว่ตามที่ MSRC สรุปไว้ข้างบน (Security Update Guide)
+- ปรับ NTLM ให้ฝั่งเครื่องลูกข่าย (client) เสนอการเซ็นกำกับข้อความ (message signing) เป็นค่าเริ่มต้นกับการเชื่อมต่อที่ไม่ใช่แบบนิรนาม ช่วยลดความเสี่ยงจาก NTLM relay (การดักแล้วส่งต่อข้อมูลยืนยันตัวตน) และมีระบบ audit ไว้ตรวจว่าการเชื่อมต่อไหนไม่ได้เซ็น (ทั้ง 23H2, 25H2/26H2 และ 26H1)
+- PowerShell ตรวจรหัสอักขระ (encoding) ของสคริปต์ที่เซ็นชื่อเข้มขึ้น สคริปต์ที่มี UTF-8 ไม่ถูกต้องอาจตรวจลายเซ็นไม่ผ่าน ทั้งที่เคยผ่าน วิธีแก้ที่ Microsoft แนะนำคือเปิดสคริปต์แล้วบันทึกเป็น UTF-8 แบบมี BOM แล้วเซ็นใหม่ (คนใช้งานทั่วไปไม่ต้องกังวล เรื่องนี้เกี่ยวกับคนที่เขียนและเซ็นสคริปต์เองเท่านั้น)
+
+**ฟีเจอร์ใหม่ / การเตรียมระบบ**
+
+- Secure Boot เพิ่มข้อมูลระบุเครื่องที่มั่นใจสูงขึ้น เพื่อให้เครื่องมากขึ้นได้รับใบรับรอง Secure Boot ชุดใหม่อัตโนมัติ การแจกใบรับรองผ่าน Windows Update ยังทยอยทำต่อใน "หลายเดือนข้างหน้า"
+- ปรับกติกาเวลาออมแสง (DST) ของประเทศคิวบาสำหรับปี 2569-2570 (คิวบาอยู่ UTC-04:00 ไม่เปลี่ยนเวลาในพ.ย. 2569 และ มี.ค. 2570 แล้วกลับเป็น UTC-05:00 ในพ.ย. 2570)
+
+**แก้บั๊ก**
+
+- เสียง: USB Audio 1.0 บางตัวอาจเปิดไม่ขึ้นและขึ้น error code 10 ใน Device Manager หลังลงอัปเดตความปลอดภัยก่อนหน้า แก้แล้ว (ระบุไว้ใน 25H2/26H2 และ 26H1)
+- เครื่องพิมพ์: การเพิ่มเครื่องพิมพ์ที่ประกาศไว้ใน Active Directory ผ่าน Settings > Bluetooth & devices > Printers & scanners > Add device อาจล้มเหลวด้วย error 87 "The parameter is incorrect" ซึ่งเกิดจากอัปเดตเดือนตุลาคม แก้แล้ว (ทั้ง 3 KB) Microsoft บอกว่าไม่กระทบเครื่องพิมพ์ที่ตั้งไว้เดิมโดยทั่วไป
+- Remote Desktop: การเชื่อมต่อ RDP อาจล้มเพราะใบรับรองไม่ตรงหลังลงพรีวิวเดือนตุลาคม แก้แล้ว (25H2/26H2 และ 26H1) ส่วน 23H2 แก้เรื่องอื่น คือนโยบาย "Specify thumbprints of certificates representing trusted .rdp publishers" ตั้งค่าผ่าน Microsoft Intune ไม่สำเร็จ
+
+**ปัญหาที่ยังรู้ (Known issues)**
+
+- Microsoft เขียนในทั้งสามหน้า KB ว่า "ไม่ทราบปัญหาใด ๆ กับอัปเดตนี้ในขณะนี้" (not currently aware of any issues)
+
+</div>
+<div class="note">
+
+### ข้อควรรู้เรื่อง KB
+
+**KB5132061:** หน้าแยกเป็นแท็บ 25H2/26H2 กับ 24H2 รายการที่ผมสรุปด้านซ้ายอ่านจากแท็บ 25H2/26H2
+
+**KB5132059 (26H1):** รวมการปรับปรุงจากพรีวิวเดือนที่แล้ว และ OOB ตัวเดือนตุลาคม
+
+**KB5131087 (23H2):** เป็นอัปเดตความปลอดภัยสุดท้ายของ 23H2 Enterprise และ Education
+
+**ไม่มีพรีวิวธันวาคม:** Microsoft ประกาศว่าเดือน ธ.ค. 2569 จะไม่มีอัปเดตพรีวิว (non-security) ช่วงปลายเดือน เพราะเทศกาลปลายปี จะกลับมาปกติ ม.ค. 2570
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ใช้ Windows 11 23H2 หรือ Windows 10 อยู่
+
+<div class="prose">
+
+- **Windows 11 23H2 (Enterprise และ Education):** Microsoft เขียนว่าอัปเดตเดือนนี้เป็นอัปเดตความปลอดภัยสุดท้ายของสองรุ่นนี้ หลังจากนี้ไม่ได้รับแพตช์รายเดือนอีก แนะนำให้ย้ายไปรุ่นที่ยังรองรับ (Home และ Pro ของ 23H2 หมดช่วงอัปเดตไปก่อนหน้านี้แล้วตามตาราง)
+- **Windows 10 22H2:** หน้า release health บอกว่า Latest update for ESU เป็น 2026-11 B ลงวันที่ 10 พ.ย. 2569 build 19045.7846 KB5131096 ESU (Extended Security Updates) คือโปรแกรมจ่ายเงินต่ออายุแพตช์ความปลอดภัย ใช้ได้เฉพาะเครื่องที่สมัครไว้ ผมเปิดหน้า KB5131096 ไม่ได้เนื้อหา จึงไม่ขอสรุปว่าแก้อะไรบ้างครับ
+- **Windows 10 LTSC:** หน้าเดียวกันแสดง 2026-11 B เช่นกัน เช่น LTSC 2021 build 19044.7846, LTSC 2019 build 17763.9487 และ LTSB 2016 build 14393.9688
+
+</div>
+
+</section>
+
+<section class="section">
+
+## อัปเดตยังไง
+
+<div class="split">
+<div class="prose">
+
+**Windows**
+
+1. เปิด Settings แล้วเลือก Windows Update
+2. กด Check for updates แล้วรอโหลดและติดตั้ง
+3. รีสตาร์ตเครื่องตามที่ขึ้นมา เสร็จแล้วเปิดหน้าเดิมดูว่าอัปเดต KB ของรุ่นตัวเองแสดงว่าติดตั้งแล้ว
+
+ดู KB ที่ติดตั้งได้ที่ Settings > Windows Update > Update history หรือเช็กเลข build ด้วยคำสั่ง winver เทียบกับตารางด้านบน
+
+**Office (รวม Outlook)**
+
+1. เปิดโปรแกรม Office ใดก็ได้ เช่น Word หรือ Outlook
+2. เลือก File แล้วเลือก Account (บัญชี)
+3. กด Update Options แล้วเลือก Update Now
+
+**Outlook**
+
+Outlook รุ่นที่มากับ Microsoft 365 หรือ Office LTSC อัปเดตผ่านขั้นตอน Office ข้างบนเหมือนกัน ถ้าเป็นองค์กรที่ผู้ดูแลระบบคุมการอัปเดต ให้ถามทีมไอทีว่าแพตช์ของ CVE-2026-124194 ลงให้แล้วหรือยัง
+
+</div>
+<div class="note">
+
+### ข้อควรรู้
+
+บันทึกงานที่ค้างอยู่ก่อนกดรีสตาร์ตครับ
+
+ถ้ายังไม่เห็นอัปเดต ให้เปิดหน้า Windows Update ค้างไว้สักพักหรือลองใหม่ภายหลัง เพราะ Microsoft ทยอยปล่อยให้เครื่องต่าง ๆ
+
+ระหว่างรออัปเดต Outlook อย่าเปิดไฟล์อีเมลหรือไฟล์แนบจากคนที่ไม่รู้จัก โดยเฉพาะที่ไม่ได้คาดหวังว่าจะได้รับ
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ข้อควรรู้เพิ่มเติม
+
+<div class="prose">
+
+- ตัวเลข 1,094 เป็นจำนวน CVE ไม่ใช่ระดับความอันตราย ช่องโหว่ส่วนใหญ่ผมยังไม่ได้เปิดอ่านทีละรายการ ตัวที่ผมอ่านละเอียดและยืนยันได้ว่าถูกโจมตีจริงตามประกาศคือ CVE-2026-124194
+- MSRC ระบุว่าอัปเดต Windows 10 และ 11 เป็นแบบสะสม ติดตั้งตัวใหม่ล่าสุดแล้วได้ของเก่าครบ
+- ข้อมูลทั้งหมดอ้างตามหน้าของ Microsoft และ CISA ที่ระบุในแหล่งข้อมูล ถ้า Microsoft แก้ไขหน้าในภายหลัง ข้อมูลอาจเปลี่ยนครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ภาพประกอบ
+
+<ShotGallery shots={shots} />
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- MSRC November 2026 Security Updates: <a href="https://msrc.microsoft.com/update-guide/releaseNote/2026-Nov" rel="noopener">msrc.microsoft.com</a>
+- CVE-2026-124194: <a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-124194" rel="noopener">msrc.microsoft.com</a>
+- CISA เพิ่ม KEV 10 พ.ย. 2569: <a href="https://www.cisa.gov/news-events/alerts/2026/11/10/cisa-adds-six-known-exploited-vulnerabilities-catalog" rel="noopener">cisa.gov</a>
+- Windows 11 release information: <a href="https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information" rel="noopener">learn.microsoft.com</a> · Windows 10: <a href="https://learn.microsoft.com/en-us/windows/release-health/release-information" rel="noopener">learn.microsoft.com</a>
+- หน้า KB: <a href="https://support.microsoft.com/help/5132061" rel="noopener">KB5132061</a> · <a href="https://support.microsoft.com/help/5132059" rel="noopener">KB5132059</a> · <a href="https://support.microsoft.com/help/5131087" rel="noopener">KB5131087</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- สรุป Security Updates เดือนพฤศจิกายน 2026: ภาพ: Microsoft (ภาพหน้าจอ) · <a href="https://msrc.microsoft.com/update-guide/releaseNote/2026-Nov" rel="noopener">msrc.microsoft.com</a>
+- ตาราง Windows 11 release information: ภาพ: Microsoft (ภาพหน้าจอ) · <a href="https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information" rel="noopener">learn.microsoft.com</a>
+- ภาพปก: ภาพประกอบสร้างด้วย AI (Codex image generation) โดย DOJOJIN.TECH ไม่ใช่ภาพเหตุการณ์จริง
+
+ภาพใช้ประกอบข่าว (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>

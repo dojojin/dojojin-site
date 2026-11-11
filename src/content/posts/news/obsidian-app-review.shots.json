@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "title": "โน้ตบน iPhone โหมดมืด",
+    "src": "/media/posts/news/obsidian-app-review/img-1.jpg",
+    "w": 900, "h": 1600, "fit": "contain", "group": "ภาพประกอบ",
+    "alt": "ภาพหน้าจอ Obsidian บน iPhone โหมดมืด โน้ตชื่อ Evergreen notes turn ideas into objects that you can manipulate มีแท็ก #evergreen และลิงก์ไปโน้ตอื่น",
+    "summary": "โน้ตบนมือถือที่มีลิงก์ไปหาโน้ตอื่นเป็นรายการ นี่คือหัวใจของ Obsidian คือโน้ตเชื่อมถึงกัน ภาพจาก App Store ครับ",
+    "credit": "ภาพ: Dynalist Inc. (Obsidian) · <a href=\"https://apps.apple.com/th/app/obsidian-connected-notes/id1557175442\" rel=\"noopener\">apps.apple.com</a>",
+    "analysis": ["ข้อความที่ขีดเส้นใต้สีม่วงคือลิงก์ไปโน้ตอื่น", "แถบล่างมีปุ่มย้อนกลับ ไปข้างหน้า สร้างโน้ตใหม่ และสลับแท็บ"]
+  },
+  {
+    "id": "2",
+    "title": "โน้ตโหมดสว่างบน iPhone",
+    "src": "/media/posts/news/obsidian-app-review/img-2.jpg",
+    "w": 900, "h": 1600, "fit": "contain", "group": "ภาพประกอบ",
+    "alt": "ภาพหน้าจอ Obsidian บน iPhone โหมดสว่าง โน้ตชื่อ Writing is telepathy มีแท็ก #evergreen หัวข้อและรายการ bullet",
+    "summary": "หน้าตาโหมดสว่างของโน้ตเดียวกัน อ่านง่ายแบบหน้ากระดาษ ภาพจาก App Store ครับ",
+    "credit": "ภาพ: Dynalist Inc. (Obsidian) · <a href=\"https://apps.apple.com/th/app/obsidian-connected-notes/id1557175442\" rel=\"noopener\">apps.apple.com</a>",
+    "analysis": ["ด้านบนมี breadcrumb บอกโฟลเดอร์ Ideas / Writing is telepathy"]
+  },
+  {
+    "id": "3",
+    "title": "แก้โน้ตพร้อมแถบเครื่องมือบนคีย์บอร์ด",
+    "src": "/media/posts/news/obsidian-app-review/img-3.jpg",
+    "w": 900, "h": 1600, "fit": "contain", "group": "ภาพประกอบ",
+    "alt": "ภาพหน้าจอ Obsidian บน iPhone ขณะแก้โน้ต 2023 Japan Trip Planning มีแถบเครื่องมือเหนือคีย์บอร์ด",
+    "summary": "ตอนแก้โน้ตมีแถบเครื่องมือเหนือคีย์บอร์ด สำหรับลิงก์ แนบไฟล์ แท็ก หัวข้อ ตัวหนา ตัวเอียง ภาพจาก App Store ครับ",
+    "credit": "ภาพ: Dynalist Inc. (Obsidian) · <a href=\"https://apps.apple.com/th/app/obsidian-connected-notes/id1557175442\" rel=\"noopener\">apps.apple.com</a>",
+    "analysis": ["เช็กลิสต์ซ้อนกันได้", "ในโหมดแก้ลิงก์แสดงเป็น [[Kyoto]]"]
+  }
+]

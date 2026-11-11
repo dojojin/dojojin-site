@@ -1,0 +1,185 @@
+---
+title: "แอปแนะนำ: LocalSend ส่งไฟล์ข้ามเครื่องผ่าน Wi-Fi ในบ้าน ไม่ต้องใช้เน็ต ฟรีและโอเพนซอร์ส"
+topic: software
+type: news
+tags: [app, open-source]
+date: 2026-11-11
+section: tech
+sourceName: "LocalSend"
+sourceUrl: "https://localsend.org"
+description: "แนะนำ LocalSend แอปส่งไฟล์และข้อความระหว่างอุปกรณ์ผ่านเครือข่ายในบ้านหรือที่ทำงาน ไม่ต้องใช้อินเทอร์เน็ต ใช้ได้ทั้ง Windows, macOS, Linux, Android และ iOS ฟรีและโอเพนซอร์ส รุ่นล่าสุด 1.18.2"
+kicker: "แอปแนะนำ"
+lead: "อยากส่งรูปจากมือถือเข้าคอม หรือส่งไฟล์ให้เพื่อนในห้องเดียวกันโดยไม่ต้องอัปโหลดขึ้นคลาวด์ ผมแนะนำ LocalSend ครับ ทำงานคล้าย AirDrop แต่ใช้ข้ามค่ายได้ ใช้ฟรี และเป็นโอเพนซอร์ส"
+meta: "เรียบเรียงจาก localsend.org, GitHub releases และ App Store ไทย · ข้อมูล ณ 11 พฤศจิกายน 2569"
+cover: "/media/posts/news/localsend-app-review/cover.jpg"
+coverAlt: "ภาพหน้าเว็บ localsend.org แสดงข้อความ Share files without the cloud และหน้าต่างแอป LocalSend บนคอมพิวเตอร์กับบนมือถือ"
+---
+
+import ShotGallery from '../../../components/ShotGallery.astro';
+import shots from './localsend-app-review.shots.json';
+
+<section class="section">
+
+## LocalSend คืออะไร
+
+<div class="split">
+<div class="prose">
+
+LocalSend เป็นแอปส่งไฟล์และข้อความหาอุปกรณ์ใกล้ ๆ ผ่านเครือข่าย Wi-Fi หรือ LAN วงเดียวกัน ไม่ผ่านคลาวด์และไม่ต้องมีอินเทอร์เน็ต เว็บไซต์ใช้คำว่า "Share files without the cloud. Fast, private, offline."
+
+ไม่ต้องสมัครบัญชีหรือล็อกอิน ส่งรูป วิดีโอ เอกสาร หรือข้อความ ไฟล์ชนิดไหนก็ได้ ไฟล์ที่รับจะลงโฟลเดอร์ Downloads เป็นค่าเริ่มต้น เปลี่ยนได้ในการตั้งค่า
+
+</div>
+<div class="note">
+
+### ข้อมูลเร็ว ๆ
+
+**ราคา:** ฟรี ไม่มีโฆษณา ไม่ติดตาม (ตามที่เว็บระบุ)
+
+**ไลเซนส์:** โอเพนซอร์ส Apache 2.0
+
+**รุ่นล่าสุด:** 1.18.2 (21 ส.ค. 2569 บน GitHub)
+
+**แพลตฟอร์ม:** Windows, macOS, Linux, Android, iOS และมีเว็บแอป
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## แพลตฟอร์มและราคา
+
+<div class="prose">
+
+เว็บไซต์ระบุว่ารองรับ Windows, macOS, Linux, Android และ iOS และมีเว็บแอปที่ <a href="https://web.localsend.org" rel="noopener">web.localsend.org</a>
+
+บน <a href="https://apps.apple.com/th/app/localsend/id1661733229" rel="noopener">App Store ไทย</a> ชื่อ LocalSend ผู้พัฒนา Tien Do Nam ดาวน์โหลดฟรี มีตัวเลือกบริจาคในแอปราคา 149 ถึง 1,490 บาท ต้องใช้ iOS/iPadOS 13.0 ขึ้นไป macOS 11.0 ขึ้นไป หรือ visionOS 1.0 ขึ้นไป หน้า App Store ระบุว่าไม่เก็บข้อมูลผู้ใช้
+
+**ดาวน์โหลด:** <a href="https://localsend.org/download" rel="noopener">localsend.org/download</a> รวมลิงก์ครบทุกระบบ ทั้ง Windows, macOS, Linux, Android และ iOS ครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## วิธีใช้ 3 ขั้นตอน
+
+<div class="split">
+<div class="prose">
+
+1. **ติดตั้งแอปทั้งสองเครื่อง** แล้วเปิดแอป และต่อ Wi-Fi หรือ LAN เครือข่ายเดียวกัน ไม่ต้องล็อกอิน แต่ละเครื่องจะได้ชื่อสุ่ม เช่น "Fresh Coconut"
+2. **เลือกสิ่งที่จะส่ง** ที่แท็บ Send เลือก Media, Text, File หรือ Folder
+3. **แตะชื่อเครื่องปลายทาง** ที่อยู่ในรายการ Nearby devices ฝั่งรับจะเห็นคำขอ ยืนยันแล้วไฟล์จะเริ่มส่ง ดูความคืบหน้าได้ทั้งสองฝั่ง
+
+ถ้าไม่เจอเครื่องในรายการ แอปมีปุ่ม Troubleshoot ไว้ช่วยแก้ปัญหา และฝั่งมือถือใช้ปุ่ม Share ของระบบเพื่อเลือกไฟล์ได้ง่ายขึ้น
+
+</div>
+<div class="note">
+
+### เคล็ดลับ
+
+เครื่องต้องอยู่เครือข่ายเดียวกันจริง ๆ ถ้า Wi-Fi แยกกันหรือเปิดโหมดแยกอุปกรณ์ (client isolation) อาจมองไม่เห็นกัน
+
+ถ้าอยากส่งให้เครื่องที่ไม่ได้ลงแอป หน้าเว็บมีโหมด "Receive via link" ให้เปิดผ่านเบราว์เซอร์ได้ (ตามบันทึกรุ่น 1.18.2)
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## เรื่องความปลอดภัย
+
+<div class="prose">
+
+ตามที่ localsend.org เขียนไว้ การส่งไฟล์เป็นการส่งในเครือข่ายภายใน ไม่ผ่านคลาวด์ และมีการเข้ารหัส ในหน้าฟีเจอร์เขียนถึงการเข้ารหัสแบบ end-to-end ส่วนหน้า FAQ บอกว่าเข้ารหัสด้วย HTTPS และหน้า App Store ระบุ TLS นอกจากนี้ผู้ใช้เปิดการตรวจ PIN เพิ่มได้ ผมสรุปตามที่เว็บเขียน ไม่ได้ทดสอบหรือตรวจโค้ดเองครับ
+
+ใช้ในเครือข่ายที่เราไว้ใจ อย่าตอบรับไฟล์จากเครื่องที่ไม่รู้จัก และรุ่น 1.18.2 มีการปรับปรุงด้านนี้เพิ่ม คือไม่ตามการ redirect ของ HTTP ที่ส่งมาจากเครื่องอื่นอีก
+
+</div>
+
+</section>
+
+<section class="section">
+
+## รุ่นล่าสุดและอายุของแอป
+
+<div class="split">
+<div class="prose">
+
+รุ่นล่าสุดบน GitHub คือ **v1.18.2** วันที่ 21 สิงหาคม 2569 (App Store ไทยลงวันที่ 22 ส.ค.) บันทึกรุ่นบอกว่ารอบนี้แก้ปัญหาความเข้ากันได้กับรุ่น 1.17.0 และเก่ากว่า มีทั้งแก้เรื่องเครือข่ายที่ไม่มี multicast, ปัญหา "TLS info not found" เมื่อเปิด proxy ของระบบ, ลากวางโฟลเดอร์ปนไฟล์ และเพิ่มภาษาอาร์เมเนีย พร้อมลงลายเซ็นไฟล์ Windows
+
+จากประวัติรุ่นที่มีทั้ง 1.17 และ 1.18 สรุปได้ว่าเป็นแอปที่ผ่านมาหลายรุ่นแล้ว ไม่ใช่แอปใหม่เอี่ยม ผมไม่ได้ตรวจวันเปิดตัวครั้งแรกจึงไม่ระบุปีครับ
+
+</div>
+<div class="note">
+
+### เด่นใน 1.18.2
+
+ลากไฟล์วางหน้า "Receive via link" ได้
+
+ทำหน้าเว็บแชร์เองด้วยไฟล์ HTML ได้ (เดสก์ท็อป)
+
+เซิร์ฟเวอร์ HTTP/multicast รีสตาร์ตเองเมื่อหยุดทำงาน
+
+แก้การอ่านวันที่แก้ไขไฟล์บน Android
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ใครควรใช้
+
+<div class="prose">
+
+- คนที่ส่งไฟล์ระหว่างมือถือกับคอมบ่อย โดยเฉพาะข้ามค่าย เช่น Android กับ Windows หรือ iPhone กับ Linux
+- คนที่ไม่อยากอัปโหลดไฟล์ใหญ่ขึ้นคลาวด์ หรืออยู่ที่เน็ตช้า
+- สำนักงานและทีมที่อยากส่งไฟล์ภายในเครือข่ายเดียวกัน
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ภาพประกอบ
+
+<ShotGallery shots={shots} />
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- เว็บไซต์: <a href="https://localsend.org" rel="noopener">localsend.org</a> · <a href="https://localsend.org/changelog" rel="noopener">changelog</a>
+- รุ่นและซอร์สโค้ด: <a href="https://github.com/localsend/localsend/releases" rel="noopener">GitHub releases</a>
+- App Store ไทย: <a href="https://apps.apple.com/th/app/localsend/id1661733229" rel="noopener">apps.apple.com</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: ภาพ: LocalSend (ภาพหน้าจอเว็บไซต์) · <a href="https://localsend.org" rel="noopener">localsend.org</a>
+- ภาพหน้าจอแอป 3 ภาพ: ภาพ: Tien Do Nam (LocalSend) ภาพหน้าจอจาก App Store · <a href="https://apps.apple.com/th/app/localsend/id1661733229" rel="noopener">apps.apple.com</a>
+
+ภาพใช้ประกอบการแนะนำ (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>

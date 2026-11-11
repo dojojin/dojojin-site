@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "title": "ประกาศความปลอดภัยของ iOS 27.2.1 และ iPadOS 27.2.1",
+    "src": "/media/posts/news/apple-security-updates-2026-11-09/img-1.jpg",
+    "w": 1000,
+    "h": 1300,
+    "fit": "contain",
+    "group": "ภาพประกอบ",
+    "alt": "หน้าเว็บ Apple About the security content of iOS 27.2.1 and iPadOS 27.2.1 วันที่ปล่อย 9 พฤศจิกายน 2026 แสดงรายการ AirPlay และ App Intents พร้อมเครื่องที่รองรับ",
+    "summary": "หน้าประกาศของ Apple สำหรับ iOS และ iPadOS 27.2.1 เรียงช่องโหว่ตามส่วนของระบบ แต่ละรายการบอกเครื่องที่รองรับ ผลกระทบ วิธีแก้ และเลข CVE ครับ",
+    "credit": "ภาพ: Apple (ภาพหน้าจอ) · <a href=\"https://support.apple.com/en-us/149715\" rel=\"noopener\">support.apple.com</a>",
+    "analysis": [
+      "ใต้หัวข้อ Released November 9, 2026 มีรายการ AirPlay (CVE-2026-113968) และ App Intents (CVE-2026-113963)",
+      "แต่ละรายการเขียนบรรทัด Available for ระบุรุ่น iPhone และ iPad ที่ได้รับการแก้"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "รายการ Apple security releases แถวของวันที่ 9 พฤศจิกายน",
+    "src": "/media/posts/news/apple-security-updates-2026-11-09/img-2.jpg",
+    "w": 1000,
+    "h": 1400,
+    "fit": "contain",
+    "group": "ภาพประกอบ",
+    "alt": "ตาราง Apple security updates แสดงอัปเดต 9 รายการที่ลงวันที่ 09 Nov 2026 ตั้งแต่ iOS 27.2.1 ถึง visionOS 27.2.1 และด้านล่างเป็น Xcode 27.2 วันที่ 29 Oct 2026",
+    "summary": "หน้ารายการรวมของ Apple เห็นชัดว่ามี 9 แถวที่ลงวันที่ 9 พฤศจิกายน 2569 พร้อมชื่ออัปเดตและเครื่องที่รองรับของแต่ละตัวครับ",
+    "credit": "ภาพ: Apple (ภาพหน้าจอ) · <a href=\"https://support.apple.com/en-us/100100\" rel=\"noopener\">support.apple.com</a>",
+    "analysis": [
+      "แถวของ iOS, macOS, watchOS และ visionOS ลงวันที่ 09 Nov 2026 รวม 9 แถว",
+      "macOS ทั้งสามแถวระบุแค่ชื่อระบบ ไม่ได้ระบุรุ่น Mac"
+    ]
+  }
+]

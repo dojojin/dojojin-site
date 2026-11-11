@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "title": "Rambler บน Pixel 10 Pro",
+    "src": "/media/posts/news/pixel-drop-november-2026/img-1.jpg",
+    "w": 1200,
+    "h": 675,
+    "group": "ภาพจาก Google",
+    "alt": "ภาพจอ Pixel 10 Pro แสดงแชตกับ Animal Rescue และข้อความตอบที่ Rambler เรียบเรียงให้ มีแถบเรืองแสง AI เหนือคีย์บอร์ด",
+    "summary": "Rambler ช่วยเรียบเรียงเสียงพูดเป็นข้อความตอบกลับที่อ่านง่าย ภาพจาก Google ครับ",
+    "analysis": [
+      "ซ้ายคือแชตที่มีข้อความถามเข้ามา และแถบ AI เหนือคีย์บอร์ด",
+      "ขวาคือข้อความตอบที่ Rambler เรียบเรียงจากเสียงพูด"
+    ],
+    "credit": "ภาพ: Google · <a href=\"https://blog.google/products-and-platforms/devices/pixel/november-2026-pixel-drop/\" rel=\"noopener\">blog.google</a>"
+  },
+  {
+    "id": "2",
+    "title": "สร้างวิดเจ็ตด้วยคำสั่ง บน Pixel 11 Pro",
+    "src": "/media/posts/news/pixel-drop-november-2026/img-2.jpg",
+    "w": 1200,
+    "h": 675,
+    "group": "ภาพจาก Google",
+    "alt": "จอ Pixel 11 Pro หน้า Describe your widget พร้อมคำสั่ง Show me my monthly shopping spend",
+    "summary": "หน้าจอสร้างวิดเจ็ตที่พิมพ์บอกสิ่งที่ต้องการ เช่น แสดงรายจ่ายช้อปปิ้งรายเดือนครับ",
+    "analysis": [
+      "ช่องคำสั่งชื่อ Describe your widget",
+      "ตัวอย่างคำสั่งในภาพคือ Show me my monthly shopping spend"
+    ],
+    "credit": "ภาพ: Google · <a href=\"https://blog.google/products-and-platforms/devices/pixel/november-2026-pixel-drop/\" rel=\"noopener\">blog.google</a>"
+  },
+  {
+    "id": "3",
+    "title": "สไตล์ไอคอนใหม่ บน Pixel 11 Pro",
+    "src": "/media/posts/news/pixel-drop-november-2026/img-3.jpg",
+    "w": 1200,
+    "h": 675,
+    "group": "ภาพจาก Google",
+    "alt": "จอ Pixel 11 Pro หน้าปรับแต่งไอคอน มีตัวอย่างหน้าจอหลักและสไตล์ไอคอนกล้องหลายแบบ",
+    "summary": "หน้าเลือกสไตล์ไอคอนแอปบนหน้าจอหลัก ครับ",
+    "analysis": [
+      "ด้านบนคือตัวอย่างหน้าจอหลัก",
+      "ด้านล่างคือไอคอนกล้องหลายสไตล์ให้เลือก"
+    ],
+    "credit": "ภาพ: Google · <a href=\"https://blog.google/products-and-platforms/devices/pixel/november-2026-pixel-drop/\" rel=\"noopener\">blog.google</a>"
+  }
+]

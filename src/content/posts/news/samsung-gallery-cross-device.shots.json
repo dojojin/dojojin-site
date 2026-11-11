@@ -1,0 +1,49 @@
+[
+  {
+    "id": "1",
+    "title": "เปิดซิงค์ผ่านไอคอนคลาวด์ในแกลเลอรี",
+    "src": "/media/posts/news/samsung-gallery-cross-device/img-1.jpg",
+    "w": 1000,
+    "h": 563,
+    "group": "ภาพประกอบ",
+    "alt": "ภาพจำลองหน้าจอ Samsung Gallery บนมือถือ Galaxy สามจอ ได้แก่ หน้าแกลเลอรีที่มีไอคอนคลาวด์ หน้า Sync your photos and videos และหน้าตั้งค่า Sync photos and videos",
+    "summary": "ภาพจาก Samsung แสดงขั้นตอนเริ่มซิงค์ ตั้งแต่แตะไอคอนคลาวด์ในแกลเลอรี ไปจนถึงหน้าตั้งค่าที่เห็นพื้นที่ Google storage ครับ",
+    "credit": "ภาพ: Samsung Newsroom · <a href=\"https://news.samsung.com/global/samsung-gallery-makes-it-easier-to-access-photos-and-videos-across-galaxy-devices\" rel=\"noopener\">news.samsung.com</a>",
+    "analysis": [
+      "จอซ้ายคือหน้าแกลเลอรีที่มีไอคอนคลาวด์ด้านบน",
+      "จอกลางคือหน้า Sync your photos and videos ให้เลือกบัญชี Google",
+      "จอขวาคือหน้าตั้งค่า แสดงพื้นที่ Google storage ที่ใช้ไป ปุ่ม Clean up space และตัวเลือกซิงค์ผ่าน Wi-Fi เท่านั้น"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "ฟีเจอร์ Free up space",
+    "src": "/media/posts/news/samsung-gallery-cross-device/img-2.jpg",
+    "w": 1000,
+    "h": 563,
+    "group": "ภาพประกอบ",
+    "alt": "ภาพจำลองหน้าจอตั้งค่า Sync photos and videos และหน้า Free up space on this phone",
+    "summary": "ภาพจาก Samsung ของฟีเจอร์ Free up space ที่ลบไฟล์ต้นฉบับออกจากเครื่องหลังซิงค์แล้ว แต่ยังเห็นภาพตัวอย่างในแกลเลอรีครับ",
+    "credit": "ภาพ: Samsung Newsroom · <a href=\"https://news.samsung.com/global/samsung-gallery-makes-it-easier-to-access-photos-and-videos-across-galaxy-devices\" rel=\"noopener\">news.samsung.com</a>",
+    "analysis": [
+      "จอซ้ายคือหน้าตั้งค่าซิงค์ มีปุ่ม Clean up space",
+      "จอขวาคือหน้า Free up space on this phone มีปุ่มกดยืนยันด้านล่าง",
+      "ภาพเป็นภาพจำลองเพื่ออธิบายเท่านั้น (Samsung ระบุใต้ภาพ)"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "ตั้งค่าได้จากการ์ดแนะนำหรือ Gallery Settings",
+    "src": "/media/posts/news/samsung-gallery-cross-device/img-3.jpg",
+    "w": 1000,
+    "h": 563,
+    "group": "ภาพประกอบ",
+    "alt": "ภาพจำลองหน้าจอ Samsung Gallery สี่จอ แสดงเมนูไอคอนในแกลเลอรี หน้า Gallery Settings หน้า Sync your photos and videos และหน้าตั้งค่าซิงค์",
+    "summary": "ภาพจาก Samsung แสดงอีกทางเปิดซิงค์คือไปที่ Gallery Settings แล้วเปิด Sync photos and videos ครับ",
+    "credit": "ภาพ: Samsung Newsroom · <a href=\"https://news.samsung.com/global/samsung-gallery-makes-it-easier-to-access-photos-and-videos-across-galaxy-devices\" rel=\"noopener\">news.samsung.com</a>",
+    "analysis": [
+      "จอที่สองคือหน้า Gallery Settings ที่มีรายการ Sync photos and videos อยู่ด้านบน",
+      "ภาพเป็นภาพจำลองเพื่ออธิบายเท่านั้น"
+    ]
+  }
+]

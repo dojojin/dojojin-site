@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "title": "สรุป Security Updates เดือนพฤศจิกายน 2026 ของ MSRC",
+    "src": "/media/posts/news/microsoft-patch-tuesday-2026-11/img-1.jpg",
+    "w": 1000,
+    "h": 940,
+    "fit": "contain",
+    "group": "ภาพประกอบ",
+    "alt": "หน้า MSRC November 2026 Security Updates เขียนว่า This release consists of 1094 Microsoft CVEs พร้อมตารางจำนวนช่องโหว่แยกตามผลิตภัณฑ์ และ CVE-2026-124194 ในหัวข้อ Notable CVEs",
+    "summary": "หน้าสรุปประจำเดือนของ Microsoft บอกยอดรวม 1094 CVE แยกตามตระกูลผลิตภัณฑ์ และมีช่องโหว่เด่นเพียงรายการเดียวคือ CVE-2026-124194 ของ Outlook ที่ติดป้าย Exploitation Detected ครับ",
+    "credit": "ภาพ: Microsoft (ภาพหน้าจอ) · <a href=\"https://msrc.microsoft.com/update-guide/releaseNote/2026-Nov\" rel=\"noopener\">msrc.microsoft.com</a>",
+    "analysis": [
+      "ประโยค This release consists of 1094 Microsoft CVEs ตรงกับผลรวมของตาราง คือ 20+1+53+9+174+25+59+27+726",
+      "Windows มี 726 รายการ มากที่สุด รองลงมาคือ Office 174 รายการ",
+      "หัวข้อ Notable CVEs มีรายการเดียว คือ Microsoft Outlook Spoofing Vulnerability"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "ตาราง Windows 11 release information แถวรุ่นปัจจุบัน",
+    "src": "/media/posts/news/microsoft-patch-tuesday-2026-11/img-2.jpg",
+    "w": 920,
+    "h": 522,
+    "group": "ภาพประกอบ",
+    "alt": "ตาราง Windows 11 current versions by servicing option แสดงรุ่น 26H2, 26H1, 25H2, 24H2 และ 23H2 ทุกแถวลง Latest update 2026-11 B วันที่ 2026-11-10 พร้อมเลข build",
+    "summary": "ตารางบนหน้า Windows release health ทุกรุ่นได้อัปเดต 2026-11 B เมื่อ 10 พฤศจิกายน 2026 เลข build ท้ายสุดของแต่ละรุ่นอยู่คอลัมน์ขวาสุดครับ",
+    "credit": "ภาพ: Microsoft (ภาพหน้าจอ) · <a href=\"https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information\" rel=\"noopener\">learn.microsoft.com</a>",
+    "analysis": [
+      "26H2 build 26300.9974, 26H1 build 28000.3501, 25H2 build 26200.9974, 24H2 build 26100.9974 และ 23H2 build 22631.7711",
+      "24H2 และ 23H2 หมดการอัปเดตของ Home/Pro แล้ว ส่วน 23H2 หมดทั้ง Enterprise/Education ด้วย"
+    ]
+  }
+]

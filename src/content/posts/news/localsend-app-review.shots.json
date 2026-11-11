@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "title": "หน้ารับไฟล์ของ LocalSend",
+    "src": "/media/posts/news/localsend-app-review/img-1.jpg",
+    "w": 900, "h": 1600, "fit": "contain", "group": "ภาพประกอบ",
+    "alt": "ภาพหน้าจอ LocalSend บน iPhone แท็บ Receive แสดงโลโก้ ชื่อเครื่อง Fresh Coconut และ Quick Save: Off",
+    "summary": "หน้าแรกของแอปคือแท็บ Receive แสดงชื่อสุ่มของเครื่องเรา เพื่อให้เครื่องอื่นมองเห็นและส่งไฟล์มาครับ ภาพจาก App Store",
+    "credit": "ภาพ: Tien Do Nam (LocalSend) · <a href=\"https://apps.apple.com/th/app/localsend/id1661733229\" rel=\"noopener\">apps.apple.com</a>",
+    "analysis": ["แถบล่างมี 3 แท็บ คือ Receive, Send, Settings", "Quick Save: Off คือต้องกดยืนยันก่อนรับไฟล์"]
+  },
+  {
+    "id": "2",
+    "title": "เลือกไฟล์และเครื่องปลายทาง",
+    "src": "/media/posts/news/localsend-app-review/img-2.jpg",
+    "w": 900, "h": 1600, "fit": "contain", "group": "ภาพประกอบ",
+    "alt": "ภาพหน้าจอ LocalSend แท็บ Send มีปุ่ม Media Text File Folder และรายการ Nearby devices เครื่อง Windows และ Samsung",
+    "summary": "แท็บ Send เลือกชนิดสิ่งที่จะส่ง แล้วแตะเครื่องใน Nearby devices ครับ ภาพจาก App Store",
+    "credit": "ภาพ: Tien Do Nam (LocalSend) · <a href=\"https://apps.apple.com/th/app/localsend/id1661733229\" rel=\"noopener\">apps.apple.com</a>",
+    "analysis": ["เครื่องในรายการบอกระบบ เช่น Windows และ Samsung", "ปุ่มหัวใจใช้บันทึกเครื่องโปรด"]
+  },
+  {
+    "id": "3",
+    "title": "ดูความคืบหน้าตอนรับไฟล์",
+    "src": "/media/posts/news/localsend-app-review/img-3.jpg",
+    "w": 900, "h": 1600, "fit": "contain", "group": "ภาพประกอบ",
+    "alt": "ภาพหน้าจอ LocalSend หน้า Receiving files แสดงไฟล์ Agreement.pdf เสร็จแล้ว และ video.mp4 กำลังรับ พร้อมแถบ Total progress",
+    "summary": "หน้ารับไฟล์บอกสถานะแต่ละไฟล์และความคืบหน้ารวม มีปุ่ม Cancel ครับ ภาพจาก App Store",
+    "credit": "ภาพ: Tien Do Nam (LocalSend) · <a href=\"https://apps.apple.com/th/app/localsend/id1661733229\" rel=\"noopener\">apps.apple.com</a>",
+    "analysis": ["แต่ละไฟล์แสดงขนาด เช่น 3.5 MB และ 71.9 MB", "ล่างสุดมี Total progress, Advanced และ Cancel"]
+  }
+]

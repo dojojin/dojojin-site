@@ -1,0 +1,224 @@
+---
+title: "Firefox 160 ออกแล้ว มี Mini Window, ปรับความเร็ว PiP และแก้ช่องโหว่ 99 รายการ"
+topic: software
+type: news
+tags: [firefox]
+date: 2026-11-11
+section: tech
+sourceName: "Firefox 160.0 Release Notes"
+sourceUrl: "https://www.firefox.com/en-US/firefox/160.0/releasenotes/"
+description: "Mozilla ปล่อย Firefox 160.0 เมื่อ 10 พ.ย. 2569 เพิ่ม Mini Window, ปรับความเร็ว Picture-in-Picture 0.25x ถึง 2.0x, ลากประวัติเปิดแท็บ, เล่นเสียงใน MKV และแก้ช่องโหว่ความปลอดภัย 99 รายการ"
+kicker: "ข่าวซอฟต์แวร์"
+lead: "Firefox 160.0 ออกวันที่ 10 พฤศจิกายน 2569 ของใหม่เด่น ๆ คือหน้าต่างเล็กลอยอยู่บนสุด (Mini Window) กับการปรับความเร็วหน้าต่างวิดีโอ และรอบนี้แก้ช่องโหว่ความปลอดภัยรวม 99 รายการ ผมไล่ให้ครบทุกหัวข้อตามหน้า Release Notes ครับ"
+meta: "เรียบเรียงจาก Release Notes และประกาศความปลอดภัยของ Mozilla · ข้อมูล ณ 11 พฤศจิกายน 2569"
+cover: "/media/posts/news/firefox-160/cover.jpg"
+coverAlt: "ส่วนหัวของหน้า Release Notes ของ Firefox โลโก้ Firefox บนพื้นสีม่วงกับข้อความ See what's new in Firefox! และมาสคอตจิ้งจอก"
+---
+
+import ShotGallery from '../../../components/ShotGallery.astro';
+import shots from './firefox-160.shots.json';
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="split">
+<div class="prose">
+
+Mozilla ปล่อย Firefox 160.0 ให้ผู้ใช้ช่อง Release เมื่อวันที่ 10 พฤศจิกายน 2569 ในหน้า Release Notes แบ่งหัวข้อเป็น New, Fixed, Enterprise, Developer และมีบรรทัดเรื่องการแก้ช่องโหว่ ผมสรุปให้ครบทุกข้อด้านล่าง
+
+หน้าประกาศไม่มีหัวข้อ "Changed" ในรุ่นนี้ครับ
+
+</div>
+<div class="note">
+
+### สรุปสั้น
+
+**รุ่น:** Firefox 160.0
+
+**วันที่ปล่อย:** 10 พฤศจิกายน 2569
+
+**ช่องโหว่ที่แก้:** 99 CVE (สูง 57 · ปานกลาง 24 · ต่ำ 18)
+
+**ประกาศความปลอดภัย:** MFSA 2026-125
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ของใหม่ (New)
+
+<div class="prose">
+
+- **ปรับความเร็วใน Picture-in-Picture** หน้าต่างวิดีโอลอย (PiP) เลือกความเร็วได้ตั้งแต่ 0.25x ถึง 2.0x ตัวเลือกนี้ขึ้นเฉพาะตอนหน้าต่างขนาดกลางขึ้นไป
+- **Mini Window** ย้ายแท็บหรือบางส่วนของหน้าเว็บไปอยู่ในหน้าต่างเล็กที่ลอยอยู่บนสุดเสมอ ตอนนี้เป็นรุ่นเริ่มต้น และ Mozilla ขอความเห็นจากผู้ใช้
+- **ลากประวัติไปเปิดแท็บ** ลากรายการจากแถบประวัติด้านข้างไปวางบนแถบแท็บ จะเปิดเป็นแท็บใหม่
+- **เมนูของแถบที่อยู่** ถ้าข้อความที่คัดลอกมาเป็นคำค้น จะขึ้น "Paste and Search" แทน "Paste and Go"
+- **สูตรคณิตศาสตร์ใน PDF** หน้าที่บันทึกเป็น PDF จะทำให้เนื้อหา MathML อ่านออกเสียงด้วยโปรแกรมอ่านหน้าจอได้
+- **บล็อกการขอเปิดลิงก์ด้วยแอปอื่น** มีปุ่ม "Never allow" กันเว็บที่ขอจัดการลิงก์อย่าง mailto: ซ้ำ ๆ จัดการรายชื่อเว็บที่บล็อกได้ในหน้า Settings
+- **เสียงในไฟล์ MKV** เล่นไฟล์ Matroska ที่ใช้เสียงแบบ FLAC, MP3 หรือ PCM ได้
+- **WebGL บน macOS** ใช้ Metal ของ Apple ซึ่งอาจช่วยให้บางเว็บลื่นขึ้น
+- **Smart Window (ทยอยปล่อย)** ฟีเจอร์ Organize Tabs ที่ช่วยเสนอและตั้งชื่อกลุ่มแท็บ ใช้ภาษาฝรั่งเศสได้แล้ว
+
+</div>
+
+</section>
+
+<section class="section">
+
+## แก้ไข (Fixed)
+
+<div class="split">
+<div class="prose">
+
+- พิมพ์เร็วหลังคลิกช่องที่อยู่หรือช่องค้นหา ตัวอักษรแรกบางครั้งหาย
+- เพิ่มความต่างของสีระหว่างชื่อโดเมนกับส่วนที่เหลือของที่อยู่ ให้อ่านง่ายขึ้น
+- แก้อาการค้างหลายวินาทีตอนล็อกอินเว็บภายในองค์กรที่ใช้ NTLM หรือ Kerberos (Negotiate)
+- แตะสองครั้ง กดค้างเลือกคำ และแตะเพื่อวางเคอร์เซอร์ในช่องข้อความทำงานได้ถูกต้องใกล้เคอร์เซอร์
+- macOS: ลิงก์ที่เปิดแบบพื้นหลังจากแอปอื่น (เช่นโปรแกรมอ่าน RSS) ไม่ดึง Firefox ขึ้นมาหน้าสุดอีก
+- macOS: ไฟล์ดาวน์โหลดบางครั้งเปิดผิดแอป
+- macOS: ดาวน์โหลดหลายไฟล์พร้อมกันแล้วค้าง เพราะ Firefox ถามที่เก็บไฟล์ และแสดงหน้าต่างให้แค่ไฟล์แรก
+- macOS: PDF ที่เปิดใน Preview จากหน้าต่างพิมพ์ มีชื่อไฟล์ที่สื่อความหมายและบันทึกได้ตามปกติ
+- แก้ช่องโหว่ความปลอดภัยหลายรายการ (ดูหัวข้อถัดไป)
+
+</div>
+<div class="note">
+
+### Enterprise
+
+ข้อมูลสำหรับองค์กรอยู่ในเอกสาร Enterprise Release Notes ของรุ่น 160 และรายการเปลี่ยนนโยบาย (policy) อยู่ใน changelog ของ Firefox admin docs ลิงก์อยู่ท้ายบทความ ในหน้าหลักไม่ได้ลงรายละเอียดเพิ่มครับ
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## สำหรับนักพัฒนา (Developer)
+
+<div class="split">
+<div class="prose">
+
+- **SpeechRecognition (Web Speech API)** รองรับแล้ว เป็นการแปลงเสียงเป็นข้อความแบบเรียลไทม์ทำงานบนเครื่อง รองรับ 40 ภาษา หน้า MDN บอกว่าใช้ได้บนเดสก์ท็อป ไม่รองรับบน Android และไม่รองรับการรู้จำเสียงผ่านคลาวด์
+- `::-webkit-input-placeholder` เป็นชื่อเรียกอีกชื่อของ `::placeholder`
+- ข้อมูลฉบับเต็มอยู่ที่หน้า Developer Information ของ MDN
+
+</div>
+<div class="note">
+
+### ภาษาไทยอยู่ใน 40 ภาษาหรือไม่
+
+ทั้งหน้า Release Notes และหน้า MDN บอกแค่จำนวน 40 ภาษา ไม่ได้ระบุรายชื่อ ผมจึงยืนยันไม่ได้ว่ามีภาษาไทยหรือไม่ครับ
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ความปลอดภัย
+
+<div class="split">
+<div class="prose">
+
+Release Notes เขียนสั้น ๆ ว่ามี "various security fixes" และชี้ไปที่ประกาศ MFSA 2026-125 ลงวันที่ 10 พฤศจิกายน 2569 ซึ่งรวม CVE 99 รายการ แก้ใน Firefox 160 ทั้งหมด CVE คือเลขประจำตัวของช่องโหว่ที่ใช้อ้างอิงตรงกันทั่วโลก
+
+ผมไล่อ่านทุกรายการแล้ว สรุปเป็นกลุ่มได้ดังนี้
+
+- **ระดับสูง 57 รายการ** ส่วนมากเป็น use-after-free (โปรแกรมใช้หน่วยความจำที่คืนไปแล้ว) และ boundary-condition error (อ่านหรือเขียนเกินขอบเขตหน่วยความจำ) ในส่วนต่าง ๆ เช่น HTML Parser, CSS, JavaScript garbage collection, Text and Fonts, Layout, Canvas และ Service Workers มีรายการที่เป็น sandbox escape (หลุดจากกล่องกั้นความปลอดภัยของเบราว์เซอร์) เช่น CVE-2026-124853, 124855, 124859, 124861, 124864, 124900, 124903, 124905 และ privilege escalation เช่น CVE-2026-124854, 124907 กับรายการ same-origin policy bypass (ข้ามกฎที่กันเว็บหนึ่งไม่ให้แอบอ่านอีกเว็บ) CVE-2026-124874 และ 124902
+- **ระดับปานกลาง 24 รายการ** เช่น information disclosure ใน Private Browsing, Layout, Form Controls และ Address Bar, spoofing ใน DOM security, site isolation หลายจุด, WebGPU, WebRTC, WebRender และ clickjacking ใน Autofill ของ Firefox for Android (CVE-2026-124911)
+- **ระดับต่ำ 18 รายการ** เช่น spoofing ใน Address Bar, JIT miscompilation ใน JavaScript engine, mitigation bypass ใน Add-ons Manager และ File Handling, information disclosure ใน RLBox และ Marionette, privilege escalation ใน Nimbus Desktop Client
+
+ผู้รายงานส่วนใหญ่คือทีม Mozilla เอง มีหลายรายการที่รายงานโดย OpenAI Codex Security (kylebot) และมีนักวิจัยภายนอกอีกหลายคน ตามที่ประกาศระบุไว้ ประกาศไม่ได้บอกในหน้าที่ผมอ่านว่ามีช่องโหว่ไหนถูกโจมตีจริง และข้ามเลข CVE-2026-124916 ไปครับ
+
+</div>
+<div class="note">
+
+### จำนวนตามระดับ
+
+**สูง (High):** 57
+
+**ปานกลาง (Moderate):** 24
+
+**ต่ำ (Low):** 18
+
+**รวม:** 99 CVE
+
+รายการเต็มพร้อมคำอธิบายแต่ละข้ออยู่ที่ MFSA 2026-125
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## อัปเดตยังไง
+
+<div class="split">
+<div class="prose">
+
+ปกติ Firefox อัปเดตตัวเองเบื้องหลังอยู่แล้ว ถ้าอยากเช็กเอง
+
+1. เปิด Firefox แล้วเข้าเมนู Help (ความช่วยเหลือ) เลือก About Firefox (เกี่ยวกับ Firefox)
+2. รอให้ Firefox ตรวจและดาวน์โหลดรุ่นใหม่
+3. กดรีสตาร์ตเพื่อใช้รุ่น 160.0
+
+ถ้าไม่มีเมนู Help ให้กดปุ่มเมนูมุมขวาบน แล้วเลือก Help ครับ ส่วนผู้ใช้ Linux ที่ติดตั้งจากตัวจัดการแพ็กเกจของระบบ ให้อัปเดตผ่านระบบนั้น หน้า Release Notes มีปุ่มดาวน์โหลดสำหรับ Linux 64-bit และ ARM64 ด้วย
+
+</div>
+<div class="note">
+
+### ข้อควรรู้
+
+ถ้าใช้ฟีเจอร์ใหม่อย่าง Mini Window ลองเล่นดูก่อน เพราะ Mozilla บอกว่าเป็นรุ่นเริ่มต้น
+
+ผู้ดูแลระบบองค์กรควรอ่านเอกสาร Enterprise ของรุ่น 160 ก่อนปล่อยให้ทั้งองค์กรอัปเดต
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ภาพประกอบ
+
+<ShotGallery shots={shots} />
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- Firefox 160.0 Release Notes: <a href="https://www.firefox.com/en-US/firefox/160.0/releasenotes/" rel="noopener">firefox.com</a>
+- ประกาศความปลอดภัย MFSA 2026-125: <a href="https://www.mozilla.org/security/advisories/mfsa2026-125" rel="noopener">mozilla.org</a>
+- Enterprise: <a href="https://www.firefox.com/firefox/enterprise/160.0/releasenotes/" rel="noopener">Release Notes</a> · <a href="https://firefox-admin-docs.mozilla.org/release-notes/version/firefox-160/" rel="noopener">Admin docs</a>
+- นักพัฒนา: <a href="https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/160" rel="noopener">MDN Firefox 160</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: ภาพหน้าจอส่วนหัวของหน้า Release Notes · ภาพ Mini Window และภาพ PiP: ภาพ: Mozilla (ภาพประกอบใน Release Notes) · <a href="https://www.firefox.com/en-US/firefox/160.0/releasenotes/" rel="noopener">firefox.com</a>
+- ภาพหน้า Release Notes: ภาพ: Mozilla (ภาพหน้าจอ) · <a href="https://www.firefox.com/en-US/firefox/160.0/releasenotes/" rel="noopener">firefox.com</a>
+
+ภาพใช้ประกอบข่าว (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>
