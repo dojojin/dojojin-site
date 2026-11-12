@@ -781,6 +781,29 @@ main[data-type="news"] .shot__more .shot__credit { font-size: var(--fs-caption);
 .news-fig figcaption { margin-top: var(--space-2); font-size: var(--fs-caption); line-height: 1.7; color: var(--text-secondary); }
 .news-fig figcaption b { color: var(--text-primary); margin-right: var(--space-1); }
 .news-fig__credit { display: block; margin-top: var(--space-1); }
+/* News timeline diagram: <ol class="news-tl"><li [class="is-key"]><span class="news-tl__date">…</span><div><b>…</b> text <span class="news-tl__src">…</span></div></li></ol> */
+.news-tl { list-style: none; margin: var(--space-6) 0; padding: 0; max-width: var(--measure); }
+.news-tl > li { position: relative; display: grid; grid-template-columns: minmax(0, 7.5em) minmax(0, 1fr); gap: var(--space-4); padding: 0 0 var(--space-6) var(--space-6); line-height: 1.7; }
+.news-tl > li::before { content: ''; position: absolute; left: 6px; top: 0.6em; bottom: -0.6em; width: 2px; background: var(--border-hairline); }
+.news-tl > li:last-child { padding-bottom: 0; }
+.news-tl > li:last-child::before { display: none; }
+.news-tl > li::after { content: ''; position: absolute; left: 0; top: 0.4em; width: 14px; height: 14px; border-radius: 50%; box-sizing: border-box; background: var(--surface-base); border: 2px solid var(--accent); }
+.news-tl > li.is-key::after { background: var(--accent); }
+.news-tl__date { font-weight: 700; color: var(--accent); }
+.news-tl b { display: block; color: var(--text-primary); }
+.news-tl__src { display: block; font-size: var(--fs-caption); color: var(--text-secondary); }
+@media (max-width: 768px) { .news-tl > li { grid-template-columns: minmax(0, 1fr); gap: 0; } }
+/* Card grid for short dated items (e.g. low points): <ul class="news-cards [news-cards--warn]"><li><span class="news-cards__year">…</span><b>…</b> text</li></ul> */
+.news-cards { list-style: none; margin: var(--space-6) 0; padding: 0; display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); }
+.news-cards > li { min-width: 0; padding: var(--space-4); border-radius: var(--radius); background: var(--surface-elevated); border: 1px solid var(--border-hairline); font-size: var(--fs-caption); line-height: 1.7; color: var(--text-secondary); }
+.news-cards b { display: block; margin: var(--space-1) 0; font-size: var(--fs-body); color: var(--text-primary); }
+.news-cards__year { display: inline-block; padding: 0 var(--space-2); border-radius: 999px; font-weight: 700; background: var(--tier-1-bg); color: var(--tier-1-fg); }
+.news-cards--warn .news-cards__year { background: var(--tier-4-bg); color: var(--tier-4-fg); }
+/* People grid (round portrait + name + note): <ul class="news-people"><li><img …><b>name</b> note <span class="news-fig__credit">…</span></li></ul> */
+.news-people { list-style: none; margin: var(--space-6) 0; padding: 0; display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); }
+.news-people > li { min-width: 0; padding: var(--space-4); border-radius: var(--radius); background: var(--surface-elevated); border: 1px solid var(--border-hairline); font-size: var(--fs-caption); line-height: 1.7; color: var(--text-secondary); }
+.news-people img { display: block; width: 96px; height: 96px; object-fit: cover; border-radius: 50%; margin-bottom: var(--space-3); }
+.news-people b { display: block; font-size: var(--fs-body); color: var(--text-primary); }
 /* ≤768px: in every split the picture comes first, so each paragraph sits right under the image it talks about. */
 @media (max-width: 768px) {
   .split > .split-fig, .split > .news-fig { order: -1; }
