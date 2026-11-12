@@ -16,6 +16,8 @@ for (const type of readdirSync('src/content/posts')) {
 
 export default defineConfig({
   site: 'https://dojojin.tech',
+  // CSS inlined into each page: no render-blocking stylesheet request before first paint on slow phones (PageSpeed).
+  build: { inlineStylesheets: 'always' },
   // Tag pages are thin (some noindex) and /lab is noindex, so they stay out of the sitemap; crawlers still reach them via links.
   integrations: [react(), mdx(), sitemap({
     filter: (page) => !/^\/(tag\/[^/]+|lab|search)\/$/.test(new URL(page).pathname),

@@ -126,6 +126,24 @@ Firestore rules deploy แยก: `firebase deploy --only firestore:rules`
 
 ---
 
+## ความเร็ว + Core Web Vitals (บังคับทุกหน้า)
+
+Google วัดจากผู้ใช้จริง 28 วัน (CLS ≤ 0.1, LCP ≤ 2.5 s, INP ≤ 200 ms) — แก้ 12 พ.ย. 2569 จาก CLS 0.16 / มือถือ 76 คะแนน
+
+**ห้ามทำ (เคยพังมาแล้ว)**
+- **ห้ามดึงฟอนต์/CSS จาก CDN ภายนอกแบบ render-blocking** — ฟอนต์อยู่ที่ `public/fonts/` + `src/styles/fonts.css` (เฉพาะ thai/latin/latin-ext), preload แค่ 400 thai + latin ใน `Base.astro`
+- **ห้ามโหลด Firebase SDK หรือ React ในหน้าทางการ** — ตัวนับใช้ Firestore REST (`src/components/ViewCounter.astro`, config ที่ `src/firebase-config.js`); SDK ใช้เฉพาะ `/guestbook` และ `/lab`
+- **easter egg** ตรวจด้วย JS ธรรมดาใน `Base.astro` แล้วค่อย `import('../eggs.jsx')` ตอนเกิดจริง — ห้ามกลับไปใช้ `client:only` ทั้งเว็บ
+- **ห้ามให้เนื้อหาที่มาทีหลังดันหน้า** — ตัวเลข/กล่องที่เติมด้วย JS ต้องจองที่ไว้ก่อน (`visibility:hidden` + `min-width`/`min-height`), carousel/กล่องหมุนต้องสูงคงที่ (`line-clamp` + `min-height`), ไม่สลับเนื้อหาทันทีที่โหลดหน้า
+- **รูปต้องมี `width`/`height`** และใช้ `srcset()` จาก `src/lib/thumb.js`; โหลดรูปล่วงหน้าด้วย `srcset`+`sizes` เดียวกับรูปจริง (ห้าม `new Image().src = 'x.jpg'` เต็มขนาด); โลโก้/ไอคอนใช้ไฟล์ขนาดเท่าที่แสดง ×2
+
+**ตรวจก่อน commit ที่แตะ layout / script / รูป / ฟอนต์**
+1. CLS: วัด layout-shift ที่ 390 และ 1350 รวมรอ ≥ 13 วินาที (ให้กล่องหมุนสลับ) — ต้อง < 0.05
+2. รายการไฟล์ที่มือถือ (412 px, DPR 1.75) โหลดหน้าแรก: JS ของเราไม่เกิน ~10 KB, รูป+ฟอนต์ไม่เกิน ~400 KB
+3. หลัง deploy ไม่ต้องขอ index ใหม่ (ความเร็วไม่เกี่ยวกับ index) — ให้เจ้าของกดวิเคราะห์ใหม่ใน PageSpeed
+
+---
+
 ## ข้อควรระวัง
 
 - push ขึ้น `main` = deploy prod ทันที — ใช้ branch เพื่อดู preview ก่อน และ **ต้องได้คำสั่งเจ้าของก่อน push ทุกครั้ง**

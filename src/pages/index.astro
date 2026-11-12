@@ -27,11 +27,9 @@ const hub = HUB.filter((type) => TYPES[type]).map(block).filter((b) => b.lead);
 const pair = PAIR.filter((type) => TYPES[type]).map(block).filter((b) => b.lead);
 const others = sections.filter((s) => !HUB.includes(s.type) && !PAIR.includes(s.type));
 const day = (d) => d.toLocaleDateString('th-TH', { day: 'numeric', month: 'short', year: '2-digit' });
-// Spotlight (right of the hero): every post with a cover, shuffled in the browser on each visit.
-const spot = feed.map((i) => ({ href: i.href, title: i.title, cover: i.cover, kind: TYPES[i.type]?.name ?? '', sub: i.sub ?? '' }));
-const first = spot[0];
-// Titles for the client-side "ยอดนิยม" box (filled from Firestore page views by ViewCounter).
-const titles = Object.fromEntries(feed.map((i) => [i.href, i.title]));
+// Spotlight (right of the hero): the newest post is rendered here; the rest come from /spot.json after load.
+const f0 = feed[0];
+const first = { href: f0.href, title: f0.title, cover: f0.cover, kind: TYPES[f0.type]?.name ?? '', sub: f0.sub ?? '' };
 ---
 <Base active="home">
   <section class="hero me">
@@ -54,7 +52,7 @@ const titles = Object.fromEntries(feed.map((i) => [i.href, i.title]));
           ))}
         </nav>
       </div>
-      <aside class="me__side spot" aria-roledescription="carousel" aria-label="บทความแนะนำ สุ่มจากทั้งเว็บ" data-spot={JSON.stringify(spot)}>
+      <aside class="me__side spot" aria-roledescription="carousel" aria-label="บทความแนะนำ สุ่มจากทั้งเว็บ" data-spot>
         <a class="spot__card" href={first.href} aria-live="polite">
           <img src={first.cover} srcset={srcset(first.cover)} sizes="(max-width: 768px) 100vw, 36vw" width="1600" height="1200" alt="" />
           <span class="spot__kind">{first.kind}</span>
@@ -127,7 +125,7 @@ const titles = Object.fromEntries(feed.map((i) => [i.href, i.title]));
       ))}
 
       <section class="section me-more" aria-label="เกี่ยวกับผม">
-        <div class="popular" data-popular={JSON.stringify(titles)} hidden>
+        <div class="popular" data-popular hidden>
           <b>คนอ่านเยอะสุด</b>
           <ol></ol>
         </div>
@@ -150,15 +148,14 @@ const titles = Object.fromEntries(feed.map((i) => [i.href, i.title]));
   // paused while hovered/focused or by the pause button.
   const box = document.querySelector('[data-spot]');
   if (box) {
-    const list = JSON.parse(box.dataset.spot);
-    // Keep the server-rendered first story (no swap or extra download on load); shuffle the rest.
-    for (let i = list.length - 1; i > 1; i--) { const j = 1 + Math.floor(Math.random() * i); [list[i], list[j]] = [list[j], list[i]]; }
+    let list = [];
     const card = box.querySelector('.spot__card'), img = card.querySelector('img');
     const small = (src) => (/^\/media\/.*\.jpg$/.test(src) ? `${src.replace(/\.jpg$/, '.800.webp')} 800w, ${src} 1600w` : '');
     let n = 0, timer = 0, hold = false, stopped = matchMedia('(prefers-reduced-motion: reduce)').matches;
     // Warm the next image at the size this screen will actually use (not the 1600px JPEG on phones).
     const warm = (src) => { const w = new Image(); w.sizes = img.sizes; if (small(src)) w.srcset = small(src); w.src = src; };
     const show = (k) => {
+      if (list.length < 2) return;
       n = (k + list.length) % list.length; const it = list[n];
       card.classList.remove('is-in'); void card.offsetWidth; card.classList.add('is-in');
       card.href = it.href; img.src = it.cover; img.srcset = small(it.cover);
@@ -175,6 +172,12 @@ const titles = Object.fromEntries(feed.map((i) => [i.href, i.title]));
     pause.addEventListener('click', () => setPause(!stopped));
     box.addEventListener('mouseenter', () => (hold = true)); box.addEventListener('mouseleave', () => (hold = false));
     box.addEventListener('focusin', () => (hold = true)); box.addEventListener('focusout', () => (hold = false));
-    addEventListener('load', () => warm(list[1 % list.length].cover), { once: true }); setPause(stopped);
+    // The list arrives after load (kept out of the HTML). Keep the server-rendered first story; shuffle the rest.
+    addEventListener('load', () => (window.spotData ??= fetch('/spot.json').then((r) => r.json())).then((d) => {
+      list = d.spot;
+      for (let i = list.length - 1; i > 1; i--) { const j = 1 + Math.floor(Math.random() * i); [list[i], list[j]] = [list[j], list[i]]; }
+      if (list.length > 1) warm(list[1].cover);
+    }).catch(() => {}), { once: true });
+    setPause(stopped);
   }
 </script>
