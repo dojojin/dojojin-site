@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "title": "ประกาศ ASUS Security Update for Router Firmware",
+    "src": "/media/posts/news/thaicert-asus-zoom-ai-cloud-2026-11-12/img-1.jpg",
+    "w": 1000,
+    "h": 740,
+    "group": "ภาพประกอบ",
+    "alt": "หน้าประกาศ Security Update for ASUS Router Firmware บนเว็บ ASUS",
+    "summary": "ประกาศของ ASUS บอกว่าแก้ 4 ช่องโหว่ในฟีเจอร์เข้าถึงไฟล์ระยะไกลของเฟิร์มแวร์เราเตอร์ พร้อมวิธีลดความเสี่ยงถ้ายังอัปเดตไม่ได้ครับ",
+    "credit": "ภาพ: ASUS (ภาพหน้าจอ) · <a href=\"https://www.asus.com/security-advisory/\" rel=\"noopener\">asus.com</a>",
+    "analysis": [
+      "ASUS ไม่ได้ลงเลขเฟิร์มแวร์ที่แก้แล้ว บอกแค่ให้ลงรุ่นล่าสุด",
+      "ระบุวิธีลดความเสี่ยง เช่น ปิดการเข้าถึงไฟล์ระยะไกลจาก WAN"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Zoom Security Bulletin ZSB-26023",
+    "src": "/media/posts/news/thaicert-asus-zoom-ai-cloud-2026-11-12/img-2.jpg",
+    "w": 1000,
+    "h": 410,
+    "group": "ภาพประกอบ",
+    "alt": "หน้า Zoom Security Bulletin ZSB-26023",
+    "summary": "หน้าประกาศ ZSB-26023 ของ Zoom บอกชื่อช่องโหว่ คะแนน ช่วงเวอร์ชันที่กระทบ และวันเผยแพร่ครับ",
+    "credit": "ภาพ: Zoom (ภาพหน้าจอ) · <a href=\"https://www.zoom.com/en/trust/security-bulletin/zsb-26023/\" rel=\"noopener\">zoom.com</a>",
+    "analysis": [
+      "CVE-2026-108186 ระดับ Critical คะแนน 9.6",
+      "กระทบ Zoom Workplace for Windows 7.1.0 ถึงก่อน 7.1.8"
+    ]
+  }
+]

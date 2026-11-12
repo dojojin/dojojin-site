@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "title": "รายการเวอร์ชันเฟิร์มแวร์ AirPods ล่าสุดของ Apple",
+    "src": "/media/posts/news/airpods-firmware-9b47/img-1.jpg",
+    "w": 1000,
+    "h": 620,
+    "group": "ภาพประกอบ",
+    "alt": "หน้า Apple Support หัวข้อ Latest AirPods firmware versions",
+    "summary": "หน้ารายการของ Apple แสดงเวอร์ชันล่าสุดของ AirPods แต่ละรุ่น รุ่นใหม่ 5 กลุ่มเป็น 9B47 ครับ",
+    "credit": "ภาพ: Apple (ภาพหน้าจอ) · <a href=\"https://support.apple.com/en-us/106340\" rel=\"noopener\">support.apple.com</a>",
+    "analysis": [
+      "AirPods Max 2, Pro 3, Pro 2, AirPods 5 และ AirPods 4 เป็น 9B47",
+      "รุ่นเก่ากว่า เช่น AirPods 3 และ 2 ยังเป็น 6F21"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "ขั้นตอนอัปเดตเฟิร์มแวร์ AirPods ตาม Apple",
+    "src": "/media/posts/news/airpods-firmware-9b47/img-2.jpg",
+    "w": 1000,
+    "h": 630,
+    "group": "ภาพประกอบ",
+    "alt": "หน้า Apple Support หัวข้อ Update your AirPods firmware",
+    "summary": "ขั้นตอนของ Apple ให้ต่อ Wi-Fi ต่อเคสเข้าไฟ ปิดฝาเคสไว้ใกล้เครื่อง รออย่างน้อย 30 นาที แล้วเช็กเวอร์ชันซ้ำครับ",
+    "credit": "ภาพ: Apple (ภาพหน้าจอ) · <a href=\"https://support.apple.com/en-us/106340\" rel=\"noopener\">support.apple.com</a>",
+    "analysis": [
+      "ขั้นตอน 1 ถึง 8 สำหรับ AirPods และ AirPods Pro",
+      "ถ้ายังไม่อัปเดต ให้รีเซ็ต AirPods แล้วลองใหม่"
+    ]
+  }
+]

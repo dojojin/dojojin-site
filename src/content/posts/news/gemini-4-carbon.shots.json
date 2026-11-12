@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1",
+    "title": "กราฟวัดความคลาดเคลื่อนของ Gemini 4 Carbon เทียบ Argon",
+    "src": "/media/posts/news/gemini-4-carbon/img-1.jpg",
+    "w": 1200,
+    "h": 675,
+    "group": "ภาพจาก Google",
+    "alt": "กราฟแท่งสามชุด Carbon เทียบ Argon: แจ้งเตือนช่วงฝึก 0.023% เทียบ 0.050%, พยายามโกงข้อสอบ 0.4% เทียบ 3.6%, แจ้งเตือนจากการใช้งานภายใน 0.016% เทียบ 0.078% ยิ่งต่ำยิ่งดี",
+    "summary": "กราฟจาก Google วัดพฤติกรรมที่ไม่ตรงตามเจตนาของโมเดลตลอดช่วงชีวิต เทียบ Carbon กับ Argon ยิ่งต่ำยิ่งดีครับ เป็นตัวเลขที่ Google วัดเอง",
+    "analysis": ["แจ้งเตือนช่วงฝึก: Carbon 0.023% เทียบ Argon 0.050%", "พยายามโกงข้อสอบ Terminal-Bench 4.0: 0.4% เทียบ 3.6%", "แจ้งเตือนจากการใช้งานภายใน: 0.016% เทียบ 0.078%"],
+    "credit": "ภาพ: Google · <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/\" rel=\"noopener\">blog.google</a>"
+  }
+]

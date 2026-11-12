@@ -1,0 +1,46 @@
+[
+ {
+  "id": "1",
+  "title": "PS5 กับชุดเครื่องมือ iFixit",
+  "src": "/media/posts/news/ifixit-gta-vi-console-lifespan/img-1.jpg",
+  "w": 1200,
+  "h": 800,
+  "group": "ภาพประกอบ",
+  "alt": "PlayStation 5 กับจอยสีฟ้า และชุดเครื่องมือ iFixit ม้วนอยู่บนโต๊ะ",
+  "summary": "iFixit ใช้ภาพนี้ประกอบเรื่องการดูแลคอนโซลเครื่องเดิมครับ",
+  "credit": "ภาพ: iFixit · <a href=\"https://www.ifixit.com/News/120222/gta-vi-took-13-years-your-console-should-last-at-least-that-long\" rel=\"noopener\">ifixit.com</a>",
+  "analysis": [
+   "PS5 ตั้งคู่กับจอย DualSense สีฟ้า",
+   "ชุดเครื่องมือแบบม้วนวางอยู่ข้างจอย"
+  ]
+ },
+ {
+  "id": "2",
+  "title": "3DS กับคู่มือซ่อมของ iFixit",
+  "src": "/media/posts/news/ifixit-gta-vi-console-lifespan/img-2.jpg",
+  "w": 1200,
+  "h": 800,
+  "group": "ภาพประกอบ",
+  "alt": "Nintendo 3DS กับชุดเครื่องมือ iFixit บนโต๊ะ มีหน้าจอแสดงหน้าคู่มือซ่อม Nintendo 3DS ของ iFixit",
+  "summary": "iFixit บอกว่า Nintendo Japan เลิกซ่อม 3DS แล้ว แต่คู่มือซ่อมของ iFixit ยังครอบคลุมเครื่องนี้ครับ",
+  "credit": "ภาพ: iFixit · <a href=\"https://www.ifixit.com/News/120222/gta-vi-took-13-years-your-console-should-last-at-least-that-long\" rel=\"noopener\">ifixit.com</a>",
+  "analysis": [
+   "หน้าจอเป็นหน้า Nintendo 3DS Repair ของ iFixit",
+   "ในหน้านั้นเห็นป้าย Repairability 5/10"
+  ]
+ },
+ {
+  "id": "3",
+  "title": "ชุดเครื่องมือเปิดออกข้างเครื่องที่ถูกแกะ",
+  "src": "/media/posts/news/ifixit-gta-vi-console-lifespan/img-3.jpg",
+  "w": 1600,
+  "h": 900,
+  "group": "ภาพประกอบ",
+  "alt": "ชุดเครื่องมือ iFixit แบบม้วนเปิดออก วางข้างเครื่องเล่นเกมพกพาที่ถูกแกะ เห็นพัดลม แบตเตอรี่ และแผงวงจร",
+  "summary": "ชุดเครื่องมือเปิดออกให้เห็นว่าใช้กับเครื่องที่ถูกแกะอย่างไรครับ",
+  "credit": "ภาพ: iFixit · <a href=\"https://www.ifixit.com/News/120222/gta-vi-took-13-years-your-console-should-last-at-least-that-long\" rel=\"noopener\">ifixit.com</a>",
+  "analysis": [
+   "เห็นพัดลม แบตเตอรี่ และแผงวงจรด้านในเครื่อง"
+  ]
+ }
+]

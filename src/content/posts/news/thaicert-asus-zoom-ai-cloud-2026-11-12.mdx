@@ -1,0 +1,199 @@
+---
+title: "ThaiCERT เตือน 12 พ.ย. 2569: ASUS เราเตอร์และ Zoom อัปเดตแก้ช่องโหว่, AntiFox ขโมยคีย์ AWS, แอป Grok เปิดสาธารณะ 35,578 แอป"
+topic: software
+type: news
+tags: [security, ai, amazon]
+date: 2026-11-12T18:10:00+07:00
+section: security
+sourceName: "ThaiCERT"
+sourceUrl: "https://www.thaicert.or.th"
+description: "สรุปประกาศเตือนภัยของ ThaiCERT วันที่ 12 พ.ย. 2569 ASUS แก้ช่องโหว่เฟิร์มแวร์เราเตอร์ 4 รายการ Zoom Workplace สำหรับ Windows ให้ลง 7.1.8 ขึ้นไป AntiFox เครื่องมือเจาะระบบที่ใช้ AI ถูกใช้ขโมยคีย์ AWS และแอปที่สร้างด้วย Grok กว่า 35,000 แอปเปิดให้ใครก็เข้าได้"
+kicker: "ข่าวความปลอดภัยไซเบอร์"
+lead: "ThaiCERT ออกประกาศเตือนภัยวันที่ 12 พฤศจิกายน 2569 หลายเรื่อง ผมเปิดอ่านต้นทางของแต่ละเรื่องแล้วสรุป 4 เรื่องที่น่าสนใจ คือ ASUS และ Zoom ออกอัปเดตแก้ช่องโหว่ เครื่องมือเจาะระบบที่ใช้ AI ชื่อ AntiFox ถูกนำไปขโมยคีย์ AWS และแอปที่สร้างด้วย Grok กว่า 35,000 แอปเปิดให้ใครก็เข้าดูได้ครับ"
+meta: "เรียบเรียงจากประกาศ ThaiCERT และต้นทางของผู้ผลิต/นักวิจัย · ข้อมูล ณ 12 พฤศจิกายน 2569"
+cover: "/media/posts/news/thaicert-asus-zoom-ai-cloud-2026-11-12/cover.jpg"
+coverAlt: "เราเตอร์ไร้สายบนโต๊ะทำงานในห้องมืด มีโฮโลแกรมแม่กุญแจสีฟ้าลอยอยู่เหนือเครื่อง ด้านหลังมีก้อนเมฆและโล่ป้องกันจาง ๆ (ภาพประกอบ)"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="split">
+<div class="prose">
+
+ThaiCERT คือหน่วยงานของรัฐที่คอยแจ้งเตือนภัยไซเบอร์ให้คนไทย วันที่ 12 พฤศจิกายน 2569 มีประกาศหลายเรื่อง ผมเลือก 4 เรื่องที่เกี่ยวกับของที่หลายคนใช้อยู่ คือเราเตอร์ ASUS โปรแกรม Zoom บริการคลาวด์ AWS และแอปที่สร้างด้วย AI
+
+ผมไม่ได้อ่านแค่หน้าของ ThaiCERT แต่เปิดหน้าประกาศของ ASUS และ Zoom เอง รวมถึงรายงานของ Arctic Wolf และ Claroc ที่ ThaiCERT อ้างถึง ตัวเลขในข่าวนี้มาจากหน้าเหล่านั้นครับ
+
+</div>
+<figure class="split-fig"><img src="/media/posts/news/thaicert-asus-zoom-ai-cloud-2026-11-12/igv-1.jpg" width="1600" height="1400" loading="lazy" alt="สรุป 4 เรื่อง 12 พ.ย. 2569 แจ้งเตือนจาก ThaiCERT: ASUS เราเตอร์ แก้ 4 CVE · Zoom (Windows) ลง 7.1.8+ · AntiFox ขโมยคีย์ AWS · แอป Grok เปิดสาธารณะ 35,578 · ASUS และ Zoom ยังไม่ระบุว่ามีการโจมตีจริง" /></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## ASUS แก้ช่องโหว่เฟิร์มแวร์เราเตอร์ 4 รายการ
+
+<div class="split">
+<figure class="split-fig"><img src="/media/posts/news/thaicert-asus-zoom-ai-cloud-2026-11-12/igv-2.jpg" width="1600" height="1400" loading="lazy" alt="ASUS เฟิร์มแวร์เราเตอร์ แก้ 4 ช่องโหว่: CVE-2026-88710 คะแนน 8.7 สูง · CVE-2026-88707 คะแนน 7.1 สูง · CVE-2026-88709 คะแนน 7.0 สูง · CVE-2026-88708 คะแนน 5.3 กลาง คะแนน CVSS 4.0 ตามที่ ASUS ระบุ ASUS ไม่ได้ลงเลขเฟิร์มแวร์ที่แก้แล้ว บอกแค่ให้ลงรุ่นล่าสุด" /></figure>
+<div class="prose">
+
+ASUS ประกาศเมื่อ 10 พฤศจิกายน 2569 ว่าแก้ช่องโหว่ 4 รายการในฟีเจอร์เข้าถึงไฟล์ระยะไกลของเฟิร์มแวร์เราเตอร์บางรุ่น ถ้าถูกใช้โจมตี ผู้โจมตีอาจสั่งรันคำสั่งบนเราเตอร์ด้วยสิทธิ์สูง หรือทำให้บริการนั้นหยุดทำงาน เฟิร์มแวร์ที่อยู่ในประกาศคือชุด 3.0.0.4_386, 3.0.0.4_388 และ 3.0.0.6_102
+
+ตัวช่องโหว่ตามที่ ThaiCERT สรุป
+
+- **CVE-2026-88710 (8.7 สูง)** ผู้โจมตีที่อยู่ในเครือข่ายเดียวกันทำหลายขั้นตอนเพื่อสั่งรันคำสั่งด้วยสิทธิ์ root ได้ โดยไม่ต้องล็อกอิน
+- **CVE-2026-88707 (7.1 สูง)** เขียนข้อมูลเกินขอบเขตหน่วยความจำ ผู้โจมตีในเครือข่ายเดียวกันส่งคำขอ HTTP ที่ทำขึ้นมาเป็นพิเศษ ทำให้ข้อมูลเสียหรือระบบล่มได้
+- **CVE-2026-88709 (7.0 สูง)** ฝังคำสั่งผ่านชื่อโฟลเดอร์ในแฟลชไดรฟ์ ต้องเสียบ USB เข้าเครื่องเราเตอร์จริง ๆ จึงเกิดผล
+- **CVE-2026-88708 (5.3 กลาง)** ข้อผิดพลาดแบบ off-by-one (นับเกินไป 1) ทำให้บริการหยุดทำงาน
+
+คะแนนข้างต้นคือ CVSS 4.0 ตามที่ ASUS ระบุ ส่วนคำอธิบายแต่ละรายการมาจากบทความของ ThaiCERT ครับ
+
+</div>
+</div>
+
+<div class="split">
+<div class="prose">
+
+ในภาพคือประกาศของ ASUS เอง ASUS ไม่ได้ลงเลขเฟิร์มแวร์ที่แก้แล้ว และไม่ได้ลงรายชื่อรุ่นเราเตอร์ในหน้านั้น บอกแค่ให้อัปเดตเป็นรุ่นล่าสุดจากหน้า Support ของ ASUS ดังนั้นผมบอกเลขเฟิร์มแวร์ที่แก้แล้วให้ไม่ได้ ต้องเข้าไปดูที่หน้าเราเตอร์รุ่นของเราเองครับ
+
+ถ้ายังอัปเดตไม่ได้ ASUS แนะนำให้ปิดฟีเจอร์เข้าถึงไฟล์ระยะไกลและคลาวด์สตอเรจที่ไม่ได้ใช้ ปิดการเข้าถึงจาก WAN ลบลิงก์แชร์ไฟล์ที่ไม่ใช้แล้ว ไม่เสียบ USB แปลกหน้าเข้าเราเตอร์ และตั้งรหัสผ่านให้ไม่ซ้ำใครและยาวอย่างน้อย 10 ตัวอักษร ThaiCERT ระบุว่าผู้ผลิตยังไม่รายงานว่ามีการโจมตีจริงครับ
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/thaicert-asus-zoom-ai-cloud-2026-11-12/img-1.jpg" width="1000" height="740" loading="lazy" alt="หน้าประกาศ Security Update for ASUS Router Firmware บนเว็บ ASUS บอกว่าแก้ 4 ช่องโหว่ในฟีเจอร์เข้าถึงไฟล์ระยะไกล พร้อมข้อแนะนำให้อัปเดตเฟิร์มแวร์ล่าสุดและวิธีลดความเสี่ยง" /></div><figcaption><span class="news-fig__credit">ภาพ: ASUS (ภาพหน้าจอ) · <a href="https://www.asus.com/security-advisory/" rel="noopener">asus.com</a></span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## Zoom Workplace สำหรับ Windows ให้ลง 7.1.8 ขึ้นไป
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/thaicert-asus-zoom-ai-cloud-2026-11-12/img-2.jpg" width="1000" height="410" loading="lazy" alt="หน้า Zoom Security Bulletin ZSB-26023 Zoom Workplace for Windows Improper Input Validation CVE-2026-108186 ระดับ Critical คะแนน 9.6 กระทบเวอร์ชัน 7.1.0 ถึงก่อน 7.1.8 ผู้ค้นพบคือ Zoom Offensive Security เผยแพร่ 11/10/2026" /></div><figcaption><span class="news-fig__credit">ภาพ: Zoom (ภาพหน้าจอ) · <a href="https://www.zoom.com/en/trust/security-bulletin/zsb-26023/" rel="noopener">zoom.com</a></span></figcaption></figure>
+<div class="prose">
+
+Zoom ประกาศเมื่อ 10 พฤศจิกายน 2569 สองรายการ ทั้งสองเป็นช่องโหว่ยกระดับสิทธิ์ใน Zoom Workplace สำหรับ Windows (ยกระดับสิทธิ์ คือโปรแกรมได้สิทธิ์สูงกว่าที่ควรได้)
+
+- **ZSB-26023 (CVE-2026-108186)** ระดับ Critical คะแนน CVSS 9.6 สาเหตุคือตรวจข้อมูลนำเข้าไม่รัดกุม กระทบเวอร์ชัน 7.1.0 ขึ้นไปจนถึงก่อน 7.1.8 Zoom ระบุว่าผู้ค้นพบคือทีม Zoom Offensive Security
+- **ZSB-26024 (CVE-2026-108187)** ระดับ High คะแนน CVSS 8.1 สาเหตุคือตรวจต้นทางของคำขอไม่ถูกต้อง กระทบเวอร์ชันก่อน 7.1.5
+
+ทั้งสองรายการระบุว่าผู้โจมตีไม่ต้องล็อกอิน แต่ต้องมีผู้ใช้ทำบางอย่างด้วย (ตามเวกเตอร์ CVSS ในประกาศ) การลง **7.1.8 ขึ้นไป** ครอบคลุมทั้งสองรายการ ตามที่ ThaiCERT สรุปไว้ Zoom ไม่ได้บอกว่ามีการโจมตีจริงครับ
+
+</div>
+</div>
+
+<div class="prose">
+
+ในภาพคือหน้าประกาศ ZSB-26023 ของ Zoom บอกชื่อช่องโหว่ คะแนน ช่วงเวอร์ชันที่กระทบ และวันเผยแพร่ ถ้าเปิด Zoom ไว้ ให้ไปที่รูปโปรไฟล์ แล้วเลือกตรวจหาอัปเดต หรือโหลดตัวล่าสุดจาก zoom.us/download ครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## AntiFox เครื่องมือเจาะระบบที่ใช้ AI ถูกนำไปขโมยคีย์ AWS
+
+<div class="prose">
+
+Arctic Wolf บริษัทด้านความปลอดภัยไซเบอร์ รายงานเมื่อ 10 พฤศจิกายน 2569 ว่าเจอผู้โจมตีใช้ AntiFox บนเครื่องที่เช่าจาก Alibaba Cloud โจมตีเว็บเซอร์วิสและระบบ AWS ของเหยื่อ
+
+AntiFox เป็นแพลตฟอร์ม open source สำหรับ "ทดสอบเจาะระบบ" ให้ AI agent ทำงานเองอัตโนมัติ เช่น สำรวจบริการที่เปิดอยู่บนเน็ตและลองหาช่องโหว่ มีหน้าจอภาษาจีน และพัฒนาต่อจากเครื่องมือชื่อ ARTEX เวอร์ชัน 0.1.1 ปกติเป็นเครื่องมือของฝ่ายป้องกัน แต่รอบนี้ถูกใช้ฝั่งโจมตี
+
+ที่ Arctic Wolf เห็นมี 3 อย่าง
+
+- **เว็บเชลล์บนเซิร์ฟเวอร์ IIS** ผู้โจมตีวางไฟล์ ASPX web shell (ไฟล์ที่เปิดช่องให้สั่งรันคำสั่งผ่านเว็บ) บน IIS ที่เปิดสู่อินเทอร์เน็ต แล้วอ่านค่าตั้งค่าแอปและ connection string ของฐานข้อมูล Arctic Wolf บอกว่ายังไม่รู้ว่าเข้ามาทางช่องโหว่ไหน
+- **ใช้ตัวตน AWS ที่ถูกต้อง** ใช้ IAM user และ EC2 role จริง เรียก AWS API เหมือนการล็อกอินปกติ ในเหตุการณ์หนึ่งสลับตัวตนหลายอันและส่งคำขอหลายร้อยครั้งในราว 30 นาที ส่วนใหญ่ถูกปฏิเสธ แต่บางครั้งสำเร็จ และผู้โจมตีอ่านความลับของระบบ production ได้
+- **ข้อมูลใน S3** อีกเหตุการณ์ใช้ตัวตนที่ถูกต้องอ่าน คัดลอก และลบไฟล์ใน Amazon S3
+
+ฝั่ง Amazon ตอบ BleepingComputer ว่าบริการของ AWS ไม่ได้ถูกเจาะ และทำงานตามที่ออกแบบ ผู้โจมตีใช้คีย์ที่ขโมยมาจากแอปของลูกค้าที่ถูกเจาะ Amazon แนะนำให้ให้สิทธิ์เท่าที่จำเป็น เปิด IMDSv2 บน EC2 ไม่เก็บ access key ถาวรไว้ในไฟล์ตั้งค่าของแอป และเปิด GuardDuty
+
+ข้อแนะนำของ Arctic Wolf คือ เช็กว่ากิจกรรม web shell บน IIS ตรงกับการเข้า AWS ที่ผิดปกติหรือไม่ ดูคำขอ API ที่สำเร็จปนอยู่ในกลุ่มคำขอที่ถูกปฏิเสธเยอะ ๆ ยกเลิก session และ access key ที่เกี่ยวข้อง และเปลี่ยนรหัสหรือคีย์ที่อาจรั่วจากไฟล์ตั้งค่า
+
+ข้อควรรู้ AntiFox ยังอยู่บน GitHub และออกเวอร์ชัน 2.0 แล้ว ผู้พัฒนาห้ามใช้โจมตีระบบจริง แต่ BleepingComputer ระบุว่าไม่มีกลไกทางเทคนิคที่บังคับข้อห้ามนี้ครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## แอปที่สร้างด้วย Grok กว่า 35,000 แอปเปิดให้ใครก็เข้าได้
+
+<div class="split">
+<div class="prose">
+
+บริษัทความปลอดภัย Claroc รายงานเมื่อ 10 พฤศจิกายน 2569 เรื่องแอปที่คนสร้างด้วยโหมด Build ของ Grok (ผู้ให้บริการคือ SpaceXSI ซึ่ง Claroc ระบุว่าเดิมชื่อ xAI) แอปที่เผยแพร่จะได้ที่อยู่ในโดเมน grok.me
+
+Claroc ลองเปิดที่อยู่ 43,551 ที่ ยังออนไลน์ 37,571 แอป และมี 35,578 แอป (94.7%) ที่เปิดได้โดยไม่ต้องล็อกอิน โดยทำเหมือนคนทั่วไปที่เปิดผ่านเน็ตสาธารณะ
+
+สิ่งที่เจอในแอปที่เปิดอยู่
+
+- แอปของพนักงาน SpaceXSI และ X 24 แอป เช่น แผนต้อนรับพนักงานใหม่ที่ระบุว่าเป็นความลับ แผนที่พื้นที่ขาย และข้อเสนอโฆษณา SpaceXSI ถอดแอปเหล่านี้หลัง Claroc รายงาน
+- ข้อมูลภายในของอีก 30 องค์กรที่ Claroc ระบุตัวได้ ในนั้น 26 แห่งมีพนักงานเกิน 1,000 คน และ 6 แห่งอยู่ในกลุ่ม Fortune 500
+- ตัวอย่างข้อมูลที่ ThaiCERT สรุปไว้ เช่น รายชื่อบุคลากรทางการแพทย์กว่า 3,500 คน ข้อมูลผู้ป่วย เวรดับเพลิง และระบบลงเวลาที่เก็บรหัสผ่านพนักงานเป็นข้อความเปล่า ๆ
+
+</div>
+<figure class="split-fig"><img src="/media/posts/news/thaicert-asus-zoom-ai-cloud-2026-11-12/igv-3.jpg" width="1600" height="1400" loading="lazy" alt="Claroc แอป Grok เปิดให้ทุกคนเข้าได้: ที่ลองเปิด 43,551 · ยังออนไลน์ 37,571 · เปิดได้โดยไม่ต้องล็อกอิน 35,578 · สัดส่วน 94.7% · แอปของพนักงาน SpaceXSI และ X ที่เปิดอยู่ 24 แอป ถูกถอดแล้วหลังรายงาน" /></figure>
+</div>
+
+<div class="prose">
+
+ทำไมถึงหลุดได้ ThaiCERT สรุปสาเหตุจากรายงานไว้ 3 ข้อ หนึ่ง ตอนกดเผยแพร่ ระบบเสนอตัวเลือก "ทุกคนที่มีลิงก์" ไว้ให้ สอง แอปอยู่ในโดเมนย่อยของ grok.me ซึ่งชื่อโดเมนไปอยู่ในฐานข้อมูล Passive DNS (ฐานข้อมูลที่เก็บว่าชื่อโดเมนไหนถูกเรียกใช้) คนภายนอกจึงค้นหาได้แม้ไม่รู้ลิงก์ สาม โค้ดล็อกอินที่ AI เขียนให้มีจุดอ่อน ในแอปทดสอบของ Claroc เอง บัญชี Google ใครก็ได้ดู แก้ และลบข้อมูลได้
+
+SpaceXSI ให้ความเห็นว่าแอปของพนักงานตั้งต้นเป็นส่วนตัว ตามที่ Claroc เขียน ผมไม่พบแถลงอย่างเป็นทางการของ SpaceXSI ในหน้าที่อ่านครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## แล้วเราควรทำอะไร
+
+<div class="prose">
+
+- **ASUS** เช็กเฟิร์มแวร์เราเตอร์จากหน้า Support ของรุ่นที่ใช้ ถ้ายังอัปเดตไม่ได้ให้ปิดฟีเจอร์เข้าถึงไฟล์ระยะไกลและเข้าถึงจาก WAN ที่ไม่ได้ใช้
+- **Zoom** ใครใช้บน Windows ให้อัปเดตเป็น 7.1.8 ขึ้นไป
+- **คนดูแลระบบบน AWS** ตรวจว่ามี access key ถาวรเก็บอยู่ในไฟล์ตั้งค่าของแอปหรือไม่ เปิด IMDSv2 และ GuardDuty ตามที่ Amazon แนะนำ
+- **องค์กรที่พนักงานใช้เครื่องมือสร้างแอปด้วย AI** ThaiCERT แนะนำให้สำรวจว่าใครใช้อะไรอยู่ (เช่น Grok, Lovable, Replit, v0, Bolt, Base44, Google AI Studio) ตั้งแอปที่มีข้อมูลภายในให้เข้าได้เฉพาะคนที่เชิญ ทดสอบล็อกอินด้วยบัญชีภายนอกว่าถูกกันจริง ตรวจว่าไม่มีชื่อ อีเมล หรือรหัสผ่านฝังอยู่ในโค้ด และเลิกเผยแพร่แอปที่ไม่มีเจ้าของ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- ThaiCERT: <a href="https://www.thaicert.or.th/en/2026/11/12/us-and-zoom-release-security-updates-for-vulnerabilities-that-could-lead-to-root-command-execution-and-privilege-escalation/" rel="noopener">ASUS และ Zoom</a> · <a href="https://www.thaicert.or.th/en/2026/11/12/attackers-use-antifox-ai-agents-to-target-cloud-environments-and-steal-aws-credentials-via-alibaba-cloud-infrastructure/" rel="noopener">AntiFox</a> · <a href="https://www.thaicert.or.th/en/2026/11/12/more-than-35000-grok-ai-built-applications-publicly-exposed-putting-corporate-data-and-passwords-at-risk/" rel="noopener">Grok</a>
+- ASUS Product Security Advisory: <a href="https://www.asus.com/security-advisory/" rel="noopener">asus.com</a>
+- Zoom Security Bulletins: <a href="https://www.zoom.com/en/trust/security-bulletin/zsb-26023/" rel="noopener">ZSB-26023</a> · <a href="https://www.zoom.com/en/trust/security-bulletin/zsb-26024/" rel="noopener">ZSB-26024</a>
+- Arctic Wolf: <a href="https://github.com/rtkwlf/wolf-tools/tree/main/pack_alerts/202611-antifox-alibaba-hosted-platforms-facilitate-web-cloud-intrusions" rel="noopener">รายงาน AntiFox</a> · BleepingComputer: <a href="https://www.bleepingcomputer.com/news/security/hackers-use-antifox-ai-agents-in-aws-credential-theft-attacks/" rel="noopener">bleepingcomputer.com</a>
+- Claroc: <a href="https://blog.claroc.io/ghostshares-grok-build-apps/" rel="noopener">GhostShares 2</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- อินโฟกราฟิก: ภาพประกอบจาก DOJOJIN.TECH จากข้อมูลในข่าวนี้
+- ประกาศ ASUS Router Firmware: ภาพ: ASUS (ภาพหน้าจอ) · <a href="https://www.asus.com/security-advisory/" rel="noopener">asus.com</a>
+- ประกาศ Zoom ZSB-26023: ภาพ: Zoom (ภาพหน้าจอ) · <a href="https://www.zoom.com/en/trust/security-bulletin/zsb-26023/" rel="noopener">zoom.com</a>
+- ภาพปก: ภาพประกอบจาก DOJOJIN.TECH
+
+ภาพใช้ประกอบข่าว (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>

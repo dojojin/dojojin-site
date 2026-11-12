@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "title": "Windows message center: NTLM signing และอัปเดต พ.ย. 2569",
+    "src": "/media/posts/news/windows-november-2026-changes/img-1.jpg",
+    "w": 720,
+    "h": 900,
+    "fit": "contain",
+    "group": "ภาพประกอบ",
+    "alt": "หน้า Windows message center รายการ NTLM signing security improvements ลงวันที่ 2026-11-11 และรายการอัปเดตความปลอดภัย พ.ย. 2026 ลงวันที่ 2026-11-10",
+    "summary": "หน้าประกาศของ Microsoft ที่บอกว่าอัปเดตตั้งแต่ 10 พ.ย. 2569 ให้เครื่องลูกข่ายเสนอการเซ็น NTLM เป็นค่าเริ่มต้น และมีเฟสถัดไปใน พ.ค. 2570 ครับ",
+    "credit": "ภาพ: Microsoft (ภาพหน้าจอ) · <a href=\"https://learn.microsoft.com/en-us/windows/release-health/windows-message-center\" rel=\"noopener\">learn.microsoft.com</a>",
+    "analysis": [
+      "รายการแรกลงวันที่ 2026-11-11 พูดถึง CVE-2026-118737 และเฟสถัดไปเดือนพฤษภาคม 2027",
+      "รายการที่สองในไฮไลต์ของ 26H2 มีบรรทัด Secure Boot และ USB Audio 1.0 error code 10"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "หน้า KB5135557 หัวข้อ Timeline",
+    "src": "/media/posts/news/windows-november-2026-changes/img-2.jpg",
+    "w": 740,
+    "h": 380,
+    "fit": "contain",
+    "group": "ภาพประกอบ",
+    "alt": "หน้า KB5135557 หัวข้อ Timeline: Phase 1 พฤศจิกายน 2026 และ Phase 2 พฤษภาคม 2027",
+    "summary": "ไทม์ไลน์ 2 เฟสของ NTLM signing เฟส 1 เริ่มเสนอการเซ็นฝั่งเครื่องลูกข่าย เฟส 2 เซิร์ฟเวอร์เริ่มบังคับครับ",
+    "credit": "ภาพ: Microsoft (ภาพหน้าจอ) · <a href=\"https://support.microsoft.com/help/5135557\" rel=\"noopener\">support.microsoft.com</a>",
+    "analysis": [
+      "Phase 1 (10 พ.ย. 2026) เครื่องลูกข่ายเสนอการเซ็น เซิร์ฟเวอร์รับได้ทั้งสองแบบ มี audit event",
+      "Phase 2 (พ.ค. 2027) เซิร์ฟเวอร์เริ่มบังคับ เครื่องที่ไม่เสนอการเซ็นจะถูกปฏิเสธ"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "หน้า KB5132061 รายการ Key changes",
+    "src": "/media/posts/news/windows-november-2026-changes/img-3.jpg",
+    "w": 740,
+    "h": 540,
+    "fit": "contain",
+    "group": "ภาพประกอบ",
+    "alt": "หน้า KB5132061 รายการ Key changes: Secure Boot, Audio, Printing, Security (NTLM), Date and Time",
+    "summary": "รายการการเปลี่ยนแปลงหลักของ KB5132061 มีทั้งการขยายการแจกใบรับรอง Secure Boot การแก้ USB Audio 1.0 และ NTLM ครับ",
+    "credit": "ภาพ: Microsoft (ภาพหน้าจอ) · <a href=\"https://support.microsoft.com/help/5132061\" rel=\"noopener\">support.microsoft.com</a>",
+    "analysis": [
+      "บรรทัด Secure Boot บอกว่าแจกใบรับรองผ่าน Windows Update ต่อไปในอีกหลายเดือน",
+      "บรรทัด Audio แก้อาการ USB Audio 1.0 ขึ้น error code 10 ใน Device Manager"
+    ]
+  }
+]

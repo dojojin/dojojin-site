@@ -1,0 +1,161 @@
+---
+title: "Windows พ.ย. 2569 มีอะไรอีกนอกจาก Patch Tuesday: Secure Boot, USB Audio error 10, ไม่มีพรีวิว ธ.ค. และ NTLM signing (KB5135557)"
+topic: software
+type: news
+tags: [microsoft, windows, security]
+date: 2026-11-12T19:10:00+07:00
+section: security
+sourceName: "Microsoft Windows release health"
+sourceUrl: "https://learn.microsoft.com/en-us/windows/release-health/windows-message-center"
+description: "สรุป 4 เรื่องในอัปเดต Windows พ.ย. 2569 (KB5132061) ที่ไม่ใช่ตัวช่องโหว่ คือ Secure Boot ขยายการแจกใบรับรองใหม่ แก้ USB Audio 1.0 error code 10 ไม่มีอัปเดตพรีวิวเดือนธันวาคม และ NTLM message signing เปิดเป็นค่าเริ่มต้นฝั่งเครื่องลูกข่าย (KB5135557) พร้อมบอกว่าผู้ใช้ทั่วไปกับฝ่ายไอทีต้องทำอะไร"
+kicker: "ข่าวความปลอดภัยไซเบอร์"
+lead: "อัปเดต Windows เดือนนี้ไม่ได้มีแค่แพตช์ช่องโหว่ครับ Microsoft แก้บั๊กเสียง USB, แจกใบรับรอง Secure Boot ชุดใหม่ต่อ, ประกาศว่าเดือนธันวาคมไม่มีอัปเดตพรีวิว และเริ่มเปลี่ยนวิธีเซ็นข้อความของ NTLM ผมแยกว่าใครต้องทำอะไรให้ครับ"
+meta: "เรียบเรียงจากหน้า Windows release health และหน้า KB ของ Microsoft · ข้อมูล ณ 12 พฤศจิกายน 2569"
+cover: "/media/posts/news/windows-november-2026-changes/cover.jpg"
+coverAlt: "แล็ปท็อปบนโต๊ะไม้ หน้าจอแสดงโลโก้ Windows มีโล่ที่มีรูปแม่กุญแจเรืองแสงและหูฟังแบบมีไมค์ที่เสียบสาย USB อยู่ข้างกัน (ภาพประกอบ)"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="split">
+<div class="prose">
+
+วันที่ 10 พฤศจิกายน 2569 Microsoft ออกอัปเดตความปลอดภัยประจำเดือนของ Windows ส่วนช่องโหว่ที่แก้ ผมเขียนไว้แล้วในข่าว [Patch Tuesday พ.ย. 2569](/news/microsoft-patch-tuesday-2026-11/) ครับ ข่าวนี้ผมเก็บเฉพาะเรื่องอื่นที่อยู่ในประกาศและหน้า KB5132061 ซึ่งมี 4 เรื่อง
+
+- **Secure Boot:** ขยายการแจกใบรับรองชุดใหม่ให้เครื่องมากขึ้น
+- **USB Audio 1.0:** แก้อุปกรณ์เสียง USB ที่ขึ้น error code 10
+- **ไม่มีพรีวิวเดือนธันวาคม:** กลับมาเดือนมกราคม 2570
+- **NTLM message signing:** เริ่มเปิดเป็นค่าเริ่มต้นฝั่งเครื่องลูกข่าย (client) เพื่อลดการโจมตีแบบ relay
+
+ผมอ่านทั้งหน้า Windows release health, หน้า KB5132061 และหน้า KB5135557 แล้ว ทุกเรื่องมีเขียนไว้ครบครับ
+
+</div>
+<figure class="split-fig"><img src="/media/posts/news/windows-november-2026-changes/igv-1.jpg" width="1600" height="2000" loading="lazy" alt="4 เรื่องที่ควรรู้ Windows พ.ย. 2569: Secure Boot ใบรับรองชุดใหม่ ทยอยแจกต่อ KB5132061; USB Audio 1.0 แก้ error code 10 KB5132061; ไม่มีพรีวิว ธ.ค. กลับมา ม.ค. 2570; NTLM message signing เฟส 2 พ.ค. 2570 KB5135557" /></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## Secure Boot และบั๊ก USB Audio
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/windows-november-2026-changes/img-3.jpg" width="740" height="540" loading="lazy" alt="หน้า KB5132061 รายการ Key changes มีหัวข้อ Secure Boot, Audio (known issue), Printing, Security (NTLM) และ Date and Time" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft (ภาพหน้าจอ) · <a href="https://support.microsoft.com/help/5132061" rel="noopener">support.microsoft.com</a></span></figcaption></figure>
+<div class="prose">
+
+ในภาพคือรายการ "Key changes" ของ KB5132061 (ใช้กับ Windows 11 รุ่น 26H2, 25H2 และ 24H2) ครับ
+
+**Secure Boot** คือระบบตรวจว่าตอนเปิดเครื่อง มีแต่ซอฟต์แวร์ที่เชื่อถือได้เท่านั้นที่ถูกโหลด โดยใช้ใบรับรองดิจิทัลเป็นตัวเทียบ Microsoft เขียนไว้ในข่าวประกาศเดือนพฤษภาคมว่า ใบรับรอง Secure Boot "เริ่มหมดอายุตั้งแต่เดือนมิถุนายน 2569" ตอนนี้จึงแจกชุดใหม่ผ่าน Windows Update
+
+อัปเดตเดือนนี้เพิ่มข้อมูลที่ช่วยระบุเครื่องที่ "มั่นใจสูง" ว่าพร้อมรับใบรับรองชุดใหม่ เครื่องที่เข้าข่ายจะได้รับอัตโนมัติมากขึ้น และ Microsoft บอกว่าการแจกจะทยอยทำต่อ "ในหลายเดือนข้างหน้า" นอกจากนี้ข่าวประกาศของ Microsoft เตือนว่า บางเครื่องอาจต้องรีสตาร์ตเพิ่มอีก 1 ครั้งหลังใบรับรอง Secure Boot ถูกอัปเดต
+
+**USB Audio 1.0** อุปกรณ์เสียง USB Audio 1.0 บางตัวอาจไม่ทำงานและขึ้น error code 10 ใน Device Manager หลังลงอัปเดตความปลอดภัยรอบก่อน อัปเดตนี้แก้แล้ว ถ้าเจออาการนี้ลองลงอัปเดตเดือนนี้ดูครับ
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ไม่มีอัปเดตพรีวิวเดือนธันวาคม
+
+<div class="prose">
+
+Microsoft เขียนไว้ในหน้าประกาศของ KB5132061 ว่า เพราะช่วงเทศกาลปลายปีมีคนทำงานน้อย จึง **ไม่มีอัปเดตพรีวิว (non-security) ในช่วงหลังของเดือนธันวาคม 2569** และจะกลับมาออกตามปกติทั้งอัปเดตความปลอดภัยและพรีวิวในเดือนมกราคม 2570 ครับ
+
+พรีวิวคืออัปเดตที่ไม่ใช่เรื่องความปลอดภัย ใช้ทดสอบฟีเจอร์และแก้บั๊กก่อนรวมเข้าอัปเดตความปลอดภัยเดือนถัดไป ผู้ดูแลระบบที่วางแผนทดสอบพรีวิวทุกเดือนควรเผื่อไว้ ส่วนคนทั่วไปไม่ต้องทำอะไรครับ ข้อความนี้ไม่ได้พูดถึงอัปเดตความปลอดภัยเดือนธันวาคม จึงไม่ขอเดาว่าจะมีหรือไม่
+
+</div>
+
+</section>
+
+<section class="section">
+
+## NTLM message signing เปิดเป็นค่าเริ่มต้น (KB5135557)
+
+<div class="split">
+<div class="prose">
+
+NTLM คือวิธีพิสูจน์ตัวตนแบบเก่าของ Windows ที่ยังใช้กันในองค์กร จุดอ่อนอย่างหนึ่งคือ NTLM relay คือผู้โจมตีดักข้อมูลยืนยันตัวตนแล้วส่งต่อไปสวมรอยที่เซิร์ฟเวอร์อื่น
+
+ในภาพ Microsoft ประกาศเมื่อ 11 พ.ย. 2569 ว่า อัปเดตตั้งแต่ 10 พ.ย. 2569 ทำให้เครื่องลูกข่ายเสนอการเซ็นกำกับข้อความ (message signing) ของ NTLM เป็นค่าเริ่มต้น กับการเชื่อมต่อที่ไม่ใช่แบบนิรนาม เพื่อลดความเสี่ยงจาก relay และมี auditing ไว้ดูว่าการเชื่อมต่อไหนไม่ได้เซ็น เรื่องนี้เกี่ยวกับช่องโหว่ CVE-2026-118737
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/windows-november-2026-changes/img-1.jpg" width="720" height="900" loading="lazy" alt="หน้า Windows message center รายการแรก NTLM signing security improvements in Windows ลงวันที่ 2026-11-11 และรายการ The November 2026 Windows security update is now available ลงวันที่ 2026-11-10" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft (ภาพหน้าจอ) · <a href="https://learn.microsoft.com/en-us/windows/release-health/windows-message-center" rel="noopener">learn.microsoft.com</a></span></figcaption></figure>
+</div>
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/windows-november-2026-changes/img-2.jpg" width="740" height="380" loading="lazy" alt="หน้า KB5135557 หัวข้อ Timeline: Phase 1 พฤศจิกายน 2026 เครื่องลูกข่ายเริ่มเสนอการเซ็น NTLM เซิร์ฟเวอร์ยอมรับทั้งแบบเซ็นและไม่เซ็น Phase 2 พฤษภาคม 2027 เซิร์ฟเวอร์เริ่มบังคับ" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft (ภาพหน้าจอ) · <a href="https://support.microsoft.com/help/5135557" rel="noopener">support.microsoft.com</a></span></figcaption></figure>
+<div class="prose">
+
+หน้า KB5135557 แบ่งเป็น 2 เฟสครับ
+
+- **เฟส 1 (10 พ.ย. 2569):** เครื่องลูกข่ายเริ่มเสนอการเซ็นเป็นค่าเริ่มต้น เซิร์ฟเวอร์ยังรับได้ทั้งแบบเซ็นและไม่เซ็น และมี audit event บอกว่าเครื่องไหนไม่เซ็น
+- **เฟส 2 (พ.ค. 2570):** เซิร์ฟเวอร์ Windows เริ่ม **บังคับ** ให้เซ็นเป็นค่าเริ่มต้น เครื่องลูกข่ายที่ไม่เสนอการเซ็นจะถูกปฏิเสธ (error SEC_E_UNSUPPORTED_FUNCTION)
+
+ช่วง audit คือตอนนี้ (เฟส 1) ส่วน พ.ค. 2570 คือวันที่เริ่มบังคับ ผู้ดูแลระบบดู Event ID 4022 (ฝั่งลูกข่าย) และ 4023 (ฝั่งเซิร์ฟเวอร์) ใน Microsoft-Windows-NTLM/Operational ได้ หน้า KB มีสคริปต์ PowerShell ช่วยหาการเชื่อมต่อที่ไม่เซ็นด้วย
+
+ระบบที่เข้าข่ายตามหน้านี้คือ Windows 11 (23H2 ถึง 26H2), Windows 10 Enterprise LTSC 2021 และ Windows Server 2016 ถึง 2025 กระทบเฉพาะ NTLM ไม่กระทบ Kerberos และการเชื่อมต่อแบบนิรนามกับ guest ยังใช้ได้ ถ้าเจอปัญหาชั่วคราว มี registry ClientAllowUnsignedNtlm ให้ปิดการเสนอเซ็นเพื่อความเข้ากันได้ แต่ Microsoft ระบุว่าใช้ชั่วคราวเท่านั้นครับ
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## แล้วเราต้องทำอะไร
+
+<div class="split">
+<div class="prose">
+
+**ผู้ใช้ทั่วไป** กด Settings แล้วเลือก Windows Update ให้ลงอัปเดตเดือนนี้ก็พอครับ บางเครื่องอาจรีสตาร์ตเพิ่มอีกครั้งหลัง Secure Boot อัปเดต ถ้าเจอ USB Audio เสียงไม่ขึ้นอัปเดตนี้น่าจะช่วยได้ ส่วน NTLM ฝั่งผู้ใช้ทั่วไปไม่ต้องตั้งค่าอะไร
+
+**ฝ่ายไอทีและผู้ดูแลระบบ** มี 3 เรื่องที่ควรจดไว้
+
+- Secure Boot: Microsoft มี playbook สำหรับ client และ Server ที่ลิงก์อยู่ในหน้า Windows release health
+- NTLM: เปิดดู audit ตอนนี้ เพื่อให้รู้ว่าใครยังไม่เซ็น ก่อนเซิร์ฟเวอร์เริ่มบังคับใน พ.ค. 2570
+- วางแผนแพตช์: ไม่มีพรีวิวปลายเดือน ธ.ค. จึงข้ามรอบทดสอบนั้นไปรอ ม.ค. 2570
+
+ผมไม่ได้อ่านรายละเอียดขั้นตอนของ Secure Boot playbook ทั้งฉบับ จึงไม่ขอสรุปวิธีทำทีละขั้นครับ
+
+</div>
+<figure class="split-fig"><img src="/media/posts/news/windows-november-2026-changes/igv-2.jpg" width="1600" height="2000" loading="lazy" alt="ใครต้องทำอะไร ผู้ใช้ทั่วไป: กด Windows Update ให้ลงอัปเดตเดือนนี้ บางเครื่องอาจรีสตาร์ตเพิ่ม 1 ครั้งหลังอัปเดต Secure Boot ถ้าใช้ USB Audio 1.0 แล้วเสียงไม่ขึ้น (error code 10) อัปเดตนี้แก้ให้ ฝ่ายไอที: ตามแผน Secure Boot เปิด audit NTLM ดู Event 4022/4023 ก่อน พ.ค. 2570 วางแผนแพตช์ใหม่เพราะไม่มีพรีวิว ธ.ค." /></figure>
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- Windows message center: <a href="https://learn.microsoft.com/en-us/windows/release-health/windows-message-center" rel="noopener">learn.microsoft.com</a>
+- KB5132061 (Windows 11 26H2, 25H2, 24H2): <a href="https://support.microsoft.com/help/5132061" rel="noopener">support.microsoft.com</a>
+- KB5135557 NTLM signing security improvements in Windows: <a href="https://support.microsoft.com/help/5135557" rel="noopener">support.microsoft.com</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- หน้า KB5132061: ภาพ: Microsoft (ภาพหน้าจอ) · <a href="https://support.microsoft.com/help/5132061" rel="noopener">support.microsoft.com</a>
+- Windows message center: ภาพ: Microsoft (ภาพหน้าจอ) · <a href="https://learn.microsoft.com/en-us/windows/release-health/windows-message-center" rel="noopener">learn.microsoft.com</a>
+- หน้า KB5135557: ภาพ: Microsoft (ภาพหน้าจอ) · <a href="https://support.microsoft.com/help/5135557" rel="noopener">support.microsoft.com</a>
+- อินโฟกราฟิก: ภาพประกอบจาก DOJOJIN.TECH จากข้อมูลในข่าวนี้
+- ภาพปก: ภาพประกอบจาก DOJOJIN.TECH
+
+ภาพใช้ประกอบข่าว (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>
