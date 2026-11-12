@@ -131,7 +131,7 @@ Firestore rules deploy แยก: `firebase deploy --only firestore:rules`
 Google วัดจากผู้ใช้จริง 28 วัน (CLS ≤ 0.1, LCP ≤ 2.5 s, INP ≤ 200 ms) — แก้ 12 พ.ย. 2569 จาก CLS 0.16 / มือถือ 76 คะแนน
 
 **ห้ามทำ (เคยพังมาแล้ว)**
-- **ห้ามดึงฟอนต์/CSS จาก CDN ภายนอกแบบ render-blocking** — ฟอนต์อยู่ที่ `public/fonts/` + `src/styles/fonts.css` (เฉพาะ thai/latin/latin-ext), preload แค่ 400 thai + latin ใน `Base.astro`
+- **ห้ามดึงฟอนต์/CSS จาก CDN ภายนอกแบบ render-blocking** — ฟอนต์อยู่ที่ `public/fonts/` + `src/styles/fonts.css` (เฉพาะ thai/latin/latin-ext), preload แค่ 400 thai + latin ใน `Base.astro` · ใช้ `font-display: optional` เท่านั้น (ห้าม `swap`: เครื่องที่ไม่มีฟอนต์ไทยในระบบ เช่นเครื่องทดสอบของ PageSpeed จะได้ CLS 0.25 ตอนฟอนต์สลับ) · ทดสอบ CLS ด้วย `FONTCONFIG_FILE` ที่มีแค่ DejaVu
 - **ห้ามโหลด Firebase SDK หรือ React ในหน้าทางการ** — ตัวนับใช้ Firestore REST (`src/components/ViewCounter.astro`, config ที่ `src/firebase-config.js`); SDK ใช้เฉพาะ `/guestbook` และ `/lab`
 - **easter egg** ตรวจด้วย JS ธรรมดาใน `Base.astro` แล้วค่อย `import('../eggs.jsx')` ตอนเกิดจริง — ห้ามกลับไปใช้ `client:only` ทั้งเว็บ
 - **ห้ามให้เนื้อหาที่มาทีหลังดันหน้า** — ตัวเลข/กล่องที่เติมด้วย JS ต้องจองที่ไว้ก่อน (`visibility:hidden` + `min-width`/`min-height`), carousel/กล่องหมุนต้องสูงคงที่ (`line-clamp` + `min-height`), ไม่สลับเนื้อหาทันทีที่โหลดหน้า
