@@ -37,7 +37,7 @@ const titles = Object.fromEntries(feed.map((i) => [i.href, i.title]));
   <section class="hero me">
     <div class="wrap me__grid">
       <div class="me__text">
-        <p class="me__who"><img src="/logo.png" width="40" height="40" alt="" /><span>รีวิว · ความรู้ · ข่าว · ท่องเที่ยว</span></p>
+        <p class="me__who"><img src="/logo-80.webp" width="40" height="40" alt="" /><span>รีวิว · ความรู้ · ข่าว · ท่องเที่ยว</span></p>
         <h1 class="me__title"><span>ซื้อจริง ใช้จริง ไปจริง</span> <span>แล้วมาเล่าให้ฟัง</span></h1>
         <p class="lead">ผม ปอ Dojo-mAn ชอบถ่ายรูป ชอบเที่ยว ชอบลองของใหม่ ๆ ที่นี่มีรีวิวของที่ซื้อมาใช้เอง ร้านอร่อยที่ไปจ่ายเงินเอง เรื่องไอทีที่เล่าให้เข้าใจง่าย และข่าวที่มีประโยชน์ที่อยากบอกต่อครับ</p>
         <ul class="me__promise">
@@ -151,10 +151,13 @@ const titles = Object.fromEntries(feed.map((i) => [i.href, i.title]));
   const box = document.querySelector('[data-spot]');
   if (box) {
     const list = JSON.parse(box.dataset.spot);
-    for (let i = list.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [list[i], list[j]] = [list[j], list[i]]; }
+    // Keep the server-rendered first story (no swap or extra download on load); shuffle the rest.
+    for (let i = list.length - 1; i > 1; i--) { const j = 1 + Math.floor(Math.random() * i); [list[i], list[j]] = [list[j], list[i]]; }
     const card = box.querySelector('.spot__card'), img = card.querySelector('img');
     const small = (src) => (/^\/media\/.*\.jpg$/.test(src) ? `${src.replace(/\.jpg$/, '.800.webp')} 800w, ${src} 1600w` : '');
     let n = 0, timer = 0, hold = false, stopped = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // Warm the next image at the size this screen will actually use (not the 1600px JPEG on phones).
+    const warm = (src) => { const w = new Image(); w.sizes = img.sizes; if (small(src)) w.srcset = small(src); w.src = src; };
     const show = (k) => {
       n = (k + list.length) % list.length; const it = list[n];
       card.classList.remove('is-in'); void card.offsetWidth; card.classList.add('is-in');
@@ -162,7 +165,7 @@ const titles = Object.fromEntries(feed.map((i) => [i.href, i.title]));
       card.querySelector('.spot__kind').textContent = it.kind;
       card.querySelector('.spot__title').textContent = it.title;
       card.querySelector('.spot__sub').textContent = it.sub;
-      new Image().src = list[(n + 1) % list.length].cover;   // warm the next one
+      warm(list[(n + 1) % list.length].cover);
     };
     const tick = () => { clearInterval(timer); if (!stopped) timer = setInterval(() => { if (!hold) show(n + 1); }, 6000); };
     const pause = box.querySelector('[data-spot-pause]');
@@ -172,6 +175,6 @@ const titles = Object.fromEntries(feed.map((i) => [i.href, i.title]));
     pause.addEventListener('click', () => setPause(!stopped));
     box.addEventListener('mouseenter', () => (hold = true)); box.addEventListener('mouseleave', () => (hold = false));
     box.addEventListener('focusin', () => (hold = true)); box.addEventListener('focusout', () => (hold = false));
-    show(0); setPause(stopped);
+    addEventListener('load', () => warm(list[1 % list.length].cover), { once: true }); setPause(stopped);
   }
 </script>

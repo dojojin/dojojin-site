@@ -1,39 +1,43 @@
 ---
-// Page-view counter (Firestore `pageviews/{id}`): +1 once per browser session per page, then fills
-// [data-views] (post pages), [data-visitors] and [data-popular] (home) when they exist on the page.
-// The site-wide visitor total (`meta/visitors`) is still incremented by EasterEggs in App.jsx.
-// Rules allow exactly +1 per write; until firestore.rules is deployed the writes just fail quietly.
+// Page-view counter over the Firestore REST API (no Firebase SDK on formal pages: ~550 KB less JS).
+// - pageviews/{id}: +1 once per browser session per page
+// - meta/visitors: +1 once per browser session (same sessionStorage key the /lab app uses, so no double count)
+// Then fills [data-views] (post pages), [data-visitors] (top bar) and [data-popular] (home) when present.
+// firestore.rules allow exactly +1 per write; an increment transform satisfies that for create and update.
 ---
 <script>
-  import { loadFirebase } from '../firebase.js';
+  import { firebaseConfig } from '../firebase-config.js';
+  const { projectId, apiKey } = firebaseConfig;
+  const root = `projects/${projectId}/databases/(default)/documents`;
+  const api = `https://firestore.googleapis.com/v1/${root}`;
   const idOf = (path) => path.replace(/^\/+|\/+$/g, '').replace(/\//g, '__') || 'home';
-  const fmt = (n) => n.toLocaleString('th-TH');
-  loadFirebase().then(async ({ db, doc, collection, setDoc, getDoc, getDocs, query, orderBy, limit, increment }) => {
+  const fmt = (n) => Number(n).toLocaleString('th-TH');
+  const count = (doc) => doc?.fields?.count?.integerValue;
+  const getCount = (path) => fetch(`${api}/${path}?key=${apiKey}`).then((r) => (r.ok ? r.json() : null)).then(count).catch(() => undefined);
+  const bump = (path) => ({ transform: { document: `${root}/${path}`, fieldTransforms: [{ fieldPath: 'count', increment: { integerValue: '1' } }] } });
+  const once = (key) => { try { if (sessionStorage.getItem(key)) return false; sessionStorage.setItem(key, '1'); return true; } catch { return false; } };
+
+  (async () => {
     const id = idOf(location.pathname);
-    const key = `dojojin_pv:${id}`;
-    const ref = doc(db, 'pageviews', id);
-    try {
-      if (!sessionStorage.getItem(key)) {
-        sessionStorage.setItem(key, '1');
-        await setDoc(ref, { count: increment(1) }, { merge: true });
-      }
-    } catch { /* rules not deployed yet, or offline */ }
+    const writes = [];
+    if (once(`dojojin_pv:${id}`)) writes.push(bump(`pageviews/${id}`));
+    if (once('dojojin_visited')) writes.push(bump('meta/visitors'));
+    // One write per commit: a rejected one (bad page id) must not cancel the other.
+    await Promise.all(writes.map((w) => fetch(`${api}:commit?key=${apiKey}`, { method: 'POST', body: JSON.stringify({ writes: [w] }) }).catch(() => {})));
 
     const views = document.querySelector('[data-views]');
-    if (views) {
-      const s = await getDoc(ref).catch(() => null);
-      if (s?.exists()) { views.querySelector('b').textContent = fmt(s.data().count); views.hidden = false; }
-    }
+    if (views) { const n = await getCount(`pageviews/${id}`); if (n) { views.querySelector('b').textContent = fmt(n); views.hidden = false; } }
+
     const visitors = document.querySelector('[data-visitors]');
-    if (visitors) {
-      const s = await getDoc(doc(db, 'meta', 'visitors')).catch(() => null);
-      if (s?.exists()) { visitors.querySelector('b').textContent = fmt(s.data().count); visitors.hidden = false; }
-    }
+    if (visitors) { const n = await getCount('meta/visitors'); if (n) { visitors.querySelector('b').textContent = fmt(n); visitors.classList.add('is-on'); } }
+
     const popular = document.querySelector('[data-popular]');
     if (popular) {
       const titles = JSON.parse(popular.dataset.popular);
-      const snap = await getDocs(query(collection(db, 'pageviews'), orderBy('count', 'desc'), limit(20))).catch(() => null);
-      const top = (snap?.docs ?? []).map((d) => ({ href: '/' + d.id.replace(/__/g, '/') + '/', n: d.data().count }))
+      const rows = await fetch(`${api}:runQuery?key=${apiKey}`, { method: 'POST', body: JSON.stringify({ structuredQuery: {
+        from: [{ collectionId: 'pageviews' }], orderBy: [{ field: { fieldPath: 'count' }, direction: 'DESCENDING' }], limit: 20 } }) })
+        .then((r) => (r.ok ? r.json() : [])).catch(() => []);
+      const top = rows.filter((r) => r.document).map((r) => ({ href: '/' + r.document.name.split('/').pop().replace(/__/g, '/') + '/', n: count(r.document) }))
         .filter((x) => titles[x.href]).slice(0, 5);
       if (top.length) {
         popular.querySelector('ol').replaceChildren(...top.map((x) => {
@@ -44,5 +48,5 @@
         popular.hidden = false;
       }
     }
-  }).catch(() => {});
+  })();
 </script>

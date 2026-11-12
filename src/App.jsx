@@ -347,7 +347,7 @@ function CCTVStatic({ w=80, h=60 }) {
   return <canvas ref={ref} width={w} height={h} style={{width:"100%",height:"100%",display:"block"}} />;
 }
 
-function KonamiPopup({ onClose }) {
+export function KonamiPopup({ onClose }) {
   return (
     <div style={{position:"fixed",inset:0,zIndex:9999,background:"rgba(0,0,0,0.88)",backdropFilter:"blur(20px)",display:"flex",alignItems:"center",justifyContent:"center"}} onClick={onClose}>
       <div style={{background:"rgba(0,255,180,0.06)",border:"2px solid rgba(0,255,180,0.5)",borderRadius:"24px",padding:"40px 48px",maxWidth:"480px",textAlign:"center",animation:"rgb-border 2s ease-in-out infinite"}} onClick={e=>e.stopPropagation()}>
@@ -392,7 +392,7 @@ function LightModeOverlay({ onClose }) {
   );
 }
 
-function Screensaver() {
+export function Screensaver() {
   const [time, setTime] = useState(getBangkokTime);
   useEffect(() => {
     const iv = setInterval(() => setTime(getBangkokTime()), 1000);
@@ -1238,31 +1238,6 @@ export function CommentsPage() {
 
 /* ══════ MAIN COMPONENT ══════ */
 /* Easter eggs for the formal Astro pages. The logo element must carry data-logo. */
-export function EasterEggs() {
-  const [showKonami, setShowKonami] = useState(false);
-  const clicks = useRef([]);
-  useKonamiCode(useCallback(() => setShowKonami(true), []));
-  const idle = useIdleTimer(60000);
-  useVisitorCount(false); // every page visit still counts (plan D5); the number is shown in /lab
-  useEffect(() => {
-    const el = document.querySelector("[data-logo]");
-    if (!el) return;
-    const h = () => {
-      const now = Date.now();
-      clicks.current = [...clicks.current, now].filter(t => now - t < 2500);
-      if (clicks.current.length >= 5) window.location.href = "/lab/";
-    };
-    el.addEventListener("click", h);
-    return () => el.removeEventListener("click", h);
-  }, []);
-  return (
-    <>
-      {idle && <Screensaver/>}
-      {showKonami && <KonamiPopup onClose={() => setShowKonami(false)}/>}
-    </>
-  );
-}
-
 export default function DevChaosProfile() {
   const [activePage,  setActivePage]  = useState("home");
   const [mousePos,    setMousePos]    = useState({ x:0, y:0 });

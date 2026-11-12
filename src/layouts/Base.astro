@@ -1,8 +1,8 @@
 ---
+import '../styles/fonts.css';
 import '../styles/site.css';
 import Icons from '../components/Icons.astro';
 import ViewCounter from '../components/ViewCounter.astro';
-import { EasterEggs } from '../App.jsx';
 import { PROFILE, NAV, SITE } from '../data/site.js';
 
 const {
@@ -81,20 +81,19 @@ const jsonLd = {
     (() => { let t; try { t = localStorage.getItem('theme'); } catch {}
       document.documentElement.dataset.theme = t || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); })();
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;600;700&family=JetBrains+Mono:wght@500;600&display=swap" />
+  <link rel="preload" href="/fonts/ibm-plex-sans-thai-400-thai.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/ibm-plex-sans-thai-400-latin.woff2" as="font" type="font/woff2" crossorigin />
 </head>
 <body>
   <Icons />
   <header class="site-bar">
     <div class="wrap">
       <span class="brand">
-        <button class="brand__logo" type="button" data-logo aria-label="DOJOJIN logo"><img src="/logo.png" alt="" width="28" height="28" /></button>
+        <button class="brand__logo" type="button" data-logo aria-label="DOJOJIN logo"><img src="/logo-80.webp" alt="" width="28" height="28" /></button>
         <a class="site-bar__brand" href="/">{siteName}</a>
       </span>
       <span class="site-tools">
-        <span class="site-visitors" data-visitors hidden title="ผู้เข้าชมเว็บทั้งหมด"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><b></b><span class="hide-sm"> visitors</span></span>
+        <span class="site-visitors" data-visitors title="ผู้เข้าชมเว็บทั้งหมด"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><b></b><span class="hide-sm"> visitors</span></span>
         <a class="tool-btn" href="/search/" aria-label="ค้นหา" title="ค้นหา"><svg class="icon" aria-hidden="true"><use href="#icon-search" /></svg></a>
         <button class="tool-btn" type="button" data-theme-toggle aria-label="สลับโหมดมืด/สว่าง" title="สลับโหมดมืด/สว่าง"><svg class="icon icon--dark" aria-hidden="true"><use href="#icon-moon" /></svg><svg class="icon icon--light" aria-hidden="true"><use href="#icon-sun" /></svg></button>
       </span>
@@ -123,7 +122,21 @@ const jsonLd = {
       <span><a href="/tag/">Tags</a> · <a href="/lab/">/lab</a></span>
     </div>
   </footer>
-  <EasterEggs client:only="react" />
+  <script>
+    // Easter eggs: Konami code -> popup, 60 s idle -> CCTV screensaver, logo x5 -> /lab/.
+    // Detection is plain JS; the React part (src/eggs.jsx) is imported only when an egg fires.
+    const KONAMI = 'ArrowUp,ArrowUp,ArrowDown,ArrowDown,ArrowLeft,ArrowRight,ArrowLeft,ArrowRight,b,a';
+    let keys = [], clicks = [], idle = 0, shown = '';
+    const show = (kind) => { if (shown === kind) return; shown = kind; import('../eggs.jsx').then((m) => m.render(kind, () => (shown = ''))); };
+    addEventListener('keydown', (e) => { keys = [...keys, e.key].slice(-10); if (keys.join(',') === KONAMI) show('konami'); });
+    document.querySelector('[data-logo]')?.addEventListener('click', () => {
+      const now = Date.now(); clicks = [...clicks, now].filter((t) => now - t < 2500);
+      if (clicks.length >= 5) location.href = '/lab/';
+    });
+    const wake = () => { clearTimeout(idle); if (shown === 'idle') show(''); idle = setTimeout(() => show('idle'), 60000); };
+    ['mousemove', 'keydown', 'click', 'scroll', 'touchstart'].forEach((e) => addEventListener(e, wake, { passive: true }));
+    wake();
+  </script>
   <ViewCounter />
 </body>
 </html>

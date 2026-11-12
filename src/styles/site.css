@@ -529,7 +529,7 @@ a.grade-card.project:hover { border-color: var(--accent); }
 .popular li { min-width: 0; }
 .popular li a { display: inline; }
 .popular li span { margin-left: var(--space-2); font-family: var(--font-mono); color: var(--text-secondary); white-space: nowrap; }
-.site-visitors[hidden], .popular[hidden], [data-views][hidden] { display: none; }
+.popular[hidden], [data-views][hidden] { display: none; }
 
 /* Header tools, top right: visitor total · search · theme toggle */
 .site-tools { order: 3; flex: none; display: inline-flex; align-items: center; gap: var(--space-1); }
@@ -541,7 +541,9 @@ a.grade-card.project:hover { border-color: var(--accent); }
 :root[data-theme="dark"] .icon--dark, :root:not([data-theme="dark"]) .icon--light { display: none; }
 .site-visitors { margin-right: var(--space-2); flex: none; display: inline-flex; align-items: center; gap: var(--space-1);
   font-family: var(--font-mono); font-size: var(--fs-caption); color: var(--text-secondary); white-space: nowrap; }
-.site-visitors b { color: var(--accent); font-weight: 600; }
+.site-visitors b { color: var(--accent); font-weight: 600; display: inline-block; min-width: 5ch; text-align: right; font-variant-numeric: tabular-nums; }
+/* Space is reserved before the number arrives so the top bar never shifts (CLS). */
+.site-visitors:not(.is-on) { visibility: hidden; }
 .site-nav { order: 2; margin-left: auto; }
 @media (max-width: 768px) {
   .site-tools { order: 2; margin-left: auto; }
@@ -688,10 +690,11 @@ a.grade-card.project:hover { border-color: var(--accent); }
 .spot__card { display: grid; gap: var(--space-2); text-decoration: none; color: inherit; }
 .spot__card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-lg); background: var(--surface-sunken); }
 .spot__kind { font-size: var(--fs-caption); font-weight: 600; color: var(--accent); }
-.spot__title { font-size: var(--fs-h2); line-height: 1.4; }
+.spot__title { font-size: var(--fs-h2); line-height: 1.4; min-height: calc(3em * 1.4);
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .spot__card:hover .spot__title { color: var(--accent); }
 .spot__sub { font-size: var(--fs-caption); color: var(--text-secondary); line-height: 1.6;
-  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  min-height: calc(2em * 1.6); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .spot__card.is-in { animation: spot-in .45s ease; }
 @keyframes spot-in { from { opacity: 0; } to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .spot__card.is-in { animation: none; } }
