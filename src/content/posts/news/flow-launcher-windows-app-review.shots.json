@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "title": "ค้นบุ๊กมาร์ก",
+    "src": "/media/posts/news/flow-launcher-windows-app-review/img-1.jpg",
+    "w": 990,
+    "h": 643,
+    "group": "ภาพประกอบ",
+    "alt": "ภาพ Flow Launcher ค้นบุ๊กมาร์ก",
+    "summary": "พิมพ์ตัวอักษรนำหน้าเพื่อค้นบุ๊กมาร์กของเบราว์เซอร์",
+    "credit": "ภาพ: Flow Launcher · <a href=\"https://github.com/Flow-Launcher/Flow.Launcher\" rel=\"noopener\">github.com</a>",
+    "analysis": [
+      "Alt+เลข เลือกผลลัพธ์ได้เร็ว"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "แผงพรีวิว",
+    "src": "/media/posts/news/flow-launcher-windows-app-review/img-2.jpg",
+    "w": 966,
+    "h": 619,
+    "group": "ภาพประกอบ",
+    "alt": "ภาพ Flow Launcher แผงพรีวิวรูปภาพ",
+    "summary": "กด F1 เพื่อดูพรีวิวไฟล์ในช่องค้นหา",
+    "credit": "ภาพ: Flow Launcher · <a href=\"https://github.com/Flow-Launcher/Flow.Launcher\" rel=\"noopener\">github.com</a>",
+    "analysis": [
+      "ไฟล์ภาพแสดงเป็นภาพใหญ่"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "เครื่องคิดเลข",
+    "src": "/media/posts/news/flow-launcher-windows-app-review/img-3.jpg",
+    "w": 769,
+    "h": 221,
+    "group": "ภาพประกอบ",
+    "alt": "ภาพ Flow Launcher เครื่องคิดเลข",
+    "summary": "พิมพ์โจทย์ได้ผลลัพธ์ทันที",
+    "credit": "ภาพ: Flow Launcher · <a href=\"https://github.com/Flow-Launcher/Flow.Launcher\" rel=\"noopener\">github.com</a>",
+    "analysis": [
+      "5*3-2 ได้ 13"
+    ]
+  }
+]

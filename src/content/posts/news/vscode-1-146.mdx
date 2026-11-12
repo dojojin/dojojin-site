@@ -1,0 +1,154 @@
+---
+title: "VS Code 1.146 ออกแล้ว มี Inbox mode ดูเซสชันเอเจนต์ที่รอเรา เปรียบเทียบผลหลายโมเดล และแยกแชตเป็นหน้าต่างของตัวเอง"
+topic: software
+type: news
+tags: [microsoft, ai, app]
+date: 2026-11-12T10:20:00+07:00
+section: tech
+sourceName: "Visual Studio Code Updates"
+sourceUrl: "https://code.visualstudio.com/updates"
+description: "VS Code 1.146 (ปล่อย 11 พ.ย. 2569) เพิ่ม Inbox mode (Experimental) รวมเซสชันเอเจนต์ที่รอเราไว้ที่เดียว เปรียบเทียบผลหลายโมเดลได้ง่ายขึ้น (Preview) แยกแชตเป็นหน้าต่างของตัวเอง (Preview) และประกาศเลิกใช้ Local harness ภายในกุมภาพันธ์ 2570"
+kicker: "ข่าวซอฟต์แวร์"
+lead: "VS Code 1.146 เน้นเรื่องใช้เอเจนต์ AI หลายตัวพร้อมกันโดยไม่หลงว่าตัวไหนรอเราอยู่ ผมสรุปว่าอะไรใหม่ ตัวไหนยังเป็น Experimental หรือ Preview และต้องเปิดตรงไหนครับ"
+meta: "เรียบเรียงจากบันทึกการอัปเดตของ VS Code · ข้อมูล ณ 12 พฤศจิกายน 2569"
+cover: "/media/posts/news/vscode-1-146/cover.jpg"
+coverAlt: "หน้าจอ Agents window ของ VS Code แสดงส่วน Extensions ในหน้า Agent Customizations"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="split">
+<div class="prose">
+
+Microsoft ปล่อย Visual Studio Code 1.146 เมื่อวันที่ 11 พฤศจิกายน 2569 รุ่นนี้เน้นเรื่อง "Agents window" คือหน้าต่างสำหรับสั่งงานและดูเอเจนต์ AI (ผู้ช่วยที่ลงมือทำงานให้เราเป็นเซสชัน ๆ) ที่รันอยู่หลายตัวพร้อมกัน
+
+ไฮไลต์ที่ Microsoft ระบุไว้มี 5 เรื่อง คือ Inbox mode, เปรียบเทียบผลระหว่างโมเดล, แยกแชตเป็นหน้าต่างใหม่, ติดตั้งส่วนขยายใน Agents window และการเลิกใช้ Local harness
+
+ขอบอกก่อนว่าหลายอย่างยังไม่ใช่ฟีเจอร์เสร็จสมบูรณ์ ผมแปะป้ายกำกับ Experimental หรือ Preview ตามที่หน้าประกาศเขียนไว้ และส่วนใหญ่ต้องเปิดในตั้งค่าเองครับ
+
+</div>
+<figure class="split-fig"><img src="/media/posts/news/vscode-1-146/igv-1.jpg" width="1600" height="1400" loading="lazy" alt="VS Code 1.146 สรุปสั้น ปล่อย 11 พ.ย. 2569 · Inbox mode (Experimental) · เปรียบเทียบผลหลายโมเดล (Preview) · แชตแยกหน้าต่าง (Preview) · ส่วนขยายใน Agents window (Experimental) · Local harness เลิกใช้ ก.พ. 2570" /></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## Inbox mode (Experimental)
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/vscode-1-146/img-1.jpg" width="500" height="252" loading="lazy" alt="เมนู Grouping ใน Agents window ที่เลือก Inbox Mode" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft (ภาพหน้าจอ) · <a href="https://code.visualstudio.com/updates" rel="noopener">code.visualstudio.com</a></span></figcaption></figure>
+<div class="prose">
+
+ถ้าเราสั่งเอเจนต์ไว้หลายโปรเจกต์ ปัญหาคือไม่รู้ว่าตัวไหนรอให้เราตอบ Inbox mode แก้เรื่องนี้ด้วยการรวมทุกเซสชันไว้ในมุมมองเดียว
+
+วิธีเปิด: เปิดค่า `sessions.list.inboxEnabled` (ปิดอยู่เป็นค่าเริ่มต้น) แล้วเลือก Grouping > Inbox Mode ในรายการเซสชันของ Agents window ในภาพคือเมนู Grouping ที่เลือก Inbox Mode ไว้ครับ
+
+</div>
+</div>
+
+<div class="split">
+<div class="prose">
+
+เซสชันที่ต้องการให้เราดูจะขึ้นอยู่บนสุด เหนือกลุ่ม Working (กำลังทำ), Ready to merge (พร้อมรวมโค้ด), On hold (พักไว้) และ Done (เสร็จแล้ว) ในภาพเห็นลำดับนี้ชัดครับ
+
+ถ้าเซสชันไหนรอได้ ใช้ Dismiss from Inbox, Put on Hold หรือ Snooze เก็บไว้ก่อน กด Undo ถ้าเปลี่ยนใจ การ Dismiss ไม่ได้เก็บถาวร ถ้าจะเก็บเข้าคลังให้เลือก Mark Session as Done
+
+</div>
+<figure class="news-fig news-fig--tall news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/vscode-1-146/img-2.jpg" width="279" height="483" loading="lazy" alt="รายการเซสชันที่มี Inbox อยู่ด้านบน เหนือกลุ่ม Working, Ready to merge, On hold และ Done" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft (ภาพหน้าจอ) · <a href="https://code.visualstudio.com/updates" rel="noopener">code.visualstudio.com</a></span></figcaption></figure>
+</div>
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/vscode-1-146/img-3.jpg" width="335" height="249" loading="lazy" alt="ปุ่ม Address Comments ใต้เซสชันในรายการของ Agents window" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft (ภาพหน้าจอ) · <a href="https://code.visualstudio.com/updates" rel="noopener">code.visualstudio.com</a></span></figcaption></figure>
+<div class="prose">
+
+มีอีกตัวคือ Session list inline actions (Experimental) เปิดด้วย `sessions.list.inlineActions` ปิดอยู่เป็นค่าเริ่มต้นเช่นกัน ใช้สั่งแก้เช็กที่ไม่ผ่านหรือตอบคอมเมนต์รีวิวได้จากแถวในรายการเลย โดยไม่ต้องเปิดเซสชัน ในภาพคือปุ่ม Address Comments ใต้เซสชัน
+
+คำสั่งนี้ส่งไปที่เซสชันนั้นเบื้องหลัง และ Microsoft บอกว่าไม่ได้เปิด Agent Merge หรือเปลี่ยนสิทธิ์ของแอ็กชันครับ
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## เปรียบเทียบผลหลายโมเดล และแชตแยกหน้าต่าง (Preview)
+
+<div class="prose">
+
+**เปรียบเทียบโมเดล (Preview)** ฟีเจอร์ Compare Models ใน Agents window ให้ส่งคำสั่งเดียวกันให้หลายโมเดลทำ แล้วให้ตัวตัดสิน (judge) ประเมินผล และตัวรวม (synthesizer) เอาข้อดีมารวมกัน รุ่นนี้เพิ่มว่า
+
+- ใช้ judge และ synthesizer กับแชตที่ไม่มีโฟลเดอร์งานได้ การรวมผลสร้างแชตใหม่ ไม่แตะคำตอบเดิม
+- เลือก Copilot Fusion พร้อมระดับ effort ที่รองรับ ได้ทั้งตัวทำงาน ตัวตัดสิน และตัวรวม
+- (Experimental) ให้เอเจนต์รันการเปรียบเทียบเองได้ โดยเปิด `sessions.chat.compareAgents.tools.enabled` ซึ่งปิดอยู่เป็นค่าเริ่มต้น และต้องเปิด Compare Models ก่อน
+
+**แชตแยกหน้าต่าง (Preview)** เปิดด้วย `sessions.chatWindows.enabled` ใน Stable (ใน VS Code Insiders เปิดมาให้แล้ว) คลิกขวาที่เซสชันหรือแชต เลือก Open in > New Window หรือลากแชตออกมาก็ได้ หน้าต่างหนึ่งใส่หลายแชตได้ ลากจัดตำแหน่งแชต ตัวแก้ไข และเทอร์มินัลได้อิสระ และคืนค่าเดิมด้วยคำสั่ง Developer: Reset Chat Window Layout ครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ส่วนอื่นที่น่าสนใจ
+
+<div class="split">
+<div class="prose">
+
+**เลิกใช้ Local harness** harness คือตัวขับเคลื่อนเอเจนต์ ตอนนี้ค่าเริ่มต้นของเซสชันใหม่คือ Copilot harness (ตั้งแต่ 1.143) ส่วน Local harness ถูกประกาศเลิกใช้และจะถูกถอดในเดือนกุมภาพันธ์ 2570 ช่วงสามเดือนนี้ยังใช้ได้แต่ไม่มีฟีเจอร์ใหม่ ในภาพคือตัวเลือก Copilot ในหน้าเลือก harness ถ้าใช้ Copilot อยู่แล้วไม่ต้องทำอะไรครับ
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/vscode-1-146/img-4.jpg" width="984" height="453" loading="lazy" alt="ตัวเลือก Copilot ในตัวเลือก harness พร้อมคำอธิบายเรื่อง Copilot SDK และ Agent Host" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft (ภาพหน้าจอ) · <a href="https://code.visualstudio.com/updates" rel="noopener">code.visualstudio.com</a></span></figcaption></figure>
+</div>
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/vscode-1-146/img-5.jpg" width="393" height="142" loading="lazy" alt="ช่องพิมพ์แชตที่แสดงข้อความ Chat with Copilot (sandbox enabled)" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft (ภาพหน้าจอ) · <a href="https://code.visualstudio.com/updates" rel="noopener">code.visualstudio.com</a></span></figcaption></figure>
+<div class="prose">
+
+**ความปลอดภัย** ข้อความขออนุญาตของ Copilot harness ละเอียดขึ้น จากเดิมที่เสนอสิทธิ์กว้าง ๆ เช่น "Allow in this Session" ให้เข้าได้ทุก URL ตอนนี้เสนอเป็นเฉพาะโดเมน คำสั่ง หรือโฟลเดอร์ นอกจากนี้ตั้งค่า `chat.agent.sandbox.credentials.envVars` เพื่อซ่อนค่า environment variable ในเซสชัน sandbox ได้ และช่องแชตจะแสดง "(sandbox enabled)" เมื่อเปิด sandbox ให้เทอร์มินัลอยู่
+
+</div>
+</div>
+
+<div class="prose">
+
+- **ส่วนขยายใน Agents window (Experimental)** หาและติดตั้งส่วนขยายได้โดยไม่ต้องกลับไปหน้าต่างตัวแก้ไข ถ้าส่วนขยายใช้ฟีเจอร์ที่ Agents window ยังไม่รองรับ จะมีคำเตือนบอก
+- **ต่อเซสชัน Copilot CLI เข้า VS Code (Experimental)** พิมพ์ `/code` ใน CLI แล้วเซสชันเดิมจะเปิดใน VS Code ต้องใช้ Copilot CLI 1.0.107 ขึ้นไปและเปิดฟีเจอร์ทดลองก่อน
+- **Skills over MCP (Preview)** เซิร์ฟเวอร์ MCP ส่ง skill ให้โมเดลได้เอง โดยจะถามให้เราอนุญาตก่อนครั้งแรก
+- **Mermaid 12** ใช้แสดงไดอะแกรมในแชต Markdown preview และ notebook
+- **Copilot Agent Host รองรับ virtual repository** ใช้กับรีโพที่เปิดดูโดยไม่ต้อง clone ได้แล้ว
+- **องค์กร** รองรับพร็อกซี (PAC, Kerberos) และตั้งลิงก์ขอความช่วยเหลือเมื่อนโยบายบล็อกได้
+
+</div>
+
+</section>
+
+<section class="section">
+
+## อัปเดตยังไง
+
+<div class="prose">
+
+ถ้าติดตั้ง VS Code อยู่แล้ว ให้ใช้ Check for Updates ใน VS Code ตามที่หน้าประกาศแนะนำ หรือโหลดรุ่น 1.146.0 จากหน้า Downloads ของเว็บ VS Code ครับ ถ้าอยากลองฟีเจอร์ที่ยังไม่ออก Stable ใช้รุ่น Insiders
+
+เรื่องการใช้งานในไทย หน้าประกาศไม่ได้ระบุข้อจำกัดตามประเทศ แต่ฟีเจอร์เอเจนต์หลายตัวเกี่ยวกับ GitHub Copilot ซึ่งอาจต้องมีบัญชีและสิทธิ์ใช้งาน ผมไม่ได้ตรวจเรื่องนี้ครับ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+- Microsoft, Visual Studio Code 1.146 (11 พ.ย. 2569): <a href="https://code.visualstudio.com/updates" rel="noopener">code.visualstudio.com/updates</a>
+
+## ที่มาของภาพ
+
+- ภาพปก และภาพหน้าจอในเนื้อข่าว: Microsoft · <a href="https://code.visualstudio.com/updates" rel="noopener">code.visualstudio.com</a>
+- Infographic: ภาพประกอบจาก DOJOJIN.TECH
+
+</section>

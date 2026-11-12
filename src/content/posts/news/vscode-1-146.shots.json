@@ -1,0 +1,77 @@
+[
+  {
+    "id": "1",
+    "title": "เมนู Grouping ที่เลือก Inbox Mode",
+    "src": "/media/posts/news/vscode-1-146/img-1.jpg",
+    "w": 500,
+    "h": 252,
+    "fit": "contain",
+    "group": "ภาพประกอบ",
+    "alt": "เมนู Grouping ใน Agents window ที่เลือก Inbox Mode",
+    "summary": "เมนู Grouping ใน Agents window ที่เลือก Inbox Mode",
+    "credit": "ภาพ: Microsoft (ภาพหน้าจอ) · <a href=\"https://code.visualstudio.com/updates\" rel=\"noopener\">code.visualstudio.com</a>",
+    "analysis": [
+      "ตัวเลือก Inbox Mode อยู่ในเมนู Grouping ของรายการเซสชัน"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Inbox เหนือกลุ่มเซสชันอื่น",
+    "src": "/media/posts/news/vscode-1-146/img-2.jpg",
+    "w": 279,
+    "h": 483,
+    "fit": "contain",
+    "group": "ภาพประกอบ",
+    "alt": "เซสชันที่ต้องการให้เราดูอยู่ใน Inbox เหนือ Working, Ready to merge, On hold และ Done",
+    "summary": "เซสชันที่ต้องการให้เราดูอยู่ใน Inbox เหนือ Working, Ready to merge, On hold และ Done",
+    "credit": "ภาพ: Microsoft (ภาพหน้าจอ) · <a href=\"https://code.visualstudio.com/updates\" rel=\"noopener\">code.visualstudio.com</a>",
+    "analysis": [
+      "Inbox อยู่บนสุดของรายการ"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "ปุ่ม Address Comments",
+    "src": "/media/posts/news/vscode-1-146/img-3.jpg",
+    "w": 335,
+    "h": 249,
+    "fit": "contain",
+    "group": "ภาพประกอบ",
+    "alt": "ปุ่ม Address Comments ใต้เซสชัน ใช้สั่งแก้คอมเมนต์โดยไม่เปิดเซสชัน",
+    "summary": "ปุ่ม Address Comments ใต้เซสชัน ใช้สั่งแก้คอมเมนต์โดยไม่เปิดเซสชัน",
+    "credit": "ภาพ: Microsoft (ภาพหน้าจอ) · <a href=\"https://code.visualstudio.com/updates\" rel=\"noopener\">code.visualstudio.com</a>",
+    "analysis": [
+      "ปุ่มอยู่ใต้แถวเซสชันในรายการ"
+    ]
+  },
+  {
+    "id": "4",
+    "title": "ตัวเลือก Copilot harness",
+    "src": "/media/posts/news/vscode-1-146/img-4.jpg",
+    "w": 984,
+    "h": 453,
+    "fit": "contain",
+    "group": "ภาพประกอบ",
+    "alt": "ตัวเลือก Copilot ในหน้าเลือก harness",
+    "summary": "ตัวเลือก Copilot ในหน้าเลือก harness",
+    "credit": "ภาพ: Microsoft (ภาพหน้าจอ) · <a href=\"https://code.visualstudio.com/updates\" rel=\"noopener\">code.visualstudio.com</a>",
+    "analysis": [
+      "มีคำอธิบายเรื่อง Copilot SDK และ Agent Host"
+    ]
+  },
+  {
+    "id": "5",
+    "title": "sandbox enabled",
+    "src": "/media/posts/news/vscode-1-146/img-5.jpg",
+    "w": 393,
+    "h": 142,
+    "fit": "contain",
+    "group": "ภาพประกอบ",
+    "alt": "ช่องแชตแสดง (sandbox enabled) เมื่อเปิด sandbox ให้เทอร์มินัล",
+    "summary": "ช่องแชตแสดง (sandbox enabled) เมื่อเปิด sandbox ให้เทอร์มินัล",
+    "credit": "ภาพ: Microsoft (ภาพหน้าจอ) · <a href=\"https://code.visualstudio.com/updates\" rel=\"noopener\">code.visualstudio.com</a>",
+    "analysis": [
+      "ข้อความ Chat with Copilot (sandbox enabled)"
+    ]
+  }
+]

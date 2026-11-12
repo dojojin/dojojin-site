@@ -1,0 +1,184 @@
+---
+title: "Fortinet แก้ช่องโหว่ Critical 3 รายการ FortiOS และ FortiManager ส่วน Palo Alto Networks ออกแพตช์ PAN-OS"
+topic: network
+type: news
+tags: [security]
+date: 2026-11-12T10:00:00+07:00
+section: security
+sourceName: "FortiGuard PSIRT / Palo Alto Networks Security Advisories"
+sourceUrl: "https://www.fortiguard.com/psirt"
+description: "Fortinet ประกาศช่องโหว่ระดับ Critical 3 รายการเมื่อ 10 พ.ย. 2569 (FortiOS, FortiSASE, FortiManager, FortiAnalyzer) ส่วน Palo Alto Networks ออกแพตช์ PAN-OS และ GlobalProtect ที่ไม่มีรายการ Critical พร้อมรุ่นที่ต้องอัปเดตและสิ่งที่แอดมินควรเช็ก"
+kicker: "ข่าวความปลอดภัยไซเบอร์"
+lead: "สัปดาห์นี้ทั้ง Fortinet และ Palo Alto Networks ออกแพตช์ให้ไฟร์วอลล์และ VPN ฝั่งองค์กร ฝั่ง Fortinet มีช่องโหว่ระดับ Critical 3 รายการ ส่วน Palo Alto ไม่มีรายการ Critical ในชุดนี้ ผมสรุปว่ากระทบอะไร ต้องอัปเดตเป็นรุ่นไหน และแอดมินควรเช็กอะไรก่อนครับ"
+meta: "เรียบเรียงจากประกาศของ Fortinet และ Palo Alto Networks · ข้อมูล ณ 12 พฤศจิกายน 2569"
+cover: "/media/posts/news/fortinet-paloalto-patches-2026-11/cover.jpg"
+coverAlt: "ตู้แร็คเซิร์ฟเวอร์ที่มีไฟร์วอลล์เรียงเป็นชั้น ไฟสีน้ำเงิน มีโล่สีเขียวเรืองแสง และแล็ปท็อปแสดงแถบอัปเดตด้านหน้า (ภาพประกอบ)"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="split">
+<div class="prose">
+
+วันที่ 10 พฤศจิกายน 2569 Fortinet ประกาศช่องโหว่ระดับ Critical 3 รายการบนหน้า FortiGuard PSIRT ได้แก่ CVE-2026-126253 (FortiOS และ FortiSASE) CVE-2026-126229 (FortiManager, FortiAnalyzer และรุ่น Cloud) และ CVE-2026-126261 (FortiManager) CVE คือเลขประจำตัวของช่องโหว่ที่ใช้อ้างถึงตรงกันทั่วโลก
+
+ทั้ง 3 รายการหน้าประกาศระบุว่า Known exploited คือ No หมายความว่ายังไม่ถูกโจมตีจริงตามที่ Fortinet เขียน และไม่มี virtual patch (ตัวป้องกันชั่วคราวผ่านระบบกรองทราฟฟิก) ให้ใช้ ส่วนวิธีเลี่ยงชั่วคราว (workaround) ผมไม่เห็นหน้าไหนระบุไว้ ทางเดียวคืออัปเดตครับ
+
+</div>
+<figure class="split-fig"><img src="/media/posts/news/fortinet-paloalto-patches-2026-11/igv-1.jpg" width="1600" height="1400" loading="lazy" alt="Fortinet 10 พ.ย. 2569 ช่องโหว่ระดับ Critical 3 รายการ: CVE-2026-126253 FortiOS, FortiSASE คะแนน 9.3 · CVE-2026-126229 FortiManager, FortiAnalyzer คะแนน 9.1 · CVE-2026-126261 FortiManager คะแนน 9.0 · ถูกโจมตีจริงหรือไม่: หน้าประกาศระบุว่า No ทั้ง 3 รายการ" /></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## แต่ละรายการคืออะไร
+
+<div class="split">
+<figure class="split-fig"><img src="/media/posts/news/fortinet-paloalto-patches-2026-11/igv-2.jpg" width="1600" height="1778" loading="lazy" alt="Fortinet รุ่นที่แก้แล้ว: FortiOS (CVE-2026-126253) 8.0 เป็น 8.0.2, 7.6 เป็น 7.6.8, 7.4 เป็น 7.4.13, 7.2 เป็น 7.2.14 · FortiManager และ FortiAnalyzer (CVE-2026-126229) 8.0 เป็น 8.0.2, 7.6 เป็น 7.6.8, 7.4 เป็น 7.4.12 · FortiManager (CVE-2026-126261) 8.0 เป็น 8.0.1, 7.6 เป็น 7.6.8, 7.4 เป็น 7.4.6, 7.2 เป็น 7.2.9 · รุ่นเก่ากว่านี้ เช่น FortiOS 7.0 ประกาศให้ย้ายไปรุ่นที่แก้แล้ว" /></figure>
+<div class="prose">
+
+ตัวเลขรุ่นที่แก้อยู่ในภาพทางซ้ายครับ ส่วนเนื้อหาของแต่ละช่องโหว่ ผมสรุปจากหน้าประกาศดังนี้
+
+- **CVE-2026-126253 (CVSS 9.3)** เป็นช่องโหว่ข้ามการยืนยันตัวตนใน OSPF daemon ของ FortiOS และ FortiSASE OSPF คือโปรโตคอลที่เราเตอร์ใช้แลกเปลี่ยนเส้นทาง Fortinet ว่าผู้โจมตีที่ไม่ต้องล็อกอินอาจส่งคำขอพิเศษเพื่อกระจาย LSA (ข้อมูลเส้นทาง) ได้ เวกเตอร์ของคะแนนเป็นแบบ adjacent คือต้องอยู่ในเครือข่ายใกล้ ๆ
+- **CVE-2026-126229 (CVSS 9.1)** ใน dmserver ของ FortiManager และ FortiAnalyzer ผู้ดูแลระบบที่ล็อกอินแล้วอาจเข้าถึง VDOM อื่นได้ ด้วยคำขอ HTTP ที่ปรับแต่งมา VDOM คือระบบเสมือนแยกกันในอุปกรณ์เดียว เรื่องนี้สำคัญกับองค์กรที่แยกลูกค้าหรือหน่วยงานไว้คนละ VDOM
+- **CVE-2026-126261 (CVSS 9.0)** ใน FortiManager ส่วนบริการ FGFM ผู้โจมตีที่ไม่ต้องล็อกอินแต่เข้าถึงพอร์ต FGFM ได้ อาจรันโค้ดหรือคำสั่งผ่านแพ็กเก็ตที่สร้างมาเฉพาะ
+
+ประเด็นที่ควรจำคือ FortiOS 7.0 ทั้งสาย และ FortiManager กับ FortiAnalyzer รุ่น 7.2 และ 7.0 หน้าประกาศไม่ได้ให้รุ่นแพตช์ แต่บอกให้ย้ายไปรุ่นที่แก้แล้ว ถ้าใช้รุ่นเหล่านี้อยู่ต้องวางแผนอัปเกรดข้ามสาย ไม่ใช่แค่ลงอัปเดตย่อยครับ
+
+</div>
+</div>
+
+<div class="prose">
+
+สำหรับ FortiSASE ซึ่งเป็นบริการคลาวด์ หน้าประกาศบอกว่ารุ่น 26.3.1 แก้แล้วใน 26.3.2 โดยลูกค้าไม่ต้องทำอะไร ส่วนสายอื่นตั้งแต่ 26.2 ถึง 25.1 ระบุว่าให้ย้ายไปรุ่นที่แก้แล้ว ส่วนสาย 24.4 และเก่ากว่านั้นไม่ได้รับผลกระทบ
+
+อีกข้อที่ผมอยากให้รู้ Fortinet แนะนำเครื่องมือวางเส้นทางอัปเกรด (upgrade path tool) ที่ docs.fortinet.com/upgrade-tool ใช้เช็กก่อนอัปเกรดข้ามรุ่นได้ครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ฝั่ง Palo Alto Networks
+
+<div class="split">
+<div class="prose">
+
+ในหน้า Security Advisories ของ Palo Alto Networks ชุดล่าสุดคือ CVE-2026-0323 ถึง 0331 ซึ่งหน้ารายการลงวันที่ 12 พฤศจิกายน 2569 ส่วนใหญ่เกี่ยวกับ PAN-OS (ระบบปฏิบัติการของไฟร์วอลล์) และ GlobalProtect (บริการ VPN) คะแนนสูงสุดในชุดนี้คือ 6.6 ความรุนแรง Medium ผมไม่เห็นรายการ Critical
+
+รายการที่ผมเปิดอ่านละเอียด Palo Alto ระบุว่าไม่ทราบว่ามีการโจมตีจริง และทุกรายการให้ระดับความเร่งด่วนแนะนำเป็น Moderate
+
+- **CVE-2026-0331 (6.6)** ข้อมูลของไฟร์วอลล์และเซสชันรั่วได้ จากทราฟฟิกที่ส่งมายังหรือผ่านอินเทอร์เฟซ dataplane โดยไม่ต้องล็อกอิน กระทบ PA-Series และ VM-Series ไม่กระทบ Panorama
+- **CVE-2026-0330 (6.1)** รันโค้ดด้วยสิทธิ์ root บน Panorama ได้ แต่ต้องเป็นแอดมินที่ล็อกอินแล้วและเข้าถึงเครือข่ายได้ ไม่กระทบไฟร์วอลล์เดี่ยว Prisma Access และ Cloud NGFW
+- **CVE-2026-0329 (4.6)** buffer overflow ทำให้บริการล่ม (DoS) ได้ จากทราฟฟิกที่ส่งผ่าน dataplane กระทบเมื่อมี IKE Gateway ที่ใช้ใบรับรองพร้อมตรวจ CRL หรือ OCSP หรือมีการเปิด DNS Proxy
+- **CVE-2026-0328 (2.7)** ผู้ใช้ที่ไม่ได้ล็อกอินอาจต่อ VPN ได้ผ่าน GlobalProtect เฉพาะกรณีเปิดให้ใช้ไคลเอนต์ VPN ของบริษัทอื่น ถ้าใช้เฉพาะ GlobalProtect client ไม่กระทบ
+- **CVE-2026-0325 (1.3)** ผู้ใช้ GlobalProtect ที่ล็อกอินได้อาจข้ามการจำกัดตาม IP ต้นทาง
+
+</div>
+<figure class="split-fig"><img src="/media/posts/news/fortinet-paloalto-patches-2026-11/igv-3.jpg" width="1600" height="1468" loading="lazy" alt="Palo Alto Networks พ.ย. 2569 ชุดแพตช์ไม่มี Critical: CVE-2026-0331 ข้อมูลรั่ว 6.6 · CVE-2026-0330 RCE บน Panorama 6.1 · CVE-2026-0329 buffer overflow 4.6 · รุ่นที่แก้ (สายหลัก) 12.2.4-h2, 12.1.10-h4, 11.2.16-h2, 11.1.16-h5, 10.2.18-h14 · รายการที่ผมเปิดอ่าน ไม่มีรายงานการโจมตีจริง" /></figure>
+</div>
+
+<div class="split">
+<figure class="news-fig news-fig--tall news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/fortinet-paloalto-patches-2026-11/img-1.jpg" width="700" height="1020" loading="lazy" alt="หน้า Palo Alto Networks Security Advisories แสดงรายการล่าสุด CVE-2026-0331 PAN-OS Sensitive Information Disclosure คะแนน 6.6 พร้อมตารางรุ่นที่ได้รับผลกระทบและรุ่นที่แก้ วันที่ 2026-11-12" /></div><figcaption><span class="news-fig__credit">ภาพ: Palo Alto Networks (ภาพหน้าจอ) · <a href="https://security.paloaltonetworks.com/" rel="noopener">security.paloaltonetworks.com</a></span></figcaption></figure>
+<div class="prose">
+
+ในภาพคือหน้ารวม advisory ของ Palo Alto Networks แถวบนสุดคือ CVE-2026-0331 มีคะแนน 6.6 ตารางทางขวาเทียบรุ่นที่ได้รับผลกระทบกับรุ่นที่แก้แล้วของแต่ละสาย PAN-OS รวมถึง Prisma Access ครับ
+
+</div>
+</div>
+
+<div class="split">
+<div class="prose">
+
+ในภาพคือหน้าของ CVE-2026-0330 บอกชัดว่า Urgency เป็น Moderate คะแนน 6.1 Medium และ Exploit Maturity เป็น Unreported ด้านล่างเป็นตาราง Product Status ที่บอกว่ากระทบเฉพาะ Panorama
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/fortinet-paloalto-patches-2026-11/img-2.jpg" width="1000" height="1100" loading="lazy" alt="หน้า Palo Alto Networks CVE-2026-0330 PAN-OS Authenticated Remote Code Execution in Panorama แสดง Urgency Moderate, Severity 6.1 Medium, Exploit Maturity Unreported และตาราง Product Status" /></div><figcaption><span class="news-fig__credit">ภาพ: Palo Alto Networks (ภาพหน้าจอ) · <a href="https://security.paloaltonetworks.com/CVE-2026-0330" rel="noopener">security.paloaltonetworks.com</a></span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## รุ่น PAN-OS ที่แก้แล้ว
+
+<div class="prose">
+
+สายหลักที่ผมเห็นในหน้าประกาศ ให้อัปเดตเป็นรุ่นนี้หรือใหม่กว่าครับ
+
+- **PAN-OS 12.2** 12.2.4-h2
+- **PAN-OS 12.1** 12.1.4-h14, 12.1.7-h12 หรือ 12.1.10-h4 แล้วแต่สายย่อย
+- **PAN-OS 11.2** 11.2.4-h24, 11.2.7-h24, 11.2.10-h18, 11.2.13-h5 หรือ 11.2.16-h2
+- **PAN-OS 11.1** 11.1.4-h39, 11.1.6-h41, 11.1.7-h13, 11.1.10-h37, 11.1.13-h17 หรือ 11.1.16-h5
+- **PAN-OS 10.2** 10.2.7-h40, 10.2.10-h43, 10.2.13-h28, 10.2.16-h13 หรือ 10.2.18-h14
+
+บางรายการไม่ครอบคลุมทุกสาย เช่น CVE-2026-0325 มีรุ่นแก้เฉพาะ 12.2 ถึง 11.1 ดูรายละเอียดของแต่ละ CVE ในหน้าประกาศก่อนเสมอครับ Prisma Access และ Cloud NGFW เป็นบริการที่ Palo Alto ดูแลให้ ในประกาศที่ผมเปิดอ่านบอกว่าจะอัปเกรดให้ในรอบบำรุงรักษาถัดไป ถ้าต้องการเร็วกว่านั้นให้ติดต่อ Support
+
+</div>
+
+</section>
+
+<section class="section">
+
+## แอดมินควรเช็กอะไร
+
+<div class="prose">
+
+1. **ทำรายการอุปกรณ์** ว่าที่บริษัทมี FortiGate (FortiOS), FortiManager, FortiAnalyzer, FortiSASE และไฟร์วอลล์ Palo Alto (PAN-OS), Panorama, GlobalProtect อะไรบ้าง รุ่นซอฟต์แวร์ที่รันอยู่เท่าไร
+2. **เทียบกับตารางรุ่นที่แก้** ถ้าอยู่ในช่วงที่กระทบ ให้ลงแพตช์ ตัวที่ผมให้ความสำคัญก่อนคือ FortiManager เพราะเป็นศูนย์กลางจัดการหลายอุปกรณ์ และมีทั้ง 2 ใน 3 รายการ Critical
+3. **ปิดไม่ให้พอร์ตจัดการเปิดสู่อินเทอร์เน็ต** ไม่ว่าจะเป็นหน้า GUI ของ FortiManager พอร์ต FGFM หรือ management interface ของ Panorama Palo Alto เองเขียนว่าการจำกัดการเข้าถึงเฉพาะ IP ภายในที่เชื่อถือได้ ลดความเสี่ยงลงมาก
+4. **เช็กการตั้งค่าที่เป็นเงื่อนไขของช่องโหว่** เช่น OSPF ที่เปิดอยู่บน FortiOS, การใช้ VDOM ใน FortiManager, GlobalProtect gateway ที่เปิดอยู่ (Network > GlobalProtect > Gateways), DNS Proxy และ IKE Gateway ที่ใช้ใบรับรองบน PAN-OS
+5. **อัปเดตตามขั้นตอนของหน่วยงาน** สำรอง config ก่อน นัดช่วงเวลาปิดงาน และถ้าข้ามสายรุ่น ให้เช็ก upgrade path ของ Fortinet ก่อน
+6. **อย่าลืมรุ่นที่ไม่มีแพตช์ย่อยให้** ถ้ายังใช้ FortiOS 7.0 หรือ FortiManager/FortiAnalyzer 7.2 และ 7.0 ต้องวางแผนย้ายรุ่น
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ข้อควรรู้เพิ่มเติม
+
+<div class="prose">
+
+- ผมเขียนตามที่หน้าประกาศของแต่ละบริษัทระบุเท่านั้นครับ ถ้าหน้าถูกแก้ภายหลัง เช่น มีรายงานโจมตีจริง ข้อมูลอาจเปลี่ยนได้ ควรเปิดหน้าจริงเช็กอีกครั้งก่อนลงมือ
+- ผมไม่ได้เห็นข้อมูลว่ามีผลต่ออุปกรณ์รุ่นใดโดยเฉพาะในประเทศไทย ประกาศเป็นแบบทั่วโลก เช็กรุ่นซอฟต์แวร์ที่ใช้อยู่เป็นหลัก
+- คะแนน CVSS ที่ Fortinet ให้เป็นคะแนนพื้นฐานของรายการนั้น ส่วนของ Palo Alto ผมใช้คะแนนรวมสถานการณ์ (CVSS-BT) ตามที่หน้ารายการแสดง ตัวเลขจึงเทียบกันตรง ๆ ไม่ได้
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- Fortinet PSIRT: <a href="https://www.fortiguard.com/psirt" rel="noopener">fortiguard.com/psirt</a> · <a href="https://www.fortiguard.com/psirt/FG-IR-26-267" rel="noopener">FG-IR-26-267</a> · <a href="https://www.fortiguard.com/psirt/FG-IR-26-244" rel="noopener">FG-IR-26-244</a> · <a href="https://www.fortiguard.com/psirt/FG-IR-26-275" rel="noopener">FG-IR-26-275</a>
+- Palo Alto Networks Security Advisories: <a href="https://security.paloaltonetworks.com/" rel="noopener">security.paloaltonetworks.com</a> · <a href="https://security.paloaltonetworks.com/CVE-2026-0331" rel="noopener">0331</a> · <a href="https://security.paloaltonetworks.com/CVE-2026-0330" rel="noopener">0330</a> · <a href="https://security.paloaltonetworks.com/CVE-2026-0329" rel="noopener">0329</a> · <a href="https://security.paloaltonetworks.com/CVE-2026-0328" rel="noopener">0328</a> · <a href="https://security.paloaltonetworks.com/CVE-2026-0325" rel="noopener">0325</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- อินโฟกราฟิก: ภาพประกอบจาก DOJOJIN.TECH จากข้อมูลในข่าวนี้
+- รายการ advisory ของ Palo Alto Networks: ภาพ: Palo Alto Networks (ภาพหน้าจอ) · <a href="https://security.paloaltonetworks.com/" rel="noopener">security.paloaltonetworks.com</a>
+- หน้า CVE-2026-0330: ภาพ: Palo Alto Networks (ภาพหน้าจอ) · <a href="https://security.paloaltonetworks.com/CVE-2026-0330" rel="noopener">security.paloaltonetworks.com</a>
+- ภาพปก: ภาพประกอบจาก DOJOJIN.TECH
+
+ภาพใช้ประกอบข่าว (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>

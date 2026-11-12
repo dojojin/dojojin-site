@@ -1,0 +1,160 @@
+---
+title: "แอปแนะนำ: Stats แสดงสถานะเครื่อง Mac ไว้บนเมนูบาร์ CPU, RAM, ดิสก์, เน็ต ฟรีและโอเพนซอร์ส"
+topic: software
+type: news
+tags: [app, open-source]
+date: 2026-11-12T10:30:00+07:00
+section: tech
+sourceName: "Stats (GitHub)"
+sourceUrl: "https://github.com/exelban/stats"
+description: "แนะนำ Stats แอปบน macOS ที่แสดงการใช้ CPU, GPU, RAM, ดิสก์, เครือข่าย, แบตเตอรี่ และเซนเซอร์ไว้บนเมนูบาร์ ต้องใช้ macOS 12 ขึ้นไป โอเพนซอร์สไลเซนส์ MIT ใช้ฟรี รุ่นล่าสุด 3.0.26"
+kicker: "แอปแนะนำ"
+lead: "อยากรู้ว่า Mac ช้าเพราะอะไร แรมเต็มหรือเปล่า เน็ตวิ่งเท่าไร ไม่ต้องเปิด Activity Monitor ทุกครั้ง ผมแนะนำ Stats ครับ เป็นแอปเล็ก ๆ ที่เอาตัวเลขพวกนี้มาวางไว้บนเมนูบาร์ ใช้ฟรีและเป็นโอเพนซอร์ส"
+meta: "เรียบเรียงจากหน้า GitHub ของ Stats และ GitHub releases · ข้อมูล ณ 12 พฤศจิกายน 2569"
+cover: "/media/posts/news/stats-macos-app-review/cover.jpg"
+coverAlt: "ภาพหน้าต่างป๊อปอัปของ Stats หลายโมดูลเรียงกัน ได้แก่ CPU, GPU, Disk, RAM, Network, Battery, Sensors, Clock และ Bluetooth"
+---
+
+<section class="section">
+
+## Stats คืออะไร
+
+<div class="split">
+<div class="prose">
+
+Stats เป็นแอปมอนิเตอร์ระบบสำหรับ macOS ที่หน้า GitHub สรุปไว้ว่า "macOS system monitor in your menu bar" คือเอาข้อมูลของเครื่องมาแสดงบนเมนูบาร์ด้านบนจอ เหลือบตาดูได้ทันที
+
+ข้อมูลที่ดูได้ตามรายการในหน้า GitHub มี CPU, GPU, หน่วยความจำ (RAM), ดิสก์, เครือข่าย, ระดับแบตเตอรี่, เซนเซอร์ (อุณหภูมิ แรงดันไฟ กำลังไฟ), อุปกรณ์บลูทูธ และนาฬิกาหลายเขตเวลา
+
+</div>
+<figure class="split-fig"><img src="/media/posts/news/stats-macos-app-review/igv-1.jpg" width="1600" height="1513" loading="lazy" alt="อินโฟกราฟิกข้อมูลเร็ว ๆ ของ Stats โอเพนซอร์ส MIT ใช้ฟรี รุ่นล่าสุด 3.0.26 วันที่ 8 พ.ย. 2569 บน GitHub ต้องใช้ macOS 12 ขึ้นไป ติดตั้งด้วยไฟล์ DMG หรือ Homebrew" /></figure>
+</div>
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/stats-macos-app-review/img-1.jpg" width="1600" height="68" loading="lazy" alt="ภาพตัวอย่างเมนูบาร์ที่ติดตั้ง Stats แสดงตัวเลข CPU, GPU, RAM, SSD เครือข่าย แบตเตอรี่ และนาฬิกา ในหลายรูปแบบ ทั้งตัวเลข กราฟ และวงกลม" /></div><figcaption><span class="news-fig__credit">ภาพ: Stats (exelban) · <a href="https://github.com/exelban/stats" rel="noopener">github.com</a></span></figcaption></figure>
+<div class="prose">
+
+ในภาพคือตัวอย่างเมนูบาร์ 3 แบบจากหน้าโปรเจกต์ บางแบบโชว์เป็นตัวเลข บางแบบเป็นกราฟเส้น หรือวงกลมเล็ก ๆ เลือกได้ว่าอยากให้โมดูลไหนขึ้นบนเมนูบาร์ และให้หน้าตาเป็นแบบไหนครับ
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ราคา ไลเซนส์ และรุ่นล่าสุด
+
+<div class="prose">
+
+Stats เป็นโอเพนซอร์สไลเซนส์ MIT ใช้ฟรี หน้า GitHub บอกว่าซอร์สโค้ดเปิดให้อ่าน แก้ไข และทำรุ่นของตัวเองได้ แต่ไม่ได้เปิดรับ pull request ทั่วไป เพราะโปรเจกต์ดูแลโดยคนเดียว ถ้าอยากเสนออะไรให้เปิด issue ก่อน ส่วนงานแปลภาษารับเสมอ และมีภาษาไทยอยู่ในรายการภาษาที่รองรับแล้ว
+
+รุ่นล่าสุดบน GitHub คือ **v3.0.26** วันที่ 8 พฤศจิกายน 2569 บันทึกรุ่นเขียนว่าแก้บั๊กวิดเจ็ต Stack และ Speed, แก้รายการโปรเซสของ RAM ค้างเมื่อชื่อโปรเซสมีอักขระแปลก ๆ, แก้ข้อมูล Disk ที่ไม่ขึ้น และเพิ่มค่า memory pressure เป็นเปอร์เซ็นต์ในหน้า RAM กับเพิ่มกราฟประวัติแบตเตอรี่
+
+**ระบบที่ใช้ได้:** macOS 12 (Monterey) ขึ้นไป เฉพาะรุ่นเสถียร ไม่รองรับ macOS เบต้า · มีรุ่นเก่าสำหรับระบบเก่ากว่านี้ที่ <a href="https://mac-stats.com/downloads" rel="noopener">mac-stats.com/downloads</a>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## วิธีติดตั้ง
+
+<div class="prose">
+
+มี 2 วิธีหลักตามหน้า GitHub ครับ
+
+1. **ไฟล์ DMG** โหลด <a href="https://github.com/exelban/stats/releases/latest/download/Stats.dmg" rel="noopener">Stats.dmg</a> เปิดไฟล์ แล้วลากแอปไปไว้ในโฟลเดอร์ Applications
+2. **Homebrew** เปิดแอป Terminal แล้วพิมพ์ `brew install stats`
+
+หน้า GitHub ยังมีวิธีติดตั้งผ่าน SSH เพื่อใช้เป็นตัวส่งข้อมูลให้ดูจากอุปกรณ์อื่น และสคริปต์ถอนการติดตั้งที่มากับแอป (`/Applications/Stats.app/Contents/Resources/Scripts/uninstall.sh`) ผมไม่ได้ลองสองอย่างนี้ครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## หน้าต่างรายละเอียดของแต่ละโมดูล
+
+<div class="split">
+<div class="prose">
+
+พอคลิกที่ไอคอนบนเมนูบาร์ จะเปิดหน้าต่างรายละเอียดของโมดูลนั้น ในภาพซ้ายเป็นของ CPU ที่มีกราฟประวัติ ค่า load เฉลี่ย ความถี่ และรายชื่อโปรเซสที่ใช้ CPU มากสุด ตามด้วย GPU, Disk และ Bluetooth ที่โชว์แบตเตอรี่ของอุปกรณ์ที่เชื่อมอยู่ครับ
+
+ตัวเลขทั้งหมดในภาพเป็นข้อมูลตัวอย่างจากหน้าโปรเจกต์ ไม่ใช่จากเครื่องผมครับ
+
+</div>
+<figure class="news-fig news-fig--tall news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/stats-macos-app-review/img-3.jpg" width="830" height="865" loading="lazy" alt="ภาพตัวอย่างหน้าต่างป๊อปอัปของ Stats ได้แก่ CPU แสดงการใช้งาน 25 เปอร์เซ็นต์ กราฟประวัติ และ Top processes, GPU ของ Apple M1 Max, Disk Macintosh HD, และ Bluetooth แสดงแบตเตอรี่ AirPods Pro และ MX Master 3S" /></div><figcaption><span class="news-fig__credit">ภาพ: Stats (exelban) · <a href="https://github.com/exelban/stats" rel="noopener">github.com</a></span></figcaption></figure>
+</div>
+
+<div class="split">
+<figure class="news-fig news-fig--tall news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/stats-macos-app-review/img-2.jpg" width="820" height="865" loading="lazy" alt="ภาพตัวอย่างหน้าต่างป๊อปอัปของ Stats ได้แก่ Battery แสดงแบตเตอรี่ 80 เปอร์เซ็นต์ ข้อมูล Details และ Top processes, Sensors แสดงอุณหภูมิหลายจุด, Clock แสดงปฏิทินและเวลา และหน้าต่าง Combined modules รวม CPU GPU RAM Disk Sensors Network Battery ไว้ด้วยกัน" /></div><figcaption><span class="news-fig__credit">ภาพ: Stats (exelban) · <a href="https://github.com/exelban/stats" rel="noopener">github.com</a></span></figcaption></figure>
+<div class="prose">
+
+อีกชุดในภาพนี้คือหน้าต่าง Battery ที่บอกแหล่งพลังงาน ความจุ รอบการชาร์จ และสุขภาพแบตเตอรี่ ตามด้วย Sensors ที่แสดงอุณหภูมิหลายจุด และ Clock ที่เป็นปฏิทินกับนาฬิกา ส่วนหน้าต่างขวาสุดคือ Combined modules ที่รวมหลายโมดูลไว้ในหน้าต่างเดียว
+
+เรื่องเซนเซอร์ หน้า GitHub เตือนว่าค่าที่เห็นเป็นเซนเซอร์ความร้อนบนชิป ไม่ใช่อุณหภูมิของแต่ละคอร์จริง ๆ เช่น "CPU Efficient Core 1" คือหนึ่งในจุดวัดของกลุ่มคอร์ประหยัดไฟ ไม่ได้หมายถึงคอร์เดียวครับ
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ข้อควรรู้ก่อนใช้
+
+<div class="prose">
+
+- **ไอคอนไม่ขึ้นบนเมนูบาร์ (macOS 26):** หน้า GitHub อธิบายว่า macOS 26 เพิ่มการควบคุมความเป็นส่วนตัวที่ System Settings → Menu Bar แอปต้องได้รับอนุญาตก่อนจึงแสดงไอคอนได้ ให้เปิดสวิตช์ของ Stats เป็น ON
+- **การควบคุมพัดลมเป็นโหมดเก่า (legacy):** ผู้พัฒนาบอกว่าฟีเจอร์นี้ไม่ได้รับการอัปเดตหรือแก้ไขแล้ว ที่ยังเก็บไว้เพราะบน Mac รุ่นเก่ายังใช้ได้ค่อนข้างดี
+- **ชื่อ Wi-Fi ขึ้นว่า Unknown:** ต้องเปิดสิทธิ์ Location Services ให้ Stats ใน Privacy & Security
+- **ประหยัดแรงเครื่อง:** โมดูลที่หนักสุดคือ Sensors กับ Bluetooth การปิดสองตัวนี้ลดการใช้ CPU และพลังงานได้สูงสุดราว 50% ในบางกรณี ตามที่หน้า GitHub ระบุ
+- **การเชื่อมต่อออกเน็ต:** ผู้พัฒนาระบุว่าไม่เก็บ telemetry หรือ analytics มีการเรียกไปที่ api.mac-stats.com เพื่อตรวจอัปเดตกับดู IP สาธารณะ และใช้ api.github.com สำรองสำหรับตรวจอัปเดต ถ้าไม่สบายใจปิดกั้นได้ แต่จะไม่ได้รับอัปเดตและไม่เห็น IP สาธารณะ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ใครควรใช้
+
+<div class="prose">
+
+- คนที่อยากเห็นว่าเครื่องกำลังทำงานหนักแค่ไหนโดยไม่ต้องเปิดหน้าต่างเพิ่ม
+- คนที่ทำงานหนัก ๆ เช่น ตัดต่อวิดีโอหรือเขียนโค้ด และอยากรู้เรื่องความร้อน แรม และดิสก์
+- คนที่อยากได้แอปฟรีที่เปิดซอร์ส ดูโค้ดและตรวจสอบได้
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- หน้าโปรเจกต์และซอร์สโค้ด: <a href="https://github.com/exelban/stats" rel="noopener">github.com/exelban/stats</a>
+- รุ่นล่าสุดและวันที่: <a href="https://github.com/exelban/stats/releases" rel="noopener">GitHub releases</a>
+
+</div>
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปกและภาพตัวอย่างทั้งหมด: ภาพ: Stats (exelban) จากหน้า README บน <a href="https://github.com/exelban/stats" rel="noopener">github.com</a> (ไฟล์ภาพโฮสต์ที่ cdn.mac-stats.com) ตัดเป็นส่วนเพื่อให้เห็นชัด
+- อินโฟกราฟิก: ภาพประกอบจาก DOJOJIN.TECH จากข้อมูลในข่าวนี้
+
+ภาพใช้ประกอบการแนะนำ (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "1",
+    "title": "ตัวอย่างเมนูบาร์ของ Stats",
+    "src": "/media/posts/news/stats-macos-app-review/img-1.jpg",
+    "w": 1600,
+    "h": 68,
+    "group": "ภาพประกอบ",
+    "alt": "ภาพตัวอย่างเมนูบาร์ที่ติดตั้ง Stats",
+    "summary": "เมนูบาร์ 3 แบบจากหน้าโปรเจกต์ ทั้งตัวเลข กราฟ และวงกลม",
+    "credit": "ภาพ: Stats (exelban) · <a href=\"https://github.com/exelban/stats\" rel=\"noopener\">github.com</a>",
+    "analysis": [
+      "เลือกโมดูลและรูปแบบการแสดงผลได้"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "หน้าต่าง Battery, Sensors, Clock",
+    "src": "/media/posts/news/stats-macos-app-review/img-2.jpg",
+    "w": 820,
+    "h": 865,
+    "fit": "contain",
+    "group": "ภาพประกอบ",
+    "alt": "ภาพหน้าต่างป๊อปอัป Battery Sensors Clock และ Combined modules",
+    "summary": "หน้าต่างรายละเอียดของแบตเตอรี่ เซนเซอร์ นาฬิกา และโมดูลรวม ตัวเลขเป็นข้อมูลตัวอย่าง",
+    "credit": "ภาพ: Stats (exelban) · <a href=\"https://github.com/exelban/stats\" rel=\"noopener\">github.com</a>",
+    "analysis": [
+      "Sensors เป็นจุดวัดความร้อนบนชิป ไม่ใช่ต่อคอร์"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "หน้าต่าง CPU, GPU, Disk, Bluetooth",
+    "src": "/media/posts/news/stats-macos-app-review/img-3.jpg",
+    "w": 830,
+    "h": 865,
+    "fit": "contain",
+    "group": "ภาพประกอบ",
+    "alt": "ภาพหน้าต่างป๊อปอัป CPU GPU Disk Bluetooth",
+    "summary": "หน้าต่างรายละเอียดของ CPU GPU Disk และ Bluetooth ตัวเลขเป็นข้อมูลตัวอย่าง",
+    "credit": "ภาพ: Stats (exelban) · <a href=\"https://github.com/exelban/stats\" rel=\"noopener\">github.com</a>",
+    "analysis": [
+      "CPU มีกราฟประวัติ ค่า load และ Top processes"
+    ]
+  }
+]

@@ -803,3 +803,6 @@ main[data-type="news"] .shot__more .shot__credit { font-size: var(--fs-caption);
 /* Two picture+text rows in a row need breathing room; a short paragraph sits level with the middle of its photo. */
 .split + .split { margin-top: var(--space-12); }
 @media (min-width: 769px) { .split:has(> .news-fig) { align-items: center; } }
+
+/* long setting names / paths in inline code must wrap on phones */
+.prose code, .content li code { overflow-wrap: anywhere; }
