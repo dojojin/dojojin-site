@@ -1,0 +1,55 @@
+---
+import Base from '../../layouts/Base.astro';
+import { CHARGERS } from '../../data/chargers.js';
+
+const dash = (v) => v ?? '–';
+const tags = (c) => [c.max >= 60 ? 'laptop' : '', /GaN/.test(c.kind) ? 'gan' : '', /PPS/.test(c.pd) ? 'pps' : ''].join(' ');
+const filters = [['', 'ทั้งหมด'], ['laptop', 'ชาร์จโน้ตบุ๊กได้ (60W+)'], ['gan', 'GaN'], ['pps', 'รองรับ PPS (Samsung)']];
+const count = (f) => CHARGERS.filter((c) => !f || tags(c).includes(f)).length;
+---
+<Base title="เทียบหัวชาร์จทุกตัวที่รีวิว วัดจริงด้วย POWER-Z" description={`ตารางเทียบหัวชาร์จ ${CHARGERS.length} รุ่นที่ DOJOJIN.TECH รีวิวและวัดจริงด้วย POWER-Z — กำลังไฟสูงสุด ช่องชาร์จ PD / PPS โปรโตคอลชาร์จเร็ว ค่าที่วัดได้ และน้ำหนัก เลือกหัวชาร์จ MacBook หรือมือถือได้ง่ายขึ้น`} active="review">
+  <section class="hero">
+    <div class="wrap" style="grid-template-columns:1fr">
+      <div class="hero__text">
+        <span class="kicker">Review · ชาร์จ & พลังงาน</span>
+        <h1>เทียบหัวชาร์จทุกตัวที่รีวิว</h1>
+        <p class="lead">{CHARGERS.length} รุ่น ตัวเลขจากตารางสเปกและผลวัดด้วย POWER-Z ของแต่ละรีวิว กดชื่อรุ่นเพื่ออ่านรีวิวเต็มและดูรูปค่าที่วัดได้</p>
+      </div>
+    </div>
+  </section>
+  <main class="wrap layout" style="grid-template-columns:1fr">
+    <div class="content">
+      <div class="filters" role="group" aria-label="กรองหัวชาร์จ">
+        {filters.map(([f, label], i) => <button type="button" aria-pressed={String(i === 0)} data-ch-filter={f}>{label} <span>{count(f)}</span></button>)}
+      </div>
+      <table class="compare">
+        <thead>
+          <tr><th>รุ่น</th><th>ประเภท</th><th>สูงสุด</th><th>ช่อง</th><th>PD / PPS</th><th>โปรโตคอลอื่น</th><th>วัดได้สูงสุด</th><th>น้ำหนัก</th></tr>
+        </thead>
+        <tbody>
+          {CHARGERS.map((c) => (
+            <tr data-tags={tags(c)}>
+              <th scope="row"><a href={`/review/${c.slug}/`}>{c.name}</a></th>
+              <td data-label="ประเภท">{c.kind}</td>
+              <td data-label="สูงสุด" class="num">{c.max}W</td>
+              <td data-label="ช่อง">{c.ports}</td>
+              <td data-label="PD / PPS">{c.pd}</td>
+              <td data-label="โปรโตคอลอื่น">{c.extra}</td>
+              <td data-label="วัดได้สูงสุด" class="num">{dash(c.measured)}</td>
+              <td data-label="น้ำหนัก" class="num">{c.weight ? `${c.weight} g` : '–'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="fineprint">สูงสุด = กำลังไฟตามฉลาก · วัดได้สูงสุด = ค่าสูงสุดที่เห็นในรูป POWER-Z ของรีวิวนั้น (กำลังที่อุปกรณ์ดึงจริง ไม่ใช่เพดานของหัวชาร์จ) · “–” = ไม่มีข้อมูลในรีวิว · อยากรู้เรื่องไฟ “เรียบ” อ่าน <a href="/knowledge/charger-ripple-guide/">คู่มืออ่านค่า Ripple</a></p>
+    </div>
+  </main>
+</Base>
+
+<script>
+  const btns = document.querySelectorAll('[data-ch-filter]');
+  btns.forEach((b) => b.addEventListener('click', () => {
+    btns.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    document.querySelectorAll('.compare tbody tr').forEach((r) => { r.hidden = !!b.dataset.chFilter && !r.dataset.tags.includes(b.dataset.chFilter); });
+  }));
+</script>

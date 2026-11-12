@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://dojojin.tech/sitemap-index.xml
+Sitemap: https://dojojin.tech/news-sitemap.xml

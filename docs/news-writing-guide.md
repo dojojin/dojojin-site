@@ -32,6 +32,14 @@
 - มือถือ (≤768px) ภาพขึ้นก่อน ตามด้วยข้อความของภาพนั้น (CSS จัดการเอง)
 - ข่าวประชาสัมพันธ์ภาพเยอะ: ภาพหลัก 3–4 ภาพในเนื้อข่าว ที่เหลือ `## ภาพเพิ่มเติม` + ShotGallery
 
+## Sitemap / SEO (อัตโนมัติ — ไม่ต้องทำมือ)
+- `npm run build` สร้าง `sitemap-index.xml` (ทุกหน้า + `lastmod` จาก `date` ใน frontmatter; ถ้าแก้บทความเก่ามากให้เพิ่ม `updated: 2026-11-20T10:00:00+07:00` แล้ว lastmod จะใช้ค่านี้) และ `news-sitemap.xml` (ข่าว 2 วันล่าสุดสำหรับ Google News) — logic อยู่ใน `astro.config.mjs` และ `src/pages/news-sitemap.xml.js`
+- พาดหัว (`title`) และ `description`: ใส่คำที่คนค้นจริง เช่น "รีวิว <รุ่น> … ดีไหม?" + ตัวเลข/จุดเด่นที่วัดได้, description บอกสิ่งที่อ่านแล้วได้ (ราคา สเปก ผลวัด ข้อดีข้อเสีย ควรซื้อไหม) — ห้ามพาดหัวเกินจริง/หลอกคลิก, ไม่เปลี่ยน URL
+- รีวิวสินค้าประเภทเดียวกันให้เพิ่มแถวในหน้ารวม: หัวชาร์จ `src/data/chargers.js` (`/compare/chargers/`), หูฟัง `src/data/headphones.js` (`/compare/headphones/`)
+
+## ข่าวที่ยังมีเรื่องค้าง
+- ถ้าข่าวรอข้อมูลทางการ (ราคา, กฎหมาย, วันวางขาย) ให้เพิ่มบรรทัดใน `~/news-digest/followups.md` — cron สรุปข่าวจะเช็กทุกรอบและเสนอในหมวด I "ติดตามข่าวเดิม"
+
 ## ตรวจก่อนขอ commit
 - `python3 scripts/content/check-splits.py src/content/posts/news/<slug>.mdx` ต้อง OK
 - `npm run build` ผ่าน · เปิดหน้าจริงที่ 390/768/1280 ไม่มี scroll แนวนอน · **ดูภาพหน้าจอจริง**
