@@ -1,0 +1,133 @@
+---
+title: "Gemini บน Apple CarPlay ใช้ยังไง รองรับภาษาไทยไหม Google เปิดให้ iPhone ทุกคนแล้ว"
+topic: infra-ai
+type: news
+tags: [google, apple, ai]
+date: 2026-11-13T10:10:00+07:00
+section: tech
+sourceName: "Google The Keyword"
+sourceUrl: "https://blog.google/innovation-and-ai/products/gemini-app/gemini-on-apple-carplay/"
+description: "Google ประกาศ 11 พ.ย. 2569 ว่า Gemini Live ใช้บน Apple CarPlay ได้แล้ว คุยแฮนด์ฟรีขณะขับรถ ทยอยเปิดทั่วโลกให้ผู้ใช้ iOS ทุกคน สรุปวิธีเปิดใช้ 4 ขั้น และสิ่งที่ Google ยังไม่บอก: เวอร์ชัน iOS ราคา และภาษาไทย"
+kicker: "ข่าวเทคโนโลยี · AI"
+lead: "Gemini ขึ้นจอ Apple CarPlay แล้ว คุยกับ Gemini Live ผ่านจอรถได้ ไม่ต้องจับมือถือ ผมสรุปวิธีเปิดใช้ไว้ให้ และบอกตรง ๆ ครับ ว่าเรื่องภาษาไทยกับเวอร์ชัน iOS Google ไม่ได้เขียนไว้"
+meta: "เรียบเรียงจากประกาศของ Google (11 พฤศจิกายน 2569) และเอกสารนักพัฒนาของ Apple · ข้อมูล ณ 13 พฤศจิกายน 2569"
+cover: "/media/posts/news/gemini-apple-carplay/cover.jpg"
+coverAlt: "ภาพทางการของ Google จอ CarPlay ในรถ แสดงข้อความ Gemini is connecting พร้อมไอคอน Gemini รูปดาวสี่แฉกตรงกลางจอ"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="split">
+<div class="prose">
+
+สั้น ๆ คือ แอป Gemini ขึ้นจอ Apple CarPlay แล้วครับ
+
+Google ประกาศเมื่อ 11 พฤศจิกายน 2569 ว่าคุยกับ Gemini Live ผ่านจอในรถได้เลย
+
+- **CarPlay** คือระบบของ Apple ที่เอาแอปบน iPhone ไปแสดงบนจอรถ
+- **Gemini Live** คือโหมดคุยกับ Gemini ด้วยเสียงแบบโต้ตอบไปมา เหมือนคุยกับคน
+
+Google บอกว่าทยอยเปิดทั่วโลกตั้งแต่วันประกาศ ให้ผู้ใช้ Gemini บน iOS ทุกคน ใช้ได้ทุกภาษาที่ Gemini Live รองรับ
+
+ตัวอย่างที่ Google ยกมาว่าทำได้ขณะขับ
+
+- ถามเรื่องปฏิทิน
+- ให้สรุปอีเมล และสรุป Daily Brief (สรุปประจำวัน)
+- คุยระดมความคิด หรือซ้อมพูด
+
+บนจอ CarPlay กดไอคอน Gemini เพื่อเริ่มคุยใหม่ หรือคุยต่อจากบทสนทนาล่าสุดก็ได้ บทสนทนาจะไปโผล่ในแอป Gemini บน iPhone ด้วย
+
+ผมเสริมฝั่ง Apple นิดหนึ่งครับ
+
+เอกสาร CarPlay Developer Guide (ฉบับตุลาคม 2569) ของ Apple มีหมวดแอปแบบ "voice-based conversational" ไว้สำหรับแอปคุยกับผู้ช่วยด้วยเสียงโดยเฉพาะ
+
+- แอปหมวดนี้ต้องได้ entitlement (สิทธิ์พิเศษที่ Apple อนุมัติให้แอป) ชื่อ com.apple.developer.carplay-voice-based-conversation
+- หมวดนี้เริ่มมีตั้งแต่ iOS 26.4
+
+แต่ Apple ไม่ได้บอกว่า Gemini อยู่ในหมวดนี้ ผมเลยไม่ขอฟันธงว่าต้องใช้ iOS 26.4 ครับ
+
+</div>
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/news/gemini-apple-carplay/cover.jpg" width="1300" height="685" loading="lazy" alt="จอ CarPlay ในรถ แสดงข้อความ Gemini is connecting มีไอคอน Gemini รูปดาวสี่แฉกอยู่กลางจอ และแถบไอคอนแอปด้านซ้าย" /></div><figcaption><span class="news-fig__credit">ภาพ: Google · <a href="https://blog.google/innovation-and-ai/products/gemini-app/gemini-on-apple-carplay/" rel="noopener">blog.google</a></span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## เปิดใช้ยังไง และต้องมีอะไรบ้าง
+
+<div class="split">
+<figure class="split-fig"><img src="/media/posts/news/gemini-apple-carplay/igv-1.jpg" width="1600" height="2000" loading="lazy" alt="Gemini บน CarPlay เปิดใช้ 4 ขั้น 1. อัปเดตแอป Gemini บน iPhone เป็นเวอร์ชันล่าสุด 2. เปิดสิทธิ์ไมโครโฟนให้แอป Gemini 3. ใช้ Gemini Live บนมือถืออย่างน้อย 1 ครั้ง 4. ต่อ iPhone เข้ารถ แตะไอคอน Gemini บนจอ CarPlay Google ไม่ระบุเวอร์ชัน iOS และไม่ระบุว่ารองรับภาษาไทย" /></figure>
+<div class="prose">
+
+Google เขียนไว้ 4 ขั้นครับ
+
+1. อัปเดตแอป Gemini บน iPhone เป็นเวอร์ชันล่าสุด (Google ไม่บอกเลขเวอร์ชัน)
+2. เปิดสิทธิ์ไมโครโฟนให้แอป Gemini
+3. ใช้ Gemini Live บนมือถืออย่างน้อย 1 ครั้ง
+4. ต่อ iPhone เข้ารถ แล้วแตะไอคอน Gemini บนจอ CarPlay
+
+อยากฟังสรุป Daily Brief ต้องเปิดฟีเจอร์นี้ในแอปก่อน
+
+ส่วนฟีเจอร์ที่ปรับให้เข้ากับตัวเรา รวมถึง Daily Brief Google บอกว่ายังใช้ไม่ได้กับ
+
+- ผู้ใช้อายุต่ำกว่า 18 ปี
+- ผู้ใช้ในเขตเศรษฐกิจยุโรป (EEA)
+- ผู้ใช้ในไนจีเรีย
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## คนไทยใช้ได้ไหม
+
+<div class="prose">
+
+ตอบตรง ๆ คือ ยังยืนยันไม่ได้ครับ
+
+**ภาษาไทย:** หน้าประกาศไม่ได้พูดถึงประเทศไทยหรือภาษาไทยเลย Google บอกแค่ว่าใช้ได้ "ทุกภาษาที่ Gemini Live รองรับ" ผมเลยยืนยันไม่ได้ว่าคุยไทยบน CarPlay ได้หรือเปล่า เดี๋ยวผมจะลองเช็กให้อีกทีครับ
+
+**เวอร์ชัน iOS:** Google ไม่ได้ระบุ
+
+**ราคา:** ไม่ได้พูดถึงราคาหรือแพ็กเกจ เขียนแค่ว่าเปิดให้ผู้ใช้ Gemini บน iOS ทุกคน
+
+ใครอยากรู้ก่อน ผมแนะนำให้เปิด Gemini Live บนมือถือแล้วลองพูดไทยดูครับ ถ้าบนมือถือยังไม่รองรับ ผมว่าบน CarPlay ก็น่าจะเจอแบบเดียวกัน อันนี้ผมคาดเอาเองนะครับ ไม่ใช่ข้อมูลจาก Google
+
+เรื่องอื่นของ Gemini ช่วงนี้ ผมเขียนไว้ในข่าว [Gemini 4 Carbon](/news/gemini-4-carbon/) และ [Gemini Intelligence ขยายมา Pixel 10](/news/gemini-intelligence-november-expansion/) ครับ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- Google The Keyword, Gemini on Apple CarPlay (11 พ.ย. 2569): <a href="https://blog.google/innovation-and-ai/products/gemini-app/gemini-on-apple-carplay/" rel="noopener">blog.google</a>
+- Apple CarPlay Developer Guide (ตุลาคม 2569): <a href="https://developer.apple.com/download/files/CarPlay-Developer-Guide.pdf" rel="noopener">developer.apple.com</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก/ภาพจอ CarPlay: ภาพ: Google · <a href="https://blog.google/innovation-and-ai/products/gemini-app/gemini-on-apple-carplay/" rel="noopener">blog.google</a>
+- อินโฟกราฟิก: ภาพประกอบจาก DOJOJIN.TECH จากข้อมูลในข่าวนี้
+
+ภาพใช้ประกอบข่าว (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>
