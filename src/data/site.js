@@ -47,7 +47,7 @@ export const TAGS = {
   anitech: "anitech", "power-strip": "ปลั๊กไฟ / สายพ่วง",
   "true-corp": "True", dtac: "dtac", "5g": "5G",
   php: "PHP", security: "ความปลอดภัย",
-  openssh: "OpenSSH", wordpress: "WordPress", cctv: "กล้องวงจรปิด", onvif: "ONVIF",
+  apache: "Apache", openssh: "OpenSSH", wordpress: "WordPress", cctv: "กล้องวงจรปิด", onvif: "ONVIF",
   xiaomi: "Xiaomi", redmagic: "REDMAGIC", motorola: "Motorola", nvidia: "NVIDIA", gaming: "เกม",
   dunlop: "DUNLOP", honda: "Honda", tire: "ยางรถยนต์", ev: "EV", motorcycle: "มอเตอร์ไซค์", motorsport: "มอเตอร์สปอร์ต",
   hippocraft: "HippoCraft", pdf: "PDF",
