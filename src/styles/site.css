@@ -830,3 +830,9 @@ main[data-type="news"] .shot__more .shot__credit { font-size: var(--fs-caption);
 
 /* long setting names / paths in inline code must wrap on phones */
 .prose code, .content li code { overflow-wrap: anywhere; }
+
+/* shortcut tables inside prose (app guides): 3 short columns, wraps on mobile */
+.prose table:not([class]) { width: 100%; border-collapse: collapse; font-size: var(--fs-caption); margin-bottom: var(--space-4); }
+.prose td kbd { font-size: 0.85em; overflow-wrap: break-word; }
+.prose table:not([class]) :is(th, td) { text-align: left; vertical-align: top; padding: var(--space-2); border-bottom: 1px solid var(--border-hairline); overflow-wrap: break-word; min-width: 0; }
+.prose table:not([class]) th { color: var(--text-secondary); font-weight: 600; }

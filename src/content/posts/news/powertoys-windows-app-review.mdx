@@ -1,0 +1,559 @@
+---
+title: "แอปแนะนำ: คู่มือ PowerToys ของฟรีบน Windows ติดตั้งยังไง ใช้ FancyZones, Text Extractor, Color Picker พร้อมแป้นลัด"
+topic: software
+type: news
+tags: [app, open-source, windows, microsoft]
+date: 2026-11-13T10:00:00+07:00
+section: tech
+sourceName: "Microsoft PowerToys (GitHub)"
+sourceUrl: "https://github.com/microsoft/PowerToys/releases/tag/v0.102.3101"
+description: "คู่มือใช้ PowerToys ชุดเครื่องมือฟรีของ Microsoft สำหรับ Windows 11 และ 10 วิธีติดตั้ง (GitHub, Microsoft Store, winget) วิธีใช้ FancyZones, Command Palette, Text Extractor, Color Picker, Always On Top, Peek, Keyboard Manager, File Locksmith, PowerRename, Image Resizer ตารางแป้นลัด และของใหม่รุ่น 0.102.3101 ไลเซนส์ MIT"
+kicker: "แอปแนะนำ"
+lead: "ใครใช้ Windows ทุกวัน ผมแนะนำ PowerToys ครับ ชุดเครื่องมือเสริมจาก Microsoft เอง ฟรีและโอเพนซอร์ส มีทั้งจัดหน้าต่าง ก๊อปข้อความจากรูป ดูดสี และเปลี่ยนชื่อไฟล์ทีละเยอะ ๆ ข่าวนี้ผมรวมวิธีติดตั้งและวิธีใช้เครื่องมือเด่นแบบทีละขั้นไว้ให้ครับ"
+meta: "เรียบเรียงจาก Microsoft Learn และบันทึกรุ่นบน GitHub · ข้อมูล ณ 13 พฤศจิกายน 2569"
+cover: "/media/posts/news/powertoys-windows-app-review/cover.jpg"
+coverAlt: "ภาพหน้าตั้งค่า PowerToys หน้า Home แสดงรายการเครื่องมือ ทางลัด และสวิตช์เปิดปิดของแต่ละเครื่องมือ"
+---
+
+
+<section class="section">
+
+## PowerToys คืออะไร
+
+<div class="split">
+<div class="prose">
+
+PowerToys คือชุดเครื่องมือเสริมของ Windows จาก Microsoft เองครับ หน้าเอกสารบอกว่าเป็นยูทิลิตีฟรีและโอเพนซอร์ส สำหรับคนที่อยากใช้ Windows ให้คล่องขึ้น เช่น
+
+- จัดหน้าต่างให้เป็นระเบียบ
+- รีแมปแป้นพิมพ์
+- เปลี่ยนชื่อไฟล์ทีละเยอะ ๆ
+- ก๊อปข้อความจากรูป
+
+ไลเซนส์เป็น MIT ตามที่หน้า GitHub ระบุ ลงตัวเดียวได้หลายเครื่องมือ เปิดปิดทีละอันได้ตามใจ ไม่ต้องใช้ทุกอย่างครับ
+
+**เครื่องที่ใช้ได้** (ตามหน้า Install)
+
+- Windows 11 หรือ Windows 10 เวอร์ชัน 2004 (build 19041) ขึ้นไป
+- ตัวประมวลผล 64 บิต x64 หรือ ARM64
+- ตอนติดตั้งจะมี WebView2 Runtime ให้ด้วย
+
+</div>
+<figure class="split-fig"><img src="/media/posts/news/powertoys-windows-app-review/igv-1.jpg" width="1600" height="1400" loading="lazy" alt="อินโฟกราฟิกข้อมูลเร็ว ๆ ของ Microsoft PowerToys ฟรี ไลเซนส์ MIT โอเพนซอร์ส รุ่นเสถียรล่าสุด 0.102.3101 วันที่ 6 พ.ย. 2569 ใช้กับ Windows 11 หรือ Windows 10 เวอร์ชัน 2004 (build 19041) ขึ้นไป ชิป x64 และ ARM64" /></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## ติดตั้งยังไง
+
+<div class="split">
+<figure class="split-fig"><img src="/media/posts/news/powertoys-windows-app-review/igv-2.jpg" width="1600" height="1400" loading="lazy" alt="อินโฟกราฟิกวิธีติดตั้ง PowerToys 3 วิธีหลัก คือ GitHub โหลดไฟล์ .exe, Microsoft Store ค้นหา PowerToys และ winget พิมพ์คำสั่งบรรทัดเดียว winget install --id Microsoft.PowerToys --source winget มี Chocolatey และ Scoop เป็นทางเลือกจากชุมชน" /></figure>
+<div class="prose">
+
+Microsoft แนะนำให้ติดตั้งจาก GitHub หรือ Microsoft Store ครับ เลือกทางเดียวพอ
+
+1. **GitHub** เข้าหน้า <a href="https://github.com/microsoft/PowerToys/releases" rel="noopener">releases</a> เปิดส่วน Assets แล้วโหลด `PowerToysSetup-…-x64.exe` (หรือ `arm64` ถ้าเครื่องเป็น ARM) เปิดไฟล์แล้วทำตามหน้าจอ
+2. **Microsoft Store** ค้นหา PowerToys แล้วกดติดตั้ง
+3. **winget** เปิด PowerShell แล้วพิมพ์ `winget install --id Microsoft.PowerToys --source winget`
+
+ข้อควรรู้เพิ่มเติม
+
+- ที่ GitHub มีไฟล์สองแบบ **Per User** ติดตั้งให้ผู้ใช้คนเดียว ส่วน **Machine wide** ติดตั้งให้ทุกบัญชีในเครื่อง ทั้งสองแบบอัปเดตได้ปกติ
+- ทางเลือกจากชุมชนมี Chocolatey (`choco install powertoys`) และ Scoop
+
+ติดตั้งเสร็จจะมีหน้าต่างแนะนำแต่ละเครื่องมือขึ้นมา หน้าตั้งค่าเปิดได้จากไอคอนใน system tray ครับ แอปเช็กอัปเดตเองได้ หรือจะกดเช็กเองในหน้าตั้งค่าก็ได้
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## Command Palette ช่องค้นหาลัดตัวใหม่
+
+<div class="split">
+<div class="prose">
+
+Command Palette คือช่องค้นหาที่เด้งขึ้นกลางจอ ใช้เปิดแอป รันคำสั่ง ค้นไฟล์ คิดเลข หรือสลับหน้าต่าง กด <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd> แล้วพิมพ์ได้เลยครับ
+
+ในภาพคือหน้าแรกของ Command Palette มีรายการอย่าง All Apps, Run commands, Calculator และ Search files ให้เลือก
+
+ตัวอย่างการพิมพ์ จากหน้าเอกสารของ Microsoft
+
+- ชื่อแอป แล้วกด <kbd>Enter</kbd> เพื่อเปิด
+- `>` ตามด้วยคำสั่ง เช่น `> cmd`
+- `??` ตามด้วยคำค้น เพื่อค้นเว็บด้วยเบราว์เซอร์หลัก
+- `23*47` หรือ `=` ตามด้วยสมการ เพื่อคิดเลข
+- `$` ตามด้วยชื่อหน้าตั้งค่า เช่น `$ display`
+
+อยากได้ความสามารถเพิ่ม มีส่วนเสริม (extensions) จากชุมชนให้ลงจาก Extension Gallery ในหน้าตั้งค่าด้วยครับ
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/powertoys-windows-app-review/img-2.jpg" width="1084" height="645" loading="lazy" alt="ภาพตัวอย่าง Command Palette ช่องพิมพ์ค้นหาด้านบน และรายการ All Apps, Run commands, Calculator, Search files, Add bookmark, Extensions Repo, CmdPal Issues, Psych และ Switch between open windows" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft Learn (เฟรมจากภาพเคลื่อนไหว) · <a href="https://learn.microsoft.com/en-us/windows/powertoys/command-palette/overview" rel="noopener">learn.microsoft.com</a></span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## ชั้นทางลัดของ Command Palette (ใหม่ใน 0.102)
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/powertoys-windows-app-review/img-3.jpg" width="837" height="231" loading="lazy" alt="ภาพ quick-access shelf ของ Command Palette ในโหมดกะทัดรัด แสดงรายการที่ปักหมุดไว้ใต้ช่องค้นหา" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft PowerToys (บันทึกรุ่น v0.102.2933.0) · <a href="https://github.com/microsoft/PowerToys/releases/tag/v0.102.2933.0" rel="noopener">github.com</a></span></figcaption></figure>
+<div class="prose">
+
+รุ่น 0.102 เพิ่ม quick-access shelf หรือชั้นทางลัดครับ ถ้าตั้ง How Command Palette opens เป็น Compact search box ช่องค้นหาจะเล็กลง แล้วเปิด shelf ให้โชว์คำสั่งที่ปักหมุดไว้ใต้ช่องค้นหาได้
+
+ในภาพคือแถวคำสั่งที่ปักไว้ใต้ช่องค้นหา ใช้งานแบบนี้
+
+- <kbd>Alt</kbd>+<kbd>1</kbd> ถึง <kbd>9</kbd> เปิดแต่ละอัน
+- <kbd>Alt</kbd>+<kbd>Shift</kbd>+เลข เลือกไว้ก่อน ยังไม่รัน
+- ลากเรียงลำดับได้ และเปิดโชว์คำสั่งที่เพิ่งใช้ไว้ข้าง ๆ ก็ได้
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## PowerToys Run ตัวเดิมที่ยังใช้ได้
+
+<div class="split">
+<div class="prose">
+
+PowerToys Run คือตัวเปิดแอปแบบเดิม กด <kbd>Alt</kbd>+<kbd>Space</kbd> แล้วพิมพ์ ค้นได้ทั้งแอป โฟลเดอร์ ไฟล์ และโปรเซสที่รันอยู่ มีเครื่องคิดเลข แปลงหน่วย และเปิดเว็บในตัว
+
+ในภาพคือพิมพ์ "Visual" แล้วขึ้นรายการแอป พร้อมปุ่มลัด เช่น เปิดแบบผู้ดูแลระบบ
+
+หน้าเอกสารของ Run มีหมายเหตุว่า Run กำลังจะอัปเกรดเป็น v2 และชี้ว่า Command Palette คือวิวัฒนาการของ Run ผมเลยแนะนำว่า ถ้าเพิ่งเริ่ม ลอง Command Palette ก่อน ส่วนใครชิน Run อยู่แล้ว ใช้ต่อได้ครับ
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/powertoys-windows-app-review/img-4.jpg" width="944" height="332" loading="lazy" alt="ภาพ PowerToys Run พิมพ์ว่า Visual แล้วขึ้นรายการ Visual Studio 2022, Visual Studio Code, Blend for Visual Studio 2022 และ Visual Studio 2022 Preview พร้อมปุ่มลัดด้านขวาของรายการที่เลือก" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft Learn (เฟรมจากภาพเคลื่อนไหว) · <a href="https://learn.microsoft.com/en-us/windows/powertoys/run" rel="noopener">learn.microsoft.com</a></span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## FancyZones แบ่งหน้าจอเป็นโซน
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/powertoys-windows-app-review/img-5.jpg" width="1600" height="900" loading="lazy" alt="ภาพ FancyZones ตอนลากหน้าต่าง Command Prompt โซนหมายเลข 1, 2 และ 3 ปรากฏเป็นสีฟ้าบนหน้าจอที่เปิดโค้ดอยู่" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft Learn · <a href="https://learn.microsoft.com/en-us/windows/powertoys/fancyzones" rel="noopener">learn.microsoft.com</a></span></figcaption></figure>
+<div class="prose">
+
+FancyZones ให้เราแบ่งจอเป็นโซน แล้วลากหน้าต่างไปวางให้พอดีโซนครับ เหมาะกับจอกว้างที่อยากเปิดหลายหน้าต่างพร้อมกัน
+
+วิธีใช้ตามหน้าเอกสาร
+
+1. กด <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>`</kbd> เพื่อเปิดตัวแก้ไขเลย์เอาต์ แล้วเลือกแบบสำเร็จรูป
+2. กด <kbd>Shift</kbd> ค้างไว้ระหว่างลากหน้าต่าง โซนจะขึ้นมา ปล่อยหน้าต่างลงในโซนที่ต้องการ
+3. ถ้าเปิด Override Windows Snap ไว้ ใช้ <kbd>Win</kbd>+ลูกศรย้ายหน้าต่างระหว่างโซนได้
+
+ในภาพคือโซนหมายเลข 1 ถึง 3 ที่ขึ้นตอนลากหน้าต่างครับ
+
+</div>
+</div>
+
+<div class="split">
+<div class="prose">
+
+อยากได้เลย์เอาต์ของตัวเอง กด Create new layout ครับ มีสองแบบ
+
+- **Grid** เริ่มจากสามคอลัมน์ แล้วแบ่งหรือรวมโซน และลากเส้นแบ่งได้ ขนาดปรับตามจออัตโนมัติ
+- **Canvas** เป็นโซนอิสระที่ซ้อนกันได้
+
+ในภาพคือตัวแก้ไขแบบ Grid ที่แบ่งโซน 1 กับ 2 ฝั่งซ้ายด้วยเส้นกลาง
+
+สลับเลย์เอาต์เร็ว ๆ
+
+- เลย์เอาต์ที่ตั้งเลขลัดไว้ สลับได้ด้วย <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+เลข (ต้องเปิด quick layout switch ก่อน)
+- รุ่น 0.102 เพิ่มการหมุนล้อเมาส์ตอนลากหน้าต่างเพื่อสลับเลย์เอาต์ (ปิดอยู่เป็นค่าเริ่มต้น)
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/powertoys-windows-app-review/img-6.jpg" width="1600" height="1021" loading="lazy" alt="ภาพตัวแก้ไขเลย์เอาต์ FancyZones แบบ Grid โซน 1 และ 2 ฝั่งซ้ายถูกแบ่งด้วยเส้นกลาง โซน 3 ฝั่งขวา และมีหน้าต่างให้กดบันทึก" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft · <a href="https://learn.microsoft.com/en-us/windows/powertoys/fancyzones" rel="noopener">learn.microsoft.com</a></span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## Text Extractor ก๊อปข้อความจากรูปและวิดีโอ
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/powertoys-windows-app-review/img-7.jpg" width="400" height="266" loading="lazy" alt="ภาพ Text Extractor ตัวอย่างหน้านิตยสารมีข้อความ Experiences built for focus ที่ถูกเลือก และหน้าต่าง Notepad แสดงข้อความเดียวกันที่ก๊อปมา" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft · <a href="https://learn.microsoft.com/en-us/windows/powertoys/" rel="noopener">learn.microsoft.com</a></span></figcaption></figure>
+<div class="prose">
+
+Text Extractor อ่านตัวหนังสือบนหน้าจอด้วย OCR (ระบบอ่านตัวอักษรจากภาพ) แล้วส่งเข้าคลิปบอร์ดให้ครับ ไม่ว่าจะอยู่ในรูป วิดีโอ หรือหน้าต่างที่ก๊อปไม่ได้ ในภาพคือข้อความบนหน้านิตยสารที่ถูกดึงมาวางใน Notepad
+
+1. กด <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> จะมีฉากครอบหน้าจอ
+2. กดเมาส์ซ้ายค้างแล้วลากครอบข้อความ
+3. ปล่อยเมาส์ ข้อความจะถูกก๊อปให้ ไปกดวางที่ไหนก็ได้
+
+ข้อควรรู้
+
+- กด <kbd>Esc</kbd> เพื่อยกเลิก
+- กด <kbd>Shift</kbd> ค้างเพื่อย้ายกรอบแทนการปรับขนาด
+- ภาษา OCR ขึ้นกับภาษาของ Windows และต้องลงชุดภาษา OCR ไว้
+- ผลลัพธ์อาจไม่เป๊ะ ควรอ่านตรวจอีกรอบ
+- ถ้าจะแคปภาพหน้าจอ เอกสารแนะนำให้ใช้ Snipping Tool ส่วน Text Extractor ไว้ดึงข้อความ
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## Color Picker เลือกสีจากหน้าจอ
+
+<div class="split">
+<div class="prose">
+
+Color Picker ดูดสีจากจุดไหนก็ได้บนหน้าจอครับ กด <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd> แล้วคลิกที่สี รหัสสีจะถูกก๊อปไว้ในรูปแบบที่ตั้งไว้ (ค่าเริ่มต้นคือ HEX)
+
+ในภาพคือกำลังชี้สีบนหน้าจอ มีชื่อสีและรหัสโชว์ข้างเคอร์เซอร์ อยากเห็นละเอียดขึ้น เลื่อนล้อเมาส์ขึ้นเพื่อซูมได้
+
+ปุ่มเมาส์ค่าเริ่มต้น (ปรับได้ในหน้าตั้งค่า)
+
+- คลิกซ้าย: เลือกสีและเปิดตัวแก้ไข
+- คลิกล้อกลาง: เลือกสีแล้วปิด
+- คลิกขวา: ปิดโดยไม่ก๊อป
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/powertoys-windows-app-review/img-8.jpg" width="886" height="576" loading="lazy" alt="ภาพ Color Picker ขยายส่วนของจอแล้วแสดงรหัสสี a7c7d2 ชื่อ Sky blue ข้างเคอร์เซอร์" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft Learn (เฟรมจากภาพเคลื่อนไหว) · <a href="https://learn.microsoft.com/en-us/windows/powertoys/color-picker" rel="noopener">learn.microsoft.com</a></span></figcaption></figure>
+</div>
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/powertoys-windows-app-review/img-9.jpg" width="846" height="706" loading="lazy" alt="ภาพตัวแก้ไข Color Picker แถบด้านบนมีประวัติสี ปุ่ม Pick และช่องรหัสสี HEX 7d754e, RGB 125, 117, 78, HSL และ HSV" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft Learn (เฟรมจากภาพเคลื่อนไหว) · <a href="https://learn.microsoft.com/en-us/windows/powertoys/color-picker" rel="noopener">learn.microsoft.com</a></span></figcaption></figure>
+<div class="prose">
+
+ตัวแก้ไขเก็บประวัติสีที่เลือกได้ไม่เกิน 20 สีครับ ในภาพเห็นรหัสสีหลายรูปแบบเรียงกัน คือ HEX, RGB, HSL และ HSV
+
+- กดไอคอนก๊อปข้าง ๆ เพื่อเอาแบบที่ต้องการ
+- คลิกที่สีกลางในแถบสีเพื่อปรับละเอียด
+- คลิกขวาที่สีเพื่อลบหรือส่งออกประวัติ
+
+รุ่น 0.102 ย้าย Color Picker กับ Text Extractor ไปใช้ WinUI 3 (ชุดหน้าตาแอปรุ่นใหม่ของ Windows) แต่แป้นลัดและการตั้งค่าเดิมยังอยู่ครับ ภาพนี้มาจากหน้าเอกสาร หน้าตาอาจต่างจากรุ่นล่าสุดเล็กน้อย
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## Always On Top ปักหน้าต่างไว้บนสุด
+
+<div class="split">
+<div class="prose">
+
+Always On Top ปักหน้าต่างที่กำลังใช้อยู่ให้ลอยเหนือหน้าต่างอื่นทั้งหมดครับ เหมาะกับเครื่องคิดเลข โน้ต หรือหน้าต่างวิดีโอที่อยากเปิดคู่กับงานอื่น
+
+กด <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd> ที่หน้าต่างนั้น กดซ้ำเพื่อเลิกปัก
+
+ในภาพคือเครื่องคิดเลขที่มีกรอบสีล้อมรอบ กรอบนี้เปิดโชว์ได้ในหน้าตั้งค่า ในหน้าเดียวกันยังตั้งได้อีก
+
+- สี ความหนา และมุมมนของกรอบ
+- แอปที่ไม่ให้ปัก
+
+ข้อควรระวังจากเอกสาร: ถ้าเป็นหน้าต่างของ Citrix, RDP หรือ VMware ซึ่งเป็น topmost (ลอยบนสุด) อยู่แล้ว หน้าต่างที่เราปักอาจไปอยู่ข้างหลังครับ
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/powertoys-windows-app-review/img-10.jpg" width="400" height="266" loading="lazy" alt="ภาพหน้าต่างเครื่องคิดเลข Calculator มีกรอบสีน้ำเงินล้อมรอบ ลอยอยู่เหนือหน้าต่างตั้งค่า PowerToys หน้า Always On Top" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft · <a href="https://learn.microsoft.com/en-us/windows/powertoys/always-on-top" rel="noopener">learn.microsoft.com</a></span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## Peek ดูไฟล์ผ่านปุ่ม Space
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/powertoys-windows-app-review/img-11.jpg" width="400" height="266" loading="lazy" alt="ภาพหน้าต่าง Peek แสดงตัวอย่างรูปภูมิประเทศทะเลทรายลอยอยู่เหนือหน้าต่าง File Explorer" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft · <a href="https://learn.microsoft.com/en-us/windows/powertoys/peek" rel="noopener">learn.microsoft.com</a></span></figcaption></figure>
+<div class="prose">
+
+Peek เปิดดูไฟล์เร็ว ๆ โดยไม่ต้องเปิดแอปครับ เลือกไฟล์ใน File Explorer แล้วกด <kbd>Space</kbd> (เหมือน Quick Look บน Mac) ดูได้ทั้งรูป เอกสาร Office วิดีโอ หน้าเว็บ Markdown ข้อความ และโค้ด
+
+ในภาพคือหน้าต่างพรีวิวรูปที่เด้งขึ้นเหนือ Explorer ครับ
+
+ปุ่มที่ใช้ระหว่างดู
+
+- <kbd>←</kbd> <kbd>→</kbd> เลื่อนดูไฟล์ถัดไปในโฟลเดอร์
+- <kbd>Enter</kbd> เปิดด้วยโปรแกรมหลัก
+- <kbd>Delete</kbd> ลบลงถังขยะ
+- <kbd>Esc</kbd> ปิด
+
+รุ่น 0.102 เพิ่มพรีวิวฐานข้อมูล SQLite แบบอ่านอย่างเดียว และแสดงจำนวนไฟล์ในโฟลเดอร์ด้วยครับ
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## Keyboard Manager รีแมปปุ่มและแป้นลัด
+
+<div class="split">
+<div class="prose">
+
+Keyboard Manager เปลี่ยนปุ่มหนึ่งให้ส่งเป็นอีกปุ่ม เปลี่ยนแป้นลัดหนึ่งเป็นอีกแป้นลัด หรือให้พิมพ์ข้อความที่กำหนดก็ได้ และตั้งแยกตามแอปได้ครับ
+
+1. เปิดหน้าตั้งค่า PowerToys แท็บ Keyboard Manager
+2. กด Remap a key แล้วกด Add key remapping
+3. ช่อง Select เลือกปุ่มต้นทาง ช่อง To send เลือกปุ่มที่ต้องการให้ส่งออก
+
+ในภาพคือสลับ A กับ B ด้วยสองแถว
+
+ข้อควรรู้
+
+- บางปุ่มรีแมปไม่ได้ เช่น <kbd>Win</kbd>+<kbd>L</kbd>, <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> และปุ่ม <kbd>Fn</kbd> ส่วนใหญ่
+- การรีแมปทำงานเฉพาะตอนที่ PowerToys เปิดอยู่
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/powertoys-windows-app-review/img-12.jpg" width="1518" height="950" loading="lazy" alt="ภาพหน้าต่าง Remap keys ของ Keyboard Manager มีสองแถว แถวแรก A เปลี่ยนเป็น B แถวที่สองเปลี่ยน B เป็น A และปุ่ม Add key remapping" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft · <a href="https://learn.microsoft.com/en-us/windows/powertoys/keyboard-manager" rel="noopener">learn.microsoft.com</a></span></figcaption></figure>
+</div>
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/powertoys-windows-app-review/img-13.jpg" width="783" height="818" loading="lazy" alt="ภาพตัวแก้ไข Keyboard Manager แบบใหม่ในรุ่น 0.102 ที่ใช้สร้างและแก้การรีแมป" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft PowerToys (บันทึกรุ่น v0.102.2933.0) · <a href="https://github.com/microsoft/PowerToys/releases/tag/v0.102.2933.0" rel="noopener">github.com</a></span></figcaption></figure>
+<div class="prose">
+
+รุ่น 0.102 ปรับตัวแก้ไขใหม่ ในภาพคือหน้าตาตัวใหม่ครับ ของใหม่มีดังนี้
+
+- **tap-alone remap** แตะปุ่มเดียวแล้วส่งอีกการกระทำ แต่ปุ่มนั้นยังใช้ในแป้นลัดและร่วมกับเมาส์ได้ตามปกติ
+- รายการรีแมปเยอะ ๆ ค้นหาและกรองตามปุ่มตัวปรับ (modifier) หรือแอปได้ และลบทีละหลายอันได้
+- ตัวเลือกปุ่มแบบค้นหาได้ รวมถึงปุ่มมีเดียหรือปุ่มที่คีย์บอร์ดเราไม่มี
+- ฝั่งผู้ดูแลระบบ ส่งออกโปรไฟล์ด้วย DSC v3 ได้
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## File Locksmith ดูว่าใครล็อกไฟล์อยู่
+
+<div class="split">
+<div class="prose">
+
+เคยเจอ "ไฟล์นี้ถูกใช้งานอยู่ ลบไม่ได้" ไหมครับ File Locksmith บอกได้ว่าโปรเซสไหนจับไฟล์นั้นอยู่
+
+1. เปิดสวิตช์ Enable File Locksmith ใน PowerToys
+2. คลิกขวาที่ไฟล์หรือโฟลเดอร์ใน File Explorer เลือก Show more options แล้ว Unlock with File Locksmith
+3. รอสแกน จะเห็นรายการโปรเซส กด End task เพื่อปิดโปรเซสนั้น
+
+ในภาพคือไฟล์ที่ถูก dllhost.exe ใช้อยู่
+
+ข้อควรรู้
+
+- โปรเซสของผู้ใช้อื่นอาจไม่ขึ้น ให้กด Restart as administrator เพื่อสแกนทั้งหมด
+- รุ่น 0.102 เรียกจากบรรทัดคำสั่งได้ด้วย `PowerToys.FileLocksmith.CLI.exe`
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/powertoys-windows-app-review/img-14.jpg" width="700" height="416" loading="lazy" alt="ภาพหน้าต่าง File Locksmith แสดงไฟล์ AdvancedPaste.ico กับโปรเซส dllhost.exe ที่ใช้ไฟล์อยู่ และปุ่ม End task" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft Learn (เฟรมจากภาพเคลื่อนไหว) · <a href="https://learn.microsoft.com/en-us/windows/powertoys/file-locksmith" rel="noopener">learn.microsoft.com</a></span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## PowerRename เปลี่ยนชื่อไฟล์ทีละเยอะ ๆ
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/powertoys-windows-app-review/img-15.jpg" width="1598" height="1080" loading="lazy" alt="ภาพหน้าต่าง PowerRename ฝั่งซ้ายมีช่องค้นหาและตัวเลือก Use regular expressions ฝั่งขวามีตารางชื่อเดิมและชื่อใหม่ของไฟล์ พร้อมปุ่ม Apply" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft Learn (เฟรมจากภาพเคลื่อนไหว) · <a href="https://learn.microsoft.com/en-us/windows/powertoys/powerrename" rel="noopener">learn.microsoft.com</a></span></figcaption></figure>
+<div class="prose">
+
+PowerRename เปลี่ยนชื่อไฟล์หลายไฟล์ในทีเดียวครับ ค้นแล้วแทนที่ได้ ใช้ regular expression ได้ มีพรีวิวให้ดูผลก่อนเปลี่ยนจริง และย้อนกลับได้
+
+1. เลือกไฟล์ใน File Explorer แล้วคลิกขวา เลือก Rename with PowerRename
+2. ใส่ข้อความที่ค้นในช่อง Search for และข้อความใหม่ในช่อง Replace with
+3. ดูตารางพรีวิวชื่อเดิมกับชื่อใหม่ (แบบในภาพ) แล้วกด Apply
+
+ตัวเลือกที่ใช้บ่อย
+
+- Match all occurrences แทนที่ทุกที่ที่เจอ ไม่ใช่แค่ที่แรก
+- Case sensitive
+- เลือกว่าจะแก้เฉพาะชื่อไฟล์หรือนามสกุล
+
+ถ้าเปลี่ยนผิด กด <kbd>Ctrl</kbd>+<kbd>Z</kbd> ใน Explorer เพื่อย้อนได้ครับ
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## Image Resizer ย่อรูปจากเมนูคลิกขวา
+
+<div class="split">
+<div class="prose">
+
+Image Resizer ย่อรูปหลายรูปพร้อมกันครับ
+
+1. เลือกรูปใน File Explorer คลิกขวา เลือก Resize with Image Resizer
+2. เลือกขนาดที่ตั้งไว้ ในภาพคือขนาด Small 854 × 480 พิกเซล
+3. กด Resize
+
+เพิ่มขนาดของตัวเองได้ในหน้าตั้งค่า
+
+- วิธีย่อ: Fill (เต็มกรอบ ครอบตัดส่วนเกิน), Fit (ใส่ทั้งภาพในกรอบ) หรือ Stretch (ยืดให้เต็ม)
+- หน่วย: พิกเซล เปอร์เซ็นต์ เซนติเมตร หรือนิ้ว
+
+อีกวิธีคือลากรูปด้วยเมาส์ขวาไปวางในโฟลเดอร์ที่จะบันทึกก็ได้ครับ
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/powertoys-windows-app-review/img-16.jpg" width="1232" height="436" loading="lazy" alt="ภาพหน้าต่าง Image Resizer แสดงขนาด Small 854 × 480 พิกเซล ตัวเลือก Ignore the orientation of pictures และปุ่ม Resize กับ Cancel" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft Learn (เฟรมจากภาพเคลื่อนไหว) · <a href="https://learn.microsoft.com/en-us/windows/powertoys/image-resizer" rel="noopener">learn.microsoft.com</a></span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## แป้นลัดที่ควรจำ
+
+<div class="prose">
+
+<table>
+<thead><tr><th>เครื่องมือ</th><th>วิธีเรียก</th><th>ทำอะไร</th></tr></thead>
+<tbody>
+<tr><td>Command Palette</td><td><kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd></td><td>ค้นแอป ไฟล์ คำสั่ง</td></tr>
+<tr><td>PowerToys Run</td><td><kbd>Alt</kbd>+<kbd>Space</kbd></td><td>ตัวเปิดแอปแบบเดิม</td></tr>
+<tr><td>FancyZones</td><td><kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>`</kbd></td><td>เปิดตัวแก้ไขเลย์เอาต์</td></tr>
+<tr><td>FancyZones</td><td><kbd>Shift</kbd> ค้างตอนลากหน้าต่าง</td><td>แสดงโซนให้วางหน้าต่าง</td></tr>
+<tr><td>FancyZones</td><td><kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+เลข</td><td>สลับเป็นเลย์เอาต์ที่ตั้งเลขไว้</td></tr>
+<tr><td>Text Extractor</td><td><kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd></td><td>ลากครอบเพื่อก๊อปข้อความ</td></tr>
+<tr><td>Color Picker</td><td><kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd></td><td>ดูดสีจากหน้าจอ</td></tr>
+<tr><td>Always On Top</td><td><kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd></td><td>ปักหรือเลิกปักหน้าต่าง</td></tr>
+<tr><td>Peek</td><td><kbd>Space</kbd> ที่ไฟล์ใน Explorer</td><td>ดูตัวอย่างไฟล์</td></tr>
+<tr><td>PowerRename, Image Resizer, File Locksmith</td><td>คลิกขวาที่ไฟล์ใน Explorer</td><td>เปลี่ยนชื่อ ย่อรูป ดูไฟล์ที่ถูกล็อก</td></tr>
+</tbody>
+</table>
+
+หมายเหตุ: แป้นลัดเหล่านี้เป็นค่าเริ่มต้นตามหน้าเอกสาร เปลี่ยนได้ในหน้าตั้งค่าของแต่ละเครื่องมือ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## รุ่น 0.102 มีอะไรใหม่
+
+<div class="split">
+<figure class="split-fig"><img src="/media/posts/news/powertoys-windows-app-review/igv-3.jpg" width="1600" height="1400" loading="lazy" alt="อินโฟกราฟิกของใหม่ใน PowerToys 0.102 Mouse Button Lock ค้างปุ่มเมาส์ไว้, CursorHide ซ่อนเคอร์เซอร์, Command Palette ชั้นทางลัด Alt+1 ถึง 9, ZoomIt พูดอธิบายตอนแคป, Keyboard Manager รีแมปแตะปุ่มเดียว และเครื่องมือบรรทัดคำสั่ง" /></figure>
+<div class="prose">
+
+รุ่น 0.102 ออกวันที่ 21 ตุลาคม 2569 ครับ ไฮไลต์ตามบันทึกรุ่นมี
+
+- เครื่องมือเมาส์ใหม่สองตัว
+- ชั้นทางลัดของ Command Palette
+- การพูดอธิบายตอนแคปใน ZoomIt
+- เครื่องมือบรรทัดคำสั่งชุดใหม่
+- ปรับ Keyboard Manager
+
+ของใหม่อื่น ๆ ที่บันทึกรุ่นระบุ
+
+- FancyZones: หมุนล้อเมาส์ตอนลากหน้าต่างเพื่อสลับเลย์เอาต์
+- Peek: พรีวิว SQLite ข้อมูลโฟลเดอร์ และ <kbd>Alt</kbd>+<kbd>←</kbd> <kbd>→</kbd> เลื่อนไฟล์
+- Screen Ruler: วัดเป็นพิกเซลที่ไม่ขึ้นกับสเกลจอ
+- Environment Variables: ปุ่ม Remove duplicates ล้างค่าซ้ำใน PATH
+- Grab and Move: ยกเว้นบางแอปได้
+- Awake: ให้ Windows ดับจอตอนล็อกเครื่องได้โดยไม่ตัดการกันเครื่องหลับ
+
+</div>
+</div>
+
+<div class="split">
+<div class="prose">
+
+**Mouse Button Lock** (ในภาพ) ช่วยตอนต้องลากหรือคลุมเลือกนาน ๆ ครับ กดปุ่มเมาส์ค้างสักครู่แล้วปล่อย Windows จะถือว่าปุ่มยังกดอยู่ จนกว่าเราจะคลิกปุ่มใดก็ได้ บันทึกรุ่นบอกว่าเหมาะกับเกม งานโปรแกรมมืออาชีพ และคนที่กดปุ่มเมาส์ค้างนาน ๆ ลำบาก
+
+อีกตัวคือ **CursorHide** ซ่อนตัวชี้เมาส์ตอนพิมพ์ หรือเมื่อไม่ขยับครบเวลาที่ตั้ง หรือทั้งสองอย่าง แล้วโชว์กลับเมื่อขยับเมาส์
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/powertoys-windows-app-review/img-17.jpg" width="716" height="475" loading="lazy" alt="ภาพตัวอย่าง Mouse Button Lock ของ PowerToys" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft PowerToys (บันทึกรุ่น v0.102.2933.0) · <a href="https://github.com/microsoft/PowerToys/releases/tag/v0.102.2933.0" rel="noopener">github.com</a></span></figcaption></figure>
+</div>
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/powertoys-windows-app-review/img-18.jpg" width="824" height="653" loading="lazy" alt="ภาพตัวอย่างเครื่องมือบรรทัดคำสั่งของ PowerToys ในหน้าต่างเทอร์มินัล" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft PowerToys (บันทึกรุ่น v0.102.2933.0) · <a href="https://github.com/microsoft/PowerToys/releases/tag/v0.102.2933.0" rel="noopener">github.com</a></span></figcaption></figure>
+<div class="prose">
+
+สายสคริปต์น่าจะชอบชุดบรรทัดคำสั่งใหม่ครับ ในภาพคือตัวอย่างการเรียกใช้ในเทอร์มินัล
+
+- มีคำสั่งของ Advanced Paste, Light Switch, Settings และ Peek
+- คำสั่งของ FancyZones, Image Resizer, File Locksmith และ PowerDisplay อยู่ใน PATH แล้ว เรียกจากโฟลเดอร์ไหนก็ได้
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## รุ่นล่าสุด 0.102.3101
+
+<div class="prose">
+
+รุ่นเสถียรล่าสุดคือ **v0.102.3101** วันที่ 6 พฤศจิกายน 2569 เป็นรุ่นแก้ด่วน (hotfix) ของ 0.102 บันทึกรุ่นสรุปไว้สามเรื่อง
+
+- File Explorer: จัดการตัวสร้างภาพขนาดย่อที่ค้างได้ดีขึ้น แยกการขอไฟล์ SVG พร้อมกัน และคงรูปแบบ SVG กับชื่อไฟล์ STL แบบ UTF-8
+- General: อัปเดต telemetry เป็นรุ่น 2.0.5 และคืนการส่งข้อมูลวินิจฉัยแบบเลือกได้ โดยไม่เปลี่ยนค่าที่ผู้ใช้ตั้งไว้
+- Mouse Without Borders: แก้การจับคู่ล้มเหลวที่อาจขึ้นข้อความลายเซ็นไม่น่าเชื่อถือในบิลด์ที่ลงนามแล้ว
+
+ใครลงไว้แล้ว อัปเดตผ่านหน้าตั้งค่าของ PowerToys ได้เลยครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ใครควรใช้
+
+<div class="prose">
+
+- คนใช้ Windows ทำงานทุกวัน และอยากได้เครื่องมือเล็ก ๆ ที่ช่วยประหยัดเวลา โดยไม่ต้องหาแอปแยกทีละตัว
+- คนที่ใช้จอกว้างหรือหลายจอ เริ่มจาก FancyZones กับ Always On Top ก่อน
+- คนที่ต้องจัดไฟล์และรูปเยอะ ๆ PowerRename, Image Resizer และ Peek คุ้มมาก
+- ไม่ต้องเปิดทุกเครื่องมือ เลือกเปิดเฉพาะที่ใช้ในหน้าตั้งค่าได้ครับ
+
+</div>
+
+</section>
+
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- บันทึกรุ่น: <a href="https://github.com/microsoft/PowerToys/releases/tag/v0.102.3101" rel="noopener">v0.102.3101</a> · <a href="https://github.com/microsoft/PowerToys/releases/tag/v0.102.2933.0" rel="noopener">v0.102.2933.0</a> · <a href="https://github.com/microsoft/PowerToys" rel="noopener">ซอร์สโค้ด (ไลเซนส์ MIT)</a>
+- Microsoft Learn: <a href="https://learn.microsoft.com/en-us/windows/powertoys/" rel="noopener">PowerToys</a> · <a href="https://learn.microsoft.com/en-us/windows/powertoys/install" rel="noopener">Install</a> · <a href="https://learn.microsoft.com/en-us/windows/powertoys/command-palette/overview" rel="noopener">Command Palette</a> · <a href="https://learn.microsoft.com/en-us/windows/powertoys/run" rel="noopener">Run</a> · <a href="https://learn.microsoft.com/en-us/windows/powertoys/fancyzones" rel="noopener">FancyZones</a> · <a href="https://learn.microsoft.com/en-us/windows/powertoys/text-extractor" rel="noopener">Text Extractor</a> · <a href="https://learn.microsoft.com/en-us/windows/powertoys/color-picker" rel="noopener">Color Picker</a> · <a href="https://learn.microsoft.com/en-us/windows/powertoys/always-on-top" rel="noopener">Always On Top</a> · <a href="https://learn.microsoft.com/en-us/windows/powertoys/peek" rel="noopener">Peek</a> · <a href="https://learn.microsoft.com/en-us/windows/powertoys/keyboard-manager" rel="noopener">Keyboard Manager</a> · <a href="https://learn.microsoft.com/en-us/windows/powertoys/file-locksmith" rel="noopener">File Locksmith</a> · <a href="https://learn.microsoft.com/en-us/windows/powertoys/powerrename" rel="noopener">PowerRename</a> · <a href="https://learn.microsoft.com/en-us/windows/powertoys/image-resizer" rel="noopener">Image Resizer</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพหน้าจอและภาพประกอบของแต่ละเครื่องมือ: ภาพ: Microsoft (เอกสาร PowerToys บน Microsoft Learn) · ภาพที่ระบุว่าเฟรมจากภาพเคลื่อนไหว ตัดมาจาก GIF ในหน้าเอกสารเดียวกัน
+- ภาพ Command Palette shelf, Keyboard Manager ตัวใหม่, Mouse Button Lock และเครื่องมือบรรทัดคำสั่ง: ภาพ: Microsoft PowerToys จากบันทึกรุ่น v0.102.2933.0 บน GitHub
+- ภาพปก: ภาพ: Microsoft (หน้า Install PowerToys บน Microsoft Learn)
+- อินโฟกราฟิก: ภาพประกอบจาก DOJOJIN.TECH จากข้อมูลในข่าวนี้
+
+ภาพใช้ประกอบการแนะนำ (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>
