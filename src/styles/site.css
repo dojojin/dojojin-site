@@ -824,6 +824,8 @@ main[data-type="news"] .shot__more .shot__credit { font-size: var(--fs-caption);
 .zoomer__close:focus-visible { outline: 3px solid var(--accent); }
 /* Two picture+text rows in a row need breathing room; a short paragraph sits level with the middle of its photo. */
 .split + .split { margin-top: var(--space-12); }
+/* Card grids, splits and plain prose stacked in one section get the same gap. */
+:is(.grade-grid, .split, .section > .prose) + :is(.grade-grid, .split, .section > .prose) { margin-top: var(--space-12); }
 @media (min-width: 769px) { .split:has(> .news-fig) { align-items: center; } }
 
 /* long setting names / paths in inline code must wrap on phones */

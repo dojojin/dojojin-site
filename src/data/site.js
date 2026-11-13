@@ -50,7 +50,7 @@ export const TAGS = {
   apache: "Apache", openssh: "OpenSSH", wordpress: "WordPress", cctv: "กล้องวงจรปิด", onvif: "ONVIF",
   xiaomi: "Xiaomi", redmagic: "REDMAGIC", motorola: "Motorola", nvidia: "NVIDIA", gaming: "เกม",
   dunlop: "DUNLOP", honda: "Honda", tire: "ยางรถยนต์", ev: "EV", motorcycle: "มอเตอร์ไซค์", motorsport: "มอเตอร์สปอร์ต",
-  hippocraft: "HippoCraft", pdf: "PDF",
+  hippocraft: "HippoCraft", pdf: "PDF", font: "ฟอนต์",
   google: "Google", chrome: "Chrome", axis: "Axis", vms: "VMS", mercular: "Mercular", "data-breach": "ข้อมูลรั่ว",
   android: "Android", foldable: "มือถือจอพับ", tablet: "แท็บเล็ต", ai: "AI", anthropic: "Anthropic", meta: "Meta", gpu: "GPU",
   nissan: "Nissan", "motor-show": "งานมอเตอร์โชว์", tax: "ภาษี",
