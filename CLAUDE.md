@@ -93,6 +93,7 @@ Firestore rules deploy แยก: `firebase deploy --only firestore:rules`
 - ต้นฉบับเก็บที่ `_sources/data/<slug>.html` + `<slug>.og.png` (gitignored)
 - รัน `node scripts/patch-atlas.mjs` → เขียน `public/data/<slug>/index.html` + `og.png` (ใช้การแก้ข้อมูลใน `src/data/atlas-corrections/<slug>.json`, แก้ `<head>`/og ให้ชี้ dojojin.tech, CSS แก้ responsive + ความกว้างเท่าเว็บ, Top Bar ของเว็บตรึงบนสุด (เมนูจาก `NAV` ใน `src/data/site.js`) + ลิงก์ “ที่มาของรูป”)
 - การแก้ข้อมูลแต่ละรายการต้องมี `source` + `snippet` ที่คัดจากหน้านั้นจริง; ค่า `old` ต้องตรงกับไฟล์ ไม่งั้นสคริปต์หยุด (กันการแก้ทับเวอร์ชันใหม่)
+- รูปรุ่นที่ขาด: ไฟล์ WebP 300×400 ที่ `src/data/atlas-photos/<slug>/photos/<id>.webp` + correction `"path":"photo"` ที่ `new.src_file` (ต้องเป็นภาพเครื่องจริงจาก Commons ไม่ใช่ภาพเรนเดอร์/สร้าง) · ถอดรูปใช้ `"op":"remove"` + `old_file_url` · ข้อความในหน้าที่ผิดแก้ใน `TEXT_FIXES` ของ `scripts/patch-atlas.mjs` (ต้องตรงทุกตัวอักษร) · โทน/ฟอนต์/แถบเมนูให้เหมือนเว็บอยู่ใน `PATCH_CSS` (ห้ามดึงฟอนต์จาก Google Fonts)
 - รายชื่อ + ตัวเลขบนการ์ด `/data/` อยู่ที่ `src/data/atlases.js` (นับจาก `window.__ATLAS__` ในไฟล์ — อัปเดตเมื่อได้ไฟล์เวอร์ชันใหม่)
 - รูปเครื่องทุกรูปต้องมีผู้ถ่าย + สัญญาอนุญาต + ลิงก์ไฟล์ต้นฉบับ (Wikimedia Commons) ก่อนขึ้นเว็บ
 
