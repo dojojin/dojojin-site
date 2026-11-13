@@ -1,0 +1,51 @@
+[
+  {
+    "id": "iphone-6s-plus",
+    "path": "photo",
+    "op": "set",
+    "old": null,
+    "new": {
+      "src_file": "photos/iphone-6s-plus.webp",
+      "author": "Brett Jordan",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "file_url": "https://commons.wikimedia.org/wiki/File:IPhone_6s_Plus_unboxing.jpg",
+      "title": "IPhone 6s Plus unboxing.jpg",
+      "source": "Wikimedia Commons"
+    },
+    "why": "missing photo",
+    "source": "https://commons.wikimedia.org/wiki/File:IPhone_6s_Plus_unboxing.jpg",
+    "snippet": "This file is licensed under the Creative Commons Attribution 2.0 Generic license.",
+    "checked": "2026-11-13, source opened and quoted"
+  },
+  {
+    "id": "iphone-se-2",
+    "path": "photo",
+    "op": "set",
+    "old": null,
+    "new": {
+      "src_file": "photos/iphone-se-2.webp",
+      "author": "Seth Whales",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "file_url": "https://commons.wikimedia.org/wiki/File:IPhone_SE_(2020)_Product_Red.jpg",
+      "title": "IPhone SE (2020) Product Red.jpg",
+      "source": "Wikimedia Commons"
+    },
+    "why": "missing photo",
+    "source": "https://commons.wikimedia.org/wiki/File:IPhone_SE_(2020)_Product_Red.jpg",
+    "snippet": "This file is licensed under the Creative Commons Attribution-Share Alike 4.0 International license.",
+    "checked": "2026-11-13, source opened and quoted"
+  },
+  {
+    "id": "iphone-17e",
+    "path": "th_channel",
+    "op": "set",
+    "old": "Apple Store TH and carriers (pre-order ~6-8 Mar 2026)",
+    "new": "Apple Store TH and carriers (pre-order 4 Mar 2026)",
+    "why": "pre-order date was approximate; Thai press gives exact date",
+    "source": "https://www.thansettakij.com/technology/652839",
+    "snippet": "เปิดสั่งซื้อล่วงหน้า: วันพุธที่ 4 มีนาคม 2569",
+    "checked": "2026-11-13, source opened and quoted"
+  }
+]

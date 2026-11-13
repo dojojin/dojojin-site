@@ -9,7 +9,7 @@ export const ATLASES = [
     title: 'iPhone Thai Price Atlas — ราคาเปิดตัวในไทยทุกรุ่น',
     description: 'ราคาเปิดตัว iPhone ในไทยทุกรุ่น 2007–2026 ทุกความจุ เทียบราคาสหรัฐฯ พร้อมสเปกระดับชิ้นส่วนจากการแกะเครื่อง',
     brand: 'Apple',
-    models: 55, years: '2007–2026', photos: 53,
+    models: 55, years: '2007–2026', photos: 55,
     thbMin: 14900, thbMax: 127900,
     updated: '2026-10-21',
   },
@@ -21,7 +21,7 @@ export const ATLASES = [
     description: 'ราคาเปิดตัว Samsung Galaxy S ในไทยทุกรุ่น 2010–2026 พร้อมสเปกและชิ้นส่วนบนบอร์ดของรุ่นที่ขายในไทย',
     brand: 'Samsung',
     models: 46, years: '2010–2026', photos: 45,
-    thbMin: 19900, thbMax: 66900,
+    thbMin: 18900, thbMax: 66900,
     updated: '2026-10-01',
   },
   {

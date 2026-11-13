@@ -220,5 +220,56 @@
     "source": "https://www.fonearena.com/blog/474167/vivo-x200t-price-india-specifications.html",
     "snippet": "the 12GB + 512GB model costs Rs. 69,999.",
     "checked": "2026-11-08, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x300",
+    "path": "photo",
+    "op": "set",
+    "old": null,
+    "new": {
+      "src_file": "photos/vivo-x300.webp",
+      "author": "X-SHLIED",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "file_url": "https://commons.wikimedia.org/wiki/File:The_back_of_the_colorful_vivo_X300.jpg",
+      "title": "The back of the colorful vivo X300.jpg",
+      "source": "Wikimedia Commons"
+    },
+    "why": "missing photo (rotated upright and cropped to the phone; a hand holds it, no face)",
+    "source": "https://commons.wikimedia.org/wiki/File:The_back_of_the_colorful_vivo_X300.jpg",
+    "snippet": "vivo X300彩色版手机背面 | License: CC BY 4.0 | Author: X-SHLIED",
+    "checked": "2026-11-13, source opened and quoted"
+  },
+  {
+    "id": "vivo-x300-ultra",
+    "path": "rear_camera",
+    "op": "set",
+    "old": "200 MP Sony LYTIA 901 1/1.12\" 35 mm f/1.9 gimbal OIS + 200 MP 1/1.4\" 85 mm f/2.7 Zeiss APO periscope 3.7x (Samsung ISOCELL HP0 per GSMArena) + 50 MP Sony LYTIA 818 1/1.28\" 14 mm ultrawide OIS; Zeiss 200/400 mm Gen 2 telephoto extenders",
+    "new": "200 MP Sony LYTIA 901 1/1.12\" 35 mm f/1.85 gimbal OIS + 200 MP 1/1.4\" 85 mm f/2.7 Zeiss APO periscope 3.7x (Samsung ISOCELL HP0 per GSMArena) + 50 MP Sony LYTIA 818 1/1.28\" 14 mm ultrawide OIS; Zeiss 200/400 mm Gen 2 telephoto extenders",
+    "why": "Main-camera aperture is f/1.85 per FoneArena (China launch) and droidsans (Thai launch); atlas rear_camera string still carries GSMArena's f/1.9 (cam.cameras[0].aperture already says f/1.85).",
+    "source": "https://droidsans.com/vivo-x300-ultra-launch-in-thailand-spec-details/",
+    "snippet": "200MP (f/1.85) Sony LYTIA 901 ขนาด 1/1.12 นิ้ว | FoneArena: 200MP \"1/1.12″ Sony LYTIA 901 sensor, f/1.85 aperture, OIS\"",
+    "checked": "2026-11-13, source opened and quoted"
+  },
+  {
+    "id": "vivo-x5-pro",
+    "path": "th_launch",
+    "op": "set",
+    "old": "2015-07",
+    "new": "2015-07-17",
+    "why": "Checkraka reports sales started the day of the article (17 Jul 2015), narrowing the month-only date.",
+    "source": "https://www.checkraka.com/mobilephone/news/103316",
+    "snippet": "ได้เริ่มวางจำหน่ายในราคา 13,990 บาท ตั้งแต่วันนี้เป็นต้นไป (post date 17 ก.ค. 58)",
+    "checked": "2026-11-13, source opened and quoted"
+  },
+  {
+    "id": "vivo-x300-ultra",
+    "path": "photo",
+    "op": "remove",
+    "old_file_url": "https://commons.wikimedia.org/wiki/File:Vivo_X300_Ultra.jpg",
+    "why": "Removed: the Commons file is not a real photo of the phone (description 'detailed, dramatic hero shot', no camera EXIF, Zeiss logo misspelled 'ZEISR', malformed lens elements); a real-photo rule applies to every model image.",
+    "source": "https://commons.wikimedia.org/wiki/File:Vivo_X300_Ultra.jpg",
+    "snippet": "Vivo X300 Ultra detailed, dramatic hero shot",
+    "checked": "2026-11-13, Commons file page opened and image viewed"
   }
 ]

@@ -42,5 +42,148 @@
     "source": "https://www.thaimobilecenter.com/content/samsung-galaxy-s26-series-launch.asp",
     "snippet": "เปิดให้สั่งจองล่วงหน้าตั้งแต่วันนี้ - 10 มีนาคม 2026 พร้อมวางจำหน่ายอย่างเป็นทางการในวันที่ 11 มีนาคม 2026",
     "checked": "2026-11-08, source re-fetched and quoted"
+  },
+  {
+    "id": "galaxy-s2",
+    "path": "tiers[gb=16].thb",
+    "op": "set",
+    "old": 19900,
+    "new": 18900,
+    "why": "Samsung Thailand confirmed 18,900 THB incl. VAT; 19,900 was the pre-VAT figure from an earlier blog post.",
+    "source": "https://droidsans.com/samsung-galaxy-s2-18900thb-official-announced/",
+    "snippet": "ได้ออกมายืนยันราคาแล้วว่า 18,900 บาท รวม VAT แน่นอนจ้า … ยังไม่รวม VAT อยู่เลย",
+    "checked": "2026-11-13, source opened and quoted"
+  },
+  {
+    "id": "galaxy-s2",
+    "path": "price_conf",
+    "op": "set",
+    "old": "low",
+    "new": "medium",
+    "why": "Launch price now backed by Samsung TH confirmation (via droidsans, 27 May 2011).",
+    "source": "https://droidsans.com/samsung-galaxy-s2-18900thb-official-announced/",
+    "snippet": "ได้ออกมายืนยันราคาแล้วว่า 18,900 บาท รวม VAT แน่นอนจ้า",
+    "checked": "2026-11-13, source opened and quoted"
+  },
+  {
+    "id": "galaxy-s2",
+    "path": "price_flags",
+    "op": "set",
+    "old": "THB from siamphone spec launch-price field (19,900); same page lists 16GB variant at 18,900, so ±1,000 uncertainty. US: no unlocked I9100; carrier variants AT&T SGH-I777 $199.99, Sprint Epic 4G Touch $199.99, T-Mobile SGH-T989 $229.99 (all 2-yr contract, Sep–Oct 2011).",
+    "new": "THB 18,900 incl. VAT = Samsung Thailand confirmed price (droidsans, 27 May 2011; an earlier 19,900 figure was before VAT; siamphone spec page still shows 19,900 launch / 18,900 for 16GB). Thai on-sale date not verified (delivery 'after TME'). US: no unlocked I9100; carrier variants AT&T SGH-I777 $199.99, Sprint Epic 4G Touch $199.99, T-Mobile SGH-T989 $229.99 (all 2-yr contract, Sep–Oct 2011).",
+    "why": "Update note to match corrected price.",
+    "source": "https://droidsans.com/samsung-galaxy-s2-18900thb-official-announced/",
+    "snippet": "ได้ออกมายืนยันราคาแล้วว่า 18,900 บาท รวม VAT แน่นอนจ้า",
+    "checked": "2026-11-13, source opened and quoted"
+  },
+  {
+    "id": "galaxy-s3",
+    "path": "tiers[gb=16].thb",
+    "op": "set",
+    "old": null,
+    "new": 21900,
+    "why": "Thai launch price was missing; AIS and DTAC both announced 21,900 THB.",
+    "source": "https://droidsans.com/ais-dtac-trumove-promotion-on-galaxy-s3/",
+    "snippet": "AIS: \"ราคาคือ 21,900 บาท พร้อมสิทธิ์ผ่อน 0% นาน 10 เดือนกับบัตรเครดิตชั้นนำ\" · DTAC: \"ราคาเครื่อง 21,900 บาท รับสิทธิผ่อน 0% นาน 10 เดือน\" · \"กำหนดวันขายจริงของ Samsung Galaxy S III คือวันที่ 7 มิถุนายน 2555\"",
+    "checked": "2026-11-13, source opened and quoted"
+  },
+  {
+    "id": "galaxy-s3",
+    "path": "th_launch",
+    "op": "set",
+    "old": null,
+    "new": "2012-06-07",
+    "why": "Thai on-sale date was missing.",
+    "source": "https://droidsans.com/ais-dtac-trumove-promotion-on-galaxy-s3/",
+    "snippet": "AIS: \"ราคาคือ 21,900 บาท พร้อมสิทธิ์ผ่อน 0% นาน 10 เดือนกับบัตรเครดิตชั้นนำ\" · DTAC: \"ราคาเครื่อง 21,900 บาท รับสิทธิผ่อน 0% นาน 10 เดือน\" · \"กำหนดวันขายจริงของ Samsung Galaxy S III คือวันที่ 7 มิถุนายน 2555\"",
+    "checked": "2026-11-13, source opened and quoted"
+  },
+  {
+    "id": "galaxy-s3",
+    "path": "th_status",
+    "op": "set",
+    "old": "unverified",
+    "new": "ok",
+    "why": "Thai price and date now sourced.",
+    "source": "https://droidsans.com/ais-dtac-trumove-promotion-on-galaxy-s3/",
+    "snippet": "AIS: \"ราคาคือ 21,900 บาท พร้อมสิทธิ์ผ่อน 0% นาน 10 เดือนกับบัตรเครดิตชั้นนำ\" · DTAC: \"ราคาเครื่อง 21,900 บาท รับสิทธิผ่อน 0% นาน 10 เดือน\" · \"กำหนดวันขายจริงของ Samsung Galaxy S III คือวันที่ 7 มิถุนายน 2555\"",
+    "checked": "2026-11-13, source opened and quoted"
+  },
+  {
+    "id": "galaxy-s3",
+    "path": "price_conf",
+    "op": "set",
+    "old": "low",
+    "new": "medium",
+    "why": "Two Thai sources agree on 21,900 (droidsans carrier article + droidsans review 'ราคาเปิดตัว วางจำหน่ายมิถุนายน 2012 ราคา 21,900 บาท').",
+    "source": "https://droidsans.com/ais-dtac-trumove-promotion-on-galaxy-s3/",
+    "snippet": "AIS: \"ราคาคือ 21,900 บาท พร้อมสิทธิ์ผ่อน 0% นาน 10 เดือนกับบัตรเครดิตชั้นนำ\" · DTAC: \"ราคาเครื่อง 21,900 บาท รับสิทธิผ่อน 0% นาน 10 เดือน\" · \"กำหนดวันขายจริงของ Samsung Galaxy S III คือวันที่ 7 มิถุนายน 2555\"",
+    "checked": "2026-11-13, source opened and quoted"
+  },
+  {
+    "id": "galaxy-s3",
+    "path": "th_channel",
+    "op": "set",
+    "old": "Thai launch ~late May/Jun 2012 (unverified)",
+    "new": "Thai on-sale 7 Jun 2012 (AIS, DTAC, TrueMove; delivery of pre-orders from 2 Jun)",
+    "why": "Replace 'unverified' wording.",
+    "source": "https://droidsans.com/ais-dtac-trumove-promotion-on-galaxy-s3/",
+    "snippet": "AIS: \"ราคาคือ 21,900 บาท พร้อมสิทธิ์ผ่อน 0% นาน 10 เดือนกับบัตรเครดิตชั้นนำ\" · DTAC: \"ราคาเครื่อง 21,900 บาท รับสิทธิผ่อน 0% นาน 10 เดือน\" · \"กำหนดวันขายจริงของ Samsung Galaxy S III คือวันที่ 7 มิถุนายน 2555\"",
+    "checked": "2026-11-13, source opened and quoted"
+  },
+  {
+    "id": "galaxy-s3",
+    "path": "price_flags",
+    "op": "set",
+    "old": "THB unverified: siamphone spec page shows 11,900 (clearly a later street price, not launch). US: carrier versions (Snapdragon S4, 2GB RAM, e.g. SGH-I747) at $199.99/16GB and $249.99/32GB on 2-yr contract; Thai GT-I9300 is Exynos 4412, 1GB.",
+    "new": "THB 21,900 (16GB) = AIS/DTAC announced price, droidsans 23 May 2012; siamphone spec page shows 11,900, a later street price, not launch. No Thai 32GB launch price found. US: carrier versions (Snapdragon S4, 2GB RAM, e.g. SGH-I747) at $199.99/16GB and $249.99/32GB on 2-yr contract; Thai GT-I9300 is Exynos 4412, 1GB.",
+    "why": "Update note to match corrected price.",
+    "source": "https://droidsans.com/ais-dtac-trumove-promotion-on-galaxy-s3/",
+    "snippet": "AIS: \"ราคาคือ 21,900 บาท พร้อมสิทธิ์ผ่อน 0% นาน 10 เดือนกับบัตรเครดิตชั้นนำ\" · DTAC: \"ราคาเครื่อง 21,900 บาท รับสิทธิผ่อน 0% นาน 10 เดือน\" · \"กำหนดวันขายจริงของ Samsung Galaxy S III คือวันที่ 7 มิถุนายน 2555\"",
+    "checked": "2026-11-13, source opened and quoted"
+  },
+  {
+    "id": "galaxy-s4",
+    "path": "th_launch",
+    "op": "set",
+    "old": null,
+    "new": "2013-05-03",
+    "why": "Thai on-sale date was missing; Samsung Thailand began sales 3 May 2013 at 21,900 THB.",
+    "source": "https://www.siamphone.com/contents/news-12170.html",
+    "snippet": "วางจำหน่ายสมาร์ทโฟนรุ่นนี้อย่างเป็นทางการครั้งแรกในประเทศไทยแล้วในวันที่ 3 พฤษภาคม … ดำ (Black Mist) และขาว (White Frost) ในราคาจำหน่าย 21,900 บาท",
+    "checked": "2026-11-13, source opened and quoted"
+  },
+  {
+    "id": "galaxy-s4",
+    "path": "price_conf",
+    "op": "set",
+    "old": "low",
+    "new": "medium",
+    "why": "21,900 now confirmed by a Thai launch article (not only the spec page).",
+    "source": "https://www.siamphone.com/contents/news-12170.html",
+    "snippet": "ในราคาจำหน่าย 21,900 บาท",
+    "checked": "2026-11-13, source opened and quoted"
+  },
+  {
+    "id": "galaxy-s4",
+    "path": "th_channel",
+    "op": "set",
+    "old": "Thai launch Apr 2013 (exact date unverified)",
+    "new": "Thai on-sale 3 May 2013 (Samsung Thailand, Black Mist / White Frost)",
+    "why": "Replace 'unverified' wording.",
+    "source": "https://www.siamphone.com/contents/news-12170.html",
+    "snippet": "วางจำหน่ายสมาร์ทโฟนรุ่นนี้อย่างเป็นทางการครั้งแรกในประเทศไทยแล้วในวันที่ 3 พฤษภาคม",
+    "checked": "2026-11-13, source opened and quoted"
+  },
+  {
+    "id": "galaxy-s26-ultra",
+    "path": "th_launch",
+    "op": "set",
+    "old": "2026-03",
+    "new": "2026-03-11",
+    "why": "Exact Thai on-sale date for the whole S26 series (same article as the S26 / S26+ fixes above); the Ultra's Thai pre-order promotion ran 26 Feb to 10 Mar.",
+    "source": "https://www.thaimobilecenter.com/content/samsung-galaxy-s26-series-launch.asp",
+    "snippet": "เปิดให้สั่งจองล่วงหน้าตั้งแต่วันนี้ - 10 มีนาคม 2026 พร้อมวางจำหน่ายอย่างเป็นทางการในวันที่ 11 มีนาคม 2026",
+    "checked": "2026-11-13, series article (already quoted for S26 / S26+); Ultra pre-order window cross-checked at thethaiger.com"
   }
 ]
