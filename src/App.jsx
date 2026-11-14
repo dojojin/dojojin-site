@@ -1005,8 +1005,8 @@ function useVisitorCount(listen = true) {
     loadFirebase().then(({ db, doc, runTransaction, onSnapshot }) => {
       if (!alive) return;
       const ref = doc(db, "meta", "visitors");
-      // Increment once per session
-      if (!sessionStorage.getItem("dojojin_visited")) {
+      // Increment once per session, on production only (same rule as ViewCounter.astro)
+      if (/^(www\.)?dojojin\.tech$/.test(location.hostname) && !sessionStorage.getItem("dojojin_visited")) {
         sessionStorage.setItem("dojojin_visited", "1");
         runTransaction(db, async (tx) => {
           const snap = await tx.get(ref);

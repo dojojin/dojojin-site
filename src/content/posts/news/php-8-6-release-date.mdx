@@ -1,0 +1,163 @@
+---
+title: "PHP 8.6 ตัวจริงกำหนดออก 19 พ.ย. 2569 มีอะไรใหม่ และเว็บเราต้องเตรียมอะไร (ตอนนี้ยังเป็น RC7)"
+topic: infra-ai
+type: news
+tags: [php]
+date: 2026-11-14T09:40:00+07:00
+section: tech
+sourceName: "PHP (php.net)"
+sourceUrl: "https://www.php.net/archive/2026.php#2026-11-12-1"
+description: "PHP 8.6.0 RC7 ออกแล้ว 12 พ.ย. 2569 ส่วนตัวจริง (GA) ทีม PHP วางแผนปล่อย 19 พ.ย. 2569 สรุปฟีเจอร์ใหม่ที่ไฟล์ UPGRADING ยืนยัน เช่น partial function application, readonly property มีค่าเริ่มต้น, clamp() และค่า session ที่ปลอดภัยขึ้น พร้อมสิ่งที่ผู้ดูแลเว็บควรเช็กก่อนอัปเกรด"
+kicker: "ข่าวเทคโนโลยี"
+lead: "PHP 8.6.0 ตัวจริงมีกำหนดออกวันที่ 19 พฤศจิกายน 2569 ครับ ตอนนี้ยังเป็นรุ่นทดสอบ RC7 ที่ทีม PHP บอกชัดว่าห้ามใช้บน production ใครดูแลเว็บหรือเซิร์ฟเวอร์ที่ใช้ PHP ผมสรุปมาให้แล้วว่าอะไรจะเปลี่ยน และควรเช็กอะไรไว้ก่อน"
+meta: "เรียบเรียงจากประกาศและไฟล์ UPGRADING ของ PHP · ข้อมูล ณ 14 พฤศจิกายน 2569"
+cover: "/media/posts/news/php-8-6-release-date/cover.jpg"
+coverAlt: "แล็ปท็อปบนโต๊ะในออฟฟิศนักพัฒนา หน้าจอแสดงโลโก้ PHP ข้างแถบความคืบหน้าสีเขียวที่ใกล้เต็ม มีตู้เซิร์ฟเวอร์อยู่ด้านหลัง (ภาพประกอบ)"
+---
+
+<section class="section">
+
+## ตอนนี้อยู่ตรงไหน
+
+<div class="split">
+<div class="prose">
+
+วันที่ 12 พฤศจิกายน 2569 ทีม PHP ปล่อย PHP 8.6.0 RC7 (Release Candidate รุ่นทดสอบก่อนตัวจริง) ออกมาให้ทดสอบ
+
+รุ่นถัดไปจะเป็นตัวจริงตัวแรก หรือ GA (General Availability) คือ **PHP 8.6.0 กำหนดวันที่ 19 พฤศจิกายน 2569**
+
+ตอนที่ผมเขียนข่าวนี้ (14 พ.ย.) ตัวจริงยังไม่ออกนะครับ ยังเป็นแค่กำหนดการ และตารางงานของ PHP เองก็เขียนไว้ว่ารุ่นต่าง ๆ อาจถูกเพิ่มหรือตัดได้ระหว่างทาง
+
+เลข RC อาจดูงงนิดนึง
+
+- RC1 ไม่เคยออกจริง (แพ็กไฟล์ผิดพลาด เลยออกเป็น RC2 แทน)
+- RC6 ถูกแท็กแล้วข้ามไป
+- ประกาศเลยเรียก RC7 ว่า "รุ่นทดสอบที่ห้า"
+
+ในภาพผมสรุปไทม์ไลน์ตั้งแต่ RC4 จนถึงวันออกตัวจริงไว้ให้ครับ
+
+ประกาศเขียนตรง ๆ ว่า **"Please DO NOT use this version in production"** ครับ อยากลองก็ลองในเครื่องทดสอบหรือ staging เท่านั้น
+
+</div>
+<figure class="split-fig"><img src="/media/posts/news/php-8-6-release-date/igv-1.jpg" width="1600" height="1400" loading="lazy" alt="อินโฟกราฟิกกำหนดการ PHP 8.6 RC4 21 ต.ค., RC5 5 พ.ย., RC7 12 พ.ย. และรุ่นตัวจริง PHP 8.6.0 กำหนดวันที่ 19 พ.ย. 2569 RC ไม่ใช่รุ่นสำหรับ production" /></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## ฟีเจอร์ใหม่ที่ยืนยันได้
+
+<div class="prose">
+
+ข้อมูลส่วนนี้ผมอ่านจากไฟล์ UPGRADING ของ RC7 ที่ทีม PHP ลิงก์ไว้ในประกาศ ไฟล์นี้ยังแก้ได้จนถึงวันออกตัวจริงนะครับ
+
+ผมเลือกมาเฉพาะข้อที่น่าสนใจ ทุกข้อมีลิงก์ RFC (เอกสารข้อเสนอฟีเจอร์ของ PHP) อยู่ในไฟล์
+
+</div>
+
+<div class="grade-grid">
+  <article class="grade-card">
+    <h3>ภาษา (Core)</h3>
+    <p>readonly property ใส่ค่าเริ่มต้นได้ · partial function application (กำหนดอาร์กิวเมนต์บางตัวของฟังก์ชันไว้ก่อน) · <code>#[\Override]</code> ใช้กับค่าคงที่ของคลาสได้ · enum มี <code>__debugInfo()</code> · เขียนค่า property ของ object ที่เก็บในค่าคงที่ได้</p>
+  </article>
+  <article class="grade-card">
+    <h3>ฟังก์ชันและคลาสใหม่</h3>
+    <p><code>clamp()</code> จำกัดค่าให้อยู่ในช่วง · คลาส <code>Time\Duration</code> · polling API ตัวใหม่ · <code>mysqli::quote_string()</code> · <code>ReflectionProperty::isReadable()</code> และ <code>isWritable()</code> · <code>ZipArchive::openString()</code></p>
+  </article>
+  <article class="grade-card">
+    <h3>เครือข่ายและความปลอดภัย</h3>
+    <p>OpenSSL รองรับ TLS session resumption และ TLS 1.3 early data (0-RTT) · stream errors API · จำกัดจำนวน filter ใน <code>php://filter</code> ไว้ที่ 16 ตัวเป็นค่าเริ่มต้น · Sodium เพิ่มชุดฟังก์ชัน ML-KEM (ต้องใช้ libsodium 1.0.22 ขึ้นไป)</p>
+  </article>
+  <article class="grade-card">
+    <h3>อื่น ๆ</h3>
+    <p>ข้อความ error ของ JSON บอกตำแหน่งที่ผิด · <code>pack()</code>/<code>unpack()</code> ระบุ endianness ด้วย <code>&lt;</code> และ <code>&gt;</code> · Intl, URI, SNMP มีของใหม่เพิ่ม · MBstring อัปเดต Unicode เป็น 18.0</p>
+  </article>
+</div>
+
+</section>
+
+<section class="section">
+
+## ของที่อาจทำให้เว็บเดิมพัง
+
+<div class="split">
+<figure class="split-fig"><img src="/media/posts/news/php-8-6-release-date/igv-2.jpg" width="1600" height="1540" loading="lazy" alt="อินโฟกราฟิกสิ่งที่ต้องเช็กก่อนอัป PHP 8.6 ค่า session ใหม่ use_strict_mode=1, cookie_httponly=1, cookie_samesite=Lax, trim() ตัด form feed, preg_grep() คืน false เมื่อผิดพลาด, deprecated: return ใน finally, define() อาร์กิวเมนต์ที่สาม, spl_object_hash(), mbregex" /></figure>
+<div class="prose">
+
+ส่วนนี้ผมว่าเจ้าของเว็บควรอ่านที่สุด มาจากหมวด Backward Incompatible Changes (เปลี่ยนแล้วโค้ดเดิมอาจพัง) กับ Deprecated ในไฟล์ UPGRADING ผมยกมาเฉพาะข้อที่น่าจะกระทบเว็บทั่วไป
+
+ในภาพผมรวมรายการที่ต้องเช็กไว้ในหน้าเดียว รายละเอียดตามนี้ครับ
+
+**ค่า session เปลี่ยนค่าเริ่มต้น** เป็น `session.use_strict_mode=1`, `session.cookie_httponly=1` และ `session.cookie_samesite=Lax`
+
+ปลอดภัยขึ้นครับ แต่ถ้าแอปเก่าพึ่งพฤติกรรมเดิม เช่น ให้ JavaScript อ่านคุกกี้ session ก็อาจพังได้
+
+**`trim()` ตัด form feed** ด้วยเป็นค่าเริ่มต้น
+
+**`preg_grep()`** คืนค่า false เมื่อ regex ทำงานผิดพลาด แทนที่จะคืนอาร์เรย์ครึ่ง ๆ กลาง ๆ
+
+**ฟังก์ชันจำนวนมากโยน `ValueError`** เมื่อรับสตริงที่มี NUL byte เช่น `getenv()`, `parse_str()`, `proc_open()`
+
+**ที่ถูกประกาศเลิกใช้ (deprecated)** ตอนนี้ยังใช้ได้ แต่จะขึ้นคำเตือน เช่น
+
+- `return` ใน `finally`
+- อาร์กิวเมนต์ตัวที่สามของ `define()`
+- `spl_object_hash()` (ให้ใช้ `spl_object_id()` แทน)
+- `mbregex` และ `metaphone()`
+- การตั้งชื่อฟังก์ชันว่า `readonly`
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## วันที่ 19 พ.ย. ผู้ดูแลเว็บควรทำอะไร
+
+<div class="prose">
+
+ผมแนะนำตามนี้ครับ
+
+1. **อย่าเพิ่งอัปเกรด production วันแรก** รอตัวจริงออกก่อน แล้วรอให้ framework กับปลั๊กอินที่ใช้ประกาศว่ารองรับ 8.6
+2. **เช็กความเข้ากันได้** ของ framework, CMS, ปลั๊กอิน และ extension ที่เซิร์ฟเวอร์ใช้ ไล่ดู changelog หรือหน้า requirement ของแต่ละตัว ตัวไหนรองรับแล้วบ้างผมเองก็ยังไม่รู้ครับ ต้องดูจากผู้พัฒนาแต่ละราย
+3. **ทดสอบบน staging** เปิด `error_reporting` ให้เห็น deprecation แล้วไล่แก้คำเตือนที่ขึ้น
+4. **ใช้โฮสติ้ง?** รอผู้ให้บริการเปิดตัวเลือก 8.6 ในหน้าควบคุมได้เลย ไม่ต้องทำอะไรก่อน
+5. **ใช้ 8.5, 8.4 ต่อไปได้** แต่อย่าลืมลงแพตช์ความปลอดภัยเสมอ ดูเรื่อง <a href="/news/php2shell/">PHP2Shell</a> ที่เพิ่งแก้ไป ซึ่งทีม PHP ระบุว่า RC4 ของ 8.6.0 ก็มีแพตช์ชุดนี้แล้ว
+
+คนทั่วไปที่แค่เข้าเว็บไม่ต้องทำอะไรเลยครับ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- ประกาศ PHP 8.6.0 RC7 (12 พ.ย. 2569): <a href="https://www.php.net/archive/2026.php#2026-11-12-1" rel="noopener">php.net/archive/2026</a>
+- ตารางงานรุ่น 8.6: <a href="https://wiki.php.net/todo/php86" rel="noopener">wiki.php.net/todo/php86</a>
+- UPGRADING ของ 8.6.0RC7: <a href="https://github.com/php/php-src/blob/php-8.6.0RC7/UPGRADING" rel="noopener">github.com/php/php-src</a>
+- ข้อมูลที่ยังไม่ได้ตรวจ: รายชื่อ framework/CMS ที่รองรับ PHP 8.6 และเนื้อหาของแต่ละ RFC (ผมอ่านจากสรุปในไฟล์ UPGRADING)
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: ภาพประกอบจาก DOJOJIN.TECH (โลโก้ PHP เป็นของ The PHP Group)
+- อินโฟกราฟิก: ภาพประกอบจาก DOJOJIN.TECH จากข้อมูลในข่าวนี้
+
+ภาพทั้งหมดใช้ประกอบข่าว (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>

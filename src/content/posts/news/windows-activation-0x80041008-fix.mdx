@@ -1,0 +1,133 @@
+---
+title: "Microsoft ออกอัปเดตแก้ error 0x80041008 ตอนเปิดใช้งาน Windows ด้วย SLMGR/KMS (KB แยกตามเวอร์ชัน)"
+topic: software
+type: news
+tags: [microsoft, windows]
+date: 2026-11-14T09:50:00+07:00
+section: tech
+sourceName: "Microsoft Windows release health"
+sourceUrl: "https://learn.microsoft.com/en-us/windows/release-health/windows-message-center"
+description: "13 พ.ย. 2569 Microsoft ออกอัปเดตนอกรอบ (OOB) แก้ปัญหาคำสั่ง SLMGR ล้มเหลวด้วย error 0x80041008 หลังลงอัปเดตความปลอดภัยเดือนพฤศจิกายน กระทบองค์กรที่ตั้ง KMS ติดตั้งคีย์ หรือใช้สคริปต์จัดการไลเซนส์ ส่วนเครื่องที่เปิดใช้งานแล้วไม่หลุด พร้อมตาราง KB แยกตามระบบปฏิบัติการ"
+kicker: "ข่าวเทคโนโลยี"
+lead: "ใครใช้คำสั่ง slmgr.vbs ตั้งค่า KMS หรือใส่คีย์ Windows ด้วยสคริปต์ แล้วเจอ error 0x80041008 หลังลงอัปเดตเดือนพฤศจิกายน Microsoft ออกอัปเดตนอกรอบมาแก้แล้วเมื่อวานครับ คนใช้ Windows ที่บ้านส่วนใหญ่ไม่โดน ผมสรุปไว้ว่าใครควรสนใจ และแต่ละระบบต้องใช้ KB ไหน"
+meta: "เรียบเรียงจากหน้า Windows release health และหน้า KB ของ Microsoft · ข้อมูล ณ 14 พฤศจิกายน 2569"
+cover: "/media/posts/news/windows-activation-0x80041008-fix/cover.jpg"
+coverAlt: "แล็ปท็อปในทางเดินห้องเซิร์ฟเวอร์ หน้าจอแสดงโลโก้ Windows 11 ข้างไอคอนกุญแจเรืองแสงและเครื่องหมายถูกสีเขียว (ภาพประกอบ)"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="split">
+<div class="prose">
+
+วันที่ 13 พฤศจิกายน 2569 Microsoft ออกอัปเดต Windows นอกรอบ (out-of-band หรือ OOB คือออกนอกรอบอัปเดตประจำเดือน) เพื่อแก้ปัญหาที่เกิดหลังลงอัปเดตความปลอดภัยเดือนพฤศจิกายน 2569
+
+อาการคือ งานด้านไลเซนส์และการเปิดใช้งาน (activation) ที่ทำผ่านเครื่องมือ **SLMGR** (`slmgr.vbs`) อาจล้มเหลวด้วย error **0x80041008 (Invalid parameter)**
+
+Microsoft บอกว่ากระทบ "เครื่ององค์กรจำนวนจำกัด" หลัก ๆ คือองค์กรที่ใช้ `slmgr.vbs` หรือระบบอัตโนมัติ เพื่อ
+
+- ตั้งค่าการเปิดใช้งานแบบ KMS (Key Management Service)
+- ติดตั้งคีย์ผลิตภัณฑ์
+- จัดการไลเซนส์ Windows
+
+**เครื่องที่เปิดใช้งานไว้แล้ว ยังเปิดใช้งานอยู่ตามเดิม** ครับ
+
+อัปเดตนี้เป็นแบบสะสม (cumulative) คือรวมของในอัปเดตความปลอดภัยเดือนพฤศจิกายนมาด้วย ในภาพผมรวมเลข KB ของแต่ละระบบ และช่องทางดาวน์โหลดไว้ครับ
+
+</div>
+<figure class="split-fig"><img src="/media/posts/news/windows-activation-0x80041008-fix/igv-1.jpg" width="1600" height="1400" loading="lazy" alt="อินโฟกราฟิกอัปเดตแก้ error 0x80041008 วันที่ 13 พ.ย. 2569 Windows Server 2025 KB5136489, Windows Server 2022 KB5136487, Windows Server 2019 และ Windows 10 LTSC 2019 KB5136490, Windows 11 23H2 KB5136483, Windows 10 22H2 ESU และ LTSC 2021 KB5136493 หาได้จาก Microsoft Update Catalog เฉพาะ Windows 11 23H2 มีใน Windows Update ด้วย" /></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## ระบบไหนใช้ KB อะไร
+
+<div class="prose">
+
+รายการ KB มาจากหน้าของ Microsoft ครับ ผมทำเป็นตารางให้อ่านง่ายอีกที
+
+| ระบบปฏิบัติการ | KB | ช่องทาง |
+|---|---|---|
+| Windows Server 2025 | KB5136489 | Update Catalog เท่านั้น |
+| Windows Server 2022 | KB5136487 | Update Catalog เท่านั้น |
+| Windows Server 2019 และ Windows 10 Enterprise LTSC 2019 | KB5136490 | Update Catalog เท่านั้น |
+| Windows 11 เวอร์ชัน 23H2 | KB5136483 | Update Catalog และ Windows Update |
+| Windows 10 เวอร์ชัน 22H2 (ESU) และ Windows 10 Enterprise LTSC 2021 | KB5136493 | Update Catalog เท่านั้น |
+
+หน้าประกาศไม่ได้พูดถึง Windows 11 เวอร์ชัน 24H2, 25H2 หรือ 26H2 และไม่ได้บอกสาเหตุของปัญหาครับ ผมเลยบอกไม่ได้ว่าเวอร์ชันเหล่านั้นโดนด้วยหรือเปล่า
+
+ถ้าองค์กรคุณใช้เวอร์ชันพวกนี้แล้วเจอ error นี้ ให้ดูหน้า release health ของเวอร์ชันนั้นโดยตรง
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ฝ่ายไอทีต้องทำอะไร
+
+<div class="prose">
+
+อัปเดตนี้เป็นแบบ **เลือกลงได้ (optional) และไม่ใช่อัปเดตความปลอดภัย** ครับ ผมว่าลงเมื่อเจอปัญหานี้จริง หรือมีสคริปต์ที่ต้องใช้ `slmgr` เป็นประจำก็พอ
+
+1. **เช็กก่อนว่าเราโดนไหม** ถ้าหลังลงอัปเดตเดือนพฤศจิกายนไม่มีงานไหนเรียก `slmgr.vbs` ก็ไม่ต้องรีบ
+2. **ดาวน์โหลดจาก Microsoft Update Catalog** (เว็บของ Microsoft ที่ให้โหลดอัปเดตเป็นไฟล์แยก) เพราะ Windows Server และ Windows 10 ทุกรุ่นในตารางไม่มีให้ผ่านช่องทางปกติ ส่วน Windows 11 23H2 กดได้ที่ Settings > Windows Update > Advanced options > Optional updates
+3. **อ่านหน้า KB ก่อนลง** ผมเปิดหน้า KB5136489 (Server 2025) ดูแล้ว มีเงื่อนไขแบบนี้
+   - ต้องมี servicing stack (ส่วนที่ Windows ใช้ติดตั้งอัปเดต) เวอร์ชัน 26100.2032 ขึ้นไป
+   - ต้องลงอัปเดต checkpoint (KB5043080) ก่อน แล้วค่อยลงตัวหลัก
+   - หน้าบอกว่า Windows Update, Windows Update for Business และ WSUS ยังแสดงว่า "ไม่พร้อมให้ใช้"
+
+   หน้า KB ของระบบอื่นผมไม่ได้เปิด จึงยืนยันไม่ได้ว่าเงื่อนไขเหมือนกัน
+4. **ทดสอบกับเครื่องจำนวนน้อยก่อน** แล้วค่อยขยายทั้งองค์กร
+
+</div>
+
+</section>
+
+<section class="section">
+
+## แล้วผู้ใช้ทั่วไปล่ะ
+
+<div class="prose">
+
+ถ้าคุณใช้ Windows ที่บ้านและเครื่องเปิดใช้งานเรียบร้อยแล้ว ไม่ต้องทำอะไรครับ
+
+ปัญหานี้เกิดกับงานตั้งค่าไลเซนส์ผ่าน SLMGR ซึ่งส่วนใหญ่เป็นงานของฝ่ายไอที เครื่องที่เปิดใช้งานแล้วก็ใช้ต่อได้ตามปกติ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- Windows message center (13 พ.ย. 2569): <a href="https://learn.microsoft.com/en-us/windows/release-health/windows-message-center" rel="noopener">learn.microsoft.com/windows/release-health</a>
+- KB5136489 Windows Server 2025: <a href="https://support.microsoft.com/help/5136489" rel="noopener">support.microsoft.com/help/5136489</a>
+- KB อื่นตามตาราง: <a href="https://support.microsoft.com/help/5136487" rel="noopener">5136487</a> · <a href="https://support.microsoft.com/help/5136490" rel="noopener">5136490</a> · <a href="https://support.microsoft.com/help/5136483" rel="noopener">5136483</a> · <a href="https://support.microsoft.com/help/5136493" rel="noopener">5136493</a> (ตัวเลข KB ตรวจจากหน้า release health ผมยังไม่ได้เปิดหน้าเหล่านี้)
+- Microsoft Update Catalog: <a href="https://catalog.update.microsoft.com/" rel="noopener">catalog.update.microsoft.com</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: ภาพประกอบจาก DOJOJIN.TECH (โลโก้ Windows เป็นของ Microsoft)
+- อินโฟกราฟิก: ภาพประกอบจาก DOJOJIN.TECH จากข้อมูลในข่าวนี้
+
+ภาพทั้งหมดใช้ประกอบข่าว (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>

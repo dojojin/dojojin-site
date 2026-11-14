@@ -1,0 +1,330 @@
+---
+title: "แอปแนะนำ: Syncthing-Fork ซิงก์ไฟล์ระหว่างมือถือ Android กับคอมพิวเตอร์โดยตรง ไม่ผ่านคลาวด์ ฟรีและโอเพนซอร์ส"
+topic: software
+type: news
+tags: [app, open-source, android]
+date: 2026-11-14T10:40:00+07:00
+section: tech
+sourceName: "Syncthing-Fork (GitHub)"
+sourceUrl: "https://github.com/researchxxl/syncthing-android"
+description: "แนะนำ Syncthing-Fork แอป Android ที่ซิงก์โฟลเดอร์กับคอมพิวเตอร์หรือมือถืออีกเครื่องโดยตรง ไม่ต้องอัปโหลดขึ้นคลาวด์ ต้องติดตั้ง Syncthing ที่อีกเครื่องด้วย โอเพนซอร์ส MPL-2.0 ใช้ฟรี รุ่นล่าสุด 2.1.7.0 พร้อมขั้นตอนจับคู่อุปกรณ์และแชร์โฟลเดอร์"
+kicker: "แอปแนะนำ"
+lead: "อยากให้รูปในมือถือไปอยู่ในคอมเองอัตโนมัติ โดยไม่ต้องอัปโหลดขึ้นคลาวด์ของใคร ผมแนะนำ Syncthing-Fork ครับ แอป Android ที่ซิงก์โฟลเดอร์ตรงระหว่างเครื่องของเราเอง ใช้ฟรี เป็นโอเพนซอร์ส แต่ต้องตั้งค่าเองนิดหน่อย ผมเลยเขียนขั้นตอนไว้ละเอียดครับ"
+meta: "เรียบเรียงจาก GitHub ของ Syncthing-Fork, หน้า F-Droid, docs.syncthing.net และ syncthing.net · ข้อมูล ณ 14 พฤศจิกายน 2569"
+cover: "/media/posts/news/syncthing-fork-android-app-review/cover.jpg"
+coverAlt: "ภาพหน้าจอ Syncthing-Fork สามหน้า ซ้ายคือแท็บ Devices แสดงรายชื่ออุปกรณ์และสถานะ Syncing กลางคือแท็บ Folders แสดงโฟลเดอร์ที่แชร์ ขวาคือแท็บ Status แสดงปุ่ม Follow run conditions และเหตุผลที่ Syncthing ทำงานอยู่"
+---
+
+<section class="section">
+
+## Syncthing-Fork คืออะไร
+
+<div class="split">
+<div class="prose">
+
+Syncthing คือโปรแกรมซิงก์ไฟล์แบบเปิดซอร์สครับ ไม่มีเซิร์ฟเวอร์กลางเก็บไฟล์ของเรา ไฟล์วิ่งตรงระหว่างอุปกรณ์ที่เราอนุญาตเท่านั้น
+
+หน้า F-Droid อธิบายว่า Syncthing มาแทนบริการซิงก์และคลาวด์แบบปิด ด้วยของที่เปิด น่าเชื่อถือ และกระจายศูนย์ ข้อมูลเป็นของเราคนเดียว เราเลือกเองว่าจะเก็บที่ไหน แชร์กับใคร และส่งยังไง
+
+ส่วน Syncthing-Fork คือแอปที่ห่อ Syncthing ให้ใช้บน Android หน้า F-Droid บอกว่ามีหน้าจอของแอปเอง ไม่ต้องเปิดเว็บ GUI (หน้าตั้งค่าผ่านเบราว์เซอร์) ของ Syncthing
+
+**สำคัญ:** แอปนี้ไม่ใช่บริการคลาวด์ครับ ลงเครื่องเดียวไม่มีประโยชน์ ต้องมี Syncthing อีกเครื่องให้ซิงก์ด้วย เช่น คอมพิวเตอร์ที่ลง Syncthing จาก <a href="https://syncthing.net/downloads/" rel="noopener">syncthing.net</a> หรือมือถือเครื่องที่สองที่ลง Syncthing-Fork
+
+</div>
+<figure class="split-fig"><img src="/media/posts/news/syncthing-fork-android-app-review/igv-1.jpg" width="1600" height="1613" loading="lazy" alt="อินโฟกราฟิกข้อมูลเร็ว ๆ ของ Syncthing-Fork สำหรับ Android ใช้ฟรี โอเพนซอร์ส MPL-2.0 ต้องใช้ Android 6.0 ขึ้นไปตามหน้า F-Droid รุ่นล่าสุด 2.1.7.0 วันที่ 21 ต.ค. 2569 บน GitHub ติดตั้งจาก F-Droid หรือ GitHub ซิงก์ตรงระหว่างเครื่อง ไม่ผ่านคลาวด์ ต้องมี Syncthing อีกฝั่ง" /></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## Fork ของอะไร และต่างจากแอปทางการอย่างไร
+
+<div class="prose">
+
+ที่ชื่อมีคำว่า "Fork" เพราะแตกออกมาจากแอป Android ตัวทางการของ Syncthing ครับ (fork คือการก๊อปโค้ดโครงการเดิมมาพัฒนาต่อเป็นอีกสาย) ผมตรวจที่ต้นทางแล้ว สรุปได้แบบนี้
+
+- **แอปทางการเลิกพัฒนาแล้ว:** หน้า GitHub ของ <a href="https://github.com/syncthing/syncthing-android" rel="noopener">syncthing/syncthing-android</a> มีประกาศ "Discontinued" ตอนบนสุด บอกว่ารุ่นสุดท้ายบน GitHub กับ F-Droid คือ Syncthing เวอร์ชันธันวาคม 2567 และ repo ถูกเก็บถาวร (archived) ผู้ดูแลให้เหตุผลว่า Google ทำให้การเผยแพร่บน Play ยากหรือแทบเป็นไปไม่ได้ และไม่มีคนดูแลต่อ เรื่องนี้โพสต์ไว้ใน <a href="https://forum.syncthing.net/t/discontinuing-syncthing-android/23002" rel="noopener">ฟอรัมของ Syncthing</a> เมื่อ 20 ตุลาคม 2567
+- **Syncthing-Fork แยกออกมาจากแอปนั้น:** README ของ Fork เขียนว่า "forked from syncthing/syncthing-android" และขอบคุณอดีตผู้ดูแลอย่าง Catfriend1, imsodin และ nutomic ใน README ยังมีหัวข้อ "Switching from the deprecated official version" ไว้ให้คนที่ย้ายมาจากแอปทางการ
+- **ยังอัปเดตอยู่:** repo ปัจจุบันอยู่ที่ <a href="https://github.com/researchxxl/syncthing-android" rel="noopener">github.com/researchxxl/syncthing-android</a> (ลิงก์เดิมของ Catfriend1 พามาที่นี่) ไม่ได้ถูกเก็บถาวร และหน้า GitHub ขึ้นว่าอัปเดตล่าสุดเมื่อ 12 พฤศจิกายน 2569
+
+ผมไม่เจอข้อความจากทีม Syncthing ที่รับรองแอป Fork นี้โดยตรง เอกสารของ Syncthing บอกแค่กว้าง ๆ ว่ามี "community flavors" หลายแบบที่ใช้แกน Syncthing เดียวกัน สรุปคือ Fork นี้เป็นโครงการของชุมชน ไม่ใช่แอปของทีม Syncthing ครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ราคา ไลเซนส์ และรุ่นล่าสุด
+
+<div class="prose">
+
+Syncthing-Fork ใช้ฟรีครับ ไลเซนส์ Mozilla Public License 2.0 (MPL-2.0) หน้า GitHub กับหน้า F-Droid บอกตรงกัน ใครอยากสนับสนุนผู้พัฒนา มีลิงก์บริจาคผ่าน GitHub Sponsors
+
+รุ่นล่าสุดคือ **v2.1.7.0**
+
+- ประกาศบน GitHub วันที่ 21 ตุลาคม 2569 (ตามเวลา UTC)
+- ขึ้นบน F-Droid วันที่ 25 ตุลาคม 2569
+
+บันทึกรุ่นสั้นมาก มีแค่ 2 ข้อ คือลดขนาดแพ็กเกจ และปรับปรุงการตรวจใบรับรองกับคีย์ของ HTTPS แบบกำหนดเอง ส่วน Syncthing ฝั่งคอมพิวเตอร์ หน้าดาวน์โหลดทางการก็ขึ้นรุ่น v2.1.7 ในช่วงเดียวกัน
+
+**ระบบที่ใช้ได้:** หน้า F-Droid บอกว่ารุ่นนี้ต้องใช้ Android 6.0 ขึ้นไป มีไฟล์ติดตั้งของ arm64-v8a, armeabi-v7a, x86 และ x86_64
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ติดตั้งจากไหน
+
+<div class="prose">
+
+README ของโปรเจกต์บอกให้ไปที่ส่วน Releases หรือ F-Droid ครับ (F-Droid คือร้านแอป Android ที่รวมแต่แอปโอเพนซอร์ส)
+
+1. **F-Droid (แนะนำ):** ติดตั้งแอป F-Droid ก่อน แล้วค้นหา Syncthing-Fork หรือเปิดหน้า <a href="https://f-droid.org/packages/com.github.catfriend1.syncthingfork/" rel="noopener">f-droid.org/packages/com.github.catfriend1.syncthingfork</a> หน้า F-Droid เตือนว่าโหลดไฟล์ APK ตรง ๆ จะไม่มีแจ้งเตือนอัปเดต และปลอดภัยน้อยกว่า เลยแนะนำให้ใช้แอป F-Droid
+2. **GitHub:** โหลดไฟล์ .apk จาก <a href="https://github.com/researchxxl/syncthing-android/releases/latest" rel="noopener">Releases</a> รุ่น 2.1.7.0 มีไฟล์รวมและไฟล์แยกตามชิป (arm64-v8a, armeabi-v7a, x86, x86_64)
+3. **Obtainium:** README มีปุ่มสำหรับติดตามอัปเดตจาก GitHub ผ่านแอป Obtainium
+
+ส่วน Google Play ผมไม่เจอว่า README หรือหน้า F-Droid ลิงก์ไปแอปของ Fork นี้บน Play เลยไม่ได้บอกว่ามีให้โหลดที่นั่นครับ ถ้าเจอแอปชื่อคล้ายกันบน Play ให้ดูชื่อผู้พัฒนาก่อน
+
+</div>
+
+</section>
+
+<section class="section">
+
+## สิ่งที่ Fork ทำเพิ่มจากแอปทางการ
+
+<div class="split">
+<figure class="news-fig news-fig--tall news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/syncthing-fork-android-app-review/img-2.jpg" width="800" height="1280" loading="lazy" alt="ภาพหน้าจอ Syncthing-Fork แท็บ Devices แสดงอุปกรณ์ Anna สถานะ Syncing 71 เปอร์เซ็นต์ Dad Disconnected Felix Syncing 67 เปอร์เซ็นต์ Kevin Syncing 78 เปอร์เซ็นต์ และ Mum Disconnected พร้อมความเร็วดาวน์โหลดและอัปโหลด" /></div><figcaption><span class="news-fig__credit">ภาพ: Syncthing-Fork (ภาพตัวอย่างบน F-Droid) · <a href="https://f-droid.org/packages/com.github.catfriend1.syncthingfork/" rel="noopener">f-droid.org</a></span></figcaption></figure>
+<div class="prose">
+
+หน้า F-Droid สรุปจุดเด่นของ Fork ไว้เป็นข้อ ๆ ผมเรียบเรียงใหม่ให้อ่านง่ายครับ
+
+- ดูความคืบหน้าการซิงก์ของโฟลเดอร์ อุปกรณ์ และภาพรวมได้จากหน้าจอแอปเลย
+- มีโหมด "ซิงก์ทุกชั่วโมง" ช่วยประหยัดแบตเตอรี่
+- ตั้งเงื่อนไขการซิงก์แยกตามอุปกรณ์และตามโฟลเดอร์ได้
+- มีหน้า Recent changes กดเปิดไฟล์ที่เพิ่งเปลี่ยนได้
+- แก้ค่าโฟลเดอร์และอุปกรณ์ได้ ไม่ว่า Syncthing จะทำงานอยู่หรือไม่
+- แอปบอกเหตุผลว่าตอนนี้ Syncthing ทำงานหรือไม่ทำงานเพราะอะไร
+- ผู้พัฒนาบอกว่าแก้ปัญหา "battery eater" (กินแบตมาก) แล้ว
+- ค้นหาอุปกรณ์ Syncthing อื่นในเครือข่ายเดียวกันแล้วเพิ่มได้ง่าย
+- รองรับการซิงก์สองทางบนการ์ด SD ภายนอกตั้งแต่ Android 11
+
+ในภาพคือแท็บ Devices แท็บแรกของแอป แต่ละแถวคืออุปกรณ์ที่จับคู่ไว้ บอกชื่อ สถานะ (Syncing, Disconnected) และความเร็วดาวน์โหลดกับอัปโหลด วงกลมข้างชื่อแอปคือภาพรวมความคืบหน้า
+
+ชื่ออุปกรณ์ในภาพเป็นตัวอย่างของผู้พัฒนา ไม่ใช่ของผมนะครับ
+
+</div>
+</div>
+
+<div class="split">
+<div class="prose">
+
+ในภาพคือแท็บ Folders แต่ละแถวคือโฟลเดอร์ในมือถือที่ให้ Syncthing ดูแล บอกที่อยู่ของโฟลเดอร์ จำนวนไฟล์ และขนาด พร้อมสถานะ เช่น
+
+- **Syncing 76%** กำลังซิงก์
+- **Idle** ซิงก์ครบแล้ว
+- **Unshared** (สีส้ม) โฟลเดอร์นี้ยังไม่ได้แชร์ให้อุปกรณ์ไหนเลย
+
+โฟลเดอร์แรกในภาพคือโฟลเดอร์กล้อง (DCIM) ซึ่งเป็นงานที่คนใช้กันบ่อย คือซิงก์รูปจากมือถือเข้าคอมครับ
+
+</div>
+<figure class="news-fig news-fig--tall news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/syncthing-fork-android-app-review/img-1.jpg" width="800" height="1280" loading="lazy" alt="ภาพหน้าจอ Syncthing-Fork แท็บ Folders แสดงโฟลเดอร์ Android Kamera สถานะ Unshared 459 ไฟล์ Kevin-Music สถานะ Syncing 76 เปอร์เซ็นต์ 13 จาก 18 ไฟล์ และ Syncthing Kamera สถานะ Idle" /></div><figcaption><span class="news-fig__credit">ภาพ: Syncthing-Fork (ภาพตัวอย่างบน F-Droid) · <a href="https://f-droid.org/packages/com.github.catfriend1.syncthingfork/" rel="noopener">f-droid.org</a></span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## เริ่มใช้: จับคู่มือถือกับคอมพิวเตอร์ แล้วแชร์โฟลเดอร์
+
+<div class="split">
+<figure class="split-fig"><img src="/media/posts/news/syncthing-fork-android-app-review/igv-2.jpg" width="1600" height="1400" loading="lazy" alt="อินโฟกราฟิกเริ่มใช้ 4 ขั้น จับคู่มือถือกับคอมพิวเตอร์ ขั้นที่ 1 ติดตั้ง Syncthing ทั้งสองเครื่อง ขั้นที่ 2 คัดลอก Device ID ของอีกเครื่อง หรือสแกน QR ขั้นที่ 3 Add Device ทั้งสองฝั่ง เลือกโฟลเดอร์ที่จะแชร์ ขั้นที่ 4 รอสักครู่ เครื่องเชื่อมกัน ไฟล์เริ่มซิงก์ ต้องทำทั้งสองฝั่ง ไม่งั้นไม่เชื่อมกัน" /></figure>
+<div class="prose">
+
+หลักของ Syncthing ตามคู่มือทางการ (Getting Started) คือ สองเครื่องจะคุยกันได้ก็ต่อเมื่อ **ทั้งสองเครื่องใส่ Device ID ของกันและกัน** Device ID คือรหัสประจำเครื่องที่สร้างตอนเปิดโปรแกรมครั้งแรก ไม่ต้องเก็บเป็นความลับ
+
+ในภาพคืออินโฟกราฟิกที่ผมสรุปขั้นตอนไว้ 4 ข้อ รายละเอียดแต่ละข้อมีดังนี้ครับ
+
+1. **ติดตั้งทั้งสองเครื่อง** ฝั่งคอมพิวเตอร์โหลดจาก <a href="https://syncthing.net/downloads/" rel="noopener">syncthing.net/downloads</a> หน้านั้นมีทั้งตัวหลักสำหรับ Windows, macOS, Linux และตัวห่อสำหรับ Windows กับ macOS ที่ใช้ง่ายกว่า ฝั่งมือถือติดตั้ง Syncthing-Fork
+2. **ดู Device ID ของอีกเครื่อง** บนคอมพิวเตอร์ เปิดหน้า GUI ที่ http://127.0.0.1:8384 แล้วเลือก Actions → Show ID ส่วนบนมือถือ เปิดเมนูข้างของแอปแล้วแตะ Show device ID
+3. **เพิ่มอุปกรณ์ทั้งสองฝั่ง** กด Add Remote Device (บนคอมพิวเตอร์) หรือไอคอนเพิ่มอุปกรณ์ (บนมือถือ) วาง Device ID ของอีกเครื่อง ตั้งชื่อเล่น (ไม่บังคับ) เลือกโฟลเดอร์ที่จะแชร์ แล้วกดบันทึก
+4. **รอสักครู่** คู่มือบอกว่าหลังบันทึก อุปกรณ์ใหม่จะขึ้นในรายการ (ตอนแรกยังขึ้นว่าไม่ได้เชื่อมต่อ) แล้วจะเชื่อมกันภายในประมาณ 1 นาที ขั้นที่ 3 ต้องทำทั้งสองฝั่ง ทำฝั่งเดียวจะไม่เชื่อมกัน
+
+พอเชื่อมแล้ว ไฟล์ที่เพิ่มในโฟลเดอร์ที่แชร์ ไม่ว่าฝั่งไหน จะถูกซิงก์ไปอีกฝั่ง
+
+คู่มือเตือนด้วยว่า ถ้าใช้ Syncthing เวอร์ชันที่เสริมฟังก์ชันของระบบ เช่นแอป Android อาจต้องเข้า Web GUI เพื่อเปิดซิงก์โฟลเดอร์หรือตั้งค่าบางอย่าง
+
+ผมยังไม่ได้ลองซิงก์จริงบนเครื่องตัวเองนะครับ ขั้นตอนข้างบนเรียบเรียงจากคู่มือทางการและภาพหน้าจอของแอป
+
+</div>
+</div>
+
+<div class="split">
+<div class="prose">
+
+ในภาพคือเมนูข้างของแอป เปิดจากไอคอนสามขีดมุมซ้ายบน เมนูที่ใช้บ่อยคือ
+
+- **Show device ID** ดู Device ID ของมือถือเครื่องนี้ เอาไปวางบนคอมพิวเตอร์
+- **Recent changes** ดูไฟล์ที่เพิ่งเปลี่ยน
+- **Web GUI** เปิดหน้าตั้งค่าเต็มของ Syncthing
+- **Import and Export** สำรองหรือกู้คืนค่าตั้งค่า
+
+ใครย้ายมาจากแอปทางการ วิธีที่ README ของ Fork ลิงก์ไปคือ ส่งออกค่าตั้งค่าจากแอปเดิม บีบไฟล์ cert.pem, https-cert.pem, https-key.pem, key.pem และ config.xml เป็น config.zip แล้วนำเข้าที่ Import and Export ของ Fork
+
+ขั้นตอนนี้มีจุดจุกจิกหลายข้อ เช่น แอปจะขึ้นข้อความผิดพลาด ทั้งที่นำเข้าสำเร็จแล้ว แนะนำให้ทำตามบทความ wiki ของโปรเจกต์ครับ
+
+</div>
+<figure class="news-fig news-fig--tall news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/syncthing-fork-android-app-review/img-3.jpg" width="800" height="1280" loading="lazy" alt="ภาพเมนูข้างของ Syncthing-Fork มีรายการ Show device ID, Recent changes, Web GUI, Import and Export, Restart และ Tips and Tricks" /></div><figcaption><span class="news-fig__credit">ภาพ: Syncthing-Fork (ภาพตัวอย่างบน F-Droid) · <a href="https://f-droid.org/packages/com.github.catfriend1.syncthingfork/" rel="noopener">f-droid.org</a></span></figcaption></figure>
+</div>
+
+<div class="split">
+<figure class="news-fig news-fig--tall news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/syncthing-fork-android-app-review/img-4.jpg" width="800" height="1280" loading="lazy" alt="ภาพหน้าจอ Add Device ของ Syncthing-Fork มีช่องใส่ Device ID พร้อมไอคอน QR รายการ Discovered devices สองรายการ ช่องชื่อ ที่อยู่ dynamic และสวิตช์ Introducer กับ Pause Device" /></div><figcaption><span class="news-fig__credit">ภาพ: Syncthing-Fork (ภาพตัวอย่างบน F-Droid) · <a href="https://f-droid.org/packages/com.github.catfriend1.syncthingfork/" rel="noopener">f-droid.org</a></span></figcaption></figure>
+<div class="prose">
+
+ในภาพคือหน้าจอ Add Device ที่ขึ้นมาตอนกดเพิ่มอุปกรณ์ในแอป
+
+- **ช่องบนสุด** ไว้วาง Device ID มีไอคอน QR ข้างช่อง ใช้สแกน QR จากอีกเครื่องได้
+- **Discovered devices** รายการอุปกรณ์ Syncthing ที่แอปค้นเจอในเครือข่ายเดียวกัน แตะเลือกได้เลย ไม่ต้องพิมพ์รหัสยาว ๆ ตรงกับจุดเด่นข้อ "ค้นหาอุปกรณ์ในเครือข่ายเดียวกัน" ที่หน้า F-Droid เขียนไว้
+- **ช่องชื่อ** ชื่อเล่นของอุปกรณ์
+- **Introducer** ให้อุปกรณ์นี้แนะนำอุปกรณ์อื่นให้เรา ผมว่าปิดไว้ก่อนก็พอ
+- **Pause Device** พักการซิงก์กับเครื่องนั้นชั่วคราว
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ตรวจสถานะและเงื่อนไขการทำงาน
+
+<div class="split">
+<div class="prose">
+
+ในภาพคือแท็บ Status บอกว่าตอนนี้ Syncthing ทำงานอยู่หรือเปล่า พร้อมเหตุผลเป็นข้อ ๆ ตัวอย่างในภาพกำลังทำงาน เพราะเครื่องต่อ Wi-Fi ที่ไม่จำกัดปริมาณ (non-metered) อยู่ และแอปตั้งไว้ว่าไม่ซิงก์บนข้อมูลมือถือ ช่วยกันเน็ตมือถือหมดแบบไม่ตั้งใจครับ
+
+ปุ่มด้านบนมี 3 โหมด
+
+- **Follow run conditions** ทำตามเงื่อนไขที่ตั้งไว้
+- **Force start ignore run conditions** บังคับเริ่ม ไม่สนเงื่อนไข
+- **Force stop ignore run conditions** บังคับหยุด
+
+ด้านล่างยังเห็นเวลาที่ทำงาน (Uptime) การใช้ RAM (107.5 MiB ในภาพตัวอย่าง) และความเร็วดาวน์โหลด
+
+</div>
+<figure class="news-fig news-fig--tall news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/syncthing-fork-android-app-review/img-5.jpg" width="800" height="1280" loading="lazy" alt="ภาพหน้าจอ Syncthing-Fork แท็บ Status มีปุ่ม Follow run conditions, Force start ignore run conditions และ Force stop ignore run conditions ข้อความ Syncthing is running พร้อมเหตุผลว่าไม่ได้ตั้งให้ทำงานบนข้อมูลมือถือ อนุญาตบน WiFi ที่ไม่จำกัดปริมาณ และตัวเลข RAM Usage 107.5 MiB" /></div><figcaption><span class="news-fig__credit">ภาพ: Syncthing-Fork (ภาพตัวอย่างบน F-Droid) · <a href="https://f-droid.org/packages/com.github.catfriend1.syncthingfork/" rel="noopener">f-droid.org</a></span></figcaption></figure>
+</div>
+
+<div class="split">
+<figure class="news-fig news-fig--tall news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/syncthing-fork-android-app-review/img-6.jpg" width="800" height="1280" loading="lazy" alt="ภาพการแจ้งเตือนของ Syncthing-Fork บนหน้าจอ Android ข้อความ Syncthing is running: 3 devices online and up to d" /></div><figcaption><span class="news-fig__credit">ภาพ: Syncthing-Fork (ภาพตัวอย่างบน F-Droid) · <a href="https://f-droid.org/packages/com.github.catfriend1.syncthingfork/" rel="noopener">f-droid.org</a></span></figcaption></figure>
+<div class="prose">
+
+ในภาพคือการแจ้งเตือนที่ค้างอยู่ในแถบแจ้งเตือนของ Android ตอนแอปทำงาน ขึ้นว่า "Syncthing is running: 3 devices online" บอกจำนวนอุปกรณ์ที่ออนไลน์ ผมเข้าใจว่าเป็นการแจ้งเตือนปกติของแอปที่ทำงานเบื้องหลัง
+
+อีกเรื่อง หน้า F-Droid แสดงรายการสิทธิ์ที่แอปขอ ซึ่งรวมการเข้าถึงตำแหน่งที่ตั้งด้วย ผมไม่ได้ตรวจว่าแอปเอาสิทธิ์นี้ไปทำอะไร ใครสงสัย อ่านรายการสิทธิ์ทั้งหมดในหน้า F-Droid ก่อนติดตั้งครับ
+</div>
+</div>
+
+<div class="split">
+<div class="prose">
+
+ในภาพคือหน้า Recent changes รายการไฟล์ที่เพิ่งเปลี่ยนหรือเพิ่งมาถึง บอกชื่อไฟล์ โฟลเดอร์ที่ไฟล์อยู่ ชื่อเครื่องที่ส่งมา และเวลา หน้า F-Droid บอกว่าแตะที่ไฟล์เพื่อเปิดดูได้ ผมว่าตรงนี้ใช้เช็กได้ดีว่ารูปที่เพิ่งถ่ายมาถึงคอมหรือยังครับ
+
+ภาษาในภาพเป็นเยอรมัน (Letzte Änderungen) เพราะภาพตัวอย่างถ่ายจากเครื่องที่ตั้งภาษาเยอรมัน ผมเดาว่าแอปแสดงตามภาษาของเครื่อง แต่ยังไม่ได้ลองกับภาษาไทย
+
+</div>
+<figure class="news-fig news-fig--tall news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/syncthing-fork-android-app-review/img-7.jpg" width="800" height="1280" loading="lazy" alt="ภาพหน้าจอ Recent changes ของ Syncthing-Fork เป็นภาษาเยอรมัน (Letzte Änderungen) แสดงรายการไฟล์ภาพหน้าจอและรูปถ่ายล่าสุด ชื่อโฟลเดอร์ ชื่อเครื่อง และเวลา" /></div><figcaption><span class="news-fig__credit">ภาพ: Syncthing-Fork (ภาพตัวอย่างบน F-Droid) · <a href="https://f-droid.org/packages/com.github.catfriend1.syncthingfork/" rel="noopener">f-droid.org</a></span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## เทียบกับ LocalSend ที่แนะนำไปก่อนหน้านี้
+
+<div class="prose">
+
+ผมเคยแนะนำ <a href="/news/localsend-app-review/">LocalSend</a> ไปแล้ว สองแอปนี้ดูคล้ายกัน แต่เหมาะกับคนละงานครับ
+
+| | LocalSend | Syncthing-Fork |
+|---|---|---|
+| งานหลัก | ส่งไฟล์ครั้งเดียวหาเครื่องใกล้ ๆ | ซิงก์โฟลเดอร์ต่อเนื่องระหว่างเครื่องที่จับคู่ไว้ |
+| ตั้งค่า | เปิดแอปทั้งสองเครื่อง ส่งได้เลย | จับคู่ด้วย Device ID ทั้งสองฝั่ง แล้วเลือกโฟลเดอร์ |
+| เครือข่าย | Wi-Fi หรือ LAN วงเดียวกัน ไม่ต้องใช้อินเทอร์เน็ต | ใช้ในวงเดียวกันได้ และตามเอกสารมีเซิร์ฟเวอร์ค้นหา (discovery) ช่วยหาเครื่องที่อยู่นอกวง |
+| ฝั่งที่ต้องลง | LocalSend ทั้งสองเครื่อง | Syncthing ทั้งสองเครื่อง |
+
+ผมว่าถ้าแค่อยากส่งรูปไม่กี่ใบเข้าคอมตอนนี้ LocalSend ง่ายกว่า แต่ถ้าอยากให้โฟลเดอร์ เช่น รูปถ่ายหรือโน้ต ตรงกันเองทุกครั้งที่มีไฟล์ใหม่ Syncthing เหมาะกว่า แลกกับต้องตั้งค่ามากกว่าครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ข้อควรรู้ก่อนใช้
+
+<div class="prose">
+
+- **เป็นการซิงก์ ไม่ใช่การสำรองข้อมูล:** ลบไฟล์ฝั่งหนึ่ง อีกฝั่งก็อาจถูกลบตาม ข้อนี้ผมสรุปจากหลักการซิงก์ทั่วไป ไม่ใช่ข้อความใน README ถ้าต้องการสำรอง ให้ตั้งโฟลเดอร์เป็นแบบส่งอย่างเดียวหรือรับอย่างเดียว และอ่านเอกสารของ Syncthing เรื่องประเภทโฟลเดอร์ก่อนใช้กับไฟล์สำคัญ
+- **เครื่องต้องเปิดอยู่ทั้งสองฝั่ง:** ไม่มีเซิร์ฟเวอร์กลางเก็บไฟล์ ถ้าคอมปิดอยู่ มือถือก็ไม่มีที่ส่งไป จนกว่าคอมจะเปิดใหม่
+- **การเข้ารหัส:** เอกสารความปลอดภัยของ Syncthing บอกว่าการรับส่งระหว่างอุปกรณ์ป้องกันด้วย TLS (การเข้ารหัสแบบเดียวกับเว็บ https) และเชื่อมต่อได้เฉพาะอุปกรณ์ที่อยู่ในรายการอนุญาต (ตรวจจากลายนิ้วมือใบรับรองของ Device ID)
+- **การค้นหาผ่านเซิร์ฟเวอร์กลาง:** เอกสารเดียวกันบอกว่า ค่าเริ่มต้นเปิด Global Discovery ไว้ ซึ่งจะส่งรหัสอุปกรณ์กับพอร์ตไปที่เซิร์ฟเวอร์ค้นหา ไม่สบายใจก็ปิดได้ แต่เครื่องที่อยู่นอกวงเครือข่ายเดียวกันจะหากันไม่เจอ
+- **ต้องปรับค่าแบตเตอรี่ของมือถือ:** หน้า GitHub มีบทความแยกตามผู้ผลิตเครื่อง (manufacturer specific) สำหรับเครื่องที่ระบบชอบปิดแอปเบื้องหลัง ผมยังไม่ได้ลองกับเครื่องรุ่นไหนครับ
+- **ขอความช่วยเหลือ:** README ขอให้ถามในฟอรัมหรือโซเชียลก่อนเปิด issue บน GitHub
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ใครควรใช้
+
+<div class="prose">
+
+- คนที่อยากซิงก์รูปหรือไฟล์จากมือถือเข้าคอมโดยไม่ผ่านคลาวด์ของบริษัทใด
+- คนที่ดูแลหลายเครื่องและอยากให้โฟลเดอร์เดียวกันตรงกัน เช่น โน้ต ไฟล์ตั้งค่า รูปถ่าย
+- คนที่เคยใช้แอป Syncthing ทางการบน Android แล้วต้องหาตัวต่อ
+- คนที่ยอมตั้งค่าเอง และชอบแอปฟรีที่เปิดซอร์ส
+
+ถ้าอยากได้แอปที่เปิดแล้วใช้ได้เลย ไม่ต้องตั้งอะไร ลองดู LocalSend ก่อนครับ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- หน้าโปรเจกต์ README และไลเซนส์: <a href="https://github.com/researchxxl/syncthing-android" rel="noopener">github.com/researchxxl/syncthing-android</a>
+- รุ่นล่าสุดและวันที่: <a href="https://github.com/researchxxl/syncthing-android/releases/latest" rel="noopener">GitHub releases (v2.1.7.0)</a>
+- หน้าแอปบน F-Droid: <a href="https://f-droid.org/packages/com.github.catfriend1.syncthingfork/" rel="noopener">f-droid.org</a>
+- บทความย้ายจากแอปทางการ: <a href="https://github.com/researchxxl/syncthing-android/blob/main/wiki/migration/Switching-from-the-deprecated-official-version.md" rel="noopener">Switching from the deprecated official version</a>
+- แอปทางการที่เลิกพัฒนา: <a href="https://github.com/syncthing/syncthing-android" rel="noopener">syncthing/syncthing-android</a> และ <a href="https://forum.syncthing.net/t/discontinuing-syncthing-android/23002" rel="noopener">ประกาศบนฟอรัม</a>
+- คู่มือเริ่มต้นและความปลอดภัย: <a href="https://docs.syncthing.net/intro/getting-started.html" rel="noopener">Getting Started</a>, <a href="https://docs.syncthing.net/users/security.html" rel="noopener">Security Principles</a>
+- ดาวน์โหลดฝั่งคอมพิวเตอร์: <a href="https://syncthing.net/downloads/" rel="noopener">syncthing.net/downloads</a>
+
+</div>
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพหน้าจอและภาพปก: ภาพ: Syncthing-Fork (ภาพตัวอย่างที่ผู้พัฒนาอัปโหลดไว้บน <a href="https://f-droid.org/packages/com.github.catfriend1.syncthingfork/" rel="noopener">f-droid.org</a>) ภาพตัวอย่างอาจเป็นหน้าตาของรุ่นเก่ากว่ารุ่นล่าสุด และชื่ออุปกรณ์ในภาพเป็นข้อมูลตัวอย่าง ภาพปกประกอบจากภาพหน้าจอ 3 ภาพ
+- อินโฟกราฟิก: ภาพประกอบจาก DOJOJIN.TECH จากข้อมูลในข่าวนี้
+
+ภาพใช้ประกอบการแนะนำ (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>

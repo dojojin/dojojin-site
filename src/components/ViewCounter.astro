@@ -20,8 +20,11 @@
   (async () => {
     const id = idOf(location.pathname);
     const writes = [];
-    if (once(`dojojin_pv:${id}`)) writes.push(bump(`pageviews/${id}`));
-    if (once('dojojin_visited')) writes.push(bump('meta/visitors'));
+    // Count only on production: localhost, the Tailscale preview and *.pages.dev previews read counts but never add to them.
+    if (/^(www\.)?dojojin\.tech$/.test(location.hostname)) {
+      if (once(`dojojin_pv:${id}`)) writes.push(bump(`pageviews/${id}`));
+      if (once('dojojin_visited')) writes.push(bump('meta/visitors'));
+    }
     // One write per commit: a rejected one (bad page id) must not cancel the other.
     await Promise.all(writes.map((w) => fetch(`${api}:commit?key=${apiKey}`, { method: 'POST', body: JSON.stringify({ writes: [w] }) }).catch(() => {})));
 
