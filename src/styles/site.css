@@ -660,17 +660,15 @@ a.grade-card.project:hover { border-color: var(--accent); }
 }
 @media (max-width: 899px) { .me__side { border-top: 1px solid var(--border-hairline); padding-top: var(--space-6); } }
 
-/* Home blocks. Column count must match the row: top row = 3 blocks (ข่าว · Review · ความรู้), never 2+1,
-   so 1 column until 1024px then 3; second row = 2 blocks (ท่องเที่ยว · Data), 2 columns from 769px. */
+/* Home blocks. Column count must match the row, never 2+1: both rows = 3 blocks (ข่าว · Review · ความรู้ /
+   แอปแนะนำ · ท่องเที่ยว · Data), so 1 column until 1024px then 3. */
 .hub { display: grid; gap: var(--space-6); grid-template-columns: 1fr; }
-@media (min-width: 769px) { .hub--pair { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 1024px) {
   .hub--three { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
   .hub--three .hub__lead b { font-size: var(--fs-body); }
   .hub--three .hub__list li { flex-direction: column; gap: 0; }   /* narrow block: date goes under the title */
   .hub--three .hub__block > .meta { min-height: 2lh; }          /* blurbs wrap to 1 or 2 lines: keep images level */
 }
-.hub--pair .hub__block > .meta { min-height: 2lh; }
 .hub__block { min-width: 0; display: flex; flex-direction: column; background: var(--surface-elevated);
   border: 1px solid var(--border-hairline); border-radius: var(--radius-lg); padding: var(--space-4); }
 .hub__block > .meta { margin: 0 0 var(--space-3); }

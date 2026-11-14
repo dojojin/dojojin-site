@@ -17,14 +17,19 @@ const mixed = (items, n = 3) => {
 };
 // The 4 blocks at the top: what the site offers, one block each (newest post big + 3 more as a list).
 const HUB = ['news', 'review', 'knowledge'];   // top row: 3 blocks
-const PAIR = ['eat', 'data'];                    // second row: 2 blocks
+const PAIR = ['app', 'eat', 'data'];             // second row: 3 blocks (app = news posts with section app)
+// "app" is not a menu type: software recommendations live under /news/ but get their own block, so the news block skips them.
+const APP = { name: 'แอปแนะนำ', blurb: 'แอปและโปรแกรมน่าใช้ บอกวิธีติดตั้ง ราคา และข้อควรระวัง', href: '/tag/app/' };
+const isApp = (i) => i.type === 'news' && i.news.includes('app');
 const block = (type) => {
-  const items = feed.filter((i) => i.type === type);
+  const all = type === 'app' ? feed.filter(isApp) : feed.filter((i) => i.type === type);
+  const items = type === 'news' ? all.filter((i) => !isApp(i)) : all;
   const picks = type === 'review' ? mixed(items, 4) : items.slice(0, 4);
-  return { type, t: TYPES[type], count: items.length, lead: picks[0], rest: picks.slice(1) };
+  const t = type === 'app' ? APP : { ...TYPES[type], href: `/${type}/` };
+  return { type, t, count: all.length, lead: picks[0], rest: picks.slice(1) };
 };
 const hub = HUB.filter((type) => TYPES[type]).map(block).filter((b) => b.lead);
-const pair = PAIR.filter((type) => TYPES[type]).map(block).filter((b) => b.lead);
+const pair = PAIR.filter((type) => type === 'app' || TYPES[type]).map(block).filter((b) => b.lead);
 const others = sections.filter((s) => !HUB.includes(s.type) && !PAIR.includes(s.type));
 const day = (d) => d.toLocaleDateString('th-TH', { day: 'numeric', month: 'short', year: '2-digit' });
 // Spotlight (right of the hero): the newest post is rendered here; the rest come from /spot.json after load.
@@ -76,7 +81,7 @@ const first = { href: f0.href, title: f0.title, cover: f0.cover, kind: TYPES[f0.
           <article class="hub__block">
             <div class="section-head">
               <h2>{t.name}</h2>
-              <a class="more" href={`/${type}/`}>ดูทั้งหมด ({count}) <svg class="icon" aria-hidden="true"><use href="#icon-next" /></svg></a>
+              <a class="more" href={t.href}>ดูทั้งหมด ({count}) <svg class="icon" aria-hidden="true"><use href="#icon-next" /></svg></a>
             </div>
             <p class="meta">{t.blurb}</p>
             <a class="hub__lead" href={lead.href}>
@@ -91,12 +96,12 @@ const first = { href: f0.href, title: f0.title, cover: f0.cover, kind: TYPES[f0.
         ))}
       </section>
 
-      <section class="section hub hub--pair" aria-label="ท่องเที่ยว และข้อมูล">
+      <section class="section hub hub--three" aria-label="แอปแนะนำ ท่องเที่ยว และข้อมูล">
         {pair.map(({ type, t, count, lead, rest }) => (
           <article class="hub__block">
             <div class="section-head">
               <h2>{t.name}</h2>
-              <a class="more" href={`/${type}/`}>ดูทั้งหมด ({count}) <svg class="icon" aria-hidden="true"><use href="#icon-next" /></svg></a>
+              <a class="more" href={t.href}>ดูทั้งหมด ({count}) <svg class="icon" aria-hidden="true"><use href="#icon-next" /></svg></a>
             </div>
             <p class="meta">{t.blurb}</p>
             <a class="hub__lead" href={lead.href}>
