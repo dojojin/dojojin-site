@@ -1,0 +1,84 @@
+---
+title: "สายแต่ละชนิดจ่ายไฟได้กี่แอมป์ รองรับการกินพลังงานกี่วัตต์? วัดจริง 7 เส้น (2015)"
+topic: power
+type: knowledge
+tags: [powerbank, samsung]
+date: 2015-01-28 # Pantip topic 33163859 posted 28 Jan 2015
+updated: 2026-11-15T04:00:00+07:00
+description: "โพสต์จาก Pantip ปี 2015 นำมาลงซ้ำและแก้ข้อมูลให้ถูกต้องแล้ว สมัยนั้นข้อมูลอาจจะไม่ครบรอบด้าน: วัดกระแสและกำลังไฟของสาย USB 7 เส้น 7 ยี่ห้อ ผ่าน Power Bank Eloop E14 เข้า Galaxy Tab S 8.4"
+kicker: "ความรู้ · สาย USB"
+lead: "เอาสาย USB 7 เส้น 7 ยี่ห้อมาวัดว่าแต่ละเส้นจ่ายไฟได้กี่แอมป์ กินไฟกี่วัตต์ ข้อสรุปของผมคือ สายที่ดีต้องรองรับการจ่ายไฟได้เยอะ ๆ ส่วนสายสวย ๆ ผมท้าเลยว่าห่วยทุกตัว 555+ โพสต์นี้เขียนไว้ที่ Pantip ตั้งแต่ปี 2015 นำมาลงซ้ำและแก้ข้อมูลให้ถูกต้องแล้ว สมัยนั้นข้อมูลอาจจะไม่ครบรอบด้าน"
+meta: "Dojo-mAn Fotographer · ต้นฉบับจากกระทู้ Pantip ปี 2015 · ปรับปรุงเนื้อหาปี 2026"
+sourceUrl: "https://pantip.com/topic/33163859"
+cover: "/media/posts/knowledge/cable-current-watts-2015/c7-imobile.jpg"
+coverAlt: "มิเตอร์ USB Dongle วัดสาย i-mobile ได้ 4.83V 1.47A 7.14W"
+---
+import ShotGallery from '../../../components/ShotGallery.astro';
+import shots from './cable-current-watts-2015.shots.json';
+
+<section class="section">
+
+## อุปกรณ์ที่ใช้ทดสอบ
+
+<p class="note">ที่มา: รีวิวนี้เดิมผมโพสต์เป็นกระทู้ใน Pantip เมื่อ 28 มกราคม 2558 ต้นฉบับอยู่ที่ <a href="https://pantip.com/topic/33163859" rel="noopener">pantip.com/topic/33163859</a></p>
+
+<div class="split">
+<div class="prose">
+
+วิธีวัดคือเสียบ USB Dongle (มิเตอร์วัดแรงดัน กระแส และกำลังไฟ) คั่นระหว่าง Power Bank กับสาย แล้วต่อเข้า Galaxy Tab S 8.4 ดูว่าสายแต่ละเส้นปล่อยกระแสผ่านได้เท่าไร
+
+ผมไม่ทราบว่าชิป PA ของ Tab S ถูกจำกัดกระแสชาร์จไว้เท่าไร แต่ลองชาร์จกับที่ชาร์จของมันเองที่บ้านได้ 1.70A ครับ
+
+</div>
+<div class="grade-grid">
+  <article class="grade-card"><h3>แหล่งจ่ายไฟ</h3><p>Power Bank Eloop E14 มี 2 พอร์ต 1A/2.1A ผมเสียบช่อง 2.1A ช่องเดียว</p></article>
+  <article class="grade-card"><h3>เครื่องรับไฟ</h3><p>Samsung Galaxy Tab S 8.4 (ใส่เคสแมวเหมียว)</p></article>
+  <article class="grade-card"><h3>ตัววัด</h3><p>USB Dongle ซื้อจาก Arduinoall</p></article>
+  <article class="grade-card"><h3>สายที่ทดสอบ</h3><p>สาย USB Data Cable 7 เส้น 7 ยี่ห้อ</p></article>
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ผลวัด: จ่ายไฟได้กี่แอมป์
+
+<div class="grade-grid">
+  <article class="grade-card"><h3>1. Eloop (ติดมากับ Eloop E14)</h3><p><b>1.21A</b> · 4.87V · 5.89W ผมว่าแรงพอควร</p></article>
+  <article class="grade-card"><h3>2. Samsung แท้ (มากับกล่อง Tab S 8.4)</h3><p><b>1.11A</b> · 4.87V · 5.45W แรงพอควร</p></article>
+  <article class="grade-card"><h3>3. NOKIA แท้ (มากับกล่อง Nokia)</h3><p><b>0.87A</b> · 4.91V · 4.27W ต่ำ ไม่ถึง 1A</p></article>
+  <article class="grade-card"><h3>4. Daiso (สายสปริง)</h3><p><b>0.82A</b> · 4.91V · 4.02W ต่ำ (แต่ยังไม่ต่ำที่สุด)</p></article>
+  <article class="grade-card"><h3>5. REMAX รุ่น Transformer</h3><p><b>0.97A</b> · 4.90V · 4.70W สองหัว ใช้ได้ทั้ง iPhone และ Android ผมผิดหวังนิดหน่อย เห็นเขาโฆษณาว่าเร็ว ๆ</p></article>
+  <article class="grade-card"><h3>6. สายแบบมีไฟวิ่ง (LED)</h3><p><b>0.71A</b> · 4.95V · 3.58W น้อยสุดในกลุ่ม ผมว่าสายแนวนี้พวกบ้า Gadget จะชอบเพราะมันสวย</p></article>
+  <article class="grade-card"><h3>7. i-mobile (แท้จากศูนย์) · มากสุด</h3><p><b>1.47A</b> · 4.83V · 7.14W มากสุดใน 7 เส้น ชาร์จเต็มไวแน่ ๆ</p></article>
+</div>
+
+<div class="split">
+<div class="prose">
+
+**จากตัวเลข** กระแสที่ได้ห่างกันเกือบเท่าตัว (0.71A ถึง 1.47A) ทั้งที่ใช้แหล่งจ่ายเดียวกันกับเครื่องเดียวกัน แปลว่าสายแต่ละเส้นมีผลจริง
+
+ผมชี้แจงเพิ่มว่า สายที่ดีต้องรองรับการจ่ายไฟได้เยอะ ๆ ครับ สายที่ดูสวย ๆ ผมท้าเลยว่าห่วยทุกตัว ส่วนที่บางคนสงสัยว่าทำไมแรงดันได้แค่ 4.7-4.9V อันนั้นเป็นที่ Power Bank เองส่วนหนึ่ง ถ้าไม่ต่ำกว่า 4.5-4.6V ก็โอเค เพราะแบตเตอรี่ใช้ไฟจริง ๆ แค่ 4.2-4.3V ที่เหลือเป็น Load ล้วน ๆ
+
+</div>
+<div class="note">
+
+### อัปเดตปี 2026
+
+ค่าที่วัดคือกระแสที่ Tab S ดึงผ่านสายที่ 5V ตอนนั้น ไม่ใช่เพดานของสาย ปัจจุบันสาย USB-C ใช้กับ USB Power Delivery ได้ถึง 240W (ต้องเป็นสายที่รองรับ) ดูที่ <a href="https://www.usb.org/usb-charger-pd" rel="noopener">USB-IF: USB Charger (Power Delivery)</a>
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ภาพประกอบ
+
+<p class="prose">กดที่รูปเพื่อดูค่าที่มิเตอร์</p>
+
+<ShotGallery shots={shots} />
+
+</section>

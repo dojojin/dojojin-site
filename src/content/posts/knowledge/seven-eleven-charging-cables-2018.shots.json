@@ -1,0 +1,546 @@
+[
+  {
+    "id": "1",
+    "title": "สายทั้ง 7 เส้นที่ซื้อจาก 7-Eleven",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/overview.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "ภาพรวม",
+    "alt": "สายทั้ง 7 เส้นที่ซื้อจาก 7-Eleven: วางเรียงบนผ้าแดง ซื้อคละสาขากันมา",
+    "summary": "วางเรียงบนผ้าแดง ซื้อคละสาขากันมา"
+  },
+  {
+    "id": "2",
+    "title": "กล่อง RIZZ RWL-124A ด้านหน้า",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/rizz-box-front.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "RIZZ RWL-124A (159 บาท)",
+    "alt": "กล่อง RIZZ RWL-124A ด้านหน้า: สาย Lightning พร้อมที่ชาร์จ 1.2A",
+    "summary": "สาย Lightning พร้อมที่ชาร์จ 1.2A",
+    "fit": "contain"
+  },
+  {
+    "id": "3",
+    "title": "กล่อง RIZZ RWL-124A ด้านหลัง",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/rizz-box-back.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "RIZZ RWL-124A (159 บาท)",
+    "alt": "กล่อง RIZZ RWL-124A ด้านหลัง: ข้อมูลบนกล่อง",
+    "summary": "ข้อมูลบนกล่อง",
+    "fit": "contain"
+  },
+  {
+    "id": "4",
+    "title": "ที่ชาร์จ RIZZ",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/rizz-adapter.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "RIZZ RWL-124A (159 บาท)",
+    "alt": "ที่ชาร์จ RIZZ: หัวชาร์จ USB-A ช่องเดียว",
+    "summary": "หัวชาร์จ USB-A ช่องเดียว"
+  },
+  {
+    "id": "5",
+    "title": "ฉลากที่ชาร์จ RIZZ",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/rizz-adapter-label.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "RIZZ RWL-124A (159 บาท)",
+    "alt": "ฉลากที่ชาร์จ RIZZ: เขียนระบุจ่ายไฟ 1.2A (Max)",
+    "summary": "เขียนระบุจ่ายไฟ 1.2A (Max)"
+  },
+  {
+    "id": "6",
+    "title": "ด้านข้างที่ชาร์จ RIZZ",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/rizz-adapter-side.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "RIZZ RWL-124A (159 บาท)",
+    "alt": "ด้านข้างที่ชาร์จ RIZZ: มีสติกเกอร์เบอร์ติดต่อ (เบลอเลขเครื่อง)",
+    "summary": "มีสติกเกอร์เบอร์ติดต่อ (เบลอเลขเครื่อง)"
+  },
+  {
+    "id": "7",
+    "title": "วัดซ้ำหลังเอาไปชาร์จ iPad",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/rizz-meter-drop.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "RIZZ RWL-124A (159 บาท)",
+    "alt": "วัดซ้ำหลังเอาไปชาร์จ iPad: แรงดันตกเหลือ 4.57V กระแส 0mA",
+    "summary": "แรงดันตกเหลือ 4.57V กระแส 0mA"
+  },
+  {
+    "id": "8",
+    "title": "ที่ชาร์จเสียแล้ว",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/rizz-meter-dead.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "RIZZ RWL-124A (159 บาท)",
+    "alt": "ที่ชาร์จเสียแล้ว: ต่อมิเตอร์แล้วหน้าจอไม่ขึ้น",
+    "summary": "ต่อมิเตอร์แล้วหน้าจอไม่ขึ้น"
+  },
+  {
+    "id": "9",
+    "title": "สาย RIZZ + AUKEY PA-T11",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/rizz-cable-wall.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "RIZZ RWL-124A (159 บาท)",
+    "alt": "สาย RIZZ + AUKEY PA-T11: ไฟเข้า iPad 1.81–1.85A",
+    "summary": "ไฟเข้า iPad 1.81–1.85A"
+  },
+  {
+    "id": "10",
+    "title": "สาย RIZZ + AUKEY PB-T11",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/rizz-cable-powerbank.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "RIZZ RWL-124A (159 บาท)",
+    "alt": "สาย RIZZ + AUKEY PB-T11: ไฟเข้า iPad 1.94–2.05A",
+    "summary": "ไฟเข้า iPad 1.94–2.05A"
+  },
+  {
+    "id": "11",
+    "title": "สาย RIZZ ลายถัก",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/rizz-cable-1.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "RIZZ RWL-124A (159 บาท)",
+    "alt": "สาย RIZZ ลายถัก: หัว Lightning ใกล้ๆ",
+    "summary": "หัว Lightning ใกล้ๆ"
+  },
+  {
+    "id": "12",
+    "title": "สาย RIZZ ลายถัก",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/rizz-cable-2.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "RIZZ RWL-124A (159 บาท)",
+    "alt": "สาย RIZZ ลายถัก: หัว USB-A ใกล้ๆ",
+    "summary": "หัว USB-A ใกล้ๆ"
+  },
+  {
+    "id": "13",
+    "title": "กล่อง Asaki A-2503 ด้านหน้า",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/a2503-box-front.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "Asaki A-2503 microUSB (129 บาท)",
+    "alt": "กล่อง Asaki A-2503 ด้านหน้า: สาย microUSB พร้อมที่ชาร์จ 1.2A",
+    "summary": "สาย microUSB พร้อมที่ชาร์จ 1.2A",
+    "fit": "contain"
+  },
+  {
+    "id": "14",
+    "title": "กล่อง Asaki A-2503 ด้านหลัง",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/a2503-box-back.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "Asaki A-2503 microUSB (129 บาท)",
+    "alt": "กล่อง Asaki A-2503 ด้านหลัง: ข้อมูลบนกล่อง",
+    "summary": "ข้อมูลบนกล่อง",
+    "fit": "contain"
+  },
+  {
+    "id": "15",
+    "title": "สายถัก Asaki A-2503",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/a2503-cable.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Asaki A-2503 microUSB (129 บาท)",
+    "alt": "สายถัก Asaki A-2503: ลายสายเหมือนงู",
+    "summary": "ลายสายเหมือนงู"
+  },
+  {
+    "id": "16",
+    "title": "ที่ชาร์จ Asaki",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/a2503-adapter.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Asaki A-2503 microUSB (129 บาท)",
+    "alt": "ที่ชาร์จ Asaki: ฉลากบอก Input AC110-240V Output DC5V 1.2A Max",
+    "summary": "ฉลากบอก Input AC110-240V Output DC5V 1.2A Max"
+  },
+  {
+    "id": "17",
+    "title": "ฉลากที่ชาร์จ Asaki",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/a2503-adapter-label.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Asaki A-2503 microUSB (129 บาท)",
+    "alt": "ฉลากที่ชาร์จ Asaki: มีเบอร์โทรติดต่อบนตัวสินค้า",
+    "summary": "มีเบอร์โทรติดต่อบนตัวสินค้า"
+  },
+  {
+    "id": "18",
+    "title": "วัดแรงดันตอนยังไม่ชาร์จ",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/a2503-no-load.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Asaki A-2503 microUSB (129 บาท)",
+    "alt": "วัดแรงดันตอนยังไม่ชาร์จ: 4.97V",
+    "summary": "4.97V"
+  },
+  {
+    "id": "19",
+    "title": "ชาร์จ ROMOSS PH-50 Pro",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/a2503-powerbank.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Asaki A-2503 microUSB (129 บาท)",
+    "alt": "ชาร์จ ROMOSS PH-50 Pro: ไฟเข้า 1.18A ใกล้เคียงที่เขียนไว้หน้ากล่อง",
+    "summary": "ไฟเข้า 1.18A ใกล้เคียงที่เขียนไว้หน้ากล่อง"
+  },
+  {
+    "id": "20",
+    "title": "ลองดันกระแสเพิ่มอีกนิด",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/a2503-test-2a.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Asaki A-2503 microUSB (129 บาท)",
+    "alt": "ลองดันกระแสเพิ่มอีกนิด: ได้ 1.23A เกินสเปกมานิดหน่อย",
+    "summary": "ได้ 1.23A เกินสเปกมานิดหน่อย"
+  },
+  {
+    "id": "21",
+    "title": "ลองเสียบช่อง Quick Charge",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/a2503-qc.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Asaki A-2503 microUSB (129 บาท)",
+    "alt": "ลองเสียบช่อง Quick Charge: รองรับ แต่ได้แค่ 0.8A",
+    "summary": "รองรับ แต่ได้แค่ 0.8A"
+  },
+  {
+    "id": "22",
+    "title": "ที่ชาร์จ Asaki + สายแท้ iPhone ชาร์จ iPad",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/a2503-ipad-genuine.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Asaki A-2503 microUSB (129 บาท)",
+    "alt": "ที่ชาร์จ Asaki + สายแท้ iPhone ชาร์จ iPad: ได้แค่ 0.95–1A",
+    "summary": "ได้แค่ 0.95–1A"
+  },
+  {
+    "id": "23",
+    "title": "กล่อง Asaki A-2012 ด้านหน้า",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/a2012-box-front.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "Asaki A-2012 Lightning (129 บาท)",
+    "alt": "กล่อง Asaki A-2012 ด้านหน้า: เขียนว่ารองรับ 2.1A หัวเหล็ก สายหนัง",
+    "summary": "เขียนว่ารองรับ 2.1A หัวเหล็ก สายหนัง",
+    "fit": "contain"
+  },
+  {
+    "id": "24",
+    "title": "กล่อง Asaki A-2012 ด้านหลัง",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/a2012-box-back.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "Asaki A-2012 Lightning (129 บาท)",
+    "alt": "กล่อง Asaki A-2012 ด้านหลัง: มี QR Code ให้ลงทะเบียนออนไลน์",
+    "summary": "มี QR Code ให้ลงทะเบียนออนไลน์",
+    "fit": "contain"
+  },
+  {
+    "id": "25",
+    "title": "แกะออกมา",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/a2012-unboxed.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Asaki A-2012 Lightning (129 บาท)",
+    "alt": "แกะออกมา: ซองกระดาษ ซองพลาสติกนุ่ม และสายรัด",
+    "summary": "ซองกระดาษ ซองพลาสติกนุ่ม และสายรัด"
+  },
+  {
+    "id": "26",
+    "title": "สายและหัว Asaki A-2012",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/a2012-cable.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Asaki A-2012 Lightning (129 บาท)",
+    "alt": "สายและหัว Asaki A-2012: หนังเงา หัวเหล็ก",
+    "summary": "หนังเงา หัวเหล็ก"
+  },
+  {
+    "id": "27",
+    "title": "สาย A-2012 + AUKEY PA-T11",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/a2012-wall.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Asaki A-2012 Lightning (129 บาท)",
+    "alt": "สาย A-2012 + AUKEY PA-T11: ไฟเข้า iPad 1.24–1.25A",
+    "summary": "ไฟเข้า iPad 1.24–1.25A"
+  },
+  {
+    "id": "28",
+    "title": "สาย A-2012 + AUKEY PB-T11",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/a2012-powerbank.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Asaki A-2012 Lightning (129 บาท)",
+    "alt": "สาย A-2012 + AUKEY PB-T11: ไฟเข้า iPad 1.38–1.40A",
+    "summary": "ไฟเข้า iPad 1.38–1.40A"
+  },
+  {
+    "id": "29",
+    "title": "กล่อง Asaki A-2013 ด้านหน้า",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/a2013-box-front.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "Asaki A-2013 microUSB (109 บาท)",
+    "alt": "กล่อง Asaki A-2013 ด้านหน้า: หน้ากล่องเหมือน A-2012 แต่เป็น microUSB",
+    "summary": "หน้ากล่องเหมือน A-2012 แต่เป็น microUSB",
+    "fit": "contain"
+  },
+  {
+    "id": "30",
+    "title": "กล่อง Asaki A-2013 ด้านหลัง",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/a2013-box-back.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "Asaki A-2013 microUSB (109 บาท)",
+    "alt": "กล่อง Asaki A-2013 ด้านหลัง: ข้อมูลบนกล่อง",
+    "summary": "ข้อมูลบนกล่อง",
+    "fit": "contain"
+  },
+  {
+    "id": "31",
+    "title": "แกะออกมา",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/a2013-unboxed.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Asaki A-2013 microUSB (109 บาท)",
+    "alt": "แกะออกมา: ซองกระดาษและซองพลาสติกนุ่ม คนละสีกับรุ่น Lightning",
+    "summary": "ซองกระดาษและซองพลาสติกนุ่ม คนละสีกับรุ่น Lightning"
+  },
+  {
+    "id": "32",
+    "title": "ชาร์จ ROMOSS ช่อง 2.4A (AutoID)",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/a2013-autoid.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Asaki A-2013 microUSB (109 บาท)",
+    "alt": "ชาร์จ ROMOSS ช่อง 2.4A (AutoID): ไฟเข้า 1.30–1.35A",
+    "summary": "ไฟเข้า 1.30–1.35A"
+  },
+  {
+    "id": "33",
+    "title": "ชาร์จ ROMOSS ช่อง QC",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/a2013-qc.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Asaki A-2013 microUSB (109 บาท)",
+    "alt": "ชาร์จ ROMOSS ช่อง QC: 8.91V 0.99A",
+    "summary": "8.91V 0.99A"
+  },
+  {
+    "id": "34",
+    "title": "กล่อง Wealth CL92 ด้านหน้า",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/wealth-box-front.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "Wealth CL92 Lightning (119 บาท)",
+    "alt": "กล่อง Wealth CL92 ด้านหน้า: สายยาว 120 ซม. เขียนว่าของแท้ 100%",
+    "summary": "สายยาว 120 ซม. เขียนว่าของแท้ 100%",
+    "fit": "contain"
+  },
+  {
+    "id": "35",
+    "title": "กล่อง Wealth CL92 ด้านหลัง",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/wealth-box-back.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "Wealth CL92 Lightning (119 บาท)",
+    "alt": "กล่อง Wealth CL92 ด้านหลัง: ข้อมูลบนกล่อง",
+    "summary": "ข้อมูลบนกล่อง",
+    "fit": "contain"
+  },
+  {
+    "id": "36",
+    "title": "สายหัวตัว L",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/wealth-cable.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Wealth CL92 Lightning (119 บาท)",
+    "alt": "สายหัวตัว L: พับแนบตัวเครื่องได้ เหมาะกับคนเล่นเกม",
+    "summary": "พับแนบตัวเครื่องได้ เหมาะกับคนเล่นเกม"
+  },
+  {
+    "id": "37",
+    "title": "ข้อต่อตัว L ใกล้ๆ",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/wealth-cable-close.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Wealth CL92 Lightning (119 บาท)",
+    "alt": "ข้อต่อตัว L ใกล้ๆ: ตรงข้อต่อดูยุ่ยๆ ไม่พรีเมียม",
+    "summary": "ตรงข้อต่อดูยุ่ยๆ ไม่พรีเมียม"
+  },
+  {
+    "id": "38",
+    "title": "สาย Wealth + AUKEY PA-T11",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/wealth-wall.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Wealth CL92 Lightning (119 บาท)",
+    "alt": "สาย Wealth + AUKEY PA-T11: ไฟเข้า iPad 1.91–2.0A",
+    "summary": "ไฟเข้า iPad 1.91–2.0A"
+  },
+  {
+    "id": "39",
+    "title": "สาย Wealth + AUKEY PB-T11",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/wealth-powerbank.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Wealth CL92 Lightning (119 บาท)",
+    "alt": "สาย Wealth + AUKEY PB-T11: ไฟเข้า iPad 1.95–2.3A",
+    "summary": "ไฟเข้า iPad 1.95–2.3A"
+  },
+  {
+    "id": "40",
+    "title": "ชุดทดสอบกับ iPad",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/wealth-setup.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Wealth CL92 Lightning (119 บาท)",
+    "alt": "ชุดทดสอบกับ iPad: ต่อมิเตอร์คั่นระหว่างแหล่งจ่ายไฟกับสาย",
+    "summary": "ต่อมิเตอร์คั่นระหว่างแหล่งจ่ายไฟกับสาย"
+  },
+  {
+    "id": "41",
+    "title": "กล่อง Xteem X5 ด้านหน้า",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/x5-box-front.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "Xteem X5 Lightning (119 บาท)",
+    "alt": "กล่อง Xteem X5 ด้านหน้า: สายผ้าถัก 2A ยาว 100 ซม.",
+    "summary": "สายผ้าถัก 2A ยาว 100 ซม.",
+    "fit": "contain"
+  },
+  {
+    "id": "42",
+    "title": "กล่อง Xteem X5 ด้านหลัง",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/x5-box-back.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "Xteem X5 Lightning (119 บาท)",
+    "alt": "กล่อง Xteem X5 ด้านหลัง: ข้อมูลบนกล่อง",
+    "summary": "ข้อมูลบนกล่อง",
+    "fit": "contain"
+  },
+  {
+    "id": "43",
+    "title": "สาย Xteem X5",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/x5-cable.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Xteem X5 Lightning (119 บาท)",
+    "alt": "สาย Xteem X5: ข้อต่อโค้งงอได้ กันสายหัก",
+    "summary": "ข้อต่อโค้งงอได้ กันสายหัก"
+  },
+  {
+    "id": "44",
+    "title": "ข้อต่อ Xteem X5 ใกล้ๆ",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/x5-cable-close.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Xteem X5 Lightning (119 บาท)",
+    "alt": "ข้อต่อ Xteem X5 ใกล้ๆ: หัวต่อสวย งานดี",
+    "summary": "หัวต่อสวย งานดี"
+  },
+  {
+    "id": "45",
+    "title": "สาย X5 + AUKEY PA-T11",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/x5-wall.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Xteem X5 Lightning (119 บาท)",
+    "alt": "สาย X5 + AUKEY PA-T11: ไฟเข้า iPad 2.15–2.35A",
+    "summary": "ไฟเข้า iPad 2.15–2.35A"
+  },
+  {
+    "id": "46",
+    "title": "สาย X5 + AUKEY PB-T11",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/x5-powerbank.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Xteem X5 Lightning (119 บาท)",
+    "alt": "สาย X5 + AUKEY PB-T11: ไฟเข้า iPad 2.25–2.35A",
+    "summary": "ไฟเข้า iPad 2.25–2.35A"
+  },
+  {
+    "id": "47",
+    "title": "กล่อง Xteem M6 ด้านหน้า",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/m6-box-front.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "Xteem M6 microUSB (99 บาท)",
+    "alt": "กล่อง Xteem M6 ด้านหน้า: สายผ้าถัก 2A ยาว 100 ซม.",
+    "summary": "สายผ้าถัก 2A ยาว 100 ซม.",
+    "fit": "contain"
+  },
+  {
+    "id": "48",
+    "title": "กล่อง Xteem M6 ด้านหลัง",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/m6-box-back.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "Xteem M6 microUSB (99 บาท)",
+    "alt": "กล่อง Xteem M6 ด้านหลัง: ข้อมูลบนกล่อง",
+    "summary": "ข้อมูลบนกล่อง",
+    "fit": "contain"
+  },
+  {
+    "id": "49",
+    "title": "สาย Xteem M6",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/m6-cable.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Xteem M6 microUSB (99 บาท)",
+    "alt": "สาย Xteem M6: ทำมาเหมือนรุ่น Lightning",
+    "summary": "ทำมาเหมือนรุ่น Lightning"
+  },
+  {
+    "id": "50",
+    "title": "ข้อต่อ Xteem M6 ใกล้ๆ",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/m6-cable-close.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Xteem M6 microUSB (99 บาท)",
+    "alt": "ข้อต่อ Xteem M6 ใกล้ๆ: ทั้งหัวและปลายสายดูพรีเมียม",
+    "summary": "ทั้งหัวและปลายสายดูพรีเมียม"
+  },
+  {
+    "id": "51",
+    "title": "ชาร์จ ROMOSS ช่อง 2.4A (AutoID)",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/m6-autoid.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Xteem M6 microUSB (99 บาท)",
+    "alt": "ชาร์จ ROMOSS ช่อง 2.4A (AutoID): ไฟเข้า 2A เต็มๆ",
+    "summary": "ไฟเข้า 2A เต็มๆ"
+  },
+  {
+    "id": "52",
+    "title": "ชาร์จ ROMOSS ช่อง QC",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/m6-qc.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "Xteem M6 microUSB (99 บาท)",
+    "alt": "ชาร์จ ROMOSS ช่อง QC: 8.89V 1.56A",
+    "summary": "8.89V 1.56A"
+  },
+  {
+    "id": "53",
+    "title": "ตารางสรุปผลทั้ง 7 เส้น",
+    "src": "/media/posts/knowledge/seven-eleven-charging-cables-2018/summary-table.jpg",
+    "w": 1038,
+    "h": 396,
+    "group": "ตารางสรุปของผม",
+    "alt": "ตารางสรุปผลทั้ง 7 เส้น: สีเขียวคือผ่าน น่าซื้อ",
+    "summary": "สีเขียวคือผ่าน น่าซื้อ"
+  }
+]

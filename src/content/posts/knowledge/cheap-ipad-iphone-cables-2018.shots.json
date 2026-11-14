@@ -1,0 +1,516 @@
+[
+  {
+    "id": "1",
+    "title": "iPad ชาร์จกับ Power Bank",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/intro-ipad-orig.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "เกริ่น",
+    "alt": "iPad กับสายแท้ ต่อ Power Bank ROMOSS ผ่านมิเตอร์ POWER-Z",
+    "summary": "ภาพเปิดโพสต์: iPad + สายแท้ วัดได้ 2.3783A",
+    "readings": [
+      [
+        "แรงดัน",
+        "5.0382V"
+      ],
+      [
+        "กระแส",
+        "2.3783A"
+      ],
+      [
+        "กำลัง",
+        "11.983W"
+      ]
+    ]
+  },
+  {
+    "id": "2",
+    "title": "สายชาร์จที่มีอยู่",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/cable-pile.jpg",
+    "w": 1500,
+    "h": 843,
+    "group": "เกริ่น",
+    "alt": "กองสายชาร์จหลายเส้นกับ Power Bank",
+    "summary": "สายชาร์จที่สะสมไว้"
+  },
+  {
+    "id": "3",
+    "title": "สายแท้ที่พันซ่อมด้วยท่อหดกับสปริงพลาสติก",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/repaired-cable.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "เกริ่น",
+    "alt": "สาย Lightning สีแดงที่ซ่อมด้วยท่อหดและสปริงพลาสติก",
+    "summary": "สายแท้ที่ใช้ไปแล้วแหว่งหรือขาด ผมซ่อมด้วยท่อหดกับสปริงพลาสติก แน่นกว่าเดิมแต่อาจร้อนขึ้นเวลาชาร์จ"
+  },
+  {
+    "id": "4",
+    "title": "สายแท้ + iPad (ที่บ้าน)",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/orig-ipad-home.jpg",
+    "w": 1500,
+    "h": 843,
+    "group": "สายแท้",
+    "alt": "iPad กับสายแท้ ต่อ Power Bank ROMOSS ที่บ้าน",
+    "summary": "iPad กับสายแท้ที่บ้าน ได้ 2.3762A",
+    "readings": [
+      [
+        "แรงดัน",
+        "5.0414V"
+      ],
+      [
+        "กระแส",
+        "2.3762A"
+      ],
+      [
+        "กำลัง",
+        "11.979W"
+      ]
+    ]
+  },
+  {
+    "id": "5",
+    "title": "สายแท้ + iPhone 7 Plus",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/orig-iphone.jpg",
+    "w": 1500,
+    "h": 843,
+    "group": "สายแท้",
+    "alt": "iPhone 7 Plus กับสายแท้ ต่อ Power Bank",
+    "summary": "iPhone 7 Plus กับสายแท้ ได้ 1.8317A (ผมวัดช่วง 1.75-1.85A)",
+    "readings": [
+      [
+        "แรงดัน",
+        "5.0094V"
+      ],
+      [
+        "กระแส",
+        "1.8317A"
+      ],
+      [
+        "กำลัง",
+        "9.1758W"
+      ]
+    ]
+  },
+  {
+    "id": "6",
+    "title": "BeBePhone (Tesco Lotus บางกรวย-ไทรน้อย)",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/bebephone-1.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "ร้านที่ซื้อ",
+    "alt": "หน้าร้าน BeBePhone ป้ายทั้งร้าน 100 บาท",
+    "summary": "ร้านที่ผมไปเจอสายทั้งร้าน 100 บาท"
+  },
+  {
+    "id": "7",
+    "title": "หน้าร้าน BeBePhone",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/bebephone-2.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "ร้านที่ซื้อ",
+    "alt": "ป้ายร้าน BeBePhone",
+    "summary": "หน้าร้าน"
+  },
+  {
+    "id": "8",
+    "title": "หน้ากล่อง",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/leather-box-front.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "สาย Leather Data Cable (Copper 100% 5-Core)",
+    "alt": "กล่องสาย Leather Data Cable Lightning to USB 5-Core 100% Copper",
+    "summary": "บนกล่องเขียน Copper 100%, 5-Core, 2.4A, Aluminium Alloy ยาว 100 CM",
+    "fit": "contain"
+  },
+  {
+    "id": "9",
+    "title": "หลังกล่อง",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/leather-box-back.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "สาย Leather Data Cable (Copper 100% 5-Core)",
+    "alt": "ด้านหลังกล่องสาย Leather Data Cable",
+    "summary": "ด้านหลังกล่อง",
+    "fit": "contain"
+  },
+  {
+    "id": "10",
+    "title": "ซื้อเสร็จลองกับ iPad ที่ร้านเลย",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/leather-ipad-shop.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "สาย Leather Data Cable (Copper 100% 5-Core)",
+    "alt": "iPad กับสาย Leather ต่อ Power Bank ที่ร้าน",
+    "summary": "ผมว่าวัดได้ 2.32A (สายแท้ได้ 2.37A)",
+    "readings": [
+      [
+        "แรงดัน",
+        "5.0408V"
+      ],
+      [
+        "กระแส",
+        "2.3205A"
+      ]
+    ]
+  },
+  {
+    "id": "11",
+    "title": "ที่บ้านกับ Wall Charger (iPad)",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/leather-ipad-home.jpg",
+    "w": 1500,
+    "h": 843,
+    "group": "สาย Leather Data Cable (Copper 100% 5-Core)",
+    "alt": "iPad กับสาย Leather ต่อ Wall Charger ที่บ้าน",
+    "summary": "ที่บ้านกับ Wall Charger ได้ค่าพอ ๆ กัน",
+    "readings": [
+      [
+        "แรงดัน",
+        "5.0074V"
+      ],
+      [
+        "กระแส",
+        "2.3213A"
+      ]
+    ]
+  },
+  {
+    "id": "12",
+    "title": "ชาร์จ iPhone (Power Bank)",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/leather-iphone-1.jpg",
+    "w": 1500,
+    "h": 843,
+    "group": "สาย Leather Data Cable (Copper 100% 5-Core)",
+    "alt": "iPhone กับสาย Leather ต่อ Power Bank",
+    "summary": "iPhone ได้ 1.6915A",
+    "readings": [
+      [
+        "แรงดัน",
+        "5.0134V"
+      ],
+      [
+        "กระแส",
+        "1.6915A"
+      ],
+      [
+        "กำลัง",
+        "8.4800W"
+      ]
+    ]
+  },
+  {
+    "id": "13",
+    "title": "ชาร์จ iPhone (Wall Charger)",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/leather-iphone-2.jpg",
+    "w": 1500,
+    "h": 843,
+    "group": "สาย Leather Data Cable (Copper 100% 5-Core)",
+    "alt": "iPhone กับสาย Leather ต่อ Wall Charger",
+    "summary": "iPhone ได้ 1.6925A (ผมวัดช่วง 1.69-1.73A ว่าโอเค)",
+    "readings": [
+      [
+        "แรงดัน",
+        "5.0434V"
+      ],
+      [
+        "กระแส",
+        "1.6925A"
+      ],
+      [
+        "กำลัง",
+        "8.5361W"
+      ]
+    ]
+  },
+  {
+    "id": "14",
+    "title": "กล่อง SAFE CHARGE ใกล้ ๆ",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/ibonno-box-1.jpg",
+    "w": 1155,
+    "h": 836,
+    "group": "สาย IBONNO SAFE CHARGE (138)",
+    "alt": "กล่องสาย SAFE CHARGE เขียน 138 pure copper wires, 3.4A current",
+    "summary": "บนกล่องเขียน 138 pure copper wires และ 3.4 A current"
+  },
+  {
+    "id": "15",
+    "title": "กล่องสีชมพู",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/ibonno-box-2.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "สาย IBONNO SAFE CHARGE (138)",
+    "alt": "กล่องสาย IBONNO SAFE CHARGE สีชมพู 1000MM",
+    "summary": "ยาว 1000MM",
+    "fit": "contain"
+  },
+  {
+    "id": "16",
+    "title": "หลังกล่อง",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/ibonno-box-3.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "สาย IBONNO SAFE CHARGE (138)",
+    "alt": "ด้านหลังกล่องสาย IBONNO",
+    "summary": "ด้านหลังกล่อง",
+    "fit": "contain"
+  },
+  {
+    "id": "17",
+    "title": "ชาร์จ iPad",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/ibonno-ipad.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "สาย IBONNO SAFE CHARGE (138)",
+    "alt": "iPad กับสาย IBONNO ผ่านมิเตอร์",
+    "summary": "รองรับแค่ 2.03A ผมให้ผ่านไป",
+    "readings": [
+      [
+        "แรงดัน",
+        "4.9973V"
+      ],
+      [
+        "กระแส",
+        "2.0397A"
+      ],
+      [
+        "กำลัง",
+        "10.193W"
+      ]
+    ]
+  },
+  {
+    "id": "18",
+    "title": "กล่อง whY SPACE",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/why-box-1.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "สาย whY SPACE (ดีพลัส)",
+    "alt": "กล่องสาย whY SPACE lightning cable 2.1A max ยาว 1 เมตร",
+    "summary": "บนกล่องเขียนรองรับ 2.1A max",
+    "fit": "contain"
+  },
+  {
+    "id": "19",
+    "title": "หลังกล่อง",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/why-box-2.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "สาย whY SPACE (ดีพลัส)",
+    "alt": "ด้านหลังกล่องสาย whY SPACE ชาร์จเต็มเร็วด้วยความแรง 2.1A",
+    "summary": "หลังกล่อง",
+    "fit": "contain"
+  },
+  {
+    "id": "20",
+    "title": "ชาร์จ iPad",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/why-ipad.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "สาย whY SPACE (ดีพลัส)",
+    "alt": "iPad กับสาย whY ผ่านมิเตอร์",
+    "summary": "iPad ได้ 1.79A (ผมคาดว่าควรได้ 1.95-2.0A)",
+    "readings": [
+      [
+        "แรงดัน",
+        "5.0089V"
+      ],
+      [
+        "กระแส",
+        "1.7901A"
+      ],
+      [
+        "กำลัง",
+        "8.9663W"
+      ]
+    ]
+  },
+  {
+    "id": "21",
+    "title": "กล่อง FOX iQ3",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/fox-box-1.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "สาย FOX iQ3",
+    "alt": "กล่องสาย FOX USB DATA CABLE รุ่น iQ3 2.4A ยาว 100CM",
+    "summary": "บนกล่องเขียน model iQ3, 2.4A, 100CM",
+    "fit": "contain"
+  },
+  {
+    "id": "22",
+    "title": "หลังกล่อง",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/fox-box-2.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "สาย FOX iQ3",
+    "alt": "ด้านหลังกล่องสาย FOX",
+    "summary": "หลังกล่อง",
+    "fit": "contain"
+  },
+  {
+    "id": "23",
+    "title": "ชาร์จ iPad",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/fox-ipad.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "สาย FOX iQ3",
+    "alt": "iPad กับสาย FOX ผ่านมิเตอร์",
+    "summary": "iPad ได้ 2.3253A เท่าสายทองแดงเลย (ผมว่า 2.32A)",
+    "readings": [
+      [
+        "แรงดัน",
+        "5.0426V"
+      ],
+      [
+        "กระแส",
+        "2.3253A"
+      ],
+      [
+        "กำลัง",
+        "11.726W"
+      ]
+    ]
+  },
+  {
+    "id": "24",
+    "title": "REMAX + iPad",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/remax-ipad.jpg",
+    "w": 1500,
+    "h": 843,
+    "group": "สาย REMAX 2SPEED RC-011 (ความเห็นเสริม)",
+    "alt": "iPad กับสาย REMAX สายแบนสีฟ้า",
+    "summary": "iPad ได้ 2.3389A (ดีมากสำหรับ iPad)",
+    "readings": [
+      [
+        "แรงดัน",
+        "5.0028V"
+      ],
+      [
+        "กระแส",
+        "2.3389A"
+      ],
+      [
+        "กำลัง",
+        "11.701W"
+      ]
+    ]
+  },
+  {
+    "id": "25",
+    "title": "REMAX + iPhone",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/remax-iphone.jpg",
+    "w": 1500,
+    "h": 843,
+    "group": "สาย REMAX 2SPEED RC-011 (ความเห็นเสริม)",
+    "alt": "iPhone กับสาย REMAX สายแบนสีฟ้า",
+    "summary": "iPhone ได้ 1.6961A (ดีพอใช้)",
+    "readings": [
+      [
+        "แรงดัน",
+        "5.0473V"
+      ],
+      [
+        "กระแส",
+        "1.6961A"
+      ],
+      [
+        "กำลัง",
+        "8.5605W"
+      ]
+    ]
+  },
+  {
+    "id": "26",
+    "title": "TWZ สายสั้น + iPad",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/twz-ipad.jpg",
+    "w": 1500,
+    "h": 843,
+    "group": "สาย TWZ สายสั้น (ความเห็นเสริม)",
+    "alt": "iPad กับสาย TWZ สายสั้น",
+    "summary": "iPad วิ่งถึง 2.37A",
+    "readings": [
+      [
+        "แรงดัน",
+        "4.9803V"
+      ],
+      [
+        "กระแส",
+        "2.3721A"
+      ],
+      [
+        "กำลัง",
+        "11.814W"
+      ]
+    ]
+  },
+  {
+    "id": "27",
+    "title": "TWZ สายสั้น + iPhone",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/twz-iphone.jpg",
+    "w": 1500,
+    "h": 843,
+    "group": "สาย TWZ สายสั้น (ความเห็นเสริม)",
+    "alt": "iPhone กับสาย TWZ สายสั้น",
+    "summary": "iPhone ได้ 1.94A มากกว่าสายแท้ แต่สายสั้น",
+    "readings": [
+      [
+        "แรงดัน",
+        "5.0241V"
+      ],
+      [
+        "กระแส",
+        "1.9446A"
+      ],
+      [
+        "กำลัง",
+        "9.7696W"
+      ]
+    ]
+  },
+  {
+    "id": "28",
+    "title": "HOCO X14 + iPad",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/hoco-ipad.jpg",
+    "w": 1500,
+    "h": 843,
+    "group": "สาย HOCO X14 (ความเห็นเสริม)",
+    "alt": "iPad กับสาย HOCO สีแดง",
+    "summary": "iPad ได้ 2.28A",
+    "readings": [
+      [
+        "แรงดัน",
+        "4.9929V"
+      ],
+      [
+        "กระแส",
+        "2.2889A"
+      ],
+      [
+        "กำลัง",
+        "11.428W"
+      ]
+    ]
+  },
+  {
+    "id": "29",
+    "title": "HOCO X14 + iPhone",
+    "src": "/media/posts/knowledge/cheap-ipad-iphone-cables-2018/hoco-iphone.jpg",
+    "w": 1500,
+    "h": 843,
+    "group": "สาย HOCO X14 (ความเห็นเสริม)",
+    "alt": "iPhone กับสาย HOCO สีแดง",
+    "summary": "iPhone ได้ 1.63A",
+    "readings": [
+      [
+        "แรงดัน",
+        "5.0479V"
+      ],
+      [
+        "กระแส",
+        "1.6367A"
+      ],
+      [
+        "กำลัง",
+        "8.2618W"
+      ]
+    ]
+  }
+]

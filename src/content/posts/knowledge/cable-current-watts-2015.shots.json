@@ -1,0 +1,211 @@
+[
+  {
+    "id": "1",
+    "title": "Power Bank Eloop E14",
+    "src": "/media/posts/knowledge/cable-current-watts-2015/eloop-e14.jpg",
+    "w": 1200,
+    "h": 910,
+    "group": "อุปกรณ์ทดสอบ",
+    "alt": "Eloop E14 20000mAh ใช้ช่อง 2.1A ช่องเดียว",
+    "summary": "Power Bank ที่ใช้จ่ายไฟทดสอบ (ใช้ช่อง 2.1A)"
+  },
+  {
+    "id": "2",
+    "title": "Samsung Galaxy Tab S 8.4",
+    "src": "/media/posts/knowledge/cable-current-watts-2015/tab-s.jpg",
+    "w": 910,
+    "h": 1200,
+    "group": "อุปกรณ์ทดสอบ",
+    "alt": "Galaxy Tab S 8.4 ที่ใช้เป็นเครื่องรับไฟ",
+    "summary": "ชาร์จด้วยที่ชาร์จของมันเองได้ 1.70A (ตามที่ผมวัดไว้)",
+    "fit": "contain"
+  },
+  {
+    "id": "3",
+    "title": "สาย USB 7 เส้น 7 ยี่ห้อ",
+    "src": "/media/posts/knowledge/cable-current-watts-2015/cables.jpg",
+    "w": 1200,
+    "h": 910,
+    "group": "อุปกรณ์ทดสอบ",
+    "alt": "สาย USB Data Cable ที่เอามาทดสอบ",
+    "summary": "สาย 7 เส้นที่เอามาวัด"
+  },
+  {
+    "id": "4",
+    "title": "USB Dongle วัดกระแส",
+    "src": "/media/posts/knowledge/cable-current-watts-2015/meter.jpg",
+    "w": 1200,
+    "h": 910,
+    "group": "อุปกรณ์ทดสอบ",
+    "alt": "มิเตอร์ USB แบบ Dongle ที่ใช้วัด",
+    "summary": "\"พระเอก\" ของงานนี้ ซื้อจาก Arduinoall"
+  },
+  {
+    "id": "5",
+    "title": "เส้นที่ 1 Eloop (ติดมากับ Eloop E14)",
+    "src": "/media/posts/knowledge/cable-current-watts-2015/c1-eloop.jpg",
+    "w": 1200,
+    "h": 910,
+    "group": "ผลวัดรายเส้น",
+    "alt": "สาย Eloop: 4.87V 1.21A 5.89W",
+    "summary": "จ่ายไฟได้ 1.21A กินไฟ 5.89W",
+    "readings": [
+      [
+        "แรงดัน",
+        "4.87V"
+      ],
+      [
+        "กระแส",
+        "1.21A"
+      ],
+      [
+        "กำลัง",
+        "5.89W"
+      ]
+    ]
+  },
+  {
+    "id": "6",
+    "title": "เส้นที่ 2 Samsung แท้ (มากับกล่อง Galaxy Tab S 8.4)",
+    "src": "/media/posts/knowledge/cable-current-watts-2015/c2-samsung.jpg",
+    "w": 1200,
+    "h": 910,
+    "group": "ผลวัดรายเส้น",
+    "alt": "สาย Samsung: 4.87V 1.11A 5.45W",
+    "summary": "จ่ายไฟได้ 1.11A กินไฟ 5.45W",
+    "readings": [
+      [
+        "แรงดัน",
+        "4.87V"
+      ],
+      [
+        "กระแส",
+        "1.11A"
+      ],
+      [
+        "กำลัง",
+        "5.45W"
+      ]
+    ]
+  },
+  {
+    "id": "7",
+    "title": "เส้นที่ 3 NOKIA แท้ (มากับกล่อง Nokia)",
+    "src": "/media/posts/knowledge/cable-current-watts-2015/c3-nokia.jpg",
+    "w": 1200,
+    "h": 910,
+    "group": "ผลวัดรายเส้น",
+    "alt": "สาย NOKIA: 4.91V 0.87A 4.27W",
+    "summary": "จ่ายไฟได้ 0.87A ผมว่าต่ำ ไม่ถึง 1A กินไฟ 4.27W (ผมลืมไปว่ามากับ Nokia รุ่นไหน)",
+    "readings": [
+      [
+        "แรงดัน",
+        "4.91V"
+      ],
+      [
+        "กระแส",
+        "0.87A"
+      ],
+      [
+        "กำลัง",
+        "4.27W"
+      ]
+    ]
+  },
+  {
+    "id": "8",
+    "title": "เส้นที่ 4 Daiso (สายสปริง)",
+    "src": "/media/posts/knowledge/cable-current-watts-2015/c4-daiso.jpg",
+    "w": 1200,
+    "h": 910,
+    "group": "ผลวัดรายเส้น",
+    "alt": "สาย Daiso: 4.91V 0.82A 4.02W",
+    "summary": "จ่ายไฟได้ 0.82A ถือว่าต่ำ (แต่ยังไม่ต่ำที่สุด) กินไฟ 4.02W",
+    "readings": [
+      [
+        "แรงดัน",
+        "4.91V"
+      ],
+      [
+        "กระแส",
+        "0.82A"
+      ],
+      [
+        "กำลัง",
+        "4.02W"
+      ]
+    ]
+  },
+  {
+    "id": "9",
+    "title": "เส้นที่ 5 REMAX รุ่น Transformer",
+    "src": "/media/posts/knowledge/cable-current-watts-2015/c5-remax.jpg",
+    "w": 1200,
+    "h": 910,
+    "group": "ผลวัดรายเส้น",
+    "alt": "สาย REMAX Transformer: 4.90V 0.97A 4.70W",
+    "summary": "สองหัว ใช้ได้ทั้ง iPhone และ Android จ่ายไฟได้ 0.97A ผิดหวังนิดหน่อย กินไฟ 4.70W",
+    "readings": [
+      [
+        "แรงดัน",
+        "4.90V"
+      ],
+      [
+        "กระแส",
+        "0.97A"
+      ],
+      [
+        "กำลัง",
+        "4.70W"
+      ]
+    ]
+  },
+  {
+    "id": "10",
+    "title": "เส้นที่ 6 สายแบบมีไฟวิ่ง (LED)",
+    "src": "/media/posts/knowledge/cable-current-watts-2015/c6-led.jpg",
+    "w": 1200,
+    "h": 910,
+    "group": "ผลวัดรายเส้น",
+    "alt": "สายไฟวิ่ง: 4.95V 0.71A 3.58W",
+    "summary": "จ่ายไฟได้ 0.71A ต่ำสุดในกลุ่ม กินไฟ 3.58W",
+    "readings": [
+      [
+        "แรงดัน",
+        "4.95V"
+      ],
+      [
+        "กระแส",
+        "0.71A"
+      ],
+      [
+        "กำลัง",
+        "3.58W"
+      ]
+    ]
+  },
+  {
+    "id": "11",
+    "title": "เส้นที่ 7 สายมือถือ i-mobile (แท้จากศูนย์)",
+    "src": "/media/posts/knowledge/cable-current-watts-2015/c7-imobile.jpg",
+    "w": 1200,
+    "h": 910,
+    "group": "ผลวัดรายเส้น",
+    "alt": "สาย i-mobile: 4.83V 1.47A 7.14W",
+    "summary": "จ่ายไฟได้ 1.47A มากที่สุดใน 7 เส้น กินไฟ 7.14W",
+    "readings": [
+      [
+        "แรงดัน",
+        "4.83V"
+      ],
+      [
+        "กระแส",
+        "1.47A"
+      ],
+      [
+        "กำลัง",
+        "7.14W"
+      ]
+    ]
+  }
+]

@@ -85,6 +85,6 @@ const schema = [
   )}
   <div class="wrap"><ShareBar url={url} title={d.title} class="share--end" /></div>
   <div class="wrap source">
-    {d.pr ? <>ข่าวประชาสัมพันธ์จาก {d.pr} · เนื้อหาและภาพจากผู้ส่งข่าว</> : d.sourceName ? <>ที่มา: <a href={d.sourceUrl} rel="noopener">{d.sourceName}</a> · เรียบเรียงโดย DOJOJIN.TECH</> : <>{d.sourceUrl && <>โพสต์ต้นฉบับ: <a href={d.sourceUrl} rel="noopener">Facebook · Dojo-mAn Fotographer</a> · </>}ภาพทั้งหมด © Dojo-mAn Photographer</>}
+    {d.pr ? <>ข่าวประชาสัมพันธ์จาก {d.pr} · เนื้อหาและภาพจากผู้ส่งข่าว</> : d.sourceName ? <>ที่มา: <a href={d.sourceUrl} rel="noopener">{d.sourceName}</a> · เรียบเรียงโดย DOJOJIN.TECH</> : <>{d.sourceUrl && (d.sourceUrl.includes('pantip.com') ? <>ต้นฉบับ: กระทู้รีวิวของผมใน Pantip <a href={d.sourceUrl} rel="noopener">{d.sourceUrl.replace(/^https?:\/\//, '').replace(/\/$/, '')}</a> · </> : <>โพสต์ต้นฉบับ: <a href={d.sourceUrl} rel="noopener">Facebook · Dojo-mAn Fotographer</a> · </>)}ภาพทั้งหมด © Dojo-mAn Photographer</>}
   </div>
 </Base>

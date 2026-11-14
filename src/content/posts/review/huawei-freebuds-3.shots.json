@@ -1,0 +1,199 @@
+[
+  {
+    "id": "1",
+    "title": "กล่องด้านหน้า",
+    "src": "/media/posts/review/huawei-freebuds-3/box-front.jpg",
+    "w": 600,
+    "h": 800,
+    "group": "แกะกล่อง",
+    "alt": "กล่อง HUAWEI FreeBuds 3 New Intelligent Sound",
+    "summary": "หน้ากล่อง HUAWEI FreeBuds 3 \"New Intelligent Sound\"",
+    "fit": "contain"
+  },
+  {
+    "id": "2",
+    "title": "กล่องและฝากล่อง",
+    "src": "/media/posts/review/huawei-freebuds-3/box-open.jpg",
+    "w": 800,
+    "h": 600,
+    "group": "แกะกล่อง",
+    "alt": "กล่อง FreeBuds 3 กับฝากล่องสีขาว",
+    "summary": "กล่องสองส่วน ฝากล่องมีโลโก้ HUAWEI"
+  },
+  {
+    "id": "3",
+    "title": "ด้านหลังกล่อง",
+    "src": "/media/posts/review/huawei-freebuds-3/box-back.jpg",
+    "w": 800,
+    "h": 600,
+    "group": "แกะกล่อง",
+    "alt": "ด้านหลังกล่องและข้อความหลายภาษา",
+    "summary": "ด้านหลังกล่องมีข้อความหลายภาษา (Kirin A1, Intelligent Noise Cancellation, Wireless Charging, Driver 14 mm) บล็อกภาพ QR ด้านล่างแล้ว"
+  },
+  {
+    "id": "4",
+    "title": "เปิดกล่อง",
+    "src": "/media/posts/review/huawei-freebuds-3/inside-box.jpg",
+    "w": 800,
+    "h": 600,
+    "group": "แกะกล่อง",
+    "alt": "เปิดกล่องเห็นเคสชาร์จสีดำ",
+    "summary": "เปิดกล่องเห็นเคสชาร์จสีดำวางในถาด"
+  },
+  {
+    "id": "5",
+    "title": "เคสชาร์จ (ฟิล์มยังติดอยู่)",
+    "src": "/media/posts/review/huawei-freebuds-3/case-film.jpg",
+    "w": 800,
+    "h": 600,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "เคสชาร์จสีดำที่ยังมีฟิล์มโลโก้",
+    "summary": "เคสชาร์จสีดำ ฟิล์มโลโก้ยังไม่ลอก"
+  },
+  {
+    "id": "6",
+    "title": "เคสชาร์จสีดำ",
+    "src": "/media/posts/review/huawei-freebuds-3/case-black.jpg",
+    "w": 800,
+    "h": 600,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "เคสชาร์จสีดำบนฝ่ามือ",
+    "summary": "เคสสีดำ Carbon Black โลโก้ HUAWEI"
+  },
+  {
+    "id": "7",
+    "title": "เคสบน HUAWEI P30 Pro",
+    "src": "/media/posts/review/huawei-freebuds-3/case-p30.jpg",
+    "w": 800,
+    "h": 600,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "เคสชาร์จวางบนมือถือ HUAWEI",
+    "summary": "วางเคสบนมือถือ HUAWEI (ผู้รีวิวบอกว่ามือถือที่รองรับ Reverse Wireless Charging วางเคสชาร์จได้เลย)"
+  },
+  {
+    "id": "8",
+    "title": "เครื่องตัวอย่างที่ร้าน",
+    "src": "/media/posts/review/huawei-freebuds-3/demo-unit.jpg",
+    "w": 800,
+    "h": 600,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "เคสสีขาวและหูฟังที่เครื่องโชว์",
+    "summary": "เครื่องตัวอย่างสีขาว ป้าย \"สุดยอดพลังเสียง ที่อยากให้คุณสัมผัส\""
+  },
+  {
+    "id": "9",
+    "title": "โปสเตอร์จอง",
+    "src": "/media/posts/review/huawei-freebuds-3/preorder-poster.jpg",
+    "w": 600,
+    "h": 800,
+    "group": "ตัวเคส / ตัวหูฟัง",
+    "alt": "โปสเตอร์ Pre-Order FreeBuds 3",
+    "summary": "โปสเตอร์ Pre-Order ราคา 4,990 บาท แถม HUAWEI Wireless Charger มูลค่า 1,490 บาท",
+    "fit": "contain"
+  },
+  {
+    "id": "10",
+    "title": "AirPods 2 ของผม",
+    "src": "/media/posts/review/huawei-freebuds-3/airpods-2.jpg",
+    "w": 800,
+    "h": 600,
+    "group": "เทียบกับรุ่นอื่น",
+    "alt": "เคสและหูฟัง AirPods 2 บนโต๊ะไม้",
+    "summary": "AirPods 2 ของผมเอง ที่ใช้อยู่ก่อนเปลี่ยนมาลอง FreeBuds 3"
+  },
+  {
+    "id": "11",
+    "title": "ตารางเปรียบเทียบ",
+    "src": "/media/posts/review/huawei-freebuds-3/compare-table.jpg",
+    "w": 1003,
+    "h": 653,
+    "group": "เทียบกับรุ่นอื่น",
+    "alt": "ตารางเทียบสเปก AirPods 1, 2, Pro และ FreeBuds 3",
+    "summary": "ตารางที่ผู้รีวิวทำเมื่อปี 2019 ข้อมูลและราคา ณ ตอนนั้น (บางช่องเขียนว่าไม่ระบุ)"
+  },
+  {
+    "id": "12",
+    "title": "ทดสอบในห้าง",
+    "src": "/media/posts/review/huawei-freebuds-3/test-mall.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ทดสอบใช้งาน",
+    "alt": "ผู้รีวิวใส่ FreeBuds 3 ในห้างสรรพสินค้า",
+    "summary": "ทดสอบเปิด ANC ในห้างสรรพสินค้า"
+  },
+  {
+    "id": "13",
+    "title": "ซ้อนท้ายพี่วิน",
+    "src": "/media/posts/review/huawei-freebuds-3/test-motorbike.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "ทดสอบใช้งาน",
+    "alt": "ผู้รีวิวซ้อนมอเตอร์ไซค์รับจ้างขณะใส่ FreeBuds 3",
+    "summary": "ทดสอบที่ 20-60 กม./ชม. ไม่ได้ใส่หมวก (ภาพบัตรบนเสื้อวินถูกบล็อก)"
+  },
+  {
+    "id": "14",
+    "title": "ทดสอบในงาน Motor Expo",
+    "src": "/media/posts/review/huawei-freebuds-3/test-motorexpo.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "ทดสอบใช้งาน",
+    "alt": "ผู้รีวิวใส่ FreeBuds 3 ในงาน Motor Expo 2019",
+    "summary": "ทดสอบในงาน Motor Expo 2019 (ใบหน้าคนอื่นถูกบล็อก)",
+    "fit": "contain"
+  },
+  {
+    "id": "15",
+    "title": "บรรยากาศงาน",
+    "src": "/media/posts/review/huawei-freebuds-3/motorexpo-hall.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "ทดสอบใช้งาน",
+    "alt": "ฮอลล์งาน Motor Expo 2019 คนเยอะ",
+    "summary": "บรรยากาศงาน Motor Expo 2019 (ใบหน้าบางคนถูกบล็อก)"
+  },
+  {
+    "id": "16",
+    "title": "เชื่อมต่อบน EMUI",
+    "src": "/media/posts/review/huawei-freebuds-3/app-pairing.jpg",
+    "w": 369,
+    "h": 800,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าจอมือถือแสดงการเชื่อมต่อ FreeBuds 3",
+    "summary": "เปิดฝาเคส มือถือแสดงตัวเลือกเชื่อมต่อ ชื่ออุปกรณ์ของผู้รีวิว",
+    "fit": "contain"
+  },
+  {
+    "id": "17",
+    "title": "ตั้งค่าใน Bluetooth",
+    "src": "/media/posts/review/huawei-freebuds-3/app-settings.jpg",
+    "w": 308,
+    "h": 800,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "เมนูตั้งค่าอุปกรณ์ FreeBuds 3",
+    "summary": "ตั้งค่าในเมนู Bluetooth ของ EMUI 10",
+    "fit": "contain"
+  },
+  {
+    "id": "18",
+    "title": "ตั้งค่าปุ่มและ ANC",
+    "src": "/media/posts/review/huawei-freebuds-3/app-anc.jpg",
+    "w": 1107,
+    "h": 800,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าจอตั้งค่าปุ่มและการตัดเสียงรบกวน",
+    "summary": "แอป HUAWEI AI Life: แบตเตอรี่หูฟังซ้าย/ขวา เคส ตั้งค่าแตะ และปรับ ANC",
+    "fit": "contain"
+  },
+  {
+    "id": "19",
+    "title": "อัปเดตเฟิร์มแวร์",
+    "src": "/media/posts/review/huawei-freebuds-3/app-update.jpg",
+    "w": 271,
+    "h": 800,
+    "group": "ภาพหน้าจอแอป",
+    "alt": "หน้าจออัปเดตเฟิร์มแวร์ FreeBuds 3",
+    "summary": "หน้าอัปเดตเฟิร์มแวร์ผ่านแอป",
+    "fit": "contain"
+  }
+]

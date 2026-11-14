@@ -15,6 +15,7 @@ export const HEADPHONES = [
   { slug: 'soundpeats-t3-pro', name: 'SoundPEATS T3 Pro', fit: 'In-ear', anc: '35dB', codec: null, bt: '5.4', battery: [7, 28], ip: null, weight: null, price: 499 },
   { slug: 'huawei-freebuds-pro-4', name: 'HUAWEI FreeBuds Pro 4', fit: 'In-ear', anc: 'มี', codec: 'SBC, AAC, LDAC, L2HC', bt: '5.2', battery: [7, 33], ip: 'IP54', weight: 5.8, price: null },
   { slug: 'soundcore-liberty-4-pro', name: 'soundcore Liberty 4 Pro', fit: 'In-ear', anc: 'มี', codec: 'SBC, AAC, LDAC', bt: '5.3', battery: [10, 40], ip: null, weight: 5.5, price: 5490 },
+  { slug: 'huawei-freebuds-3', name: 'HUAWEI FreeBuds 3', fit: 'In-ear', anc: 'มี', codec: null, bt: '5.1', battery: [4, 20], ip: null, weight: 4.5, price: 4990 },
   { slug: 'huawei-freebuds-se-3', name: 'HUAWEI FreeBuds SE 3', fit: 'In-ear', anc: null, codec: 'SBC, AAC', bt: '5.4', battery: [9, 42], ip: 'IP54', weight: 3.8, price: 1399 },
   { slug: 'shokz-opendots-one', name: 'Shokz OpenDots One', fit: 'Clip-on', anc: null, codec: 'SBC, AAC', bt: '5.4', battery: [10, 40], ip: 'IP54', weight: 6.5, price: null },
   { slug: '1more-earclip-s20', name: '1MORE Ear Clip S20', fit: 'Clip-on', anc: null, codec: 'SBC, AAC, LDAC', bt: '5.4', battery: [7, 30], ip: 'IPX5', weight: 7, price: null },

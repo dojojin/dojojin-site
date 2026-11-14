@@ -1,0 +1,322 @@
+[
+  {
+    "id": "1",
+    "title": "ของที่ใช้ทดสอบ",
+    "src": "/media/posts/knowledge/charging-tech-powerbank-2020/gadget-pile.jpg",
+    "w": 640,
+    "h": 480,
+    "group": "ELECJET PowerPie P20",
+    "alt": "กองอุปกรณ์ชาร์จ มิเตอร์ และ Power Bank บนโต๊ะ",
+    "summary": "ภาพเปิดโพสต์"
+  },
+  {
+    "id": "2",
+    "title": "แกะกล่อง",
+    "src": "/media/posts/knowledge/charging-tech-powerbank-2020/elecjet-box.jpg",
+    "w": 640,
+    "h": 480,
+    "group": "ELECJET PowerPie P20",
+    "alt": "กล่อง ELECJET PowerPie P20 พร้อมหัวชาร์จ gosh",
+    "summary": "ELECJET PowerPie P20 ซื้อจาก gosh.co.th ราคา 2,690 บาท"
+  },
+  {
+    "id": "3",
+    "title": "ข้างกล่อง",
+    "src": "/media/posts/knowledge/charging-tech-powerbank-2020/box-side.jpg",
+    "w": 640,
+    "h": 480,
+    "group": "ELECJET PowerPie P20",
+    "alt": "ข้างกล่อง ELECJET เขียนว่ารองรับ MacBook, Surface, Lenovo Yoga, Dell Inspiron, HP Elite",
+    "summary": "ข้างกล่อง: USB-C PD 45W ใช้กับ Laptop ที่ชาร์จด้วย USB-C ได้"
+  },
+  {
+    "id": "4",
+    "title": "หลังกล่อง",
+    "src": "/media/posts/knowledge/charging-tech-powerbank-2020/box-back.jpg",
+    "w": 480,
+    "h": 640,
+    "group": "ELECJET PowerPie P20",
+    "alt": "หลังกล่อง ELECJET ระบุยืดอายุ MacBook 14 ชม. iPad 20 ชม. iPhone X 64 ชม.",
+    "summary": "หลังกล่อง: ยืดอายุ MacBook ได้ถึง 14 ชม. / iPad 20 ชม. / iPhone 64 ชม. (ตามที่กล่องระบุ)",
+    "fit": "contain"
+  },
+  {
+    "id": "5",
+    "title": "คู่มือ",
+    "src": "/media/posts/knowledge/charging-tech-powerbank-2020/manual.jpg",
+    "w": 640,
+    "h": 480,
+    "group": "ELECJET PowerPie P20",
+    "alt": "คู่มือและตารางสเปก ELECJET PowerPie P20",
+    "summary": "คู่มือภาษาอังกฤษ ตารางสเปกอยู่ด้านขวา"
+  },
+  {
+    "id": "6",
+    "title": "ช่อง USB-C (Auto Enumerate)",
+    "src": "/media/posts/knowledge/charging-tech-powerbank-2020/meter-typec.jpg",
+    "w": 640,
+    "h": 480,
+    "group": "ตรวจโปรโตคอลที่ POWER-Z รายงาน",
+    "alt": "ผลตรวจช่อง USB-C: Samsung 5V-2A, DCP 5V-1.5A, QC2, QC3, FCP",
+    "summary": "ช่อง USB-C: 5V/2A, 5V/1.5A, QC2, QC3 และ FCP (บรรทัดที่เป็นสีเขียวคือรองรับ)"
+  },
+  {
+    "id": "7",
+    "title": "ช่อง USB-A (Auto Enumerate)",
+    "src": "/media/posts/knowledge/charging-tech-powerbank-2020/meter-typea.jpg",
+    "w": 640,
+    "h": 480,
+    "group": "ตรวจโปรโตคอลที่ POWER-Z รายงาน",
+    "alt": "ผลตรวจช่อง USB-A: Apple 2.4A, 5V-1.5A, QC2, QC3, AFC, FCP, SCP",
+    "summary": "ช่อง USB-A: Apple 2.4A, 5V/1.5A, QC2, QC3, AFC, FCP และ SCP"
+  },
+  {
+    "id": "8",
+    "title": "รายการ PDO และ PPS",
+    "src": "/media/posts/knowledge/charging-tech-powerbank-2020/meter-pd-pps.jpg",
+    "w": 640,
+    "h": 480,
+    "group": "ตรวจโปรโตคอลที่ POWER-Z รายงาน",
+    "alt": "Power Delivery 3.0: PDO 5V 9V 12V 15V 20V และ PPS 3.3-11.0V 3A",
+    "summary": "PD 3.0: 5V/9V/12V/15V/20V (20V@2.25A = 45W) และ PPS 3.3-11.0V @3.00A"
+  },
+  {
+    "id": "9",
+    "title": "iPad Pro 10.5 (2017)",
+    "src": "/media/posts/knowledge/charging-tech-powerbank-2020/ipad-pro.jpg",
+    "w": 640,
+    "h": 480,
+    "group": "ชาร์จอุปกรณ์จริง",
+    "alt": "iPad Pro 10.5 พร้อมคีย์บอร์ดต่อกับ Power Bank",
+    "summary": "iPad Pro 10.5 (2017) ชาร์จได้ 23-30W (ตามที่ iPad เครื่องนี้รองรับ)"
+  },
+  {
+    "id": "10",
+    "title": "iPad Pro: ค่าที่มิเตอร์",
+    "src": "/media/posts/knowledge/charging-tech-powerbank-2020/ipad-pro-meter.jpg",
+    "w": 640,
+    "h": 480,
+    "group": "ชาร์จอุปกรณ์จริง",
+    "alt": "มิเตอร์ USB-C อ่านค่า 14.9525V 1.5604A 23.3284W",
+    "summary": "iPad Pro ได้ราว 23W ที่ 15V",
+    "readings": [
+      [
+        "แรงดัน",
+        "14.9525V"
+      ],
+      [
+        "กระแส",
+        "1.5604A"
+      ],
+      [
+        "กำลัง",
+        "23.3284W"
+      ]
+    ]
+  },
+  {
+    "id": "11",
+    "title": "Huawei P40 Pro",
+    "src": "/media/posts/knowledge/charging-tech-powerbank-2020/p40-pro-1.jpg",
+    "w": 640,
+    "h": 480,
+    "group": "ชาร์จอุปกรณ์จริง",
+    "alt": "Huawei P40 Pro ต่อ Power Bank ผ่านมิเตอร์ POWER-Z",
+    "summary": "ขึ้น Super Charge ได้ 10-22.5W (ตามมาตรฐาน SCP 1.0)"
+  },
+  {
+    "id": "12",
+    "title": "Huawei P40 Pro: ค่าที่มิเตอร์",
+    "src": "/media/posts/knowledge/charging-tech-powerbank-2020/p40-pro-2.jpg",
+    "w": 640,
+    "h": 480,
+    "group": "ชาร์จอุปกรณ์จริง",
+    "alt": "มิเตอร์ POWER-Z อ่าน 4.6010V 2.8483A 13.106W",
+    "summary": "ตอนวัดได้ 13.1W ที่ 4.6V",
+    "readings": [
+      [
+        "แรงดัน",
+        "4.6010V"
+      ],
+      [
+        "กระแส",
+        "2.8483A"
+      ],
+      [
+        "กำลัง",
+        "13.106W"
+      ]
+    ]
+  },
+  {
+    "id": "13",
+    "title": "Samsung Galaxy Note10+",
+    "src": "/media/posts/knowledge/charging-tech-powerbank-2020/note10-1.jpg",
+    "w": 640,
+    "h": 480,
+    "group": "ชาร์จอุปกรณ์จริง",
+    "alt": "Note10+ ต่อ Power Bank มิเตอร์อ่าน 9.4277V 3.5146A 33.1080W",
+    "summary": "Note10+ ชาร์จได้สูงสุด 35-36W (เฉลี่ยราว 25W เท่ากับ Samsung Travel Adapter 45W)",
+    "readings": [
+      [
+        "แรงดัน",
+        "9.4277V"
+      ],
+      [
+        "กระแส",
+        "3.5146A"
+      ],
+      [
+        "กำลัง",
+        "33.1080W"
+      ]
+    ]
+  },
+  {
+    "id": "14",
+    "title": "Note10+: อีกช่วงหนึ่ง",
+    "src": "/media/posts/knowledge/charging-tech-powerbank-2020/note10-2.jpg",
+    "w": 640,
+    "h": 480,
+    "group": "ชาร์จอุปกรณ์จริง",
+    "alt": "Note10+ มิเตอร์อ่าน 8.6064V 25.7454W",
+    "summary": "อีกช่วงหนึ่งได้ราว 25.7W",
+    "readings": [
+      [
+        "แรงดัน",
+        "8.6064V"
+      ],
+      [
+        "กำลัง",
+        "25.7454W"
+      ]
+    ]
+  },
+  {
+    "id": "15",
+    "title": "Note10+: ช่วงสูงสุด",
+    "src": "/media/posts/knowledge/charging-tech-powerbank-2020/note10-3.jpg",
+    "w": 640,
+    "h": 480,
+    "group": "ชาร์จอุปกรณ์จริง",
+    "alt": "Note10+ มิเตอร์อ่าน 9.3375V 3.7549A 35.0333W",
+    "summary": "ช่วงสูงสุดได้ราว 35W",
+    "readings": [
+      [
+        "แรงดัน",
+        "9.3375V"
+      ],
+      [
+        "กระแส",
+        "3.7549A"
+      ],
+      [
+        "กำลัง",
+        "35.0333W"
+      ]
+    ]
+  },
+  {
+    "id": "16",
+    "title": "Huawei MateBook D15",
+    "src": "/media/posts/knowledge/charging-tech-powerbank-2020/matebook-1.jpg",
+    "w": 640,
+    "h": 480,
+    "group": "ชาร์จอุปกรณ์จริง",
+    "alt": "MateBook D15 ต่อ Power Bank มิเตอร์อ่าน 19.9743V 2.0136A 40.2125W",
+    "summary": "MateBook D15 ได้ 40-42W (ตามกำลังไฟแบตที่เหลือ)",
+    "readings": [
+      [
+        "แรงดัน",
+        "19.9743V"
+      ],
+      [
+        "กระแส",
+        "2.0136A"
+      ],
+      [
+        "กำลัง",
+        "40.2125W"
+      ]
+    ]
+  },
+  {
+    "id": "17",
+    "title": "MateBook D15: อีกช่วง",
+    "src": "/media/posts/knowledge/charging-tech-powerbank-2020/matebook-2.jpg",
+    "w": 640,
+    "h": 480,
+    "group": "ชาร์จอุปกรณ์จริง",
+    "alt": "MateBook D15 มิเตอร์อ่าน 19.9715V 40.2034W",
+    "summary": "อีกช่วงหนึ่งอ่านได้ 40.2W",
+    "readings": [
+      [
+        "แรงดัน",
+        "19.9715V"
+      ],
+      [
+        "กำลัง",
+        "40.2034W"
+      ]
+    ]
+  },
+  {
+    "id": "18",
+    "title": "ASUS ROG ZEPHYRUS G14 (Ryzen 5 4000 Series)",
+    "src": "/media/posts/knowledge/charging-tech-powerbank-2020/rog-1.jpg",
+    "w": 640,
+    "h": 480,
+    "group": "ชาร์จอุปกรณ์จริง",
+    "alt": "ROG Zephyrus G14 ต่อ Power Bank ผ่านมิเตอร์",
+    "summary": "ROG G14 ได้ 40-43W"
+  },
+  {
+    "id": "19",
+    "title": "ROG G14: ค่าที่มิเตอร์",
+    "src": "/media/posts/knowledge/charging-tech-powerbank-2020/rog-2.jpg",
+    "w": 640,
+    "h": 480,
+    "group": "ชาร์จอุปกรณ์จริง",
+    "alt": "มิเตอร์อ่าน 14.8895V 2.8713A 42.7249W",
+    "summary": "ได้ราว 42.7W ที่ 15V",
+    "readings": [
+      [
+        "แรงดัน",
+        "14.8895V"
+      ],
+      [
+        "กระแส",
+        "2.8713A"
+      ],
+      [
+        "กำลัง",
+        "42.7249W"
+      ]
+    ]
+  },
+  {
+    "id": "20",
+    "title": "ชาร์จไฟเข้า Power Bank",
+    "src": "/media/posts/knowledge/charging-tech-powerbank-2020/recharge-bank.jpg",
+    "w": 480,
+    "h": 640,
+    "group": "ชาร์จกลับเข้า Power Bank",
+    "alt": "ชาร์จไฟกลับเข้า ELECJET P20 ผ่านหัวชาร์จ มิเตอร์อ่าน 19.9792V 2.2068A 44.0703W",
+    "summary": "ชาร์จไฟกลับเข้าตัว Power Bank ได้ 44-45W เต็ม ๆ",
+    "fit": "contain",
+    "readings": [
+      [
+        "แรงดัน",
+        "19.9792V"
+      ],
+      [
+        "กระแส",
+        "2.2068A"
+      ],
+      [
+        "กำลัง",
+        "44.0703W"
+      ]
+    ]
+  }
+]

@@ -1,0 +1,307 @@
+[
+  {
+    "id": "1",
+    "title": "สายแท้ + หัวชาร์จแท้",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/orig-orig.jpg",
+    "w": 902,
+    "h": 1600,
+    "group": "สาย Lightning แท้",
+    "alt": "สายแท้ + หัวชาร์จแท้: เฉลี่ย 1.00–0.95A",
+    "summary": "เฉลี่ย 1.00–0.95A",
+    "fit": "contain"
+  },
+  {
+    "id": "2",
+    "title": "สายแท้ + noontec",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/orig-noontec.jpg",
+    "w": 1600,
+    "h": 902,
+    "group": "สาย Lightning แท้",
+    "alt": "สายแท้ + noontec: เฉลี่ย 1.85–1.65A",
+    "summary": "เฉลี่ย 1.85–1.65A"
+  },
+  {
+    "id": "3",
+    "title": "สายแท้ + AUKEY 30,000mAh",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/orig-aukey.jpg",
+    "w": 1600,
+    "h": 902,
+    "group": "สาย Lightning แท้",
+    "alt": "สายแท้ + AUKEY 30,000mAh: เฉลี่ย 1.55–1.45A",
+    "summary": "เฉลี่ย 1.55–1.45A"
+  },
+  {
+    "id": "4",
+    "title": "สายแท้ + YooBao 16,000mAh",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/orig-yoobao.jpg",
+    "w": 1600,
+    "h": 902,
+    "group": "สาย Lightning แท้",
+    "alt": "สายแท้ + YooBao 16,000mAh: เฉลี่ย 1.45–1.35A",
+    "summary": "เฉลี่ย 1.45–1.35A"
+  },
+  {
+    "id": "5",
+    "title": "REMAX Full Speed Data Line",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/remax-fs-box.jpg",
+    "w": 902,
+    "h": 1600,
+    "group": "REMAX Full Speed",
+    "alt": "REMAX Full Speed Data Line: กล่องสาย REMAX Full Speed",
+    "summary": "กล่องสาย REMAX Full Speed",
+    "fit": "contain"
+  },
+  {
+    "id": "6",
+    "title": "REMAX Full Speed + หัวชาร์จแท้",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/remax-fs-orig.jpg",
+    "w": 902,
+    "h": 1600,
+    "group": "REMAX Full Speed",
+    "alt": "REMAX Full Speed + หัวชาร์จแท้: เฉลี่ย 1.00–0.95A",
+    "summary": "เฉลี่ย 1.00–0.95A",
+    "fit": "contain"
+  },
+  {
+    "id": "7",
+    "title": "REMAX Full Speed + noontec",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/remax-fs-noontec.jpg",
+    "w": 1600,
+    "h": 902,
+    "group": "REMAX Full Speed",
+    "alt": "REMAX Full Speed + noontec: เฉลี่ย 1.75–1.55A",
+    "summary": "เฉลี่ย 1.75–1.55A"
+  },
+  {
+    "id": "8",
+    "title": "REMAX Full Speed สีชมพู",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/remax-fs-pink.jpg",
+    "w": 1600,
+    "h": 902,
+    "group": "REMAX Full Speed",
+    "alt": "REMAX Full Speed สีชมพู: แถมสีชมพูให้อีกเส้น",
+    "summary": "แถมสีชมพูให้อีกเส้น"
+  },
+  {
+    "id": "9",
+    "title": "REMAX Full Speed + AUKEY",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/remax-fs-aukey.jpg",
+    "w": 1600,
+    "h": 902,
+    "group": "REMAX Full Speed",
+    "alt": "REMAX Full Speed + AUKEY: เฉลี่ย 1.65–1.45A",
+    "summary": "เฉลี่ย 1.65–1.45A"
+  },
+  {
+    "id": "10",
+    "title": "REMAX Full Speed + YooBao",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/remax-fs-yoobao.jpg",
+    "w": 1600,
+    "h": 902,
+    "group": "REMAX Full Speed",
+    "alt": "REMAX Full Speed + YooBao: เฉลี่ย 1.45–1.35A",
+    "summary": "เฉลี่ย 1.45–1.35A"
+  },
+  {
+    "id": "11",
+    "title": "REMAX Emperor 2.1A",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/emperor-box.jpg",
+    "w": 902,
+    "h": 1600,
+    "group": "REMAX Emperor",
+    "alt": "REMAX Emperor 2.1A: กล่องสาย REMAX Emperor 2.1A",
+    "summary": "กล่องสาย REMAX Emperor 2.1A",
+    "fit": "contain"
+  },
+  {
+    "id": "12",
+    "title": "Emperor + noontec",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/emperor-noontec.jpg",
+    "w": 1600,
+    "h": 902,
+    "group": "REMAX Emperor",
+    "alt": "Emperor + noontec: เฉลี่ย 1.35–1.25A",
+    "summary": "เฉลี่ย 1.35–1.25A"
+  },
+  {
+    "id": "13",
+    "title": "Emperor + AUKEY",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/emperor-aukey.jpg",
+    "w": 1600,
+    "h": 902,
+    "group": "REMAX Emperor",
+    "alt": "Emperor + AUKEY: เฉลี่ย 1.35–1.25A",
+    "summary": "เฉลี่ย 1.35–1.25A"
+  },
+  {
+    "id": "14",
+    "title": "Emperor + YooBao",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/emperor-yoobao.jpg",
+    "w": 1600,
+    "h": 902,
+    "group": "REMAX Emperor",
+    "alt": "Emperor + YooBao: เฉลี่ย 1.35–1.25A",
+    "summary": "เฉลี่ย 1.35–1.25A"
+  },
+  {
+    "id": "15",
+    "title": "WK WDC-023 (2 เมตร)",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/wk-box.jpg",
+    "w": 902,
+    "h": 1600,
+    "group": "WK WDC-023",
+    "alt": "WK WDC-023 (2 เมตร): กล่องสาย WK ยาว 2 เมตร",
+    "summary": "กล่องสาย WK ยาว 2 เมตร",
+    "fit": "contain"
+  },
+  {
+    "id": "16",
+    "title": "WK + noontec",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/wk-noontec.jpg",
+    "w": 1600,
+    "h": 902,
+    "group": "WK WDC-023",
+    "alt": "WK + noontec: เฉลี่ย 1.35–1.25A",
+    "summary": "เฉลี่ย 1.35–1.25A"
+  },
+  {
+    "id": "17",
+    "title": "WK + noontec (อีกมุม)",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/wk-noontec-2.jpg",
+    "w": 1600,
+    "h": 902,
+    "group": "WK WDC-023",
+    "alt": "WK + noontec (อีกมุม): เฉลี่ย 1.35–1.25A",
+    "summary": "เฉลี่ย 1.35–1.25A"
+  },
+  {
+    "id": "18",
+    "title": "WK + YooBao",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/wk-yoobao.jpg",
+    "w": 1600,
+    "h": 902,
+    "group": "WK WDC-023",
+    "alt": "WK + YooBao: เฉลี่ย 1.15–1.05A",
+    "summary": "เฉลี่ย 1.15–1.05A"
+  },
+  {
+    "id": "19",
+    "title": "TWZ สายชาร์จสองหัว",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/twz-cable.jpg",
+    "w": 1600,
+    "h": 902,
+    "group": "TWZ",
+    "alt": "TWZ สายชาร์จสองหัว: สาย TWZ สองหัว",
+    "summary": "สาย TWZ สองหัว"
+  },
+  {
+    "id": "20",
+    "title": "TWZ + noontec",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/twz-noontec.jpg",
+    "w": 1600,
+    "h": 902,
+    "group": "TWZ",
+    "alt": "TWZ + noontec: เฉลี่ย 2.05–1.85A มิเตอร์ขึ้น 5.05V 1.94A 9.82W",
+    "summary": "เฉลี่ย 2.05–1.85A มิเตอร์ขึ้น 5.05V 1.94A 9.82W"
+  },
+  {
+    "id": "21",
+    "title": "TWZ + noontec (อีกมุม)",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/twz-noontec-2.jpg",
+    "w": 1600,
+    "h": 902,
+    "group": "TWZ",
+    "alt": "TWZ + noontec (อีกมุม): เฉลี่ย 2.05–1.85A",
+    "summary": "เฉลี่ย 2.05–1.85A"
+  },
+  {
+    "id": "22",
+    "title": "TWZ + AUKEY",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/twz-aukey.jpg",
+    "w": 1600,
+    "h": 902,
+    "group": "TWZ",
+    "alt": "TWZ + AUKEY: เฉลี่ย 1.75–1.65A",
+    "summary": "เฉลี่ย 1.75–1.65A"
+  },
+  {
+    "id": "23",
+    "title": "TWZ + YooBao",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/twz-yoobao.jpg",
+    "w": 1600,
+    "h": 902,
+    "group": "TWZ",
+    "alt": "TWZ + YooBao: เฉลี่ย 1.70–1.55A",
+    "summary": "เฉลี่ย 1.70–1.55A"
+  },
+  {
+    "id": "24",
+    "title": "สายแถม",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/twz-extra.jpg",
+    "w": 1600,
+    "h": 902,
+    "group": "สายแถม",
+    "alt": "สายแถม: มิเตอร์ขึ้น 5.13V 0.81A 4.10W",
+    "summary": "มิเตอร์ขึ้น 5.13V 0.81A 4.10W"
+  },
+  {
+    "id": "25",
+    "title": "สายแถม",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/doraemon-1.jpg",
+    "w": 1600,
+    "h": 902,
+    "group": "สายแถม",
+    "alt": "สายแถม: มิเตอร์ขึ้น 4.94V 1.54A 7.67W",
+    "summary": "มิเตอร์ขึ้น 4.94V 1.54A 7.67W"
+  },
+  {
+    "id": "26",
+    "title": "สายแถม",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/doraemon-2.jpg",
+    "w": 1600,
+    "h": 902,
+    "group": "สายแถม",
+    "alt": "สายแถม: มิเตอร์ขึ้น 5.10V 1.07A 5.47W",
+    "summary": "มิเตอร์ขึ้น 5.10V 1.07A 5.47W"
+  },
+  {
+    "id": "27",
+    "title": "noontec Powa 50",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/gear-1.jpg",
+    "w": 1600,
+    "h": 902,
+    "group": "อุปกรณ์ที่ใช้ทดสอบ",
+    "alt": "noontec Powa 50: Powa HUB รุ่น Powa50 Output 5.0V 10A (เบลอเลข Serial)",
+    "summary": "Powa HUB รุ่น Powa50 Output 5.0V 10A (เบลอเลข Serial)"
+  },
+  {
+    "id": "28",
+    "title": "noontec Powa 50",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/gear-2.jpg",
+    "w": 1600,
+    "h": 902,
+    "group": "อุปกรณ์ที่ใช้ทดสอบ",
+    "alt": "noontec Powa 50: noontec Powa 50 ด้านหน้า",
+    "summary": "noontec Powa 50 ด้านหน้า"
+  },
+  {
+    "id": "29",
+    "title": "YooBao Q16",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/gear-3.jpg",
+    "w": 1600,
+    "h": 902,
+    "group": "อุปกรณ์ที่ใช้ทดสอบ",
+    "alt": "YooBao Q16: พาวเวอร์แบงก์ YooBao 16,000mAh",
+    "summary": "พาวเวอร์แบงก์ YooBao 16,000mAh"
+  },
+  {
+    "id": "30",
+    "title": "YooBao Q16",
+    "src": "/media/posts/knowledge/iphone-lightning-cable-test-2017/gear-4.jpg",
+    "w": 1600,
+    "h": 902,
+    "group": "อุปกรณ์ที่ใช้ทดสอบ",
+    "alt": "YooBao Q16: พาวเวอร์แบงก์ YooBao ด้านหน้า",
+    "summary": "พาวเวอร์แบงก์ YooBao ด้านหน้า"
+  }
+]

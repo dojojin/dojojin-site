@@ -1,0 +1,185 @@
+---
+title: "เทคโนโลยีการชาร์จโทรศัพท์ กับ Power Bank ที่ควรมีในยุค 2020"
+topic: power
+type: knowledge
+tags: [powerbank, usb-pd, samsung, huawei, oppo, realme]
+date: 2020-08-14 # Pantip topic 40129700 posted 14 Aug 2020
+updated: 2026-11-15T04:00:00+07:00
+description: "โพสต์จาก Pantip ปี 2020 นำมาลงซ้ำและแก้ข้อมูลให้ถูกต้องแล้ว สมัยนั้นข้อมูลอาจจะไม่ครบรอบด้าน: อธิบายเทคโนโลยีชาร์จเร็วแต่ละค่าย (QC, AFC, FCP, SCP, VOOC, PD) และวัด ELECJET PowerPie P20 กับ iPad Pro, Huawei, Samsung และ Laptop"
+kicker: "ความรู้ · ชาร์จเร็ว / Power Bank"
+lead: "ชาร์จเร็วมีหลายค่ายหลายมาตรฐาน ผมเลยรวบรวมว่าแต่ละค่ายใช้อะไร แล้วเอา Power Bank ที่ผมยกให้เป็นอันดับ 1 ที่ควรมีในยุคนั้น (ELECJET PowerPie P20) มาวัดจริงกับอุปกรณ์ 5 แบบ โพสต์นี้เขียนไว้ที่ Pantip ตั้งแต่ปี 2020 นำมาลงซ้ำและแก้ข้อมูลให้ถูกต้องแล้ว สมัยนั้นข้อมูลอาจจะไม่ครบรอบด้าน"
+meta: "Dojo-mAn Fotographer · ต้นฉบับจากกระทู้ Pantip ปี 2020 · ปรับปรุงเนื้อหาปี 2026"
+sourceUrl: "https://pantip.com/topic/40129700"
+cover: "/media/posts/knowledge/charging-tech-powerbank-2020/elecjet-box.jpg"
+coverAlt: "กล่อง ELECJET PowerPie P20 พร้อมหัวชาร์จ gosh"
+---
+import ShotGallery from '../../../components/ShotGallery.astro';
+import shots from './charging-tech-powerbank-2020.shots.json';
+
+<section class="section">
+
+## เกริ่นนำ
+
+<p class="note">ที่มา: รีวิวนี้เดิมผมโพสต์เป็นกระทู้ใน Pantip เมื่อ 14 สิงหาคม 2563 ต้นฉบับอยู่ที่ <a href="https://pantip.com/topic/40129700" rel="noopener">pantip.com/topic/40129700</a></p>
+
+<div class="split">
+<div class="prose">
+
+สวัสดีครับ ผมปอ Dojo-mAn ห่างหายไปนานกับการรีวิวสายชาร์จและอุปกรณ์ชาร์จไฟ เพราะยุคโควิดทำให้ขาดทุนทรัพย์ในการหาของมารีวิว 555+ ตอนนี้พอมีบ้าง เห็นอะไรน่าสนใจก็เอามาบอกต่อ
+
+ไปร้านขายสายหรือที่ชาร์จ เขาก็จะพูดเสมอว่า "น้อง ตัวนี้ชาร์จไวนะ" "น้อง Adapter รุ่นนี้จ่ายไฟได้ 4.2A เลยนะ" "น้องสายชาร์จรุ่นนี้รองรับ 3A เลยนะ" คนส่วนมากเป็นเหยื่อการตลาดว่ายิ่ง A มากยิ่งชาร์จเร็ว ซึ่งเราโดนหลอกมาตั้งแต่ยุค Smart Phone แรก ๆ เพราะ Apple ครับ พอมี iPad พวก Reviewer และ Blogger (รวมทั้งผมด้วย) ก็บอกว่าให้ไปซื้อที่ชาร์จ iPad เพราะจ่าย 2.4A ของ iPhone จ่าย 1A เอง แต่จริง ๆ เอา iPhone ไปชาร์จกับที่ชาร์จ iPad ก็ไม่ได้ใช้ไฟถึง 2.4A อยู่ดี ต่อให้เป็น iPad เองก็เถอะ ไม่งั้นร้อน การชาร์จจะอยู่ที่ 80-90% ของ Charger ตัวนั้น เช่น Adapter 2.4A ได้แค่ 2.3-2.37A
+
+อีกอย่าง fast charge ไม่ได้แปลว่าชาร์จไวทุกเครื่อง ขึ้นอยู่กับมือถือแต่ละแบรนด์ สายชาร์จ และที่ชาร์จ ถ้าซื้อ Fast Charge ของ Samsung แต่มือถือคุณเป็น Huawei ก็ชาร์จเร็วตามที่มือถือทำได้ไม่ได้ เช่นเดียวกัน ถ้าซื้อที่ชาร์จ SCP ของ Huawei แต่สายดันเป็นสายที่รองรับ AFC ก็ได้ไฟไม่ตรงกับที่มือถือทำได้
+
+</div>
+<div class="grade-grid">
+  <article class="grade-card"><h3>ชาร์จเร็วต้องสัมพันธ์กัน 3 ส่วน</h3><p>1. มือถือที่เราใช้<br />2. สายชาร์จที่เราใช้<br />3. Adapter ที่เราใช้<br />การจ่ายไฟก็เหมือนคนสองคนคุยกัน คุยกันรู้เรื่องก็จ่ายไฟเยอะ คุยกันไม่รู้เรื่องก็จ่ายไฟปกติ</p></article>
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## เทคโนโลยีชาร์จเร็วในตอนนั้น (ปี 2020)
+
+<div class="grade-grid">
+  <article class="grade-card"><h3>QC</h3><p>Qualcomm Quick Charge</p></article>
+  <article class="grade-card"><h3>AFC</h3><p>Samsung Adaptive Fast Charge</p></article>
+  <article class="grade-card"><h3>FCP / SCP</h3><p>Huawei Fast Charge Protocol / Supercharge Protocol</p></article>
+  <article class="grade-card"><h3>BC 1.1 / BC 1.2</h3><p>USB Battery Charging 1.1 / 1.2</p></article>
+  <article class="grade-card"><h3>VOOC</h3><p>Voltage Open Loop Multi-step Constant-Current Charging</p></article>
+  <article class="grade-card"><h3>PD</h3><p>USB Power Delivery</p></article>
+  <article class="grade-card"><h3>PE</h3><p>MediaTek Pump Express (ตอนนั้นไม่ค่อยเห็นแล้ว)</p></article>
+</div>
+
+<p class="prose">เพื่อไม่ให้งง ผมแยกตามยี่ห้อครับ</p>
+
+<h3>1. Samsung: AFC และ QC</h3>
+<div class="split">
+<div class="prose">
+
+Samsung มีเทคโนโลยีชาร์จเร็วน่าจะรายแรก ๆ ของโลกกับ AFC (Adaptive Fast Charge) ชาร์จที่ 9V 1.67A หรือ 15W ซึ่งไป Compatible กับ QC 2.0 ที่รองรับสูงสุดใกล้เคียงกันคือ 9V/2A หรือ 18W ฝั่งชาร์จเจอร์ จุดต่างคือ ถ้าเราใช้มือถือตอนชาร์จ AFC จะปรับแรงดันลงเหลือ 5V แต่ถ้าปิดจอไฟกลับไปที่ 9V ต่างจาก QC 2.0 ที่ไม่ปรับลงไม่ว่าจะเปิดหรือปิดจอ
+
+</div>
+<div class="note">
+
+ปี 2019 มี AFC 2.0 รองรับได้สูงสุด 25W และ 45W โดย Galaxy Note10+ เป็นรุ่นแรก ผ่านเทคโนโลยี Type-C PDO + PPS ซึ่งสองเทคโนโลยีนี้จะพูดถึงในส่วนต่อไป
+
+</div>
+</div>
+
+<h3>2. Huawei: FCP และ SCP</h3>
+<div class="grade-grid">
+  <article class="grade-card"><h3>FCP</h3><p>Fast Charge Protocol ชาร์จที่ 9V/2A ไป Compatible กับ QC 2.0 เช่นเดียวกับ AFC ตอนนั้นเริ่มจางหายจากตลาด เหลือเฉพาะรุ่นล่าง</p></article>
+  <article class="grade-card"><h3>SCP</h3><p>Supercharge Protocol จ่าย 4.5V/5A หรือ 22.5W ตอนแรก ๆ ถือว่าเร็วมาก ในขณะที่คนอื่นสูงสุดแค่ 18W สายต้องรองรับ 5A หรือมีแถบสีม่วงเท่านั้น</p></article>
+  <article class="grade-card"><h3>SCP 2.0</h3><p>เข้ามาแทน SCP ตัวแรก รุ่นแรกที่รองรับคือ P30 Pro จ่าย 10V/4A หรือ 40W แรงที่สุดในตอนนั้น ผมเขียนไว้ว่า Huawei ยังใช้โปรโตคอลนี้มาจนถึงตอนนั้น</p></article>
+</div>
+
+<h3>3. OPPO / realme / OnePlus: VOOC / Dash Charge</h3>
+<div class="grade-grid">
+  <article class="grade-card"><h3>VOOC 2.0</h3><p>BBK บริษัทแม่ของสามแบรนด์ ชาร์จที่ 5V/4A หรือ 20W ต้องใช้สายพิเศษ (OPPO สีเขียว, realme สีเหลือง, OnePlus สีแดง) ทั้งสามแบรนด์ใช้เทคโนโลยีเดียวกัน ใช้สายและชาร์จเจอร์เดียวกันได้ แต่เรียกชื่อต่างกัน</p></article>
+  <article class="grade-card"><h3>VOOC 3.0 (2019)</h3><p>BBK เคลมว่าเร็วกว่าเดิม 23.8% ใช้กับ OPPO Reno2 ที่ <b>20W</b> (แก้จากที่ผมเคยเขียน 5V/5A 25W ตาม <a href="https://m.gsmarena.com/oppo_reno2_5g_gets_3c_certification_and_appears_in_promo_materials-news-38733.php" rel="noopener">GSMArena</a> และ <a href="https://www.91mobiles.com/hub/oppo-reno-2-specifications-official-snapdragon-730g-soc-8gb-ram-4000mah-battery/" rel="noopener">91mobiles</a>)</p></article>
+  <article class="grade-card"><h3>SuperVOOC</h3><p>เอา VOOC 2.0 มาพัฒนา แบ่งแบตสองก้อนชาร์จแบบ parallel จ่ายสูงสุด 10V/5A หรือ 50W</p></article>
+  <article class="grade-card"><h3>VOOC 4.0 (2020)</h3><p>ต่อยอดจาก VOOC 3.0 รับไฟกระแสสูงขึ้นเป็น 5V/6A หรือ 30W</p></article>
+  <article class="grade-card"><h3>SuperVOOC 2.1 / Super FlashCharge</h3><p>BBK พัฒนา Super VOOC Fast Charge 2.1 บนพื้นฐาน VOOC 2.0 จ่ายได้ถึง 65W และตัวล่าสุดตอนนั้น Super FlashCharge จ่ายได้มากสุดถึง 120W ซึ่งผมเรียกว่ามากสุดในตอนนั้นสำหรับการจ่ายไฟให้มือถือ</p></article>
+</div>
+
+<h3>4. LG, SONY, NOKIA, XIAOMI, HTC, Nubia, VIVO, ASUS: Qualcomm Quick Charge</h3>
+<div class="split">
+<div class="prose">
+
+ทั้งหมดนี้มักใช้เทคโนโลยีจากชิปเซ็ตที่ใช้เป็นหลัก คือ Qualcomm ซึ่งมี Quick Charge อยู่ในมือ แรกเริ่มใช้คู่กับมือถือที่ใช้ชิป Qualcomm เท่านั้น แต่ตอนนี้ถูกนำไปใช้กับอุปกรณ์อื่นด้วย ล่าสุดตอนนั้นคือ Quick Charge 5 ที่รองรับการจ่ายได้มากกว่า 100W
+
+</div>
+<div class="grade-grid">
+  <article class="grade-card"><h3>QC 1.0</h3><p>สูงสุด 10W (5V/2A)</p></article>
+  <article class="grade-card"><h3>QC 2.0</h3><p>สูงสุด 18W (5V, 9V และ 12V)</p></article>
+  <article class="grade-card"><h3>QC 3.0</h3><p>สูงสุด 36W (3.6V ถึง 20V เพิ่มแรงดันทีละ 200mV)</p></article>
+  <article class="grade-card"><h3>QC 4.0</h3><p>สูงสุด 100W (3.6V ถึง 20V เพิ่มแรงดันละเอียดขึ้นทีละ 20mV) และ Compatible กับ USB Power Delivery</p></article>
+</div>
+</div>
+
+<h3>5. USB Power Delivery (USB-PD)</h3>
+<p class="prose">นอกจาก 5 กลุ่มข้างบน ยังมีมาตรฐานกลางคือ Universal Serial Bus Power Delivery (USB-PD) ซึ่งเรียกได้ว่าเป็นมาตรฐานของยุคปัจจุบัน ไม่จำกัดอยู่แค่มือถือ ใช้เป็นมาตรฐานเดียวกันกับอุปกรณ์ทั่วไปอย่าง Notebook และเครื่องเล่นเกมพกพา</p>
+
+<div class="note">
+
+### อัปเดตปี 2026
+
+ตั้งแต่ที่ผมเขียนโพสต์นี้ มาตรฐานขยับขึ้นหลายตัว: Qualcomm ประกาศ Quick Charge 5 ในชื่อ "World's First Commercial 100W+ Charging Platform" เมื่อ 27 กรกฎาคม 2563 ดู <a href="https://www.qualcomm.com/news/releases/2020/07/27/qualcomm-announces-worlds-fastest-commercial-charging-solution-quick-charge" rel="noopener">Qualcomm: Quick Charge 5</a> · USB-IF ขยาย USB PD เป็น Revision 3.1 ส่งไฟได้สูงสุด 240W เดิมจำกัดที่ 100W ดู <a href="https://www.usb.org/usb-charger-pd" rel="noopener">USB-IF: USB Charger (Power Delivery)</a> · ฝั่ง OPPO/realme มี SuperVOOC 240W (20V/12A) ที่ใช้ใน realme GT Neo5 ซึ่งสูงกว่า 120W ที่ผมเขียนไว้ ดู <a href="https://en.wikipedia.org/wiki/Dash_Charge" rel="noopener">Wikipedia: Dash Charge (VOOC / SuperVOOC)</a>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## Power Bank อันดับ 1 ที่ควรมี: ELECJET PowerPie P20
+
+<div class="split">
+<div class="prose">
+
+ทำไมผมถึงยกให้ Power Bank ตัวนี้เป็นอันดับ 1 เพราะมันรองรับการชาร์จได้หลายอุปกรณ์มาก ไม่ว่าจะเป็น iPhone, Samsung, Huawei, MacBook, Notebook, Netbook, Nintendo Switch ตามที่กล่องระบุ ยืดอายุ MacBook ได้ถึง 14 ชั่วโมง / iPad ได้ถึง 20 ชั่วโมง / iPhone ได้ถึง 64 ชั่วโมง และรองรับโปรโตคอลมากที่สุดตัวหนึ่ง (Apple 2.4A, AFC, SCP, FCP, QC3.0 และ PD)
+
+ฟังดูเหมือนมาโฆษณาให้ใช่ไหมครับ ผมเลยต้องวัดไฟกันจริง ๆ ใช้งานจริงไปเลย ผมใช้มา 1 อาทิตย์หลังซื้อ ผลคือชอบครับ สะดวกมาก ซื้อจาก <a href="https://www.gosh.co.th/" rel="noopener">gosh.co.th</a> ราคา 2,690 บาทครับ (หน้าเว็บจัดโปรอยู่)
+
+</div>
+<div class="grade-grid">
+  <article class="grade-card"><h3>ช่อง USB-C ที่วัดได้</h3><p>5V/2A, 5V/1.5A, QC2, QC3 และ FCP</p></article>
+  <article class="grade-card"><h3>ช่อง USB-A ที่วัดได้</h3><p>Apple 2.4A, 5V/1.5A, QC2, QC3, AFC, FCP และ SCP</p></article>
+  <article class="grade-card"><h3>PDO / PPS ที่วัดได้</h3><p>Power Delivery rev.3.0 · PDO 5V-20V (สูงสุด 45W) · PPS ปรับแรงดัน 3.3V-11.0V (ที่ 3A)</p></article>
+</div>
+</div>
+
+<div class="prose">
+
+PPS ย่อมาจาก Programmable Power Supply คือปรับแรงดันไฟ (Volt) ได้ละเอียดขึ้น ทำให้จ่ายไฟนิ่งขึ้น ร้อนน้อยลง น้อยมากที่ Power Bank จะมี PPS มาด้วย ส่วนมากมีแค่ PDO (Power Delivery Output) ถ้าจะชาร์จมือถือรุ่นใหม่ ๆ อย่าง Galaxy Note10+, Galaxy S20 Ultra หรือ Note20 Ultra ที่เพิ่งออก ต้องมี PPS ด้วยถึงจะชาร์จแบบ Fast Charge ได้
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ลองชาร์จจริง
+
+<div class="grade-grid">
+  <article class="grade-card"><h3>iPad Pro 10.5 (2017)</h3><p><b>23-30W</b> ตามที่ iPad เครื่องนี้รองรับ</p></article>
+  <article class="grade-card"><h3>Huawei P40 Pro</h3><p>ขึ้น Super Charge ได้ <b>10-22.5W</b> (ตามมาตรฐาน SCP 1.0)</p></article>
+  <article class="grade-card"><h3>Samsung Galaxy Note10+</h3><p>สูงสุด <b>35-36W</b> เฉลี่ยราว 25W เท่ากับ Samsung Travel Adapter 45W</p></article>
+  <article class="grade-card"><h3>Huawei MateBook D15</h3><p><b>40-42W</b> ตามกำลังไฟแบตที่เหลือ</p></article>
+  <article class="grade-card"><h3>ASUS ROG Zephyrus G14 (Ryzen 5 4000)</h3><p><b>40-43W</b></p></article>
+  <article class="grade-card"><h3>ชาร์จไฟกลับเข้าตัว Power Bank</h3><p><b>44-45W</b> เต็ม ๆ เร็วมาก</p></article>
+</div>
+
+<div class="split">
+<div class="prose">
+
+**ELECJET PowerPie P20 เหมาะกับใคร** คนที่ออกไปทำงานนอกบ้านประจำ และคนที่ชอบเที่ยวในที่ไม่มีปลั๊กไฟ
+
+**ข้อดี** มีระบบ PDO+PPS ซึ่งน้อยตัวจะมี · รองรับการชาร์จไวกับ Samsung รุ่นใหม่ ๆ · รองรับหลายโปรโตคอล · ชาร์จพร้อมกันได้สองพอร์ต (แต่ไฟจะดรอป) · จ่ายไฟสูงถึง 45W ซึ่ง Power Bank ทั่วไปอยู่ที่ 18-30W · ขนาดแบตพอใช้ได้ครบวัน · ชาร์จไฟกลับเข้าตัวเร็วมาก · รับประกัน 1 ปี ปกติ Power Bank ทั่วไปรับประกัน 3-6 เดือน
+
+**ข้อเสีย** หนัก ต้องแบกไปด้วย · ยังไม่รองรับ VOOC และ SCP 2.0 40W · SCP 22.5W ยังไม่นิ่ง ต้องเสียบทิ้งไว้สักพักถึงจะคุยกันรู้เรื่อง
+
+</div>
+<div class="note">
+
+### จากความเห็นของผมใต้กระทู้
+
+<b>ชาร์จ Nintendo Switch</b> ที่ชาร์จมือถือแบบ 30W ของ realme X50 ชาร์จ Switch ไม่ได้ ต้องเป็นสาย C to C · <b>เสียบ 2 ช่องพร้อมกัน</b> ได้ แต่ไฟจะดรอปลง · <b>ZMi Fusion 2in1</b> ยี่ห้อดีอยู่แล้ว แต่ถ้ามันจ่าย 45-50W ทั้งโหมด Adapter และ Power Bank จะเจ๋งกว่านี้ · ก่อนหน้านี้ผมใช้ Baozu M3 ก่อนหน้านั้นก็ AUKEY ราคาพันขึ้นเหมือนกัน
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ภาพประกอบ
+
+<p class="prose">กดที่รูปเพื่อดูค่าที่มิเตอร์ ภาพโลโก้และกล่องสินค้าของค่ายต่าง ๆ ที่ผมใช้ประกอบในกระทู้เดิมไม่ได้นำมาลงซ้ำที่นี่ ดูได้ที่กระทู้ต้นฉบับ</p>
+
+<ShotGallery shots={shots} />
+
+</section>
