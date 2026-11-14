@@ -843,7 +843,7 @@ main[data-type="news"] .shot__more .shot__credit { font-size: var(--fs-caption);
 
 .news-cards { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-3); margin: var(--space-6) 0; }
 .news-card { min-width: 0; background: var(--surface-elevated); border: 1px solid var(--border-hairline); border-left: 4px solid var(--accent); border-radius: var(--radius); padding: var(--space-3) var(--space-4); line-height: 1.6; }
-.news-card b { display: block; }
+.news-card > b:first-child { display: block; }
 .news-card.is-bad { border-left-color: var(--tier-4-fg); }
 .news-card.is-warn { border-left-color: var(--tier-3-fg); }
 .news-card.is-ok { border-left-color: var(--tier-1-fg); }
@@ -873,7 +873,7 @@ main[data-type="news"] .shot__more .shot__credit { font-size: var(--fs-caption);
 .news-steps li { counter-increment: s; position: relative; margin: 0; background: var(--surface-elevated); border: 1px solid var(--border-hairline); border-radius: var(--radius); padding: var(--space-3) var(--space-4) var(--space-3) calc(var(--space-4) + 40px); line-height: 1.6; }
 .news-steps li::before { content: counter(s); position: absolute; left: var(--space-4); top: var(--space-3); width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: var(--on-accent); font-weight: 700; text-align: center; line-height: 28px; }
 .news-steps li.is-key { border: 2px solid var(--accent); }
-.news-steps b { display: block; }
+.news-steps li > b:first-child { display: block; }
 
 /* Spec list: framed rows, icon left, label + value right.
    <div class="spec-list"><div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-chip" /></svg><div><b>ชิป</b>value</div></div></div>
