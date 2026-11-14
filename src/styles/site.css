@@ -884,3 +884,5 @@ main[data-type="news"] .shot__more .shot__credit { font-size: var(--fs-caption);
   padding: var(--space-4); box-shadow: var(--shadow-raised); line-height: 1.7; }
 .spec-row b { display: block; font-size: var(--fs-caption); color: var(--text-secondary); font-weight: 600; letter-spacing: 0.02em; }
 .spec-icon { width: 1.5em; height: 1.5em; padding: 0.45em; border-radius: var(--radius); background: var(--surface-sunken); color: var(--accent); box-sizing: content-box; }
+.news-steps li { min-width: 0; }
+.news-steps pre { max-width: 100%; margin: var(--space-2) 0; white-space: pre-wrap; overflow-wrap: anywhere; }
