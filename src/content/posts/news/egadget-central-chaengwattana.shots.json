@@ -1,0 +1,200 @@
+[
+  {
+    "id": "1",
+    "title": "หน้าร้าน",
+    "src": "/media/posts/news/egadget-central-chaengwattana/storefront.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "หน้าร้าน",
+    "alt": "หน้าร้าน eGadget ป้ายไฟรวมแบรนด์",
+    "summary": "Open Booth ที่เซ็นทรัลแจ้งวัฒนะ ชั้น 4",
+    "credit": "ภาพ: Dojo-mAn Photographer"
+  },
+  {
+    "id": "2",
+    "title": "เคาน์เตอร์กลางร้าน",
+    "src": "/media/posts/news/egadget-central-chaengwattana/center-display.jpg",
+    "w": 1600,
+    "h": 1202,
+    "group": "หน้าร้าน",
+    "alt": "เคาน์เตอร์กลางร้านรวม TOZO W-KING Skullcandy Tribit SOUNDPEATS FLYDIGI",
+    "summary": "รวมหลายแบรนด์ไว้จุดเดียว",
+    "credit": "ภาพ: Dojo-mAn Photographer"
+  },
+  {
+    "id": "3",
+    "title": "เคาน์เตอร์ยาว",
+    "src": "/media/posts/news/egadget-central-chaengwattana/tribit-counter.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "หน้าร้าน",
+    "alt": "เคาน์เตอร์ยาวโซน Tribit พร้อมป้ายสมาชิกลด 20%",
+    "summary": "ป้ายสมาชิกลด 20% ติดหลายจุด",
+    "credit": "ภาพ: Dojo-mAn Photographer"
+  },
+  {
+    "id": "4",
+    "title": "SOUNDPEATS Air6 Pro",
+    "src": "/media/posts/news/egadget-central-chaengwattana/soundpeats-air6-pro.jpg",
+    "w": 1600,
+    "h": 1202,
+    "group": "หูฟัง",
+    "alt": "แท่นโชว์ SOUNDPEATS Air6 Pro",
+    "summary": "แท่นโชว์พร้อมตัวเครื่องให้ดู",
+    "credit": "ภาพ: Dojo-mAn Photographer"
+  },
+  {
+    "id": "5",
+    "title": "SOUNDPEATS H3",
+    "src": "/media/posts/news/egadget-central-chaengwattana/soundpeats-h3.jpg",
+    "w": 1600,
+    "h": 1202,
+    "group": "หูฟัง",
+    "alt": "แท่นโชว์ SOUNDPEATS H3",
+    "summary": "แท่นโชว์ SOUNDPEATS H3",
+    "credit": "ภาพ: Dojo-mAn Photographer"
+  },
+  {
+    "id": "6",
+    "title": "SOUNDPEATS Air6 HS",
+    "src": "/media/posts/news/egadget-central-chaengwattana/soundpeats-air6-hs.jpg",
+    "w": 1600,
+    "h": 1202,
+    "group": "หูฟัง",
+    "alt": "แท่นโชว์ SOUNDPEATS Air6 HS",
+    "summary": "แท่นโชว์ SOUNDPEATS Air6 HS",
+    "credit": "ภาพ: Dojo-mAn Photographer"
+  },
+  {
+    "id": "7",
+    "title": "ชั้น SOUNDPEATS",
+    "src": "/media/posts/news/egadget-central-chaengwattana/soundpeats-shelf.jpg",
+    "w": 1600,
+    "h": 1202,
+    "group": "หูฟัง",
+    "alt": "ชั้นวาง SOUNDPEATS Clip1 Pop Clip 2 PearlClip Pro",
+    "summary": "หูฟังหลายรุ่นของ SOUNDPEATS",
+    "credit": "ภาพ: Dojo-mAn Photographer"
+  },
+  {
+    "id": "8",
+    "title": "หูฟังหลายสี",
+    "src": "/media/posts/news/egadget-central-chaengwattana/earbuds-colors.jpg",
+    "w": 1600,
+    "h": 1202,
+    "group": "หูฟัง",
+    "alt": "หูฟังไร้สายหลายสีวางเรียงบนชั้นอะคริลิก",
+    "summary": "มีหลายสีให้เลือก",
+    "credit": "ภาพ: Dojo-mAn Photographer"
+  },
+  {
+    "id": "9",
+    "title": "ชั้น TOZO",
+    "src": "/media/posts/news/egadget-central-chaengwattana/tozo-shelf.jpg",
+    "w": 1600,
+    "h": 1202,
+    "group": "หูฟัง",
+    "alt": "ชั้น TOZO มีแว่น VIZO Z1 Pro หูฟัง Open X2 Pro และหูฟังครอบหู",
+    "summary": "TOZO มีทั้งหูฟังและแว่น VIZO Z1 Pro",
+    "credit": "ภาพ: Dojo-mAn Photographer"
+  },
+  {
+    "id": "10",
+    "title": "หูฟังไร้สาย TOZO",
+    "src": "/media/posts/news/egadget-central-chaengwattana/tozo-earbuds.jpg",
+    "w": 1600,
+    "h": 1202,
+    "group": "หูฟัง",
+    "alt": "หูฟังไร้สาย TOZO Tonal Pods Agile Solo AeroSound3",
+    "summary": "หูฟังไร้สาย TOZO หลายรุ่น",
+    "credit": "ภาพ: Dojo-mAn Photographer"
+  },
+  {
+    "id": "11",
+    "title": "หูฟังครอบหู H20 / H100",
+    "src": "/media/posts/news/egadget-central-chaengwattana/headphones-h20-h100.jpg",
+    "w": 1600,
+    "h": 1202,
+    "group": "หูฟัง",
+    "alt": "หูฟังครอบหู H20 และ H100 วางบนขาตั้ง",
+    "summary": "หูฟังครอบหูให้ลองใส่",
+    "credit": "ภาพ: Dojo-mAn Photographer"
+  },
+  {
+    "id": "12",
+    "title": "SOUNDPEATS Space Pro",
+    "src": "/media/posts/news/egadget-central-chaengwattana/space-pro.jpg",
+    "w": 1600,
+    "h": 1202,
+    "group": "หูฟัง",
+    "alt": "หูฟังครอบหู SOUNDPEATS Space Pro พร้อมป้ายราคา",
+    "summary": "หูฟังครอบหู SOUNDPEATS Space Pro",
+    "credit": "ภาพ: Dojo-mAn Photographer"
+  },
+  {
+    "id": "13",
+    "title": "Skullcandy Crusher",
+    "src": "/media/posts/news/egadget-central-chaengwattana/skullcandy-crusher.jpg",
+    "w": 1600,
+    "h": 1202,
+    "group": "หูฟัง",
+    "alt": "หูฟัง Skullcandy Crusher บนหุ่นหัวกะโหลกหลากสี",
+    "summary": "โซน Skullcandy หัวกะโหลกหลากสี",
+    "credit": "ภาพ: Dojo-mAn Photographer"
+  },
+  {
+    "id": "14",
+    "title": "iClever หูฟังเด็ก",
+    "src": "/media/posts/news/egadget-central-chaengwattana/iclever-kids.jpg",
+    "w": 1600,
+    "h": 1202,
+    "group": "หูฟัง",
+    "alt": "หูฟังเด็ก iClever หลายสี และคีย์บอร์ดเมาส์",
+    "summary": "หูฟังเด็กสำหรับ 2–3 ปีขึ้นไป และคีย์บอร์ด",
+    "credit": "ภาพ: Dojo-mAn Photographer"
+  },
+  {
+    "id": "15",
+    "title": "ลำโพง Tribit",
+    "src": "/media/posts/news/egadget-central-chaengwattana/tribit-speakers.jpg",
+    "w": 1600,
+    "h": 1202,
+    "group": "ลำโพง",
+    "alt": "ลำโพง Tribit Pocket Go และ Stormbox Micro 3",
+    "summary": "ลำโพงพกพา Tribit",
+    "credit": "ภาพ: Dojo-mAn Photographer"
+  },
+  {
+    "id": "16",
+    "title": "คีย์บอร์ด EPOMAKER",
+    "src": "/media/posts/news/egadget-central-chaengwattana/epomaker-keyboards.jpg",
+    "w": 1600,
+    "h": 1202,
+    "group": "คีย์บอร์ด & จอยเกม",
+    "alt": "คีย์บอร์ด EPOMAKER หลายรุ่นหลายสี",
+    "summary": "คีย์บอร์ดเมคานิคอลหลายสี",
+    "credit": "ภาพ: Dojo-mAn Photographer"
+  },
+  {
+    "id": "17",
+    "title": "จอย FLYDIGI",
+    "src": "/media/posts/news/egadget-central-chaengwattana/flydigi-controllers.jpg",
+    "w": 1600,
+    "h": 1202,
+    "group": "คีย์บอร์ด & จอยเกม",
+    "alt": "จอยเกม FLYDIGI หลายรุ่น",
+    "summary": "จอยเกมหลายรุ่นให้จับลอง",
+    "credit": "ภาพ: Dojo-mAn Photographer"
+  },
+  {
+    "id": "18",
+    "title": "FLYDIGI",
+    "src": "/media/posts/news/egadget-central-chaengwattana/flydigi-stand.jpg",
+    "w": 1600,
+    "h": 1202,
+    "group": "คีย์บอร์ด & จอยเกม",
+    "alt": "อุปกรณ์ FLYDIGI โชว์ในกล่อง",
+    "summary": "อุปกรณ์เกมของ FLYDIGI",
+    "credit": "ภาพ: Dojo-mAn Photographer"
+  }
+]
