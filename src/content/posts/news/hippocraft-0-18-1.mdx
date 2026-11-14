@@ -4,6 +4,7 @@ topic: software
 type: news
 tags: [hippocraft, pdf]
 date: 2026-11-10
+updated: 2026-11-14T20:40:00+07:00
 section: tech
 description: "HippoCraft โปรแกรมอ่านและแก้ไข PDF ภาษาไทย ออกรุ่น 0.18.1-th23.2d.b4603 เมื่อ 9 พ.ย. 2569 แต่งสี ขนาด ตัวหนาเฉพาะคำไทยที่เลือกได้ เลือก ก๊อป วาง ข้ามหน้าและข้ามไฟล์ แก้ข้อความในไฟล์ Canva ได้ มี Windows, macOS, Linux และรุ่นเว็บ"
 kicker: "ข่าวเทคโนโลยี · ซอฟต์แวร์"
@@ -54,23 +55,11 @@ coverAlt: "HippoCraft รุ่นลงเครื่อง 0.18.1 ดาว�
 
 ## มีอะไรใหม่
 
-<div class="grade-grid">
-  <article class="grade-card">
-    <h3>แต่งเฉพาะคำไทยที่เลือก</h3>
-    <p>เลือกคำเดียวในประโยคแล้วเปลี่ยนสี ขนาด หรือฟอนต์ไทยได้ กด Ctrl + B, I, U ทำตัวหนา ตัวเอียง ขีดเส้นใต้ได้ทีละคำ เส้นใต้เป็นสีเดียวกับตัวหนังสือ</p>
-  </article>
-  <article class="grade-card">
-    <h3>เลือก ก๊อป วาง ข้ามไฟล์</h3>
-    <p>Ctrl + A เลือกทุกอย่างในหน้า หรือกด Alt แล้วลากล้อมเฉพาะส่วนที่ต้องการ ก๊อปไปวางอีกหน้าหรืออีกไฟล์ได้ ช่องตารางจาก Excel ย้ายไปทั้งช่อง</p>
-  </article>
-  <article class="grade-card">
-    <h3>แก้ไฟล์จาก Canva ได้</h3>
-    <p>คลิกเลือกเส้นหรือรูปทรงแล้วย้าย ลบ เปลี่ยนสีได้ ไฟล์ที่ทำจาก Canva แยกชิ้นทั้งหน้าแล้วแก้ข้อความได้</p>
-  </article>
-  <article class="grade-card">
-    <h3>ไฟล์ไทยจากโปรแกรมอื่นดีขึ้น</h3>
-    <p>ไฟล์จาก PDFelement ที่ใช้ TH SarabunPSK สระไม่ลอยแล้ว ไฟล์จาก LibreOffice พิมพ์เพิ่มไม่เพี้ยน ตารางที่มีเส้นแบ่งแก้ได้ทีละช่อง</p>
-  </article>
+<div class="spec-list">
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-type" /></svg><div><b>แต่งเฉพาะคำไทยที่เลือก</b>เลือกคำเดียวในประโยคแล้วเปลี่ยนสี ขนาด หรือฟอนต์ไทยได้ กด Ctrl + B, I, U ทำตัวหนา ตัวเอียง ขีดเส้นใต้ได้ทีละคำ เส้นใต้เป็นสีเดียวกับตัวหนังสือ</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-copy" /></svg><div><b>เลือก ก๊อป วาง ข้ามไฟล์</b>Ctrl + A เลือกทุกอย่างในหน้า หรือกด Alt แล้วลากล้อมเฉพาะส่วนที่ต้องการ ก๊อปไปวางอีกหน้าหรืออีกไฟล์ได้ ช่องตารางจาก Excel ย้ายไปทั้งช่อง</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-shapes" /></svg><div><b>แก้ไฟล์จาก Canva ได้</b>คลิกเลือกเส้นหรือรูปทรงแล้วย้าย ลบ เปลี่ยนสีได้ ไฟล์ที่ทำจาก Canva แยกชิ้นทั้งหน้าแล้วแก้ข้อความได้</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-file" /></svg><div><b>ไฟล์ไทยจากโปรแกรมอื่นดีขึ้น</b>ไฟล์จาก PDFelement ที่ใช้ TH SarabunPSK สระไม่ลอยแล้ว ไฟล์จาก LibreOffice พิมพ์เพิ่มไม่เพี้ยน ตารางที่มีเส้นแบ่งแก้ได้ทีละช่อง</div></div>
 </div>
 
 <div class="split">
@@ -94,9 +83,14 @@ coverAlt: "HippoCraft รุ่นลงเครื่อง 0.18.1 ดาว�
 <div class="split">
 <div class="prose">
 
-- **ใช้ผ่านเว็บ** ไม่ต้องลงโปรแกรม ลงทะเบียนที่ <a href="https://pdf.dojojin.tech" rel="noopener">pdf.dojojin.tech</a> (รองรับ 50 คน) ไฟล์ยังทำงานในเบราว์เซอร์บนเครื่องเรา ไม่ถูกอัปโหลด
-- **ลงเครื่อง** มีให้ทั้ง Windows (x64, x86, ARM64 และแบบ Portable), macOS (Universal ใช้ได้ทั้ง Apple Silicon และ Intel) และ Linux (AppImage, .deb) รุ่นลงเครื่องไม่ต้องสมัคร ไม่เก็บข้อมูลผู้ใช้
-- อยากรู้รายละเอียดทั้งหมดและงานที่จะทำต่อ ดูที่ <a href="/projects/hippocraft/">หน้าโปรเจกต์ HippoCraft</a>
+มีให้เลือก 2 แบบครับ
+
+<div class="spec-list">
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-globe" /></svg><div><b>ใช้ผ่านเว็บ</b>ไม่ต้องลงโปรแกรม ลงทะเบียนที่ <a href="https://pdf.dojojin.tech" rel="noopener">pdf.dojojin.tech</a> (รองรับ 50 คน) ไฟล์ยังทำงานในเบราว์เซอร์บนเครื่องเรา ไม่ถูกอัปโหลด</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-download" /></svg><div><b>ลงเครื่อง</b>Windows (x64, x86, ARM64 และแบบ Portable), macOS (Universal ใช้ได้ทั้ง Apple Silicon และ Intel) และ Linux (AppImage, .deb) ไม่ต้องสมัคร ไม่เก็บข้อมูลผู้ใช้</div></div>
+</div>
+
+อยากรู้รายละเอียดทั้งหมดและงานที่จะทำต่อ ดูที่ <a href="/projects/hippocraft/">หน้าโปรเจกต์ HippoCraft</a> ครับ
 
 ลองใช้แล้วเจอปัญหา หรืออยากให้เพิ่มอะไร บอกผมได้ที่ <a href="/guestbook/">Guestbook</a> ครับ
 
@@ -117,6 +111,8 @@ coverAlt: "HippoCraft รุ่นลงเครื่อง 0.18.1 ดาว�
 <div class="prose">
 
 - อินโฟกราฟิก: ภาพประกอบจาก DOJOJIN.TECH จากข้อมูลในข่าวนี้
+- ภาพหน้าจอโปรแกรม: HippoCraft · DOJOJIN.TECH
+- ภาพปก: DOJOJIN.TECH (ภาพฮิปโปจากชุดภาพของ HippoCraft)
 
 </div>
 
