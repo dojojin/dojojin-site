@@ -875,6 +875,12 @@ main[data-type="news"] .shot__more .shot__credit { font-size: var(--fs-caption);
 .news-steps li.is-key { border: 2px solid var(--accent); }
 .news-steps b { display: block; }
 
-/* Spec card title icon: <h3><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-chip" /></svg>ชิป</h3> */
-.grade-card h3:has(.spec-icon) { display: flex; align-items: center; gap: var(--space-2); }
-.spec-icon { width: 1.5em; height: 1.5em; padding: 0.25em; border-radius: var(--radius); background: var(--surface-sunken); color: var(--accent); box-sizing: content-box; }
+/* Spec list: framed rows, icon left, label + value right.
+   <div class="spec-list"><div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-chip" /></svg><div><b>ชิป</b>value</div></div></div>
+   Icons: chip display camera battery charge memory storage wireless (src/components/Icons.astro) */
+.spec-list { display: grid; gap: var(--space-3); margin: var(--space-6) 0; max-width: var(--measure); }
+.spec-row { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-4); align-items: start;
+  background: var(--surface-elevated); border: 1px solid var(--border-hairline); border-radius: var(--radius-lg);
+  padding: var(--space-4); box-shadow: var(--shadow-raised); line-height: 1.7; }
+.spec-row b { display: block; font-size: var(--fs-caption); color: var(--text-secondary); font-weight: 600; letter-spacing: 0.02em; }
+.spec-icon { width: 1.5em; height: 1.5em; padding: 0.45em; border-radius: var(--radius); background: var(--surface-sunken); color: var(--accent); box-sizing: content-box; }
