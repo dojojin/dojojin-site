@@ -109,6 +109,42 @@
     ]
   },
   {
+    "id": "13",
+    "title": "VBUS Ripple ที่ 15V",
+    "src": "/media/posts/review/apple-96w-macbook-pro/ripple-15v.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ผลวัด",
+    "alt": "POWER-Z หน้า VBUS Ripple: 107.4–108.1kHz, 36–39mV ที่ 15.13V 2.296A",
+    "summary": "Ripple ราว 36–39mV ความถี่ราว 108kHz",
+    "readings": [
+      [
+        "Ripple",
+        "▲39 ▼36 mV"
+      ],
+      [
+        "ความถี่",
+        "107.4–108.1kHz"
+      ],
+      [
+        "แรงดัน",
+        "15.13V"
+      ],
+      [
+        "กระแส",
+        "2.296A"
+      ],
+      [
+        "Ripple %",
+        "≈ 0.26%"
+      ]
+    ],
+    "analysis": [
+      "Ripple ไม่เกิน 40mV = ดีมาก (ติดขอบ) · ความถี่ 100–150kHz = ดี",
+      "วัดตอนชาร์จ iPhone 17 Pro ที่ 15V"
+    ]
+  },
+  {
     "id": "6",
     "title": "e-marker สาย MagSafe 3",
     "src": "/media/posts/review/apple-96w-macbook-pro/magsafe3-emarker.jpg",

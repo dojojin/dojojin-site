@@ -155,6 +155,42 @@ import shots from './apple-96w-macbook-pro.shots.json';
 
 <section class="section">
 
+## Ripple ไฟนิ่งแค่ไหน
+
+<div class="split">
+<div class="prose">
+
+**Ripple** คือไฟที่ "สั่น" ขึ้นลงเล็ก ๆ ซ้อนอยู่บนไฟ DC ที่ควรจะเรียบ ยิ่งน้อยยิ่งดี เพราะไฟที่สั่นมากทำให้วงจรในเครื่องทำงานหนักและร้อนขึ้น ส่วน Switching Frequency คือความเร็วที่หัวชาร์จตัดต่อไฟข้างใน ยิ่งสูงยิ่งกรองไฟได้เรียบ
+
+ผมวัดตอนชาร์จ iPhone 17 Pro ที่ 15V ได้ประมาณนี้ครับ
+
+</div>
+<div class="grade-grid">
+  <article class="grade-card">
+    <h3>Ripple: ราว 36–39mV · ดีมาก</h3>
+    <p>มิเตอร์ขึ้น ▲39 ▼36 mV ยังอยู่ในเกณฑ์ดีมาก (ไม่เกิน 40mV) แต่ติดขอบ ตรงกับที่ผมเคยบอกว่าของแท้ที่มากับเครื่องจะอยู่ราว 35–50mV</p>
+  </article>
+  <article class="grade-card">
+    <h3>Switching Frequency: ราว 108kHz · ดี</h3>
+    <p>107.4–108.1kHz อยู่ช่วง 100–150kHz ปกติของหัวชาร์จทั่วไป ไม่ถึงระดับ GaN รุ่นใหม่ที่เกิน 150kHz</p>
+  </article>
+  <article class="grade-card">
+    <h3>Ripple %: ราว 0.26% · ดีมาก</h3>
+    <p>39mV ÷ 15,131mV × 100 = 0.26% ต่ำกว่า 0.5% เอาอะไรมาชาร์จก็สบายใจครับ</p>
+  </article>
+  <article class="grade-card">
+    <h3>Voltage Accuracy: +0.9% · ดีมาก</h3>
+    <p>ขอ 15V ได้จริง 15.13V คลาดไม่ถึง 1%</p>
+  </article>
+</div>
+</div>
+
+<p class="prose">เกณฑ์ทั้ง 4 ข้อ และวิธีอ่านหน้าจอ VBUS Ripple อ่านต่อได้ที่ <a href="/knowledge/charger-ripple-guide/">หัวชาร์จแบบไหนดี หรือไม่ดี? คู่มืออ่านค่า Ripple</a></p>
+
+</section>
+
+<section class="section">
+
 ## ภาพประกอบ
 
 <p class="prose">กดที่รูปเพื่อดูคำอธิบาย</p>
