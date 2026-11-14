@@ -1,0 +1,143 @@
+---
+title: "Android 17 QPR3 Beta 4 มาแล้วสำหรับ Pixel แก้เครื่องกระตุก คีย์บอร์ดโดนตัด Bluetooth กินแบต"
+topic: smartphone
+type: news
+tags: [google, pixel, android]
+date: 2026-11-14T19:00:00+07:00
+section: tech
+sourceName: "Android Developers และ 9to5Google"
+sourceUrl: "https://developer.android.com/about/versions/17/qpr3/release-notes"
+description: "Android 17 QPR3 Beta 4 (บิลด์ DP11.261030.003) ออกเมื่อ 12 พ.ย. 2569 แก้บั๊กอะไรบ้าง Pixel รุ่นไหนลงได้ เข้าร่วมบีตายังไง และทำไมออกจากบีตาแล้วข้อมูลหาย"
+kicker: "ข่าวเทคโนโลยี · Android"
+lead: "Android 17 QPR3 Beta 4 มาให้ Pixel แล้วครับ ออกเมื่อ 12 พฤศจิกายน 2569 รอบนี้แก้บั๊กที่คนเจอกันบ่อย ทั้งหน่วยความจำรั่วจนเครื่องกระตุก คีย์บอร์ดโดนตัด และ Bluetooth กินแบต ผมสรุปให้ว่าแก้อะไร รุ่นไหนลงได้ และเข้า-ออกบีตายังไง"
+meta: "เรียบเรียงจาก Android release notes และ 9to5Google · ข้อมูล ณ 14 พฤศจิกายน 2569"
+cover: "/media/posts/news/android-17-qpr3-beta-pixel/cover.jpg"
+coverAlt: "ภาพปกข้อความ Android 17 QPR3 Beta 4 สำหรับ Pixel บิลด์ DP11.261030.003"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="prose">
+
+Google ปล่อย Android 17 QPR3 Beta 4 ให้ Pixel เมื่อวันที่ 12 พฤศจิกายน 2569 ครับ
+
+ตอนแรกข่าวบางที่เรียกว่า "Beta 3" แต่หน้า release notes ของ Android Developers เขียนชัดว่าเป็น Beta 4 บิลด์ DP11.261030.003 ส่วน Beta 3 ออกไปแล้วตั้งแต่ 29 ตุลาคม
+
+QPR คือการอัปเดตระหว่างรุ่นใหญ่ของ Android ที่ Google ปล่อยเป็นรอบรายไตรมาส ตัวนี้ยังเป็นบีตา ไม่ใช่รุ่นเสถียร ใครอยากลองก่อนก็เข้าร่วมได้ แต่ถ้าเป็นเครื่องหลักที่ใช้ทำงาน ผมว่าคิดดี ๆ ก่อนครับ
+
+<div class="news-stats">
+<div class="news-stat"><b>Beta 4</b>ชื่อรุ่นตาม release notes</div>
+<div class="news-stat"><b>12 พ.ย.</b>2569 วันที่ปล่อย</div>
+<div class="news-stat"><b>2026-10-05</b>แพตช์ความปลอดภัยในบิลด์นี้</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## บั๊กที่แก้ใน Beta 4
+
+<div class="split">
+<div class="prose">
+
+ในหัวข้อ "Top issues fixed" Google ไล่ไว้ 4 เรื่อง ในภาพคือหน้า release notes ของ Beta 4 ที่ผมอ่านมา ผมเขียนตามนั้น ไม่เติมเองครับ
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/android-17-qpr3-beta-pixel/img-1.jpg" width="1350" height="830" loading="lazy" alt="หน้า release notes ของ Android 17 QPR 3 Beta 4 (November 2026) หัวข้อ Top Issues fixed in Beta 4 มี 4 ข้อ: memory leaks ใน system_server, Conscrypt แจ้ง IllegalArgumentException ไม่ชัด, คีย์บอร์ดบนจอโดนตัด และ Bluetooth ทำงานเบื้องหลังจนแบตหมดเร็ว" /></div><figcaption><span class="news-fig__credit">ภาพหน้าจอ: Google · <a href="https://developer.android.com/about/versions/17/qpr3/release-notes" rel="noopener">developer.android.com</a></span></figcaption></figure>
+</div>
+
+<div class="prose">
+
+<div class="news-cards">
+<div class="news-card is-ok"><b>หน่วยความจำรั่วใน system_server</b> ตัวนี้ทำให้เครื่องกระตุกหนัก Pixel Launcher ล่ม และเครื่องรีสตาร์ตเอง</div>
+<div class="news-card is-ok"><b>คีย์บอร์ดบนจอโดนตัด</b> พิมพ์อยู่แล้วคีย์บอร์ดแสดงไม่ครบ ขาดไปบางส่วน</div>
+<div class="news-card is-ok"><b>Bluetooth กินแบตผิดปกติ</b> Bluetooth ทำงานเบื้องหลังมากเกินไป แบตเลยลดเร็ว</div>
+<div class="news-card is-ok"><b>ข้อความแจ้งผิดพลาดอ่านไม่รู้เรื่อง</b> ข้อนี้เกี่ยวกับนักพัฒนา: แอปที่ตั้งเป้า API 36 แล้วใช้ TLSv1 หรือ TLSv1.1 ซึ่งถูกปฏิเสธ Conscrypt จะแจ้ง IllegalArgumentException ที่ไม่บอกว่าผิดเพราะอะไร</div>
+</div>
+
+Google ไม่ได้บอกว่าแก้หายครบทุกเครื่อง เรื่องแบตจะอยู่ได้นานขึ้นแค่ไหน ผมบอกไม่ได้ ต้องลองกับเครื่องจริงครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## Pixel รุ่นไหนใช้ได้
+
+<div class="prose">
+
+รุ่นที่มี system image ของ Android 17 QPR3 บนหน้าดาวน์โหลดของ Google มีตามนี้ครับ
+
+- Pixel 6a
+- Pixel 7, 7 Pro, 7a
+- Pixel Tablet และ Pixel Fold
+- Pixel 8, 8 Pro, 8a
+- Pixel 9, 9 Pro, 9 Pro XL, 9 Pro Fold, 9a
+- Pixel 10, 10 Pro, 10 Pro XL, 10 Pro Fold, 10a
+- Pixel 11, 11 Pro, 11 Pro XL, 11 Pro Fold
+
+รายชื่อนี้ผมอ่านผ่าน 9to5Google ไม่ได้เข้าไปตรวจบนหน้าดาวน์โหลดเองนะครับ
+
+ส่วนที่ผมหาไม่เจอคือ Google เปิดบีตานี้ให้คนไทยด้วยหรือเปล่า หน้าที่ผมอ่านไม่ได้แยกรายประเทศ ใครมีเครื่องในรายการข้างบน ลองเข้าหน้า Android Beta ดูว่าเครื่องเราขึ้นไหมครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## เข้าร่วมและออกจากบีตา
+
+<div class="prose">
+
+<ol class="news-steps">
+<li><b>เช็กว่าเครื่องพร้อม</b>เครื่องต้องใช้รุ่นเสถียร (stable) อยู่ ไม่ใช่ Developer Preview และต้องเข้าด้วยบัญชี Google ที่เป็นผู้ใช้หลักของเครื่อง</li>
+<li><b>สำรองข้อมูลก่อน</b>บีตาอาจมีบั๊ก สำรองรูปและข้อมูลสำคัญไว้ก่อนเข้าร่วม</li>
+<li><b>เข้าร่วมโปรแกรม</b>เปิด google.com/android/beta ลงชื่อเข้าใช้ เลือกเครื่องที่ขึ้นในรายการ กดเข้าร่วมบีตา ยอมรับข้อกำหนด แล้วรออัปเดตมาทาง OTA (อัปเดตผ่านอากาศ)</li>
+<li><b>หรือแฟลชเอง</b>สายนักพัฒนาโหลด system image จากหน้า Android 17 QPR3 ของ Google มาลงเองได้</li>
+<li class="is-key"><b>ออกจากบีตา ข้อมูลในเครื่องจะถูกลบ</b>กด Opt out ในหน้า Android Beta แล้วเครื่องจะได้อัปเดตภายในราว 24 ชั่วโมง Google เขียนไว้ว่า "all user data on the device will be wiped" คือข้อมูลผู้ใช้ทั้งหมดถูกลบ</li>
+</ol>
+
+แต่หน้า Android Beta ก็เขียนข้อยกเว้นไว้ 2 กรณีครับ
+
+กรณีแรก ถ้าได้อัปเดตรุ่นเสถียรของเวอร์ชันที่กำลังทดสอบอยู่ จะออกจากโปรแกรมได้โดยไม่ลบข้อมูล แต่ทำได้ในช่วงจำกัด จนกว่าบีตาตัวถัดไปจะมา
+
+กรณีที่สอง ถ้าไม่รับอัปเดตที่ลบข้อมูล และไม่เข้าร่วมต่อ เครื่องจะได้รุ่นเสถียรตัวถัดไปเอง แบบนี้ไม่ลบข้อมูล แต่อาจต้องรอ 3 ถึง 4 เดือน
+
+เจอบั๊กก็รายงานได้ในแอป Android Beta Feedback บนเครื่อง เปิดจากลิ้นชักแอปหรือ Quick Settings ครับ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- Android Developers, release notes ของ Android 17 QPR3 (Beta 4, 12 พ.ย. 2569): <a href="https://developer.android.com/about/versions/17/qpr3/release-notes" rel="noopener">developer.android.com</a>
+- Android Beta Program ของ Google: <a href="https://www.google.com/android/beta" rel="noopener">google.com/android/beta</a>
+- 9to5Google (12 พ.ย. 2569): <a href="https://9to5google.com/2026/11/12/android-17-qpr3-beta-3-pixel-2/" rel="noopener">Android 17 QPR3 Beta ใหม่สำหรับ Pixel</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: ภาพประกอบจาก DOJOJIN.TECH
+- ภาพหน้า release notes: ภาพหน้าจอจาก <a href="https://developer.android.com/about/versions/17/qpr3/release-notes" rel="noopener">developer.android.com</a> (Google)
+
+</div>
+
+</section>

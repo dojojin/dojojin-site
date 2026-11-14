@@ -58,8 +58,8 @@ export const TAGS = {
 };
 
 // Filter chips on /news/. "pr" = the post has a `pr` field (sending organisation); the rest = field `section`.
-// A press release also has a section, so it shows under both chips.
-export const NEWS_CHIPS = { pr: "ข่าวประชาสัมพันธ์", tech: "ข่าวเทคโนโลยี", security: "ความปลอดภัยไซเบอร์", auto: "ข่าววงการยานยนต์", general: "ข่าวทั่วไป" };
+// A press release also has a section, so it shows under both chips. "app" = software recommendations (แอปแนะนำ).
+export const NEWS_CHIPS = { pr: "ข่าวประชาสัมพันธ์", tech: "ข่าวเทคโนโลยี", security: "ความปลอดภัยไซเบอร์", auto: "ข่าววงการยานยนต์", general: "ข่าวทั่วไป", app: "Software แนะนำ" };
 
 // Main menu — used by src/layouts/Base.astro and by scripts/patch-atlas.mjs (top bar on atlas pages).
 export const NAV = [
