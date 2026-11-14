@@ -836,3 +836,41 @@ main[data-type="news"] .shot__more .shot__credit { font-size: var(--fs-caption);
 .prose td kbd { font-size: 0.85em; overflow-wrap: break-word; }
 .prose table:not([class]) :is(th, td) { text-align: left; vertical-align: top; padding: var(--space-2); border-bottom: 1px solid var(--border-hairline); overflow-wrap: break-word; min-width: 0; }
 .prose table:not([class]) th { color: var(--text-secondary); font-weight: 600; }
+
+/* News data blocks written as HTML (not images) so they follow light/dark tokens.
+   .news-cards status cards · .news-stats tiles · .news-bars bar rows · .news-band period bar · .news-steps numbered cards */
+.prose .news-steps { list-style: none; padding: 0; margin: var(--space-6) 0; }
+
+.news-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: var(--space-3); margin: var(--space-6) 0; }
+.news-card { min-width: 0; background: var(--surface-elevated); border: 1px solid var(--border-hairline); border-left: 4px solid var(--accent); border-radius: var(--radius); padding: var(--space-3) var(--space-4); line-height: 1.6; }
+.news-card b { display: block; }
+.news-card.is-bad { border-left-color: var(--tier-4-fg); }
+.news-card.is-warn { border-left-color: var(--tier-3-fg); }
+.news-card.is-ok { border-left-color: var(--tier-1-fg); }
+.news-pill { display: inline-block; font-size: var(--fs-caption); font-weight: 600; padding: 0 var(--space-2); border-radius: 99px; background: var(--surface-sunken); color: var(--text-secondary); }
+.is-bad > .news-pill { background: var(--tier-4-bg); color: var(--tier-4-fg); }
+.is-warn > .news-pill { background: var(--tier-3-bg); color: var(--tier-3-fg); }
+.is-ok > .news-pill { background: var(--tier-1-bg); color: var(--tier-1-fg); }
+
+.news-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: var(--space-3); margin: var(--space-6) 0 var(--space-4); }
+.news-stat { min-width: 0; background: var(--surface-elevated); border: 1px solid var(--border-hairline); border-radius: var(--radius); padding: var(--space-3) var(--space-4); line-height: 1.5; color: var(--text-secondary); }
+.news-stat b { display: block; font-size: var(--fs-h1); color: var(--text-primary); }
+
+.news-panel { background: var(--surface-elevated); border: 1px solid var(--border-hairline); border-radius: var(--radius); padding: var(--space-4); margin: var(--space-4) 0; }
+.news-panel > b { display: block; margin-bottom: var(--space-2); }
+.news-bar { display: grid; grid-template-columns: minmax(0, 9em) 1fr 3.5em; align-items: center; gap: var(--space-3); line-height: 1.8; }
+.news-bar i { display: block; height: 12px; border-radius: 4px; background: var(--accent); }
+.news-bar span:last-child { text-align: right; font-weight: 600; }
+.news-band { position: relative; height: 28px; margin: var(--space-3) 0; border-radius: 6px; background: var(--surface-sunken); }
+.news-band i { position: absolute; top: 0; bottom: 0; border-radius: 6px; }
+.news-band .is-out { background: var(--tier-4-bg); border: 2px solid var(--tier-4-fg); }
+.news-band .is-work { top: -5px; bottom: -5px; border: 3px solid var(--text-primary); }
+.news-legend { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-4); margin: 0; padding: 0; list-style: none; font-size: var(--fs-caption); color: var(--text-secondary); }
+.news-legend li { margin: 0; }
+.news-legend i { display: inline-block; width: 14px; height: 10px; border-radius: 3px; margin-right: var(--space-1); vertical-align: 0; }
+
+.news-steps { counter-reset: s; display: grid; gap: var(--space-3); }
+.news-steps li { counter-increment: s; position: relative; margin: 0; background: var(--surface-elevated); border: 1px solid var(--border-hairline); border-radius: var(--radius); padding: var(--space-3) var(--space-4) var(--space-3) calc(var(--space-4) + 40px); line-height: 1.6; }
+.news-steps li::before { content: counter(s); position: absolute; left: var(--space-4); top: var(--space-3); width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: var(--on-accent); font-weight: 700; text-align: center; line-height: 28px; }
+.news-steps li.is-key { border: 2px solid var(--accent); }
+.news-steps b { display: block; }

@@ -1,0 +1,223 @@
+---
+title: "Microsoft 365 ล่มเกือบ 24 ชั่วโมง Outlook เข้าไม่ได้ ไทม์ไลน์ตามเวลาไทย และผลกระทบกับผู้ใช้ในไทย"
+topic: software
+type: news
+tags: [microsoft]
+date: 2026-11-14T18:00:00+07:00
+section: tech
+sourceName: "BleepingComputer, SecurityWeek, MacRumors และสื่อไทย"
+sourceUrl: "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/"
+description: "Microsoft 365 ล่ม 12-13 พ.ย. 2569 Outlook และ Exchange Online เข้าไม่ได้ราว 24 ชั่วโมง สรุปไทม์ไลน์เป็นเวลาไทยตั้งแต่เริ่มจนกลับมาใช้ได้ ผู้ใช้ในไทยโดนช่วงไหน สาเหตุตามที่ Microsoft แจ้ง และถ้าเจออีกควรทำอย่างไร"
+kicker: "ข่าวเทคโนโลยี"
+lead: "Outlook, Exchange Online และบางฟีเจอร์ของ Teams กับ Copilot ใช้ไม่ได้อยู่ราว 24 ชั่วโมง ผมเรียงเหตุการณ์ให้ทีละขั้นเป็นเวลาไทย และดูว่าคนไทยโดนช่วงไหนครับ"
+meta: "เรียบเรียงจาก BleepingComputer, SecurityWeek, MacRumors, azureblog.co.uk และสื่อไทย · ข้อมูล ณ 14 พฤศจิกายน 2569"
+cover: "/media/posts/news/microsoft-365-outage-2026-11/cover.jpg"
+coverAlt: "แล็ปท็อปบนโต๊ะ หน้าจอแอปอีเมลสีน้ำเงินมีไอคอนเมฆขีดฆ่าและวงกลมโหลด พร้อมข้อความ Microsoft 365 ล่มเกือบ 24 ชั่วโมง (ภาพประกอบ)"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="prose">
+
+คืนวันพฤหัสบดีที่ 12 พฤศจิกายน 2569 ตามเวลาไทย ผู้ใช้ Microsoft 365 เริ่มเปิดกล่องจดหมายไม่ได้ ตัวที่มีปัญหาคือ Exchange Online ซึ่งเป็นระบบอีเมลของ Microsoft ที่อยู่เบื้องหลัง Outlook จากนั้นปัญหาก็ลามไปถึง Outlook และบางฟีเจอร์ของ Teams กับ Copilot ลากยาวไปจนถึงคืนวันศุกร์ MacRumors บอกว่า "นานเกือบ 24 ชั่วโมง"
+
+ผมเทียบข่าวจากหลายแหล่ง ทั้ง BleepingComputer, SecurityWeek, MacRumors และสื่อไทยครับ
+
+สิ่งที่ Microsoft แจ้ง ผมอ่านผ่านสื่อเหล่านี้อีกที ยังไม่ได้เปิดโพสต์ต้นทางของ Microsoft เอง เพราะหน้า X เปิดไม่ได้ ส่วนหน้า status เป็นหน้าที่โหลดด้วยสคริปต์ ถ้าแหล่งไหนให้เวลาไม่ตรงกัน ผมเขียนบอกไว้ตรงนั้นเลย
+
+เวลาทั้งหมดในข่าวนี้ผมแปลงเป็นเวลาไทย (UTC+7) เอง เดือนนี้เวลาฝั่งตะวันออกของสหรัฐฯ (ET) ช้ากว่าไทย 12 ชั่วโมง เช่น 13:26 ET = 01:26 ของไทยวันรุ่งขึ้น
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ไทม์ไลน์ ช่วงเริ่มล่ม
+
+<div class="split">
+<div class="prose">
+
+คืนวันพฤหัสถึงเช้าวันศุกร์ เวลาไทยทั้งหมด ใต้แต่ละช่วงผมใส่ที่มาไว้ให้ครับ
+
+<ol class="news-tl">
+<li class="is-key"><span class="news-tl__date">23:17 12 พ.ย.</span><div>เริ่มเปิดกล่องจดหมาย Exchange Online ไม่ได้ Microsoft ให้เลขเหตุ EX1550543<span class="news-tl__src">ฐานเศรษฐกิจ, azureblog.co.uk (16:17 UTC)</span></div></li>
+<li><span class="news-tl__date">00:44 13 พ.ย.</span><div>Downdetector ฝั่งไทยมีคนแจ้งว่าล่มเป็นรายแรก<span class="news-tl__src">PPTV, MGR Online</span></div></li>
+<li><span class="news-tl__date">ราว 01:00 13 พ.ย.</span><div>Downdetector มีคนแจ้งปัญหา Outlook เกือบ 130,000 ครั้ง (ไม่ได้ระบุว่านับจากประเทศไหน)<span class="news-tl__src">MacRumors อ้าง AP</span></div></li>
+<li class="is-key"><span class="news-tl__date">01:26 13 พ.ย.</span><div>Microsoft เปิดเหตุใหญ่ MO1550821<span class="news-tl__src">BleepingComputer (13:26 ET)</span></div></li>
+<li><span class="news-tl__date">ช่วงเช้ามืด</span><div>หยุดปล่อยอัปเดต ย้ายทราฟฟิก รีสตาร์ตเซิร์ฟเวอร์ บางเครื่องกลับมาได้ แต่พอคนเข้าใช้ก็หยุดตอบสนองอีก<span class="news-tl__src">BleepingComputer, ฐานเศรษฐกิจ, ไทยรัฐ</span></div></li>
+<li><span class="news-tl__date">ราว 07:00</span><div>เซิร์ฟเวอร์บางส่วนกลับมาเสถียร ระบบเริ่มฟื้นบางส่วน<span class="news-tl__src">BleepingComputer ให้ 06:57 อีกแหล่งให้ 06:06</span></div></li>
+<li><span class="news-tl__date">08:59</span><div>Downdetector ฝั่งไทยขึ้นไปถึง 213 ครั้ง ช่วงคนเริ่มเข้างาน<span class="news-tl__src">PPTV, MGR Online</span></div></li>
+<li><span class="news-tl__date">10:00</span><div>Microsoft แจ้งว่าที่แก้ไปยังไม่ได้ผลอย่างที่คาด<span class="news-tl__src">ไทยรัฐ แปลงจากเวลาสหรัฐฯ</span></div></li>
+</ol>
+
+</div>
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/news/microsoft-365-outage-2026-11/photo-1.jpg" width="1448" height="1086" loading="lazy" alt="ภาพประกอบ ห้องพักยามดึก แล็ปท็อปบนโต๊ะเปิดแอปอีเมลที่ค้างอยู่ที่วงกลมโหลด โทรศัพท์ข้าง ๆ ก็โหลดไม่ขึ้น" /></div><figcaption><span class="news-fig__credit">ภาพประกอบจาก DOJOJIN.TECH</span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## ไทม์ไลน์ ช่วงแก้ไขจนกลับมาใช้ได้
+
+<div class="split">
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/news/microsoft-365-outage-2026-11/photo-3.jpg" width="1448" height="1086" loading="lazy" alt="ภาพประกอบ วิศวกรสองคนทำงานอยู่ระหว่างตู้เซิร์ฟเวอร์ในศูนย์ข้อมูล ไฟสถานะบางดวงเป็นสีส้ม" /></div><figcaption><span class="news-fig__credit">ภาพประกอบจาก DOJOJIN.TECH</span></figcaption></figure>
+<div class="prose">
+
+ต่อจากช่วงแรก ตั้งแต่วันศุกร์ที่ 13 ไปจนถึงเช้าวันเสาร์ที่ 14 พฤศจิกายนครับ
+
+<ol class="news-tl">
+<li><span class="news-tl__date">ระหว่างวัน 13 พ.ย.</span><div>ย้อนการตั้งค่าเครือข่ายที่เพิ่งเปลี่ยน และแจ้งว่าไม่พบหลักฐานว่าเป็นการโจมตี (no evidence of malicious activity)<span class="news-tl__src">SecurityWeek, azureblog.co.uk · แต่ละแหล่งให้เวลาไม่ตรงกัน</span></div></li>
+<li><span class="news-tl__date">16:10 13 พ.ย.</span><div>ขยายเวลาเก็บอีเมลที่ส่งค้างเป็น 48 ชั่วโมง เมลที่ยังส่งไม่ผ่านจะได้ไม่เด้งกลับ<span class="news-tl__src">azureblog.co.uk · BleepingComputer ลงอัปเดตนี้ตอน 20:05</span></div></li>
+<li><span class="news-tl__date">ราว 21:00 13 พ.ย.</span><div>คิวอีเมลลดลงมาก บางคนยังได้เมลช้าอยู่<span class="news-tl__src">azureblog.co.uk · BleepingComputer ลงตอน 00:06 วันที่ 14</span></div></li>
+<li class="is-key"><span class="news-tl__date">23:10 13 พ.ย.</span><div>Microsoft บันทึกว่าผลกระทบจบแล้ว รวมราว 24 ชั่วโมง<span class="news-tl__src">azureblog.co.uk</span></div></li>
+<li><span class="news-tl__date">00:57 14 พ.ย.</span><div>Microsoft ขอโทษ และบอกสาเหตุว่ามาจากการอัปเกรดเครือข่ายก่อนหน้า<span class="news-tl__src">MacRumors, azureblog.co.uk</span></div></li>
+<li class="is-key"><span class="news-tl__date">ราว 11:00 14 พ.ย.</span><div>ประกาศว่าบริการกลับมาปกติ รายงานฉบับเต็ม (post-incident report) ยังไม่ออก<span class="news-tl__src">azureblog.co.uk ให้ 10:51 อีกแหล่งให้ 11:17</span></div></li>
+</ol>
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## กระทบอะไรบ้าง และคนไทยโดนช่วงไหน
+
+<div class="split">
+<div class="prose">
+
+ตัวที่โดนหนักคือ Outlook กับ Exchange Online ครับ ส่วน Teams ไม่ได้ล่มทั้งหมด แต่ฟีเจอร์ที่ต้องพึ่งปฏิทินกับอีเมลจะมีปัญหา สรุปจาก BleepingComputer, MacRumors และฐานเศรษฐกิจได้ประมาณนี้
+
+<div class="news-cards">
+<div class="news-card is-bad"><b>Outlook / Exchange Online</b><span class="news-pill">โดนหนัก</span> เปิดกล่องจดหมายไม่ได้ อีเมลเข้าช้า</div>
+<div class="news-card is-bad"><b>Apple Mail (บัญชี Exchange)</b><span class="news-pill">โดนด้วย</span> บัญชีงานที่ผูกกับ Exchange ก็มีปัญหาเหมือนกัน</div>
+<div class="news-card is-warn"><b>ปฏิทินและนัดประชุม</b><span class="news-pill">บางส่วน</span> บางคนตั้งนัดหรือเพิ่มรายการในปฏิทินแล้วขึ้น error</div>
+<div class="news-card is-warn"><b>Microsoft 365 Copilot</b><span class="news-pill">บางส่วน</span> ฟีเจอร์ที่ต้องดึงข้อมูลจากอีเมลใช้ไม่ได้</div>
+<div class="news-card is-warn"><b>SharePoint Online, Defender XDR</b><span class="news-pill">อยู่ในรายชื่อ</span> BleepingComputer ระบุว่าอยู่ในบริการที่กระทบ</div>
+<div class="news-card is-ok"><b>Teams โทร ประชุม แชท</b><span class="news-pill">ส่วนใหญ่ใช้ได้</span> Microsoft บอกว่าฟีเจอร์หลักส่วนใหญ่ยังใช้งานได้</div>
+</div>
+
+</div>
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/news/microsoft-365-outage-2026-11/photo-2.jpg" width="1448" height="1086" loading="lazy" alt="ภาพประกอบ เช้าวันทำงานในออฟฟิศ พนักงานนั่งหน้าจอที่แอปอีเมลค้างอยู่ที่วงกลมโหลด มีคนหนึ่งยกโทรศัพท์ขึ้นคุย" /></div><figcaption><span class="news-fig__credit">ภาพประกอบจาก DOJOJIN.TECH</span></figcaption></figure>
+</div>
+
+<div class="prose">
+
+ฝั่งไทย หลักฐานที่ผมหาได้มีแค่ตัวเลขจาก Downdetector ฝั่งไทย (PPTV, MGR Online) ซึ่งนับจากคนที่กดแจ้งเอง กับที่ฐานเศรษฐกิจรายงานว่าบางคนเปิด Outlook ไม่ได้หรือได้เมลช้า และกระทบปฏิทิน นัดหมายใน Teams และการดึงเมลใน Copilot
+
+<div class="news-stats">
+<div class="news-stat"><b>00:44</b>คนไทยแจ้งรายแรก เช้ามืดวันศุกร์ 13 พ.ย.</div>
+<div class="news-stat"><b>213 ครั้ง</b>ยอดแจ้งตอน 08:59 ช่วงคนเริ่มเข้างาน</div>
+</div>
+
+<div class="news-panel">
+<b>ปัญหาที่คนไทยแจ้ง (ตอน 08:59)</b>
+<div class="news-bar"><span>เข้าแอปไม่ได้</span><i style="width:50%"></i><span>~50%</span></div>
+<div class="news-bar"><span>ล็อกอินไม่ได้</span><i style="width:27%"></i><span>27%</span></div>
+<div class="news-bar"><span>เข้าเว็บไม่ได้</span><i style="width:15%"></i><span>15%</span></div>
+</div>
+
+ส่วนเรื่องเวลา ผมคำนวณจากไทม์ไลน์เองนะครับ เหตุเริ่ม 23:17 คืนวันพฤหัส และจบราว 23:10 คืนวันศุกร์ เวลาทำงานวันศุกร์ 08:00-17:00 จึงอยู่กลางเหตุการณ์พอดี ใครเปิดอีเมลตอนเข้างานก็จะเจอช่วงที่ Microsoft ยังกู้ระบบอยู่
+
+<div class="news-panel" role="img" aria-label="แถบเวลา ช่วงที่ล่มตั้งแต่ 23:17 คืนวันพฤหัส ถึง 23:10 คืนวันศุกร์ ครอบเวลาทำงานวันศุกร์ 08:00 ถึง 17:00 ทั้งหมด">
+<b>ช่วงที่ล่ม เทียบเวลาทำงานวันศุกร์ (เวลาไทย)</b>
+<div class="news-band"><i class="is-out" style="left:10.9%;width:79.6%"></i><i class="is-work" style="left:40%;width:30%"></i></div>
+<ul class="news-legend"><li><i class="is-out" style="background:var(--tier-4-bg);border:2px solid var(--tier-4-fg)"></i>ล่ม 23:17 พฤหัส ถึง 23:10 ศุกร์</li><li><i style="border:3px solid var(--text-primary)"></i>เวลาทำงาน 08:00-17:00 วันศุกร์</li></ul>
+</div>
+
+ตัวเลข 213 ครั้งนี้น้อยกว่าตัวเลขเกือบ 130,000 ครั้งที่ AP รายงานมาก และผมไม่เจอประกาศจากมหาวิทยาลัย หน่วยงาน หรือบริษัทในไทยเรื่อง Outlook หรือ Teams ล่มครั้งนี้ รวมถึงไม่เจอแถลงจาก Microsoft ประเทศไทย เลยบอกไม่ได้ว่าองค์กรไทยโดนหนักแค่ไหนครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## สาเหตุตามที่ Microsoft แจ้ง
+
+<div class="prose">
+
+คำอธิบายของ Microsoft เปลี่ยนไปเรื่อย ๆ ระหว่างที่สืบหา ผมเรียงตามลำดับจากที่ BleepingComputer, SecurityWeek, azureblog.co.uk และ MacRumors รายงานไว้ครับ
+
+<ol class="news-steps">
+<li><b>โหลดสูง?</b>ตอนแรกบอกว่าระบบรับโหลดสูง แล้วแก้ว่าเซิร์ฟเวอร์จำนวนมากไม่ผ่านการตรวจสุขภาพอัตโนมัติ (health check) เลยถูกตัดออก เครื่องที่เหลือรับงานแทนไม่ไหว</li>
+<li><b>การเชื่อมต่อแบบปลอดภัย</b>ส่วนที่สร้างการเชื่อมต่อแบบปลอดภัยบนเซิร์ฟเวอร์ทำงานหนักเกิน เครื่องเลยหยุดรับคำขอ</li>
+<li><b>ย้อนค่าเครือข่าย</b>ย้อนการตั้งค่าเครือข่ายที่เพิ่งเปลี่ยน แต่ฐานเศรษฐกิจรายงานว่าตอนนั้นยังไม่ยืนยันว่าเป็นต้นเหตุ</li>
+<li class="is-key"><b>00:57 วันที่ 14 พ.ย.</b>"The incident was introduced by an issue during an earlier network capacity upgrade" คือปัญหาเกิดจากการอัปเกรดความจุเครือข่ายก่อนหน้านี้ แล้วมาโผล่หลังการเปลี่ยนค่าเครือข่ายครั้งล่าสุด</li>
+</ol>
+
+Microsoft บอกด้วยว่า "This was a technical issue not related to cyber or AI / agents" คือเป็นปัญหาทางเทคนิค ไม่เกี่ยวกับการโจมตีไซเบอร์ หรือ "AI / agents" ทั้งหมดนี้เป็นคำของ Microsoft ที่ผมอ่านผ่านสื่อ รายละเอียดจริง ๆ ต้องรอรายงานฉบับเต็มครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ถ้าเจอแบบนี้อีก ทำอย่างไร
+
+<div class="prose">
+
+ส่วนนี้เป็นคำแนะนำทั่วไปของผมเอง ไม่ใช่ประกาศของ Microsoft ครับ ข้อ 2 กับข้อ 5 ตรงกับที่ azureblog.co.uk แนะนำผู้ดูแลระบบไว้
+
+<ol class="news-steps">
+<li><b>เช็กสถานะก่อน</b>เปิด status.cloud.microsoft หรือบัญชี X @MSFT365Status ถ้า Microsoft แจ้งว่ามีปัญหาอยู่ แปลว่าเครื่องเราไม่ได้เสีย</li>
+<li><b>ฝ่ายไอที ดู Service health</b>ใน Microsoft 365 admin center หาเลขเหตุ เช่น EX1550543 และ MO1550821 ถ้าเข้า admin center ไม่ได้ ก็ดูหน้า status แทน</li>
+<li><b>มีช่องทางสำรอง</b>ถ้าอีเมลกับ Teams ล่มพร้อมกัน ใช้ LINE โทรศัพท์ หรืออีเมลเจ้าอื่นแจ้งทีมไปก่อน</li>
+<li><b>ลอง Outlook บนเว็บ</b>ถ้าแอปเข้าไม่ได้ แต่ถ้าปัญหาอยู่ที่ฝั่งบริการ เว็บก็อาจเข้าไม่ได้เหมือนกัน</li>
+<li><b>อย่าเพิ่งรื้อเครื่อง</b>ไม่ต้องลบโปรไฟล์ Outlook ลง Office ใหม่ หรือรีเซ็ตรหัสผ่าน ตอนที่ปัญหามาจากฝั่ง Microsoft</li>
+</ol>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ข้อควรรู้เพิ่มเติม
+
+<div class="prose">
+
+ก่อนเหตุใหญ่นี้ Teams มีอีกเหตุแยกกันคือ TM1550488 ช่วง 21:45-22:53 คืนวันที่ 12 พ.ย. เวลาไทย กระทบผู้ใช้ในทวีปอเมริกาเหนือและใต้ ส่งข้อความหรือดึงแชทไม่ได้ BleepingComputer บอกว่าแก้เรียบร้อยแล้ว และ Microsoft ยังไม่บอกว่าเกี่ยวกับเหตุใหญ่หรือไม่
+
+เวลาทั้งหมดในข่าวผมแปลงเป็นเวลาไทยเอง แต่ละแหล่งให้เวลาต่างกันได้ราวหนึ่งชั่วโมง เพราะอ้างโพสต์ของ Microsoft คนละโพสต์ จุดไหนไม่ตรงกันผมใช้คำว่า "ราว" และถ้า Microsoft ออกรายงานฉบับเต็ม เนื้อหาในข่าวนี้อาจเปลี่ยนได้ครับ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- BleepingComputer: <a href="https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/" rel="noopener">bleepingcomputer.com</a>
+- SecurityWeek: <a href="https://www.securityweek.com/microsoft-365-outage-disrupts-outlook-exchange-online-and-teams/" rel="noopener">securityweek.com</a>
+- MacRumors (คำชี้แจงของ Microsoft ตอนกลับมาใช้ได้): <a href="https://www.macrumors.com/2026/11/13/microsoft-365-outage-resolving/" rel="noopener">macrumors.com</a>
+- azureblog.co.uk (ไทม์ไลน์เวลา UTC และคำแนะนำผู้ดูแลระบบ): <a href="https://azureblog.co.uk/posts/microsoft-365-outage-12-november-2026/" rel="noopener">azureblog.co.uk</a>
+- Microsoft 365 Service health: <a href="https://status.cloud.microsoft/m365" rel="noopener">status.cloud.microsoft</a>
+- ข่าวไทย (ใช้ตัวหนังสือ ไม่ใช้ภาพ): <a href="https://www.pptvhd36.com/news/%E0%B9%84%E0%B8%AD%E0%B8%97%E0%B8%B5/287047" rel="noopener">PPTV HD 36</a> · <a href="https://mgronline.com/onlinesection/detail/9690000108609" rel="noopener">MGR Online</a> · <a href="https://www.thansettakij.com/technology/673712" rel="noopener">ฐานเศรษฐกิจ</a> · <a href="https://www.thairath.co.th/lifestyle/tech/2972249" rel="noopener">ไทยรัฐออนไลน์</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพบรรยากาศในเนื้อข่าว: ภาพประกอบจาก DOJOJIN.TECH ไม่ใช่ภาพเหตุการณ์จริง
+- ภาพปก: ภาพประกอบจาก DOJOJIN.TECH
+
+ภาพใช้ประกอบข่าว (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>
