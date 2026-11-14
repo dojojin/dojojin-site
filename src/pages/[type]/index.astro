@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import PostCard from '../../components/PostCard.astro';
 import { TYPES, TOPICS, NEWS_CHIPS } from '../../data/site.js';
-import { getFeed } from '../../lib/feed.js';
+import { getFeed, spaceApps } from '../../lib/feed.js';
 
 // One page per menu section (Review / ความรู้ / Data).
 export function getStaticPaths() {
@@ -10,7 +10,7 @@ export function getStaticPaths() {
 }
 const { type } = Astro.params;
 const t = TYPES[type];
-const items = await getFeed(type);
+const items = spaceApps(await getFeed(type));   // news: app posts at most every 4th card
 // Filter chips: news by NEWS_CHIPS (a card can match several), every other section by category.
 const [key, names] = type === 'news' ? ['news', NEWS_CHIPS] : ['topic', TOPICS];
 const has = (i, k) => [].concat(i[key] ?? []).includes(k);

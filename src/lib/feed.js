@@ -15,3 +15,11 @@ export async function getFeed(type, tag) {
   }));
   return [...posts, ...atlases].filter((i) => (!type || i.type === type) && (!tag || i.tags.includes(tag))).sort((a, b) => b.date - a.date);
 }
+
+// App recommendations (news section "app") must not crowd out the news in mixed lists: at most every 4th item is an
+// app post (both stay newest first); leftover apps go to the end. Lists filtered to apps only are unaffected.
+const isApp = (i) => i.type === 'news' && [].concat(i.news ?? []).includes('app');
+export function spaceApps(items, every = 4) {
+  const rest = items.filter((i) => !isApp(i)), apps = items.filter(isApp);
+  return rest.flatMap((n, k) => ((k + 1) % (every - 1) === 0 && apps.length ? [n, apps.shift()] : [n])).concat(apps);
+}

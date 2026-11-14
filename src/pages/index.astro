@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import PostCard from '../components/PostCard.astro';
 import { SITE, TYPES, PROFILE } from '../data/site.js';
-import { getFeed } from '../lib/feed.js';
+import { getFeed, spaceApps } from '../lib/feed.js';
 import { srcset } from '../lib/thumb.js';
 
 const feed = await getFeed();
@@ -33,7 +33,7 @@ const pair = PAIR.filter((type) => type === 'app' || TYPES[type]).map(block).fil
 const others = sections.filter((s) => !HUB.includes(s.type) && !PAIR.includes(s.type));
 const day = (d) => d.toLocaleDateString('th-TH', { day: 'numeric', month: 'short', year: '2-digit' });
 // Spotlight (right of the hero): the newest post is rendered here; the rest come from /spot.json after load.
-const f0 = feed[0];
+const f0 = spaceApps(feed)[0];   // same order as /spot.json
 const first = { href: f0.href, title: f0.title, cover: f0.cover, kind: TYPES[f0.type]?.name ?? '', sub: f0.sub ?? '' };
 ---
 <Base active="home">
