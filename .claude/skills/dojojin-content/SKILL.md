@@ -39,4 +39,4 @@ Batch of 4+ posts: one sub-agent per 2–3 posts (same type together), briefed w
 
 ## Privacy (every photo, every time)
 
-GPS is stripped by prep_images. You must still LOOK and blur/crop: faces (incl. phone wallpapers and staff in the background), names/emails in notifications, account names in apps, maps / Find-my / coordinates, parcel labels, the owner's business-card address/phone/email/QR, unit serial numbers and per-unit QR, passports/ID cards. Check the blurred output — a missed box is the common failure. Never publish `_sources/`.
+GPS is stripped by prep_images. You must still LOOK and blur/crop: faces (incl. phone wallpapers and staff in the background), names/emails in notifications, account names in apps, maps / Find-my / coordinates, parcel labels, the owner's business-card address/phone/email/QR, unit serial numbers and per-unit QR, passports/ID cards. The QR on a มอก. (TIS) mark is a standard mark: leave it (owner, 15 Nov 2026). Check the blurred output — a missed box is the common failure. Never publish `_sources/`.

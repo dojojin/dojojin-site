@@ -3,6 +3,7 @@ title: "รีวิว Apple 96W หัวชาร์จ MacBook Pro M5 Pro �
 topic: power
 type: review
 tags: [apple, usb-pd]
+updated: 2026-11-15T02:00:00+07:00
 date: 2026-11-08 # newest product in the series — owner may give the exact FB post date
 description: "รีวิว Apple 96W หัวชาร์จที่มากับ MacBook Pro M5 Pro วัดโปรโตคอลได้ 94W เป็น PD 2.0 ไม่มี PPS จ่ายครบ 5V / 9V / 15V / 20V มี มอก. พร้อมข้อดีข้อเสีย และควรซื้อไหม"
 kicker: "#NanoReview · Charger"
@@ -26,6 +27,8 @@ import shots from './apple-96w-macbook-pro.shots.json';
 - เป็นหัวชาร์จมาตรฐานเก๊าเก่า **PD 2.0** ที่ไม่มี PPS, AVS หรืออะไรเลย
 - มี **มอก.** ถูกต้อง แต่พอตรวจใบอนุญาต รายละเอียดผลิตภัณฑ์มีคำว่าเครื่องจ่ายไฟสำหรับลำโพงอยู่ด้วย
 
+- เพิ่มเติม: ตรวจของแท้ด้วยมิเตอร์ ทั้งสาย MagSafe 3 และตัวหัวชาร์จ ดูหัวข้อ "ของแท้ไหม ดูยังไง" ด้านล่าง
+
 ควรเปลี่ยนเป็น GaN ได้แล้ว 555+
 
 </div>
@@ -35,6 +38,7 @@ import shots from './apple-96w-macbook-pro.shots.json';
     <ul>
       <li>จ่ายครบทุกแรงดันตามฉลาก (5V / 9V / 15V / 20V)</li>
       <li>มี มอก. 62368 ถูกต้อง</li>
+      <li>มิเตอร์อ่านได้ว่าเป็น Apple 96W ตรงกับฉลาก</li>
     </ul>
   </div>
   <div class="cons">
@@ -42,7 +46,7 @@ import shots from './apple-96w-macbook-pro.shots.json';
     <ul>
       <li>ยังเป็น PD 2.0 ไม่มี PPS</li>
       <li>ไม่มี 12V</li>
-      <li>ไม่ใช่ GaN ตัวใหญ่กว่าหัวชาร์จ 100W รุ่นใหม่ ๆ</li>
+      <li>ไม่ใช่ GaN ตัวใหญ่กว่าหัวชาร์จ 100W รุ่นใหม่ ๆ วางข้าง AirPods Pro 3 แล้วเห็นชัด ทั้งใหญ่ทั้งหนัก</li>
     </ul>
   </div>
 </div>
@@ -73,10 +77,98 @@ import shots from './apple-96w-macbook-pro.shots.json';
 
 <section class="section">
 
+## ของแท้ไหม ดูยังไง
+
+<p class="prose">ผมเอาสาย MagSafe 3 กับตัวหัวชาร์จมาเสียบ POWER-Z ดูว่าข้างในบอกอะไรบ้าง แล้วดูตัวหนังสือบนฉลากประกอบครับ</p>
+
+<div class="grade-grid">
+  <article class="grade-card">
+    <h3>สาย MagSafe 3: ชิปในสายบอกว่าเป็นของ Apple</h3>
+    <p>สาย USB-C ที่รับไฟเกิน 3A จะมีชิปเล็ก ๆ ในหัวสาย เรียกว่า <b>e-marker</b> คอยบอกหัวชาร์จว่าสายรับไฟได้เท่าไร มิเตอร์อ่านได้ว่า Vendor <b>Apple (0x05ac)</b> ชิป <b>26DH158 (MagSafe3)</b> รับไฟได้ <b>50V 5A 240W EPR</b> และส่งข้อมูลได้แค่ USB 2.0 ซึ่งสายชาร์จก็ไม่จำเป็นต้องเร็วกว่านี้</p>
+  </article>
+  <article class="grade-card">
+    <h3>240W EPR คืออะไร</h3>
+    <p>EPR (Extended Power Range) มาจาก USB PD 3.1 ดันไฟได้ถึง 48V × 5A = 240W สายที่รองรับต้องมี e-marker บอกว่ารับ 50V 5A ได้ ตรงกับที่สายเส้นนี้บอก แต่หัวชาร์จ 96W ตัวนี้เป็น PD 2.0 ให้ไฟสูงสุดแค่ 20V สายจึงเหลือเผื่ออีกเยอะ</p>
+  </article>
+  <article class="grade-card">
+    <h3>ตัวหัวชาร์จ: บอกชื่อรุ่นตัวเองตรงกับฉลาก</h3>
+    <p>หัวชาร์จ Apple ส่งข้อมูลตัวเองให้มิเตอร์อ่านได้ ขึ้นเป็น <b>Apple Inc. · 96W USB-C Power Adapter</b> VID 0x05AC (รหัสผู้ผลิตของ Apple) พร้อม FW และ HW ตรงกับฉลากรุ่น A2166 ด้านข้าง เลข Serial ในรูปผมเบลอไว้นะครับ</p>
+  </article>
+  <article class="grade-card">
+    <h3>ตัวหนังสือบนฉลาก: จาง ๆ แบบนี้แหละของแท้</h3>
+    <p>ของแท้จะพิมพ์ตัวหนังสือสีเทาอ่อน จาง ๆ กลืนไปกับตัวเครื่อง ต้องเอียงหาแสงถึงจะอ่านออก ตัวหนังสือคมเรียบร้อย ไม่ใช่สีดำเข้มชัดแจ๋ว ข้างล่างเป็นชื่อผู้ผลิตภาษาจีน 伟创力 ก็คือ Flextronics ตรงกับฉลากด้านบน</p>
+  </article>
+</div>
+
+<p class="prose">ข้อควรรู้นิดนึงครับ รหัสผู้ผลิตกับชื่อรุ่นเป็นข้อมูลที่ของปลอมเกรดดี ๆ ก็ก๊อปได้ ผลจากมิเตอร์จึงเป็นสัญญาณที่ดีมาก แต่ไม่ใช่ใบรับรอง 100% ดูหลายอย่างประกอบกันดีที่สุด ทั้งข้อมูลในมิเตอร์ ตัวหนังสือบนฉลาก น้ำหนัก และซื้อจากร้านที่เชื่อถือได้</p>
+
+</section>
+
+<section class="section">
+
+## หัวชาร์จรู้ว่ากำลังคุยกับเครื่องอะไร
+
+<div class="split">
+<div class="prose">
+
+ความพิเศษของ Adaptor ตัวนี้คือ มันรู้ว่ากำลังคุยกับเครื่องอะไรอยู่ครับ
+
+ถ้าเอาไปชาร์จ MacBook มิเตอร์จะขึ้นว่าเป็น **Apple** แต่ถ้าเอาไปชาร์จ iPhone 17 Pro Series จะบอกเลยว่ากำลังคุยกับ **iPhone 17 Pro** อยู่
+
+ส่วนถ้าเอาไปชาร์จ vivo X300 Ultra มันจะไม่รู้จักรุ่น แต่จะบอกว่ากำลังคุยกับชิปของ **Qualcomm** อยู่ครับ
+
+</div>
+<div class="grade-grid">
+  <article class="grade-card">
+    <h3>ทำได้ยังไง</h3>
+    <p>ใน USB PD มีคำสั่งชื่อ <b>Discover Identity</b> ให้ฝั่งหนึ่งถามอีกฝั่งว่า "คุณคือใคร" อีกฝั่งจะตอบกลับเป็นรหัสผู้ผลิต (Vendor ID) รหัสสินค้า และประเภทอุปกรณ์ ส่วน Apple ยังมีข้อความเฉพาะของตัวเอง (VDM) ไว้ขอข้อมูลเพิ่มจากเครื่อง Apple ด้วยกัน</p>
+  </article>
+  <article class="grade-card">
+    <h3>มิเตอร์แค่แอบฟัง</h3>
+    <p>POWER-Z ไม่ได้ถามเอง มันเสียบคั่นกลางแล้วอ่านข้อความที่สองฝั่งคุยกัน ChargerLAB เขียนไว้ใน changelog ว่าการแสดงรุ่นของเครื่อง Apple <b>ต้องใช้หัวชาร์จที่ขอข้อมูล VDM และระดับแบตจากเครื่องได้</b> ซึ่งหัวชาร์จ Apple ตัวนี้ทำได้ เลยเห็นชื่อ iPhone 17 Pro</p>
+  </article>
+  <article class="grade-card">
+    <h3>แล้ว Qualcomm มาจากไหน</h3>
+    <p>vivo ไม่ได้คุยภาษาเฉพาะของ Apple หัวชาร์จจึงไม่รู้ชื่อรุ่น สิ่งที่เห็นน่าจะเป็นรหัสผู้ผลิตของชิปจัดการพลังงานในมือถือ ซึ่งเป็นของ Qualcomm ข้อนี้ ChargerLAB ไม่ได้อธิบายไว้ตรง ๆ ผมเลยบอกว่า "น่าจะ" นะครับ</p>
+  </article>
+</div>
+</div>
+
+<div class="grade-grid">
+  <article class="grade-card">
+    <h3>MacBook Pro</h3>
+    <p>20.58V × 0.26A = <b>5.3W</b> ตอนถ่ายแบตใกล้เต็มแล้ว เลยดึงไฟน้อย มิเตอร์ขึ้น [Apple] PD3.0 Pos:4 ตรงกับ 20V 4.7A ในรายการ PD</p>
+  </article>
+  <article class="grade-card">
+    <h3>iPhone 17 Pro</h3>
+    <p>15.13V × 2.28A = <b>34.5W</b> มิเตอร์ขึ้น [Apple iPhone 17 Pro] PD3.0 Pos:3 คือ 15V 3A ชาร์จรุ่นไหนในซีรีส์ก็ขึ้น "17 Pro" เหมือนกัน ไม่แยก Pro กับ Pro Max</p>
+  </article>
+  <article class="grade-card">
+    <h3>vivo X300 Ultra</h3>
+    <p>9.00V × 2.01A = <b>18.1W</b> มิเตอร์ขึ้น [Qualcomm] PD3.0 27W Pos:2 คือ 9V 3A ไม่มี PPS ให้ใช้ เลยได้แค่ 9V ตามที่หัวชาร์จมี</p>
+  </article>
+</div>
+
+<p class="prose">ตัวเลขวัตต์ข้างบนคือที่เครื่องดึงไปตอนถ่ายรูป ไม่ใช่กำลังสูงสุดของหัวชาร์จนะครับ ขึ้นกับแบตที่เหลือและความร้อนของเครื่องด้วย</p>
+
+</section>
+
+<section class="section">
+
 ## ภาพประกอบ
 
 <p class="prose">กดที่รูปเพื่อดูคำอธิบาย</p>
 
 <ShotGallery shots={shots} />
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูลเสริม
+
+- ChargerLAB POWER-Z KM003C changelog (แสดงรุ่นเครื่อง Apple ต้องใช้หัวชาร์จที่ขอข้อมูล VDM ได้): <a href="https://www.power-z.com/blogs/news/v.2.0.1-the-new-software-version-of-chargerlab-power-z-km003c" rel="noopener">power-z.com</a>
+- โครงสร้างคำสั่ง Discover Identity ใน USB PD (Vendor ID, Product ID, ประเภทอุปกรณ์): <a href="https://android.googlesource.com/kernel/common/+/35556bed836f/include/linux/usb/pd_vdo.h" rel="noopener">Linux kernel pd_vdo.h</a>
+- สาย EPR 240W ต้องมี e-marker บอก 50V 5A: <a href="https://allion.com/?p=16278" rel="noopener">Allion Labs</a> · <a href="https://www.cnx-software.com/2021/05/27/usb-type-c-specification-2-1-allows-up-to-240w-extended-power-range-epr/" rel="noopener">CNX Software</a>
 
 </section>

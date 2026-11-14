@@ -107,5 +107,198 @@
     "analysis": [
       "ไม่มี PPS มือถือที่ชาร์จเร็วด้วย PPS (เช่น Samsung 25W/45W) จะได้แค่ PD แบบแรงดันคงที่"
     ]
+  },
+  {
+    "id": "6",
+    "title": "e-marker สาย MagSafe 3",
+    "src": "/media/posts/review/apple-96w-macbook-pro/magsafe3-emarker.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตรวจของแท้",
+    "alt": "POWER-Z อ่าน e-marker สาย MagSafe 3: Apple 0x05ac, 50V 5A 240W EPR, USB 2.0, IC 26DH158",
+    "summary": "ชิปในสายบอกว่าเป็น Apple รับไฟได้ 240W EPR",
+    "readings": [
+      [
+        "ชนิด",
+        "Passive Cable"
+      ],
+      [
+        "ผู้ผลิต",
+        "Apple (0x05ac)"
+      ],
+      [
+        "รับไฟ",
+        "50V 5A 240W EPR"
+      ],
+      [
+        "ความเร็ว",
+        "USB 2.0"
+      ],
+      [
+        "ชิป",
+        "26DH158 (MagSafe3)"
+      ]
+    ],
+    "analysis": [
+      "e-marker คือชิปในหัวสายที่บอกหัวชาร์จว่าสายรับไฟได้เท่าไร สายที่จะใช้ไฟเกิน 3A ต้องมี",
+      "50V 5A คือค่าของสาย EPR ตาม USB PD 3.1 (ไฟสูงสุด 48V × 5A = 240W)"
+    ]
+  },
+  {
+    "id": "7",
+    "title": "ข้อมูลหัวชาร์จจากมิเตอร์",
+    "src": "/media/posts/review/apple-96w-macbook-pro/apple-charger-id.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตรวจของแท้",
+    "alt": "POWER-Z หน้า Apple Charger: Apple Inc., 96W USB-C Power Adapter, VID 0x05AC (เบลอเลข Serial)",
+    "summary": "หัวชาร์จบอกตัวเองว่าเป็น Apple 96W ตรงกับฉลาก",
+    "readings": [
+      [
+        "ผู้ผลิต",
+        "Apple Inc."
+      ],
+      [
+        "รุ่น",
+        "96W USB-C Power Adapter"
+      ],
+      [
+        "VID",
+        "0x05AC"
+      ],
+      [
+        "FW / HW",
+        "01090058 / 1.0"
+      ]
+    ],
+    "analysis": [
+      "เลข Serial เบลอไว้ทั้งบนจอและเงาที่สะท้อนบนตัวหัวชาร์จ"
+    ]
+  },
+  {
+    "id": "8",
+    "title": "ตัวหนังสือบนฉลาก",
+    "src": "/media/posts/review/apple-96w-macbook-pro/label-print.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ตรวจของแท้",
+    "alt": "ฉลากด้านข้าง Apple 96W USB-C Power Adapter รุ่น A2166 พิมพ์สีเทาอ่อน",
+    "summary": "ของแท้พิมพ์สีเทาจาง ๆ ตัวหนังสือคม"
+  },
+  {
+    "id": "9",
+    "title": "เทียบขนาดกับ AirPods Pro 3",
+    "src": "/media/posts/review/apple-96w-macbook-pro/size-airpods-pro-3.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "เทียบขนาด",
+    "alt": "หัวชาร์จ Apple 96W วางข้างเคส AirPods Pro 3",
+    "summary": "ใหญ่และหนักกว่าหัวชาร์จ GaN รุ่นใหม่ ๆ เยอะ"
+  },
+  {
+    "id": "10",
+    "title": "ชาร์จ MacBook Pro",
+    "src": "/media/posts/review/apple-96w-macbook-pro/charge-macbook.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ชาร์จจริง",
+    "alt": "POWER-Z ขณะชาร์จ MacBook Pro: 20.58V 0.257A 5.29W, Apple, PD3.0",
+    "summary": "มิเตอร์รู้ว่าเป็นเครื่อง Apple",
+    "readings": [
+      [
+        "แรงดัน",
+        "20.58V"
+      ],
+      [
+        "กระแส",
+        "0.257A"
+      ],
+      [
+        "กำลัง",
+        "5.29W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.0 · Pos 4"
+      ],
+      [
+        "อุปกรณ์",
+        "Apple"
+      ]
+    ],
+    "analysis": [
+      "แบตใกล้เต็ม เครื่องเลยดึงไฟน้อย ไม่ใช่กำลังสูงสุดของหัวชาร์จ"
+    ]
+  },
+  {
+    "id": "11",
+    "title": "ชาร์จ iPhone 17 Pro",
+    "src": "/media/posts/review/apple-96w-macbook-pro/charge-iphone-17-pro.jpg",
+    "w": 1600,
+    "h": 1205,
+    "group": "ชาร์จจริง",
+    "alt": "POWER-Z ขณะชาร์จ iPhone 17 Pro: 15.13V 2.28A 34.5W, Apple iPhone 17 Pro, PD3.0",
+    "summary": "บอกชื่อรุ่น iPhone 17 Pro ได้เลย",
+    "readings": [
+      [
+        "แรงดัน",
+        "15.13V"
+      ],
+      [
+        "กระแส",
+        "2.282A"
+      ],
+      [
+        "กำลัง",
+        "34.54W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.0 · Pos 3 (15V 3A)"
+      ],
+      [
+        "อุปกรณ์",
+        "Apple iPhone 17 Pro"
+      ]
+    ],
+    "analysis": [
+      "ChargerLAB ระบุว่าการแสดงรุ่นเครื่อง Apple ต้องใช้หัวชาร์จที่ขอข้อมูล VDM และระดับแบตจากเครื่องได้",
+      "ชาร์จ iPhone 17 Pro Series รุ่นไหนก็ขึ้นว่า \"iPhone 17 Pro\" เหมือนกัน มิเตอร์ไม่แยก Pro กับ Pro Max"
+    ]
+  },
+  {
+    "id": "12",
+    "title": "ชาร์จ vivo X300 Ultra",
+    "src": "/media/posts/review/apple-96w-macbook-pro/charge-vivo-x300-ultra.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ชาร์จจริง",
+    "alt": "POWER-Z ขณะชาร์จ vivo X300 Ultra: 9.00V 2.01A 18.1W, Qualcomm, PD3.0 27W",
+    "summary": "ไม่รู้ชื่อรุ่น แต่บอกว่าเป็นชิป Qualcomm",
+    "readings": [
+      [
+        "แรงดัน",
+        "9.00V"
+      ],
+      [
+        "กระแส",
+        "2.013A"
+      ],
+      [
+        "กำลัง",
+        "18.11W"
+      ],
+      [
+        "โปรโตคอล",
+        "PD3.0 27W · 9V 3A"
+      ],
+      [
+        "อุปกรณ์",
+        "Qualcomm"
+      ]
+    ],
+    "analysis": [
+      "หัวชาร์จไม่มี PPS มือถือ Android เลยได้แค่แรงดันคงที่ 9V"
+    ]
   }
 ]
