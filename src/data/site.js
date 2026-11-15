@@ -45,6 +45,7 @@ export const TAGS = {
   "1more": "1MORE", cmf: "CMF by Nothing", earfun: "EarFun", huawei: "HUAWEI", isuper: "iSUPER",
   soundcore: "soundcore", soundpeats: "SoundPEATS", tozo: "TOZO", "clip-on": "Clip-on",
   anitech: "anitech", "power-strip": "ปลั๊กไฟ / สายพ่วง",
+  gizmo: "GIZMO", rizz: "RIZZ", remax: "REMAX", elecjet: "ELECJET",
   "true-corp": "True", dtac: "dtac", "5g": "5G",
   php: "PHP", security: "ความปลอดภัย", scam: "มิจฉาชีพ",
   apache: "Apache", openssh: "OpenSSH", wordpress: "WordPress", cctv: "กล้องวงจรปิด", onvif: "ONVIF",
