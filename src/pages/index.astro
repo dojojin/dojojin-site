@@ -87,10 +87,10 @@ const first = { href: f0.href, title: f0.title, cover: f0.cover, kind: TYPES[f0.
             <a class="hub__lead" href={lead.href}>
               <img src={lead.cover} srcset={srcset(lead.cover)} sizes="(max-width: 768px) 100vw, 45vw" width={lead.coverW} height={lead.coverH} loading="lazy" alt="" />
               <b>{lead.title}</b>
-              <span class="meta">{day(lead.date)}</span>
+              <span class="meta">{lead.bumped && 'อัปเดต '}{day(lead.date)}</span>
             </a>
             <ul class="hub__list">
-              {rest.map((i) => <li><a href={i.href}>{i.title}</a><span class="meta">{day(i.date)}</span></li>)}
+              {rest.map((i) => <li><a href={i.href}>{i.title}</a><span class="meta">{i.bumped && 'อัปเดต '}{day(i.date)}</span></li>)}
             </ul>
           </article>
         ))}
@@ -107,10 +107,10 @@ const first = { href: f0.href, title: f0.title, cover: f0.cover, kind: TYPES[f0.
             <a class="hub__lead" href={lead.href}>
               <img src={lead.cover} srcset={srcset(lead.cover)} sizes="(max-width: 768px) 100vw, 45vw" width={lead.coverW} height={lead.coverH} loading="lazy" alt="" />
               <b>{lead.title}</b>
-              <span class="meta">{day(lead.date)}</span>
+              <span class="meta">{lead.bumped && 'อัปเดต '}{day(lead.date)}</span>
             </a>
             <ul class="hub__list">
-              {rest.map((i) => <li><a href={i.href}>{i.title}</a><span class="meta">{day(i.date)}</span></li>)}
+              {rest.map((i) => <li><a href={i.href}>{i.title}</a><span class="meta">{i.bumped && 'อัปเดต '}{day(i.date)}</span></li>)}
             </ul>
           </article>
         ))}

@@ -4,19 +4,22 @@ topic: infra-ai
 type: news
 tags: [php, security]
 date: 2026-11-10
-updated: 2026-11-14T21:00:00+07:00
+updated: 2026-11-15T12:00:00+07:00
+bumped: 2026-11-15T12:00:00+07:00
 section: security
 sourceName: "PHP (php.net) และ Malwarebytes Labs"
 sourceUrl: "https://www.php.net/archive/2026.php#2026-10-21-5"
 description: "PHP ออกแพตช์ฉุกเฉิน 21 ต.ค. 2569 ปิดช่องโหว่ CVE-2026-109618 และ CVE-2026-109619 (CVSS 9.2) ที่ให้ผู้โจมตีรันโค้ดบนเซิร์ฟเวอร์ได้ เวอร์ชันที่แก้แล้วคือ 8.5.12, 8.4.27, 8.3.36 และ 8.2.35 เจ้าของเว็บควรเช็กและอัปเดตทันที"
 kicker: "ข่าวความปลอดภัยไซเบอร์"
 lead: "PHP ภาษาที่อยู่เบื้องหลังเว็บไซต์จำนวนมาก ออกอัปเดตฉุกเฉินปิดช่องโหว่ร้ายแรง 2 ตัวที่เรียกรวมกันว่า PHP2Shell ผู้โจมตีอาจรันโค้ดบนเซิร์ฟเวอร์ได้โดยไม่ต้องล็อกอิน ถ้าคุณดูแลเว็บที่ใช้ PHP ผมแนะนำให้เช็กเวอร์ชันวันนี้เลยครับ"
-meta: "เรียบเรียงจากประกาศของ PHP และ Malwarebytes Labs · ช่องโหว่ประกาศเมื่อ 21 ตุลาคม 2569"
+meta: "เรียบเรียงจากประกาศของ PHP และ Malwarebytes Labs · ช่องโหว่ประกาศเมื่อ 21 ตุลาคม 2569 · อัปเดต 15 พ.ย. 2569: ถูกใช้โจมตีจริงผ่านอุปกรณ์ Check Point"
 cover: "/media/posts/news/php2shell/cover.jpg"
 coverAlt: "ภาพสรุป PHP2Shell ช่องโหว่ร้ายแรงใน PHP เวอร์ชันที่แก้แล้ว 8.5.12, 8.4.27, 8.3.36, 8.2.35 (ภาพประกอบ)"
 ---
 
 <section class="section">
+
+**อัปเดต 15 พ.ย. 2569:** ตอนนี้มีรายงานว่าช่องโหว่ชุดนี้ถูกใช้โจมตีจริงแล้วครับ ThaiCERT และ BleepingComputer รายงานตรงกันว่า คนร้ายใช้ PHP2Shell เจาะเข้าทาง Mobile Access Portal ของอุปกรณ์ Check Point ก่อน แล้วใช้ช่องโหว่อีกตัวของ Check Point (CVE-2026-123039) ยกระดับเป็น root ซึ่ง CISA ใส่ไว้ในรายการช่องโหว่ที่ถูกใช้โจมตีจริงเมื่อ 13 พ.ย. ใครใช้ Check Point ให้อ่านรายละเอียดและวิธีแก้ที่ [ข่าว Check Point CVE-2026-123039](/news/check-point-cve-2026-123039-kev/) ส่วนเว็บ PHP ทั่วไปยังทำตามขั้นตอนในข่าวนี้เหมือนเดิมครับ
 
 ## เกิดอะไรขึ้น
 
@@ -102,6 +105,7 @@ Malwarebytes ตั้งชื่อช่องโหว่ชุดนี้�
 - Security Advisory บน GitHub: <a href="https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w" rel="noopener">GHSA-w8hw-w9fx-j79w</a> · <a href="https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp" rel="noopener">GHSA-6wmf-4rv5-p3rp</a>
 - Malwarebytes Labs: <a href="https://www.malwarebytes.com/blog/bugs/2026/10/php2shell-why-websites-are-going-offline-for-emergency-security-updates" rel="noopener">PHP2Shell: why websites are going offline for emergency security updates</a>
 - CERT-EU: <a href="https://cert.europa.eu/publications/security-advisories/2026-018/" rel="noopener">Security Advisory 2026-018</a>
+- อัปเดต 15 พ.ย.: BleepingComputer: <a href="https://www.bleepingcomputer.com/news/security/check-point-gateways-hacked-via-php2shell-to-deploy-vmware-esxi-wiper/" rel="noopener">Check Point gateways hacked via PHP2Shell to deploy VMware ESXi wiper</a> · ThaiCERT (14 พ.ย. 2569): <a href="https://www.thaicert.or.th/2026/11/14/%e0%b9%80%e0%b8%95%e0%b8%b7%e0%b8%ad%e0%b8%99%e0%b8%a0%e0%b8%b1%e0%b8%a2-%e0%b8%8a%e0%b9%88%e0%b8%ad%e0%b8%87%e0%b9%82%e0%b8%ab%e0%b8%a7%e0%b9%88-php2shell-%e0%b9%83%e0%b8%99-check-point-security-gat/" rel="noopener">เตือนภัยช่องโหว่ PHP2Shell ใน Check Point Security Gateway</a>
 
 </div>
 

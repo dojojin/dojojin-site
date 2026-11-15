@@ -5,7 +5,7 @@ import { ATLASES } from '../data/atlases.js';
 
 export async function getFeed(type, tag) {
   const posts = (await getCollection('posts', (p) => !p.data.draft)).map((p) => ({
-    href: `/${p.id}/`, title: p.data.title, topic: p.data.topic, type: p.data.type, tags: p.data.tags, date: p.data.date, reading: p.data.reading, news: [p.data.pr && 'pr', p.data.section].filter(Boolean),
+    href: `/${p.id}/`, title: p.data.title, topic: p.data.topic, type: p.data.type, tags: p.data.tags, date: p.data.bumped ?? p.data.date, bumped: !!p.data.bumped, reading: p.data.reading, news: [p.data.pr && 'pr', p.data.section].filter(Boolean),
     cover: p.data.cover, coverW: 1600, coverH: 1200, sub: p.data.description,
   }));
   const atlases = ATLASES.map((a) => ({

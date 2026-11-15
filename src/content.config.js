@@ -13,6 +13,7 @@ const posts = defineCollection({
     tags: z.array(z.enum(Object.keys(TAGS))).default([]),
     date: z.coerce.date(),
     updated: z.coerce.date().optional(), // last real edit; used for sitemap lastmod
+    bumped: z.coerce.date().optional(), // owner-approved news update with real new info: lists sort/show by this instead of `date`
     reading: z.string().optional(), // e.g. "20.35V · 4.52A · 91.9W" — measured, shown on the post card
     description: z.string(),
     lead: z.string(),
