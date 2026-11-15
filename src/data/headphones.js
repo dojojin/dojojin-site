@@ -8,6 +8,7 @@ export const HEADPHONES = [
   { slug: 'cmf-buds-pro-2', name: 'CMF Buds Pro 2', fit: 'In-ear', anc: '50dB', codec: 'SBC, AAC, LDAC', bt: '5.3', battery: [11, 43], ip: 'IP55', weight: null, price: 2399 },
   { slug: 'earfun-air-pro-4', name: 'EarFun Air Pro 4', fit: 'In-ear', anc: '50dB', codec: 'SBC, AAC, LDAC, aptX Adaptive / Lossless', bt: '5.4', battery: [11, 52], ip: 'IPX5', weight: null, price: null },
   { slug: 'oraimo-spacebuds', name: 'oraimo SpaceBuds', fit: 'In-ear', anc: '50dB', codec: 'SBC, AAC', bt: '5.4', battery: [11, 40], ip: 'IP54', weight: null, price: null },
+  { slug: 'roseselsa-ceramics-ultra', name: 'ROSESELSA CERAMICS Ultra', fit: 'In-ear', anc: '50dB', codec: 'SBC, AAC, LDAC, LHDC 5.0', bt: '6.0', battery: [11, 40], ip: 'IP54', weight: null, price: 2490 },
   { slug: 'roseselsa-earfree-i5', name: 'ROSESELSA EARFREE i5', fit: 'In-ear', anc: '48dB', codec: 'SBC, AAC, LDAC', bt: '5.3', battery: [10, 50], ip: 'IPX5', weight: null, price: null },
   { slug: 'isuper-sound-pro-max', name: 'iSUPER SOUND PRO Max', fit: 'In-ear', anc: '46dB', codec: 'SBC, AAC, LDAC', bt: '5.3', battery: [8.5, 34], ip: null, weight: 4, price: null },
   { slug: 'realme-buds-t310', name: 'realme Buds T310', fit: 'In-ear', anc: '46dB', codec: 'SBC, AAC', bt: '5.4', battery: [9, 40], ip: 'IP55', weight: 4.2, price: 1699 },
