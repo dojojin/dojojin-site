@@ -39,6 +39,18 @@ const names = {
         <p><span>ยอดวิวรวม</span><b data-total-views>–</b></p>
         <p><span>จำนวนหน้า</span><b data-total-pages>–</b></p>
       </div>
+      <section class="stats__mix" aria-labelledby="mix-h">
+        <div class="stats__mixhead">
+          <h2 id="mix-h">ผู้อ่านมาจากไหน</h2>
+          <div class="filters" data-range>
+            <button type="button" aria-pressed="false" data-range="1">วันนี้</button>
+            <button type="button" aria-pressed="true" data-range="7">7 วัน</button>
+            <button type="button" aria-pressed="false" data-range="30">30 วัน</button>
+          </div>
+        </div>
+        <p class="meta" data-mix-note>นับ 1 ครั้งต่อการเข้าเว็บ (session) · เริ่มเก็บ 16 พ.ย. 2569 · ประเทศดูใน Cloudflare Web Analytics</p>
+        <div class="stats__groups" data-mix></div>
+      </section>
       <div class="filters" data-types>
         <button type="button" aria-pressed="true" data-type="">ทั้งหมด</button>
         {types.map(([k, name]) => <button type="button" aria-pressed="false" data-type={k}>{name}</button>)}
@@ -56,6 +68,7 @@ const names = {
 <script is:inline define:vars={{ posts, types, names }}>window.__stats = { posts, types, names };</script>
 <script>
   import { firebaseConfig } from '../firebase-config.js';
+  import { LABELS } from '../lib/ua.js';
   const { projectId, apiKey } = firebaseConfig;
   const api = `https://firestore.googleapis.com/v1/projects/${projectId}/databases/(default)/documents`;
   const { posts, types, names } = window.__stats;
@@ -103,6 +116,42 @@ const names = {
   const input = $('.search input');
   input.addEventListener('input', () => { state.q = input.value; render(); });
   $('.search').addEventListener('submit', (e) => e.preventDefault());
+
+  // Visit breakdown (uadaily/{yyyymmdd}__{dim}__{key}): last 30 Bangkok days fetched once, summed per chosen range.
+  const GROUPS = [['ref', 'แหล่งที่มา'], ['app', 'แอปที่เปิด'], ['device', 'อุปกรณ์'], ['os', 'ระบบปฏิบัติการ'], ['browser', 'เบราว์เซอร์']];
+  const bkk = (offsetDays) => new Date(Date.now() + 7 * 3600e3 - offsetDays * 864e5).toISOString().slice(0, 10).replace(/-/g, '');
+  let mix = [], range = 7;
+  const renderMix = () => {
+    const from = bkk(range - 1);
+    const sums = {};
+    for (const m of mix) if (m.day >= from) (sums[m.dim] ??= {})[m.key] = (sums[m.dim][m.key] ?? 0) + m.n;
+    const box = $('[data-mix]');
+    if (!Object.keys(sums).length) { const p = document.createElement('p'); p.className = 'meta'; p.textContent = 'ยังไม่มีข้อมูลในช่วงนี้'; box.replaceChildren(p); return; }
+    box.replaceChildren(...GROUPS.map(([dim, title]) => {
+      const rows = Object.entries(sums[dim] ?? {}).sort((a, b) => b[1] - a[1]);
+      const max = rows[0]?.[1] ?? 1;
+      const g = document.createElement('div'); g.className = 'stats__group';
+      const h = document.createElement('h3'); h.textContent = title; g.append(h);
+      for (const [key, n] of rows) {
+        const r = document.createElement('p'), l = document.createElement('span'), bar = document.createElement('i'), v = document.createElement('b');
+        l.textContent = LABELS[dim]?.[key] ?? key; bar.style.setProperty('--w', `${(n / max) * 100}%`); v.textContent = fmt(n);
+        r.append(l, bar, v); g.append(r);
+      }
+      return g;
+    }));
+  };
+  document.querySelector('[data-range]').addEventListener('click', (e) => {
+    const b = e.target.closest('button'); if (!b) return;
+    for (const x of e.currentTarget.querySelectorAll('button')) x.setAttribute('aria-pressed', String(x === b));
+    range = Number(b.dataset.range); renderMix();
+  });
+  fetch(`${api}:runQuery?key=${apiKey}`, { method: 'POST', body: JSON.stringify({ structuredQuery: { from: [{ collectionId: 'uadaily' }],
+    where: { fieldFilter: { field: { fieldPath: '__name__' }, op: 'GREATER_THAN_OR_EQUAL', value: { referenceValue: `projects/${projectId}/databases/(default)/documents/uadaily/${bkk(29)}` } } } } }) })
+    .then((r) => (r.ok ? r.json() : [])).catch(() => [])
+    .then((rows) => {
+      mix = rows.filter((r) => r.document).map((r) => { const [day, dim, key] = r.document.name.split('/').pop().split('__'); return { day, dim, key, n: Number(r.document.fields?.count?.integerValue ?? 0) }; });
+      renderMix();
+    });
 
   (async () => {
     const [docs, visitors] = await Promise.all([

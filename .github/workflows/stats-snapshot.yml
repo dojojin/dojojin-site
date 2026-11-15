@@ -1,0 +1,22 @@
+name: stats snapshot
+# Daily view-count snapshot for /stats/ (scripts/stats-snapshot.mjs). 17:07 UTC = 00:07 Bangkok;
+# off the hour because GitHub delays or drops :00 schedules under load. Run by hand once after setup for a baseline.
+on:
+  schedule:
+    - cron: '7 17 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+      - run: node scripts/stats-snapshot.mjs
+        env:
+          FIREBASE_SA: ${{ secrets.FIREBASE_SA }}
+          FIREBASE_PROJECT: dojojin-guestbook-visitor

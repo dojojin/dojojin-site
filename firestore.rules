@@ -38,6 +38,21 @@ service cloud.firestore {
       allow update: if countOnly() && request.resource.data.count == resource.data.count + 1;
     }
 
+    // Daily visit breakdown, one doc per Bangkok date + dimension + value ("20261116__app__facebook"),
+    // +1 once per browser session. KEEP IN SYNC with src/lib/ua.js (scripts/ua-check.mjs checks it).
+    match /uadaily/{docId} {
+      allow read: if true;
+      allow create: if docId.matches('^20[0-9]{6}__(app__(none|line|messenger|facebook|instagram|tiktok|telegram|whatsapp|wechat|outlook|teams|slack)|browser__(edge|samsung|opera|firefox|chrome|safari|inapp|other)|os__(ios|android|windows|macos|chromeos|linux|other)|device__(mobile|tablet|desktop|other)|ref__(direct|facebook|google|line|bing|x|youtube|pantip|internal|other))$')
+        && countOnly() && request.resource.data.count == 1;
+      allow update: if countOnly() && request.resource.data.count == resource.data.count + 1;
+    }
+
+    // Daily snapshot of all pageview counts, written by the scheduled job (service account bypasses rules).
+    match /snapshots/{day} {
+      allow read: if true;
+      allow write: if false;
+    }
+
     match /{document=**} {
       allow read, write: if false;
     }
