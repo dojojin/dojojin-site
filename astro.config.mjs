@@ -20,7 +20,7 @@ export default defineConfig({
   build: { inlineStylesheets: 'always' },
   // Tag pages are thin (some noindex) and /lab is noindex, so they stay out of the sitemap; crawlers still reach them via links.
   integrations: [react(), mdx(), sitemap({
-    filter: (page) => !/^\/(tag\/[^/]+|lab|search)\/$/.test(new URL(page).pathname),
+    filter: (page) => !/^\/(tag\/[^/]+|lab|search|stats)\/$/.test(new URL(page).pathname),
     serialize: (item) => (lastmod[item.url] ? { ...item, lastmod: lastmod[item.url] } : item),
   })],
   server: { host: true },
