@@ -837,6 +837,12 @@ main[data-type="news"] .shot__more .shot__credit { font-size: var(--fs-caption);
 .prose td kbd { font-size: 0.85em; overflow-wrap: break-word; }
 .prose table:not([class]) :is(th, td) { text-align: left; vertical-align: top; padding: var(--space-2); border-bottom: 1px solid var(--border-hairline); overflow-wrap: break-word; min-width: 0; }
 .prose table:not([class]) th { color: var(--text-secondary); font-weight: 600; }
+/* framed table: outer border, column dividers, pastel header (one tone, see .tint) */
+.table-frame { width: 100%; border-collapse: separate; border-spacing: 0; font-size: var(--fs-caption); margin-bottom: var(--space-4); border: 1.5px solid var(--tone-green); border-radius: var(--radius); overflow: hidden; background: var(--surface-elevated); }
+.table-frame :is(th, td) { text-align: left; vertical-align: top; padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--border-hairline); overflow-wrap: break-word; min-width: 0; }
+.table-frame :is(th, td) + :is(th, td) { border-left: 1px solid var(--border-hairline); }
+.table-frame tr:last-child td { border-bottom: 0; }
+.table-frame th { background: var(--tone-green-bg); color: var(--tone-green); font-weight: 600; }
 
 /* News data blocks written as HTML (not images) so they follow light/dark tokens.
    .news-cards status cards · .news-stats tiles · .news-bars bar rows · .news-band period bar · .news-steps numbered cards */
@@ -895,6 +901,7 @@ main[data-type="news"] .shot__more .shot__credit { font-size: var(--fs-caption);
 .tint--purple { --tone: var(--tone-purple); --tone-bg: var(--tone-purple-bg); }
 .tint > h3:first-child { margin: 0 calc(-1 * var(--space-4)) var(--space-3); padding: var(--space-2) var(--space-4); background: var(--tone-bg); color: var(--tone); font-size: var(--fs-body); letter-spacing: 0.02em; }
 .tint > :last-child { margin-bottom: 0; }
+.split > .tint { align-self: start; }
 
 /* ---------- /stats/ (owner's view counts) ---------- */
 .stats { display: grid; gap: var(--space-4); }
