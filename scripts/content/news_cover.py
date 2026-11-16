@@ -7,7 +7,8 @@ cover.json:
   {"kicker": "แจ้งเตือนความปลอดภัย", "title": "OpenSSH", "headline": "ข้ามการใส่รหัสผ่านได้",
    "sub": "มีการโจมตีจริงแล้ว · อัปเดตด่วน", "chips_label": "เวอร์ชันที่แก้แล้ว", "chips": ["10.6p2"],
    "foot": ["CVE-2026-123158", "CISA KEV · 9 พฤศจิกายน 2569"], "accent": "#e5484d"}
-Only "title" is required. Writes public/media/posts/<type>/<slug>/cover.jpg and its 800px WebP twin.
+Only "title" is required. Optional "logo": path (relative to cover.json) of the product's real logo
+(PNG with alpha), drawn top-right on a white rounded tile (keep the title short). Writes public/media/posts/<type>/<slug>/cover.jpg and its 800px WebP twin.
 """
 import json, re, runpy, sys
 from pathlib import Path
@@ -83,6 +84,13 @@ def main():
             else:
                 d.text((x + 30, y + 18), v, font=mono(56), fill='#ffffff')
             x += w + 90
+    if c.get('logo'):
+        lg = Image.open(Path(sys.argv[2]).parent / c['logo']).convert('RGBA')
+        lg.thumbnail((240, 240), Image.LANCZOS)
+        tile = 300
+        x0, y0 = 1600 - 110 - tile, 150
+        d.rounded_rectangle([x0, y0, x0 + tile, y0 + tile], radius=40, fill='#ffffff')
+        im.paste(lg, (x0 + (tile - lg.width) // 2, y0 + (tile - lg.height) // 2), lg)
     for i, line in enumerate(c.get('foot', [])):
         text(d, 110, 960 + i * 80, line, 40, '#8b91a3')
     im.save(out / 'cover.jpg', quality=88)

@@ -1,0 +1,201 @@
+---
+title: "PostgreSQL อัปเดตปิด 52 ช่องโหว่ ต้องลงรุ่นไหน และ PostgreSQL 14 หมดอายุแล้ว"
+topic: infra-ai
+type: news
+tags: [security]
+date: 2026-11-16T16:50:00+07:00
+section: security
+sourceName: "PostgreSQL Global Development Group"
+sourceUrl: "https://www.postgresql.org/about/news/postgresql-187-1712-1616-1520-1425-and-19-rc-2-released-3442/"
+description: "PostgreSQL ออกรุ่น 18.7, 17.12, 16.16, 15.20, 14.25 เมื่อ 12 พ.ย. 2569 ปิด 52 ช่องโหว่ ส่วนใหญ่คนที่ล็อกอินสิทธิ์ต่ำก็สั่งรันโค้ดบนเซิร์ฟเวอร์ได้ สรุปรุ่นที่ต้องลง ขั้นตอนหลังอัปเดต (REINDEX, backup ใหม่) และ PostgreSQL 14 ที่หมดอายุแล้ว"
+kicker: "ข่าวความปลอดภัยไซเบอร์"
+lead: "ใครใช้ PostgreSQL เช็กรุ่นวันนี้ครับ รอบนี้ปิด 52 ช่องโหว่ ส่วนใหญ่ต้องล็อกอินก่อน แต่ถ้าล็อกอินได้ ต่อให้สิทธิ์ต่ำก็อาจสั่งรันโค้ดบนเซิร์ฟเวอร์ได้ และ PostgreSQL 14 รอบนี้เป็นรุ่นสุดท้ายแล้ว"
+meta: "เรียบเรียงจาก PostgreSQL Global Development Group, postgresql.org และ ThaiCERT · ข้อมูล ณ 16 พฤศจิกายน 2569"
+cover: "/media/posts/news/postgresql-security-update-2026-11/cover.jpg"
+coverAlt: "ปกข่าว PostgreSQL อัปเดตปิด 52 ช่องโหว่ พร้อมรุ่นที่ต้องลง 18.7 17.12 16.16 15.20 14.25 และโลโก้ช้างของ PostgreSQL"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="prose">
+
+PostgreSQL ออกรุ่นอัปเดตเมื่อ 12 พฤศจิกายน 2569 ครับ มี 18.7, 17.12, 16.16, 15.20 และ 14.25 แถมตัวทดสอบของรุ่น 19 (RC 2) มาด้วย
+
+รอบนี้ทีมผู้พัฒนาแก้บั๊กไปกว่า 140 เรื่อง ในนั้นเป็นช่องโหว่ความปลอดภัย 52 รายการ ตัวเลขนี้ตรงกับที่ ThaiCERT ประกาศเตือนเมื่อ 16 พ.ย.
+
+ข่าวดีคือเป็นแค่รุ่นย่อย (minor update) ไม่ต้อง dump/reload ข้อมูล ไม่ต้องใช้ pg_upgrade แค่หยุด server ลงไบนารีใหม่ แล้วเปิดกลับ และรุ่นย่อยของ PostgreSQL รวมการแก้ของรุ่นก่อนหน้าไว้หมดแล้ว ใครตกรุ่นไปหลายรอบก็ข้ามมาลงรุ่นล่าสุดได้เลยครับ
+
+<div class="news-stats">
+<div class="news-stat"><b>52</b>ช่องโหว่ที่ปิดในรอบนี้</div>
+<div class="news-stat"><b>29</b>รายการได้คะแนน CVSS 8.8 (เต็ม 10)</div>
+<div class="news-stat"><b>1</b>รายการเดียวฝั่ง server ที่โจมตีได้ก่อนล็อกอิน คะแนนต่ำ 5.3</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ช่องโหว่เป็นแบบไหน
+
+<div class="prose">
+
+ส่วนใหญ่เป็นบั๊กเรื่องหน่วยความจำครับ มีทั้ง use-after-free (หยิบหน่วยความจำที่คืนระบบไปแล้วกลับมาใช้), heap overflow (เขียนข้อมูลเกินช่องที่จองไว้) และ type confusion (โค้ดเข้าใจผิดว่าข้อมูลเป็นชนิดหนึ่ง ทั้งที่จริงเป็นอีกชนิด) กลุ่มนี้ส่วนใหญ่ได้คะแนน CVSS 8.8 (ทั้งรอบมี 29 รายการที่ได้ 8.8)
+
+เงื่อนไขหลักคือผู้โจมตีต้อง **ล็อกอินเข้าฐานข้อมูลได้ก่อน** แต่บัญชีสิทธิ์ต่ำ ๆ ก็พอ จากนั้นอาจสั่งรันโค้ดบนเครื่องได้ ในนามผู้ใช้ระบบที่รัน PostgreSQL อยู่ ผมว่าตรงนี้แหละที่ต้องระวัง ถ้าระบบของคุณมีบัญชีฐานข้อมูลที่คนนอกหรือระบบอื่นถือไว้ ไม่ควรรอนานครับ
+
+อีกกลุ่มอยู่ที่เครื่องมือฝั่งผู้ใช้อย่าง pg_dump, pg_restore และ psql กลุ่มนี้จะเกิดเรื่องได้ก็ต่อเมื่อผู้ดูแลเอาไฟล์ dump ที่มีคนทำมาให้เป็นอันตรายไป restore หรือเปิดเอง
+
+<div class="news-cards">
+<div class="news-card is-bad"><b>ล็อกอินสิทธิ์ต่ำแล้วรันโค้ดได้ (8.8)</b><span class="news-pill">ส่วนใหญ่</span> ตัวอย่าง CVE-2026-120151 (PL/pgSQL), CVE-2026-120147 (dblink), CVE-2026-116317 และ CVE-2026-116315 (ค้นหาข้อความเต็ม ts_rank_cd และ tsvector_delete) รวมถึงใน PL/Perl หลายรายการ และ PL/Tcl</div>
+<div class="news-card is-bad"><b>ไฟล์ dump อันตราย (8.8)</b><span class="news-pill">เครื่องมือฝั่งผู้ดูแล</span> CVE-2026-116314 (pg_restore รันโค้ดได้) และ CVE-2026-116330 (pg_dump แบบ tar แทรกคำสั่ง psql) ต้องมีคนเอาไฟล์นั้นไป restore ก่อนถึงจะโดน</div>
+<div class="news-card is-warn"><b>เขียนไฟล์ได้ตามใจ (8.1)</b><span class="news-pill">dblink และ subscription</span> CVE-2026-14661 ต่อท้ายไฟล์ใดก็ได้บนเครื่อง ส่วน CVE-2026-116325 (8.0) เป็น SQL injection ใน reindexdb เฉพาะรุ่น 18 และ 17</div>
+<div class="news-card is-ok"><b>ก่อนล็อกอิน (5.3)</b><span class="news-pill">รายการเดียว คะแนนต่ำ</span> CVE-2026-116322 คำขอยกเลิก (cancel request) ก่อนยืนยันตัวตนทำให้ spinlock รั่วได้ กระทบเฉพาะรุ่น 18</div>
+</div>
+
+แต่ละช่องโหว่กระทบรุ่นไม่เหมือนกัน แต่ส่วนใหญ่โดนตั้งแต่ 14 ไปจนถึง 18 ครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## มีคนโจมตีจริงหรือยัง
+
+<div class="prose">
+
+postgresql.org ไม่ได้รายงานว่ามีการโจมตีจริงครับ ผมเข้าไปเช็กแคตตาล็อก KEV ของ CISA (รายชื่อช่องโหว่ที่ถูกใช้โจมตีจริงแล้ว) ฉบับ 13 พ.ย. 2569 เองด้วย ก็ยังไม่มี PostgreSQL อยู่ในรายการ
+
+ผมว่าไม่ต้องตกใจ เพราะส่วนใหญ่ต้องล็อกอินก่อน แต่ก็ไม่ควรรอเหมือนกัน แค่ลงรุ่นย่อย ทำได้ไม่ยากครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ต้องลงรุ่นไหน
+
+<div class="prose">
+
+ดูว่าใช้สาขาไหนอยู่ แล้วลงรุ่นล่าสุดของสาขานั้นครับ
+
+<div class="news-cards">
+<div class="news-card is-ok"><b>PostgreSQL 18</b><span class="news-pill">ลง 18.7</span> ซัพพอร์ตถึง 14 พ.ย. 2573</div>
+<div class="news-card is-ok"><b>PostgreSQL 17</b><span class="news-pill">ลง 17.12</span> ซัพพอร์ตถึง 8 พ.ย. 2572</div>
+<div class="news-card is-ok"><b>PostgreSQL 16</b><span class="news-pill">ลง 16.16</span> ซัพพอร์ตถึง 9 พ.ย. 2571</div>
+<div class="news-card is-warn"><b>PostgreSQL 15</b><span class="news-pill">ลง 15.20</span> ซัพพอร์ตถึง 11 พ.ย. 2570 เหลือราว 1 ปี เริ่มวางแผนอัปเกรดได้เลย</div>
+<div class="news-card is-bad"><b>PostgreSQL 14</b><span class="news-pill">ลง 14.25 และย้ายสาขา</span> รุ่นสุดท้ายแล้ว หมดอายุ 12 พ.ย. 2569 ต่อไปจะไม่มีแพตช์ความปลอดภัยอีก</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ถ้ายังใช้ PostgreSQL 14
+
+<div class="prose">
+
+ประกาศบอกชัดว่า 14.25 เป็นรุ่นสุดท้ายของสาขา 14 และสาขานี้ "end-of-life" แล้ว แปลว่าต่อจากนี้ไม่มีแพตช์ความปลอดภัยหรือแก้บั๊กให้อีก
+
+พูดง่าย ๆ คือถ้าเจอช่องโหว่ใหม่ในอนาคต จะไม่มีใครออกแพตช์ให้ครับ ผมแนะนำให้ลง 14.25 ไว้ก่อนแบบขัดตาทัพ แล้ววางแผนย้ายไป 15 ขึ้นไป ถ้าจะย้ายทั้งที ผมว่าไป 17 หรือ 18 เลยดีกว่า จะได้ไม่ต้องย้ายอีกเร็ว ๆ นี้ การย้ายข้ามสาขาใหญ่ต้องใช้ pg_upgrade หรือ dump/restore และควรลองบนเครื่องทดสอบก่อนนะครับ
+
+<ol class="news-tl">
+<li class="is-key"><span class="news-tl__date">12 พ.ย. 2569</span><div>PostgreSQL 14 หมดอายุ (14.25 เป็นรุ่นสุดท้าย)<span class="news-tl__src">postgresql.org หน้า versioning</span></div></li>
+<li><span class="news-tl__date">11 พ.ย. 2570</span><div>PostgreSQL 15 หมดอายุ<span class="news-tl__src">postgresql.org หน้า versioning</span></div></li>
+<li><span class="news-tl__date">9 พ.ย. 2571</span><div>PostgreSQL 16 หมดอายุ<span class="news-tl__src">postgresql.org หน้า versioning</span></div></li>
+<li><span class="news-tl__date">8 พ.ย. 2572</span><div>PostgreSQL 17 หมดอายุ<span class="news-tl__src">postgresql.org หน้า versioning</span></div></li>
+<li><span class="news-tl__date">14 พ.ย. 2573</span><div>PostgreSQL 18 หมดอายุ<span class="news-tl__src">postgresql.org หน้า versioning</span></div></li>
+</ol>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ลงแล้วต้องทำอะไรต่อ
+
+<div class="prose">
+
+ลงรุ่นใหม่แล้วยังไม่จบนะครับ รอบนี้มีบั๊กเรื่อง index กับ backup ที่แก้ในโค้ดแล้วก็จริง แต่ index หรือ backup ที่เสียไปก่อนหน้านี้ไม่ได้กลับมาดีเอง ต้องตามแก้เอง
+
+<ol class="news-steps">
+<li class="is-key"><b>เช็กรุ่นก่อน</b>เข้าฐานข้อมูลแล้วรัน <code>SELECT version();</code> จะเห็นเลขรุ่นที่รันอยู่จริง</li>
+<li class="is-key"><b>REINDEX ตามกรณี</b>ประกาศให้ทำ 3 กรณี คือ index แบบ GIN (รอบนี้แก้บั๊ก index เสียหาย), index แบบ GiST ของ pg_trgm (gist_trgm_ops) และ index แบบ B-tree บนคอลัมน์ bpchar ที่ไม่ระบุความยาว (char(n) ไม่โดน) กรณีสุดท้ายน่ากลัวตรงที่ index-only scan อาจคืนผลลัพธ์ผิด</li>
+<li><b>ถ้าเคยเจอ "missing chunk number"</b>ข้อความนี้อาจมาจาก REINDEX CONCURRENTLY บน TOAST ถ้าเจอให้รัน REINDEX TABLE กับตารางนั้น</li>
+<li class="is-key"><b>ทำ full backup ใหม่ ถ้าใช้ incremental backup</b>ประกาศแจ้งว่า incremental backup อาจเสียหาย หลังอัปเดตแล้วให้ทำ full backup ใหม่หนึ่งชุด</li>
+<li><b>ตรวจตารางที่ใช้ NOT NULL NO INHERIT</b>ตาราง partitioned ใช้แบบนี้ไม่ได้แล้ว ในหน้าประกาศมีคำสั่งค้นหาตารางที่เข้าข่ายให้ ก๊อปไปใช้ได้เลยครับ</li>
+</ol>
+
+ประกาศยังเตือนบั๊กอื่นไว้อีกครับ เช่น รัน pg_dump แบบขนานกับเครื่อง standby อาจทำให้ไฟล์ dump และข้อมูลบน standby เสียหาย หรือสั่ง CLUSTER / VACUUM FULL หลังมี subtransaction ที่ถูก abort อาจทำให้แถวข้อมูลหายไป ส่วนข้อมูลเขตเวลา (tzdata) ก็อัปเดตเป็น 2026f ด้วย
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ในไทยเป็นอย่างไร
+
+<div class="prose">
+
+ThaiCERT ออกประกาศเตือนเมื่อ 16 พ.ย. 2569 หัวข้อว่า PostgreSQL ออกอัปเดตแก้ 52 ช่องโหว่ เสี่ยงถูกสั่งรันคำสั่งบนเซิร์ฟเวอร์ ตรงนี้ผมดูแค่หัวข้อกับตัวเลข ยังไม่ได้อ่านเนื้อหาข้างในนะครับ
+
+ส่วนหน่วยงานหรือบริษัทไทยที่โดนโจมตีจากช่องโหว่ชุดนี้ ผมยังไม่เจอรายงานครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ข้อควรรู้เพิ่มเติม
+
+<div class="prose">
+
+PostgreSQL 19 มีกำหนดออกรุ่นจริง (GA) วันที่ 19 พ.ย. 2569 ครับ ใครกำลังคิดจะย้ายสาขา จะรออ่านโน้ตของรุ่นใหม่ก่อนก็ได้ แต่ระหว่างนี้ลงรุ่นย่อยของสาขาที่ใช้อยู่ไปก่อน อย่ารอ
+
+ก่อนลงแพตช์ ผมแนะนำให้เปิดหน้าประกาศของ PostgreSQL อ่านอีกรอบ โดยเฉพาะขั้นตอน REINDEX ว่าตรงกับระบบของเราไหมครับ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- PostgreSQL Global Development Group (ประกาศรุ่น 12 พ.ย. 2569): <a href="https://www.postgresql.org/about/news/postgresql-187-1712-1616-1520-1425-and-19-rc-2-released-3442/" rel="noopener">postgresql.org</a>
+- PostgreSQL Security Information (รายการ CVE): <a href="https://www.postgresql.org/support/security/" rel="noopener">postgresql.org/support/security</a>
+- PostgreSQL Versioning Policy (วันหมดอายุแต่ละสาขา): <a href="https://www.postgresql.org/support/versioning/" rel="noopener">postgresql.org/support/versioning</a>
+- CISA Known Exploited Vulnerabilities Catalog (ตรวจ 13 พ.ย. 2569): <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" rel="noopener">cisa.gov</a>
+- ThaiCERT (16 พ.ย. 2569): <a href="https://www.thaicert.or.th/2026/11/16/%e0%b9%81%e0%b8%88%e0%b9%89%e0%b8%87%e0%b9%80%e0%b8%95%e0%b8%b7%e0%b8%ad%e0%b8%99-postgresql-%e0%b8%ad%e0%b8%ad%e0%b8%81%e0%b8%ad%e0%b8%b1%e0%b8%9b%e0%b9%80%e0%b8%94%e0%b8%95%e0%b9%81%e0%b8%81/" rel="noopener">thaicert.or.th</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: by dojojin.tech · โลโก้ PostgreSQL จาก postgresql.org
+
+Postgres, PostgreSQL and the Slonik Logo are trademarks or registered trademarks of the PostgreSQL Community Association of Canada.
+
+ภาพใช้ประกอบข่าว (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>
