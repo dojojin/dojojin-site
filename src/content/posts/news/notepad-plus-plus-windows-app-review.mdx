@@ -1,0 +1,176 @@
+---
+title: "แอปแนะนำ: Notepad++ โปรแกรมแก้ข้อความและโค้ดบน Windows ฟรี เบา มีภาษาไทย (รุ่น 8.9.9.1)"
+topic: software
+type: news
+tags: [app, windows]
+date: 2026-11-16T12:10:00+07:00
+section: app
+sourceName: "Notepad++ (notepad-plus-plus.org และ GitHub)"
+sourceUrl: "https://notepad-plus-plus.org"
+description: "แนะนำ Notepad++ โปรแกรมแก้ไขข้อความและโค้ดบน Windows ฟรี (GPL) เปิดหลายไฟล์เป็นแท็บ แบ่งหน้าจอดูสองไฟล์ได้ มีเมนูภาษาไทย รุ่นล่าสุด 8.9.9.1 พร้อมเรื่องความปลอดภัยของตัวอัปเดตที่ควรรู้และวิธีติดตั้งจากเว็บทางการ"
+kicker: "แอปแนะนำ"
+lead: "ใช้ Notepad ของ Windows เปิดไฟล์ใหญ่ ๆ หรือแก้โค้ดหลายไฟล์แล้วไม่สะดวก ผมแนะนำ Notepad++ ครับ ฟรี เปิดหลายไฟล์เป็นแท็บ ใส่สีโค้ดให้ มีเมนูภาษาไทย รุ่นล่าสุดคือ 8.9.9.1 ใครยังใช้รุ่นเก่ากว่า 8.9.9 ควรอัปเดต เพราะรุ่นนี้แก้ช่องโหว่ความปลอดภัยไปหลายรายการ"
+meta: "เรียบเรียงจาก notepad-plus-plus.org, GitHub ของโปรเจกต์ และ npp-user-manual.org · ข้อมูล ณ 16 พฤศจิกายน 2569"
+cover: "/media/posts/news/notepad-plus-plus-windows-app-review/cover.jpg"
+coverAlt: "ภาพหน้าจอ Notepad++ บน Windows 11 แบ่งหน้าต่างสองฝั่ง ซ้ายเป็นไฟล์ README ขวาเป็นโค้ด PHP มีรายการเติมคำอัตโนมัติ บนพื้นสีพาสเทล"
+---
+
+<section class="section">
+
+## Notepad++ คืออะไร
+
+<div class="prose">
+
+Notepad++ คือโปรแกรมแก้ไขข้อความ (text editor) สำหรับ Windows ครับ ใช้แทน Notepad ที่ติดมากับเครื่องได้เลย แต่ทำได้มากกว่าเยอะ เปิดหลายไฟล์เป็นแท็บ ใส่สีให้โค้ดตามภาษา ค้นและแทนที่ได้ละเอียด
+
+ผมว่าเหมาะกับคนที่ต้องแก้ไฟล์ตั้งค่า ไฟล์ log หรือโค้ดบ่อย ๆ แต่ไม่อยากเปิดโปรแกรมใหญ่อย่าง IDE มาแก้แค่ไฟล์เดียวครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ข้อมูลหลัก
+
+<div class="prose">
+
+<div class="spec-list">
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-download" /></svg><div><b>รุ่นล่าสุด</b>8.9.9.1 หน้า Release บน GitHub ลงวันที่ 12 พฤศจิกายน 2569 ส่วนเว็บทางการลง 11 พฤศจิกายน (น่าจะต่างกันที่เขตเวลา) รุ่นนี้แก้การวางข้อความหลายบรรทัดในพื้นที่ว่าง (virtual space) แก้โหมด Folder as Workspace เวลาเจอ symlink และแก้การบันทึกไฟล์ภายใต้ UAC ในโหมด Administrator Protection แถมเพิ่มตัวเลือก highlight all matches ในหน้าค้นหาด้วย</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-copy" /></svg><div><b>ราคา</b>ฟรี</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-file" /></svg><div><b>ไลเซนส์</b>GNU GPL เวอร์ชัน 3 ตามไฟล์ LICENSE ของโปรเจกต์ เป็นโอเพนซอร์ส ดูซอร์สโค้ดได้บน GitHub</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-panel" /></svg><div><b>ระบบที่รองรับ</b>Windows 8.1 ขึ้นไป (ตามไฟล์ SUPPORTED_SYSTEM.md บน GitHub) Windows 8 และเก่ากว่าไม่รองรับแล้ว มีไฟล์ให้โหลดทั้ง x86, x64 และ ARM64</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-globe" /></svg><div><b>ภาษา</b>มีภาษาไทย ใน GitHub มีไฟล์แปล nativeLang/thai.xml เช่นเมนู "ไฟล์ (&amp;F)" ส่วนจะแปลครบแค่ไหน ผมยังไม่ได้เปิดดู</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-memory" /></svg><div><b>แบบไฟล์ให้โหลด</b>มีตัวติดตั้ง .exe (x86, x64, arm64) ตัวติดตั้ง .msi (x64) และแบบพกพา (portable) เป็น zip หรือ 7z ทั้งแบบปกติและแบบ minimalist พร้อมไฟล์ลายเซ็น GPG และค่า SHA-256 ให้ตรวจเทียบ</div></div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## หน้าตาและการใช้งาน
+
+<div class="split">
+<div class="prose">
+
+ในภาพคือ Notepad++ 8.9.1 บน Windows 11 แบ่งหน้าต่างเป็นสองฝั่ง ฝั่งซ้ายเปิดไฟล์ README ฝั่งขวาเป็นโค้ด PHP ของ MediaWiki แต่ละฝั่งมีแท็บของตัวเอง มีเลขบรรทัดด้านซ้าย และโค้ดมีสีตามภาษา อ่านง่ายกว่า Notepad เดิมเยอะ
+
+ตรงบรรทัด 1204 มีรายการเติมคำอัตโนมัติเด้งขึ้นมา ใครแก้โค้ดบ่อย ๆ ตรงนี้ช่วยได้พอสมควรครับ
+
+ภาพนี้เป็นรุ่น 8.9.1 เก่ากว่ารุ่นล่าสุดนิดหน่อย ผมเลือกเพราะเป็นภาพใหม่และไลเซนส์ชัดที่สุดที่หาได้ หน้าตาหลักน่าจะไม่ต่างกันมากครับ
+
+<div class="news-cards">
+<div class="news-card is-ok"><b>เมนู Plugins Admin ในตัว</b>คู่มือบน npp-user-manual.org บอกว่าเข้าเมนู Plugins แล้วเลือก Plugins Admin ก็ดูรายการปลั๊กอินและติดตั้งเพิ่มได้เลย</div>
+<div class="news-card is-warn"><b>ปลั๊กอินคือโค้ดของคนอื่น</b>ลงเท่าที่จำเป็น และเลือกตัวที่คนใช้เยอะครับ ขนาดปลั๊กอิน MIME Tools ที่มากับโปรแกรมเอง รุ่น 8.9.9 ยังต้องแก้ช่องโหว่เลย</div>
+</div>
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/notepad-plus-plus-windows-app-review/img-1.jpg" width="1600" height="986" loading="lazy" alt="ภาพหน้าจอ Notepad++ 8.9.1 บน Windows 11 แบ่งหน้าต่างสองฝั่ง ซ้ายเป็น README.md ขวาเป็นโค้ด PHP พร้อมรายการเติมคำอัตโนมัติ" /></div><figcaption><span class="news-fig__credit">ภาพ: User:WubTheCaptain (ภาพหน้าจอจาก <a href="https://commons.wikimedia.org/wiki/File:Notepad%2B%2B_v8.9.1_on_Windows_11,_with_MediaWiki_1.45.1_source_code,_with_split_window_view_and_autocompletion.png" rel="noopener">Wikimedia Commons</a> วางบนพื้นสีโดย DOJOJIN.TECH)</span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## มีอะไรใหม่ในรุ่น 8.9.9
+
+<div class="prose">
+
+8.9.9 คือรุ่นก่อนหน้า 8.9.9.1 ครับ หน้า Release บอกว่าอัปเดตเอนจินแสดงผลเป็น Scintilla 5.6.9 และ Lexilla 5.5.5 และค้นในหลายไฟล์ (Find in Files) ได้เร็วขึ้น
+
+ฝั่งหน้าตาก็ปรับหลายจุด เลือกฟอนต์และขนาดของหน้าต่างโต้ตอบได้ ย้ายแถบ Incremental Search ไปไว้ด้านบนได้ และแผง Clipboard History ดีขึ้น นอกจากนี้ยังตั้งภาษาที่ผู้ใช้กำหนดเอง (UDL) เป็นภาษาเริ่มต้นของไฟล์ใหม่ได้ รองรับ Structured Text และแก้ memory leak
+
+<div class="news-cards">
+<div class="news-card is-warn"><b>แก้ช่องโหว่ความปลอดภัยหลายรายการ</b>ใครใช้รุ่นเก่ากว่านี้ ควรอัปเดตเป็น 8.9.9 ขึ้นไปครับ รายการที่แก้มี การตรวจผู้ส่งข้อความ WM_COPYDATA ที่ข้ามได้, การยกระดับสิทธิ์ผ่านคำสั่งปลั๊กอิน, ข้อมูลหน่วยความจำรั่ว (heap), การบันทึกไฟล์ชั่วคราวภายใต้ UAC (TOCTOU), การอ่านเกินขอบเขตผ่าน NPPM_MENUCOMMAND และ heap overflow ตอนถอดรหัส SAML ในปลั๊กอิน MIME Tools ตอนนี้หน้า Release ยังบอกว่ายังไม่ได้รับเลข CVE</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## เรื่องที่ควรรู้: เหตุการณ์ตัวอัปเดตถูกดักเมื่อปีก่อน
+
+<div class="prose">
+
+เรื่องนี้แก้ไปแล้ว แต่ใครเคยลงไว้นานก็ควรรู้ครับ
+
+ตามประกาศทางการของผู้พัฒนา (กุมภาพันธ์ 2569) ตั้งแต่ราวมิถุนายน 2568 ผู้โจมตีเจาะระบบของผู้ให้บริการโฮสติ้งเดิมของเว็บ แล้วเปลี่ยนเส้นทางคำขออัปเดตของผู้ใช้บางส่วนไปยังตัวติดตั้งที่ถูกแก้ไข การเข้าถึงนั้นสิ้นสุดราววันที่ 2 ธันวาคม 2568
+
+ผู้พัฒนาย้ำว่าปัญหาอยู่ที่ระดับโฮสติ้ง ไม่ใช่ในโค้ดของ Notepad++ ส่วนผู้โจมตีเป็นใคร นักวิจัยบางรายสงสัยว่าเป็นกลุ่มที่รัฐหนุนหลัง แต่ยังไม่มีการยืนยัน
+
+หลังจากนั้นโปรเจกต์ย้ายไปโฮสต์ใหม่ และเพิ่มการป้องกันหลายชั้น ตัวอัปเดต (WinGup) ตรวจใบรับรองและลายเซ็นของตัวติดตั้งตั้งแต่รุ่น 8.8.9 ไฟล์ XML ของการอัปเดตก็มีลายเซ็น และรุ่น 8.9.2 (16 กุมภาพันธ์ 2569) บังคับตรวจทั้งหมดนี้ พร้อมแก้ CVE-2026-25926 ผมว่าโปรเจกต์รับมือได้จริงจังดีครับ
+
+<div class="news-cards">
+<div class="news-card is-ok"><b>สิ่งที่ควรทำ</b>โหลดจาก notepad-plus-plus.org หรือ GitHub ของโปรเจกต์เท่านั้น และอัปเดตเป็นรุ่นล่าสุดเสมอ ถ้าเคยใช้รุ่นเก่าช่วงมิถุนายนถึงธันวาคม 2568 ประกาศแนะนำให้พิจารณาติดตั้งใหม่จากเว็บทางการครับ</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## วิธีติดตั้ง
+
+<div class="prose">
+
+<ol class="news-steps">
+<li><b>ไปที่หน้าดาวน์โหลดทางการ</b>เปิด <a href="https://notepad-plus-plus.org/downloads/v8.9.9.1/" rel="noopener">notepad-plus-plus.org/downloads</a> หรือหน้า Release บน GitHub เท่านั้น</li>
+<li><b>เลือกไฟล์ให้ตรงเครื่อง</b>เครื่อง Windows 64 บิตส่วนใหญ่เลือกตัวติดตั้ง x64 (.exe) ได้เลย ถ้าไม่อยากติดตั้งลงเครื่อง ใช้แบบพกพา zip แทนได้</li>
+<li><b>ตรวจไฟล์ (ถ้าอยากชัวร์)</b>เทียบค่า SHA-256 กับที่หน้าดาวน์โหลดแสดงไว้</li>
+<li><b>หรือใช้ winget</b>พิมพ์ <code>winget install Notepad++.Notepad++</code> ใน Terminal (รหัสแพ็กเกจดูจากรายการ winget-pkgs)</li>
+</ol>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ใครควรใช้
+
+<div class="prose">
+
+ผมว่าเหมาะกับคนที่แก้ไฟล์ข้อความเป็นประจำ เช่น ไฟล์ตั้งค่า log สคริปต์ หรือโค้ดเล็ก ๆ ครับ ฟรี ไม่หนักเครื่อง และทำได้มากกว่า Notepad เดิมเยอะ
+
+ก่อนลงจำไว้ 2 อย่าง โหลดจากเว็บทางการเท่านั้น และใช้รุ่น 8.9.9 ขึ้นไป ส่วนใครเขียนโปรเจกต์ใหญ่เป็นหลัก คงอยากได้ editor ที่ทำได้มากกว่านี้
+
+ขอบอกตรง ๆ ว่าผมยังไม่ได้ลงแอปลองใช้เองนะครับ ข้อมูลในข่าวนี้มาจากหน้าทางการ GitHub และคู่มือของโปรเจกต์
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- รุ่น 8.9.9.1 และรายการแก้ไข: <a href="https://github.com/notepad-plus-plus/notepad-plus-plus/releases/tag/v8.9.9.1" rel="noopener">GitHub Release v8.9.9.1</a>
+- หน้าดาวน์โหลดและไฟล์ที่มีให้โหลด: <a href="https://notepad-plus-plus.org/downloads/v8.9.9.1/" rel="noopener">notepad-plus-plus.org/downloads/v8.9.9.1</a>
+- เหตุการณ์ตัวอัปเดตถูกดัก: <a href="https://notepad-plus-plus.org/news/hijacked-incident-info-update/" rel="noopener">ประกาศทางการ</a>
+- ไลเซนส์ และระบบที่รองรับ: <a href="https://github.com/notepad-plus-plus/notepad-plus-plus/blob/master/LICENSE" rel="noopener">LICENSE</a> · <a href="https://github.com/notepad-plus-plus/notepad-plus-plus/blob/master/SUPPORTED_SYSTEM.md" rel="noopener">SUPPORTED_SYSTEM.md</a>
+- Plugins Admin: <a href="https://npp-user-manual.org/docs/plugins/" rel="noopener">คู่มือผู้ใช้ (Plugins)</a>
+- แพ็กเกจ winget: <a href="https://github.com/microsoft/winget-pkgs" rel="noopener">microsoft/winget-pkgs</a>
+
+</div>
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพในเนื้อข่าวและภาพปก: ภาพหน้าจอ Notepad++ 8.9.1 บน Windows 11 โดย User:WubTheCaptain จาก <a href="https://commons.wikimedia.org/wiki/File:Notepad%2B%2B_v8.9.1_on_Windows_11,_with_MediaWiki_1.45.1_source_code,_with_split_window_view_and_autocompletion.png" rel="noopener">Wikimedia Commons</a> ไลเซนส์ GPL v3 หรือใหม่กว่า (ตามหัวข้อ Licensing ของหน้าไฟล์) วางบนพื้นสีโดย DOJOJIN.TECH
+
+ภาพใช้ประกอบการแนะนำ ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>

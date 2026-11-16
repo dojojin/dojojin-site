@@ -1,0 +1,187 @@
+---
+title: "แอปแนะนำ: QuickLook กด Space ดูตัวอย่างไฟล์ใน Windows แบบ macOS ฟรี โอเพนซอร์ส (รุ่น 4.5.0)"
+topic: software
+type: news
+tags: [app, windows]
+date: 2026-11-16T12:20:00+07:00
+section: app
+sourceName: "QuickLook (QL-Win บน GitHub)"
+sourceUrl: "https://github.com/QL-Win/QuickLook"
+description: "แนะนำ QuickLook โปรแกรมฟรี โอเพนซอร์ส (GPL-3.0) ที่ทำให้ Windows กด Space ดูตัวอย่างไฟล์ได้ทันทีแบบ Quick Look ของ macOS รองรับรูป วิดีโอ เสียง PDF โค้ด ไฟล์บีบอัด และอื่น ๆ รุ่น 4.5.0 ติดตั้งได้ทั้ง Microsoft Store, ตัวติดตั้งจาก GitHub, winget และ Scoop พร้อมข้อควรรู้ก่อนลง"
+kicker: "แอปแนะนำ"
+lead: "เลือกไฟล์ใน File Explorer แล้วกด Space ก็เห็นข้างในเลย ไม่ต้องนั่งรอโปรแกรมเปิด ผมแนะนำ QuickLook ครับ ฟรี โอเพนซอร์ส ทำให้ Windows กด Space ดูไฟล์ได้แบบ Quick Look บน macOS รุ่นล่าสุดคือ 4.5.0 (14 เมษายน 2569) และโค้ดบน GitHub ยังมีคนแก้อยู่ถึงกลางเดือนนี้"
+meta: "เรียบเรียงจาก GitHub ของ QL-Win/QuickLook (README, หน้า Releases, wiki, ซอร์สโค้ด) และ winget-pkgs · ข้อมูล ณ 16 พฤศจิกายน 2569"
+cover: "/media/posts/news/quicklook-windows-app-review/cover.jpg"
+coverAlt: "ภาพหน้าจอ QuickLook บน Windows แสดงหน้าต่างตัวอย่างรูปภูเขากับทะเลสาบสีฟ้า มีแถบเครื่องมือด้านบน บนพื้นสีพาสเทล"
+---
+
+<section class="section">
+
+## QuickLook คืออะไร
+
+<div class="prose">
+
+QuickLook คือโปรแกรมที่เอา Quick Look ของ macOS มาไว้บน Windows ครับ หน้า GitHub เขียนว่า "Bring macOS Quick Look feature to Windows"
+
+วิธีใช้ง่ายมาก เลือกไฟล์ใน File Explorer แล้วกด Space หน้าต่างตัวอย่างก็เด้งขึ้นมา กด Space อีกทีก็ปิด ไม่ต้องดับเบิลคลิก ไม่ต้องรอโปรแกรมเปิด
+
+ผมว่าเหมาะกับงานแบบเปิดดูแป๊บเดียวแล้วปิด เช่น คัดรูป ดูว่าเอกสารไหนคือตัวที่หา หรือเช็กไฟล์โค้ดสั้น ๆ ครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ข้อมูลหลัก
+
+<div class="prose">
+
+<div class="spec-list">
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-download" /></svg><div><b>รุ่นล่าสุด</b>4.5.0 ออก 14 เมษายน 2569 ตามหน้า Releases ก่อนหน้านั้นคือ 4.4.0 (8 ม.ค. 2569) กับ 4.3.0 (10 ธ.ค. 2568) ไฟล์ให้โหลดมี .exe, .msi, .appx, .zip และ .7z</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-copy" /></svg><div><b>ราคา</b>ฟรี README เขียนว่า "Free software, free forever. No ads, no tracking, no premium tiers."</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-file" /></svg><div><b>ไลเซนส์</b>GPL-3.0 ซอร์สโค้ดเปิดอยู่บน GitHub ใครอยากรู้ว่าโปรแกรมทำอะไรบ้างก็เข้าไปอ่านได้</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-panel" /></svg><div><b>ระบบที่ต้องมี</b>README ไม่ได้บอกว่าต้องใช้ Windows รุ่นไหนขึ้นไป มีแค่ลิงก์ไปหน้า .NET runtime ส่วนไฟล์โปรเจกต์ในซอร์สตั้งเป้าไว้ที่ .NET Framework 4.6.2 ผมเลยยืนยันไม่ได้ว่าลงได้ถึง Windows รุ่นไหน อ่านหน้า Releases ก่อนลงครับ</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-globe" /></svg><div><b>ภาษา</b>ไม่มีภาษาไทย ไฟล์แปลหลักในซอร์สมี 28 ภาษา เช่น อังกฤษ จีน ญี่ปุ่น เกาหลี ฮินดี เครื่องที่ตั้งภาษาไทย ผมคาดว่าเมนูจะขึ้นเป็นอังกฤษ</div></div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ดูอะไรได้บ้าง
+
+<div class="split">
+<div class="prose">
+
+README บอกว่าดูได้กว่า 100 ฟอร์แมต ผมแบ่งเป็นกลุ่มให้อ่านง่ายขึ้นครับ
+
+ในภาพคือหน้าต่างพรีวิวของโฟลเดอร์ Desktop บอกวันที่แก้ไข ขนาดรวม และจำนวนไฟล์ เปิดซ้อนกันได้หลายหน้าต่าง และมีปุ่มปักหมุดไว้ด้านบน
+
+<div class="news-cards">
+<div class="news-card is-ok"><b>รูปและวิดีโอ</b>รูป JPEG, PNG, GIF, WebP และไฟล์ RAW · วิดีโอ MP4, AVI, MKV, MOV · SVG ฟอนต์ ไฟล์ PSD/AI และโมเดล 3 มิติ (OBJ, STL, FBX)</div>
+<div class="news-card is-ok"><b>เอกสารและอีบุ๊ก</b>PDF, Markdown, EPUB, MOBI และการ์ตูน CBZ/CBR · ไฟล์ Word, Excel, PowerPoint ใน README เป็นงานของปลั๊กอิน OfficeViewer (อ่านหัวข้อปลั๊กอินด้านล่าง)</div>
+<div class="news-card is-ok"><b>โค้ดและไฟล์ตั้งค่า</b>ไฟล์ข้อความและโค้ดมีสีไวยากรณ์ JSON, XML, YAML, TOML, INI · ไฟล์ไบนารีดูแบบ hex ได้</div>
+<div class="news-card is-ok"><b>เสียง ซับไตเติล และไฟล์บีบอัด</b>เสียง MP3, FLAC, WAV, AAC · ซับไตเติล SRT, ASS · ไฟล์บีบอัด ZIP, RAR, 7Z, TAR ดูรายชื่อไฟล์ข้างในได้โดยไม่ต้องแตก</div>
+</div>
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/quicklook-windows-app-review/img-1.jpg" width="1329" height="797" loading="lazy" alt="ภาพหน้าจอหน้าต่างพรีวิวของ QuickLook สามหน้าต่างซ้อนกันบนวอลเปเปอร์ Windows หน้าต่างหน้าสุดแสดงโฟลเดอร์ Desktop วันที่แก้ไข ขนาด 147.89 MB และจำนวนไฟล์" /></div><figcaption><span class="news-fig__credit">ภาพ: QL-Win (ภาพหน้าจอจาก <a href="https://github.com/QL-Win/QuickLook" rel="noopener">github.com/QL-Win/QuickLook</a> วางบนพื้นสีโดย DOJOJIN.TECH)</span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## ปลั๊กอินเสริม
+
+<div class="split">
+<div class="prose">
+
+ตัวหลักไม่ได้เปิดได้ทุกไฟล์ครับ บางชนิดต้องลงปลั๊กอินเพิ่ม (ไฟล์นามสกุล .qlplugin) README แนะนำปลั๊กอินทางการไว้ 4 ตัว
+
+OfficeViewer สำหรับไฟล์ Word/Excel/PowerPoint โดยไม่ต้องลง Office ตามที่ README เขียน, PdfViewer-Native ดู PDF ผ่าน WebView2, PostScriptViewer และ CADImport ดูไฟล์ CAD (.dwg/.dxf)
+
+วิธีลงตามหน้า wiki ก็ใช้ปุ่ม Space เหมือนเดิม เปิด QuickLook ค้างไว้ เลือกไฟล์ .qlplugin กด Space กดปุ่ม Install แล้วรีสตาร์ต QuickLook
+
+ในภาพคือพรีวิวไฟล์ JSON มีเลขบรรทัดและสีตัวอักษร เลื่อนอ่านในหน้าต่างได้เลย ไม่ต้องเปิดโปรแกรมแก้โค้ด
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/quicklook-windows-app-review/img-2.jpg" width="1443" height="1191" loading="lazy" alt="ภาพหน้าจอ QuickLook แสดงไฟล์ Microsoft.NETCore.App.deps.json มีเลขบรรทัดและไฟล์ JSON ที่ไฮไลต์สีตัวอักษร" /></div><figcaption><span class="news-fig__credit">ภาพ: QL-Win (ภาพหน้าจอจาก <a href="https://github.com/QL-Win/QuickLook" rel="noopener">github.com/QL-Win/QuickLook</a> วางบนพื้นสีโดย DOJOJIN.TECH)</span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## ยังมีคนดูแลอยู่ไหม
+
+<div class="prose">
+
+ยังมีครับ ผมเช็กเพราะรุ่นล่าสุดออกมาเกือบ 7 เดือนแล้ว (เมษายน 2569)
+
+รายการ commit บน GitHub ล่าสุดคือ 12 พ.ย. 2569 เพิ่มการดูไอคอนฟอนต์ WOFF2 ก่อนหน้านั้นก็มีแก้ให้จำค่าตั้งแสดงผลของตัวอ่านข้อความ และให้ไอคอนโปรแกรมมีโหมดสว่าง/มืด
+
+แต่ของใหม่พวกนี้ยังไม่อยู่ในรุ่นเสถียรที่ออกเป็น Release ใครอยากได้ก่อน README มี Nightly build ให้ลอง ส่วนผมแนะนำรุ่นเสถียร 4.5.0 ครับ
+
+<div class="news-cards">
+<div class="news-card is-warn"><b>เรื่องวิดีโอ</b>รุ่น 4.5.0 อัปเดตตัวถอดรหัสวิดีโอ LAVFilters เป็น 0.81.0 หน้า Release เตือนว่าอาจเปิดวิดีโอไม่ได้บนการ์ดจอรุ่นเก่า หรือเครื่องที่ยังไม่มี Visual C++ Redistributable ล่าสุด ถ้าเจออาการนี้ให้ลงตัวนั้นก่อน</div>
+<div class="news-card is-ok"><b>ของใหม่ในรุ่น 4.5.0</b>ตัวเลือกพื้นหลังหน้าต่าง (backdrop) · ไฮไลต์ไวยากรณ์ไฟล์ชนิดใหม่เพิ่ม · ดูไฟล์ Chromium .pak, Python .whl/.egg และ DICOM · กด F11 เต็มจอ</div>
+<div class="news-card is-ok"><b>บั๊กที่แก้ในรุ่นนี้</b>ความโปร่งใสบน Windows 10 · ไอคอนบน taskbar หายหลัง Explorer รีสตาร์ต · ไฟล์ assimp.dll ที่ขาดหาย</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## วิธีติดตั้ง
+
+<div class="prose">
+
+มีหลายทาง เลือกตามที่สะดวกได้เลยครับ ข้อต่างหลักคืออยากให้กด Space ดูไฟล์ในหน้าต่าง Open/Save ได้ด้วยหรือเปล่า
+
+<ol class="news-steps">
+<li><b>Microsoft Store</b>ค้นหา QuickLook หรือเปิด <a href="https://apps.microsoft.com/detail/9NV4BS3L1H4S" rel="noopener">apps.microsoft.com/detail/9NV4BS3L1H4S</a> อัปเดตเองและรันแบบแซนด์บ็อกซ์ แต่ README บอกว่าแบบนี้ไม่มีพรีวิวในหน้าต่าง Open/Save</li>
+<li><b>ตัวติดตั้งจาก GitHub</b>โหลด .exe หรือ .msi จาก <a href="https://github.com/QL-Win/QuickLook/releases/tag/4.5.0" rel="noopener">หน้ารุ่น 4.5.0</a> ได้ฟีเจอร์ครบ รวมหน้าต่าง Open/Save และโหมดพกพา</li>
+<li><b>winget หรือ Scoop</b>winget มีแพ็กเกจ QL-Win.QuickLook (ในรายการ winget-pkgs มีรุ่น 4.5.0 แล้ว) ส่วน Scoop พิมพ์ scoop bucket add extras แล้ว scoop install quicklook</li>
+<li><b>แบบพกพา</b>โหลดไฟล์ .zip หรือ .7z แตกแล้วรันได้เลย ไม่ต้องติดตั้ง</li>
+</ol>
+
+โหลดจาก GitHub หรือ Store ของโปรเจกต์เท่านั้นนะครับ โปรแกรมนี้เปิดอ่านไฟล์ที่เราเลือก ไฟล์ติดตั้งจากแหล่งอื่นไม่ควรเสี่ยง
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ใครควรใช้
+
+<div class="prose">
+
+ผมว่าเหมาะกับคนที่เปิดไฟล์ดูผ่าน ๆ บ่อย และอิจฉาปุ่ม Space ของ Mac ครับ ผู้พัฒนาเขียนไว้ว่าฟรี ไม่มีโฆษณา ลองแล้วไม่ชอบก็ถอนออกได้
+
+ก่อนลงมี 3 เรื่องที่ควรรู้ แบบ Store ไม่มีพรีวิวในหน้าต่าง Open/Save โปรแกรมไม่มีภาษาไทย และรุ่นเสถียรล่าสุดออกมาหลายเดือนแล้ว
+
+ใครใช้ <a href="/news/everything-windows-app-review/">Everything</a> ค้นไฟล์อยู่ ใช้คู่กันได้เลยครับ ค้นเจอแล้วกด Space ดูก่อนค่อยเปิดจริง
+
+สุดท้ายขอบอกตรง ๆ ว่าผมยังไม่ได้ลงแอปลองเองนะครับ ข้อมูลทั้งหมดในข่าวนี้มาจากหน้าทางการของโปรเจกต์บน GitHub
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- หน้าโปรเจกต์ คำอธิบาย ฟอร์แมตที่รองรับ ปลั๊กอิน ตัวเลือกติดตั้ง ไลเซนส์: <a href="https://github.com/QL-Win/QuickLook" rel="noopener">github.com/QL-Win/QuickLook</a> (README)
+- รุ่น 4.5.0 วันที่ออก รายการแก้ไข และไฟล์ให้โหลด: <a href="https://github.com/QL-Win/QuickLook/releases/tag/4.5.0" rel="noopener">Releases 4.5.0</a>
+- ความเคลื่อนไหวล่าสุดของโค้ด: <a href="https://github.com/QL-Win/QuickLook/commits/master" rel="noopener">Commits</a>
+- วิธีลงปลั๊กอิน: <a href="https://github.com/QL-Win/QuickLook/wiki/Available-Plugins" rel="noopener">wiki Available Plugins</a>
+- Microsoft Store: <a href="https://apps.microsoft.com/detail/9NV4BS3L1H4S" rel="noopener">apps.microsoft.com</a>
+- แพ็กเกจ winget: <a href="https://github.com/microsoft/winget-pkgs/tree/master/manifests/q/QL-Win/QuickLook" rel="noopener">winget-pkgs</a>
+- รายชื่อภาษาที่แปล: <a href="https://github.com/QL-Win/QuickLook/blob/master/QuickLook/Translations.config" rel="noopener">Translations.config</a>
+
+</div>
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปกและภาพในเนื้อข่าว: ภาพตัวอย่างทางการจากโฟลเดอร์ Build/Assets/Branding ของ <a href="https://github.com/QL-Win/QuickLook" rel="noopener">github.com/QL-Win/QuickLook</a> วางบนพื้นสีโดย DOJOJIN.TECH
+
+ภาพใช้ประกอบการแนะนำ (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ ไฟล์ในที่เก็บโค้ดอยู่ภายใต้ GPL-3.0
+
+</div>
+
+</section>
