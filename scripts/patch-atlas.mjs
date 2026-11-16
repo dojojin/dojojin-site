@@ -6,6 +6,7 @@
 //   3. add a small responsive CSS patch (tested at 390 / 768 / 1280)
 //   4. add the site top bar (same menu as src/layouts/Base.astro, the atlas's type (Data) active)
 //      and a "ที่มาของรูป" link in the atlas's own menu
+//   5. inline the site's page-view counter (src/lib/count.js, bundled with rolldown) so /stats/ counts these pages
 //
 // Usage: node scripts/patch-atlas.mjs
 // Input : _sources/data/<slug>.html + _sources/data/<slug>.og.png   (local, gitignored)
@@ -13,9 +14,11 @@
 import { readFileSync, writeFileSync, mkdirSync, copyFileSync, existsSync } from 'node:fs';
 import { ATLASES } from '../src/data/atlases.js';
 import { NAV } from '../src/data/site.js';
+import { build } from 'rolldown';
 
 const SITE = 'https://dojojin.tech';
 const FONTS_CSS = readFileSync('src/styles/fonts.css', 'utf8').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\s+/g, ' ');
+const COUNTER = (await build({ input: 'src/lib/count.js', write: false, output: { format: 'esm', minify: true } })).output[0].code.trim();
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 
 /* ---------- data corrections ---------- */
@@ -226,6 +229,8 @@ function patchPage(html, a) {
   if (!/<\/head>/i.test(html) || !/<body[^>]*>/i.test(html)) throw new Error(`${a.slug}: no </head> or <body>`);
   html = html.replace(/<\/head>/i, `${head}</head>`);
   html = html.replace(/<body([^>]*)>/i, (m) => `${m}${topBar(a.type)}`);
+  if (!/<\/body>/i.test(html)) throw new Error(`${a.slug}: no </body>`);
+  html = html.replace(/<\/body>(?![\s\S]*<\/body>)/i, () => `<script type="module" id="dojojin-counter">${COUNTER}</script>\n</body>`);
   // the atlas's own section menu: add a direct link to the photo credits
   const navEnd = html.indexOf('</nav>', html.indexOf('class="nav"'));
   if (navEnd < 0) throw new Error(`${a.slug}: atlas nav not found`);

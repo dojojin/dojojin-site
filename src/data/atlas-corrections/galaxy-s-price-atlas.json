@@ -185,5 +185,49 @@
     "source": "https://www.thaimobilecenter.com/content/samsung-galaxy-s26-series-launch.asp",
     "snippet": "เปิดให้สั่งจองล่วงหน้าตั้งแต่วันนี้ - 10 มีนาคม 2026 พร้อมวางจำหน่ายอย่างเป็นทางการในวันที่ 11 มีนาคม 2026",
     "checked": "2026-11-13, series article (already quoted for S26 / S26+); Ultra pre-order window cross-checked at thethaiger.com"
+  },
+  {
+    "id": "galaxy-s24-fe",
+    "path": "th_launch",
+    "op": "set",
+    "old": "2024-09-27",
+    "new": "2024-10-03",
+    "why": "th_launch = first day of general retail sale in Thailand (owner rule 2026-11-16), not the pre-order / launch-event date.",
+    "source": "https://www.siamphone.com/contents/news-53802.html",
+    "snippet": "เตรียมวางจำหน่ายอย่างเป็นทางการวันที่ 3 ตุลาคม 2567 (27 Sep was the early-bird pre-order start)",
+    "checked": "2026-11-16, source fetched and quoted"
+  },
+  {
+    "id": "galaxy-s5",
+    "path": "price_conf",
+    "op": "set",
+    "old": "low",
+    "new": "medium",
+    "why": "THB 23,800 / 16GB / sale 11 Apr 2014 now confirmed by a second outlet (droidsans 18 Mar 2014) besides siamphone.",
+    "source": "https://droidsans.com/samsung-thailand-annouce-price-galaxy-s5/",
+    "snippet": "เปิดราคา Samsung Galaxy S5 แล้ววันนี้ที่ 23,800 บาท … รุ่นที่นำเข้ามาจำหน่ายเป็นรุ่น 16 GB … จะเริ่มวางจำหน่ายในบ้านเราตั้งแต่วันที่ 11 เมษายนเป็นต้นไป",
+    "checked": "2026-11-16, source fetched and quoted (audit agent)"
+  },
+  {
+    "id": "galaxy-s5",
+    "path": "price_flags",
+    "op": "set",
+    "old": "THB 23,800 from siamphone spec launch-price field only (date field 25 Feb 2014 = MWC announcement); not cross-checked. US: no Samsung unlocked at launch; $649.99 = AT&T full retail (contract $199.99; Verizon/T-Mobile full retail ~$600–660).",
+    "new": "THB 23,800 (16GB), on sale 11 Apr 2014: siamphone and droidsans (18 Mar 2014) agree. US: no Samsung unlocked at launch; $649.99 = AT&T full retail (contract $199.99; Verizon/T-Mobile full retail ~$600–660).",
+    "why": "Follows price_conf change.",
+    "source": "https://droidsans.com/samsung-thailand-annouce-price-galaxy-s5/",
+    "snippet": "เปิดราคา Samsung Galaxy S5 แล้ววันนี้ที่ 23,800 บาท",
+    "checked": "2026-11-16, source fetched and quoted (audit agent)"
+  },
+  {
+    "id": "galaxy-s21-fe",
+    "path": "price_flags",
+    "op": "set",
+    "old": "Thai RAM not stated in source (8GB assumed for SM-G990E). US 128GB model has 6GB RAM.",
+    "new": "Thai launch tiers are 8GB RAM (stated by droidsans: RAM 8GB + ROM 128GB 22,900). US 128GB model has 6GB RAM.",
+    "why": "Note said Thai RAM not stated; Thai sources state 8GB.",
+    "source": "https://droidsans.com/samsung-galaxy-s21-fe-officially-launched/",
+    "snippet": "รุ่น RAM 8GB + ROM 128GB ราคา 22,900 บาท",
+    "checked": "2026-11-16, source fetched and quoted (audit agent)"
   }
 ]

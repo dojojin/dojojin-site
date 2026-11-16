@@ -271,5 +271,148 @@
     "source": "https://commons.wikimedia.org/wiki/File:Vivo_X300_Ultra.jpg",
     "snippet": "Vivo X300 Ultra detailed, dramatic hero shot",
     "checked": "2026-11-13, Commons file page opened and image viewed"
+  },
+  {
+    "id": "vivo-x60-pro",
+    "path": "th_launch",
+    "op": "set",
+    "old": "2021-06-10",
+    "new": "2021-06-11",
+    "why": "th_launch = first day of general retail sale in Thailand (owner rule 2026-11-16), not the pre-order / launch-event date.",
+    "source": "https://droidsans.com/vivo-x60-pro-5g-thailand-official-launched/",
+    "snippet": "โดยจะเริ่มวางจำหน่ายตั้งแต่วันที่ 11 มิถุนายน 2564 เป็นต้นไป ตามตัวแทนจำหน่ายทั้งออนไลน์ และหน้าร้านครับ",
+    "checked": "2026-11-16, source fetched and quoted"
+  },
+  {
+    "id": "vivo-x70",
+    "path": "th_launch",
+    "op": "set",
+    "old": "2021-10-07",
+    "new": "2021-10-16",
+    "why": "th_launch = first day of general retail sale in Thailand (owner rule 2026-11-16), not the pre-order / launch-event date.",
+    "source": "https://droidsans.com/vivo-x70-x70-pro-thailand-official-prices-revealed/",
+    "snippet": "Pre-order ตั้งแต่วันที่ 8 – 15 ตุลาคม และจะเริ่มวางขายตามร้านในวันที่ 16 ตุลาคม 2564 เป็นต้นไป",
+    "checked": "2026-11-16, source fetched and quoted"
+  },
+  {
+    "id": "vivo-x70-pro",
+    "path": "th_launch",
+    "op": "set",
+    "old": "2021-10-07",
+    "new": "2021-10-16",
+    "why": "th_launch = first day of general retail sale in Thailand (owner rule 2026-11-16), not the pre-order / launch-event date.",
+    "source": "https://droidsans.com/vivo-x70-x70-pro-thailand-official-prices-revealed/",
+    "snippet": "Pre-order ตั้งแต่วันที่ 8 – 15 ตุลาคม และจะเริ่มวางขายตามร้านในวันที่ 16 ตุลาคม 2564 เป็นต้นไป",
+    "checked": "2026-11-16, source fetched and quoted"
+  },
+  {
+    "id": "vivo-x80",
+    "path": "th_launch",
+    "op": "set",
+    "old": "2022-05-19",
+    "new": "2022-05-27",
+    "why": "th_launch = first day of general retail sale in Thailand (owner rule 2026-11-16), not the pre-order / launch-event date.",
+    "source": "https://www.checkraka.com/mobilephone/news/132001",
+    "snippet": "vivo X80 Series 5G ทั้งสองรุ่นจะวางจำหน่ายอย่างเป็นทางการพร้อมกันใน วันศุกร์ ที่ 27 พฤษภาคม 2565",
+    "checked": "2026-11-16, source fetched and quoted"
+  },
+  {
+    "id": "vivo-x80-pro",
+    "path": "th_launch",
+    "op": "set",
+    "old": "2022-05-19",
+    "new": "2022-05-27",
+    "why": "th_launch = first day of general retail sale in Thailand (owner rule 2026-11-16), not the pre-order / launch-event date.",
+    "source": "https://www.checkraka.com/mobilephone/news/132001",
+    "snippet": "vivo X80 Series 5G ทั้งสองรุ่นจะวางจำหน่ายอย่างเป็นทางการพร้อมกันใน วันศุกร์ ที่ 27 พฤษภาคม 2565",
+    "checked": "2026-11-16, source fetched and quoted"
+  },
+  {
+    "id": "vivo-x90-pro",
+    "path": "th_launch",
+    "op": "set",
+    "old": "2023-05-19",
+    "new": "2023-05-20",
+    "why": "th_launch = first day of general retail sale in Thailand (owner rule 2026-11-16), not the pre-order / launch-event date.",
+    "source": "https://www.thairath.co.th/news/tech/2695428",
+    "snippet": "Vivo X90 Pro 5G เริ่มวางจำหน่ายวันนี้ (20 พฤษภาคม) เป็นวันแรก ในราคา 39,999 บาท",
+    "checked": "2026-11-16, source fetched and quoted"
+  },
+  {
+    "id": "vivo-x90-pro",
+    "path": "price_flags",
+    "op": "set",
+    "old": "TH: 12/256 black only, 39,999, on sale from 2023-05-19.",
+    "new": "TH: 12/256 black only, 39,999, on sale from 2023-05-20.",
+    "why": "Sale date per Thai Rath (20 May 2023) and Checkraka.",
+    "source": "https://www.checkraka.com/mobilephone/news/137933",
+    "snippet": "จำหน่ายอย่างเป็นทางการในวันที่ 20 พฤษภาคม 2566 เป็นต้นไป",
+    "checked": "2026-11-16, source fetched and quoted"
+  },
+  {
+    "id": "vivo-x100",
+    "path": "th_launch",
+    "op": "set",
+    "old": "2024-01-30",
+    "new": "2024-01-31",
+    "why": "th_launch = first day of general retail sale in Thailand (owner rule 2026-11-16), not the pre-order / launch-event date.",
+    "source": "https://droidsans.com/vivo-x100-series-5g-thai-price/",
+    "snippet": "วางจำหน่ายอย่างเป็นทางการตั้งแต่วันที่ 31 มกราคม 2024 เป็นต้นไป ที่ร้านค้า Official Shop",
+    "checked": "2026-11-16, source fetched and quoted"
+  },
+  {
+    "id": "vivo-x100-pro",
+    "path": "th_launch",
+    "op": "set",
+    "old": "2024-01-30",
+    "new": "2024-01-31",
+    "why": "th_launch = first day of general retail sale in Thailand (owner rule 2026-11-16), not the pre-order / launch-event date.",
+    "source": "https://droidsans.com/vivo-x100-series-5g-thai-price/",
+    "snippet": "วางจำหน่ายอย่างเป็นทางการตั้งแต่วันที่ 31 มกราคม 2024 เป็นต้นไป ที่ร้านค้า Official Shop",
+    "checked": "2026-11-16, source fetched and quoted"
+  },
+  {
+    "id": "vivo-x200",
+    "path": "th_launch",
+    "op": "set",
+    "old": "2024-11-29",
+    "new": "2024-12-04",
+    "why": "th_launch = first day of general retail sale in Thailand (owner rule 2026-11-16), not the pre-order / launch-event date.",
+    "source": "https://www.thansettakij.com/technology/technology/613467",
+    "snippet": "vivo X200 Series จะวางจำหน่ายอย่างเป็นทางการตั้งแต่วันที่ 4 ธันวาคม 2024 เป็นต้นไป ... Pre-order ได้แล้วตั้งแต่วันนี้ - วันที่ 3 ธันวาคม 2024 (article dated 02 ธ.ค. 67)",
+    "checked": "2026-11-16, source fetched and quoted"
+  },
+  {
+    "id": "vivo-x200-pro",
+    "path": "th_launch",
+    "op": "set",
+    "old": "2024-11-29",
+    "new": "2024-12-04",
+    "why": "th_launch = first day of general retail sale in Thailand (owner rule 2026-11-16), not the pre-order / launch-event date.",
+    "source": "https://www.thansettakij.com/technology/technology/613467",
+    "snippet": "vivo X200 Series จะวางจำหน่ายอย่างเป็นทางการตั้งแต่วันที่ 4 ธันวาคม 2024 เป็นต้นไป ... Pre-order ได้แล้วตั้งแต่วันนี้ - วันที่ 3 ธันวาคม 2024 (article dated 02 ธ.ค. 67)",
+    "checked": "2026-11-16, source fetched and quoted"
+  },
+  {
+    "id": "vivo-x200",
+    "path": "price_flags",
+    "op": "set",
+    "old": "TH: 12/256 only, 29,999 (Thai price announced 2024-11-29).",
+    "new": "TH: 12/256 only, 29,999 (launched and pre-order 2024-12-02, on sale 2024-12-04).",
+    "why": "29 Nov date not found in any source; Thai launch was 2 Dec 2024.",
+    "source": "https://www.thansettakij.com/technology/technology/613467",
+    "snippet": "vivo X200 5G (12GB + 256GB) ราคา 29,999 บาท ... วางจำหน่ายอย่างเป็นทางการตั้งแต่วันที่ 4 ธันวาคม 2024",
+    "checked": "2026-11-16, source fetched and quoted"
+  },
+  {
+    "id": "vivo-x200t",
+    "path": "price_flags",
+    "op": "set",
+    "old": "Not a China model. Rumoured/India-market model (leaks: India launch late Jan 2026, MediaTek chip). Launch, prices and Thai availability not verified in this pass. India-only model (China X200s hardware); no Thai or China price.",
+    "new": "Not a China model. Launched in India 2026-01-27 (INR 59,999 for 12/256, INR 69,999 for 12/512), on sale from 2026-02-03. No Thai or China price; not sold in Thailand.",
+    "why": "Note said rumoured; the model has launched.",
+    "source": "https://www.fonearena.com/blog/474167/vivo-x200t-price-india-specifications.html",
+    "snippet": "priced at Rs. 59,999 for the 12GB + 256GB model ... will go on sale starting from February 3rd",
+    "checked": "2026-11-16, source fetched and quoted"
   }
 ]

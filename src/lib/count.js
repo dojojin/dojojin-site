@@ -1,0 +1,65 @@
+// Page-view counter over the Firestore REST API (no Firebase SDK on formal pages: ~550 KB less JS).
+// - pageviews/{id}: +1 once per browser session per page
+// - meta/visitors: +1 once per browser session (same sessionStorage key the /lab app uses, so no double count)
+// - uadaily/{yyyymmdd}__{dim}__{key}: with that visitor bump, +1 per dimension (app, browser, os, device, ref) — see src/lib/ua.js
+// Bots / headless browsers (src/lib/ua.js BOT, navigator.webdriver) are never counted.
+// Then fills [data-views] (post pages), [data-visitors] (top bar) and [data-popular] (home) when present.
+// firestore.rules allow exactly +1 per write; an increment transform satisfies that for create and update.
+// Also inlined into the Price Atlas pages (public/data/*) by scripts/patch-atlas.mjs — re-run it after changing this file.
+import { firebaseConfig } from '../firebase-config.js';
+import { classify, refOf } from './ua.js';
+const { projectId, apiKey } = firebaseConfig;
+const root = `projects/${projectId}/databases/(default)/documents`;
+const api = `https://firestore.googleapis.com/v1/${root}`;
+const idOf = (path) => path.replace(/^\/+|\/+$/g, '').replace(/\//g, '__') || 'home';
+const fmt = (n) => Number(n).toLocaleString('th-TH');
+const count = (doc) => doc?.fields?.count?.integerValue;
+const getCount = (path) => fetch(`${api}/${path}?key=${apiKey}`).then((r) => (r.ok ? r.json() : null)).then(count).catch(() => undefined);
+const bump = (path) => ({ transform: { document: `${root}/${path}`, fieldTransforms: [{ fieldPath: 'count', increment: { integerValue: '1' } }] } });
+const once = (key) => { try { if (sessionStorage.getItem(key)) return false; sessionStorage.setItem(key, '1'); return true; } catch { return false; } };
+
+(async () => {
+  const id = idOf(location.pathname);
+  const writes = [], breakdown = [];
+  const ua = classify(navigator.userAgent, navigator.maxTouchPoints);
+  // Count only on production: localhost, the Tailscale preview and *.pages.dev previews read counts but never add to them.
+  // Never on /stats/ (the owner's view-count page), nor in a browser where the owner pressed "ไม่นับยอดจากเครื่องนี้" there.
+  const off = (() => { try { return localStorage.getItem('dojojin_nocount') === '1'; } catch { return false; } })();
+  if (/^(www\.)?dojojin\.tech$/.test(location.hostname) && !off && !location.pathname.startsWith('/stats/') && !ua.bot && !navigator.webdriver) {
+    if (once(`dojojin_pv:${id}`)) writes.push(bump(`pageviews/${id}`));
+    if (once('dojojin_visited')) {
+      writes.push(bump('meta/visitors'));
+      const day = new Date(Date.now() + 7 * 3600e3).toISOString().slice(0, 10).replace(/-/g, ''); // Bangkok date
+      const keys = { app: ua.app, browser: ua.browser, os: ua.os, device: ua.device, ref: refOf(document.referrer) };
+      for (const [dim, key] of Object.entries(keys)) breakdown.push(bump(`uadaily/${day}__${dim}__${key}`));
+    }
+  }
+  // One write per commit: a rejected one (bad page id) must not cancel the other.
+  // The breakdown goes in its own commit (all five together): if it is rejected, the counts above still land.
+  await Promise.all([...writes.map((w) => [w]), ...(breakdown.length ? [breakdown] : [])]
+    .map((ws) => fetch(`${api}:commit?key=${apiKey}`, { method: 'POST', body: JSON.stringify({ writes: ws }) }).catch(() => {})));
+
+  const views = document.querySelector('[data-views]');
+  if (views) { const n = await getCount(`pageviews/${id}`); if (n) { views.querySelector('b').textContent = fmt(n); views.hidden = false; } }
+
+  const visitors = document.querySelector('[data-visitors]');
+  if (visitors) { const n = await getCount('meta/visitors'); if (n) { visitors.querySelector('b').textContent = fmt(n); visitors.classList.add('is-on'); } }
+
+  const popular = document.querySelector('[data-popular]');
+  if (popular) {
+    const titles = (await (window.spotData ??= fetch('/spot.json').then((r) => r.json())).catch(() => ({})))?.titles ?? {};
+    const rows = await fetch(`${api}:runQuery?key=${apiKey}`, { method: 'POST', body: JSON.stringify({ structuredQuery: {
+      from: [{ collectionId: 'pageviews' }], orderBy: [{ field: { fieldPath: 'count' }, direction: 'DESCENDING' }], limit: 20 } }) })
+      .then((r) => (r.ok ? r.json() : [])).catch(() => []);
+    const top = rows.filter((r) => r.document).map((r) => ({ href: '/' + r.document.name.split('/').pop().replace(/__/g, '/') + '/', n: count(r.document) }))
+      .filter((x) => titles[x.href]).slice(0, 5);
+    if (top.length) {
+      popular.querySelector('ol').replaceChildren(...top.map((x) => {
+        const li = document.createElement('li'), a = document.createElement('a'), n = document.createElement('span');
+        a.href = x.href; a.textContent = titles[x.href]; n.textContent = `${fmt(x.n)} ครั้ง`;
+        li.append(a, n); return li;
+      }));
+      popular.hidden = false;
+    }
+  }
+})();
