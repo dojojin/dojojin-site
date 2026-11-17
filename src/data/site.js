@@ -38,7 +38,7 @@ export const TAGS = {
   gan: "GaN", ripple: "Ripple", "usb-pd": "USB-PD",
   price: "ราคา",
   hoco: "HOCO", powerbank: "Power Bank", "retro-game": "เกมย้อนยุค",
-  oppo: "OPPO", dynaudio: "Dynaudio", anc: "ANC", lhdc: "LHDC", ldac: "LDAC",
+  oppo: "OPPO", dynaudio: "Dynaudio", anc: "ANC", lhdc: "LHDC", ldac: "LDAC", bluetooth: "Bluetooth",
   "northern-thai": "อาหารเหนือ", "southern-thai": "อาหารใต้", "japanese-food": "อาหารญี่ปุ่น", "chinese-food": "อาหารจีน", market: "ตลาด", ayutthaya: "อยุธยา", suphanburi: "สุพรรณบุรี", "thai-food": "อาหารไทย", cafe: "คาเฟ่",
   orsen: "ORSEN", commy: "COMMY", slimq: "SlimQ", realme: "realme",
   baseus: "Baseus", oraimo: "oraimo", roseselsa: "ROSESELSA",

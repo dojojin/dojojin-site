@@ -1,6 +1,6 @@
 ---
 name: dojojin-content
-description: Use when turning a folder in ~/TEMP (post.txt + photos) into a post on dojojin.tech, or when fixing an existing post's captions, specs or photos. Loaded by dojojin-charger, dojojin-headphone and dojojin-food; read it first.
+description: Use when turning a folder in ~/TEMP (post.txt + photos) into a post on dojojin.tech, or when fixing an existing post's captions, specs or photos. Loaded by dojojin-charger, dojojin-headphone, dojojin-food and dojojin-knowledge; read it first.
 ---
 
 # dojojin.tech content pipeline (shared core)
