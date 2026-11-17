@@ -1,0 +1,193 @@
+---
+title: "macOS 27.3 beta 2 เปลี่ยนวิธีให้สิทธิ์แอปคุมเครื่อง แยกเป็น 2 หมวด เลือกทีละแอป และตั้งให้ถามทุกครั้งได้"
+topic: infra-ai
+type: news
+tags: [apple, security, ai]
+date: 2026-11-17T13:30:00+07:00
+section: tech
+sourceName: "Apple Developer News และ MacRumors"
+sourceUrl: "https://developer.apple.com/news/?id=oqng0zjk"
+description: "Apple ประกาศ 16 พ.ย. 2569 ว่า macOS 27.3 beta 2 แยกสิทธิ์ Device Control and Data Access เป็น System & App Protection Override กับ Accessibility ให้เลือกแอปจากรายการ ตั้งให้ถามทุกครั้งได้ และมีป้ายบอกเมื่อแอปหนึ่งคุมอีกแอป สิทธิ์ที่ให้ไว้แล้วยังอยู่ สรุปว่าคนใช้ทั่วไปจะเจออะไร และถ้าแอปสำรองข้อมูลหรือแอปอัตโนมัติหยุดทำงานต้องทำอย่างไร"
+kicker: "ข่าว Apple · macOS"
+lead: "Apple กำลังทดสอบวิธีให้สิทธิ์แบบใหม่ใน macOS 27.3 beta 2 แอปที่จะคุมเครื่องหรืออ่านไฟล์ทั้งเครื่อง ต้องขอสิทธิ์ละเอียดขึ้น เราเลือกให้ทีละแอปได้ และตั้งให้ถามทุกครั้งได้ ตอนนี้ยังเป็นเบต้า และสิทธิ์ที่เคยให้ไว้ไม่หายครับ"
+meta: "เรียบเรียงจาก Apple Developer News (16 พ.ย. 2569) และ MacRumors · ข้อมูล ณ 17 พฤศจิกายน 2569 · ยังเป็นเบต้า อาจเปลี่ยนก่อนรุ่นจริง"
+cover: "/media/posts/news/macos-27-3-beta-2-app-control-permissions/cover.jpg"
+coverAlt: "ปกข่าว ภาพประกอบคนใช้โน้ตบุ๊กที่มีกล่องขออนุญาตบนจอ พร้อมข้อความ macOS 27.3 beta 2 แอปคุมเครื่องต้องขอสิทธิ์ละเอียดขึ้น ตั้งให้ถามทุกครั้งได้ แยกสิทธิ์ 2 หมวด เลือกทีละแอป สิทธิ์เดิมยังอยู่"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="prose">
+
+Apple เปลี่ยนวิธีให้สิทธิ์ใหญ่ ๆ ของแอปบน Mac ครับ
+
+วันที่ 16 พฤศจิกายน 2569 Apple โพสต์ในเว็บนักพัฒนาว่า macOS 27.3 beta 2 จะเปลี่ยนวิธีขอสิทธิ์ 2 แบบ คือ
+
+- "Device Control and Data Access" สิทธิ์ให้แอปสั่งงานเครื่องและเข้าถึงข้อมูล
+- "Full Disk Access" สิทธิ์อ่านไฟล์ได้ทั้งเครื่อง
+
+พูดง่าย ๆ คือ การให้สิทธิ์จะละเอียดขึ้น และเราจะเห็นชัดขึ้นว่ากำลังยอมให้แอปทำอะไรกับเครื่อง
+
+ขอย้ำว่านี่ยังเป็นเบต้านะครับ หน้าตาและการทำงานอาจเปลี่ยนก่อนออกรุ่นจริง Apple ยังไม่บอกวันออก มีแต่ Macworld กับ 9to5Mac ที่คาดว่าน่าจะเป็นเดือนธันวาคม ซึ่งเป็นการคาดของสื่อ ไม่ใช่คำของ Apple
+
+</div>
+
+</section>
+
+<section class="section">
+
+## Apple เปลี่ยนอะไรบ้าง
+
+<div class="prose">
+
+ในโพสต์ของ Apple มีทั้งหมด 6 เรื่อง ผมสรุปเป็นภาษาง่าย ๆ ไว้ตามนี้ครับ
+
+<div class="news-cards">
+<div class="news-card"><b>แยกสิทธิ์เดิมเป็น 2 หมวด</b>"Device Control and Data Access" แยกเป็น "System & App Protection Override" กับ "Accessibility" ซึ่งเป็นสิทธิ์ที่ปกติใช้กับเครื่องมือช่วยการเข้าถึง และแอปที่สั่งงานเครื่องแทนเรา</div>
+<div class="news-card"><b>ให้สิทธิ์ด้วยวิธีเดียว</b>คือเลือกแอปที่ขอสิทธิ์จากรายการ ("selecting the requesting app from a list")</div>
+<div class="news-card"><b>ให้เฉพาะที่จำเป็น</b>Apple จะแนะนำให้เราให้สิทธิ์แค่บางแอป (สำหรับ System & App Protection Override) หรือแค่บางโฟลเดอร์ (สำหรับ Full Disk Access) ที่งานของเราใช้จริง</div>
+<div class="news-card"><b>บอกชัดขึ้นว่าแอปจะเข้าถึงอะไร</b>มีคำอธิบายมากขึ้นว่า ถ้าให้สิทธิ์เต็ม แอปจะเข้าถึงหรือควบคุมข้อมูลได้กว้างแค่ไหน</div>
+<div class="news-card is-ok"><b>ตั้งให้ถามทุกครั้งได้</b>เลือกแบบ "ask every time" ได้ คือแอปต้องถามเราทุกครั้งที่จะใช้สิทธิ์</div>
+<div class="news-card is-ok"><b>มีป้ายบอกเมื่อแอปหนึ่งคุมอีกแอป</b>ป้ายที่ Apple เรียกว่า "transparency indicator" จะขึ้นมา เมื่อแอปที่ได้สิทธิ์กำลังใช้ System & App Protection Override คุมแอปอื่นอยู่</div>
+</div>
+
+Apple เขียนไว้ว่า "Before granting an app such extraordinary access, users should understand that it puts all of the data on their Mac at risk." แปลง่าย ๆ คือ ก่อนจะให้สิทธิ์ระดับนี้ ต้องรู้ไว้ว่าข้อมูลทั้งหมดในเครื่องจะเสี่ยงไปด้วย
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ทำไมเรื่องนี้สำคัญ
+
+<div class="prose">
+
+ลองนึกถึงแอปที่คลิกและพิมพ์แทนเรา เช่น แอปอัตโนมัติ หรือ AI agent (พูดง่าย ๆ คือโปรแกรม AI ที่ลงมือทำงานแทนเรา ไม่ใช่แค่ตอบแชต)
+
+แอปแบบนี้ต้องได้สิทธิ์คุมเครื่องกว้างมาก ถ้าเราให้สิทธิ์แบบหลวม ๆ แล้วแอปทำพลาด หรือโดนหลอกให้ทำผิด ก็กระทบได้ทั้งเครื่อง
+
+Apple เองก็เคยพูดเรื่องนี้ไว้แล้ว MacRumors รายงานโพสต์ของ Apple เมื่อ 2 ต.ค. 2569 ไว้ (ผมยังไม่ได้เปิดโพสต์ต้นฉบับ เห็นแค่ที่สื่อยกคำมา) ใจความมี 2 ข้อ
+
+- การให้สิทธิ์ระดับนี้ต้องผ่าน "very explicit user action" คือผู้ใช้ต้องกดยืนยันเองอย่างชัดเจน
+- "the risks associated with this level of access will grow substantially" คือความเสี่ยงจะเพิ่มขึ้นมากเมื่อ AI agent เก่งขึ้น
+
+ส่วนใน 6 เรื่องข้างบน Apple ไม่ได้เอ่ยชื่อแอปไหนเลยครับ ผมเลยไม่ขอเดาว่าแอปตัวไหนจะโดน
+
+ใครสนใจเรื่อง AI agent กับความปลอดภัย ผมเคยเขียนไว้ในข่าว <a href="/news/ai-agent-attack-thaicert-universities/">ThaiCERT เตือน แฮกเกอร์ใช้ AI agent สแกนหาช่องโหว่</a> แต่เป็นคนละมุมนะครับ ข่าวนั้นเป็นฝั่งคนโจมตี ข่าวนี้เป็นฝั่งป้องกันในเครื่องของเราเอง
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ก่อนหน้านี้ใน beta 1
+
+<div class="prose">
+
+เรื่องนี้มีสัญญาณมาตั้งแต่ beta 1 ต้นเดือน พ.ย. แล้วครับ ตอนนั้น 9to5Mac กับ Macworld รายงานว่า แอปจะใส่ตัวเองเข้ารายการ Full Disk Access ไม่ได้อีกต่อไป ผู้ใช้ต้องไปเพิ่มเองที่ System Settings > Privacy & Security > Full Disk Access
+
+แต่ทั้งสองเว็บบอกว่าเป็นข้อมูลที่เจอในโค้ดของเบต้า และตอนนั้นตัวเลือกนี้ยังไม่ได้เปิดใช้ มาถึง beta 2 Apple ก็ยืนยันทิศทางเดียวกันในโพสต์ของตัวเอง
+
+</div>
+
+</section>
+
+<section class="section">
+
+## คนใช้ทั่วไปจะเจออะไร
+
+<div class="split">
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/news/macos-27-3-beta-2-app-control-permissions/photo-1.jpg" width="1448" height="1086" loading="lazy" alt="ภาพประกอบ คนนั่งใช้โน้ตบุ๊กที่โต๊ะทำงาน บนจอเป็นหน้าตั้งค่าที่มีรายชื่อแอปพร้อมสวิตช์เปิดปิด และมีกล่องขออนุญาตเด้งขึ้นกลางจอ" /></div><figcaption><span class="news-fig__credit">ภาพประกอบจาก DOJOJIN.TECH</span></figcaption></figure>
+<div class="prose">
+
+<ol class="news-steps">
+<li><b>สิทธิ์ที่ให้ไว้แล้ว ยังอยู่</b>Apple เขียนว่า "All app permissions previously granted by users will remain in effect." คือลงรุ่นใหม่แล้ว แอปที่เคยได้สิทธิ์จะไม่โดนถอน</li>
+<li><b>เจอหน้าใหม่เมื่ออนุมัติสิทธิ์ใหม่</b>เราจะเห็นหน้าตาใหม่ตอนที่แอปขอสิทธิ์ใหม่แล้วเรากดอนุมัติ ไม่ใช่เห็นทันทีที่อัปเดตเครื่อง</li>
+<li><b>ต้องเลือกแอปเอง</b>การให้สิทธิ์คือเลือกแอปจากรายการ ส่วนแอปที่ต้องการสิทธิ์ทั้งเครื่อง อาจต้องให้เราไปเปิดเองในหน้าตั้งค่า</li>
+<li><b>ถ้าไม่ไว้ใจ ตั้งให้ถามทุกครั้ง</b>ตั้งให้แอปต้องถามทุกครั้งที่จะใช้สิทธิ์ แทนการอนุญาตไว้ถาวร</li>
+<li class="is-key"><b>ดูป้ายที่ขึ้น</b>ถ้ามีแอปหนึ่งกำลังคุมอีกแอป จะมีป้าย transparency indicator ขึ้นมา ถ้าเราไม่ได้สั่งให้แอปไหนทำอะไร แต่ป้ายนี้ขึ้น ให้หยุดดูก่อนว่าเกิดอะไรขึ้น</li>
+</ol>
+
+ในภาพเป็นภาพประกอบบรรยากาศตอนแอปเด้งขอสิทธิ์ ไม่ใช่หน้าจอจริงของ macOS 27.3 นะครับ Apple ยังไม่ได้บอกว่าตัวเลือก "ask every time" กับป้ายบอกสถานะอยู่ตรงไหนของหน้าจอ และผมยังไม่เจอภาพหน้าจอจริงของหน้าตั้งค่าใหม่
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ถ้าแอปสำรองข้อมูลหรือแอปอัตโนมัติหยุดทำงานหลังอัปเดต
+
+<div class="prose">
+
+Apple ไม่ได้บอกว่าแอปไหนจะมีปัญหา บอกแค่ว่า "known apps" ยังใช้งานได้เหมือนเดิม โดยไม่ต้องมี entitlement แต่ไม่ได้บอกว่า known apps คือแอปอะไรบ้าง
+
+entitlement พูดง่าย ๆ คือสิทธิ์พิเศษที่นักพัฒนาขอจาก Apple เพื่อให้แอปทำงานแบบเดิมได้
+
+ถ้าอัปเดตแล้วแอปที่เคยใช้ได้ทำงานไม่ครบ ผมแนะนำให้ลองตามลำดับนี้ครับ
+
+<ol class="news-steps">
+<li><b>เปิดหน้าตั้งค่าสิทธิ์</b>ไปที่ System Settings > Privacy & Security แล้วดูหมวด Full Disk Access กับ Accessibility (ชื่อหมวดใน beta 2 อาจต่างจากนี้นิดหน่อย)</li>
+<li><b>ดูว่าแอปยังอยู่ในรายการหรือเปล่า</b>ถ้าไม่อยู่หรือถูกปิดไว้ ก็เพิ่มหรือเปิดให้แอปนั้นใหม่</li>
+<li><b>ให้เฉพาะแอปที่จำเป็น</b>อย่าเปิดให้ทุกแอปแค่เพราะสะดวก Apple เองก็แนะนำแบบนี้</li>
+<li><b>ยังไม่หาย ดูคู่มือของแอป</b>ฝั่งนักพัฒนาต้องปรับขั้นตอนพาผู้ใช้ตั้งค่าตอนเริ่มใช้แอป (Apple เขียนว่า "adjust how they onboard users") ส่วน entitlement สำหรับแอปสำรองข้อมูลกับแอปช่วยการเข้าถึง Apple บอกแค่ว่าจะประกาศรายละเอียด "soon"</li>
+</ol>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ผมว่า
+
+<div class="prose">
+
+ผมว่าทิศทางนี้สมเหตุสมผลครับ
+
+สิทธิ์แบบ "ให้ทั้งเครื่อง" เมื่อก่อนคือคลิกครั้งเดียวแล้วลืมไปเลย พอตอนนี้แอปลงมือแทนเราได้มากขึ้น การให้เลือกเป็นรายแอป เป็นรายโฟลเดอร์ และตั้งให้ถามทุกครั้งได้ น่าจะช่วยได้จริง
+
+แต่ก็ต้องรอดูรุ่นจริงก่อน เพราะเบต้ายังเปลี่ยนได้ และต้องดูด้วยว่านักพัฒนาจะปรับแอปทันแค่ไหน
+
+ที่ผมยังไม่รู้ตอนนี้มี 3 เรื่อง คือวันออกรุ่นจริง รายชื่อ known apps และรายละเอียด entitlement ถ้า Apple ประกาศเมื่อไร ผมจะตามมาเล่าต่อครับ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- Apple Developer News, "Updates to Device Control and Data Access, and Full Disk Access in macOS" (16 พ.ย. 2569): <a href="https://developer.apple.com/news/?id=oqng0zjk" rel="noopener">developer.apple.com</a>
+- MacRumors (สรุปโพสต์ Apple 16 พ.ย. 2569): <a href="https://www.macrumors.com/2026/11/16/macos-27-3-full-desk-access/" rel="noopener">macrumors.com</a>
+- MacRumors (โพสต์ของ Apple 2 ต.ค. 2569 ที่ผมอ่านผ่านสื่อ): <a href="https://www.macrumors.com/2026/10/02/apple-announces-macos-full-disk-access-changes/" rel="noopener">macrumors.com</a>
+- 9to5Mac (beta 1, 8 พ.ย. 2569): <a href="https://9to5mac.com/2026/11/08/macos-changes-for-full-disk-access-ai-agents-imessage/" rel="noopener">9to5mac.com</a>
+- Macworld (beta 1, 9 พ.ย. 2569): <a href="https://www.macworld.com/article/3280195/macos-27-3-increases-security-with-changes-to-full-disk-access.html" rel="noopener">macworld.com</a>
+- ข่าวเกี่ยวข้อง: <a href="/news/ai-agent-attack-thaicert-universities/">ThaiCERT เตือน AI agent สแกนหาช่องโหว่</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: by dojojin.tech
+- ภาพประกอบในเนื้อหา (คนใช้โน้ตบุ๊กกับกล่องขออนุญาต): ภาพประกอบจาก DOJOJIN.TECH ไม่ใช่ภาพหน้าจอจริงของ macOS
+
+ภาพใช้ประกอบข่าว (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>
