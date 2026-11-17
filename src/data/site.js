@@ -53,7 +53,7 @@ export const TAGS = {
   dunlop: "DUNLOP", honda: "Honda", tire: "ยางรถยนต์", ev: "EV", motorcycle: "มอเตอร์ไซค์", motorsport: "มอเตอร์สปอร์ต",
   hippocraft: "HippoCraft", pdf: "PDF", font: "ฟอนต์",
   google: "Google", chrome: "Chrome", axis: "Axis", vms: "VMS", mercular: "Mercular", "data-breach": "ข้อมูลรั่ว",
-  android: "Android", foldable: "มือถือจอพับ", tablet: "แท็บเล็ต", ai: "AI", anthropic: "Anthropic", meta: "Meta", gpu: "GPU",
+  android: "Android", lenovo: "Lenovo", leak: "ข่าวหลุด", foldable: "มือถือจอพับ", tablet: "แท็บเล็ต", ai: "AI", anthropic: "Anthropic", meta: "Meta", gpu: "GPU",
   nissan: "Nissan", "motor-show": "งานมอเตอร์โชว์", tax: "ภาษี",
   microsoft: "Microsoft", windows: "Windows", openai: "OpenAI", amazon: "Amazon", firefox: "Firefox", app: "แอปแนะนำ", wearable: "อุปกรณ์สวมใส่", health: "สุขภาพ", "smart-home": "สมาร์ตโฮม", "social-media": "โซเชียลมีเดีย", "open-source": "โอเพนซอร์ส", pixel: "Pixel",
 };
