@@ -5,9 +5,10 @@ description: Use when the owner asks for short Facebook content with images ("Co
 
 # FB carousel for a dojojin.tech post
 
-**Deliverable:** one zip, plus a preview image sent with SendUserFile, plus the caption printed in chat as a code block. The zip holds:
-- N slides as PNGs at 2160×2700 (4:5)
-- `post.txt`
+**Deliverable:** one zip, plus a preview image sent with SendUserFile, plus `prompt-for-chrome.txt` printed in chat as a code block. The zip holds:
+- N slides as PNGs at 2160×2700 (4:5), named `01-<what>.png`…
+- `post.txt` (owner's caption format, below)
+- `claude-in-chrome.md` and `prompt-for-chrome.txt` (posting pack)
 - `preview-sheet.jpg`
 
 Do it in one go, with no step-by-step questions. First example: `_sources/social/sets/bluetooth-guide/` (17 Nov 2026).
@@ -50,22 +51,34 @@ HippoCraft is a dark navy engineering log with emoji. dojojin.tech is light, lik
 - **Every number and claim comes from the published post,** including its hedges. Vendor numbers stay vendor numbers, and expected dates stay "คาดว่า".
 - **Voice:** the owner's (ผม/ครับ, simple Thai, plain opinions). Never invent his experiences.
 - **Slides:** short lines, one idea per slide, about 7 slides.
-- **`post.txt` (Facebook):**
-  - No emoji. The only symbols allowed are → and ✓ (the owner's rule).
-  - Structure:
+- **`post.txt` (Facebook): the owner's own format (17 Nov 2026), copy it exactly.** Reference: `_sources/social/sets/bluetooth-guide/post.txt`.
+  - Emoji are part of his FB format, as in his review posts. The site itself stays emoji-free.
+  - A topic marker goes after the emoji on the headline and on every point. For Bluetooth it is `ᚼᛒ`, the two runes in the Bluetooth logo. For another topic, pick a fitting marker or leave it out.
+  - `👉` marks general points and `🎵` marks audio points.
+  - The separator is exactly 17 dashes (`-----------------`).
 
 ```
-<question headline>? <short answer>ครับ
-<2-line intro: what the article is, "ส่วนนี้คือฉบับย่อครับ">
+✅ <marker> <question headline>? <short answer>ครับ
+<2-line intro: what the article is, "ส่วนนี้คือฉบับย่อครับ">   (no blank line after the headline)
 
-→ point 1 … (4–5 points, one per slide idea)
-
+👉 <marker> general point …
+🎵 <marker> audio point …                (4–5 points, one per slide idea)
+-----------------
 <ก่อนซื้อ / ควรดู> 3 อย่าง
-✓ … ✓ … ✓ …
-
+✓ …
+✓ …
+✓ …
+-----------------
 อ่านเต็ม ๆ พร้อมที่มาของทุกตัวเลข → https://dojojin.tech/<path>/
-
+-----------------
 #dojojin #<topic> … (6–8 hashtags)
 ```
 
+- **Posting pack:** put the files in a `dojojin-<slug>-fb/` folder and zip it. The folder holds:
+  - slides renamed `01-<what>.png` … `0N-<what>.png`
+  - `post.txt`
+  - `claude-in-chrome.md`: the rules, 7 steps, and a table `| # | ไฟล์ | หัวข้อในภาพ | คำบรรยาย |` with one row per slide
+  - `prompt-for-chrome.txt`
+  - Copy all of these from `_sources/social/sets/bluetooth-guide/` and change the counts (N รูป · 01–0N · 01→0N).
+- **After sending the zip,** print `prompt-for-chrome.txt` in chat as a code block (same rule as `docs/fb-review-pack.md`).
 - Claude never presses Post on Facebook. The owner posts it himself.
