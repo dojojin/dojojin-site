@@ -4,13 +4,15 @@ topic: software
 type: news
 tags: [microsoft]
 date: 2026-11-14T18:00:00+07:00
+updated: 2026-11-17T19:45:00+07:00
+bumped: 2026-11-17T19:45:00+07:00
 section: tech
 sourceName: "BleepingComputer, SecurityWeek, MacRumors และสื่อไทย"
 sourceUrl: "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/"
 description: "Microsoft 365 ล่ม 12-13 พ.ย. 2569 Outlook และ Exchange Online เข้าไม่ได้ราว 24 ชั่วโมง สรุปไทม์ไลน์เป็นเวลาไทยตั้งแต่เริ่มจนกลับมาใช้ได้ ผู้ใช้ในไทยโดนช่วงไหน สาเหตุตามที่ Microsoft แจ้ง และถ้าเจออีกควรทำอย่างไร"
 kicker: "ข่าวเทคโนโลยี"
 lead: "Outlook, Exchange Online และบางฟีเจอร์ของ Teams กับ Copilot ใช้ไม่ได้อยู่ราว 24 ชั่วโมง ผมเรียงเหตุการณ์ให้ทีละขั้นเป็นเวลาไทย และดูว่าคนไทยโดนช่วงไหนครับ"
-meta: "เรียบเรียงจาก BleepingComputer, SecurityWeek, MacRumors, azureblog.co.uk และสื่อไทย · ข้อมูล ณ 14 พฤศจิกายน 2569"
+meta: "เรียบเรียงจาก BleepingComputer, SecurityWeek, MacRumors, azureblog.co.uk และสื่อไทย · ข้อมูล ณ 14 พฤศจิกายน 2569 · อัปเดต 17 พ.ย. 2569: สาเหตุเบื้องต้นจากรายงานเบื้องต้นของ Microsoft"
 cover: "/media/posts/news/microsoft-365-outage-2026-11/cover.jpg"
 coverAlt: "แล็ปท็อปบนโต๊ะ หน้าจอแอปอีเมลสีน้ำเงินมีไอคอนเมฆขีดฆ่าและวงกลมโหลด พร้อมข้อความ Microsoft 365 ล่มเกือบ 24 ชั่วโมง (ภาพประกอบ)"
 ---
@@ -28,6 +30,28 @@ coverAlt: "แล็ปท็อปบนโต๊ะ หน้าจอแอ�
 สิ่งที่ Microsoft แจ้ง ผมอ่านผ่านสื่อเหล่านี้อีกที ยังไม่ได้เปิดโพสต์ต้นทางของ Microsoft เอง เพราะหน้า X เปิดไม่ได้ ส่วนหน้า status เป็นหน้าที่โหลดด้วยสคริปต์ ถ้าแหล่งไหนให้เวลาไม่ตรงกัน ผมเขียนบอกไว้ตรงนั้นเลย
 
 เวลาทั้งหมดในข่าวนี้ผมแปลงเป็นเวลาไทย (UTC+7) เอง เดือนนี้เวลาฝั่งตะวันออกของสหรัฐฯ (ET) ช้ากว่าไทย 12 ชั่วโมง เช่น 13:26 ET = 01:26 ของไทยวันรุ่งขึ้น
+
+</div>
+
+</section>
+
+<section class="section">
+
+## อัปเดต 17 พ.ย. 2569 19:45 น. สาเหตุเบื้องต้น
+
+<div class="prose">
+
+BleepingComputer รายงานเมื่อ 16 พ.ย. ว่า Microsoft ส่งรายงานเบื้องต้น (preliminary post-incident report) ผ่าน Microsoft 365 Admin Center บอกสาเหตุของเหตุครั้งนี้แล้ว ผมเปิดต้นฉบับของ Microsoft เองไม่ได้ เพราะต้องล็อกอินแอดมิน เลยเขียนตามที่ BleepingComputer อ้างไว้ครับ และนี่เป็นแค่สาเหตุเบื้องต้น **รายงานฉบับเต็ม (PIR) ยังไม่ออก** BleepingComputer บอกว่า Microsoft คาดว่าจะออกภายในสัปดาห์นี้ ตัวเลขข้างล่างอาจเปลี่ยนได้
+
+<ol class="news-steps">
+<li><b>บั๊กที่ฝังมาตั้งแต่เดือนกรกฎาคม</b>มาจากอัปเดตของเซิร์ฟเวอร์เกตเวย์เครือข่าย Microsoft 365 ที่ใช้มาเกิน 3 เดือนโดยไม่มีปัญหา</li>
+<li><b>ทราฟฟิก Teams ย้ายมาก่อนเหตุราว 15 ชั่วโมง</b>Teams สลับมาใช้โครงข่ายเดียวกับ Exchange Online อัตโนมัติ เซิร์ฟเวอร์กลุ่มนี้เลยรับงานเพิ่ม</li>
+<li><b>ความจุเหลือน้อยลงราว 14%</b>เซิร์ฟเวอร์ของเกตเวย์เกือบ 14% ใช้ไม่ได้อยู่แล้วด้วยเรื่องอื่น Microsoft บอกว่าลำพังแค่นี้ยังรับไหว แต่พอรวมกับทราฟฟิกที่เพิ่มก็ไปกระตุ้นบั๊ก</li>
+<li><b>ทำไมทดสอบไม่เจอ</b>Microsoft บอกว่าการทดสอบโหลดตามปกติไม่เจอ เพราะเครื่องในห้องทดสอบแรงน้อยกว่าเครื่องจริง</li>
+<li class="is-key"><b>ลามเร็ว</b>ภายในไม่ถึงสองชั่วโมง บั๊กก็เจอทั่วทั้งกลุ่มเซิร์ฟเวอร์ ช่วงต่ำสุดมีเซิร์ฟเวอร์ไม่ตอบสนองเกิน 80% และเครื่องที่รับงานต่อก็ล้มตามกัน</li>
+</ol>
+
+เรื่องนี้ไม่ตรงกับที่สื่อบางเจ้ารายงานไว้ก่อนหน้า เช่น BetaNews เขียนว่าเป็นผลจากการอัปเกรดเครือข่ายก่อนหน้า ซึ่งตรงกับคำชี้แจงของ Microsoft ที่ BleepingComputer ลงเมื่อ 13 พ.ย. ผมจึงถือว่านี่เป็นภาพล่าสุดที่ละเอียดที่สุด แต่ยังไม่ใช่คำตอบสุดท้าย ส่วนที่ Microsoft ทำหลังเหตุ คือเพิ่มความจุ ปรับการเฝ้าดู และเพิ่มตัวกันไม่ให้การย้ายทราฟฟิกทำให้เครื่องอื่นล้มต่อกัน
 
 </div>
 
@@ -147,7 +171,8 @@ coverAlt: "แล็ปท็อปบนโต๊ะ หน้าจอแอ�
 <li><b>โหลดสูง?</b>ตอนแรกบอกว่าระบบรับโหลดสูง แล้วแก้ว่าเซิร์ฟเวอร์จำนวนมากไม่ผ่านการตรวจสุขภาพอัตโนมัติ (health check) เลยถูกตัดออก เครื่องที่เหลือรับงานแทนไม่ไหว</li>
 <li><b>การเชื่อมต่อแบบปลอดภัย</b>ส่วนที่สร้างการเชื่อมต่อแบบปลอดภัยบนเซิร์ฟเวอร์ทำงานหนักเกิน เครื่องเลยหยุดรับคำขอ</li>
 <li><b>ย้อนค่าเครือข่าย</b>ย้อนการตั้งค่าเครือข่ายที่เพิ่งเปลี่ยน แต่ฐานเศรษฐกิจรายงานว่าตอนนั้นยังไม่ยืนยันว่าเป็นต้นเหตุ</li>
-<li class="is-key"><b>00:57 วันที่ 14 พ.ย.</b>"The incident was introduced by an issue during an earlier network capacity upgrade" คือปัญหาเกิดจากการอัปเกรดความจุเครือข่ายก่อนหน้านี้ แล้วมาโผล่หลังการเปลี่ยนค่าเครือข่ายครั้งล่าสุด</li>
+<li><b>00:57 วันที่ 14 พ.ย.</b>"The incident was introduced by an issue during an earlier network capacity upgrade" คือปัญหาเกิดจากการอัปเกรดความจุเครือข่ายก่อนหน้านี้ แล้วมาโผล่หลังการเปลี่ยนค่าเครือข่ายครั้งล่าสุด</li>
+<li class="is-key"><b>16 พ.ย. รายงานเบื้องต้น</b>บั๊กในอัปเดตเกตเวย์เมื่อเดือนกรกฎาคม ถูกกระตุ้นเมื่อทราฟฟิก Teams เพิ่มและความจุลดลงราว 14% ดูรายละเอียดในบล็อกอัปเดตด้านบน ยังรอรายงานฉบับเต็ม</li>
 </ol>
 
 Microsoft บอกด้วยว่า "This was a technical issue not related to cyber or AI / agents" คือเป็นปัญหาทางเทคนิค ไม่เกี่ยวกับการโจมตีไซเบอร์ หรือ "AI / agents" ทั้งหมดนี้เป็นคำของ Microsoft ที่ผมอ่านผ่านสื่อ รายละเอียดจริง ๆ ต้องรอรายงานฉบับเต็มครับ
@@ -197,6 +222,8 @@ Microsoft บอกด้วยว่า "This was a technical issue not related
 <div class="prose">
 
 - BleepingComputer: <a href="https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/" rel="noopener">bleepingcomputer.com</a>
+- BleepingComputer, Microsoft says months-old bug caused global Microsoft 365 outage (16 พ.ย. 2569): <a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-says-months-old-bug-caused-global-microsoft-365-outage/" rel="noopener">bleepingcomputer.com</a>
+- BetaNews (สาเหตุแบบอัปเกรดเครือข่าย): <a href="https://betanews.com/article/microsoft-365-outage-network-upgrade/" rel="noopener">betanews.com</a>
 - SecurityWeek: <a href="https://www.securityweek.com/microsoft-365-outage-disrupts-outlook-exchange-online-and-teams/" rel="noopener">securityweek.com</a>
 - MacRumors (คำชี้แจงของ Microsoft ตอนกลับมาใช้ได้): <a href="https://www.macrumors.com/2026/11/13/microsoft-365-outage-resolving/" rel="noopener">macrumors.com</a>
 - azureblog.co.uk (ไทม์ไลน์เวลา UTC และคำแนะนำผู้ดูแลระบบ): <a href="https://azureblog.co.uk/posts/microsoft-365-outage-12-november-2026/" rel="noopener">azureblog.co.uk</a>

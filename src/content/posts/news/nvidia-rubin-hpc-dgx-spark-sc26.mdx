@@ -1,0 +1,222 @@
+---
+title: "NVIDIA เปิดตัว Rubin HPC ชิปซูเปอร์คอมฯ ออกปี 2028 พร้อม DGX Spark ชุด 4 เครื่องที่ขายแล้ว"
+topic: infra-ai
+type: news
+tags: [nvidia]
+date: 2026-11-17T19:10:00+07:00
+section: tech
+sourceName: "NVIDIA Blog, HPCwire และ SiliconANGLE"
+sourceUrl: "https://blogs.nvidia.com/blog/rubin-hpc/"
+description: "NVIDIA เปิดตัว Rubin HPC ที่งาน SC26 (16 พ.ย. 2569) GPU ใหม่สำหรับงานคำนวณวิทยาศาสตร์ มี CUDA core กว่า 50,000 คอร์ คาดออกปี 2028 พร้อม DGX Spark HPC Developer Kit ชุด 4 เครื่อง 512GB ที่ขายแล้ว สรุปสเปก ตัวเลข FP64 ที่ยังไม่เปิด เรื่องราคา และ HPC ต่างจาก AI อย่างไร อธิบายแบบเข้าใจง่าย"
+kicker: "ข่าว SC26 · ซูเปอร์คอมพิวเตอร์"
+lead: "NVIDIA เปิดตัว GPU ใหม่ชื่อ Rubin HPC ที่งานซูเปอร์คอมพิวเตอร์ SC26 ที่ชิคาโก ทำมาเพื่องานคำนวณทางวิทยาศาสตร์ มี CUDA core มากกว่า 50,000 คอร์ คาดออกปี 2028 แต่ยังไม่บอกตัวเลข FP64 ส่วน DGX Spark HPC Developer Kit ชุดที่นักวิจัยซื้อมาตั้งบนโต๊ะเองได้ วางขายแล้ว"
+meta: "เรียบเรียงจากบล็อก NVIDIA (Rubin HPC, DGX Spark HPC Developer Kit), HPCwire และ SiliconANGLE · ข้อมูล ณ 17 พฤศจิกายน 2569"
+cover: "/media/posts/news/nvidia-rubin-hpc-dgx-spark-sc26/cover.jpg"
+coverAlt: "ปกข่าว NVIDIA Rubin HPC GPU ใหม่สำหรับงานซูเปอร์คอมพิวเตอร์ มี CUDA core มากกว่า 50,000 คอร์ คาดออกปี 2028 พื้นหลังเป็นภาพชิป Rubin HPC จาก NVIDIA"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="split">
+<div class="prose">
+
+NVIDIA เปิดตัวของสองอย่างครับ ตัวหนึ่งเป็นของใหญ่ที่ยังไม่ออกขาย อีกตัวเป็นของเล็กที่ซื้อได้เลย
+
+ประกาศนี้ออกวันที่ 16 พฤศจิกายน 2569 ที่งาน SC26 งานประชุมซูเปอร์คอมพิวเตอร์ประจำปี จัดที่ชิคาโก
+
+ซูเปอร์คอมพิวเตอร์คืออะไร พูดง่าย ๆ คือคอมพิวเตอร์จำนวนมากต่อกันให้ทำงานเหมือนเป็นเครื่องเดียว ถ้าคอมฯ ที่บ้านเหมือนคนคิดเลขหนึ่งคน ซูเปอร์คอมฯ ก็เหมือนเอาคนเป็นหมื่นมาช่วยกันคิดโจทย์เดียวพร้อมกัน
+
+ของชิ้นแรกคือ **Rubin HPC** GPU ตัวใหม่ในตระกูล Vera Rubin NVIDIA บอกว่าทำมาเพื่องานจำลอง (simulation) และประมวลผลข้อมูลด้านวิทยาศาสตร์ วิศวกรรม และการวิเคราะห์ข้อมูล
+
+ชิ้นที่สองคือ **DGX Spark HPC Developer Kit** เครื่องเล็ก 4 เครื่องต่อกันเป็นชุด สำหรับนักวิจัยที่อยากลองงานแบบซูเปอร์คอมพิวเตอร์บนโต๊ะตัวเอง
+
+</div>
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/news/nvidia-rubin-hpc-dgx-spark-sc26/rubin-hpc.jpg" width="1280" height="720" loading="lazy" alt="ภาพชิป Rubin HPC GPU บนพื้นหลังสีดำ เห็นแผ่นซิลิคอนหลายส่วนสีชมพู เหลือง และฟ้า" /></div><figcaption>ชิป Rubin HPC ในภาพที่ NVIDIA ปล่อยออกมา<span class="news-fig__credit">ภาพ: NVIDIA · <a href="https://blogs.nvidia.com/blog/rubin-hpc/" rel="noopener">blogs.nvidia.com</a></span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## HPC กับ AI ต่างกันตรงไหน
+
+<div class="split">
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/news/nvidia-rubin-hpc-dgx-spark-sc26/nvl4-rack.jpg" width="1600" height="900" loading="lazy" alt="ตู้แร็กเซิร์ฟเวอร์สีดำเปิดด้านหน้า มีถาดคอมพิวเตอร์สีทองหลายชั้น และมีถาด NVL4 ดึงออกมาวางเอียงด้านหน้า" /></div><figcaption>ตู้เซิร์ฟเวอร์และถาด NVL4 ของแพลตฟอร์ม Vera Rubin<span class="news-fig__credit">ภาพ: NVIDIA · <a href="https://blogs.nvidia.com/blog/rubin-hpc/" rel="noopener">blogs.nvidia.com</a></span></figcaption></figure>
+<div class="prose">
+
+HPC ย่อมาจาก High-Performance Computing พูดง่าย ๆ คือใช้คอมพิวเตอร์แรง ๆ คิดเลขในงานที่คอมฯ ทั่วไปทำไม่ไหว เช่น พยากรณ์อากาศ ออกแบบปีกเครื่องบิน หรือจำลองว่ายาจับกับโปรตีนในร่างกายอย่างไร
+
+AI ที่เราใช้กัน เช่น แชตบอต เป็นงานอีกแบบครับ มัน "เดา" คำตอบจากสิ่งที่เคยเรียนมา ตัวเลขหยาบหน่อยก็ยังใช้ได้ ส่วนงานวิทยาศาสตร์ต้อง "คำนวณ" ตามสมการจริงทุกขั้น
+
+เทียบง่าย ๆ AI เหมือนแม่ค้ากะน้ำหนักด้วยมือ ส่วน HPC เหมือนร้านทองที่ต้องชั่งด้วยตาชั่งดิจิทัลละเอียดถึงทศนิยม
+
+ตรงนี้เองที่ **FP64** สำคัญ มันคือการเก็บตัวเลขแบบมีทศนิยมยาวที่สุดที่คอมพิวเตอร์ใช้กันทั่วไป ละเอียดกว่า FP32 และ FP16 ที่งาน AI นิยมใช้
+
+ลองนึกถึงการคิดเงินที่ปัดเศษสตางค์ทิ้งครับ ทำครั้งเดียวไม่เป็นไร แต่ถ้าบวกกันเป็นล้านครั้ง ยอดจะเพี้ยนไปเยอะ งานอย่างพยากรณ์อากาศล่วงหน้าหลายวันก็แบบนั้น เลขคลาดนิดเดียว คำนวณซ้ำหลายล้านรอบ ผลก็ไปไกล
+
+NVIDIA เองก็เคยย้ำเรื่องนี้ ในประกาศแพลตฟอร์ม Vera Rubin เมื่อเดือนมิถุนายน NVIDIA ยกตัวอย่างว่า FP64 ยังจำเป็นกับงานพลศาสตร์ของไหล (การไหลของน้ำและอากาศ) การศึกษาสภาพภูมิอากาศ และธรณีวิทยา
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## Rubin HPC: สเปกที่ NVIDIA เปิดแล้ว
+
+<div class="prose">
+
+ตอนนี้ NVIDIA เปิดข้อมูลออกมาน้อยครับ บล็อกทางการบอกไว้แค่นี้
+
+</div>
+
+<div class="spec-list">
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-chip" /></svg><div><b>CUDA core</b>มากกว่า 50,000 คอร์ต่อ GPU (NVIDIA บอกว่าเป็นสถิติสูงสุด)</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-memory" /></svg><div><b>ส่งข้อมูลให้คอร์</b>ระบบเร่งข้อมูลแบบ sparse (sparse data acceleration) สำหรับข้อมูลที่มีเลขศูนย์เยอะ</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-wireless" /></svg><div><b>เชื่อม GPU ด้วยกัน</b>NVLink รุ่นที่ 7</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-dot" /></svg><div><b>วางขาย</b>คาดปี 2028 (พ.ศ. 2571)</div></div>
+</div>
+
+<div class="split">
+<div class="prose">
+
+CUDA core คือหน่วยคิดเลขเล็ก ๆ ข้างใน GPU ยิ่งมากก็ยิ่งแบ่งงานไปทำพร้อมกันได้มาก เทียบให้เห็นภาพ SiliconANGLE ระบุว่า Rubin รุ่นปกติมี CUDA core กว่า 28,000 คอร์ แปลว่ารุ่น HPC มีมากกว่านั้นเกือบเท่าตัว
+
+งานที่ NVIDIA ตั้งเป้าคือการคูณเมทริกซ์แบบโปร่ง (sparse) การคำนวณแบบ stencil การเรียงข้อมูล และการรวมค่า ฟังดูยาก แต่งานพวกนี้อยู่ในแบบจำลองภูมิอากาศ งานจำลองทางวิศวกรรม การวิเคราะห์จีโนม และการประเมินความเสี่ยงทางการเงิน
+
+**เรื่อง FP64:** ผมหาตัวเลขของ Rubin HPC ไม่เจอครับ ทั้งบล็อก NVIDIA และ SiliconANGLE ไม่ระบุ ส่วนผลค้นหาที่อ้าง HPCwire บอกว่า NVIDIA ยังไม่เปิดว่ารุ่นนี้มี FP64 เท่าไร (ผมเปิดบทความ HPCwire อ่านเองไม่ได้ ติดสิทธิ์เข้าถึง) ใครอยากรู้ตัวเลขจริงต้องรอ NVIDIA ประกาศเพิ่ม
+
+**ราคา:** ยังไม่ประกาศครับ
+
+</div>
+<div class="prose">
+
+**ตัวเลข FP64 ที่เปิดแล้ว** เป็นของแพลตฟอร์ม Vera Rubin จากประกาศเดือนมิถุนายน (งาน ISC 2026) ไม่ใช่ของ Rubin HPC นะครับ
+
+ระบบหนึ่งชุดให้ FP64 แท้ 5 เพตาฟลอปส์ (petaflops คือหนึ่งพันล้านล้านการคำนวณต่อวินาที) และงาน AI สำหรับวิทยาศาสตร์มากกว่า 7 เอกซะฟลอปส์ (ตัวเลขฝั่ง AI นับคนละแบบกับ FP64 จึงเอามาเทียบกันตรง ๆ ไม่ได้) ขยายได้ถึง 144 GPU ต่อแร็ก
+
+ใครจะเอาไปเทียบ ระวังว่าเป็นคนละรุ่นกันครับ
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## DGX Spark HPC Developer Kit
+
+<div class="split">
+<div class="prose">
+
+ชุดนี้คือ DGX Spark 4 เครื่องต่อกันครับ ใช้ทำงานที่โต๊ะของนักวิจัยเองได้
+
+ในภาพเห็นสายต่อวนเป็นวงระหว่างเครื่อง ตรงกับที่ NVIDIA อธิบายว่าแต่ละเครื่องต่อตรงกับเครื่องข้าง ๆ สองเครื่องเป็นวงแหวน ทุกเครื่องใช้ชิป GB10 Grace Blackwell Superchip ต่อกันผ่าน ConnectX-7 ไม่ต้องมีสวิตช์เครือข่ายคั่นกลาง
+
+ไม่ต้องซื้อครบชุดทีเดียวก็ได้ เริ่มจากเครื่องเดียวแล้วค่อยเพิ่มจนถึง 4 เครื่อง
+
+</div>
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/news/nvidia-rubin-hpc-dgx-spark-sc26/dgx-spark-kit.jpg" width="1280" height="572" loading="lazy" alt="เครื่อง DGX Spark สีทอง 4 เครื่องวางซ้อนกันบนโต๊ะ มีสายเคเบิลต่อวนระหว่างเครื่อง ข้างกันมีแก้วกาแฟและปากกา" /></div><figcaption><span class="news-fig__credit">ภาพ: NVIDIA · <a href="https://blogs.nvidia.com/blog/dgx-spark-hpc-developer-kit-sc26/" rel="noopener">blogs.nvidia.com</a></span></figcaption></figure>
+</div>
+
+<div class="spec-list">
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-chip" /></svg><div><b>ชิป</b>NVIDIA GB10 Grace Blackwell Superchip ต่อเครื่อง</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-wireless" /></svg><div><b>เชื่อมต่อ</b>NVIDIA ConnectX-7 ต่อกันเป็นวงแหวน ไม่ต้องใช้สวิตช์</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-memory" /></svg><div><b>หน่วยความจำรวม (4 เครื่อง)</b>512GB</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-storage" /></svg><div><b>พื้นที่เก็บข้อมูลรวม (4 เครื่อง)</b>NVMe 20TB</div></div>
+</div>
+
+<div class="split">
+<div class="prose">
+
+ครบ 4 เครื่อง NVIDIA บอกว่ารันโมเดล AI ขนาดถึง 700 พันล้านพารามิเตอร์ได้ในเครื่องเลย โดยใช้รูปแบบตัวเลข NVFP4 (ยกตัวอย่าง DeepSeek V4.1)
+
+**วางขาย:** โชว์และขายแล้วที่ SC26 ซื้อได้จากพาร์ตเนอร์ OEM หรือ NVIDIA Marketplace แบรนด์ที่ NVIDIA ระบุคือ Acer, ASUS, Dell Technologies, GIGABYTE, H3C, HP, Lenovo, MSI และ xFusion
+
+**ราคา:** บล็อกไม่ได้บอกครับ
+
+</div>
+<div class="prose">
+
+**ซอฟต์แวร์:** ชุด NVIDIA HPC SDK (คอมไพเลอร์ C, C++, Fortran ไลบรารี และเครื่องมือ MPI) ยังขึ้นว่า "coming soon" ไม่มีวันที่
+
+โปรแกรมที่ NVIDIA โชว์บนชุด 4 เครื่อง คือ LAMMPS (จำลองวัสดุ) กับ NAMD (จำลองโมเลกุล) ส่วนที่คนใช้ DGX Spark ลองกันแล้วมี GROMACS, OpenFOAM (การไหลของน้ำและอากาศ) และ WRF (พยากรณ์อากาศ)
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ใครถูกพูดถึงบ้าง
+
+<div class="prose">
+
+ผมดูแล้ว ทั้งบล็อกและรายงานของ SiliconANGLE **ไม่ได้บอกว่าซูเปอร์คอมพิวเตอร์เครื่องไหนจะใช้ Rubin HPC** ครับ ชื่อที่ NVIDIA ยกมาเป็นคนที่ใช้ DGX Spark ไม่ใช่ลูกค้า Rubin HPC
+
+</div>
+
+<div class="news-cards">
+<div class="news-card"><b>Rubin Lab ที่ UC Berkeley (IGI)</b>ใช้ DGX Spark กับ Evo 2 ทำนายลักษณะของแบคทีเรียจากจีโนม NVIDIA บอกว่าผลออกเร็วกว่ารอคิวคลัสเตอร์ 11 ชั่วโมงถึง 15 เท่า</div>
+<div class="news-card"><b>Kvantify</b>จำลองวงจรควอนตัมเคมีได้ถึง 70 คิวบิต 975 เกต บน DGX Spark เครื่องเดียว มีตัวอย่างคำนวณพลังงานของเพนิซิลลิน</div>
+<div class="news-card"><b>OpenFold</b>ปรับแต่ง OpenFold3 บน DGX Spark เพื่อทำนายโครงสร้างโปรตีนกับตัวยาให้แม่นขึ้น สำหรับงานวิจัยยา</div>
+<div class="news-card"><b>IBM และ Fermilab</b>สร้างแพลตฟอร์มควอนตัม "modular quantum codesign" ที่ใช้ NVIDIA DGX B200 ร่วมกับฮาร์ดแวร์ควอนตัมของ IBM (ตามรายงาน SiliconANGLE)</div>
+</div>
+
+<div class="prose">
+
+ส่วนซูเปอร์คอมพิวเตอร์ที่มีชื่อแล้ว อยู่ในประกาศ Vera Rubin เดือนมิถุนายน เช่น Blue Lion ของศูนย์ LRZ (เยอรมนี) Doudna ของ NERSC และ Mission, Vision, Veritas ของ Los Alamos แต่พวกนี้เป็นระบบ Vera Rubin ทั่วไป ไม่ใช่ Rubin HPC
+
+</div>
+
+</section>
+
+<section class="section">
+
+## แล้วเกี่ยวกับไทยไหม
+
+<div class="prose">
+
+ประกาศรอบนี้ไม่มีแหล่งไหนพูดถึงไทยครับ
+
+ที่ยืนยันได้คือซูเปอร์คอมพิวเตอร์แห่งชาติ LANTA ของศูนย์ ThaiSC (สวทช.) ใช้ NVIDIA A100 จำนวน 704 ตัว ตามที่ NVIDIA เคยประกาศไว้ตอนสร้างระบบ ส่วนอนาคตจะอัปเกรดมาใช้ Rubin หรือไม่ ผมไม่พบข้อมูล
+
+ผมว่าข่าวนี้น่าสนใจตรงที่ NVIDIA กลับมาพูดเรื่อง FP64 ชัดขึ้น หลังจากช่วงหลัง GPU รุ่นใหม่เน้นงาน AI เป็นหลัก แต่จะดีแค่ไหน ต้องรอตัวเลขจริงก่อนครับ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- NVIDIA Announces Rubin HPC (16 พ.ย. 2569): <a href="https://blogs.nvidia.com/blog/rubin-hpc/" rel="noopener">blogs.nvidia.com</a>
+- NVIDIA DGX Spark HPC Developer Kit (16 พ.ย. 2569): <a href="https://blogs.nvidia.com/blog/dgx-spark-hpc-developer-kit-sc26/" rel="noopener">blogs.nvidia.com</a>
+- SiliconANGLE, At SC26, Nvidia debuts new Rubin HPC chip: <a href="https://siliconangle.com/2026/11/16/nvidia-debuts-new-rubin-hpc-chip-scientific-research-libraries/" rel="noopener">siliconangle.com</a>
+- HPCwire, Nvidia recommits to FP64 with a new GPU, the Rubin HPC (ผมเปิดอ่านตรงไม่ได้ อ้างผ่านผลค้นหาเท่านั้น): <a href="https://www.hpcwire.com/2026/11/16/nvidia-recommits-to-fp64-with-a-new-gpu-the-rubin-hpc/" rel="noopener">hpcwire.com</a>
+- NVIDIA Vera Rubin Delivers World-Class Supercomputers for Science (22 มิ.ย. 2569): <a href="https://nvidianews.nvidia.com/news/nvidia-vera-rubin-delivers-world-class-supercomputers-for-science" rel="noopener">nvidianews.nvidia.com</a>
+- NVIDIA Powers Thailand Research Agency's New Supercomputer (LANTA): <a href="https://www.nvidia.com/en-sg/news/nvidia-powers-thailand-research-agency-new-supercomputer-with-region-largest-gpu-cluster" rel="noopener">nvidia.com</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: by dojojin.tech · พื้นหลังเป็นภาพชิป Rubin HPC จาก NVIDIA · โลโก้ NVIDIA เป็นเครื่องหมายการค้าของ NVIDIA Corporation
+- ภาพชิป Rubin HPC, ตู้เซิร์ฟเวอร์ NVL4 และ DGX Spark 4 เครื่อง: NVIDIA (จากบล็อกทางการของ NVIDIA) ภาพ DGX Spark ครอปเอาแถบด้านล่างออก
+
+</div>
+
+</section>

@@ -2,7 +2,7 @@
 """Photo cover for news (1600x1200): real photo + title/key numbers/chips (owner 17 Nov 2026: no text-only covers).
 usage: python3 scripts/content/photo_cover.py spec.json out.html && node scripts/content/render_cover.mjs out.html cover.jpg
 Fonts: copy public/fonts/ibm-plex-sans-thai-{400,700}-{thai,latin}.woff2 next to out.html. Examples: _sources/posts/news/*/cover-v2/*.json
-spec:  (spec: photo, mode dark|light, kicker, title[], info{label,big,unit,badge}, chips[], logo (svg/png path, shown on a white tile above the title), logo_h, photo_top, photo_h, pos, accent)"""
+spec:  (spec: photo, mode dark|light, kicker, title[], info{label,big,unit,badge}, chips[], logo (svg/png path, shown on a white tile above the title), logo_h, logo_bg, logo_inline (logo left of title), photo_top, photo_h, pos, accent)"""
 import json,sys,html
 s=json.load(open(sys.argv[1])); e=html.escape
 dark=s.get('mode','dark')=='dark'
@@ -28,12 +28,13 @@ h1{{font-size:{s.get('title_size',96)}px;line-height:1.08;margin-top:6px;margin-
 .i .c{{display:inline-block;margin-top:10px;background:{s.get('badge_bg','#e5484d')};color:#fff;font-size:34px;padding:6px 18px;border-radius:10px}}
 .chips{{position:absolute;{'right' if s.get('chips_right') else 'left'}:90px;top:{s.get('chips_top',950)}px;display:flex;gap:18px}}
 
-.lg{{display:inline-flex;align-items:center;background:#fff;border-radius:18px;padding:{s.get('logo_pad',18)}px {s.get('logo_pad',18)+10}px;margin:{s.get('logo_gap',14)}px 0 {s.get('logo_gap',14)+6}px}}
+.lg{{display:inline-flex;align-items:center;background:{s.get('logo_bg','#fff')};border-radius:18px;padding:{s.get('logo_pad',18)}px {s.get('logo_pad',18)+10}px;margin:{s.get('logo_gap',14)}px 0 {s.get('logo_gap',14)+6}px}}
 .lg img{{height:{s.get('logo_h',48)}px;display:block}}
+.row{{display:flex;align-items:center;gap:30px;margin-top:20px}} .row .lg{{margin:0}} .row h1{{margin-top:0}}
 .chips span{{background:{s.get('chip_bg','#2f7d4f')};color:#fff;font-size:40px;padding:8px 22px;border-radius:12px}}
 """+("" if dark else ".ph::after{display:none!important}")
 out=[f'<!doctype html><meta charset=utf-8><style>{css}</style><div class=bar></div><div class=ph></div>',
- f'<div class=t><div class=k>{e(s["kicker"])}</div>'+(f'<div class=lg><img src="{e(s["logo"])}"></div>' if s.get('logo') else '')+f'<h1>{"<br>".join(e(x) for x in s["title"])}</h1></div>']
+ f'<div class=t><div class=k>{e(s["kicker"])}</div>'+('<div class=row>' if s.get('logo_inline') else '')+(f'<div class=lg><img src="{e(s["logo"])}"></div>' if s.get('logo') else '')+f'<h1>{"<br>".join(e(x) for x in s["title"])}</h1>'+('</div>' if s.get('logo_inline') else '')+'</div>']
 if inf:
   out.append('<div class=i>'+(f'<div class=a>{e(inf["label"])}</div>' if inf.get('label') else '')
    +(f'<div class=b>{e(inf["big"])}'+(f' <small>{e(inf["unit"])}</small>' if inf.get('unit') else '')+'</div>' if inf.get('big') else '')
