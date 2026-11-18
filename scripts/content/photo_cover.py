@@ -2,7 +2,7 @@
 """Photo cover for news (1600x1200): real photo + title/key numbers/chips (owner 17 Nov 2026: no text-only covers).
 usage: python3 scripts/content/photo_cover.py spec.json out.html && node scripts/content/render_cover.mjs out.html cover.jpg
 Fonts: copy public/fonts/ibm-plex-sans-thai-{400,700}-{thai,latin}.woff2 next to out.html. Examples: _sources/posts/news/*/cover-v2/*.json
-spec:  (spec: photo, mode dark|light, kicker, title[], info{label,big,unit,badge}, chips[], logo (svg/png path, shown on a white tile above the title), logo_h, logo_bg, logo_inline (logo left of title), photo_top, photo_h, pos, accent)"""
+spec:  (spec: photo, mode dark|light, kicker, title[], info{label,big,unit,badge}, chips[], logo (svg/png path, shown on a white tile above the title), logo_h, logo_bg, logo_inline (logo left of title), photo_top, photo_h, pos, accent, text_top (default 180), chips_bottom (owner 18 Nov 2026: margins balanced — text_top 90 + chips_bottom 90, cards 90 from right/bottom))"""
 import json,sys,html
 s=json.load(open(sys.argv[1])); e=html.escape
 dark=s.get('mode','dark')=='dark'
@@ -19,14 +19,14 @@ body{{width:1600px;height:1200px;background:{bg};font-family:P;color:{fg};positi
 .ph{{position:absolute;left:0;top:{s.get('photo_top',370)}px;width:1600px;height:{s.get('photo_h',830)}px;background:url({s['photo']}) {s.get('pos','center')}/{s.get('fit','cover')} no-repeat}}
 .ph::after{{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgb({fade}) 0%,rgba({fade},.5) 14%,rgba({fade},0) 30%,rgba({fade},0) 70%,rgb({fade}) 100%),linear-gradient(90deg,rgba({fade},.7) 0%,rgba({fade},0) 32%)}}
 .bar{{position:absolute;left:0;top:0;width:100%;height:12px;background:{s.get('accent','#4b9bf0')}}}
-.t{{position:absolute;left:90px;top:180px;max-width:{s.get('title_w',860)}px}}
+.t{{position:absolute;left:90px;top:{s.get('text_top',180)}px;max-width:{s.get('title_w',860)}px}}
 .k{{font-size:34px;color:{'#f4a3b0' if dark else '#c2364a'}}}
 h1{{font-size:{s.get('title_size',96)}px;line-height:1.08;margin-top:6px;margin-left:{s.get('title_indent',0)}px;font-weight:700}}
-.i{{position:absolute;right:90px;top:180px;text-align:right}}
+.i{{position:absolute;right:90px;top:{s.get('text_top',180)}px;text-align:right}}
 .i .a{{font-size:30px;color:{'#c9d2e0' if dark else '#5b6472'}}}
 .i .b{{font-size:{s.get('big_size',84)}px;line-height:1.05}} .i .b small{{font-size:40px}}
 .i .c{{display:inline-block;margin-top:10px;background:{s.get('badge_bg','#e5484d')};color:#fff;font-size:34px;padding:6px 18px;border-radius:10px}}
-.chips{{position:absolute;{'right' if s.get('chips_right') else 'left'}:90px;top:{s.get('chips_top',950)}px;display:flex;gap:18px}}
+.chips{{position:absolute;{'right' if s.get('chips_right') else 'left'}:90px;{('bottom:'+str(s['chips_bottom'])) if 'chips_bottom' in s else ('top:'+str(s.get('chips_top',950)))}px;display:flex;gap:18px}}
 
 .lg{{display:inline-flex;align-items:center;background:{s.get('logo_bg','#fff')};border-radius:18px;padding:{s.get('logo_pad',18)}px {s.get('logo_pad',18)+10}px;margin:{s.get('logo_gap',14)}px 0 {s.get('logo_gap',14)+6}px}}
 .lg img{{height:{s.get('logo_h',48)}px;display:block}}

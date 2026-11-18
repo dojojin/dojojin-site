@@ -1,0 +1,185 @@
+---
+title: "AXIS OS 13 มาแล้ว HTTPS อย่างเดียวเป็นค่าเริ่มต้น รหัสผ่านต้องซับซ้อน แอป ACAP ต้องมีลายเซ็น อัปเกรดแล้วอะไรเปลี่ยนบ้าง"
+topic: infra-ai
+type: news
+tags: [axis, cctv, security]
+date: 2026-11-18T10:24:00+07:00
+section: tech
+sourceName: "Axis Communications (Newsroom, เอกสาร AXIS OS)"
+sourceUrl: "https://newsroom.axis.com/news/axis-os-13"
+description: "Axis ประกาศ AXIS OS 13 เมื่อ 17 พ.ย. 2569 ใช้ HTTPS อย่างเดียวเป็นค่าเริ่มต้น บังคับรหัสผ่านซับซ้อน ลงได้เฉพาะแอป ACAP ที่เซ็นแล้ว แก้ปัญหาปี 2038 และตัด VAPIX เก่าบางส่วน สรุปสิ่งที่ช่างและผู้ดูแลระบบต้องเตรียมก่อนอัปเกรด"
+kicker: "ข่าวกล้องวงจรปิด"
+lead: "Axis ออกระบบปฏิบัติการตัวใหม่ให้กล้องและอุปกรณ์ทั้งค่าย รอบนี้เปลี่ยนค่าเริ่มต้นด้านความปลอดภัยหลายข้อ และตัดของเก่าออกด้วย ใครดูแลระบบที่มีทั้งกล้อง ตัวบันทึก และแอปเสริม ควรอ่านก่อนกดอัปเกรดครับ"
+meta: "เรียบเรียงจากข่าวแจกของ Axis และเอกสาร AXIS OS ของ Axis · ข้อมูล ณ 18 พฤศจิกายน 2569"
+cover: "/media/posts/news/axis-os-13/cover.jpg"
+coverAlt: "ภาพอุปกรณ์ Axis หลายแบบ ทั้งกล้องโดม กล้อง PTZ กล้องทรงกล่อง อุปกรณ์ควบคุมประตู ลำโพง และเครื่องบันทึก มีแสงวงสีทองล้อมรอบ"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="split">
+<div class="prose">
+
+Axis Communications ประกาศ AXIS OS 13 เมื่อ 17 พฤศจิกายน 2569 ครับ
+
+AXIS OS คือระบบปฏิบัติการบนลินุกซ์ที่อยู่ในอุปกรณ์ส่วนใหญ่ของ Axis ตั้งแต่กล้องเครือข่าย ระบบควบคุมประตู อินเตอร์คอม ไปจนถึงระบบเสียง Axis บอกว่าครอบคลุมมากกว่า 200 รุ่น และใช้งานอยู่หลายสิบล้านเครื่อง
+
+ข่าวแจกของ Axis เน้น 4 เรื่อง
+
+- ค่าเริ่มต้นด้านความปลอดภัยเข้มขึ้น: เชื่อมต่อ HTTPS อย่างเดียว บังคับรหัสผ่านซับซ้อน และตรวจลายเซ็นของแอป
+- เชื่อมกับระบบไอทีได้ดีขึ้น
+- VAPIX รุ่นใหม่ (VAPIX คือ API ของ Axis สำหรับสั่งงานอุปกรณ์) ตั้งค่าอุปกรณ์แบบรวมศูนย์ได้
+- แก้ปัญหาปี 2038 คือเวลาของระบบ 32 บิตจะนับต่อไม่ได้หลัง 19 ม.ค. 2038
+
+</div>
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/news/axis-os-13/hero.jpg" width="1600" height="899" loading="lazy" alt="ภาพข่าวแจกของ Axis: อุปกรณ์หลายประเภท ทั้งกล้องโดม กล้อง PTZ กล้องทรงกล่อง อุปกรณ์ควบคุมประตู ลำโพง และเครื่องบันทึก มีแสงวงสีทองล้อมรอบ" /></div><figcaption><span class="news-fig__credit">ภาพ: Axis Communications (Newsroom) · <a href="https://newsroom.axis.com/news/axis-os-13" rel="noopener">newsroom.axis.com</a></span></figcaption></figure>
+</div>
+
+<div class="prose">
+
+ในภาพคืออุปกรณ์หลายประเภทของ Axis ที่ใช้ระบบปฏิบัติการตระกูลเดียวกัน แต่ข่าวแจกไม่ได้บอกว่าอัปเกรดแล้วอะไรจะใช้ต่อได้หรือไม่ได้ เรื่องนี้อยู่ในเอกสาร AXIS OS ของ Axis ผมสรุปไว้ในหัวข้อถัดไปครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## วันออกจริงและรุ่นที่ได้รับ
+
+<div class="prose">
+
+ข่าวแจกวันที่ 17 พ.ย. ไม่ได้บอกวันออกและรายชื่อรุ่น แต่เอกสารของ Axis มีข้อมูลดังนี้ครับ
+
+</div>
+
+<div class="news-cards">
+<div class="news-card is-ok"><b>วันที่ออกรุ่น <span class="news-pill">ทยอยออกแล้ว</span></b> หน้า Release notes มีรุ่นย่อยของ AXIS OS 13.0 ออกมาแล้ว 3 รุ่น คือ 13.0.88 (22 ก.ย. 2569), 13.0.107 (22 ต.ค. 2569) และ 13.0.114 (5 พ.ย. 2569) แต่หัวข้อ AXIS OS 13.0 กลับเขียนว่า "Release date: November" ส่วน Lifecycle guide บอกแผนเดือนกันยายน 2569 สรุปคือข่าวแจกวันที่ 17 พ.ย. เป็นการประกาศอย่างเป็นทางการ หลังจากตัว OS เริ่มทยอยออกไปแล้ว</div>
+<div class="news-card is-ok"><b>รายชื่อรุ่น <span class="news-pill">มีรายชื่อยาว</span></b> หน้า Release notes มีหัวข้อ "Products on active track - AXIS OS 13" พร้อมหมายเหตุว่ารายชื่อเปลี่ยนได้ และมีรุ่นเพิ่มเรื่อย ๆ ใครมีเครื่องอยู่ ให้เปิดหน้านั้นเช็กรุ่นของตัวเอง</div>
+<div class="news-card is-warn"><b>รุ่นที่ไม่ได้ไปต่อ <span class="news-pill">ARTPEC-6</span></b> Lifecycle guide เขียนว่า "AXIS OS 13 won't support Artpec-6 products" โดยไม่ลงรายละเอียดต่อ ผมเดาว่าอุปกรณ์กลุ่มนี้จะอยู่บน AXIS OS 12 (แทร็ก LTS 2026) ต่อไป ข้อนี้เป็นการคาดเดาของผมเอง</div>
+<div class="news-card"><b>แทร็กซอฟต์แวร์ <span class="news-pill">ทุก 2 ปี</span></b> Axis เปิดแทร็กใหม่ (Active) ทุก 2 ปี แล้วย้ายแทร็กเดิมไปเป็น LTS ที่รับแค่แพตช์ช่องโหว่และแก้บั๊ก การเปลี่ยนใหญ่ที่ทำให้ของเดิมใช้ไม่ได้ (breaking change) ทำได้เฉพาะแทร็ก Active</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## อัปเกรดแล้วอะไรเปลี่ยน
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/axis-os-13/release-notes.jpg" width="1000" height="850" loading="lazy" alt="ภาพหน้าจอ Release notes ของ AXIS OS 13.0 บอก Release date: November และรายการ breaking changes เช่น 64-bit time รหัสผ่านซับซ้อน Signed Video HTTPS-only ตัด UPnP และการเปลี่ยนระบบบันทึกภาพ" /></div><figcaption><span class="news-fig__credit">ภาพ: ภาพหน้าจอ Axis Technical Documentation (Release notes) · <a href="https://help.axis.com/en-us/axis-os-release-notes" rel="noopener">help.axis.com</a></span></figcaption></figure>
+<div class="prose">
+
+รายการด้านล่างมาจาก Release notes ของ AXIS OS 13.0 (ในภาพ) และ Lifecycle guide ของ Axis ถ้าข้อไหนมาจากเอกสารอื่น ผมบอกไว้ในการ์ดครับ
+
+Axis เรียกกลุ่มนี้ว่า breaking changes คือเปลี่ยนแล้วของเดิมอาจใช้ไม่ได้
+
+เรื่องรหัสผ่านและ HTTPS Axis บอกเองว่าทำเพื่อให้ตรงกฎและมาตรฐานความปลอดภัยของหลายประเทศ เช่น EU CRA (Cyber Resilience Act) ของยุโรป และ CLS (Cybersecurity Labelling Scheme) ของสิงคโปร์
+
+</div>
+</div>
+
+<div class="news-cards">
+<div class="news-card is-warn"><b>HTTPS อย่างเดียวเป็นค่าเริ่มต้น <span class="news-pill">ระวังหลัง reset</span></b> ถ้าจะใช้ HTTP พอร์ต 80 ต้องเปิดเอง ใน Lifecycle guide ช่องที่ถามว่ามีผล "ตอนอัปเกรดหรือหลัง reset เป็นค่าโรงงาน" Axis ตอบว่า "After a factory default" ผมอ่านว่าอัปเกรดเฉย ๆ ยังไม่ปิด HTTP แต่เครื่องที่ reset แล้วจะรับแค่ HTTPS ระบบที่ยังต่อกล้องด้วย HTTP ต้องไล่เช็กครับ ใบรับรองของอุปกรณ์อาจทำให้เบราว์เซอร์ขึ้นคำเตือน ซึ่ง Axis บอกว่าเป็นเรื่องปกติ</div>
+<div class="news-card is-warn"><b>รหัสผ่านต้องซับซ้อน <span class="news-pill">ปิดไม่ได้</span></b> ใช้กับบัญชีที่สร้างหรือแก้ใหม่ผ่าน SSH, VAPIX, ONVIF, SNMP และหน้าเว็บ เลือกได้ 2 แบบ คือแบบยาวอย่างเดียว 15 ตัวอักษร หรือแบบซับซ้อน 12 ตัวขึ้นไป มีตัวเลข ตัวพิมพ์ใหญ่ ตัวพิมพ์เล็ก และอักขระพิเศษอย่างละ 1 ตัว บัญชีเดิมหลังอัปเกรดไม่โดนบังคับ แต่ Axis เตือนว่าการเพิ่มกล้องเครื่องใหม่เข้า VMS (โปรแกรมบริหารกล้อง) อาจต้องตั้งรหัสผ่านในกล้องไว้ก่อน</div>
+<div class="news-card is-bad"><b>แอป ACAP ที่ไม่มีลายเซ็น <span class="news-pill">ติดตั้งไม่ได้</span></b> ACAP คือแอปเสริมที่ลงในอุปกรณ์ Axis ตัวเลือกให้ลงแอปที่ไม่เซ็นถูกเอาออกแล้ว แอปต้องผ่านการเซ็นที่ ACAP Portal ของ Axis ต้องมีไฟล์ manifest.json (ไม่รองรับไฟล์ package.conf แบบเก่า) และต้องระบุว่าใช้กับ AXIS OS เวอร์ชันไหนได้ ถ้ากล้องมีแอปที่ไม่เซ็นอยู่ ต้องถอดหรือเปลี่ยนเป็นตัวที่เซ็นแล้วตั้งแต่ยังเป็น AXIS OS 12 ไม่งั้นการอัปเกรดจะถูก rollback กลับ แอปที่ลงครั้งแรกบน 12.7 หรือเก่ากว่า ต้องลงใหม่บน 12.8 ขึ้นไปก่อน ส่วนช่วงพัฒนาแอป Axis มีแอป Developer Mode ให้ขอไปใช้ลงแอปที่ไม่เซ็นได้</div>
+<div class="news-card is-warn"><b>ปัญหาปี 2038 <span class="news-pill">ต้องคอมไพล์แอปใหม่</span></b> ระบบเปลี่ยนไปใช้เวลาแบบ 64 บิต (time_t) แอปทุกตัวบนอุปกรณ์ 32 บิต (ชิปกลุ่ม ARTPEC-7 และ i.MX 6SX) ต้องคอมไพล์ใหม่ ถ้ามีแอปที่ใช้ไม่ได้ การอัปเกรดจะล้มและเครื่องจะย้อนกลับเป็น AXIS OS 12 Axis ยังบอกด้วยว่า AXIS OS 13.0 รุ่นแรก "ไม่ได้ผ่านเรื่องนี้ครบทุกส่วนโดยอัตโนมัติ" เป็นแค่จุดเริ่มต้น แล้วจะทยอยแก้ในรุ่นต่อไป</div>
+<div class="news-card is-bad"><b>งานเชื่อมต่อผ่าน VAPIX <span class="news-pill">มีของที่ถูกตัด</span></b> Release notes ระบุว่าตัด VAPIX Layout, HTTP Network Authentication, legacy SNMP และ legacy Streaming ออก ระบบบันทึกภาพก็เปลี่ยน: การบันทึกหนึ่งรายการ (recording ID) ยาวได้สูงสุด 24 ชั่วโมง ค่าเริ่มต้น 1 ชั่วโมง การบันทึกต่อเนื่องยาว ๆ จึงแตกเป็นหลายรายการ ลบการบันทึกที่ยังทำอยู่จะขึ้น error ไฟล์บันทึกเก็บที่ใหม่ และตัวเลือก RTSP failoverrecordinglength ใช้ไม่ได้แล้ว พารามิเตอร์เวลา root.Time.POSIXTimeZone กับ root.Time.DST.Enabled ใน param.cgi ก็ถูกถอด ให้ใช้ Time API v2 แทน (ตามเอกสารวิธีรับมือของ Axis) ใครเขียนสคริปต์หรือโปรแกรมเชื่อมกล้องเอง ต้องเทียบกับรายการนี้</div>
+<div class="news-card is-warn"><b>การค้นหากล้องและเหตุการณ์ <span class="news-pill">เปลี่ยนวิธีหา</span></b> ตัดโปรโตคอลค้นหา UPnP ออก (ใช้ Bonjour มาตั้งแต่ AXIS OS 12.0) ตัวตรวจจับ Camera Tampering แบบเก่าถูกถอด ให้ใช้ AXIS Image Health Analytics แทน กฎที่ผูกกับเหตุการณ์เดิมจะหยุดทำงาน และ Signed Video ถูกเปิดเป็นค่าเริ่มต้น</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ระบบที่ใช้ Camera Station ต้องดูอะไรเพิ่ม
+
+<div class="prose">
+
+ใครใช้ AXIS Camera Station อยู่ Axis มีเอกสารวิธีรับมือแยกไว้ครับ
+
+Axis เขียนว่า Camera Station Pro 6.16 และ Camera Station 5.59 ลงไป อาจเจอ breaking change เมื่อลง AXIS OS 13 บนอุปกรณ์ที่ต่ออยู่ ผมเลือกมาเฉพาะข้อที่เกี่ยวกับงานหน้างาน
+
+<ol class="news-steps">
+<li class="is-key"><b>อัปเกรดเฟิร์มแวร์ผ่าน Camera Station ไม่ได้</b>เฟิร์มแวร์ AXIS OS 13 ใช้การบีบอัดแบบใหม่ (ZSTD) ที่ Camera Station รุ่นเก่าอ่านไม่ออก ฟีเจอร์อัปเกรดอุปกรณ์ในโปรแกรมจะใช้ไม่ได้ ต้องเข้าหน้าตั้งค่าของกล้องแล้วอัปเกรดทีละตัว</li>
+<li class="is-key"><b>ตัวบันทึกที่ลง AXIS OS 13 ต้องใช้เซิร์ฟเวอร์ Pro 6.18</b>ฟีเจอร์ fallback (เก็บภาพลงตัวบันทึก S30 ตอนเซิร์ฟเวอร์ขาดการเชื่อมต่อ) จะทำงานต่อได้ ต้องใช้ Camera Station Pro 6.18 ขึ้นไป ถ้าเซิร์ฟเวอร์เก่ากว่านั้น จะอัปเกรดตัวบันทึกเป็น AXIS OS 13 ไม่ได้เลย</li>
+<li><b>ค้นหาอุปกรณ์ผ่าน UPnP ไม่ได้</b>ยังหาเจอผ่าน Bonjour แต่ข้อมูลที่แสดงน้อยลง Axis แนะนำให้ใช้ Camera Station Pro 6.3 หรือ Camera Station 5.57 ขึ้นไป หรือเพิ่มเครื่องด้วย IP โดยตรง</li>
+<li><b>พารามิเตอร์เก่าตั้งค่ารวมไม่ได้</b>พารามิเตอร์ SNMP, HTTP authentication และ streaming เก่าที่เคยตั้งจากหน้า Management ต้องไปตั้งในหน้ากล้องทีละตัว</li>
+<li><b>Guard Suite ถูกถอด</b>ชุดตรวจจับ Motion, Fence, Loitering แบบเก่าหายไป กฎที่ผูกไว้จะหยุดทำงาน Axis แนะนำให้ใช้ AXIS Object Analytics หรือแอปจากผู้พัฒนาอื่นแทน</li>
+</ol>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ถ้าจะอัปเกรด ทำตามลำดับนี้
+
+<div class="prose">
+
+ลำดับนี้ผมเรียงจากที่เอกสารของ Axis แนะนำครับ
+
+ถ้าเจอปัญหาหลังอัปเกรด Axis บอกว่าใช้ตัวเลือก rollback กลับไปรุ่นก่อนได้ และแนะนำให้เก็บกล้องอย่างน้อย 1 ตัวไว้ลง AXIS OS 13 ก่อน เพื่อสร้าง server report ส่งให้ฝ่ายซัพพอร์ตของ Axis
+
+<ol class="news-steps">
+<li><b>ไล่ดูแอป ACAP ทุกตัว</b>ตัวไหนไม่เซ็น ไม่มี manifest.json หรือไม่ได้ระบุเวอร์ชันที่รองรับ ให้ติดต่อผู้พัฒนาแอปก่อน และถอดหรือเปลี่ยนแอปที่ใช้ไม่ได้ตั้งแต่เครื่องยังเป็น AXIS OS 12</li>
+<li><b>ไล่ดูงานเชื่อมต่อที่ยิง API เข้ากล้อง</b>เทียบกับรายการ VAPIX ที่ถูกตัด และระบบบันทึกภาพที่เปลี่ยน รวมถึงเช็กว่าโปรแกรม VMS อยู่ในรุ่นที่รองรับหรือยัง</li>
+<li><b>ดูว่ามีอะไรยังต่อด้วย HTTP</b>ทำก่อนจะมีใคร reset เครื่อง เพราะหลัง reset เครื่องจะรับแค่ HTTPS</li>
+<li><b>เตรียมรหัสผ่านใหม่ตามกฎ</b>ถ้าต้องเพิ่มกล้องเข้า VMS หรือสร้างบัญชีใหม่ ตั้งให้ผ่านกฎไว้ก่อน</li>
+<li class="is-key"><b>ทดสอบกับกล้อง 1 ตัวก่อน</b>แล้วค่อยทยอยทั้งระบบ เอกสารของ Axis ให้ทดลองกับเครื่องเดียวและเก็บ server report ไว้</li>
+</ol>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ข้อควรรู้เพิ่มเติม
+
+<div class="prose">
+
+ยังมีสองเรื่องที่ผมตอบไม่ได้ครับ
+
+- รุ่นไหนได้ AXIS OS 13 ไปแล้วจริง เพราะ Release notes ไม่ได้บอกทุกรุ่นว่าเริ่มที่รุ่นย่อยไหน
+- Axis ประเทศไทยหรือตัวแทนจำหน่ายจะแจ้งอะไรกับลูกค้า ยังไม่พบข้อมูล
+
+ถ้ามีข้อมูลเพิ่ม ผมจะมาอัปเดตข่าวนี้
+
+เอกสารของ Axis อัปเดตได้ตลอด รายการข้างบนเป็นข้อมูล ณ 18 พ.ย. 2569 ก่อนลงมือกับระบบจริง ให้เปิด Release notes ของ AXIS OS ดูรายการล่าสุดอีกรอบ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- Axis Communications Newsroom (17 พ.ย. 2569): <a href="https://newsroom.axis.com/news/axis-os-13" rel="noopener">AXIS OS 13 takes cybersecurity and integration to new heights</a>
+- Axis Technical Documentation (พ.ย. 2569): <a href="https://help.axis.com/en-us/axis-os-release-notes" rel="noopener">AXIS OS Release notes</a> และ <a href="https://help.axis.com/axis-os" rel="noopener">AXIS OS Lifecycle guide</a> (ส่วน Changes in AXIS OS 13)
+- Axis (Rev. 1.3, ปี 2569): <a href="https://www.axis.com/dam/public/permalink/290069/how-to-handle-breaking-changes-when-upgrading-devices-to-axis-os-13-en-US_290069.pdf" rel="noopener">How to handle breaking changes when upgrading devices to AXIS OS 13</a>
+- Axis (เอกสารเปิดเผยเมื่อ 27 พ.ย. 2568): <a href="https://www.axis.com/en-au/for-developers/news/AXIS-OS-13-breaking-changes" rel="noopener">AXIS OS 13 breaking changes</a> และหน้า <a href="https://www.axis.com/support/axis-os" rel="noopener">AXIS OS</a> บน axis.com
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพในเนื้อข่าว (อุปกรณ์ Axis): Axis Communications จาก <a href="https://newsroom.axis.com/news/axis-os-13" rel="noopener">Newsroom</a>
+- ภาพหน้าจอ Release notes: Axis Technical Documentation (<a href="https://help.axis.com/en-us/axis-os-release-notes" rel="noopener">help.axis.com</a>) ตัดเฉพาะส่วนเนื้อหา
+- ภาพปก: by dojojin.tech (ภาพข่าวแจกของ Axis จาก Newsroom, โลโก้ Axis Communications จาก <a href="https://commons.wikimedia.org/wiki/File:Axis_Communications_logo.svg" rel="noopener">Wikimedia Commons</a>)
+
+</div>
+
+</section>
