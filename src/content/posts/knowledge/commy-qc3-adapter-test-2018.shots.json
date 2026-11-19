@@ -1,0 +1,693 @@
+[
+  {
+    "id": "1",
+    "title": "ป้ายราคาที่ร้าน 429 บาท",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/box-shop-price.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "แกะกล่อง COMMY",
+    "alt": "กล่อง COMMY AUTO-ID Quick Charge 4.2A บนชั้นร้านค้า ป้ายราคา 429 บาท",
+    "summary": "ได้มาจากร้าน Jaymart ราคา 429 บาท ตามป้าย (บิลหาไม่เจอแล้ว)",
+    "fit": "contain"
+  },
+  {
+    "id": "2",
+    "title": "หน้ากล่อง",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/box-front.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "แกะกล่อง COMMY",
+    "alt": "หน้ากล่อง COMMY AUTO-ID Quick Charge USBx2 4.2A Output",
+    "summary": "หน้ากล่องเขียน 4.2A OUTPUT, Adaptive Fast Charging, Qualcomm Quick Charge 3.0",
+    "fit": "contain"
+  },
+  {
+    "id": "3",
+    "title": "ข้างกล่อง: สเปกแต่ละพอร์ต",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/box-side-spec.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "แกะกล่อง COMMY",
+    "alt": "ข้างกล่องระบุ Auto ID 5V 2.1A, QC 3.0 3.6-6.5V 3A / 6.5-9V 2A / 9-12V 1.5A, Total 4.2A (AUTO Max) 21W",
+    "summary": "Auto ID 5V 2.1A · QC 3.0 3.6-6.5V 3A, 6.5-9V 2A, 9-12V 1.5A · TOTAL OUTPUT 4.2A (AUTO Max) 21W",
+    "fit": "contain"
+  },
+  {
+    "id": "4",
+    "title": "หลังกล่อง",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/box-back.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "แกะกล่อง COMMY",
+    "alt": "หลังกล่องอธิบาย Quick Charge 3.0 ชาร์จเร็วขึ้น 80%",
+    "summary": "หลังกล่องอธิบายว่า Quick Charge 3.0 ชาร์จเร็วกว่าปกติยังไง",
+    "fit": "contain"
+  },
+  {
+    "id": "5",
+    "title": "เปิดกล่อง",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/box-open.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "แกะกล่อง COMMY",
+    "alt": "หัวชาร์จ COMMY และสาย micro USB ในถาดสีส้ม",
+    "summary": "ในกล่องมีหัวชาร์จกับสาย micro USB",
+    "fit": "contain"
+  },
+  {
+    "id": "6",
+    "title": "สาย micro USB ที่แถมมา",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/microusb-cable-1.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "แกะกล่อง COMMY",
+    "alt": "สาย micro USB แบนสีขาวที่แถมมา",
+    "summary": "สายแถมหนาดี หัวแน่นหนา แต่ผมไม่ได้เอามาเทสต์",
+    "fit": "contain"
+  },
+  {
+    "id": "7",
+    "title": "สาย micro USB ที่แถมมา",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/microusb-cable-2.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "แกะกล่อง COMMY",
+    "alt": "สาย micro USB แบนสีขาวในมือ",
+    "summary": "สายแบบนี้ผมมีเยอะแล้ว เลยขอข้าม",
+    "fit": "contain"
+  },
+  {
+    "id": "8",
+    "title": "หัว micro USB",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/microusb-cable-3.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "แกะกล่อง COMMY",
+    "alt": "หัว micro USB ของสายที่แถมมา",
+    "summary": "หัว micro USB ของสายแถม",
+    "fit": "contain"
+  },
+  {
+    "id": "9",
+    "title": "ของทั้งหมดในกล่อง",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/unbox-all.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "แกะกล่อง COMMY",
+    "alt": "หัวชาร์จ COMMY วางข้างกล่องและรางปลั๊ก",
+    "summary": "ของทั้งหมดในกล่อง"
+  },
+  {
+    "id": "10",
+    "title": "พอร์ต Auto-ID และ QC 3.0",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/commy-ports.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "ตัวหัวชาร์จ COMMY",
+    "alt": "หัวชาร์จ COMMY พอร์ต AUTO-ID สีเขียว และพอร์ต Quick Charge 3.0 สีส้ม",
+    "summary": "พอร์ตเขียว = Auto-ID · พอร์ตส้ม = Qualcomm Quick Charge 3.0"
+  },
+  {
+    "id": "11",
+    "title": "ฉลากบนตัวหัวชาร์จ",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/commy-label.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "ตัวหัวชาร์จ COMMY",
+    "alt": "ฉลาก COMMY Adaptive Fast Charging ระบุ Auto ID 5V 2.1A, QC 3.0 และ Total 4.2A 21W",
+    "summary": "ฉลากตรงกับข้างกล่อง: Total Output 4.2A (AUTO Max) 21W",
+    "screenTitle": "ข้อความบนฉลาก",
+    "screen": [
+      [
+        "Auto ID",
+        "DC 5V 2.1A Max"
+      ],
+      [
+        "QC 3.0",
+        "3.6-6.5V 3A · 6.5-9V 2A · 9-12V 1.5A"
+      ],
+      [
+        "Total",
+        "4.2A (AUTO Max) 21W"
+      ]
+    ]
+  },
+  {
+    "id": "12",
+    "title": "เทียบกับรุ่น 6 พอร์ต",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/commy-vs-6port.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "ตัวหัวชาร์จ COMMY",
+    "alt": "หัวชาร์จ COMMY 2 พอร์ตวางคู่กับแท่นชาร์จ COMMY 6 พอร์ต",
+    "summary": "ตัว 2 พอร์ตเทียบกับรุ่น 6 พอร์ตที่ผมซื้อมาก่อน (ตัวที่ QC ไม่ทำงาน)"
+  },
+  {
+    "id": "13",
+    "title": "ไฟที่โลโก้รุ่น 6 พอร์ต",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/commy-6port-logo.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "ตัวหัวชาร์จ COMMY",
+    "alt": "โลโก้ COMMY เรืองแสงสีฟ้าในที่มืด",
+    "summary": "รุ่น 6 พอร์ตมีไฟที่โลโก้ ในที่มืดดูพรีเมียมดี"
+  },
+  {
+    "id": "14",
+    "title": "สาย SONY แท้ (USB-C)",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/sony-cable-1.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "สายที่ใช้ทดสอบ",
+    "alt": "สาย USB-C สีดำของ SONY",
+    "summary": "สายชาร์จแท้ SONY วัสดุคล้ายสายแท้ iPhone แต่ผมว่าดูดีกว่า"
+  },
+  {
+    "id": "15",
+    "title": "สาย SONY แท้ หัว USB-A",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/sony-cable-2.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "สายที่ใช้ทดสอบ",
+    "alt": "หัว USB-A ของสาย SONY แท้",
+    "summary": "หัว USB-A ของสาย SONY"
+  },
+  {
+    "id": "16",
+    "title": "สาย whY (USB-C)",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/why-cable-1.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "สายที่ใช้ทดสอบ",
+    "alt": "หัว USB-C ของสายถัก whY",
+    "summary": "สาย whY จากบริษัทเดียวกับฟิล์ม FOCUS ทำมาดี แน่นหนา"
+  },
+  {
+    "id": "17",
+    "title": "สาย whY หัว USB-A",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/why-cable-2.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "สายที่ใช้ทดสอบ",
+    "alt": "หัว USB-A ของสาย whY",
+    "summary": "หัว USB-A ของสาย whY"
+  },
+  {
+    "id": "18",
+    "title": "สาย whY ทั้งเส้น",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/why-cable-3.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "สายที่ใช้ทดสอบ",
+    "alt": "สายถักสีเทา whY พร้อมตัวรัดสาย",
+    "summary": "สายถักพร้อมตัวรัดสาย ราคาราว 250 บาท (แล้วแต่ร้าน)"
+  },
+  {
+    "id": "19",
+    "title": "สาย Tronsmart 1.8 เมตร",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/tronsmart-cable.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "สายที่ใช้ทดสอบ",
+    "alt": "สาย USB-C สีดำยาวของ Tronsmart",
+    "summary": "สาย Tronsmart ยาว 1.8 เมตรที่แถมมากับหัวชาร์จ Tronsmart สายหนา"
+  },
+  {
+    "id": "20",
+    "title": "สาย Lightning ของ MINISO (MFi)",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/miniso-cable.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "สายที่ใช้ทดสอบ",
+    "alt": "สาย Lightning ของ MINISO ต่อกับมิเตอร์ USB",
+    "summary": "สาย MINISO มี MFi แท้ ผมเช็กกับเว็บ Apple แล้ว"
+  },
+  {
+    "id": "21",
+    "title": "หัวชาร์จ Tronsmart",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/tronsmart-charger.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "หัวชาร์จที่ใช้เทียบ",
+    "alt": "หัวชาร์จ Tronsmart สีดำ Quick Charge 3.0",
+    "summary": "Tronsmart 18W Quick Charger รุ่น WC1T ราคา 490 บาทพร้อมสาย (ร้าน SE-UPDATE)"
+  },
+  {
+    "id": "22",
+    "title": "ฉลาก Tronsmart WC1T",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/tronsmart-label.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "หัวชาร์จที่ใช้เทียบ",
+    "alt": "ฉลาก Tronsmart 18W Quick Charger Model WC1T",
+    "summary": "18W Quick Charger รุ่น WC1T",
+    "screenTitle": "ข้อความบนฉลาก",
+    "screen": [
+      [
+        "Output",
+        "3.6-6.5V 3A · 6.5-9V 2A · 9-12V 1.5A"
+      ],
+      [
+        "ผู้ผลิต",
+        "Dongguan Oriental Hero ELE Co., Ltd"
+      ]
+    ]
+  },
+  {
+    "id": "23",
+    "title": "หัวชาร์จ SONY แท้",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/sony-charger.jpg",
+    "w": 1125,
+    "h": 1500,
+    "group": "หัวชาร์จที่ใช้เทียบ",
+    "alt": "หัวชาร์จ SONY สีดำพอร์ต USB เดียว",
+    "summary": "Adaptor SONY แท้ราคา 1,290 บาทพร้อมสาย (SHOP SONY)",
+    "fit": "contain"
+  },
+  {
+    "id": "24",
+    "title": "ฉลาก SONY UCH12",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/sony-charger-label.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "หัวชาร์จที่ใช้เทียบ",
+    "alt": "ฉลาก SONY Charger UCH12 output 5V 2700mA, 9V 1800mA, 12V 1350mA",
+    "summary": "SONY Quick Charger UCH12 (ปลั๊กแบบ UK) เบลอหมายเลขเครื่องไว้",
+    "screenTitle": "ข้อความบนฉลาก",
+    "screen": [
+      [
+        "Output",
+        "5.0V 2700mA · 9.0V 1800mA · 12.0V 1350mA"
+      ]
+    ]
+  },
+  {
+    "id": "25",
+    "title": "กระเป๋าเก็บสาย",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/cable-bag.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "หัวชาร์จที่ใช้เทียบ",
+    "alt": "กระเป๋าเก็บสายชาร์จสีส้มเต็มไปด้วยสาย",
+    "summary": "กระเป๋าเก็บสาย มีอีกหลายเส้นที่เก็บไว้รีวิวรอบหน้า"
+  },
+  {
+    "id": "26",
+    "title": "SONY แท้ ก่อนเสียบชาร์จ",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/s1-sony.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "State 1 · ไฟก่อนเสียบชาร์จ",
+    "alt": "มิเตอร์บนหัวชาร์จ SONY แสดง 5.10V 0.00A",
+    "summary": "5.10V (เกิน 5V มา 0.10V)",
+    "readings": [
+      [
+        "แรงดัน",
+        "5.10V"
+      ],
+      [
+        "กระแส",
+        "0.00A"
+      ]
+    ]
+  },
+  {
+    "id": "27",
+    "title": "Tronsmart ก่อนเสียบชาร์จ",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/s1-tronsmart.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "State 1 · ไฟก่อนเสียบชาร์จ",
+    "alt": "มิเตอร์บนหัวชาร์จ Tronsmart แสดง 5.09V 0.00A",
+    "summary": "5.09V (เกิน 5V มา 0.09V)",
+    "readings": [
+      [
+        "แรงดัน",
+        "5.09V"
+      ],
+      [
+        "กระแส",
+        "0.00A"
+      ]
+    ]
+  },
+  {
+    "id": "28",
+    "title": "COMMY ช่อง QC 3.0 ก่อนเสียบชาร์จ",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/s1-commy-qc.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "State 1 · ไฟก่อนเสียบชาร์จ",
+    "alt": "มิเตอร์บนช่อง QC 3.0 ของ COMMY แสดง 4.87V",
+    "summary": "4.87V (ต่ำกว่า 5V อยู่ 0.13V ยังอยู่ในช่วง 4.75-5.25V)",
+    "readings": [
+      [
+        "แรงดัน",
+        "4.87V"
+      ],
+      [
+        "กระแส",
+        "0.00A"
+      ]
+    ]
+  },
+  {
+    "id": "29",
+    "title": "COMMY ช่อง Auto-ID ก่อนเสียบชาร์จ",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/s1-commy-autoid.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "State 1 · ไฟก่อนเสียบชาร์จ",
+    "alt": "มิเตอร์บนช่อง Auto-ID ของ COMMY แสดง 5.18V",
+    "summary": "5.18V (เกิน 5V มา 0.18V)",
+    "readings": [
+      [
+        "แรงดัน",
+        "5.18V"
+      ],
+      [
+        "กระแส",
+        "0.00A"
+      ]
+    ]
+  },
+  {
+    "id": "30",
+    "title": "เร่งจอสว่างสุดก่อนเทสต์",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/brightness-1.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "State 2 · หัวชาร์จ SONY แท้",
+    "alt": "Xperia XZ Premium เปิดแผงตั้งค่าด่วน ความสว่างสูงสุด แบต 17%",
+    "summary": "ก่อนเทสต์ State ถัด ๆ ไป ผมเร่งจอให้สว่างสุด"
+  },
+  {
+    "id": "31",
+    "title": "Xperia XZ Premium ที่ใช้ทดสอบ",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/brightness-2.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "State 2 · หัวชาร์จ SONY แท้",
+    "alt": "หน้าจอล็อก Xperia XZ Premium เวลา 14:51 แบต 17%",
+    "summary": "SONY Xperia XZ Premium (รองรับ QC 3.0)"
+  },
+  {
+    "id": "32",
+    "title": "สาย SONY + หัวชาร์จ SONY",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/s2-sony-cable.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "State 2 · หัวชาร์จ SONY แท้",
+    "alt": "มิเตอร์แสดง 9.08V 1.53A ชาร์จ Xperia ด้วยสาย SONY",
+    "summary": "9.08V 1.53A ราว 13.9W (แบต 11%)",
+    "readings": [
+      [
+        "แรงดัน",
+        "9.08V"
+      ],
+      [
+        "กระแส",
+        "1.53A"
+      ],
+      [
+        "กำลัง (V×A)",
+        "13.9W"
+      ]
+    ],
+    "caution": "ช่อง P ของมิเตอร์ตัวนี้แสดงได้แค่ 4 หลัก ค่าราว 13.9W เลยขึ้นเป็น 3.9W ให้ดูกำลังจากแรงดัน × กระแสแทน"
+  },
+  {
+    "id": "33",
+    "title": "สาย whY + หัวชาร์จ SONY",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/s2-why.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "State 2 · หัวชาร์จ SONY แท้",
+    "alt": "มิเตอร์แสดง 9.08V 1.52A ชาร์จ Xperia ด้วยสาย whY",
+    "summary": "9.08V 1.52A ราว 13.8W (แบต 12%)",
+    "readings": [
+      [
+        "แรงดัน",
+        "9.08V"
+      ],
+      [
+        "กระแส",
+        "1.52A"
+      ],
+      [
+        "กำลัง (V×A)",
+        "13.8W"
+      ]
+    ]
+  },
+  {
+    "id": "34",
+    "title": "สาย Tronsmart 1.8 ม. + หัวชาร์จ SONY",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/s2-tronsmart-cable.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "State 2 · หัวชาร์จ SONY แท้",
+    "alt": "มิเตอร์แสดง 9.08V 1.55A ชาร์จ Xperia ด้วยสาย Tronsmart",
+    "summary": "9.08V 1.55A ราว 14.1W (แบต 13%)",
+    "readings": [
+      [
+        "แรงดัน",
+        "9.08V"
+      ],
+      [
+        "กระแส",
+        "1.55A"
+      ],
+      [
+        "กำลัง (V×A)",
+        "14.1W"
+      ]
+    ]
+  },
+  {
+    "id": "35",
+    "title": "สาย SONY + Tronsmart (จอดับ)",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/s3-sony-cable.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "State 3 · หัวชาร์จ Tronsmart",
+    "alt": "มิเตอร์แสดง 9.03V 1.27A ขณะจอ Xperia ดับ",
+    "summary": "จอดับแล้ว 9.03V 1.27A ราว 11.5W ตอนเสียบแรก ๆ ได้ 8.99V 1.49A (แบต 21%)",
+    "readings": [
+      [
+        "แรงดัน",
+        "9.03V"
+      ],
+      [
+        "กระแส",
+        "1.27A"
+      ],
+      [
+        "กำลัง (V×A)",
+        "11.5W"
+      ]
+    ]
+  },
+  {
+    "id": "36",
+    "title": "สาย whY + Tronsmart",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/s3-why.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "State 3 · หัวชาร์จ Tronsmart",
+    "alt": "มิเตอร์แสดง 9.01V 1.53A ชาร์จ Xperia ด้วยสาย whY",
+    "summary": "9.01V 1.53A ราว 13.8W (แบต 23%)",
+    "readings": [
+      [
+        "แรงดัน",
+        "9.01V"
+      ],
+      [
+        "กระแส",
+        "1.53A"
+      ],
+      [
+        "กำลัง (V×A)",
+        "13.8W"
+      ]
+    ]
+  },
+  {
+    "id": "37",
+    "title": "ช่อง QC 3.0 · สาย SONY",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/s4-qc-sony-cable.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "State 4 · หัวชาร์จ COMMY",
+    "alt": "มิเตอร์บนช่อง QC 3.0 ของ COMMY แสดง 8.89V 1.56A",
+    "summary": "8.89V 1.56A ราว 13.9W (แบต 18%)",
+    "readings": [
+      [
+        "แรงดัน",
+        "8.89V"
+      ],
+      [
+        "กระแส",
+        "1.56A"
+      ],
+      [
+        "กำลัง (V×A)",
+        "13.9W"
+      ]
+    ]
+  },
+  {
+    "id": "38",
+    "title": "ช่อง QC 3.0 · สาย whY",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/s4-qc-why.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "State 4 · หัวชาร์จ COMMY",
+    "alt": "มิเตอร์บนช่อง QC 3.0 ของ COMMY แสดง 8.91V 1.56A",
+    "summary": "8.91V 1.56A ราว 13.9W (แบต 20%)",
+    "readings": [
+      [
+        "แรงดัน",
+        "8.91V"
+      ],
+      [
+        "กระแส",
+        "1.56A"
+      ],
+      [
+        "กำลัง (V×A)",
+        "13.9W"
+      ]
+    ]
+  },
+  {
+    "id": "39",
+    "title": "ช่อง Auto-ID · สาย SONY",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/s4-auto-sony-cable.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "State 4 · หัวชาร์จ COMMY",
+    "alt": "มิเตอร์บนช่อง Auto-ID ของ COMMY แสดง 5.05V 1.40A",
+    "summary": "5.05V 1.40A ราว 7.1W (แบต 22%)",
+    "readings": [
+      [
+        "แรงดัน",
+        "5.05V"
+      ],
+      [
+        "กระแส",
+        "1.40A"
+      ],
+      [
+        "กำลัง (V×A)",
+        "7.1W"
+      ]
+    ]
+  },
+  {
+    "id": "40",
+    "title": "ช่อง Auto-ID · สาย whY",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/s4-auto-why.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "State 4 · หัวชาร์จ COMMY",
+    "alt": "มิเตอร์บนช่อง Auto-ID ของ COMMY แสดง 5.01V 1.31A",
+    "summary": "5.01V 1.31A ราว 6.6W (แบต 22%)",
+    "readings": [
+      [
+        "แรงดัน",
+        "5.01V"
+      ],
+      [
+        "กระแส",
+        "1.31A"
+      ],
+      [
+        "กำลัง (V×A)",
+        "6.6W"
+      ]
+    ]
+  },
+  {
+    "id": "41",
+    "title": "ช่อง Auto-ID · สาย iPhone แท้ + iPhone 7 Plus",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/s4-auto-iphone-cable.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "State 4 · หัวชาร์จ COMMY",
+    "alt": "มิเตอร์บนช่อง Auto-ID ของ COMMY แสดง 5.00V 1.97A กับสาย Lightning แท้",
+    "summary": "5.00V 1.97A ราว 9.9W (แบต 30%)",
+    "readings": [
+      [
+        "แรงดัน",
+        "5.00V"
+      ],
+      [
+        "กระแส",
+        "1.97A"
+      ],
+      [
+        "กำลัง (V×A)",
+        "9.8W"
+      ]
+    ]
+  },
+  {
+    "id": "42",
+    "title": "ช่อง Auto-ID · สาย MINISO + iPhone 7 Plus",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/s4-auto-miniso.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "State 4 · หัวชาร์จ COMMY",
+    "alt": "มิเตอร์บนช่อง Auto-ID ของ COMMY แสดง 5.03V 1.82A กับสาย MINISO",
+    "summary": "5.03V 1.82A ราว 9.2W (แบต 30%) ต่ำกว่าสายแท้ราว 0.15A",
+    "readings": [
+      [
+        "แรงดัน",
+        "5.03V"
+      ],
+      [
+        "กระแส",
+        "1.82A"
+      ],
+      [
+        "กำลัง (V×A)",
+        "9.2W"
+      ]
+    ]
+  },
+  {
+    "id": "43",
+    "title": "เสียบชาร์จสองพอร์ตพร้อมกัน",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/two-ports.jpg",
+    "w": 1500,
+    "h": 1125,
+    "group": "ชาร์จสองพอร์ตพร้อมกัน",
+    "alt": "หัวชาร์จ COMMY เสียบสายทั้งสองพอร์ต",
+    "summary": "เสียบ Auto-ID ก่อน แล้วค่อยเสียบ QC 3.0 ไฟแรงทั้งคู่ ถ้าสลับลำดับ ช่อง QC จะกลับไปจ่าย 5V"
+  },
+  {
+    "id": "44",
+    "title": "ช่อง Auto-ID ชาร์จ Power Bank",
+    "src": "/media/posts/knowledge/commy-qc3-adapter-test-2018/autoid-powerbank.jpg",
+    "w": 1600,
+    "h": 1200,
+    "group": "ชาร์จสองพอร์ตพร้อมกัน",
+    "alt": "มิเตอร์บนช่อง Auto-ID แสดง 5.01V 2.17A ขณะชาร์จ Power Bank ROMOSS",
+    "summary": "ชาร์จ Power Bank ROMOSS PH-50 Pro ด้วยสาย whY Type-C ได้ 5.01V 2.17A ยืนยันว่าช่อง Auto-ID จ่ายถึง 2.1A",
+    "readings": [
+      [
+        "แรงดัน",
+        "5.01V"
+      ],
+      [
+        "กระแส",
+        "2.17A"
+      ],
+      [
+        "กำลัง (V×A)",
+        "10.9W"
+      ]
+    ]
+  }
+]
