@@ -967,3 +967,52 @@ main[data-type="news"] .shot__more .shot__credit { font-size: var(--fs-caption);
 .yt__frame:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 .yt figcaption { margin-top: var(--space-2); font-size: var(--fs-caption); color: var(--text-secondary); }
 .yt figcaption b { color: var(--text-primary); }
+
+
+/* Lens system infographic: each rear camera as a circle on a focal-length ruler (log scale, position --p in %),
+   circle size --d proportional to sensor diagonal, then one card per lens. No physical positions implied. */
+.news-lens { margin: var(--space-6) 0; display: grid; gap: var(--space-4); }
+.news-lens__ruler { position: relative; height: 150px; border-radius: var(--radius); background: var(--surface-sunken); border: 1px solid var(--border-hairline); overflow: hidden; }
+.news-lens__ruler::before { content: ""; position: absolute; left: 4%; right: 4%; top: 62px; height: 2px; background: var(--border-hairline); }
+.news-lens__dot { position: absolute; left: var(--p); top: 62px; translate: -50% -50%; width: var(--d); height: var(--d); border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #5a6b7c, #12161c 70%); border: 3px solid var(--accent); box-shadow: 0 2px 8px rgb(0 0 0 / 0.25); }
+.news-lens__lbl { position: absolute; left: var(--p); top: 108px; translate: -50% 0; text-align: center; white-space: nowrap; font-size: var(--fs-caption); line-height: 1.3; color: var(--text-secondary); }
+.news-lens__lbl b { display: block; color: var(--text-primary); font-family: var(--font-mono); }
+.news-lens__cards { display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+.news-lens__card { min-width: 0; background: var(--surface-elevated); border: 1px solid var(--border-hairline); border-top: 4px solid var(--accent); border-radius: var(--radius); padding: var(--space-3) var(--space-4); line-height: 1.55; font-size: var(--fs-caption); color: var(--text-secondary); }
+.news-lens__card b { display: block; color: var(--text-primary); font-size: var(--fs-body); }
+.news-lens__card .news-lens__mm { font-family: var(--font-mono); color: var(--accent); font-weight: 700; }
+.news-lens__note { font-size: var(--fs-caption); color: var(--text-secondary); margin: 0; }
+@media (max-width: 480px) { .news-lens__lbl { font-size: 0.75rem; } }
+
+/* Callout infographic: product photo (left 56%) + labels (right) joined by leader lines.
+   <figure class="news-callout"><div class="news-callout__body" style="--ratio:W/H">
+     <div class="news-callout__stage"><img …><span class="news-callout__dot" data-n="1" style="--x:40%;--y:30%"></span>…</div>
+     <svg class="news-callout__lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><polyline points="X1,Y1 60,LY 62,LY"/>…</svg>
+     <ol class="news-callout__labels"><li data-n="1" style="--ly:30%"><b>title</b>detail</li>…</ol>
+   </div><figcaption>credit</figcaption></figure>
+   SVG coords 0-100 over the body: X1 = dot x% × 0.56, Y1 = dot y%, LY = label centre %. Phones (≤768px): no lines, numbered dots + numbered list. */
+.news-callout { margin: var(--space-6) 0; }
+.news-callout__body { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-3); }
+.news-callout__stage { position: relative; aspect-ratio: var(--ratio); border-radius: var(--radius); overflow: hidden; background: var(--surface-sunken); }
+.news-callout__stage img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.news-callout__dot { position: absolute; left: var(--x); top: var(--y); translate: -50% -50%; width: 22px; height: 22px; border-radius: 50%;
+  display: grid; place-items: center; font: 700 0.75rem/1 var(--font-sans); color: #fff; background: rgb(0 115 95 / 0.95); border: 2px solid #fff; box-shadow: 0 0 0 2px rgb(0 0 0 / 0.35); }
+.news-callout__dot::after { content: attr(data-n); }
+.news-callout__lines { display: none; }
+.news-callout__labels { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
+.news-callout__labels li { position: relative; padding-left: 30px; font-size: var(--fs-caption); line-height: 1.45; color: var(--text-secondary); }
+.news-callout__labels li::before { content: attr(data-n); position: absolute; left: 0; top: 1px; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center;
+  font-weight: 700; font-size: 0.75rem; color: var(--on-accent); background: var(--accent); }
+.news-callout__labels li b { display: block; color: var(--text-primary); font-size: var(--fs-body); line-height: 1.3; }
+.news-callout > figcaption { margin-top: var(--space-2); font-size: var(--fs-caption); color: var(--text-secondary); }
+@media (min-width: 769px) {
+  .news-callout__body { grid-template-columns: 56% minmax(0, 1fr); column-gap: 6%; }
+  .news-callout__dot { width: 12px; height: 12px; border-width: 2px; }
+  .news-callout__dot::after { content: none; }
+  .news-callout__lines { display: block; position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+  .news-callout__lines polyline { fill: none; stroke: var(--accent); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+  .news-callout__labels { position: relative; display: block; }
+  .news-callout__labels li { position: absolute; left: 0; right: 0; top: var(--ly); translate: 0 -0.7em; padding-left: 0; }
+  .news-callout__labels li::before { display: none; }
+}
