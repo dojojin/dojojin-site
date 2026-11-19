@@ -1,0 +1,206 @@
+---
+title: "CISA เตือน 4 ช่องโหว่ถูกโจมตีจริง: Synology DSM, LiteLLM, Apache Axis, REDCap อัปเดตเป็นรุ่นไหน"
+topic: infra-ai
+type: news
+tags: [security, ai]
+date: 2026-11-19T11:10:00+07:00
+section: security
+sourceName: "CISA, Synology, GitHub (BerriAI), Apache และ CVE.org"
+sourceUrl: "https://www.cisa.gov/news-events/alerts/2026/11/18/cisa-adds-four-known-exploited-vulnerabilities-catalog"
+description: "CISA ใส่ 4 ช่องโหว่ที่ถูกโจมตีจริงเข้ารายการ KEV เมื่อ 18 พ.ย. 2569: Synology DSM (CVE-2024-10441), LiteLLM (CVE-2026-40217), Apache Axis (CVE-2026-90436) และ REDCap (CVE-2026-90817) สรุปรุ่นที่โดน รุ่นที่แก้แล้ว วันครบกำหนดของ CISA และสิ่งที่ควรทำ"
+kicker: "ข่าวความปลอดภัยไซเบอร์"
+lead: "CISA ใส่ 4 ช่องโหว่ที่ถูกโจมตีจริงเข้ารายการ KEV เมื่อ 18 พ.ย. 2569 ครับ ที่ใกล้ตัวสุดคือ Synology DSM ที่หลายบ้านและร้านเล็ก ๆ ใช้เป็น NAS กับ LiteLLM ที่ทีมพัฒนาใช้เป็นประตูกลางเรียก AI อีกสองตัวคือ Apache Axis และ REDCap"
+meta: "เรียบเรียงจาก CISA, Synology, GitHub ของ BerriAI, Apache และ CVE.org · ข้อมูล ณ 19 พฤศจิกายน 2569"
+cover: "/media/posts/news/cisa-kev-synology-litellm-18nov/cover.jpg"
+coverAlt: "ปกข่าว CISA เพิ่มช่องโหว่ที่ถูกโจมตีจริง 4 รายการเข้า KEV เมื่อ 18 พฤศจิกายน 2569 พร้อมชื่อ Synology DSM, LiteLLM, Apache Axis และ REDCap (ภาพประกอบทางเดินห้องเซิร์ฟเวอร์)"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="split">
+<div class="prose">
+
+CISA หน่วยงานความมั่นคงไซเบอร์ของสหรัฐฯ เพิ่มช่องโหว่ 4 รายการเข้ารายการ KEV เมื่อ 18 พฤศจิกายน 2569 ครับ
+
+KEV (Known Exploited Vulnerabilities) คือรายการช่องโหว่ที่ CISA มีหลักฐานว่า "ถูกโจมตีจริงแล้ว" ไม่ใช่แค่ช่องโหว่ในทฤษฎี ผมใช้เป็นตัวช่วยเรียงว่าอะไรควรแก้ก่อน
+
+วันครบกำหนดแก้ที่ CISA ตั้งไว้บังคับเฉพาะหน่วยงานรัฐบาลกลางสหรัฐฯ องค์กรอื่นไม่ได้ถูกบังคับ แต่ผมว่าเป็นสัญญาณที่ดีว่าควรรีบ
+
+CISA ไม่ได้บอกว่าใครโจมตี เข้าทางไหน หรือเหยื่อเป็นใคร ผมเลยไม่เดาเพิ่ม ทั้ง 4 รายการยังระบุว่าไม่ทราบว่าถูกใช้ในแคมเปญแรนซัมแวร์หรือไม่ (Unknown)
+
+</div>
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/news/cisa-kev-synology-litellm-18nov/photo-1.jpg" width="1100" height="900" loading="lazy" alt="ภาพหน้าจอประกาศของ CISA วันที่ 18 พฤศจิกายน 2026 รายการช่องโหว่ 4 รายการ ได้แก่ Synology DSM, BerriAI LiteLLM, Apache Axis และ REDCap" /></div><figcaption><span class="news-fig__credit">ภาพ: ภาพหน้าจอประกาศ CISA (cisa.gov) ถ่ายเมื่อ 19 พ.ย. 2569</span></figcaption></figure>
+</div>
+
+<div class="news-stats">
+<div class="news-stat"><b>21 พ.ย. 2569</b>วันครบกำหนดของ Synology DSM, Apache Axis และ REDCap (เพิ่มเมื่อ 18 พ.ย.)</div>
+<div class="news-stat"><b>2 ธ.ค. 2569</b>วันครบกำหนดของ LiteLLM</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ทั้ง 4 รายการ
+
+<div class="prose">
+
+ชื่อและชนิดช่องโหว่มาจากรายการ KEV ส่วนรุ่นที่แก้แล้วมาจากหน้าของผู้ผลิตแต่ละเจ้าครับ
+
+<div class="news-cards">
+<div class="news-card is-bad"><b>Synology DiskStation Manager (DSM) · CVE-2024-10441</b><span class="news-pill">แก้ภายใน 21 พ.ย.</span> ระบบปฏิบัติการของ NAS Synology ช่องโหว่อยู่ที่ system plugin daemon ผู้โจมตีสั่งรันโค้ดจากระยะไกลได้ รุ่นที่แก้แล้ว DSM 7.2.2-72806-1, 7.2.1-69057-6 หรือ 7.2-64570-4 ขึ้นไป และ BeeStation OS (BSM) 1.1-65374 ขึ้นไป</div>
+<div class="news-card is-bad"><b>BerriAI LiteLLM · CVE-2026-40217</b><span class="news-pill">แก้ภายใน 2 ธ.ค.</span> ตัวกลางที่ทีมพัฒนาใช้เรียกโมเดล AI หลายเจ้าผ่านจุดเดียว ช่องโหว่อยู่ที่ endpoint /guardrails/test_custom_code สั่งรันโค้ดได้ รุ่นที่โดน 1.81.8 ถึงก่อน 1.83.10 รุ่นที่แก้แล้ว 1.83.11 ขึ้นไป</div>
+<div class="news-card is-bad"><b>Apache Axis · CVE-2026-90436</b><span class="news-pill">แก้ภายใน 21 พ.ย.</span> ไลบรารี SOAP ของ Java สายรุ่น 1.x ส่งข้อความ SOAP fault ที่สร้างมาเฉพาะแล้วสั่งรันโค้ดได้โดยไม่ต้องล็อกอิน รุ่นที่โดนคือ 1.x ทุกรุ่นถึง 1.4 และ Apache ไม่มีแผนออกรุ่นแก้ แนะนำให้ย้ายไป Axis 2/Java หรือ SOAP engine อื่น</div>
+<div class="news-card is-bad"><b>Vanderbilt REDCap · CVE-2026-90817</b><span class="news-pill">แก้ภายใน 21 พ.ย.</span> ระบบเก็บข้อมูลงานวิจัยของมหาวิทยาลัยแวนเดอร์บิลต์ ผู้โจมตีไม่ต้องล็อกอินก็สั่งรันโค้ดบนเซิร์ฟเวอร์ได้ ถ้ารู้ค่า hash ของแบบสอบถามสาธารณะ รุ่นที่โดนเริ่มตั้งแต่ 13.3.0 รุ่นที่แก้แล้ว 16.0.49 LTS, 17.3.10 LTS หรือ 17.4.4</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## Synology DSM: แพตช์ออกมาตั้งแต่ปี 2567
+
+<div class="split">
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/news/cisa-kev-synology-litellm-18nov/photo-2.jpg" width="1448" height="1086" loading="lazy" alt="ภาพประกอบ กล่อง NAS สองช่องสีดำและเราเตอร์วางบนโต๊ะทำงานที่บ้านตอนเย็น ไฟสถานะสีเขียว" /></div><figcaption><span class="news-fig__credit">ภาพ: ภาพประกอบจาก DOJOJIN.TECH ไม่ใช่ภาพเหตุการณ์จริง และไม่ใช่รุ่นใดรุ่นหนึ่ง</span></figcaption></figure>
+<div class="prose">
+
+ตัวนี้ใกล้ตัวคนทั่วไปที่สุดครับ Synology ประกาศ CVE-2024-10441 ในเอกสาร Synology-SA-24:20 เมื่อ 5 พ.ย. 2567 ให้ระดับ Critical คะแนน CVSS 9.8 (คะแนนความรุนแรง เต็ม 10) และบอกว่าไม่มีวิธีลดความเสี่ยงอื่นนอกจากอัปเดต
+
+NAS ที่อัปเดตตามปกติน่าจะได้แพตช์นี้ไปนานแล้ว ที่เสี่ยงคือเครื่องที่ปล่อยทิ้งไว้ไม่เคยอัปเดต โดยเฉพาะเครื่องที่เปิดให้เข้าจากอินเทอร์เน็ต
+
+Synology ไม่ได้บอกรายละเอียดวิธีโจมตี (ระบุแค่ "unspecified vectors") และ CISA ก็ไม่ได้บอกว่าการโจมตีจริงเกิดกับเครื่องแบบไหน
+
+เอกสารของ Synology มีรุ่นแก้ของสาย DSM 7.1 (7.1.1-42962-7) และ DSM 6.2 (6.2.4-25556-8) ด้วย แต่รุ่นเหล่านั้นแก้ช่องโหว่อีก 2 รายการในเอกสารเดียวกัน สำหรับ CVE-2024-10441 เอกสารระบุเฉพาะ DSM ก่อน 7.2-64570-4, 7.2.1-69057-6 และ 7.2.2-72806-1 กับ BSM ก่อน 1.1-65374
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## LiteLLM: ต้องมีสิทธิ์แอดมินก่อน แต่ผลหนัก
+
+<div class="prose">
+
+LiteLLM คือตัวกลางที่ทีมพัฒนาตั้งเป็น "AI gateway" ครับ แอปในองค์กรเรียกผ่านจุดเดียว แล้วมันส่งต่อให้โมเดลของแต่ละเจ้า
+
+ตามประกาศบน GitHub ของ BerriAI endpoint `POST /guardrails/test_custom_code` รันโค้ด Python ที่ผู้ใช้ส่งมาในกล่องทราย (sandbox) ที่ทีมเขียนเอง แต่โค้ดหลุดออกมาได้ด้วยเทคนิคระดับ bytecode จนสั่งรันโค้ดในโปรเซสของ proxy ได้ ซึ่งในอิมเมจ Docker ค่าเริ่มต้นรันด้วยสิทธิ์ root
+
+ข้อสำคัญคือค่าเริ่มต้นต้องมีสิทธิ์ระดับ proxy-admin (credential แอดมินของ proxy) ถึงจะเข้า endpoint นี้ได้ ประกาศจึงให้ความรุนแรง Moderate (5.9 แบบ CVSS v4) ส่วนระเบียน CVE ให้ 8.8 (CVSS 3.1) CISA ไม่ได้บอกว่าการโจมตีจริงได้สิทธิ์แอดมินมาอย่างไร
+
+สิ่งที่ผู้ผลิตแนะนำ:
+
+<ol class="news-steps">
+<li class="is-key"><b>อัปเกรดเป็น 1.83.11 ขึ้นไป</b>กล่องทรายที่เขียนเองถูกเปลี่ยนเป็น RestrictedPython หน้าประกาศลงรุ่นแก้ไว้สองแบบ (ตารางบอก 1.83.10 ข้อความบอก 1.83.11) ผมจึงใช้ตัวที่สูงกว่า</li>
+<li><b>ถ้ายังอัปเกรดไม่ได้ ให้บล็อก endpoint นั้น</b>บล็อก POST /guardrails/test_custom_code ที่ reverse proxy หรือ API gateway</li>
+</ol>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## Apache Axis และ REDCap
+
+<div class="prose">
+
+**Apache Axis 1.x** หมดอายุการสนับสนุน (EOL) แล้วครับ ประกาศของ Apache เมื่อต้นเดือนพฤศจิกายน 2569 บอกว่าทุกรุ่นถึง 1.4 โดน
+
+ช่องโหว่อยู่ที่การอ่าน SOAP fault ซึ่งเกิดก่อนด่านตรวจสิทธิ์ของแต่ละบริการ ล็อกอินที่ตั้งไว้จึงช่วยไม่ได้ แต่ต้องมีคลาสที่เหมาะสมอยู่ใน classpath ของแอปด้วยถึงจะสั่งรันโค้ดได้
+
+Apache ไม่คาดว่าจะออกรุ่น 1.x ที่แก้ แนะนำให้ย้ายไป Axis 2/Java หรือใช้ Axis ที่ใส่แพตช์เองตาม commit ที่ประกาศอ้างไว้ (41f3b4e) ฝั่ง KEV ก็เขียนว่าผลิตภัณฑ์อาจ EoL และแนะนำให้เลิกใช้หรือย้ายไปรุ่นที่ยังสนับสนุน
+
+Axis เป็นไลบรารี ระบบเก่าที่ฝังมันไว้ข้างในก็อาจโดนด้วย
+
+**REDCap** ตามระเบียน CVE (ผู้แจ้งคือ Securifera ลงวันที่ 20 ก.ย. 2569) เป็นช่องโหว่สั่งรันโค้ดได้โดยไม่ต้องล็อกอิน ผ่าน HTTP request ที่ไปเรียก route ที่ไม่ควรเข้าถึงได้จากหน้าแบบสอบถามสาธารณะ พร้อมค่า path ที่สร้างมาในขั้นนำเข้าข้อมูล เงื่อนไขคือผู้โจมตีต้องรู้ hash ของแบบสอบถามสาธารณะนั้น
+
+</div>
+
+</section>
+
+<section class="section">
+
+## แล้วต้องทำอะไร
+
+<div class="prose">
+
+ข้อ 1-3 อิงจากหน้าผู้ผลิตตามที่เล่าไว้ข้างบน ส่วนข้อ 4-5 เป็นคำแนะนำของผมเอง
+
+<ol class="news-steps">
+<li class="is-key"><b>Synology: อัปเดต DSM</b>ดูรุ่นใน Control Panel แล้วเทียบกับรุ่นที่แก้แล้วด้านบน ถ้าเก่ากว่าให้อัปเดตเลย</li>
+<li class="is-key"><b>LiteLLM: ไป 1.83.11 ขึ้นไป</b>หรือบล็อก endpoint ไว้ก่อนตามที่ผู้ผลิตบอก</li>
+<li><b>Axis 1.x: วางแผนย้าย</b>ไม่มีรุ่นแก้ออกมา ต้องย้ายไปรุ่นที่ยังสนับสนุน หรือแพตช์เอง</li>
+<li><b>อย่าเปิดบริการแบบนี้ตรงจากอินเทอร์เน็ต</b>หน้าจัดการ NAS หน้าแอดมินของ LiteLLM และ REDCap ควรเข้าผ่าน VPN หรือจำกัด IP</li>
+<li class="is-key"><b>ตรวจว่าโดนไปก่อนแพตช์หรือไม่</b>ลงแพตช์แล้ว ของที่ถูกฝังไว้ก่อนหน้าไม่หายไปเอง ให้ดู log การเข้าสู่ระบบ บัญชีใหม่ที่ไม่รู้จัก และไฟล์หรือโปรเซสแปลก ๆ</li>
+</ol>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ในไทยเป็นอย่างไร
+
+<div class="prose">
+
+Synology DSM มีคนไทยใช้เป็น NAS ตามบ้านและร้านเล็ก ๆ จริงครับ ส่วน LiteLLM ทีมพัฒนาที่ทำระบบ AI ก็ใช้กัน ผมยังไม่พบรายงานว่ามีหน่วยงานหรือองค์กรในไทยโดนช่องโหว่ทั้ง 4 ตัวนี้ และในข่าวนี้ยังไม่ได้เช็กประกาศของ ThaiCERT
+
+ใครใช้อยู่ เช็กรุ่นของตัวเองเลยดีกว่ารอประกาศครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ข้อควรรู้เพิ่มเติม
+
+<div class="prose">
+
+- ผมยังไม่ได้ทดลองช่องโหว่เหล่านี้เอง และไม่ได้ยืนยันรายละเอียดการโจมตีจริง
+- หน้าประกาศของ REDCap อยู่ในเว็บ Community ที่ต้องล็อกอิน ผมเปิดไม่ได้ รุ่นที่โดนและรุ่นที่แก้ของ REDCap จึงมาจากระเบียน CVE ไม่ใช่หน้าของผู้ผลิตโดยตรง
+- Apache Axis อ้างจากประกาศที่ Apache ส่งเข้ารายชื่ออีเมล ส่วนข้อความใน KEV บอกว่าผลิตภัณฑ์อาจ EoL
+- ระเบียน CVE ของ LiteLLM ไม่ได้ลงรุ่นที่โดนเป็นเลขรุ่น (ลงเป็น "through 2026-04-08") เลขรุ่น 1.81.8 ถึงก่อน 1.83.10 มาจากประกาศบน GitHub
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- CISA (เพิ่ม 4 ช่องโหว่เข้า KEV 18 พ.ย. 2569): <a href="https://www.cisa.gov/news-events/alerts/2026/11/18/cisa-adds-four-known-exploited-vulnerabilities-catalog" rel="noopener">cisa.gov</a>
+- CISA KEV catalog (ข้อมูลรายการ วันเพิ่ม วันครบกำหนด สถานะแรนซัมแวร์ ข้อความ Required Action): <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" rel="noopener">cisa.gov</a>
+- Synology (Synology-SA-24:20 ลงวันที่ 5 พ.ย. 2567 ปรับปรุงล่าสุด 28 มี.ค. 2568): <a href="https://www.synology.com/en-global/security/advisory/Synology_SA_24_20" rel="noopener">synology.com</a>
+- BerriAI LiteLLM (GHSA-wxxx-gvqv-xp7p ลงวันที่ 7 พ.ค. 2569): <a href="https://github.com/BerriAI/litellm/security/advisories/GHSA-wxxx-gvqv-xp7p" rel="noopener">github.com</a>
+- Apache (ประกาศ CVE-2026-90436 ที่ส่งเข้ารายชื่ออีเมลของ Axis ต้นเดือน พ.ย. 2569): <a href="https://lists.apache.org/thread/8slf0j9gz35z56t0glt5h0ncwlbn4bdz" rel="noopener">lists.apache.org</a>
+- CVE.org (ระเบียน CVE-2026-90817 ของ REDCap ลงวันที่ 20 ก.ย. 2569): <a href="https://www.cve.org/CVERecord?id=CVE-2026-90817" rel="noopener">cve.org</a>
+- CVE.org (ระเบียน CVE-2026-40217 ของ LiteLLM ลงวันที่ 10 เม.ย. 2569): <a href="https://www.cve.org/CVERecord?id=CVE-2026-40217" rel="noopener">cve.org</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพประกอบ NAS ในเนื้อข่าว: ภาพประกอบจาก DOJOJIN.TECH ไม่ใช่ภาพเหตุการณ์จริง
+- ภาพหน้าจอประกาศ CISA: ถ่ายจาก <a href="https://www.cisa.gov/" rel="noopener">cisa.gov</a> เมื่อ 19 พ.ย. 2569
+- ภาพปก: by dojojin.tech (ภาพประกอบห้องเซิร์ฟเวอร์ ไม่ใช้โลโก้ผู้ผลิต)
+
+</div>
+
+</section>
