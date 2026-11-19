@@ -32,7 +32,7 @@ export const ATLASES = [
     description: 'ราคาเปิดตัว vivo X ในไทย คู่กับราคาเปิดตัวในจีน ทุกรุ่น 2012–2026 พร้อมสเปกและชิ้นส่วนบนบอร์ด',
     brand: 'vivo',
     models: 63, years: '2012–2026', photos: 9,
-    thbMin: 12990, thbMax: 79999,
-    updated: '2026-10-01',
+    thbMin: 12990, thbMax: 82999,
+    updated: '2026-11-19',
   },
 ];

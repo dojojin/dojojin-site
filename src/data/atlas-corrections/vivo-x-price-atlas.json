@@ -414,5 +414,312 @@
     "source": "https://www.fonearena.com/blog/474167/vivo-x200t-price-india-specifications.html",
     "snippet": "priced at Rs. 59,999 for the 12GB + 256GB model ... will go on sale starting from February 3rd",
     "checked": "2026-11-16, source fetched and quoted"
+  },
+  {
+    "id": "vivo-x500",
+    "path": "th_launch",
+    "op": "set",
+    "old": null,
+    "new": "2026-11-19",
+    "why": "X500 series launched and on sale in Thailand 19 Nov 2026.",
+    "source": "https://mgronline.com/cyberbiz/detail/9690000110446",
+    "snippet": "พร้อมวางจำหน่าย 19 พฤศจิกายน 2569",
+    "checked": "2026-11-19, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500",
+    "path": "th_channel",
+    "op": "set",
+    "old": null,
+    "new": "vivo Thailand official launch 19 Nov 2026; retail incl. BaNANA (promo 19-30 Nov 2026)",
+    "why": "Thai sale channel.",
+    "source": "https://instore.bnn.in.th/vivo-x500-series/",
+    "snippet": "โปรโมชันวันที่ 19 พ.ย. 69 – 30 พ.ย. 69",
+    "checked": "2026-11-19, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500",
+    "path": "tiers[gb=256&ram=12].thb",
+    "op": "set",
+    "old": null,
+    "new": 42999,
+    "why": "Thai price 12/256 (BaNANA; Read the Cloud table lists the same price with X500 colours).",
+    "source": "https://instore.bnn.in.th/vivo-x500-series/",
+    "snippet": "vivo X500 12GB + 256GB 42,999.- vivo X500 12GB + 512GB 48,999.- vivo X500 Pro 12GB + 256GB 48,999.- vivo X500 Pro Max 12GB + 256GB 54,999.- vivo X500 Pro Max 12GB + 512GB 59,999.- vivo X500 Pro Max Photographer Kit 12GB + 1TB 82,999.-",
+    "checked": "2026-11-19, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500",
+    "path": "tiers[gb=512&ram=12].thb",
+    "op": "set",
+    "old": null,
+    "new": 48999,
+    "why": "Thai price 12/512.",
+    "source": "https://instore.bnn.in.th/vivo-x500-series/",
+    "snippet": "vivo X500 12GB + 256GB 42,999.- vivo X500 12GB + 512GB 48,999.- vivo X500 Pro 12GB + 256GB 48,999.- vivo X500 Pro Max 12GB + 256GB 54,999.- vivo X500 Pro Max 12GB + 512GB 59,999.- vivo X500 Pro Max Photographer Kit 12GB + 1TB 82,999.-",
+    "checked": "2026-11-19, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500",
+    "path": "th_status",
+    "op": "set",
+    "old": "not_sold",
+    "new": "ok",
+    "why": "Now sold in Thailand.",
+    "source": "https://instore.bnn.in.th/vivo-x500-series/",
+    "snippet": "vivo X500 12GB + 256GB 42,999.- vivo X500 12GB + 512GB 48,999.- vivo X500 Pro 12GB + 256GB 48,999.- vivo X500 Pro Max 12GB + 256GB 54,999.- vivo X500 Pro Max 12GB + 512GB 59,999.- vivo X500 Pro Max Photographer Kit 12GB + 1TB 82,999.-",
+    "checked": "2026-11-19, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500",
+    "path": "thai_variant",
+    "op": "set",
+    "old": "Not sold in Thailand (China only so far; not in Europe teaser either)",
+    "new": "Thai version 12+256 GB 42,999 / 12+512 GB 48,999 THB (no 1 TB in Thailand); colours Sunny White, Starry Gray, Dust Black",
+    "why": "Thai launch 19 Nov 2026.",
+    "source": "https://instore.bnn.in.th/vivo-x500-series/",
+    "snippet": "vivo X500 12GB + 256GB 42,999.- vivo X500 12GB + 512GB 48,999.- vivo X500 Pro 12GB + 256GB 48,999.- vivo X500 Pro Max 12GB + 256GB 54,999.- vivo X500 Pro Max 12GB + 512GB 59,999.- vivo X500 Pro Max Photographer Kit 12GB + 1TB 82,999.-",
+    "checked": "2026-11-19, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500",
+    "path": "price_flags",
+    "op": "set",
+    "old": "Not (yet) sold in Thailand as of 2026-10-17: global rollout starts Europe 27 Oct 2026; MY SIRIM cert. Sale in China 2026-09-24.",
+    "new": "TH launch 19 Nov 2026: 12/256 42,999, 12/512 48,999 THB per BaNANA; Read the Cloud lists the same prices but without model names (matched by X500 colours). MGR Online gives no X500 price. Sale in China 2026-09-24.",
+    "why": "Thai launch prices; second source is unnamed-model table.",
+    "source": "https://readthecloud.co/vivo-x500-series/",
+    "snippet": "12GB/256GB 42,999 สีเทา Starry Gray, สีขาว Sunny White, สีดำ Dusk Black ... 12GB/512GB 48,999 สีเทา Starry Gray, สีดำ Dusk Black (table without model names)",
+    "checked": "2026-11-19, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500",
+    "path": "price_sources",
+    "op": "set",
+    "old": [
+      "https://tech.ifeng.com/c/8wfuLj6nU45",
+      "https://propakistani.pk/2026/09/21/vivo-x500-series-launched-with-2nm-dimensity-9600-pro-and-a-200mp-telephoto-on-the-pro-max/",
+      "https://www.thaimobilecenter.com/content/vivo-x500-series-global-europe-launch-october-27.asp"
+    ],
+    "new": [
+      "https://tech.ifeng.com/c/8wfuLj6nU45",
+      "https://instore.bnn.in.th/vivo-x500-series/",
+      "https://readthecloud.co/vivo-x500-series/"
+    ],
+    "why": "Thai price sources.",
+    "source": "https://instore.bnn.in.th/vivo-x500-series/",
+    "snippet": "vivo X500 12GB + 256GB 42,999.- vivo X500 12GB + 512GB 48,999.- vivo X500 Pro 12GB + 256GB 48,999.- vivo X500 Pro Max 12GB + 256GB 54,999.- vivo X500 Pro Max 12GB + 512GB 59,999.- vivo X500 Pro Max Photographer Kit 12GB + 1TB 82,999.-",
+    "checked": "2026-11-19, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500-pro",
+    "path": "th_launch",
+    "op": "set",
+    "old": null,
+    "new": "2026-11-19",
+    "why": "Launched in Thailand 19 Nov 2026.",
+    "source": "https://mgronline.com/cyberbiz/detail/9690000110446",
+    "snippet": "X500 Pro (12GB+256GB) 48,999 บาท - X500 Pro Max (12GB+256GB) 54,999 บาท - X500 Pro Max (12GB+512GB) 59,999 บาท - X500 Pro Max (12GB+1TB) Photographer Kit 82,999 บาท ... พร้อมวางจำหน่าย 19 พฤศจิกายน 2569",
+    "checked": "2026-11-19, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500-pro",
+    "path": "th_channel",
+    "op": "set",
+    "old": null,
+    "new": "vivo Thailand official launch 19 Nov 2026; retail incl. BaNANA (promo 19-30 Nov 2026)",
+    "why": "Thai sale channel.",
+    "source": "https://instore.bnn.in.th/vivo-x500-series/",
+    "snippet": "โปรโมชันวันที่ 19 พ.ย. 69 – 30 พ.ย. 69",
+    "checked": "2026-11-19, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500-pro",
+    "path": "tiers[gb=256&ram=12].thb",
+    "op": "set",
+    "old": null,
+    "new": 48999,
+    "why": "Thai price 12/256 (MGR Online + BaNANA agree).",
+    "source": "https://mgronline.com/cyberbiz/detail/9690000110446",
+    "snippet": "X500 Pro (12GB+256GB) 48,999 บาท - X500 Pro Max (12GB+256GB) 54,999 บาท - X500 Pro Max (12GB+512GB) 59,999 บาท - X500 Pro Max (12GB+1TB) Photographer Kit 82,999 บาท ... พร้อมวางจำหน่าย 19 พฤศจิกายน 2569",
+    "checked": "2026-11-19, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500-pro",
+    "path": "th_status",
+    "op": "set",
+    "old": "not_sold",
+    "new": "ok",
+    "why": "Now sold in Thailand.",
+    "source": "https://mgronline.com/cyberbiz/detail/9690000110446",
+    "snippet": "X500 Pro (12GB+256GB) 48,999 บาท - X500 Pro Max (12GB+256GB) 54,999 บาท - X500 Pro Max (12GB+512GB) 59,999 บาท - X500 Pro Max (12GB+1TB) Photographer Kit 82,999 บาท ... พร้อมวางจำหน่าย 19 พฤศจิกายน 2569",
+    "checked": "2026-11-19, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500-pro",
+    "path": "thai_variant",
+    "op": "set",
+    "old": "Not yet sold in Thailand as of 2026-10-17 (China only; Europe 27 Oct)",
+    "new": "Thai version 12+256 GB only, 48,999 THB; colours Sunset Orange, Starry Gray",
+    "why": "Thai launch 19 Nov 2026.",
+    "source": "https://mgronline.com/cyberbiz/detail/9690000110446",
+    "snippet": "X500 Pro (12GB+256GB) 48,999 บาท - X500 Pro Max (12GB+256GB) 54,999 บาท - X500 Pro Max (12GB+512GB) 59,999 บาท - X500 Pro Max (12GB+1TB) Photographer Kit 82,999 บาท ... พร้อมวางจำหน่าย 19 พฤศจิกายน 2569",
+    "checked": "2026-11-19, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500-pro",
+    "path": "price_flags",
+    "op": "set",
+    "old": "Not (yet) sold in Thailand as of 2026-10-17: global rollout starts Europe 27 Oct 2026; MY SIRIM cert. Pro prices from one English source (propakistani) only.",
+    "new": "TH launch 19 Nov 2026: 12/256 only at 48,999 THB (MGR Online, BaNANA). China tiers per ifeng/propakistani.",
+    "why": "Thai launch price.",
+    "source": "https://mgronline.com/cyberbiz/detail/9690000110446",
+    "snippet": "X500 Pro (12GB+256GB) 48,999 บาท - X500 Pro Max (12GB+256GB) 54,999 บาท - X500 Pro Max (12GB+512GB) 59,999 บาท - X500 Pro Max (12GB+1TB) Photographer Kit 82,999 บาท ... พร้อมวางจำหน่าย 19 พฤศจิกายน 2569",
+    "checked": "2026-11-19, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500-pro",
+    "path": "price_sources",
+    "op": "set",
+    "old": [
+      "https://tech.ifeng.com/c/8wfuLj6nU45",
+      "https://propakistani.pk/2026/09/21/vivo-x500-series-launched-with-2nm-dimensity-9600-pro-and-a-200mp-telephoto-on-the-pro-max/",
+      "https://www.thaimobilecenter.com/content/vivo-x500-series-global-europe-launch-october-27.asp"
+    ],
+    "new": [
+      "https://tech.ifeng.com/c/8wfuLj6nU45",
+      "https://propakistani.pk/2026/09/21/vivo-x500-series-launched-with-2nm-dimensity-9600-pro-and-a-200mp-telephoto-on-the-pro-max/",
+      "https://mgronline.com/cyberbiz/detail/9690000110446",
+      "https://instore.bnn.in.th/vivo-x500-series/"
+    ],
+    "why": "Thai price sources.",
+    "source": "https://mgronline.com/cyberbiz/detail/9690000110446",
+    "snippet": "X500 Pro (12GB+256GB) 48,999 บาท - X500 Pro Max (12GB+256GB) 54,999 บาท - X500 Pro Max (12GB+512GB) 59,999 บาท - X500 Pro Max (12GB+1TB) Photographer Kit 82,999 บาท ... พร้อมวางจำหน่าย 19 พฤศจิกายน 2569",
+    "checked": "2026-11-19, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500-pro",
+    "path": "price_conf",
+    "op": "set",
+    "old": "low",
+    "new": "high",
+    "why": "Thai price confirmed by two sources.",
+    "source": "https://mgronline.com/cyberbiz/detail/9690000110446",
+    "snippet": "X500 Pro (12GB+256GB) 48,999 บาท - X500 Pro Max (12GB+256GB) 54,999 บาท - X500 Pro Max (12GB+512GB) 59,999 บาท - X500 Pro Max (12GB+1TB) Photographer Kit 82,999 บาท ... พร้อมวางจำหน่าย 19 พฤศจิกายน 2569",
+    "checked": "2026-11-19, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500-pro-max",
+    "path": "th_launch",
+    "op": "set",
+    "old": null,
+    "new": "2026-11-19",
+    "why": "Launched in Thailand 19 Nov 2026.",
+    "source": "https://mgronline.com/cyberbiz/detail/9690000110446",
+    "snippet": "X500 Pro (12GB+256GB) 48,999 บาท - X500 Pro Max (12GB+256GB) 54,999 บาท - X500 Pro Max (12GB+512GB) 59,999 บาท - X500 Pro Max (12GB+1TB) Photographer Kit 82,999 บาท ... พร้อมวางจำหน่าย 19 พฤศจิกายน 2569",
+    "checked": "2026-11-19, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500-pro-max",
+    "path": "th_channel",
+    "op": "set",
+    "old": null,
+    "new": "vivo Thailand official launch 19 Nov 2026; retail incl. BaNANA (promo 19-30 Nov 2026)",
+    "why": "Thai sale channel.",
+    "source": "https://instore.bnn.in.th/vivo-x500-series/",
+    "snippet": "โปรโมชันวันที่ 19 พ.ย. 69 – 30 พ.ย. 69",
+    "checked": "2026-11-19, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500-pro-max",
+    "path": "tiers[gb=256&ram=12].thb",
+    "op": "set",
+    "old": null,
+    "new": 54999,
+    "why": "Thai price 12/256 (MGR Online, BizTalk News, BaNANA agree).",
+    "source": "https://mgronline.com/cyberbiz/detail/9690000110446",
+    "snippet": "X500 Pro (12GB+256GB) 48,999 บาท - X500 Pro Max (12GB+256GB) 54,999 บาท - X500 Pro Max (12GB+512GB) 59,999 บาท - X500 Pro Max (12GB+1TB) Photographer Kit 82,999 บาท ... พร้อมวางจำหน่าย 19 พฤศจิกายน 2569",
+    "checked": "2026-11-19, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500-pro-max",
+    "path": "tiers[gb=512&ram=12].thb",
+    "op": "set",
+    "old": null,
+    "new": 59999,
+    "why": "Thai price 12/512.",
+    "source": "https://mgronline.com/cyberbiz/detail/9690000110446",
+    "snippet": "X500 Pro (12GB+256GB) 48,999 บาท - X500 Pro Max (12GB+256GB) 54,999 บาท - X500 Pro Max (12GB+512GB) 59,999 บาท - X500 Pro Max (12GB+1TB) Photographer Kit 82,999 บาท ... พร้อมวางจำหน่าย 19 พฤศจิกายน 2569",
+    "checked": "2026-11-19, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500-pro-max",
+    "path": "tiers",
+    "op": "add",
+    "new": {
+      "gb": 1024,
+      "ram": 12,
+      "thb": 82999,
+      "usd": null,
+      "usd_contract": false,
+      "variant": "TH Photographer Kit"
+    },
+    "why": "Thai-only tier: 12GB+1TB Photographer Kit 82,999 THB (no matching China tier).",
+    "source": "https://mgronline.com/cyberbiz/detail/9690000110446",
+    "snippet": "X500 Pro (12GB+256GB) 48,999 บาท - X500 Pro Max (12GB+256GB) 54,999 บาท - X500 Pro Max (12GB+512GB) 59,999 บาท - X500 Pro Max (12GB+1TB) Photographer Kit 82,999 บาท ... พร้อมวางจำหน่าย 19 พฤศจิกายน 2569",
+    "checked": "2026-11-19, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500-pro-max",
+    "path": "th_status",
+    "op": "set",
+    "old": "not_sold",
+    "new": "ok",
+    "why": "Now sold in Thailand.",
+    "source": "https://mgronline.com/cyberbiz/detail/9690000110446",
+    "snippet": "X500 Pro (12GB+256GB) 48,999 บาท - X500 Pro Max (12GB+256GB) 54,999 บาท - X500 Pro Max (12GB+512GB) 59,999 บาท - X500 Pro Max (12GB+1TB) Photographer Kit 82,999 บาท ... พร้อมวางจำหน่าย 19 พฤศจิกายน 2569",
+    "checked": "2026-11-19, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500-pro-max",
+    "path": "thai_variant",
+    "op": "set",
+    "old": "Not yet sold in Thailand as of 2026-10-17 (China only; Europe 27 Oct)",
+    "new": "Thai version 12+256 54,999 / 12+512 59,999 THB, Photographer Kit 12+1TB 82,999 THB; colours Sunset Orange, Starry Gray, Moonlit Black",
+    "why": "Thai launch 19 Nov 2026.",
+    "source": "https://mgronline.com/cyberbiz/detail/9690000110446",
+    "snippet": "X500 Pro (12GB+256GB) 48,999 บาท - X500 Pro Max (12GB+256GB) 54,999 บาท - X500 Pro Max (12GB+512GB) 59,999 บาท - X500 Pro Max (12GB+1TB) Photographer Kit 82,999 บาท ... พร้อมวางจำหน่าย 19 พฤศจิกายน 2569",
+    "checked": "2026-11-19, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500-pro-max",
+    "path": "price_flags",
+    "op": "set",
+    "old": "Not (yet) sold in Thailand as of 2026-10-17: global rollout starts Europe 27 Oct 2026; MY SIRIM cert. vivo X500 Ultra expected Mar-Apr 2027; X500 E rumoured.",
+    "new": "TH launch 19 Nov 2026: 54,999 / 59,999 THB, Photographer Kit 1TB 82,999 THB (MGR Online, BizTalk News, BaNANA). vivo X500 Ultra expected Mar-Apr 2027; X500 E rumoured.",
+    "why": "Thai launch prices.",
+    "source": "https://mgronline.com/cyberbiz/detail/9690000110446",
+    "snippet": "X500 Pro (12GB+256GB) 48,999 บาท - X500 Pro Max (12GB+256GB) 54,999 บาท - X500 Pro Max (12GB+512GB) 59,999 บาท - X500 Pro Max (12GB+1TB) Photographer Kit 82,999 บาท ... พร้อมวางจำหน่าย 19 พฤศจิกายน 2569",
+    "checked": "2026-11-19, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x500-pro-max",
+    "path": "price_sources",
+    "op": "set",
+    "old": [
+      "https://tech.ifeng.com/c/8wfuLj6nU45",
+      "https://propakistani.pk/2026/09/21/vivo-x500-series-launched-with-2nm-dimensity-9600-pro-and-a-200mp-telephoto-on-the-pro-max/",
+      "https://www.thaimobilecenter.com/content/vivo-x500-series-global-europe-launch-october-27.asp"
+    ],
+    "new": [
+      "https://tech.ifeng.com/c/8wfuLj6nU45",
+      "https://mgronline.com/cyberbiz/detail/9690000110446",
+      "https://www.biztalknews.com/technology-it/mobile/vivo-x500-pro-max-official-launch-specs/",
+      "https://instore.bnn.in.th/vivo-x500-series/"
+    ],
+    "why": "Thai price sources.",
+    "source": "https://mgronline.com/cyberbiz/detail/9690000110446",
+    "snippet": "X500 Pro (12GB+256GB) 48,999 บาท - X500 Pro Max (12GB+256GB) 54,999 บาท - X500 Pro Max (12GB+512GB) 59,999 บาท - X500 Pro Max (12GB+1TB) Photographer Kit 82,999 บาท ... พร้อมวางจำหน่าย 19 พฤศจิกายน 2569",
+    "checked": "2026-11-19, source re-fetched and quoted"
   }
 ]
