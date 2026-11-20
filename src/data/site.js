@@ -40,7 +40,7 @@ export const TAGS = {
   hoco: "HOCO", powerbank: "Power Bank", "retro-game": "เกมย้อนยุค",
   oppo: "OPPO", dynaudio: "Dynaudio", anc: "ANC", lhdc: "LHDC", ldac: "LDAC", bluetooth: "Bluetooth",
   "northern-thai": "อาหารเหนือ", "southern-thai": "อาหารใต้", "japanese-food": "อาหารญี่ปุ่น", "chinese-food": "อาหารจีน", market: "ตลาด", ayutthaya: "อยุธยา", suphanburi: "สุพรรณบุรี", "thai-food": "อาหารไทย", cafe: "คาเฟ่",
-  orsen: "ORSEN", commy: "COMMY", sony: "Sony", tronsmart: "Tronsmart", slimq: "SlimQ", realme: "realme",
+  orsen: "ORSEN", commy: "COMMY", anker: "Anker", sony: "Sony", tronsmart: "Tronsmart", slimq: "SlimQ", realme: "realme",
   baseus: "Baseus", oraimo: "oraimo", roseselsa: "ROSESELSA",
   "1more": "1MORE", cmf: "CMF by Nothing", earfun: "EarFun", huawei: "HUAWEI", isuper: "iSUPER",
   soundcore: "soundcore", soundpeats: "SoundPEATS", tozo: "TOZO", "clip-on": "Clip-on",

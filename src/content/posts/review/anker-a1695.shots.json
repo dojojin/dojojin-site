@@ -1,0 +1,860 @@
+[
+ {
+  "id": "1",
+  "title": "กล่องและตัวเครื่อง",
+  "src": "/media/posts/review/anker-a1695/front.jpg",
+  "w": 1600,
+  "h": 1202,
+  "group": "แกะกล่อง",
+  "alt": "Anker A1695 ตั้งข้างกล่อง มีสายถักห้อยเป็นหูหิ้ว",
+  "summary": "หน้ากล่องเขียน High-Power Multi-Device Charging · 100W Single-Port Fast Charging · Charge 4 Devices Simultaneously · High-Resolution Display"
+ },
+ {
+  "id": "2",
+  "title": "หลังกล่อง",
+  "src": "/media/posts/review/anker-a1695/box-back.jpg",
+  "w": 1600,
+  "h": 1202,
+  "group": "แกะกล่อง",
+  "alt": "หลังกล่อง Anker A1695",
+  "summary": "ข้อความโฆษณาของ Anker บนกล่อง ผมยังไม่ได้ทดสอบเอง",
+  "screenTitle": "ข้อความหลังกล่อง",
+  "screen": [
+   [
+    "165W Max Total Output",
+    "A single port delivers up to 100W"
+   ],
+   [
+    "25,000mAh for Global Travel",
+    "รอบชาร์จมือถือตามที่ Anker อ้าง"
+   ],
+   [
+    "Dual Built-In Cables",
+    "สายยาว 0.72 ft ใช้เป็นสายสะพายได้ + สายยืดหด 2.3 ft"
+   ],
+   [
+    "รับประกัน",
+    "18-Month Hassle-Free Warranty"
+   ]
+  ]
+ },
+ {
+  "id": "3",
+  "title": "ข้างกล่อง (รายชื่ออุปกรณ์)",
+  "src": "/media/posts/review/anker-a1695/box-side-compat.jpg",
+  "w": 1600,
+  "h": 1200,
+  "group": "แกะกล่อง",
+  "alt": "ข้างกล่อง Anker A1695 โลโก้ Series 5",
+  "summary": "รายชื่ออุปกรณ์ที่ Anker บอกว่าใช้ได้ (Compatible with)",
+  "screenTitle": "ข้อความข้างกล่อง",
+  "screen": [
+   [
+    "Series",
+    "5"
+   ],
+   [
+    "Compatible with",
+    "iPhone 16 / 15 / 14 / 13 / 12 / SE Series · Samsung S24 / S23 Series · Google Pixel 8 / 7 · HP Chromebook 14 · MacBook Air / Pro Series · Steam Deck / DJI Mavic 3 · AirPods"
+   ]
+  ]
+ },
+ {
+  "id": "4",
+  "title": "ข้างกล่อง (สเปก)",
+  "src": "/media/posts/review/anker-a1695/box-side-spec.jpg",
+  "w": 1600,
+  "h": 1200,
+  "group": "แกะกล่อง",
+  "alt": "ตารางสเปกและเครื่องหมายมาตรฐานข้างกล่อง Anker A1695",
+  "summary": "ตารางความจุ ไฟเข้า ไฟออก และเครื่องหมายต่าง ๆ ตรงกับฉลากใต้เครื่อง",
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "บนกล่องไม่มีเครื่องหมาย CCC"
+  ],
+  "screenTitle": "ข้อความข้างกล่อง",
+  "screen": [
+   [
+    "Capacity",
+    "25,000mAh"
+   ],
+   [
+    "Input",
+    "USB-C Cable / Port: 5-11V 3A / 5V 3A / 9V 3A / 10V 2.25A / 12V 3A / 15V 3A / 20V 5A 100W Max"
+   ],
+   [
+    "Output (USB-C)",
+    "Cable / Port: เหมือนไฟเข้า"
+   ],
+   [
+    "Output (USB-A)",
+    "5-11V 3A / 5V 3A / 9V 2A / 10V 2.25A / 12V 1.5A 33W Max"
+   ],
+   [
+    "Total",
+    "165W Max"
+   ],
+   [
+    "เครื่องหมาย",
+    "มอก. 2879-2560, UL Energy Verified, CE, RCM, BIS"
+   ]
+  ]
+ },
+ {
+  "id": "5",
+  "title": "แถมถุงผ้าใส่พาวเวอร์แบงก์",
+  "src": "/media/posts/review/anker-a1695/pouch.jpg",
+  "w": 1202,
+  "h": 1600,
+  "group": "แกะกล่อง",
+  "alt": "ถุงผ้าสีเทาสกรีน ANKER วางข้างพาวเวอร์แบงก์ A1695",
+  "summary": "ในกล่องแถมถุงผ้าสีเทาสกรีน ANKER ไว้ใส่พาวเวอร์แบงก์",
+  "readings": [
+   [
+    "ของแถม",
+    "ถุงผ้าใส่พาวเวอร์แบงก์"
+   ]
+  ],
+  "fit": "contain"
+ },
+ {
+  "id": "6",
+  "title": "ฉลากใต้เครื่อง",
+  "src": "/media/posts/review/anker-a1695/label.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ตัวเครื่อง",
+  "alt": "ฉลากใต้ Anker A1695",
+  "summary": "ฉลากบอกรุ่น ความจุ ไฟเข้า ไฟออก ผู้ผลิต และเครื่องหมายมาตรฐาน",
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "บนฉลากไม่มีเครื่องหมาย CCC ครับ",
+   "QR ที่อยู่ข้างเลข มอก. 2879-2560 เป็นเครื่องหมายมาตรฐาน ไม่ได้เบลอ"
+  ],
+  "screenTitle": "ข้อความบนฉลาก",
+  "screen": [
+   [
+    "Model",
+    "A1695"
+   ],
+   [
+    "ชื่อ",
+    "Anker Power Bank (25K, 165W, Built-In and Retractable Cables)"
+   ],
+   [
+    "Total Cell Capacity",
+    "25000mAh"
+   ],
+   [
+    "Battery Capacity",
+    "5000mAh 18VDC/90Wh (Five Cells in Series)"
+   ],
+   [
+    "Rated capacity",
+    "15000mAh ที่ 5VDC"
+   ],
+   [
+    "USB-C Cable/Port เข้า/ออก",
+    "5-11V 3A / 5V 3A / 9V 3A / 10V 2.25A / 12V 3A / 15V 3A / 20V 5A (100W Max)"
+   ],
+   [
+    "USB-A ออก",
+    "5-11V 3A / 5V 3A / 9V 2A / 10V 2.25A / 12V 1.5A (33W Max)"
+   ],
+   [
+    "Total Output",
+    "165W Max"
+   ],
+   [
+    "โรงงาน",
+    "Dongguan DBK Energy Technology Co., Ltd. (Made in China)"
+   ],
+   [
+    "เครื่องหมาย",
+    "มอก. 2879-2560, PSE, KC, BIS R-41129895, RCM"
+   ]
+  ]
+ },
+ {
+  "id": "7",
+  "title": "ด้านข้างตัวเครื่อง",
+  "src": "/media/posts/review/anker-a1695/body-165w.jpg",
+  "w": 1600,
+  "h": 1200,
+  "group": "ตัวเครื่อง",
+  "alt": "Anker A1695 วางตะแคง เห็นข้อความ 165W บนตัวเครื่อง",
+  "summary": "มีตัวเลข 165W ปั๊มนูนอยู่ด้านข้าง จอแสดงผลอยู่ด้านบน"
+ },
+ {
+  "id": "8",
+  "title": "ช่องเสียบ",
+  "src": "/media/posts/review/anker-a1695/ports.jpg",
+  "w": 1600,
+  "h": 1200,
+  "group": "ตัวเครื่อง",
+  "alt": "ด้านปลายตัวเครื่อง ปุ่มกด ช่อง USB-C และ USB-A",
+  "summary": "ปุ่มกดทรงกลม ช่อง USB-C (C3: IN/OUT) และ USB-A (A: OUT)"
+ },
+ {
+  "id": "9",
+  "title": "C2: สายถักที่เป็นหูหิ้ว",
+  "src": "/media/posts/review/anker-a1695/lanyard-cable.jpg",
+  "w": 1600,
+  "h": 1200,
+  "group": "ตัวเครื่อง",
+  "alt": "สายถักออกจากข้างตัวเครื่อง ปลายสายพิมพ์ C2 IN/OUT",
+  "summary": "สาย C2 สายถักในตัวที่ใช้เป็นหูหิ้วได้ ปลายสายพิมพ์ C2 IN/OUT",
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "ผู้รีวิวบอกว่ารองรับการดึงได้ดีอยู่ ออกแบบมาเพื่อหิ้วอยู่แล้ว สบายใจได้"
+  ]
+ },
+ {
+  "id": "10",
+  "title": "C1: สายแบนยืดหดได้",
+  "src": "/media/posts/review/anker-a1695/retractable-cable.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ตัวเครื่อง",
+  "alt": "สายแบนสีดำยืดออกมาจากร่องบนตัวเครื่อง",
+  "summary": "สาย C1 สายแบนยืดหดได้ ดึงออกมาจากร่องด้านปลายตัวเครื่อง"
+ },
+ {
+  "id": "11",
+  "title": "ร่องเก็บสาย",
+  "src": "/media/posts/review/anker-a1695/cable-slot.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ตัวเครื่อง",
+  "alt": "ปลายสายเก็บอยู่ในร่องที่ตัวเครื่อง หัวสายพิมพ์ InstaCord",
+  "summary": "หัวสาย C1 เก็บในร่องที่ปลายตัวเครื่อง พิมพ์คำว่า InstaCord ที่หัวสาย"
+ },
+ {
+  "id": "12",
+  "title": "จอ: แบตเตอรี่",
+  "src": "/media/posts/review/anker-a1695/screen-battery.jpg",
+  "w": 1205,
+  "h": 1600,
+  "group": "หน้าจอ",
+  "alt": "จอ Anker A1695 แสดงแบตเตอรี่ 98%",
+  "summary": "จอบอกเปอร์เซ็นต์แบตเตอรี่ ตอนถ่ายรูปขึ้น 98%",
+  "fit": "contain"
+ },
+ {
+  "id": "13",
+  "title": "จอ: สุขภาพแบต",
+  "src": "/media/posts/review/anker-a1695/screen-health.jpg",
+  "w": 1205,
+  "h": 1600,
+  "group": "หน้าจอ",
+  "alt": "จอแสดง Battery Health 100% และ Cycle Counts 18",
+  "summary": "Battery Health 100% · Cycle Counts 18",
+  "fit": "contain",
+  "readings": [
+   [
+    "Battery Health",
+    "100%"
+   ],
+   [
+    "Cycle Counts",
+    "18"
+   ]
+  ]
+ },
+ {
+  "id": "14",
+  "title": "จอ: อุณหภูมิแบต",
+  "src": "/media/posts/review/anker-a1695/screen-temp.jpg",
+  "w": 1205,
+  "h": 1600,
+  "group": "หน้าจอ",
+  "alt": "จอแสดง Battery Temperature 73°F / 23°C SAFE และ High Performance Mode",
+  "summary": "Battery Temperature 73°F / 23°C ขึ้นคำว่า SAFE และโหมด High Performance Mode",
+  "fit": "contain",
+  "readings": [
+   [
+    "อุณหภูมิ",
+    "73°F / 23°C"
+   ],
+   [
+    "สถานะ",
+    "SAFE"
+   ],
+   [
+    "โหมด",
+    "High Performance Mode"
+   ]
+  ],
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "เป็นค่าที่จอของตัวเครื่องแสดงตอนถ่ายรูป ผมไม่ได้วัดอุณหภูมิเอง"
+  ]
+ },
+ {
+  "id": "15",
+  "title": "รายการ PD (สาย C1 ยืดหด)",
+  "src": "/media/posts/review/anker-a1695/pdo-c1.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ตรวจโปรโตคอล",
+  "alt": "POWER-Z แสดงรายการ PD3.0 100W ของสายที่พิมพ์ C1",
+  "summary": "PD3.0 100W: Fixed 5V/9V/12V/15V 3A, 20V 5A และ PPS สองชุด",
+  "readings": [
+   [
+    "Fixed",
+    "5V 3A · 9V 3A · 12V 3A · 15V 3A · 20V 5A"
+   ],
+   [
+    "PPS",
+    "5.00-11.00V 5A"
+   ],
+   [
+    "PPS",
+    "4.50-21.00V 5A"
+   ]
+  ],
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "ฉลากเขียน 5-11V 3A มิเตอร์เจอ PPS 5A ผมแสดงทั้งสองค่า",
+   "ในรายการที่เห็นไม่มีโปรไฟล์ 28V ขึ้นไป (EPR) และไม่มีรายการ AVS"
+  ]
+ },
+ {
+  "id": "16",
+  "title": "Auto detection (สาย C1 ยืดหด)",
+  "src": "/media/posts/review/anker-a1695/detect-c1.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ตรวจโปรโตคอล",
+  "alt": "POWER-Z Auto detection ของสายที่พิมพ์ C1",
+  "summary": "มิเตอร์ตรวจเจอ UFCS1.0 33W, QC3.0, FCP, SCP, AFC, PD3.0 100W, PPS, QC5 และ DCP",
+  "readings": [
+   [
+    "PD",
+    "3.0 100W · PPS · QC5"
+   ],
+   [
+    "UFCS",
+    "1.0 33W"
+   ],
+   [
+    "QC",
+    "3.0 5V/9V/12V 3.6-12V"
+   ],
+   [
+    "Huawei",
+    "FCP 5V/9V/12V · SCP 5-10V 22W"
+   ],
+   [
+    "อื่น ๆ",
+    "AFC 5V/9V/12V · DCP 2.0"
+   ]
+  ]
+ },
+ {
+  "id": "17",
+  "title": "Auto detection (อีกมุม)",
+  "src": "/media/posts/review/anker-a1695/detect-top.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ตรวจโปรโตคอล",
+  "alt": "POWER-Z Auto detection วางบน Anker A1695",
+  "summary": "หน้า Auto detection เหมือนกัน วางมิเตอร์ไว้บนตัวเครื่อง"
+ },
+ {
+  "id": "18",
+  "title": "Auto detection (สาย C2 หูหิ้ว)",
+  "src": "/media/posts/review/anker-a1695/detect-c2.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ตรวจโปรโตคอล",
+  "alt": "POWER-Z Auto detection ของสายที่พิมพ์ C2 IN/OUT",
+  "summary": "สาย C2 ก็ขึ้น PD3.0 100W, PPS, QC5 เหมือนกัน"
+ },
+ {
+  "id": "19",
+  "title": "UFCS 1.0 (สาย C2 ขณะชาร์จเครื่องอยู่)",
+  "src": "/media/posts/review/anker-a1695/c2-ufcs.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ตรวจโปรโตคอล",
+  "alt": "POWER-Z แสดง UFCS1.0 33.0W 5.00-11.00V 3.00A ที่สาย C2",
+  "summary": "UFCS 1.0 33W: 5.00-11.00V 3.00A ปรับทีละ 20mV / 50mA",
+  "readings": [
+   [
+    "UFCS 1.0",
+    "33W · 5.00-11.00V 3.00A"
+   ],
+   [
+    "Step",
+    "20mV / 50mA"
+   ]
+  ],
+  "caution": "ตอนถ่ายชุดนี้ผมเสียบชาร์จตัวพาวเวอร์แบงก์ไปด้วย มิเตอร์เลยขึ้น PD3.0 65W ที่สาย C2 ตอนไม่ได้ชาร์จ ทุกพอร์ต USB-C ได้ไฟระดับเดียวกัน (สูงสุด 100W)"
+ },
+ {
+  "id": "20",
+  "title": "QC2.0 / QC3.0 (สาย C2 ขณะชาร์จเครื่องอยู่)",
+  "src": "/media/posts/review/anker-a1695/c2-qc.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ตรวจโปรโตคอล",
+  "alt": "POWER-Z แสดง QC2.0 และ QC3.0 Fixed 5V 9V 12V และ QC3.0 3.6-12V ที่สาย C2",
+  "summary": "QC2.0: 5V / 9V / 12V · QC3.0: 3.6-12V",
+  "readings": [
+   [
+    "QC2.0",
+    "5V · 9V · 12V"
+   ],
+   [
+    "QC3.0",
+    "3.6-12V"
+   ]
+  ],
+  "caution": "ตอนถ่ายชุดนี้ผมเสียบชาร์จตัวพาวเวอร์แบงก์ไปด้วย มิเตอร์เลยขึ้น PD3.0 65W ที่สาย C2 ตอนไม่ได้ชาร์จ ทุกพอร์ต USB-C ได้ไฟระดับเดียวกัน (สูงสุด 100W)"
+ },
+ {
+  "id": "21",
+  "title": "Huawei FCP (สาย C2 ขณะชาร์จเครื่องอยู่)",
+  "src": "/media/posts/review/anker-a1695/c2-fcp.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ตรวจโปรโตคอล",
+  "alt": "POWER-Z แสดง FCP 18.0W Fixed 5V 2A 9V 2A 12V 1.5A ที่สาย C2",
+  "summary": "FCP 18W: 5V 2A · 9V 2A · 12V 1.5A",
+  "readings": [
+   [
+    "FCP",
+    "18W"
+   ],
+   [
+    "Fixed",
+    "5V 2A · 9V 2A · 12V 1.5A"
+   ]
+  ],
+  "caution": "ตอนถ่ายชุดนี้ผมเสียบชาร์จตัวพาวเวอร์แบงก์ไปด้วย มิเตอร์เลยขึ้น PD3.0 65W ที่สาย C2 ตอนไม่ได้ชาร์จ ทุกพอร์ต USB-C ได้ไฟระดับเดียวกัน (สูงสุด 100W)"
+ },
+ {
+  "id": "22",
+  "title": "Huawei SCP (สาย C2 ขณะชาร์จเครื่องอยู่)",
+  "src": "/media/posts/review/anker-a1695/c2-scp.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ตรวจโปรโตคอล",
+  "alt": "POWER-Z แสดง SCP 22.0W 5.00-10.00V 0.30-2.20A ที่สาย C2",
+  "summary": "SCP 22W: 5-10V 0.3-2.2A ปรับทีละ 20mV / 50mA",
+  "readings": [
+   [
+    "SCP",
+    "22W · 5.00-10.00V"
+   ],
+   [
+    "Current",
+    "0.30-2.20A"
+   ],
+   [
+    "Step",
+    "20mV / 50mA"
+   ]
+  ],
+  "caution": "ตอนถ่ายชุดนี้ผมเสียบชาร์จตัวพาวเวอร์แบงก์ไปด้วย มิเตอร์เลยขึ้น PD3.0 65W ที่สาย C2 ตอนไม่ได้ชาร์จ ทุกพอร์ต USB-C ได้ไฟระดับเดียวกัน (สูงสุด 100W)"
+ },
+ {
+  "id": "23",
+  "title": "Samsung AFC (สาย C2 ขณะชาร์จเครื่องอยู่)",
+  "src": "/media/posts/review/anker-a1695/c2-afc.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ตรวจโปรโตคอล",
+  "alt": "POWER-Z แสดง AFC 24.0W Fixed 5V 9V 12V 2A ที่สาย C2",
+  "summary": "AFC 24W: 5V / 9V / 12V 2A",
+  "readings": [
+   [
+    "AFC",
+    "24W"
+   ],
+   [
+    "Fixed",
+    "5V · 9V · 12V 2A"
+   ]
+  ],
+  "caution": "ตอนถ่ายชุดนี้ผมเสียบชาร์จตัวพาวเวอร์แบงก์ไปด้วย มิเตอร์เลยขึ้น PD3.0 65W ที่สาย C2 ตอนไม่ได้ชาร์จ ทุกพอร์ต USB-C ได้ไฟระดับเดียวกัน (สูงสุด 100W)"
+ },
+ {
+  "id": "24",
+  "title": "e-marker สาย C1",
+  "src": "/media/posts/review/anker-a1695/emarker-c1.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ตรวจโปรโตคอล",
+  "alt": "POWER-Z หน้า USB-C eMarker ของสาย C1: Passive Cable 20V 5A USB 2.0 only ชิป HUSB332D",
+  "summary": "สาย C1: Passive Cable · 20V 5A · USB 2.0 only · ชิป HUSB332D",
+  "readings": [
+   [
+    "ชนิดสาย",
+    "Passive Cable"
+   ],
+   [
+    "รองรับ",
+    "20V 5A (100W)"
+   ],
+   [
+    "ความเร็วข้อมูล",
+    "USB 2.0 only"
+   ],
+   [
+    "ชิป",
+    "HUSB332D"
+   ],
+   [
+    "Vendor",
+    "Undefined (0x0000)"
+   ]
+  ]
+ },
+ {
+  "id": "25",
+  "title": "e-marker สาย C2",
+  "src": "/media/posts/review/anker-a1695/emarker-c2.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ตรวจโปรโตคอล",
+  "alt": "POWER-Z หน้า USB-C eMarker ของสาย C2: Passive Cable 20V 5A USB 2.0 only ชิป HUSB332D",
+  "summary": "สาย C2 (หูหิ้ว) ได้ค่าเหมือนสาย C1 ทุกบรรทัด",
+  "readings": [
+   [
+    "ชนิดสาย",
+    "Passive Cable"
+   ],
+   [
+    "รองรับ",
+    "20V 5A (100W)"
+   ],
+   [
+    "ความเร็วข้อมูล",
+    "USB 2.0 only"
+   ],
+   [
+    "ชิป",
+    "HUSB332D"
+   ],
+   [
+    "Vendor",
+    "Undefined (0x0000)"
+   ]
+  ]
+ },
+ {
+  "id": "26",
+  "title": "ชาร์จ MacBook Pro (สาย C2 หูหิ้ว)",
+  "src": "/media/posts/review/anker-a1695/macbook-c2.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ชาร์จ MacBook",
+  "alt": "POWER-Z วัดไฟระหว่างสาย C2 กับ MacBook Pro",
+  "summary": "19.605V × 4.250A = 83.33W โปรโตคอล PD3.0",
+  "readings": [
+   [
+    "แรงดัน",
+    "19.605V"
+   ],
+   [
+    "กระแส",
+    "4.250A"
+   ],
+   [
+    "กำลัง",
+    "83.33W"
+   ],
+   [
+    "โปรโตคอล",
+    "PD3.0"
+   ]
+  ],
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "เป็นกำลังที่ MacBook ดึงตอนวัด ไม่ใช่เพดานของพาวเวอร์แบงก์"
+  ]
+ },
+ {
+  "id": "27",
+  "title": "ชาร์จ MacBook Pro 83.9W (สาย C1)",
+  "src": "/media/posts/review/anker-a1695/macbook-83w.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ชาร์จ MacBook",
+  "alt": "POWER-Z วัดไฟระหว่างสาย C1 (InstaCord) กับ MacBook Pro",
+  "summary": "19.624V × 4.276A = 83.92W โปรโตคอล PD3.0 ค่าสูงสุดในชุดรูปนี้",
+  "readings": [
+   [
+    "แรงดัน",
+    "19.624V"
+   ],
+   [
+    "กระแส",
+    "4.276A"
+   ],
+   [
+    "กำลัง",
+    "83.92W"
+   ],
+   [
+    "โปรโตคอล",
+    "PD3.0"
+   ]
+  ]
+ },
+ {
+  "id": "28",
+  "title": "ชาร์จ MacBook Pro 82.2W (สาย C1)",
+  "src": "/media/posts/review/anker-a1695/macbook-82w.jpg",
+  "w": 1600,
+  "h": 1200,
+  "group": "ชาร์จ MacBook",
+  "alt": "MacBook Pro ชาร์จผ่านมิเตอร์ จอ Anker ขึ้น C1 84W",
+  "summary": "มิเตอร์ 19.642V 4.136A 82.20W · จอ Anker ขึ้น C1 84W",
+  "readings": [
+   [
+    "แรงดัน",
+    "19.642V"
+   ],
+   [
+    "กระแส",
+    "4.136A"
+   ],
+   [
+    "กำลัง",
+    "82.20W"
+   ],
+   [
+    "โปรโตคอล",
+    "PD3.0"
+   ],
+   [
+    "จอ Anker",
+    "C1 84W"
+   ]
+  ],
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "ค่ากำลังที่มิเตอร์แสดง (82.20W) ต่างจากแรงดัน × กระแส (ราว 81.2W) เล็กน้อย ผมใช้ค่าที่มิเตอร์แสดง",
+   "ภาพนี้เบลอหน้าจอ MacBook ส่วนมุมขวาบนเพื่อความเป็นส่วนตัว"
+  ]
+ },
+ {
+  "id": "29",
+  "title": "ชาร์จ MacBook Pro 80.8W (สาย C1)",
+  "src": "/media/posts/review/anker-a1695/macbook-81w.jpg",
+  "w": 1600,
+  "h": 1200,
+  "group": "ชาร์จ MacBook",
+  "alt": "MacBook Pro ชาร์จผ่านมิเตอร์ จอ Anker ขึ้น C1 84W",
+  "summary": "มิเตอร์ 19.651V 4.114A 80.85W · จอ Anker ขึ้น C1 84W",
+  "readings": [
+   [
+    "แรงดัน",
+    "19.651V"
+   ],
+   [
+    "กระแส",
+    "4.114A"
+   ],
+   [
+    "กำลัง",
+    "80.85W"
+   ],
+   [
+    "โปรโตคอล",
+    "PD3.0"
+   ],
+   [
+    "จอ Anker",
+    "C1 84W"
+   ]
+  ],
+  "analysisTitle": "รายละเอียด",
+  "analysis": [
+   "ภาพนี้เบลอหน้าจอ MacBook ส่วนมุมขวาบนเพื่อความเป็นส่วนตัว"
+  ]
+ },
+ {
+  "id": "30",
+  "title": "ชาร์จ MacBook Pro 78.4W (สาย C1)",
+  "src": "/media/posts/review/anker-a1695/macbook-78w.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ชาร์จ MacBook",
+  "alt": "MacBook Pro ชาร์จผ่านมิเตอร์ จอ Anker ขึ้น C1 80W",
+  "summary": "มิเตอร์ 19.672V 3.990A 78.39W · จอ Anker ขึ้น C1 80W (ภาพมิเตอร์ไม่คมชัด)",
+  "readings": [
+   [
+    "แรงดัน",
+    "19.672V"
+   ],
+   [
+    "กระแส",
+    "3.990A"
+   ],
+   [
+    "กำลัง",
+    "78.39W"
+   ],
+   [
+    "โปรโตคอล",
+    "PD3.0"
+   ],
+   [
+    "จอ Anker",
+    "C1 80W"
+   ]
+  ]
+ },
+ {
+  "id": "31",
+  "title": "จอ Anker ขึ้น C1 87W",
+  "src": "/media/posts/review/anker-a1695/display-87w.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ชาร์จ MacBook",
+  "alt": "จอ Anker A1695 ขึ้น C1 87W ระหว่างชาร์จ",
+  "summary": "จอของตัวเครื่องแสดงกำลังที่ช่อง C1 ที่ 87W (ภาพนี้ไม่มีมิเตอร์)",
+  "readings": [
+   [
+    "จอ Anker",
+    "C1 87W"
+   ]
+  ]
+ },
+ {
+  "id": "32",
+  "title": "ชาร์จ MacBook Pro 87.3W (สาย C1)",
+  "src": "/media/posts/review/anker-a1695/macbook-87w.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ชาร์จ MacBook",
+  "alt": "POWER-Z วัดได้ 19.612V 4.451A 87.29W PD3.0 จอ Anker ขึ้น Output 91W",
+  "summary": "19.612V × 4.451A = 87.29W ค่าสูงสุดในชุดรูป · จอ Anker ขึ้น Output 91W",
+  "readings": [
+   [
+    "แรงดัน",
+    "19.612V"
+   ],
+   [
+    "กระแส",
+    "4.451A"
+   ],
+   [
+    "กำลัง",
+    "87.29W"
+   ],
+   [
+    "โปรโตคอล",
+    "PD3.0 (ขอ 20V 4.70A)"
+   ],
+   [
+    "จอ Anker",
+    "Output 91W · แบต 97%"
+   ]
+  ]
+ },
+ {
+  "id": "33",
+  "title": "ชาร์จ iPad Air 4 ที่ 15V",
+  "src": "/media/posts/review/anker-a1695/ipad-air-4.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ชาร์จ iPad Air 4",
+  "alt": "POWER-Z วัดได้ 15.060V 1.441A 21.70W PD3.0 ตอนชาร์จ iPad Air 4",
+  "summary": "15.060V × 1.441A = 21.70W โปรโตคอล PD3.0 iPad ขอไฟที่ 15V 3.00A",
+  "readings": [
+   [
+    "แรงดัน",
+    "15.060V"
+   ],
+   [
+    "กระแส",
+    "1.441A"
+   ],
+   [
+    "กำลัง",
+    "21.70W"
+   ],
+   [
+    "โปรโตคอล",
+    "PD3.0 (ขอ 15V 3.00A)"
+   ]
+  ]
+ },
+ {
+  "id": "34",
+  "title": "VBUS Ripple รอบแรก (สาย C1)",
+  "src": "/media/posts/review/anker-a1695/ripple-c1-a.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ชาร์จ iPad Air 4",
+  "alt": "POWER-Z หน้า VBUS Ripple: 2.0kHz 21mV, 16.6kHz 24mV ที่ 15.063V 1.418A ▲34 ▼18",
+  "summary": "Ripple 21-24mV (▲34 ▼18) ที่ 15V",
+  "readings": [
+   [
+    "Ripple",
+    "21-24mV (▲34 ▼18)"
+   ],
+   [
+    "ความถี่",
+    "2.0kHz / 16.6kHz"
+   ],
+   [
+    "แรงดัน",
+    "15.063V"
+   ],
+   [
+    "กระแส",
+    "1.418A"
+   ],
+   [
+    "Ripple %",
+    "≈ 0.16%"
+   ]
+  ],
+  "analysis": [
+   "Ripple ราว 20-30mV = ดีมาก ระดับเดียวกับแบรนด์ Top-Tier",
+   "สเกล 1M 50uS · 25mV ต่อช่อง"
+  ]
+ },
+ {
+  "id": "35",
+  "title": "VBUS Ripple รอบสอง (สาย C1)",
+  "src": "/media/posts/review/anker-a1695/ripple-c1-b.jpg",
+  "w": 1600,
+  "h": 1205,
+  "group": "ชาร์จ iPad Air 4",
+  "alt": "POWER-Z หน้า VBUS Ripple: 2.0kHz 29mV, 8.1kHz 31mV ที่ 15.050V 1.438A ▲86 ▼18",
+  "summary": "Ripple 29-31mV มีกระชาก ▲86mV บางจังหวะ",
+  "readings": [
+   [
+    "Ripple",
+    "29-31mV (▲86 ▼18)"
+   ],
+   [
+    "ความถี่",
+    "2.0kHz / 8.1kHz"
+   ],
+   [
+    "แรงดัน",
+    "15.050V"
+   ],
+   [
+    "กระแส",
+    "1.438A"
+   ],
+   [
+    "Ripple %",
+    "≈ 0.21% (กระชาก ≈ 0.57%)"
+   ]
+  ],
+  "analysis": [
+   "▲86 กับ ▼18 ห่างกัน แปลว่ากระชากเป็นครั้ง ๆ ไม่ได้แกว่งแรงตลอด",
+   "สเกล 1M 50uS · 25mV ต่อช่อง"
+  ]
+ }
+]
