@@ -94,7 +94,7 @@ export const PROJECTS = [
     tech:["iOS","Android"] },
   { name:"HippoCraft", emoji:"🦛", color:"#2bb673", status:"BETA", statusColor:"#f59e0b", link:"/projects/hippocraft/",
     desc:"โปรแกรมอ่านและแก้ไข PDF เขียนด้วย Rust แก้ข้อความภาษาไทยในไฟล์ได้โดยคงฟอนต์เดิม",
-    tech:["Rust","WebAssembly","PaddleOCR","HarfBuzz","egui"] },
+    tech:["Rust","WebAssembly","OpenThai OCR","HarfBuzz","egui"] },
   { name:"AI OCR Pipeline", emoji:"📄", color:"#f59e0b", status:"PAUSED", statusColor:"#f59e0b", link:"/projects/ai-ocr-pipeline/",
     desc:"ทดลองดึงข้อมูลจากเอกสารภาษาไทยอัตโนมัติด้วย AI — พักไว้ชั่วคราว",
     tech:["Google Apps Script","AI OCR"] },
