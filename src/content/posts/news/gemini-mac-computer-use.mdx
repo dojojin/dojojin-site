@@ -1,0 +1,125 @@
+---
+title: "Gemini บน Mac สั่งคุมแอปและไฟล์ในเครื่องแทนเราได้แล้ว แต่ตอนนี้เปิดแค่ในสหรัฐฯ คนไทยยังใช้ไม่ได้"
+topic: software
+type: news
+tags: [google, ai, apple]
+date: 2026-11-20T12:04:00+07:00
+section: tech
+sourceName: "Google Blog และ MacRumors"
+sourceUrl: "https://blog.google/innovation-and-ai/products/gemini-app/computer-use-mac/"
+description: "Google เพิ่ม computer use ให้แอป Gemini บน Mac สั่งงานหลายขั้นตอนข้ามไฟล์ แอปในเครื่อง และเว็บได้ ตอนนี้ทยอยเปิดเฉพาะภาษาอังกฤษในสหรัฐฯ ต้องมีแผน Google AI Plus, Pro หรือ Ultra, Mac ชิป Apple Silicon และ macOS 15 ขึ้นไป ไทยยังไม่อยู่ในประกาศ"
+kicker: "ฟีเจอร์ใหม่ · Gemini"
+lead: "Gemini บน Mac ควบคุมแอปกับไฟล์ในเครื่องแทนเราได้แล้วครับ แต่ Google ประกาศว่าตอนนี้ทยอยเปิดแค่ภาษาอังกฤษในสหรัฐฯ ส่วนไทยยังไม่มีในประกาศ ผมสรุปเงื่อนไขทั้งหมดที่ Google เขียนไว้ให้"
+meta: "เรียบเรียงจาก Google Blog (19 พ.ย. 2569) และ MacRumors · ข้อมูล ณ 20 พฤศจิกายน 2569"
+cover: "/media/posts/news/gemini-mac-computer-use/cover.jpg"
+coverAlt: "ปกข่าว ภาพทางการของ Google ที่ Gemini กำลังทำงานใน Blender บน Mac พร้อมโลโก้ Gemini และข้อความ Gemini บน Mac คุมแอปแทนเราได้ ตอนนี้เปิดให้ใช้ สหรัฐฯ ยังไม่ประกาศไทย ภาษาอังกฤษเท่านั้น"
+---
+
+<section class="section">
+
+## ข่าวนี้คืออะไร
+
+<div class="split">
+<div class="prose">
+
+Google ประกาศเมื่อ 19 พ.ย. 2569 ว่าแอป Gemini สำหรับ Mac ใช้ "computer use" ได้แล้วครับ ฟีเจอร์นี้ให้ Gemini ทำงานหลายขั้นตอนแทนเรา ทั้งกับไฟล์ในเครื่อง แอปบนเดสก์ท็อป และเว็บ
+
+เราแค่บอกงานเป็นประโยค ที่เหลือ Gemini เปิดเมนู กรอกฟอร์ม คลิก และพิมพ์เอง
+
+ในภาพเป็นตัวอย่างจาก Google ผู้ใช้พิมพ์ว่า "Could you take my kid's butterfly sketch, model it and rig it for me in Blender? @Computer use" (ขอให้เอาภาพสเก็ตช์ผีเสื้อของลูกไปทำเป็นโมเดลและใส่โครงให้ขยับได้ใน Blender) ด้านล่างจะเห็น Gemini ไล่ทำทีละขั้น ตรวจโฟลเดอร์กับตัวโปรแกรม Blender แล้วสร้างโมเดลผีเสื้อออกมา
+
+ตัวอย่างอื่นที่ Google ยกมามีแต่งสีรูปทีละหลายรูป ดึงขนาดจากไฟล์ PDF ไปทำใบเสนอราคาค่าขนส่ง สร้างสไลด์ Google Slides จากแดชบอร์ด และเตรียมประกาศขายของมือสองจากโฟลเดอร์รูป
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/gemini-mac-computer-use/img-1.jpg" width="1600" height="900" loading="lazy" alt="ภาพทางการจาก Google ผู้ใช้พิมพ์ขอให้ Gemini โมเดลภาพสเก็ตช์ผีเสื้อใน Blender ด้านล่างมีรายการขั้นตอนของ Gemini และหน้าต่าง Blender แสดงโมเดลผีเสื้อ" /></div><figcaption><span class="news-fig__credit">ภาพ: Google · <a href="https://blog.google/innovation-and-ai/products/gemini-app/computer-use-mac/" rel="noopener">Google Blog</a></span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## วิธีทำงานและการควบคุม
+
+<div class="prose">
+
+ตามที่ Google เขียน Gemini ทำงานใน "หน้าต่างพื้นหลังแยกต่างหาก" และมีภาพสดให้ดูในแชต ระหว่างนั้นเราทำงานอื่นไปได้เลย (MacRumors ก็เล่าตรงกัน)
+
+ส่วนการควบคุม Google เขียนไว้ 3 อย่างครับ
+
+<ol class="news-steps">
+<li><b>เราเลือกแอปที่ Gemini ใช้ได้</b> ไม่ใช่เปิดให้ทุกแอป</li>
+<li><b>ดูทีละขั้นแบบสด และหยุดได้ทุกเมื่อ</b></li>
+<li><b>งานสำคัญต้องรอเรากดอนุมัติก่อน</b> Google ใช้คำว่า "key actions"</li>
+</ol>
+
+ผมว่าข้อ 3 สำคัญที่สุดครับ เพราะเป็นตัวกันไม่ให้ Gemini ส่งหรือลบอะไรไปโดยเราไม่รู้ตัว แต่ Google ยังไม่ได้บอกว่าอะไรบ้างที่นับเป็น "key actions"
+
+</div>
+
+</section>
+
+<section class="section">
+
+## คนไทยใช้ได้ไหม
+
+<div class="prose">
+
+**ตอนนี้ยังไม่ได้ครับ** Google เขียนว่า "Computer use is rolling out in English in the U.S." คือทยอยเปิดเฉพาะภาษาอังกฤษในสหรัฐฯ ไม่มีชื่อประเทศอื่น และไม่ได้บอกกำหนดเปิดเพิ่ม
+
+<div class="news-cards">
+<div class="news-card is-bad"><b>ประเทศและภาษา</b><span class="news-pill">ไม่ครอบคลุมไทย</span> สหรัฐฯ และภาษาอังกฤษเท่านั้น ไทยยังไม่ประกาศ</div>
+<div class="news-card is-warn"><b>แผนสมาชิก</b><span class="news-pill">ต้องจ่าย</span> ต้องเป็นผู้ใช้ Google AI Plus, Pro หรือ Ultra</div>
+<div class="news-card is-warn"><b>บัญชี</b><span class="news-pill">ส่วนตัว 18+</span> บัญชี Google ส่วนตัว อายุ 18 ปีขึ้นไป</div>
+<div class="news-card is-warn"><b>เครื่อง Mac</b><span class="news-pill">Apple Silicon</span> ต้องเป็น Mac ชิป Apple Silicon และ macOS Sequoia 15.0 ขึ้นไป</div>
+</div>
+
+ต่อให้มี Mac ชิป Apple Silicon และจ่ายแผนอยู่แล้ว ถ้าอยู่ไทยก็ยังไม่อยู่ในประกาศ ผมจึงไม่แนะนำให้สมัครแผนเพื่อฟีเจอร์นี้โดยเฉพาะ รอ Google ประกาศเพิ่มก่อนดีกว่าครับ
+
+เงื่อนไขทั้งหมดนี้มาจากบล็อกอย่างเดียว เพราะประกาศไม่ได้ลิงก์หน้าช่วยเหลือไว้ ส่วนหน้าดาวน์โหลดแอปที่ Google ให้ไว้คือ gemini.google/mac
+
+</div>
+
+</section>
+
+<section class="section">
+
+## เทียบกับ Gemini ใน Chrome
+
+<div class="prose">
+
+ก่อนหน้านี้ผมเขียนข่าว <a href="/news/gemini-in-chrome-ask-page/">Gemini ใน Chrome ถามเรื่องหน้าเว็บที่เปิดอยู่ได้เลย</a> ไว้ ฟีเจอร์นั้นเป็นคนละแบบกับข่าวนี้ครับ
+
+<div class="news-cards">
+<div class="news-card"><b>Gemini ใน Chrome</b> อ่านหน้าเว็บที่เปิดอยู่แล้วตอบคำถามให้ ทำงานในเบราว์เซอร์ และตามหน้าช่วยเหลือของ Google ไทยอยู่ในรายชื่อ (อายุ 18 ปีขึ้นไป)</div>
+<div class="news-card"><b>Gemini บน Mac</b> ลงมือทำงานแทนเรา ทั้งไฟล์ แอปในเครื่อง และเว็บ แต่ตอนนี้เปิดแค่สหรัฐฯ</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- Google Blog, "Computer use in the Gemini app for Mac" (19 พ.ย. 2569): <a href="https://blog.google/innovation-and-ai/products/gemini-app/computer-use-mac/" rel="noopener">blog.google</a>
+- MacRumors, Juli Clover (19 พ.ย. 2569): <a href="https://www.macrumors.com/2026/11/19/google-gemini-mac-app-control/" rel="noopener">macrumors.com</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพในเนื้อข่าว: Google ผ่าน <a href="https://blog.google/innovation-and-ai/products/gemini-app/computer-use-mac/" rel="noopener">Google Blog</a>
+- ภาพปก: by dojojin.tech (ภาพจาก Google Blog วางบนพื้นสีโดย DOJOJIN.TECH · โลโก้ Gemini จาก <a href="https://commons.wikimedia.org/wiki/File:Google_Gemini_logo.svg" rel="noopener">Wikimedia Commons</a>)
+
+</div>
+
+</section>

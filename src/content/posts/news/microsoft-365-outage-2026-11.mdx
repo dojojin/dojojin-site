@@ -4,16 +4,16 @@ topic: software
 type: news
 tags: [microsoft]
 date: 2026-11-14T18:00:00+07:00
-updated: 2026-11-17T19:45:00+07:00
-bumped: 2026-11-17T19:45:00+07:00
+updated: 2026-11-20T11:43:00+07:00
+bumped: 2026-11-20T11:43:00+07:00
 section: tech
 sourceName: "BleepingComputer, SecurityWeek, MacRumors และสื่อไทย"
 sourceUrl: "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/"
 description: "Microsoft 365 ล่ม 12-13 พ.ย. 2569 Outlook และ Exchange Online เข้าไม่ได้ราว 24 ชั่วโมง สรุปไทม์ไลน์เป็นเวลาไทยตั้งแต่เริ่มจนกลับมาใช้ได้ ผู้ใช้ในไทยโดนช่วงไหน สาเหตุตามที่ Microsoft แจ้ง และถ้าเจออีกควรทำอย่างไร"
 kicker: "ข่าวเทคโนโลยี"
 lead: "Outlook, Exchange Online และบางฟีเจอร์ของ Teams กับ Copilot ใช้ไม่ได้อยู่ราว 24 ชั่วโมง ผมเรียงเหตุการณ์ให้ทีละขั้นเป็นเวลาไทย และดูว่าคนไทยโดนช่วงไหนครับ"
-meta: "เรียบเรียงจาก BleepingComputer, SecurityWeek, MacRumors, azureblog.co.uk และสื่อไทย · ข้อมูล ณ 14 พฤศจิกายน 2569 · อัปเดต 17 พ.ย. 2569: สาเหตุเบื้องต้นจากรายงานเบื้องต้นของ Microsoft"
-cover: "/media/posts/news/microsoft-365-outage-2026-11/cover.jpg"
+meta: "เรียบเรียงจาก BleepingComputer, SecurityWeek, MacRumors, azureblog.co.uk และสื่อไทย · ข้อมูล ณ 14 พฤศจิกายน 2569 · อัปเดต 20 พ.ย. 2569: อ่านรายงานเบื้องต้นของ Microsoft (ลงวันที่ 15 พ.ย.) ครบทั้งฉบับแล้ว รายงานฉบับสุดท้ายยังไม่พบ"
+cover: "/media/posts/news/microsoft-365-outage-2026-11/cover-v3.jpg"
 coverAlt: "แล็ปท็อปบนโต๊ะ หน้าจอแอปอีเมลสีน้ำเงินมีไอคอนเมฆขีดฆ่าและวงกลมโหลด พร้อมข้อความ Microsoft 365 ล่มเกือบ 24 ชั่วโมง (ภาพประกอบ)"
 ---
 
@@ -23,11 +23,19 @@ coverAlt: "แล็ปท็อปบนโต๊ะ หน้าจอแอ�
 
 <div class="prose">
 
+**อัปเดต 20 พ.ย. 2569:** ผมได้อ่านรายงานเบื้องต้น (preliminary PIR) ของ Microsoft ลงวันที่ 15 พ.ย. เองแล้วครับ เป็นไฟล์ PDF ต้นฉบับที่สำนักข่าว next.ink นำมาลง ไม่ใช่หน้าของ Microsoft เอง มี 3 เรื่องที่ใหม่กว่าที่เคยเขียนไว้
+
+- ตัวบั๊กคือการแย่งล็อก (lock contention) ในโปรเซสของ Windows ตัวหนึ่ง
+- แพตช์แก้เริ่มใช้เมื่อ 07:20 UTC วันที่ 13 พ.ย. หรือ 14:20 น. เวลาไทย
+- Microsoft ยืนยันว่าบั๊กกับแพตช์นี้ไม่เกี่ยวกับ Windows ทั่วไป
+
+ส่วนรายงานฉบับสุดท้าย (final PIR) ผมค้นดูวันนี้ยังไม่พบ รายงานเบื้องต้นบอกว่าจะออกภายใน 5 วันทำการหลังเหตุจบ ระบุเป็นวันที่ 20 พ.ย. และรายการแก้ไขถาวรทั้งหมดจะอยู่ในฉบับนั้น รายละเอียดอยู่ในหัวข้อ "สาเหตุตามที่ Microsoft แจ้ง"
+
 คืนวันพฤหัสบดีที่ 12 พฤศจิกายน 2569 ตามเวลาไทย ผู้ใช้ Microsoft 365 เริ่มเปิดกล่องจดหมายไม่ได้ ตัวที่มีปัญหาคือ Exchange Online ซึ่งเป็นระบบอีเมลของ Microsoft ที่อยู่เบื้องหลัง Outlook จากนั้นปัญหาก็ลามไปถึง Outlook และบางฟีเจอร์ของ Teams กับ Copilot ลากยาวไปจนถึงคืนวันศุกร์ MacRumors บอกว่า "นานเกือบ 24 ชั่วโมง"
 
 ผมเทียบข่าวจากหลายแหล่ง ทั้ง BleepingComputer, SecurityWeek, MacRumors และสื่อไทยครับ
 
-สิ่งที่ Microsoft แจ้ง ผมอ่านผ่านสื่อเหล่านี้อีกที ยังไม่ได้เปิดโพสต์ต้นทางของ Microsoft เอง เพราะหน้า X เปิดไม่ได้ ส่วนหน้า status เป็นหน้าที่โหลดด้วยสคริปต์ ถ้าแหล่งไหนให้เวลาไม่ตรงกัน ผมเขียนบอกไว้ตรงนั้นเลย
+สิ่งที่ Microsoft แจ้งช่วงเกิดเหตุ ผมอ่านผ่านสื่อเหล่านี้อีกที ยังไม่ได้เปิดโพสต์ต้นทางของ Microsoft เอง เพราะหน้า X เปิดไม่ได้ ส่วนหน้า status เป็นหน้าที่โหลดด้วยสคริปต์ ถ้าแหล่งไหนให้เวลาไม่ตรงกัน ผมเขียนบอกไว้ตรงนั้นเลย ส่วนเรื่องสาเหตุ ตอนนี้ผมอ่านจากรายงานเบื้องต้นของ Microsoft โดยตรงแล้ว ตามอัปเดตด้านบน
 
 เวลาทั้งหมดในข่าวนี้ผมแปลงเป็นเวลาไทย (UTC+7) เอง เดือนนี้เวลาฝั่งตะวันออกของสหรัฐฯ (ET) ช้ากว่าไทย 12 ชั่วโมง เช่น 13:26 ET = 01:26 ของไทยวันรุ่งขึ้น
 
@@ -41,7 +49,7 @@ coverAlt: "แล็ปท็อปบนโต๊ะ หน้าจอแอ�
 
 <div class="prose">
 
-BleepingComputer รายงานเมื่อ 16 พ.ย. ว่า Microsoft ส่งรายงานเบื้องต้น (preliminary post-incident report) ผ่าน Microsoft 365 Admin Center บอกสาเหตุของเหตุครั้งนี้แล้ว ผมเปิดต้นฉบับของ Microsoft เองไม่ได้ เพราะต้องล็อกอินแอดมิน เลยเขียนตามที่ BleepingComputer อ้างไว้ครับ และนี่เป็นแค่สาเหตุเบื้องต้น **รายงานฉบับเต็ม (PIR) ยังไม่ออก** BleepingComputer บอกว่า Microsoft คาดว่าจะออกภายในสัปดาห์นี้ ตัวเลขข้างล่างอาจเปลี่ยนได้
+BleepingComputer รายงานเมื่อ 16 พ.ย. ว่า Microsoft ส่งรายงานเบื้องต้น (preliminary post-incident report) ผ่าน Microsoft 365 Admin Center บอกสาเหตุของเหตุครั้งนี้แล้ว ตอนเขียนอัปเดตนี้ ผมเปิดต้นฉบับของ Microsoft เองไม่ได้ เพราะต้องล็อกอินแอดมิน เลยเขียนตามที่ BleepingComputer อ้างไว้ (วันที่ 20 พ.ย. ผมได้ไฟล์รายงานเบื้องต้นมาอ่านแล้ว ตัวเลขในรายการนี้ตรงกับรายงานเบื้องต้น ดูหัวข้อสาเหตุข้างล่าง) และนี่เป็นแค่สาเหตุเบื้องต้น **รายงานฉบับเต็ม (PIR) ยังไม่ออก** BleepingComputer บอกว่า Microsoft คาดว่าจะออกภายในสัปดาห์นี้ ตัวเลขข้างล่างอาจเปลี่ยนได้
 
 <ol class="news-steps">
 <li><b>บั๊กที่ฝังมาตั้งแต่เดือนกรกฎาคม</b>มาจากอัปเดตของเซิร์ฟเวอร์เกตเวย์เครือข่าย Microsoft 365 ที่ใช้มาเกิน 3 เดือนโดยไม่มีปัญหา</li>
@@ -177,6 +185,22 @@ BleepingComputer รายงานเมื่อ 16 พ.ย. ว่า Microso
 
 Microsoft บอกด้วยว่า "This was a technical issue not related to cyber or AI / agents" คือเป็นปัญหาทางเทคนิค ไม่เกี่ยวกับการโจมตีไซเบอร์ หรือ "AI / agents" ทั้งหมดนี้เป็นคำของ Microsoft ที่ผมอ่านผ่านสื่อ รายละเอียดจริง ๆ ต้องรอรายงานฉบับเต็มครับ
 
+**เพิ่มเมื่อ 20 พ.ย.** ผมอ่านรายงานเบื้องต้นของ Microsoft ลงวันที่ 15 พ.ย. เองแล้ว (PDF ที่ next.ink นำมาลง) เรียงเป็นขั้นตอนได้แบบนี้ครับ
+
+<ol class="news-steps">
+<li><b>ตัวบั๊ก: แย่งล็อกใน Windows</b>Microsoft เขียนว่าเกิด "lock contention inside an internal Windows process" คือหลายส่วนของโปรแกรมแย่งกันรอใช้ทรัพยากรเดียวกัน จนเครื่องใช้ CPU และหน่วยความจำหมด บั๊กมาจากโค้ดที่ทำไว้เฉพาะเซิร์ฟเวอร์เกตเวย์ของ Microsoft 365 และ Microsoft บอกว่าทั้งบั๊กและตัวแก้ไม่เกี่ยวกับ Windows ที่คนทั่วไปใช้</li>
+<li><b>ปล่อยมาตั้งแต่กรกฎาคม ทดสอบไม่เจอ</b>การเปลี่ยนแปลงเริ่มใช้เดือนกรกฎาคม ค่อย ๆ ปล่อยทั่วโลกตามขั้นตอนแบบปลอดภัยอยู่หลายสัปดาห์ และใช้งานจริงเกิน 3 เดือนโดยไม่มีปัญหา ที่การทดสอบโหลดไม่เจอ เพราะห้องทดสอบใช้เครื่องแรงน้อย แกนน้อย แต่บั๊กนี้จะหนักขึ้นบนเครื่องที่ใหม่กว่าและมีแกนมากกว่า</li>
+<li><b>ตัวกระตุ้น: ทราฟฟิกเพิ่ม และความจุหาย 14%</b>ราว 15 ชั่วโมงก่อนล่ม Teams ย้ายมาใช้เกตเวย์ตัวหลักที่ Exchange Online ใช้ด้วย (การย้ายแบบนี้เป็นเรื่องปกติ) ขณะเดียวกันเซิร์ฟเวอร์เกือบ 14% ใช้ไม่ได้จากปัญหาอื่นเมื่อวันก่อน ลำพังความจุที่หายไปยังไม่กระทบ แต่พอมาพร้อมกันก็ไปปลุกบั๊กขึ้นมา</li>
+<li class="is-key"><b>ลามภายในไม่ถึงสองชั่วโมง</b>ระบบย้ายผู้ใช้ไปเซิร์ฟเวอร์ที่ยังดีอยู่ แต่ทราฟฟิกที่ย้ายไปทำให้เครื่องที่เหลือเจอบั๊กต่อเป็นทอด ๆ ช่วงต่ำสุดเซิร์ฟเวอร์ไม่ตอบสนองเกิน 80% ส่วนผนังกั้นที่ควรกันปัญหาไว้เป็นส่วน ๆ (bulkhead) ก็ไม่ทำงานเพราะอีกปัญหาหนึ่ง ความเสียหายจึงลามไปทั่วโลก</li>
+<li><b>ทำไมแก้ช้า</b>เครื่องที่เปิดกลับมาโดนทราฟฟิกที่รออยู่ถล่มจนค้างอีก ระบบกู้อัตโนมัติก็ไม่ได้ออกแบบมารับเซิร์ฟเวอร์ค้างพร้อมกันเป็นวงกว้าง และเพราะบั๊กอยู่มาหลายเดือนแล้ว จะย้อนเวอร์ชัน (rollback) หรือใช้สวิตช์ปิดฟีเจอร์ที่มีอยู่ เพื่อย้อนกลับอย่างรวดเร็วก็ทำไม่ได้</li>
+<li class="is-key"><b>07:20 UTC วันที่ 13 พ.ย. คือ 14:20 น. เวลาไทย: ใช้แพตช์</b>Microsoft ทำอัปเดตที่ย้อนโค้ดส่วนจัดการการเชื่อมต่อกลับไปเป็นแบบที่เคยใช้ได้ดี แล้วใช้กับเซิร์ฟเวอร์ทีละกลุ่มก่อน (รายงานเขียนว่า "to a portion of the capacity") พอ 08:00 UTC หรือ 15:00 น. เวลาไทย ยืนยันว่ากลุ่มแรกเสถียร ก็ขยายต่อ โดยให้ภูมิภาคที่กำลังเข้าเวลาทำงานได้ก่อน จนเวลาไทย 23:10 น. Microsoft ยืนยันว่าลูกค้าไม่มีผลกระทบแล้ว</li>
+<li><b>รายงานไม่ได้พูดถึงการโจมตี</b>ในรายงานเบื้องต้นเอง ผมไม่เจอคำว่าไซเบอร์หรือ AI ประโยค "not related to cyber or AI / agents" ที่เขียนไว้ข้างบนมาจากคำชี้แจงอีกชิ้นของ Microsoft ที่ผมอ่านผ่านสื่อ ส่วนรายงานระบุสาเหตุไว้แค่ 3 ข้อข้างบน คือบั๊ก ทราฟฟิก และความจุ</li>
+</ol>
+
+สิ่งที่ Microsoft ทำไปแล้วตามรายงานเบื้องต้น มี 4 อย่าง คือขยายเวลาเก็บอีเมลที่ส่งค้าง เพิ่มความจุ เฝ้าดูรูปแบบการย้ายทราฟฟิกมากขึ้น และเพิ่มตัวกันไม่ให้การกระจายทราฟฟิกลามเป็นลูกโซ่
+
+รายการแก้ไขถาวรทั้งหมดต้องรอรายงานฉบับสุดท้าย ซึ่งรายงานเบื้องต้นระบุวันที่ 20 พ.ย. ไว้ แต่ ณ 20 พ.ย. 11:40 น. ผมยังไม่พบฉบับนั้นครับ
+
 </div>
 
 </section>
@@ -223,6 +247,8 @@ Microsoft บอกด้วยว่า "This was a technical issue not related
 
 - BleepingComputer: <a href="https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/" rel="noopener">bleepingcomputer.com</a>
 - BleepingComputer, Microsoft says months-old bug caused global Microsoft 365 outage (16 พ.ย. 2569): <a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-says-months-old-bug-caused-global-microsoft-365-outage/" rel="noopener">bleepingcomputer.com</a>
+- Microsoft, Preliminary Post Incident Report for Microsoft 365 (EX1550543/MO1550821, 15 พ.ย. 2569) ไฟล์ PDF ที่ next.ink นำมาลง: <a href="https://next.ink/wp-content/uploads/2026/11/PostIncidentReport.pdf" rel="noopener">next.ink</a>
+- The Register (16 พ.ย. 2569): <a href="https://www.theregister.com/2026/11/16/microsoft-blames-monster-email-outage-on-software-defect-introduced-in-july-fix/5310026" rel="noopener">theregister.com</a>
 - BetaNews (สาเหตุแบบอัปเกรดเครือข่าย): <a href="https://betanews.com/article/microsoft-365-outage-network-upgrade/" rel="noopener">betanews.com</a>
 - SecurityWeek: <a href="https://www.securityweek.com/microsoft-365-outage-disrupts-outlook-exchange-online-and-teams/" rel="noopener">securityweek.com</a>
 - MacRumors (คำชี้แจงของ Microsoft ตอนกลับมาใช้ได้): <a href="https://www.macrumors.com/2026/11/13/microsoft-365-outage-resolving/" rel="noopener">macrumors.com</a>

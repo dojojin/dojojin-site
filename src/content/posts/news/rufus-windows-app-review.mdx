@@ -1,0 +1,204 @@
+---
+title: "แอปแนะนำ: Rufus ทำแฟลชไดรฟ์บูตติดตั้ง Windows หรือ Linux จากไฟล์ ISO ฟรี ไฟล์เล็ก 1.9 MB (รุ่น 4.16)"
+topic: software
+type: news
+tags: [app, windows, open-source]
+date: 2026-11-20T11:52:00+07:00
+section: app
+sourceName: "Rufus (rufus.ie)"
+sourceUrl: "https://rufus.ie/en/"
+description: "แนะนำ Rufus โปรแกรมบน Windows สำหรับทำแฟลชไดรฟ์ USB ที่บูตได้จากไฟล์ ISO ของ Windows หรือ Linux ฟรี ไลเซนส์ GPL v3 ขึ้นไป ไฟล์ .exe ราว 1.9 MB มีแบบพกพา ไม่ต้องติดตั้ง ใช้ Windows 8 ขึ้นไป รุ่นล่าสุด 4.16 ออก 17 พฤศจิกายน 2569 พร้อมข้อควรระวังเรื่องการลบข้อมูลทั้งไดรฟ์และเว็บโหลดปลอม"
+kicker: "แอปแนะนำ"
+lead: "จะลง Windows ใหม่ หรือลองลีนุกซ์สักตัว ต้องมีแฟลชไดรฟ์ที่บูตได้ครับ ผมแนะนำ Rufus โปรแกรมเล็ก ๆ ฟรี ไม่ต้องติดตั้ง แต่มีข้อเดียวที่ต้องระวังมาก คือมันลบข้อมูลทั้งไดรฟ์ที่เลือก"
+meta: "เรียบเรียงจาก rufus.ie หน้าคำถามที่พบบ่อย (FAQ) และ GitHub · ข้อมูล ณ 20 พฤศจิกายน 2569"
+cover: "/media/posts/news/rufus-windows-app-review/cover.jpg"
+coverAlt: "ภาพหน้าจอโปรแกรม Rufus รุ่น 3.20 บนพื้นสีพาสเทล หัวข้อ Drive Properties เลือกไดรฟ์ UBUNTU 22_0 ขนาด 8 GB ไฟล์ ubuntu-22.04-desktop-amd64.iso ตัวเลือก Partition scheme, Target system และ Format Options"
+---
+
+<section class="section">
+
+## Rufus คืออะไร
+
+<div class="split">
+<div class="prose">
+
+Rufus เป็นโปรแกรมบน Windows สำหรับฟอร์แมตแฟลชไดรฟ์ USB ให้เอาไปบูตเครื่องได้ครับ เว็บทางการบอกว่าเหมาะกับตอนที่ต้องสร้างแฟลชไดรฟ์ติดตั้งจากไฟล์ ISO (Windows, Linux, UEFI) หรือต้องทำงานกับเครื่องที่ยังไม่มีระบบปฏิบัติการ
+
+<div class="spec-list">
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-download" /></svg><div><b>ทำแฟลชไดรฟ์ติดตั้ง</b>เอาไฟล์ ISO ของ Windows หรือ Linux มาเขียนลงแฟลชไดรฟ์ แล้วบูตเครื่องจากแฟลชไดรฟ์นั้น</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-chip" /></svg><div><b>แฟลช BIOS หรือเฟิร์มแวร์</b>เว็บยกตัวอย่างการแฟลชจาก DOS และการรันเครื่องมือระดับล่าง</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-file" /></svg><div><b>ไฟล์เล็ก</b>ผู้พัฒนาเขียนว่า "Despite its small size, Rufus provides everything you need"</div></div>
+</div>
+
+ใช้ไลเซนส์ GNU GPL เวอร์ชัน 3 ขึ้นไป (GitHub ระบุ GPL-3.0) ซอร์สโค้ดเปิดให้ดูบน <a href="https://github.com/pbatard/rufus" rel="noopener">GitHub</a> ครับ
+
+</div>
+<figure class="split-fig"><img src="/media/posts/news/rufus-windows-app-review/igv-1.jpg" width="1600" height="1400" loading="lazy" alt="อินโฟกราฟิกข้อมูลเร็ว ๆ ของ Rufus บน Windows ฟรี ไลเซนส์ GPL v3 ขึ้นไป ไฟล์ .exe รุ่น x64 ขนาด 1.9 MB ไม่ต้องติดตั้ง รุ่น 4.16 ลงวันที่ 17 พ.ย. 2569 ใช้ Windows 8 ขึ้นไป มี x64, x86, ARM64 และแบบพกพา" /></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## ข้อมูลหลัก
+
+<div class="prose">
+
+<div class="spec-list">
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-download" /></svg><div><b>รุ่นล่าสุด</b>4.16 ลงวันที่ 17 พฤศจิกายน 2569 ตามหน้าดาวน์โหลดของ rufus.ie และตรงกับรุ่น v4.16 บน GitHub</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-storage" /></svg><div><b>ขนาดไฟล์</b>แบบมาตรฐาน x64 และแบบพกพา x64 ไฟล์ละ 1.9 MB, x86 1.8 MB, ARM64 5.2 MB</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-panel" /></svg><div><b>ระบบที่ใช้</b>Windows 8 ขึ้นไป โหลดมาแล้วใช้ได้เลย ไม่ต้องติดตั้ง</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-copy" /></svg><div><b>ราคา</b>ฟรี เว็บบอกชัดว่าไม่มีปุ่มบริจาค ใครอยากให้กำลังใจ ผู้พัฒนาแนะนำให้บริจาคให้ Free Software Foundation แทน</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-globe" /></svg><div><b>ภาษา</b>รายการภาษาที่รองรับมี "ไทย" ด้วย ผมยังไม่ได้เปิดแอปดูว่าแปลครบแค่ไหน</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-file" /></svg><div><b>ลายเซ็นดิจิทัล</b>ไฟล์ .exe ลงลายเซ็นไว้ ชื่อผู้ลงลายเซ็นต้องเป็น "Akeo Consulting" (รุ่น 1.3.0 ขึ้นไป)</div></div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ระวังก่อนกดเริ่ม
+
+<div class="prose">
+
+เรื่องที่หนักจริงมีเรื่องเดียวครับ เขียนเสร็จแล้วข้อมูลเดิมในแฟลชไดรฟ์หายหมด
+
+<div class="news-cards">
+<div class="news-card is-warn"><b>ลบทุกพาร์ติชันของไดรฟ์ที่เลือก</b>FAQ ของ Rufus ให้เหตุผลว่าต้องเริ่มจากไดรฟ์ว่าง ๆ ถึงจะมั่นใจว่าบูตได้ จึงแบ่งพาร์ติชันและฟอร์แมตใหม่ทั้งหมด ก่อนเขียนจะมีคำเตือนขึ้นมาให้เห็น ผู้พัฒนาเขียนไว้ด้วยว่า ถ้าใครเสียข้อมูลเพราะคิดว่าไดรฟ์ลูกนั้นมีแค่วอลุ่มเดียว ความรับผิดชอบเป็นของผู้ใช้ ดังนั้นสำรองข้อมูลก่อน และเช็กชื่อไดรฟ์ในช่อง Device ให้ดี</div>
+<div class="news-card is-ok"><b>ค่าเริ่มต้นแสดงเฉพาะแฟลชไดรฟ์</b>FAQ บอกว่า Rufus ไม่แสดงฮาร์ดดิสก์หรือ SSD ภายนอกโดยค่าเริ่มต้น เพื่อกันคนเลือกไดรฟ์สำรองข้อมูลผิด ถ้าจะให้แสดงต้องไปติ๊ก "List USB Hard Drives" ในหัวข้อ advanced drive properties (ในภาพปกก็เห็นช่องนี้) ถ้าไม่จำเป็นอย่าติ๊กครับ</div>
+<div class="news-card is-warn"><b>ต้องใช้สิทธิ์แอดมิน</b>FAQ บอกว่าการฟอร์แมตไดรฟ์และแก้ boot record (ส่วนที่บอกเครื่องว่าจะบูตยังไง) ต้องใช้สิทธิ์ผู้ดูแลระบบ จึงทำเวอร์ชันที่ไม่ต้องใช้สิทธิ์นี้ไม่ได้</div>
+</div>
+
+ภาพปกคือหน้าต่างหลักครับ ช่อง Device คือไดรฟ์ที่จะถูกลบ ถัดมา Boot selection คือไฟล์ ISO ที่เลือก ใต้ลงมาเป็นรูปแบบพาร์ติชัน (ในภาพคือ MBR) กับระบบที่จะบูต (BIOS หรือ UEFI) เลือกครบแล้วกด START
+
+</div>
+
+</section>
+
+<section class="section">
+
+## หน้าตาและตัวเลือก
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/rufus-windows-app-review/img-1.jpg" width="1122" height="1406" loading="lazy" alt="ภาพหน้าจอ Rufus รุ่น 3.20 ตอนเขียนไฟล์ ISO ของ Windows หัวข้อ Drive Properties ไดรฟ์ CCCOMA_X64FRE_EN-GB_DV9 (F:) 8 GB ไฟล์ Win11_22H2_EnglishInternational_x64.iso โหมด Standard Windows installation Partition scheme GPT Target system UEFI แถบสถานะเขียว Copying ISO files 86.0 เปอร์เซ็นต์" /></div><figcaption><span class="news-fig__credit">ภาพ: Rufus (ภาพหน้าจอรุ่น 3.20.1929 จากเว็บ rufus.ie วางบนพื้นสีโดย DOJOJIN.TECH) · <a href="https://rufus.ie/en/" rel="noopener">rufus.ie</a></span></figcaption></figure>
+<div class="prose">
+
+ภาพนี้คือ Rufus ตอนกำลังเขียนไฟล์ ISO ของ Windows ลงแฟลชไดรฟ์ครับ แถบสีเขียวด้านล่างเขียนว่า Copying ISO files 86.0% ด้านบนเลือกโหมด Standard Windows installation, Partition scheme เป็น GPT และ Target system เป็น UEFI
+
+บอกไว้ก่อนว่าภาพหน้าจอบนเว็บ rufus.ie เป็นรุ่น 3.20 ส่วนรุ่นล่าสุดคือ 4.16 หน้าตาอาจต่างไปบ้าง ผมยังไม่ได้ลงรุ่น 4.16 เปิดดูเอง
+
+ผมว่าข้อดีของหน้าต่างนี้คือทุกอย่างอยู่หน้าเดียว ไม่ต้องไล่เปิดหลายเมนู ใครไม่แน่ใจ ใช้ค่าเริ่มต้นที่ Rufus เลือกให้ตามไฟล์ ISO ก่อนก็ได้ครับ
+
+</div>
+</div>
+
+<div class="split">
+<div class="prose">
+
+ภาพนี้คือกล่อง Windows User Experience ที่ใช้กับไฟล์ ISO ของ Windows ครับ FAQ อธิบายว่ากล่องนี้ทำมาเพื่อตัดเรื่องกวนใจตอนลง Windows เช่นเงื่อนไขเรื่อง TPM และการบังคับใช้บัญชีออนไลน์
+
+ในภาพมีตัวเลือกให้ติ๊กเองตามนี้
+
+<div class="spec-list">
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-chip" /></svg><div><b>ตัดเงื่อนไขเครื่อง</b>Remove requirement for 4GB+ RAM, Secure Boot and TPM 2.0</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-globe" /></svg><div><b>ไม่บังคับบัญชีออนไลน์</b>Remove requirement for an online Microsoft account</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-type" /></svg><div><b>ตัวเลือกอื่น</b>ปิดการเก็บข้อมูล, ตั้งบัญชีผู้ใช้ในเครื่อง, ตั้งค่าภูมิภาค</div></div>
+</div>
+
+ส่วนตัวไฟล์ ISO ของ Windows หน้า FAQ เตือนว่า ถ้ายังไม่ได้ตรวจว่าเป็นไฟล์ retail (ตัวจริงที่ Microsoft ปล่อยออกมา) ให้ถือว่าอาจมีมัลแวร์ปนมาได้ และไม่แนะนำไฟล์ ISO ที่สร้างจาก Media Creation Tool ครับ
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/rufus-windows-app-review/img-2.jpg" width="1190" height="1406" loading="lazy" alt="ภาพหน้าจอ Rufus รุ่น 3.20 กล่อง Windows User Experience ถาม Customize Windows installation มีตัวเลือกที่ติ๊กไว้ Remove requirement for 4GB+ RAM, Secure Boot and TPM 2.0, Remove requirement for an online Microsoft account และ Disable data collection กับตัวเลือกไม่ติ๊กให้ตั้งบัญชีในเครื่องและตั้งค่าภูมิภาค" /></div><figcaption><span class="news-fig__credit">ภาพ: Rufus (ภาพหน้าจอรุ่น 3.20.1929 จากเว็บ rufus.ie วางบนพื้นสีโดย DOJOJIN.TECH) · <a href="https://rufus.ie/en/" rel="noopener">rufus.ie</a></span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## โหลดจากที่ไหน
+
+<div class="prose">
+
+<ol class="news-steps">
+<li><b>เข้าเว็บทางการ</b>เปิด <a href="https://rufus.ie/en/" rel="noopener">rufus.ie</a> หรือหน้ารุ่นบน <a href="https://github.com/pbatard/rufus/releases" rel="noopener">GitHub (pbatard/rufus)</a> เท่านั้น</li>
+<li><b>เลือกไฟล์ให้ตรงเครื่อง</b>เครื่อง Windows 64 บิตส่วนใหญ่เลือก rufus-4.16.exe ถ้าอยากได้แบบพกพาก็เลือก rufus-4.16p.exe (Portable) ส่วนเครื่อง ARM64 มีไฟล์ของตัวเอง</li>
+<li><b>ดับเบิลคลิกเปิดใช้</b>ไม่ต้องติดตั้ง เปิดแล้วจะมีหน้าต่างถามสิทธิ์ผู้ดูแลระบบ (UAC) ให้ดูว่าผู้เผยแพร่ที่ยืนยันแล้วเป็น "Akeo Consulting"</li>
+</ol>
+
+ที่ผมย้ำเรื่องนี้ เพราะหน้า FAQ ของ Rufus เองก็เขียนว่าเว็บมีโฆษณา และพูดถึงโฆษณาที่ทำเป็นปุ่มดาวน์โหลดปลอมไว้ด้วย ให้ระวังโฆษณาบนหน้าเว็บ แล้วกดไฟล์จากตารางดาวน์โหลดของจริงเท่านั้น
+
+ไฟล์จากเว็บแปลก ๆ หรือไฟล์ที่เพื่อนส่งต่อมา อย่าใช้ครับ เพราะโปรแกรมนี้ยุ่งกับระบบบูตของเครื่องโดยตรง
+
+</div>
+
+</section>
+
+<section class="section">
+
+## รุ่น 4.16 มีอะไรใหม่
+
+<div class="prose">
+
+รุ่น 4.16 ออกวันที่ 17 พฤศจิกายน 2569 ในบันทึกรุ่นบนเว็บ เรื่องที่เกี่ยวกับคนทั่วไปมีประมาณนี้ครับ
+
+<div class="spec-list">
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-memory" /></svg><div><b>เลี่ยงบั๊ก AMI NTFS driver</b>ฟีเจอร์ตรวจความถูกต้องของแฟลชไดรฟ์ผ่าน UEFI (runtime UEFI media validation) ใช้ได้แล้วกับเครื่องที่เฟิร์มแวร์ AMI มีบั๊กนี้</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-wireless" /></svg><div><b>ระบุอุปกรณ์ USB 3.2 ขึ้นไป</b>แสดงรุ่น USB 3.2+ ได้แล้ว</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-panel" /></svg><div><b>เมนูคลิกขวาแบบเดิม</b>เพิ่มตัวเลือกให้กลับไปใช้เมนูคลิกขวาแบบคลาสสิกของ Windows อยู่ในกลุ่ม QoL improvements (ปรับให้ใช้สะดวกขึ้น)</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-alert" /></svg><div><b>อัปเดตและแก้ช่องโหว่</b>อัปเดต GRUB เป็น 2.16 และมีรายการแก้ช่องโหว่หลายรายการ (บันทึกรุ่นบน GitHub ลงรหัสประกาศความปลอดภัยไว้ ผมไม่ได้เปิดอ่านรายละเอียด)</div></div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ใครควรใช้
+
+<div class="prose">
+
+ผมว่าเหมาะกับคนที่จะลง Windows ใหม่ หรืออยากลองลีนุกซ์โดยยังไม่ลงถาวร ใช้ฟรี ไฟล์เล็ก ไม่ต้องติดตั้ง
+
+ก่อนใช้มีสามอย่างที่ต้องจำครับ
+
+- เขียนแล้วไดรฟ์ที่เลือกจะถูกลบทั้งหมด
+- โหลดจากเว็บทางการเท่านั้น
+- ไฟล์ ISO ควรเป็นของแท้จากต้นทาง
+
+บอกไว้ตรงนี้ว่าผมยังไม่ได้ลงแอปลองใช้เองนะครับ ข้อมูลทั้งหมดในข่าวนี้มาจากเว็บ rufus.ie และ GitHub ของ Rufus
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- หน้าแรก ตารางดาวน์โหลด ขนาด วันที่ ระบบที่ใช้ ไลเซนส์ และบันทึกรุ่น 4.16: <a href="https://rufus.ie/en/" rel="noopener">rufus.ie</a>
+- รุ่น v4.16 และขนาดไฟล์บน GitHub: <a href="https://github.com/pbatard/rufus/releases" rel="noopener">github.com/pbatard/rufus/releases</a> · ไลเซนส์ GPL-3.0: <a href="https://github.com/pbatard/rufus" rel="noopener">github.com/pbatard/rufus</a>
+- เรื่องลบพาร์ติชัน ไดรฟ์ที่แสดง สิทธิ์แอดมิน ลายเซ็น และไฟล์ ISO: <a href="https://github.com/pbatard/rufus/wiki/FAQ" rel="noopener">Rufus FAQ</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปกและภาพหน้าจอ 2 ภาพ: ภาพ: Rufus ภาพหน้าจอรุ่น 3.20.1929 จากเว็บ <a href="https://rufus.ie/en/" rel="noopener">rufus.ie</a> วางบนพื้นสีโดย DOJOJIN.TECH
+- อินโฟกราฟิก: ภาพประกอบจาก DOJOJIN.TECH จากข้อมูลในข่าวนี้
+
+ภาพใช้ประกอบการแนะนำ (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>

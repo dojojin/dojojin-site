@@ -1,0 +1,200 @@
+---
+title: "แอปแนะนำ: Tailscale บน iPhone ต่อเครื่องที่บ้านจากข้างนอกเหมือนอยู่เครือข่ายเดียวกัน แผนส่วนตัวฟรี (รุ่น 1.104.7)"
+topic: software
+type: news
+tags: [app, open-source, apple]
+date: 2026-11-20T11:55:00+07:00
+section: app
+sourceName: "Tailscale (App Store ไทย)"
+sourceUrl: "https://apps.apple.com/th/app/tailscale/id1470499037"
+description: "แนะนำ Tailscale แอปบน iPhone ที่ต่อมือถือ คอมพิวเตอร์ และ NAS เข้าเป็นเครือข่ายส่วนตัวเดียวกันด้วย WireGuard ดาวน์โหลดฟรี ไม่มีรายการซื้อในแอป แผน Personal ฟรีสำหรับงานที่ไม่ใช่เชิงพาณิชย์ 6 ผู้ใช้ ล็อกอินผ่าน Google, Microsoft, GitHub หรือ Apple รุ่นล่าสุด 1.104.7 ใช้ iOS 16.6 ขึ้นไป พร้อมข้อควรรู้เรื่องโอเพนซอร์สและรีเลย์"
+kicker: "แอปแนะนำ"
+lead: "อยากเปิดไฟล์ในคอมที่บ้านหรือ NAS ตอนอยู่ข้างนอก แต่ไม่อยากเปิดพอร์ตให้ใครก็เข้าได้ ลอง Tailscale ดูครับ แอปนี้ต่อเครื่องของเราเข้าเป็นเครือข่ายส่วนตัวเดียวกัน ดาวน์โหลดฟรี แผนส่วนตัวก็ฟรีสำหรับงานที่ไม่ใช่เชิงพาณิชย์"
+meta: "เรียบเรียงจาก App Store ไทย หน้าราคาและคู่มือของ Tailscale และ GitHub · ข้อมูล ณ 20 พฤศจิกายน 2569"
+cover: "/media/posts/news/tailscale-ios-app-review/cover.jpg"
+coverAlt: "ภาพหน้าจอ Tailscale บน iPhone สองภาพบนพื้นสีพาสเทล ซ้ายคือหน้าล็อกอินที่มีปุ่ม Sign in with Google, Microsoft, GitHub, Apple และ passkey ขวาคือหน้ารายชื่อเครื่องที่เชื่อมต่อ พร้อมช่อง Exit node"
+---
+
+<section class="section">
+
+## Tailscale คืออะไร
+
+<div class="split">
+<div class="prose">
+
+Tailscale คือแอปที่ต่อเครื่องของเราหลาย ๆ เครื่องเข้าเป็นเครือข่ายส่วนตัวเดียวกันครับ iPhone, คอมพิวเตอร์ และ NAS ที่อยู่คนละที่ ก็คุยกันได้เหมือนอยู่ในวงแลนเดียวกัน
+
+คู่มือของ Tailscale เรียกเครือข่ายนี้ว่า tailnet ใช้โปรโตคอล WireGuard เข้ารหัสการเชื่อมต่อแบบจุดต่อจุด และบอกว่าเชื่อมกันได้แม้มีไฟร์วอลล์หรือ NAT (ระบบที่เราเตอร์ใช้แชร์เน็ตให้หลายเครื่อง) ขวางอยู่ ไม่ต้องไปเปิดพอร์ตเอง
+
+<div class="spec-list">
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-wireless" /></svg><div><b>เชื่อมเครื่องต่างที่</b>มือถือที่อยู่ข้างนอก เข้าเครื่องที่บ้านหรือที่ทำงานได้</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-chip" /></svg><div><b>เข้ารหัสด้วย WireGuard</b>ทุกการเชื่อมต่อเข้ารหัสแบบ end-to-end</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-globe" /></svg><div><b>ใช้เป็น VPN ได้ด้วย</b>เลือกเครื่องหนึ่งเป็น exit node แล้วทราฟฟิกทั้งหมดจะออกทางเครื่องนั้น</div></div>
+</div>
+
+ผู้พัฒนาคือ Tailscale Inc ดาวน์โหลดฟรีบน App Store ไทย และหน้า App Store ไม่มีรายการซื้อในแอปครับ
+
+</div>
+<figure class="split-fig"><img src="/media/posts/news/tailscale-ios-app-review/igv-1.jpg" width="1600" height="1400" loading="lazy" alt="อินโฟกราฟิกข้อมูลเร็ว ๆ ของ Tailscale บน iPhone โหลดฟรี ไม่มีรายการซื้อในแอป แผน Personal ฟรี 6 ผู้ใช้ สำหรับงานที่ไม่ใช่เชิงพาณิชย์ รุ่น 1.104.7 ลงวันที่ 17 พ.ย. 2569 ขนาด 30.6 MB ใช้ iOS 16.6 ขึ้นไป ล็อกอินด้วย Google, Microsoft, GitHub หรือ Apple" /></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## ล็อกอินยังไง
+
+<div class="split">
+<figure class="news-fig news-fig--tall news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/tailscale-ios-app-review/img-1.jpg" width="898" height="1600" loading="lazy" alt="ภาพหน้าจอ Tailscale บน iPhone หน้าล็อกอินที่ login.tailscale.com มีช่องกรอกอีเมลและปุ่ม Sign in กับปุ่ม Sign in with Google, Microsoft, GitHub, Apple และ passkey" /></div><figcaption><span class="news-fig__credit">ภาพ: Tailscale Inc (ภาพจาก App Store ตัดเฉพาะส่วนมือถือ วางบนพื้นสีโดย DOJOJIN.TECH) · <a href="https://apps.apple.com/th/app/tailscale/id1470499037" rel="noopener">apps.apple.com</a></span></figcaption></figure>
+<div class="prose">
+
+ตรงนี้ต่างจากแอปทั่วไปนิดหนึ่งครับ Tailscale ไม่มีรหัสผ่านของตัวเอง
+
+คู่มือบอกว่าตั้งใจไม่รองรับการสมัครด้วยอีเมลกับรหัสผ่าน ให้ใช้บัญชีที่เรามีอยู่แล้วล็อกอินแทน ในภาพคือหน้าล็อกอิน มีปุ่มให้เลือก Google, Microsoft, GitHub, Apple และ passkey
+
+ข้อดีคือถ้าบัญชี Google หรือ Microsoft ของเราเปิดยืนยันตัวตนสองขั้น (2FA) ไว้แล้ว ก็ได้ขั้นตอนนั้นมาใช้กับ Tailscale ด้วย หน้าแอปเขียนไว้ว่า "Use your existing identity & 2FA"
+
+</div>
+</div>
+
+<div class="prose">
+
+<ol class="news-steps">
+<li><b>ติดตั้งแอป</b>ค้นหา Tailscale บน App Store (ผู้พัฒนา Tailscale Inc) แล้วกด Get</li>
+<li><b>ล็อกอินด้วยบัญชีที่มี</b>เลือก Google, Microsoft, GitHub หรือ Apple แล้วเปิดสวิตช์เชื่อมต่อ</li>
+<li><b>ลงแอปในเครื่องอื่นด้วย</b>เครื่องที่จะให้เข้าถึง เช่น คอมที่บ้านหรือ NAS ต้องลง Tailscale และล็อกอินบัญชีเดียวกัน ถึงจะเห็นกัน</li>
+</ol>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## หน้าจอหลักและ exit node
+
+<div class="split">
+<div class="prose">
+
+หน้าหลักของแอปเรียบง่ายครับ ตามภาพ บนสุดมีสวิตช์เปิดปิดการเชื่อมต่อ ชื่อเครือข่าย (ภาพตัวอย่างใช้ example.com) และสถานะ Connected
+
+ถัดลงมาเป็นช่อง Exit node ให้เลือกเครื่องปลายทางแล้วกด Enable ใต้ลงมาเป็นช่องค้นหาเครื่อง กับรายชื่อเครื่องแยกตามเจ้าของ แต่ละเครื่องมีที่อยู่ IP ของ Tailscale กำกับ เช่น 100.76.53.38 ในภาพตัวอย่าง จุดเขียวคือเครื่องที่เชื่อมอยู่
+
+ผมว่านี่คือจุดที่เข้าใจง่ายที่สุดของแอปครับ ดูจากภาพก็รู้เลยว่าเครื่องไหนออนไลน์อยู่
+
+</div>
+<figure class="news-fig news-fig--tall news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/tailscale-ios-app-review/img-2.jpg" width="879" height="1600" loading="lazy" alt="ภาพหน้าจอ Tailscale บน iPhone หน้าหลัก สวิตช์เปิดอยู่ ชื่อเครือข่าย example.com สถานะ Connected ช่อง Exit node เลือก us-east-01 พร้อมปุ่ม Enable ช่องค้นหา และรายชื่อเครื่องของ Amelie Pang, Sarah Lee และ Alex Fisher พร้อมที่อยู่ IP" /></div><figcaption><span class="news-fig__credit">ภาพ: Tailscale Inc (ภาพจาก App Store ตัดเฉพาะส่วนมือถือ วางบนพื้นสีโดย DOJOJIN.TECH) · <a href="https://apps.apple.com/th/app/tailscale/id1470499037" rel="noopener">apps.apple.com</a></span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## ข้อควรรู้ก่อนใช้
+
+<div class="prose">
+
+มีสามเรื่องที่ผมอยากให้รู้ก่อนครับ ทั้งหมดมาจากเว็บของ Tailscale เอง
+
+<div class="news-cards">
+<div class="news-card is-warn"><b>เปิดซอร์สบางส่วน ตัวแอป iPhone ไม่ใช่</b>หน้า opensource ของ Tailscale บอกว่าตัวโปรแกรมเบื้องหลัง (daemon) กับคำสั่ง CLI เป็นโอเพนซอร์ส ไลเซนส์ BSD-3-Clause อยู่บน GitHub แต่หน้าเดียวกันก็อธิบายหลักไว้ว่า บนระบบปิดอย่าง iOS ส่วนหน้าจอแอป (GUI) เป็นซอร์สปิด ส่วนเซิร์ฟเวอร์กลางที่คอยประสานงานเครื่องต่าง ๆ (coordination server) ของ Tailscale ก็เป็นซอร์สปิดเช่นกัน</div>
+<div class="news-card is-ok"><b>อยากโฮสต์เซิร์ฟเวอร์กลางเอง มี Headscale</b>Headscale เป็นเซิร์ฟเวอร์กลางแบบโอเพนซอร์สที่ชุมชนทำ โฮสต์เองได้ ใช้กับเครือข่ายเดียว Tailscale บอกว่าไม่ได้เป็นผู้ดูแลโปรเจกต์นี้ และไม่นับเป็นผลิตภัณฑ์ที่ตัวเองซัพพอร์ต ผมไม่ได้ลองตั้งเอง แต่เห็นในบันทึกรุ่นของแอป iOS ว่ามีแก้ปัญหาเรื่อง custom coordination server อยู่</div>
+<div class="news-card is-warn"><b>บางทีทราฟฟิกวิ่งผ่านรีเลย์</b>คู่มือบอกว่าเครื่องจะพยายามต่อตรงถึงกัน (peer-to-peer) ก่อน ถ้าต่อตรงไม่ได้ จึงค่อยวิ่งผ่านเซิร์ฟเวอร์รีเลย์ที่ชื่อ DERP ทั้งสองแบบเข้ารหัสด้วย WireGuard เหมือนกัน ต่างกันที่ความเร็ว การต่อตรงมักเร็วกว่า</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ฟรีแค่ไหน
+
+<div class="prose">
+
+ตัวแอปโหลดฟรี ส่วนค่าใช้เครือข่ายต้องดูหน้าราคาบน tailscale.com ครับ แผน Personal ราคา 0 ดอลลาร์ ใช้ได้ไม่จำกัดเวลา
+
+<div class="spec-list">
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-copy" /></svg><div><b>แผน Personal</b>ฟรีตลอด จำนวนอุปกรณ์ไม่จำกัด ผู้ใช้ได้ไม่เกิน 6 คน ACL group (กลุ่มสำหรับกำหนดสิทธิ์เข้าถึง) ไม่เกิน 3 กลุ่ม</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-alert" /></svg><div><b>เงื่อนไขสำคัญ</b>หน้าราคาบอกว่าแผนฟรีเหมาะกับการใช้งานที่ไม่ใช่เชิงพาณิชย์ (non-commercial) เท่านั้น ใครจะใช้กับงานหรือบริษัทต้องดูแผนอื่น</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-storage" /></svg><div><b>แผน Standard</b>8 ดอลลาร์ต่อผู้ใช้ต่อเดือน ผู้ใช้ไม่จำกัด (ราคาที่หน้าเว็บแสดง ไม่ใช่เงินบาท)</div></div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## รุ่นล่าสุด 1.104.7
+
+<div class="prose">
+
+รุ่นล่าสุดบน App Store ไทยคือ 1.104.7 ลงวันที่ 17 พฤศจิกายน 2569 ขนาด 30.6 MB ใช้ iOS 16.6 ขึ้นไป (iPad ใช้ iPadOS 16.6 ขึ้นไป)
+
+รุ่นนี้แก้เรื่องเดียวครับ คืออุปกรณ์กลางทางบางตัวขัดขวางการเชื่อมต่อไปยังเซิร์ฟเวอร์ควบคุมของ Tailscale ตอนจับมือ TLS (ขั้นตอนเริ่มต้นของการเชื่อมต่อแบบเข้ารหัส) แก้โดยอัปเดต Go เป็น 1.27.4
+
+ย้อนไปไม่กี่รุ่น ก็มีของใหม่และแก้บั๊กมาเรื่อย ๆ ครับ
+
+<div class="spec-list">
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-download" /></svg><div><b>1.104.6 (11 พ.ย.)</b>แก้ปัญหาที่เกิดไม่บ่อย กับการเชื่อมต่อที่ไม่ได้ใช้งานนาน ๆ</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-alert" /></svg><div><b>1.104.4 (29 ต.ค.)</b>แก้ประเด็นความปลอดภัยที่เกี่ยวกับ Tailscale Serve และ SSH (รายละเอียดอยู่หน้า security bulletins ของ Tailscale)</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-wireless" /></svg><div><b>1.104.1 (9 ต.ค.)</b>ปักหมุดอุปกรณ์บน iOS ได้ และ Taildrop (ส่งไฟล์ระหว่างเครื่อง) รองรับลิงก์กับข้อความที่เลือก</div></div>
+</div>
+
+วันที่ของแต่ละรุ่นเป็นเวลาไทย แปลงจากเวลาในหน้า App Store แล้ว อีกเรื่องคือแอปมีภาษาอังกฤษอย่างเดียวครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ใครควรใช้
+
+<div class="prose">
+
+ผมว่าเหมาะกับคนที่มีคอมหรือ NAS ที่บ้าน แล้วอยากเข้าถึงตอนอยู่ข้างนอกโดยไม่ต้องตั้งค่าเราเตอร์เอง หรือคนที่อยากส่งไฟล์ระหว่างเครื่องของตัวเอง ถ้าเป็นงานส่วนตัวก็ใช้ฟรีได้
+
+ก่อนลงมีสามอย่างที่ต้องรู้ครับ
+
+- แผนฟรีสำหรับงานที่ไม่ใช่เชิงพาณิชย์
+- ต้องล็อกอินผ่านบัญชี Google, Microsoft, GitHub หรือ Apple
+- เซิร์ฟเวอร์กลางเป็นของบริษัท ใครไม่สบายใจเรื่องนี้ ดู Headscale เป็นทางเลือกได้ แต่ต้องดูแลเองทั้งหมด
+
+บอกไว้ตรงนี้ว่าผมยังไม่ได้ลงแอปลองใช้เองนะครับ ข้อมูลทั้งหมดในข่าวนี้มาจากหน้า App Store และเว็บของ Tailscale
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- App Store ไทย: <a href="https://apps.apple.com/th/app/tailscale/id1470499037" rel="noopener">apps.apple.com</a> (รายละเอียด รุ่น ขนาด ระบบที่ใช้ บันทึกการอัปเดต)
+- แผนและราคา: <a href="https://tailscale.com/pricing" rel="noopener">tailscale.com/pricing</a>
+- Tailscale คืออะไร และชนิดการเชื่อมต่อ (DERP): <a href="https://tailscale.com/kb/1151/what-is-tailscale" rel="noopener">What is Tailscale</a> · <a href="https://tailscale.com/kb/1257/connection-types" rel="noopener">Connection types</a>
+- ผู้ให้บริการล็อกอิน: <a href="https://tailscale.com/kb/1013/sso-providers" rel="noopener">Identity providers</a>
+- ส่วนที่เปิดซอร์สและ Headscale: <a href="https://tailscale.com/opensource" rel="noopener">tailscale.com/opensource</a> · <a href="https://github.com/tailscale/tailscale" rel="noopener">github.com/tailscale/tailscale</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปกและภาพหน้าจอแอป 2 ภาพ: ภาพ: Tailscale Inc ภาพประชาสัมพันธ์จากหน้า App Store (ตัดเฉพาะส่วนมือถือ) วางบนพื้นสีโดย DOJOJIN.TECH · <a href="https://apps.apple.com/th/app/tailscale/id1470499037" rel="noopener">apps.apple.com</a>
+- อินโฟกราฟิก: ภาพประกอบจาก DOJOJIN.TECH จากข้อมูลในข่าวนี้
+
+ภาพใช้ประกอบการแนะนำ (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>
