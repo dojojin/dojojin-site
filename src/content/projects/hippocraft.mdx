@@ -5,7 +5,7 @@ order: 3
 icon: /media/projects/hippocraft/icon.png
 summary: โปรแกรมอ่านและแก้ไข PDF ที่เข้าใจภาษาไทยจริง ๆ แก้ข้อความไทยในเอกสารเดิม ส่งออกเป็น Word อ่านเอกสารสแกนด้วย OCR ไทย ใช้ได้ทั้งบนเว็บและแบบลงเครื่อง ไฟล์ไม่ถูกอัปโหลด
 facts:
-  - [รุ่นล่าสุด, "0.18.1-th23.2d.b4603 (ตรงกับ PdfCraft 0.18.1) · 9 พ.ย. 2569 · เว็บและลงเครื่องเป็นรุ่นเดียวกัน"]
+  - [รุ่นล่าสุด, "0.18.1-th27.1.b4713 (ตรงกับ PdfCraft 0.18.1) · 21 พ.ย. 2569 · รุ่นลงเครื่อง (รุ่นเว็บยังเป็น th26.10v)"]
   - [ดาวน์โหลด, "dojojin.tech/hippocraft/downloads/"]
   - [เขียนด้วย, Rust]
   - [ใช้ได้บน, "เว็บ pdf.dojojin.tech · Windows (x64, x86, ARM64) · macOS (Universal) · Linux (AppImage, .deb)"]
@@ -126,10 +126,12 @@ HippoCraft รุ่นเว็บเปิดรับลงทะเบีย
 
 ไฟล์ PDF ประมวลผลในเบราว์เซอร์บนเครื่องของคุณ **ไม่ถูกอัปโหลด** ขึ้นเซิร์ฟเวอร์
 
+รุ่นเว็บตอนนี้ยังเป็นรุ่นเก่ากว่า (th26.10v) ฟีเจอร์ใหม่ของรุ่น b4713 เช่น OCR ไทยชุดใหม่ มีเฉพาะแบบลงเครื่องก่อน
+
 </div>
 <div class="note">
 
-### โปรแกรมลงเครื่อง (รุ่น 0.18.1-th23.2d.b4603)
+### โปรแกรมลงเครื่อง (รุ่น 0.18.1-th27.1.b4713)
 
 Windows (x64 · x86 · ARM64 · Portable) · macOS Universal + CLI · Linux AppImage · .deb · CLI
 
@@ -142,64 +144,77 @@ Windows (x64 · x86 · ARM64 · Portable) · macOS Universal + CLI · Linux AppI
 
 <section class="section">
 
-## อัปเดตล่าสุด (0.18.1-th23.2d.b4603 · 9 พ.ย. 2569)
+## อัปเดตล่าสุด (0.18.1-th27.1.b4713 · 21 พ.ย. 2569)
 
-เทียบกับรุ่นลงเครื่องก่อนหน้า (0.16.1-th16.10)
+รุ่นลงเครื่อง Windows, macOS และ Linux build จาก commit เดียวกัน · เทียบกับรุ่นก่อนหน้า (0.18.1-th23.2d.b4603 · 9 พ.ย. 2569)
 
 <div class="grade-grid">
   <article class="grade-card">
-    <h3>แต่งเฉพาะบางคำในข้อความไทย</h3>
+    <h3>OCR ภาษาไทยชุดใหม่</h3>
     <ul>
-      <li>สี ขนาด และฟอนต์ไทยที่มากับโปรแกรม เฉพาะคำที่เลือก</li>
-      <li>Ctrl/⌘ + B · I · U กับคำที่เลือก</li>
-      <li>เส้นใต้เป็นสีเดียวกับคำ · แก้ต่อไม่เด้งกลับ</li>
-      <li>ระยะห่างตัวอักษรเฉพาะคำยังไม่ได้ (โปรแกรมบอกเหตุผลเป็นภาษาไทย)</li>
+      <li>ใช้โมเดล OpenThai 2.0 ของ iApp Technology (Apache-2.0)</li>
+      <li>ทำงานบนเครื่อง ไม่ต้องต่อเน็ต</li>
+      <li>แม่นขึ้นในทุกชุดทดสอบที่ลอง</li>
+      <li>เร็วขึ้นเกือบเท่าตัว จาก 0.80 เหลือ 0.42 วินาทีต่อหน้า</li>
     </ul>
   </article>
   <article class="grade-card">
-    <h3>เลือก ก๊อป วาง ของในไฟล์</h3>
+    <h3>สแกนเอียงหรือกลับหัว</h3>
     <ul>
-      <li>Ctrl+A เลือกทุกอย่างในหน้า</li>
-      <li>Lasso: กด Alt แล้วลากล้อม</li>
-      <li>ก๊อป ตัด วาง ข้ามหน้าและข้ามไฟล์</li>
-      <li>ช่องตาราง Excel ย้ายไปทั้งช่อง</li>
+      <li>สแกนที่เอียง ปรับให้ตรงก่อนอ่าน (เปิดอยู่แล้ว)</li>
+      <li>หน้าที่สแกนตะแคงหรือกลับหัว หมุนให้ตั้งตรงได้ (เลือกเปิด)</li>
+      <li>ปรับหน้าที่เอียงให้ตรงในตัวเอกสารได้ ไม่เกิน 5° (เลือกเปิด)</li>
     </ul>
   </article>
   <article class="grade-card">
-    <h3>เส้น รูปทรง และไฟล์ Canva</h3>
+    <h3>อ่านถูกลำดับขึ้น</h3>
     <ul>
-      <li>คลิกเลือกเส้นหรือรูปทรง ลากย้าย ลบ</li>
-      <li>สีเส้น สีพื้น ความหนา จุดจับ</li>
-      <li>รูปไล่สีก๊อปไปพร้อมสี</li>
-      <li>Ungroup ทั้งหน้า แก้ข้อความในไฟล์ Canva ได้</li>
+      <li>ช่องตารางที่ข้อความขึ้นบรรทัดใหม่ อ่านเป็นก้อนเดียว</li>
+      <li>เอกสารสองคอลัมน์ อ่านทีละคอลัมน์</li>
+      <li>ตัวอักษรที่ไม่แน่ใจ เทียบกับรายการคำไทย</li>
+      <li>จุดสกปรกตามขอบสแกน ไม่ถูกอ่านเป็นคำแล้ว</li>
+      <li>ย้ายข้อความที่แก้หลัง OCR แล้ว คำเดิมจากภาพสแกนไม่โผล่ออกมา (บั๊ก G27)</li>
     </ul>
   </article>
   <article class="grade-card">
-    <h3>ไฟล์ไทยจากโปรแกรมอื่น</h3>
+    <h3>สแกนเป็น Word</h3>
     <ul>
-      <li>PDFelement / TH SarabunPSK สระไม่ลอย ยังใช้ฟอนต์เดิม</li>
-      <li>LibreOffice (TH SarabunNew) พิมพ์เพิ่มไม่เพี้ยน</li>
-      <li>ตารางมีเส้นแบ่งแก้ทีละช่อง</li>
-      <li>ภาพสแกนย่อดูแล้วเส้นไม่หาย</li>
+      <li>ข้อความวางทับภาพสแกน และลบคำที่อ่านได้ออกจากภาพ</li>
+      <li>ขนาด สี ตัวหนา หัวเรื่องตัวใหญ่ และหัว/ท้ายกระดาษ ตามสแกน</li>
+      <li>ย่อหน้าตัดบรรทัดใหม่ใน Word เหมือนข้อความที่พิมพ์เอง</li>
     </ul>
   </article>
   <article class="grade-card">
-    <h3>ตามทันต้นฉบับ</h3>
+    <h3>ฟอนต์</h3>
     <ul>
-      <li>รวม PdfCraft 0.17.0 · 0.18.0 · 0.18.1</li>
-      <li>เมนูและข้อความแจ้งไทยครบขึ้น</li>
-      <li>ภาษาไทยยังทำงานเหมือนเดิมทุกจุด</li>
+      <li>ฟอนต์ไทยและฟอนต์อังกฤษแยกกันทีละย่อหน้า แบบเดียวกับ Word</li>
+      <li>ส่งออกเป็น Word แล้วบอกว่าเครื่องอื่นต้องมีฟอนต์อะไร</li>
+      <li>ใช้ฟอนต์ที่ติดตั้งในเครื่องได้ หลังอ่านและยอมรับเงื่อนไขของฟอนต์นั้น</li>
     </ul>
   </article>
   <article class="grade-card">
-    <h3>ติดตั้งได้ทุกเครื่อง</h3>
+    <h3>ติดตั้งและ build เอง</h3>
     <ul>
-      <li>Windows x64 · x86 · ARM64 · Portable</li>
-      <li>macOS Universal + CLI</li>
-      <li>Linux AppImage (ใหม่) · .deb · CLI</li>
+      <li>Windows x64 · x86 · ARM64 · Portable · macOS Universal + CLI · Linux AppImage · .deb · CLI</li>
+      <li>Microsoft Store: ส่งตรวจแล้ว รอผล (เร็ว ๆ นี้)</li>
+      <li>มี<a href="https://upl.dojojin.tech/pub/fil/hacs5a3x">คู่มือ build</a> สำหรับคนที่อยาก build เอง</li>
       <li><a href="/hippocraft/downloads/">ดาวน์โหลดทั้งหมด</a></li>
     </ul>
   </article>
+</div>
+
+### ปัญหาที่ยังมีในรุ่นนี้
+
+<div class="note">
+
+- OCR ภาษาอังกฤษยังอ่านผิดบ่อย หน้าตะแคงไม่ถูกหมุนอัตโนมัติ หน้าเอียงได้คำผิด และตัวเลขอาจผิด (เช่น 45 อ่านเป็น 4) ให้หมุนหน้าให้ตรงก่อนและตรวจตัวเลข · OCR ไทยไม่โดน · มีมาตั้งแต่รุ่นก่อน กำลังแก้
+- กด Enter ในย่อหน้าจาก OCR จนชนย่อหน้าถัดไป สองย่อหน้าจะรวมกัน
+- ตัวอักษรที่ทับเส้นในภาพวาด (เช่น ป้ายบนเส้นผนังในแปลนบ้าน) อาจหลุด
+- OCR ไทยอาจข้ามตัวเลขตัวเดียวในช่องตาราง (เช่น "1" ในคอลัมน์ลำดับ)
+- PDF ราชการบางไฟล์ที่ทำจาก Word ผ่าน iLovePDF แปลงกลับเป็น Word แล้วหน้าตายังเพี้ยน
+- ช่องเลขหน้าและช่องรายการในหน้าต่าง Recognize Text ยังไม่มีชื่อสำหรับ screen reader
+- ย่อหน้าไทยที่มีคำหนึ่งใหญ่กว่าคำอื่นมาก ทุกบรรทัดจะห่างตามคำนั้น
+
 </div>
 
 </section>
@@ -235,7 +250,7 @@ Windows (x64 · x86 · ARM64 · Portable) · macOS Universal + CLI · Linux AppI
 <tr><th scope="row">การบันทึก</th><td>Incremental save (เขียนต่อท้ายไฟล์) ไม่แตะ object เดิม · undo หลายขั้น</td></tr>
 <tr><th scope="row">ความเป็นส่วนตัว</th><td>รุ่นลงเครื่องไม่มีบัญชีผู้ใช้ ไม่มี telemetry · ตรวจอัปเดตดูรุ่นของ HippoCraft ไม่ใช่ PdfCraft</td></tr>
 <tr><th scope="row">CLI</th><td><code>hippocraft-cli</code> สำหรับงานอัตโนมัติ เช่น OCR ทั้งโฟลเดอร์</td></tr>
-<tr><th scope="row">สัญญาอนุญาต</th><td>MIT OR Apache-2.0 · ฟอนต์ OFL</td></tr>
+<tr><th scope="row">สัญญาอนุญาต</th><td>MIT OR Apache-2.0 · ฟอนต์ OFL · โมเดล OCR ไทย OpenThai 2.0 (iApp Technology) Apache-2.0</td></tr>
 </tbody></table>
 </div>
 <div class="grade-card">
@@ -259,7 +274,7 @@ Windows (x64 · x86 · ARM64 · Portable) · macOS Universal + CLI · Linux AppI
 <div class="grade-card">
 <h3>ตัวติดตั้งและเลขรุ่น</h3>
 <table class="spec"><tbody>
-<tr><th scope="row">รูปแบบเลขรุ่น</th><td><code>0.18.1-th23.2d.b4603</code> = รุ่น PdfCraft · รหัสงานสูงสุดที่ทำแล้ว · เลข build (เพิ่มทุก commit) · build จากโค้ดที่ยังไม่ commit ต่อท้าย <code>.dirty</code></td></tr>
+<tr><th scope="row">รูปแบบเลขรุ่น</th><td><code>0.18.1-th27.1.b4713</code> = รุ่น PdfCraft · รหัสงานสูงสุดที่ทำแล้ว · เลข build (เพิ่มทุก commit) · build จากโค้ดที่ยังไม่ commit ต่อท้าย <code>.dirty</code></td></tr>
 <tr><th scope="row">Windows</th><td>.msi / Portable · x64, x86, ARM64 · ติดตั้งที่ Programs\Dojo-mAn\HippoCraft ลงคู่กับ PdfCraft ได้</td></tr>
 <tr><th scope="row">macOS</th><td>Universal .dmg (macOS 11 ขึ้นไป) + CLI</td></tr>
 <tr><th scope="row">Linux</th><td>AppImage (+ .zsync) · .deb · CLI · glibc 2.39 ขึ้นไป</td></tr>

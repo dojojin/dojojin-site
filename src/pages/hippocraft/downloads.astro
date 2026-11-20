@@ -3,8 +3,8 @@ import Base from '../../layouts/Base.astro';
 
 // HippoCraft downloads. Links on upl.dojojin.tech never change (they always serve the newest build);
 // only VERSION / DATE below change with a release (source: the owner's release page + README).
-const VERSION = '0.18.1-th23.2d.b4603';
-const DATE = '9 พฤศจิกายน 2569';
+const VERSION = '0.18.1-th27.1.b4713';
+const DATE = '21 พฤศจิกายน 2569';
 const U = (id) => `https://upl.dojojin.tech/pub/fil/${id}`;
 const platforms = [
   {
@@ -29,9 +29,9 @@ const platforms = [
   },
   {
     os: 'Linux x86_64',
-    tip: 'glibc 2.39 ขึ้นไป (Ubuntu 24.04, Mint 22, Fedora 40, Debian 13) · AppImage: chmod +x แล้วเปิดได้เลย',
+    tip: '.deb สำหรับ Ubuntu 24.04 / Mint 22 / Debian 13 ขึ้นไป · AppImage ใช้ได้กับ glibc 2.39 ขึ้นไป: chmod +x แล้วเปิดได้เลย',
     files: [
-      ['AppImage', '', 'ทุก distro · ใหม่', U('ptgs762t'), true],
+      ['AppImage', '', 'ทุก distro', U('ptgs762t'), true],
       ['.deb', '', 'Ubuntu / Mint', U('8pvbdxyu')],
       ['CLI', '.tar.gz', 'สำหรับเซิร์ฟเวอร์', U('48o09gkd')],
       ['AppImage .zsync', '', 'อัปเดตแบบ delta', U('bl6fe65b')],
@@ -56,7 +56,7 @@ const platforms = [
       <section class="dl-web">
         <div>
           <h2>ใช้ผ่านเว็บ ไม่ต้องติดตั้ง</h2>
-          <p>ลงทะเบียนก่อนใช้ · ไฟล์ PDF ทำงานในเบราว์เซอร์ของคุณ ไม่ถูกอัปโหลด</p>
+          <p>ลงทะเบียนก่อนใช้ · ไฟล์ PDF ทำงานในเบราว์เซอร์ของคุณ ไม่ถูกอัปโหลด · รุ่นเว็บยังเป็นรุ่นเก่ากว่า (th26.10v) ฟีเจอร์ใหม่ในรุ่นนี้มีเฉพาะแบบลงเครื่อง</p>
         </div>
         <a class="dl-btn dl-btn--primary" href="https://pdf.dojojin.tech" rel="noopener">เปิด pdf.dojojin.tech</a>
       </section>
@@ -75,13 +75,33 @@ const platforms = [
         </section>
       ))}
 
+      <section class="dl-os">
+        <h2>Microsoft Store</h2>
+        <p class="dl-tip">ส่งให้ Microsoft ตรวจแล้ว กำลังรอผล · เร็ว ๆ นี้</p>
+      </section>
+
+      <section class="dl-notes">
+        <h2>ปัญหาที่ยังมีในรุ่นนี้</h2>
+        <ul>
+          <li>OCR ภาษาอังกฤษยังอ่านผิดบ่อย: หน้าที่วางตะแคง ระบบหมุนอัตโนมัติไม่หมุนให้ · หน้าที่สแกนเอียงได้คำผิด · ตัวเลขอาจผิด (เช่น 45 อ่านเป็น 4) วิธีเลี่ยง: หมุนหน้าให้ตั้งตรงก่อน แล้วตรวจตัวเลขทุกครั้ง · OCR ภาษาไทยไม่โดนปัญหานี้ · มีมาตั้งแต่รุ่นก่อน กำลังแก้อยู่</li>
+          <li>กด Enter ในย่อหน้าที่ได้จาก OCR จนข้อความยาวไปชนย่อหน้าถัดไป สองย่อหน้าจะรวมเป็นย่อหน้าเดียว</li>
+          <li>ตัวอักษรที่วางทับเส้นในภาพวาด (เช่น ป้ายชื่อบนเส้นผนังในแปลนบ้าน) OCR อาจอ่านหลุดไป</li>
+          <li>OCR ภาษาไทยอาจข้ามตัวเลขตัวเดียวในช่องตาราง (เช่น "1" ในคอลัมน์ลำดับ)</li>
+          <li>PDF ของหน่วยงานราชการบางไฟล์ที่ทำจาก Word ผ่าน iLovePDF แปลงกลับเป็น Word แล้วหน้าตายังเพี้ยน</li>
+          <li>ช่องเลขหน้าและช่องรายการในหน้าต่าง Recognize Text ยังไม่มีชื่อให้โปรแกรมอ่านหน้าจอ (screen reader)</li>
+          <li>ย่อหน้าภาษาไทยที่มีคำหนึ่งตัวใหญ่กว่าคำอื่นมาก ทุกบรรทัดจะห่างเท่ากับบรรทัดของคำนั้น</li>
+        </ul>
+      </section>
+
       <section class="dl-notes">
         <h2>ข้อมูลเพิ่มเติม</h2>
         <ul>
           <li>ลิงก์ไม่เปลี่ยน เป็นรุ่นล่าสุดเสมอ · ชื่อไฟล์บอกรุ่น เช่น <code>hippocraft-{VERSION}-windows-x64.msi</code> เลขหลัง b ยิ่งมากยิ่งใหม่ · หน้า About ในโปรแกรมบอกเลขเดียวกัน</li>
-          <li>ตรวจไฟล์: <a href={U('31uv7uyu')} rel="noopener">SHA256SUMS</a> (ทุกระบบ) · <a href={U('k1i2lpys')} rel="noopener">README / ประวัติรุ่น</a></li>
+          <li>ตัวติดตั้งยังไม่ได้เซ็นรับรอง (code-signed) · Windows: ถ้า SmartScreen เตือน กด More info › Run anyway · macOS: System Settings › Privacy &amp; Security › Open Anyway</li>
+          <li>ตรวจไฟล์: <a href={U('31uv7uyu')} rel="noopener">SHA256SUMS</a> (ครบทั้ง 12 ไฟล์) · <a href={U('k1i2lpys')} rel="noopener">README / ประวัติรุ่น</a> · <a href={U('yr2s4pe8')} rel="noopener">นโยบายความเป็นส่วนตัว</a></li>
+          <li>อยาก build เอง: <a href={U('hacs5a3x')} rel="noopener">คู่มือ build</a></li>
           <li>มีอะไรใหม่ในรุ่นนี้ และงานที่กำลังทำ ดูที่ <a href="/projects/hippocraft/">หน้าโปรเจกต์ HippoCraft</a></li>
-          <li>HippoCraft · Dojo-mAn's Edition · พัฒนาต่อจาก <a href="https://github.com/storytold/pdfcraft" rel="noopener">PdfCraft</a> · สัญญาอนุญาต MIT OR Apache-2.0</li>
+          <li>HippoCraft · Dojo-mAn's Edition · พัฒนาต่อจาก <a href="https://github.com/storytold/pdfcraft" rel="noopener">PdfCraft</a> · OCR ภาษาไทยใช้โมเดล OpenThai 2.0 ของ iApp Technology (Apache-2.0) · สัญญาอนุญาต MIT OR Apache-2.0</li>
         </ul>
       </section>
     </div>

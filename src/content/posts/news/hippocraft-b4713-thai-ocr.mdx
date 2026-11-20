@@ -1,0 +1,147 @@
+---
+title: "HippoCraft b4713 มาแล้ว OCR ไทยแม่นขึ้น เร็วขึ้นเกือบเท่าตัว สแกนเอียงก็อ่านได้ แปลงสแกนเป็น Word ได้"
+topic: software
+type: news
+tags: [hippocraft, pdf]
+date: 2026-11-21T00:20:00+07:00
+section: tech
+description: "HippoCraft โปรแกรมอ่านและแก้ไข PDF ภาษาไทย ออกรุ่น 0.18.1-th27.1.b4713 วันที่ 21 พ.ย. 2569 สำหรับ Windows, macOS และ Linux OCR ภาษาไทยเปลี่ยนมาใช้โมเดล OpenThai 2.0 ของ iApp Technology ที่ทำงานบนเครื่อง อ่านแม่นขึ้นและเร็วขึ้นเกือบเท่าตัว จัดหน้าสแกนเอียงให้ตรงก่อนอ่าน แปลงหน้าสแกนเป็น Word ได้ พร้อมรายการปัญหาที่ยังมีในรุ่นนี้"
+kicker: "ข่าวเทคโนโลยี · ซอฟต์แวร์"
+lead: "HippoCraft โปรแกรมอ่านและแก้ไข PDF ภาษาไทยที่ผมทำอยู่ ออกรุ่นใหม่ b4713 แล้วครับ รุ่นนี้เน้นที่ OCR ภาษาไทย อ่านแม่นขึ้น เร็วขึ้นเกือบเท่าตัว สแกนเอียงก็อ่านได้ และแปลงหน้าสแกนเป็น Word ได้"
+meta: "รุ่น 0.18.1-th27.1.b4713 · ออกเมื่อ 21 พฤศจิกายน 2569 · Windows, macOS, Linux"
+cover: "/media/posts/news/hippocraft-b4713-thai-ocr/cover.jpg"
+coverAlt: "HippoCraft รุ่น 0.18.1-th27.1.b4713 OCR ภาษาไทยชุดใหม่ เร็วขึ้นจาก 0.80 เหลือ 0.42 วินาทีต่อหน้า"
+---
+<section class="section">
+
+## รุ่นนี้มีอะไร
+
+<div class="split">
+<div class="prose">
+
+HippoCraft รุ่น **0.18.1-th27.1.b4713** ออกวันที่ 21 พ.ย. 2569 มีให้ลงเครื่องทั้ง Windows, macOS และ Linux ทั้งสามระบบ build จาก commit เดียวกันครับ ต่อจากรุ่น 0.18.1-th23.2d.b4603 ที่ออกเมื่อ 9 พ.ย.
+
+ของใหม่หลักของรุ่นนี้คือ OCR ภาษาไทย ที่เปลี่ยนมาใช้โมเดล OpenThai 2.0 ของ iApp Technology (สัญญาอนุญาต Apache-2.0) ทำงานบนเครื่องเราเอง ไม่ต้องต่อเน็ต
+
+ในการทดสอบของผู้พัฒนา รุ่นนี้อ่านแม่นขึ้นในทุกชุดทดสอบที่ลอง และเร็วขึ้นเกือบเท่าตัว จาก 0.80 เหลือ 0.42 วินาทีต่อหน้า
+
+</div>
+<div class="news-stats">
+<div class="news-stat"><b>0.42 วิ</b>ต่อหน้า OCR ภาษาไทย (เดิม 0.80 วินาที)</div>
+<div class="news-stat"><b>OpenThai 2.0</b>โมเดล OCR ไทยของ iApp Technology ทำงานบนเครื่อง</div>
+<div class="news-stat"><b>3 ระบบ</b>Windows · macOS · Linux build จาก commit เดียวกัน</div>
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## OCR ภาษาไทยดีขึ้นตรงไหน
+
+<div class="split">
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/projects/hippocraft/thai-ocr.jpg" width="1600" height="1000" loading="lazy" alt="หน้าต่าง Recognize Text บนหน้าสแกนภาษาไทย" /></div><figcaption><span class="news-fig__credit">ภาพหน้าจอ: HippoCraft รุ่นก่อนหน้า · DOJOJIN.TECH</span></figcaption></figure>
+<div class="prose">
+
+**สแกนเอียงหรือกลับหัว**
+- หน้าสแกนที่เอียง โปรแกรมจัดให้ตรงก่อนอ่าน (เปิดไว้ให้แล้ว)
+- หน้าที่สแกนตะแคงหรือกลับหัว โปรแกรมหมุนให้ตั้งตรงได้ (ต้องเปิดเอง)
+- หน้าที่เอียงไม่เกิน 5° สั่งให้จัดหน้านั้นในไฟล์ให้ตรงไปเลยก็ได้ (ต้องเปิดเอง)
+
+**อ่านถูกลำดับ และอ่านผิดน้อยลง**
+- ข้อความในช่องตารางที่ขึ้นบรรทัดใหม่ อ่านออกมาเป็นก้อนเดียว ไม่แตกเป็นหลายบรรทัด
+- เอกสารสองคอลัมน์ อ่านทีละคอลัมน์
+- ตัวไหนที่โปรแกรมอ่านแล้วไม่แน่ใจ จะเอาไปเทียบกับรายการคำไทยอีกรอบ
+- จุดเปื้อนตามขอบสแกน ไม่ถูกอ่านเป็นตัวหนังสือแล้ว
+
+อีกเรื่องคือบั๊ก G27 แก้แล้วครับ เดิมถ้าแก้คำหลัง OCR แล้วย้ายข้อความ คำเดิมจากภาพสแกนจะโผล่ออกมา
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## สแกนเป็น Word และเรื่องฟอนต์
+
+<div class="split">
+<div class="prose">
+
+**แปลงหน้าสแกนเป็น Word**
+- วางข้อความทับภาพสแกน แล้วลบคำที่อ่านได้ออกจากภาพ ตัวหนังสือจึงไม่ซ้อนกันสองชั้น
+- ขนาดตัวอักษร สี ตัวหนา หัวเรื่องตัวใหญ่ และหัว/ท้ายกระดาษ ออกมาตามต้นฉบับสแกน
+- ย่อหน้าตัดขึ้นบรรทัดใหม่ใน Word ได้ เหมือนข้อความที่พิมพ์เอง
+
+**ฟอนต์**
+- ตั้งฟอนต์ไทยกับฟอนต์อังกฤษแยกกันได้ในแต่ละย่อหน้า แบบเดียวกับใน Word
+- ตอนส่งออกเป็น Word โปรแกรมจะบอกว่าเครื่องที่จะเปิดไฟล์ต้องมีฟอนต์อะไรบ้าง
+- เลือกใช้ฟอนต์ที่ลงไว้ในเครื่องได้ แต่ต้องอ่านและกดยอมรับเงื่อนไขของฟอนต์นั้นก่อน
+
+</div>
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/projects/hippocraft/thai-document.jpg" width="1600" height="1000" loading="lazy" alt="HippoCraft เปิดบันทึกการประชุมภาษาไทย เมนูทั้งหมดเป็นภาษาไทย" /></div><figcaption><span class="news-fig__credit">ภาพหน้าจอ: HippoCraft รุ่นก่อนหน้า · DOJOJIN.TECH</span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## ปัญหาที่ยังมีในรุ่นนี้
+
+<div class="prose">
+
+รุ่นนี้ยังมีปัญหาที่ผมรู้อยู่แล้ว บอกไว้ตรงนี้ก่อนเลยครับ
+
+- **OCR ภาษาอังกฤษยังอ่านผิดบ่อย** หน้าที่วางตะแคง ระบบหมุนอัตโนมัติจะไม่หมุนให้ หน้าที่สแกนเอียงจะได้คำผิด และตัวเลขอาจผิด เช่น 45 อ่านเป็น 4 ตอนนี้ให้หมุนหน้าให้ตั้งตรงก่อน แล้วตรวจตัวเลขทุกครั้ง ปัญหานี้มีมาตั้งแต่รุ่นก่อน ผมกำลังแก้อยู่ ส่วน OCR ภาษาไทยไม่โดนปัญหานี้ครับ
+- ในย่อหน้าที่ได้จาก OCR ถ้ากด Enter จนข้อความดันไปชนย่อหน้าถัดไป สองย่อหน้านั้นจะรวมเป็นย่อหน้าเดียว
+- ตัวหนังสือที่อยู่ทับเส้นในภาพวาด เช่น ป้ายชื่อที่ทับเส้นผนังในแปลนบ้าน OCR อาจอ่านตกหล่น
+- OCR ภาษาไทยอาจข้ามช่องตารางที่มีตัวเลขแค่ตัวเดียว เช่น "1" ในคอลัมน์ลำดับ
+- PDF ของหน่วยงานราชการบางไฟล์ ที่ทำจาก Word แล้วผ่าน iLovePDF มา พอแปลงกลับเป็น Word หน้าตายังเพี้ยนอยู่
+- ในหน้าต่าง Recognize Text ช่องเลขหน้ากับช่องรายการยังไม่มีชื่อกำกับให้โปรแกรมอ่านหน้าจอ (screen reader)
+- ย่อหน้าภาษาไทยที่มีคำหนึ่งตัวใหญ่กว่าคำอื่นมาก ทุกบรรทัดในย่อหน้าจะห่างเท่ากับบรรทัดที่มีคำนั้น
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ดาวน์โหลดและติดตั้ง
+
+<div class="prose">
+
+<div class="spec-list">
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-download" /></svg><div><b>ลงเครื่อง</b>Windows (x64, x86, ARM64 และแบบ Portable), macOS 11 ขึ้นไป (Universal ใช้ได้ทั้ง Apple Silicon และ Intel) และ Linux (.deb, AppImage) มี CLI ให้ด้วยทั้งบน macOS และ Linux ลิงก์ดาวน์โหลดเดิมทุกลิงก์ ตอนนี้ชี้ไปที่รุ่น b4713 แล้ว</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-file" /></svg><div><b>ตัวติดตั้งยังไม่ได้เซ็นรับรอง</b>บน Windows ถ้า SmartScreen เตือน ให้กด More info แล้วกด Run anyway ส่วน macOS ให้ไปที่ System Settings › Privacy &amp; Security แล้วกด Open Anyway ตรวจความถูกต้องของไฟล์ได้จาก <a href="https://upl.dojojin.tech/pub/fil/31uv7uyu" rel="noopener">SHA256SUMS</a></div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-globe" /></svg><div><b>รุ่นเว็บ</b><a href="https://pdf.dojojin.tech" rel="noopener">pdf.dojojin.tech</a> (ต้องลงทะเบียน) ยังเป็นรุ่นเก่า th26.10v ฟีเจอร์ใหม่ในข่าวนี้มีในแบบลงเครื่องก่อน</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-copy" /></svg><div><b>Microsoft Store</b>ส่งให้ Microsoft ตรวจแล้ว กำลังรอผลอยู่ มาเร็ว ๆ นี้ครับ</div></div>
+</div>
+
+ใครอยาก build เอง มี<a href="https://upl.dojojin.tech/pub/fil/hacs5a3x" rel="noopener">คู่มือ build</a> ให้แล้วครับ · <a href="https://upl.dojojin.tech/pub/fil/yr2s4pe8" rel="noopener">นโยบายความเป็นส่วนตัว</a>
+
+HippoCraft เป็นโอเพนซอร์ส (MIT OR Apache-2.0) ต่อยอดมาจาก PdfCraft ขอบคุณ iApp Technology / OpenThai ที่เปิดโมเดลให้ใช้แบบ Apache-2.0 และขอบคุณผู้พัฒนา PdfCraft ครับ
+
+ลองใช้แล้วเจอปัญหาอะไร บอกผมได้ที่ <a href="/guestbook/">Guestbook</a> ครับ
+
+</div>
+
+<p class="hero-links"><a href="/hippocraft/downloads/">ไปหน้าดาวน์โหลด HippoCraft</a><a href="/projects/hippocraft/">หน้าโปรเจกต์ HippoCraft</a></p>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- รายละเอียดรุ่นและปัญหาที่ยังมี: ผู้พัฒนา HippoCraft (DOJOJIN.TECH) · <a href="https://upl.dojojin.tech/pub/fil/k1i2lpys" rel="noopener">README / ประวัติรุ่น</a>
+- โมเดล OCR ภาษาไทย: OpenThai 2.0 โดย iApp Technology (Apache-2.0)
+
+- **ที่มาของภาพ**
+  - ภาพหน้าจอโปรแกรม: HippoCraft · DOJOJIN.TECH
+  - ภาพปก: DOJOJIN.TECH
+
+</div>
+
+</section>
