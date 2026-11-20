@@ -1016,3 +1016,10 @@ main[data-type="news"] .shot__more .shot__credit { font-size: var(--fs-caption);
   .news-callout__labels li { position: absolute; left: 0; right: 0; top: var(--ly); translate: 0 -0.7em; padding-left: 0; }
   .news-callout__labels li::before { display: none; }
 }
+
+/* Store button with the shop's logo (review "ช่องทางการจัดจำหน่าย") */
+.store-links { display: flex; flex-wrap: wrap; gap: var(--space-3); margin: var(--space-4) 0 0; }
+.store-link { text-decoration: none; display: inline-flex; align-items: center; padding: var(--space-3) var(--space-6); background: #fff; border: 1px solid var(--border-hairline); border-radius: var(--radius); transition: border-color .15s, box-shadow .15s; }
+.store-link:hover, .store-link:focus-visible { border-color: #ee4d2d; box-shadow: 0 2px 8px rgb(238 77 45 / .18); }
+.store-link img { display: block; height: var(--space-8); width: auto; }
+.store-link span { margin-left: var(--space-3); color: #1f1f1f; font-size: var(--fs-caption); }
