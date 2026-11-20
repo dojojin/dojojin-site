@@ -1,0 +1,195 @@
+---
+title: "agent-framework ของ Microsoft บน PyPI รุ่น 1.26.1 และ 1.26.2 ถูกฝังโค้ดขโมยรหัส แค่เปิด Python ก็ทำงาน"
+topic: infra-ai
+type: news
+tags: [security, microsoft, open-source]
+date: 2026-11-20T17:51:00+07:00
+section: security
+sourceName: "PyPI, StepSecurity, OX Security และ BleepingComputer"
+sourceUrl: "https://www.stepsecurity.io/blog/microsoft-agent-framework-pypi-package-compromised"
+description: "แพ็กเกจ agent-framework ของ Microsoft บน PyPI รุ่น 1.26.1 และ 1.26.2 (ลง 17 พ.ย. 2569 เวลา UTC หรือเช้ามืด 18 พ.ย. เวลาไทย) มีโค้ดขโมยรหัสผ่านซ่อนในไฟล์ .pth ซึ่งทำงานทันทีที่เปิด Python สรุปว่ามันขโมยอะไร รุ่นที่ปลอดภัยคือ 1.26.0 วิธีเช็กเครื่องกับ CI และรหัสที่ต้องเปลี่ยน"
+kicker: "ข่าวความปลอดภัยไซเบอร์"
+lead: "ใครติดตั้งหรืออัปเดต agent-framework ตั้งแต่เช้ามืดวันที่ 18 พ.ย. เวลาไทย เช็กเครื่องวันนี้เลยครับ ช่วงตี 3 ครึ่งถึงตี 4 กว่ามีสองรุ่นที่ถูกฝังโค้ดขโมยรหัส มันทำงานเองทันทีที่ Python เริ่ม ไม่ต้อง import แพ็กเกจด้วยซ้ำ ตอนนี้ PyPI กักสองรุ่นนี้ไว้แล้ว รุ่นที่ใช้ได้คือ 1.26.0"
+meta: "เรียบเรียงจากหน้า PyPI, StepSecurity, OX Security และ BleepingComputer · ข้อมูล ณ 20 พฤศจิกายน 2569"
+cover: "/media/posts/news/microsoft-agent-framework-pypi-compromised/cover.jpg"
+coverAlt: "ปกข่าวแพ็กเกจ agent-framework บน PyPI รุ่น 1.26.1 และ 1.26.2 ถูกฝังตัวขโมยรหัส เป็นภาพประกอบหน้าจอโน้ตบุ๊กในที่มืด ไม่มีโลโก้ผู้ผลิต"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="prose">
+
+วันที่ 17 พฤศจิกายน 2569 (เวลา UTC) ผู้โจมตีปล่อย agent-framework บน PyPI ออกมาสองรุ่น คือ 1.26.1 และ 1.26.2 ทั้งคู่ไม่ใช่ของจริงครับ
+
+สองรุ่นนี้มีโค้ดที่ไล่เก็บรหัสผ่านกับโทเคนในเครื่อง แล้วส่งไปที่ webhook.site ของผู้โจมตี
+
+ที่น่ากลัวคือวิธีที่มันทำงาน โค้ดซ่อนอยู่ในไฟล์ .pth ซึ่ง Python อ่านทุกครั้งตอนเริ่ม แค่ติดตั้งแล้วเปิด Python โค้ดก็รันแล้ว ไม่ต้อง import แพ็กเกจเลย
+
+</div>
+
+<div class="split">
+<div class="prose">
+
+หน้า PyPI ของ agent-framework เมื่อวันที่ 20 พ.ย. แสดงรุ่นล่าสุดเป็น 1.26.0 ถัดลงมาเป็น 1.25.0, 1.24.0 ไม่มี 1.26.1 หรือ 1.26.2 ในรายการแล้ว ตรงกับที่ StepSecurity กับ BleepingComputer รายงานว่า PyPI กักสองรุ่นนี้ไว้
+
+ส่วนประกาศจาก Microsoft เอง ผมยังไม่เจอครับ ทั้ง security advisory ใน GitHub และคำชี้แจงจาก MSRC ฝั่ง BleepingComputer บอกว่าติดต่อ Microsoft ไปแล้ว แต่จนลงข่าวก็ยังไม่ได้คำตอบ ข้อมูลในข่าวนี้จึงมาจากหน้า PyPI กับอีกสามแหล่งด้านความปลอดภัย ซึ่งตรงกันในทุกเรื่องสำคัญ
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/microsoft-agent-framework-pypi-compromised/shot-pypi.jpg" width="1000" height="700" loading="lazy" alt="ภาพหน้าจอประวัติรุ่นของ agent-framework บน PyPI รุ่นล่าสุดคือ 1.26.0 ตามด้วย 1.25.0 และ 1.24.0 ไม่มีรุ่น 1.26.1 หรือ 1.26.2" /></div><figcaption><span class="news-fig__credit">ภาพ: หน้า Release history ของ agent-framework บน PyPI (pypi.org) · แคปเมื่อ 20 พ.ย. 2569</span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## ช่วงเวลา
+
+<div class="prose">
+
+StepSecurity ให้เวลาเป็น UTC ไว้ละเอียด ด้านล่างบวก 7 ชั่วโมงเป็นเวลาไทยแล้วครับ ทุกอย่างเกิดช่วงตี 3 ครึ่งถึงตี 4 กว่าของวันที่ 18 พ.ย. เวลาไทย
+
+<ol class="news-tl">
+<li><span class="news-tl__date">12 พ.ย.</span><div>รุ่นจริง 1.26.0 ขึ้น PyPI (18:24 UTC)<span class="news-tl__src">StepSecurity</span></div></li>
+<li class="is-key"><span class="news-tl__date">18 พ.ย. 03:35 น.</span><div>รุ่น 1.26.1 ถูกอัปโหลด (17 พ.ย. 20:35 UTC)<span class="news-tl__src">StepSecurity</span></div></li>
+<li><span class="news-tl__date">18 พ.ย. 04:06 น.</span><div>PyPI กัก 1.26.1 (21:06 UTC)<span class="news-tl__src">StepSecurity</span></div></li>
+<li class="is-key"><span class="news-tl__date">18 พ.ย. 04:08 น.</span><div>รุ่น 1.26.2 ถูกอัปโหลด หลังกัก 1.26.1 ไม่ถึง 3 นาที (21:08 UTC)<span class="news-tl__src">StepSecurity · BleepingComputer</span></div></li>
+<li><span class="news-tl__date">18 พ.ย. 04:16 น.</span><div>PyPI กัก 1.26.2 (21:16 UTC)<span class="news-tl__src">StepSecurity</span></div></li>
+</ol>
+
+จุดที่น่าห่วงคือ รุ่นที่สองขึ้นมาหลังรุ่นแรกโดนกักไปแล้ว BleepingComputer จึงชี้ว่าผู้โจมตียังมีสิทธิ์ปล่อยรุ่นใหม่ต่อได้ และยังไม่รู้ว่าได้สิทธิ์นั้นมาอย่างไร
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ใครโดนบ้าง
+
+<div class="prose">
+
+ที่โดนคือแพ็กเกจหลัก `agent-framework` บน PyPI ตัวเดียว รุ่น 1.26.1 และ 1.26.2 BleepingComputer บอกว่าสองรุ่นนี้ยังเรียกใช้ `agent-framework-core` 1.26.0 ตัวจริงอยู่ และในแหล่งที่อ้างถึงยังไม่มีที่ไหนบอกว่าแพ็กเกจย่อยตัวอื่นโดนด้วย
+
+<div class="news-cards">
+<div class="news-card is-bad"><b>เครื่องที่ติดตั้ง 1.26.1 หรือ 1.26.2</b><span class="news-pill">โดน</span> ถ้าเปิด Python หลังติดตั้ง โค้ดขโมยรหัสก็ทำงานไปแล้ว ให้ถือว่ารหัสที่เครื่องนั้นเข้าถึงได้รั่วแล้ว</div>
+<div class="news-card is-bad"><b>CI และ build server</b><span class="news-pill">เสี่ยงสูง</span> ถ้า pip install แบบไม่ล็อกเวอร์ชันในช่วงเวลาข้างบน อาจได้รุ่นเสียมา และเครื่อง CI มักเก็บรหัสคลาวด์กับโทเคนไว้เยอะ</div>
+<div class="news-card is-warn"><b>เครื่องที่ติดตั้งก่อนหน้านั้น</b><span class="news-pill">ตรวจให้แน่</span> ถ้าล็อกเวอร์ชันไว้ที่ 1.26.0 หรือเก่ากว่า ไม่โดนจากเรื่องนี้ แต่ควรเปิดไฟล์ล็อกดูให้แน่ว่าไม่มีสองรุ่นเสียหลุดเข้ามา</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## มันขโมยอะไร
+
+<div class="prose">
+
+StepSecurity กับ OX Security อธิบายตรงกันว่าโค้ดนี้ไล่เก็บของสามกลุ่มครับ
+
+<ol class="news-steps">
+<li><b>ตัวแปรสภาพแวดล้อม</b>ที่ชื่อมีคำอย่าง TOKEN, SECRET, PASSWORD, KEY, AZURE, AWS, GITHUB แถมอ่านของโปรเซสอื่นที่รันอยู่ได้ด้วย (/proc/*/environ)</li>
+<li><b>ไฟล์รหัสผ่านในเครื่อง</b>เช่น แคช Azure CLI, pip.conf, .npmrc, .netrc, .git-credentials, config ของ Docker, โทเคน Hugging Face, ข้อมูลของ Azure DevOps agent และไฟล์ .env</li>
+<li class="is-key"><b>ขอโทเคนใหม่</b>จาก Azure managed identity กับ Azure DevOps OIDC (รุ่น 1.26.2 เพิ่ม GitHub Actions OIDC กับโฟลเดอร์ runner ของ GitHub) StepSecurity ย้ำว่าเป็นแค่ความพยายามขอ ยังไม่ยืนยันว่าได้โทเคนไปจริง</li>
+</ol>
+
+ของที่เก็บได้ถูกส่งไปที่ URL บน webhook.site ครับ StepSecurity ระบุ UUID ไว้คือ d381fd80-ec62-42ad-8f5c-d1b15103c9bb ถ้าเจอการเชื่อมต่อไป webhook.site ในล็อก ยังสรุปทันทีไม่ได้ว่าข้อมูลหลุด ต้องดูก่อนว่าคำขอนั้นสำเร็จหรือถูกบล็อก
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ไฟล์ .pth ทำงานอย่างไร
+
+<div class="split">
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/news/microsoft-agent-framework-pypi-compromised/photo-1.jpg" width="1448" height="1086" loading="lazy" alt="ภาพประกอบ ทางเดินห้องเซิร์ฟเวอร์ที่มีไฟสถานะสีฟ้าและส้ม เปรียบเสมือนเครื่อง build และ CI ที่เก็บรหัสผ่านไว้มาก" /></div><figcaption><span class="news-fig__credit">ภาพ: ภาพประกอบจาก DOJOJIN.TECH</span></figcaption></figure>
+<div class="prose">
+
+ไฟล์ .pth อยู่ใน site-packages ปกติมีไว้บอก Python ว่าให้เพิ่มโฟลเดอร์ไหนเข้า path แต่บรรทัดไหนที่ขึ้นต้นด้วย import จะถูกรันทุกครั้งที่ Python เริ่ม ผู้โจมตีใช้ช่องนี้แหละครับ
+
+สองรุ่นใช้ชื่อไฟล์ต่างกัน ด้านล่างคือไฟล์ที่ต้องไปหาในเครื่อง
+
+<div class="news-cards">
+<div class="news-card is-bad"><b>รุ่น 1.26.1</b><span class="news-pill">agent_framework_meta</span> ไฟล์ agent_framework_meta.pth ซึ่งเรียก agent_framework_meta/_telemetry.py ทั้งคู่อยู่ใน site-packages (StepSecurity และ OX Security บอกว่ามีโค้ดต่อท้ายไว้ใน __init__.py ด้วย)</div>
+<div class="news-card is-bad"><b>รุ่น 1.26.2</b><span class="news-pill">af_runtime_diag</span> ไฟล์ af_runtime_diag.pth มีบรรทัดเดียว เรียก af_runtime_diag.py ส่วน __init__.py ถูกคืนเป็นของเดิม เปิดดูไฟล์นั้นจึงไม่เห็นอะไรผิด</div>
+</div>
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ทำอะไรตอนนี้
+
+<div class="prose">
+
+StepSecurity, OX Security และ BleepingComputer แนะนำตรงกัน เรียงเป็นขั้นตอนได้แบบนี้ครับ
+
+<ol class="news-steps">
+<li><b>เช็กรุ่นที่ติดตั้ง</b>รัน <code>pip show agent-framework</code> ในทุก virtualenv, container image และเครื่อง build แล้วเปิดไฟล์ requirements, poetry.lock, uv.lock ดูด้วยว่ามี 1.26.1 หรือ 1.26.2 ไหม</li>
+<li><b>หาไฟล์ .pth</b>ค้นใน site-packages หา agent_framework_meta.pth และ af_runtime_diag.pth ถ้าเจอ ให้ถือว่าเครื่องนั้นรันโค้ดร้ายไปแล้ว</li>
+<li class="is-key"><b>แยกเครื่องที่โดน</b>อย่ารัน Python หรือ pip ต่อบนเครื่องนั้นจนกว่าจะเคลียร์ แล้วสร้างสภาพแวดล้อมใหม่จากฐานที่สะอาด อย่าแค่ถอนแพ็กเกจแล้วใช้เครื่องเดิมต่อ</li>
+<li><b>ล็อกที่ 1.26.0</b>ใช้ agent-framework==1.26.0 คู่กับไฟล์ล็อกที่มี hash และบล็อกสองรุ่นเสียไว้เลย</li>
+<li class="is-key"><b>เปลี่ยนรหัสจากเครื่องที่สะอาด</b>เปลี่ยนรหัสและโทเคนทุกตัวที่เครื่องนั้นเข้าถึงได้ ทั้ง secret ใน CI, คีย์ Azure และ AWS, รหัส registry และ Docker, Git credential, โทเคน Hugging Face และ OpenAI, service connection ของ Azure DevOps</li>
+<li><b>ตรวจล็อก</b>ดู Azure sign-in log ว่า managed identity หรือ federated credential ถูกใช้ผิดปกติไหม ดู egress log ว่ามีการต่อไป webhook.site ไหม และบล็อกปลายทางนี้ไว้ที่เครื่อง build</li>
+</ol>
+
+StepSecurity บอกว่าเจอ 1.26.1 หรือ 1.26.2 ที่ไหน ให้แยกเครื่องนั้นออกก่อนจะเปิด Python หรือ pip อีก และให้ถือว่ารหัสที่โค้ดอ่านได้หลุดไปแล้ว ผมเลยว่าเปลี่ยนรหัสไว้ก่อนดีกว่าครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ที่ยังไม่ชัด
+
+<div class="prose">
+
+มีสามเรื่องที่ยังไม่มีคำตอบครับ
+
+- ผู้โจมตีได้สิทธิ์ปล่อยแพ็กเกจในชื่อ Microsoft มาอย่างไร BleepingComputer บอกว่ายังไม่ชัด
+- มีเหยื่อจริงกี่ราย ข้อมูลหลุดไปแล้วเท่าไร แหล่งที่อ้างถึงยังไม่มีตัวเลข
+- ยังไม่พบหน้าชี้แจงจาก Microsoft หรือ MSRC ถ้าออกมาเมื่อไร จะอัปเดตข่าวนี้
+
+ส่วนเหยื่อในไทย ก็ยังไม่พบรายงานจากแหล่งที่อ้างถึงเช่นกัน
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- PyPI, หน้า agent-framework และ Release history (อ่าน 20 พ.ย. 2569): <a href="https://pypi.org/project/agent-framework/">pypi.org/project/agent-framework</a>
+- StepSecurity, "Microsoft agent-framework PyPI package compromised" (เวลา UTC ละเอียด ไฟล์ที่ต้องหา วิธีแก้): <a href="https://www.stepsecurity.io/blog/microsoft-agent-framework-pypi-package-compromised">stepsecurity.io</a>
+- OX Security, "Breaking: Hijacked releases of Microsoft's official agent-framework steals Azure and CI credentials" (17 พ.ย. 2569): <a href="https://www.ox.security/blog/breaking-hijacked-releases-of-microsofts-official-agent-framework-steals-azure-and-ci-credentials">ox.security</a>
+- BleepingComputer, "Microsoft's agent-framework PyPI package compromised to steal credentials": <a href="https://www.bleepingcomputer.com/news/security/microsofts-agent-framework-pypi-package-compromised-to-steal-credentials/">bleepingcomputer.com</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: by dojojin.tech (ภาพประกอบจาก DOJOJIN.TECH ไม่มีโลโก้ผู้ผลิต)
+- ภาพหน้าจอ Release history: แคปจากหน้า pypi.org เอง
+- ภาพห้องเซิร์ฟเวอร์: ภาพประกอบจาก DOJOJIN.TECH
+
+</div>
+
+</section>

@@ -1,0 +1,139 @@
+---
+title: "ช่องโหว่ Drupal core ที่ install.php เสี่ยงโดนติดตั้งเว็บทับและรันโค้ด แพตช์ออกแล้ว อัปเดตรุ่นไหน"
+topic: infra-ai
+type: news
+tags: [security]
+date: 2026-11-20T17:57:00+07:00
+section: security
+sourceName: "Drupal Security Team (SA-CORE-2026-017) และ ThaiCERT"
+sourceUrl: "https://www.drupal.org/sa-core-2026-017"
+description: "Drupal ประกาศ SA-CORE-2026-017 (CVE-2026-132165) ระดับ Critical คะแนน 18/25 ผู้โจมตีอาจใช้ตัวติดตั้ง install.php ติดตั้ง Drupal ทับ แล้วยึดเว็บหรือสั่งรันโค้ดได้ แพตช์ออก 18 พ.ย. 2569 ให้อัปเดตเป็น 11.4.13, 11.3.22 หรือ 10.6.22 พร้อมวิธีล็อก install.php ถ้ายังอัปเดตไม่ได้"
+kicker: "ข่าวความปลอดภัยไซเบอร์"
+lead: "ใครมีเว็บที่ใช้ Drupal เช็กรุ่นวันนี้เลยครับ เมื่อ 18 พ.ย. 2569 Drupal ออกแพตช์ช่องโหว่ระดับ Critical ตัวติดตั้ง install.php อาจถูกใช้ติดตั้งเว็บทับ แล้วยึดเว็บหรือสั่งรันโค้ดบนเซิร์ฟเวอร์ได้ ตอนนี้ยังไม่มีรายงานยืนยันว่าถูกโจมตีจริง แต่ควรอัปเดตและล็อกไฟล์นี้ไว้ก่อน"
+meta: "เรียบเรียงจากประกาศของ Drupal Security Team (18 พ.ย. 2569) และ ThaiCERT (20 พ.ย. 2569) · ข้อมูล ณ 20 พฤศจิกายน 2569"
+cover: "/media/posts/news/drupal-core-rce-sa-core-2026-017/cover.jpg"
+coverAlt: "ปกข่าวช่องโหว่ Drupal core CVE-2026-132165 คะแนน 18/25 ภาพโน้ตบุ๊กเปิดหน้าตัวติดตั้งเว็บในห้องมืด (ภาพประกอบ)"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="split">
+<div class="prose">
+
+วันที่ 18 พฤศจิกายน 2569 ทีมความปลอดภัยของ Drupal ออกประกาศ SA-CORE-2026-017 แจ้งช่องโหว่ระดับ Critical ใน Drupal core เลข CVE-2026-132165
+
+ไฟล์ <code>install.php</code> คือตัวติดตั้งเว็บของ Drupal core ครับ ประกาศบอกว่าในบางเงื่อนไข ผู้โจมตีใช้ไฟล์นี้พยายามติดตั้ง Drupal ทับเว็บที่มีอยู่ได้ ผลคืออาจยึดเว็บ หรือสั่งรันโค้ดบนเซิร์ฟเวอร์ได้
+
+คะแนนความเสี่ยงตามระบบของ Drupal คือ 18 จาก 25 อยู่ในระดับ Critical ส่วน "บางเงื่อนไข" นั้นคืออะไร ประกาศไม่ได้บอกไว้
+
+มีจุดหนึ่งที่ช่วยได้ ถ้าเว็บเซิร์ฟเวอร์เขียนหรือเปลี่ยนสิทธิ์ไฟล์ <code>settings.php</code> ไม่ได้ ประกาศบอกว่าบางวิธีโจมตีจะไม่สำเร็จ
+
+คนที่เจอช่องโหว่นี้ ประกาศระบุว่าเป็นเครื่องมือ OSS Scanner ของ Anthropic
+
+</div>
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/news/drupal-core-rce-sa-core-2026-017/photo-1.jpg" width="1600" height="736" loading="lazy" alt="ภาพหน้าจอประกาศ SA-CORE-2026-017 บน drupal.org วันที่ 2026-11-18 ระดับ Critical คะแนน 18/25 ช่องโหว่ Remote code execution CVE-2026-132165 และคำอธิบายเรื่องไฟล์ install.php" /></div><figcaption>หน้าประกาศ SA-CORE-2026-017 บน drupal.org</figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## รุ่นไหนโดน รุ่นไหนแก้แล้ว
+
+<div class="split">
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/news/drupal-core-rce-sa-core-2026-017/photo-2.jpg" width="1100" height="1130" loading="lazy" alt="ภาพหน้าจอส่วน Solution ของประกาศ Drupal ระบุให้ Drupal 11.4.x อัปเดตเป็น 11.4.13, 11.3.x เป็น 11.3.22, Drupal 10.6.x เป็น 10.6.22 และ If you cannot upgrade immediately ให้ทำตามคำแนะนำการล็อกตัวติดตั้ง" /></div><figcaption>ส่วน Solution ของประกาศ</figcaption></figure>
+<div class="prose">
+
+รุ่นที่โดนตามประกาศ คือ ต่ำกว่า 10.6.22, ตั้งแต่ 11.0.0 ถึงต่ำกว่า 11.3.22 และตั้งแต่ 11.4.0 ถึงต่ำกว่า 11.4.13
+
+Drupal 11.2.x ลงไป และ 10.5.x ลงไป หมดอายุแล้ว ประกาศบอกว่าไม่มีแพตช์ความปลอดภัยให้อีก Drupal 8 กับ 9 ก็หมดอายุเหมือนกัน ใครยังใช้รุ่นพวกนี้อยู่ ต้องย้ายขึ้นรุ่นที่ยังดูแลอยู่ครับ ส่วน Drupal 7 ประกาศนี้ไม่ได้พูดถึง
+
+</div>
+</div>
+
+<div class="news-cards">
+<div class="news-card is-ok"><span class="news-pill">แก้แล้ว</span><b>Drupal 11.4.x ไป 11.4.13</b>สำหรับคนที่ใช้สาย 11.4</div>
+<div class="news-card is-ok"><span class="news-pill">แก้แล้ว</span><b>Drupal 11.3.x ไป 11.3.22</b>สำหรับคนที่ใช้สาย 11.3</div>
+<div class="news-card is-ok"><span class="news-pill">แก้แล้ว</span><b>Drupal 10.6.x ไป 10.6.22</b>สำหรับคนที่ใช้สาย 10.6</div>
+<div class="news-card is-bad"><span class="news-pill">หมดอายุ</span><b>11.2.x และ 10.5.x ลงไป</b>ไม่มีแพตช์ความปลอดภัย ต้องย้ายขึ้นรุ่นที่ยังดูแลอยู่</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ถูกโจมตีจริงหรือยัง
+
+<div class="prose">
+
+ThaiCERT บอกว่ายังไม่มีรายงานยืนยันว่ามีคนเอาช่องโหว่นี้ไปโจมตีจริง เว็บข่าวความปลอดภัย SecurityOnline ก็รายงานตรงกันว่ายังไม่พบการโจมตี
+
+แต่อย่าเพิ่งวางใจครับ ในคะแนนของ Drupal ช่อง exploit maturity เขียนว่า <code>E:Proof</code> ผมเข้าใจว่าแปลว่ามีวิธีสร้างโค้ดโจมตีบันทึกไว้แล้ว และ ThaiCERT ก็เล่าว่า Drupal เตือนไว้ว่าเครื่องมือโจมตีอาจโผล่มาภายในไม่กี่ชั่วโมงหรือไม่กี่วันหลังเปิดเผย
+
+ถ้าเว็บใช้บริการ Drupal Steward อยู่ ประกาศบอกว่ากันวิธีโจมตีที่รู้จักแล้ว แต่ก็ยังแนะนำให้อัปเดตโดยเร็ว เผื่อมีวิธีโจมตีแบบอื่นตามมา
+
+วันเดียวกัน Drupal ออกอีกประกาศคือ SA-CORE-2026-018 (CVE-2026-132166) เป็นปัญหา gadget chain ระดับ Moderately critical คะแนน 14/25 ประกาศบอกว่าตัวมันเองใช้โจมตีตรง ๆ ไม่ได้ จะอันตรายก็ต่อเมื่อเว็บมีช่องโหว่อื่นที่ปล่อยให้ข้อมูลที่ไม่น่าเชื่อถือถูกแปลงกลับเป็นออบเจ็กต์ รุ่นที่โดนและรุ่นที่แก้ตรงกับข่าวนี้ อัปเดตครั้งเดียวก็จบทั้งสองตัวครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ในไทยต้องทำอะไร
+
+<div class="prose">
+
+ThaiCERT ออกประกาศเตือนเมื่อ 20 พ.ย. 2569 (เลขที่ 642/69 กลุ่ม IT) ให้ตรวจรุ่นและอัปเดตโดยเร็ว ส่วนเว็บในไทยโดนจริงหรือยัง ผมยังไม่พบข้อมูลครับ
+
+ขั้นตอนด้านล่างมาจากประกาศของ Drupal และหน้าคู่มือ "Securing the installer" ของ Drupal เอง
+
+<ol class="news-steps">
+<li class="is-key"><b>เช็กรุ่น Drupal ของทุกเว็บที่ดูแล</b>รวมถึงเว็บเก่า เว็บทดสอบ และเว็บที่จ้างคนอื่นทำไว้ ถ้ารุ่นยังต่ำกว่า 11.4.13, 11.3.22 หรือ 10.6.22 (ตามสายที่ใช้) แปลว่ายังไม่ปลอดภัย</li>
+<li class="is-key"><b>อัปเดตเป็นรุ่นที่แก้แล้ว</b>สำรองไฟล์และฐานข้อมูลก่อน แล้วอัปเดตเป็น 11.4.13, 11.3.22 หรือ 10.6.22 ตามสายที่ใช้ ถ้าอยู่สายที่หมดอายุแล้ว ให้วางแผนย้ายขึ้นรุ่นที่ยังดูแลอยู่</li>
+<li class="is-key"><b>ถ้ายังอัปเดตไม่ได้ ให้ล็อก install.php ที่ web server</b>Drupal แนะนำวิธีนี้ เพราะการตั้งค่ายังอยู่แม้อัปเดต core ไปแล้ว ใน Apache ใช้ <code>Location "/core/install.php"</code> กับ <code>Require all denied</code> ใน virtual host ใน Nginx ใช้ <code>location ^~ /core/install.php</code> ให้ตอบ 404 ต้องทำทุก virtual host ที่ให้บริการเว็บ รวมของ HTTPS ด้วย แล้วลอง <code>apachectl configtest</code> หรือ <code>nginx -t</code> ก่อนโหลดใหม่</li>
+<li><b>ใช้ .htaccess แทน (เฉพาะ Apache)</b>ถ้าแก้ config ไม่ได้ ให้ใส่บล็อก <code>Files "install.php"</code> กับ <code>Require all denied</code> แต่ถ้าเว็บติดตั้งด้วย Composer ไฟล์ .htaccess จะถูกเขียนทับตอนอัปเดต ต้องเก็บส่วนนี้แยกไว้อีกไฟล์</li>
+<li><b>หรือลบ core/install.php ออก</b>แต่ Composer จะเอาไฟล์กลับมาทุกครั้งที่ติดตั้งหรืออัปเดต หน้าคู่มือจึงแนะนำให้ใส่คำสั่งลบไว้ใน script ของ Composer ข้อเสียคือจะติดตั้งเว็บใหม่ผ่านเบราว์เซอร์ไม่ได้</li>
+<li class="is-key"><b>ทดสอบว่าบล็อกได้จริง</b>ใช้ <code>curl -I</code> ยิงไปที่ <code>/core/install.php</code>, <code>/install.php</code> และ <code>/core/install.php/foo</code> ควรได้ 403 หรือ 404 ถ้าได้ 200 แปลว่ายังบล็อกไม่ได้</li>
+<li><b>ตรวจสิทธิ์ settings.php</b>ตั้งให้เว็บเซิร์ฟเวอร์เขียนหรือเปลี่ยนสิทธิ์ไฟล์นี้ไม่ได้ ประกาศบอกว่าช่วยกันได้บางวิธีโจมตี แต่ไม่ได้กันทั้งหมด จึงใช้แทนการอัปเดตไม่ได้</li>
+<li>สุดท้ายเช็กว่าเว็บยังทำงานปกติ และยังอัปเดตฐานข้อมูลผ่าน <code>drush updatedb</code> หรือ <code>/update.php</code> ได้ตามเดิม</li>
+</ol>
+
+ส่วนวิธีตรวจว่าเว็บโดนไปก่อนแล้วหรือยัง ประกาศของ Drupal ไม่ได้ให้ขั้นตอนไว้ครับ แต่ถ้าเว็บมีหน้าติดตั้งโผล่ขึ้นมา หรือค่าตั้งค่าเปลี่ยนไปโดยที่เราไม่ได้แก้เอง ให้ถือว่าผิดปกติและแจ้งทีมความปลอดภัย
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- Drupal Security Team (SA-CORE-2026-017, 18 พ.ย. 2569): <a href="https://www.drupal.org/sa-core-2026-017" rel="noopener">drupal.org</a>
+- Drupal Security Team (SA-CORE-2026-018, 18 พ.ย. 2569): <a href="https://www.drupal.org/sa-core-2026-018" rel="noopener">drupal.org</a>
+- Drupal.org (คู่มือ Securing the installer): <a href="https://www.drupal.org/docs/administering-a-drupal-site/security-in-drupal/securing-the-installer-installphp" rel="noopener">drupal.org</a>
+- ThaiCERT (20 พ.ย. 2569): <a href="https://www.thaicert.or.th/2026/11/20/%e0%b8%8a%e0%b9%88%e0%b8%ad%e0%b8%87%e0%b9%82%e0%b8%ab%e0%b8%a7%e0%b9%88%e0%b8%a3%e0%b8%b0%e0%b8%94%e0%b8%b1%e0%b8%9a-critical-%e0%b9%83%e0%b8%99-drupal-%e0%b9%80%e0%b8%aa%e0%b8%b5%e0%b9%88%e0%b8%a2/" rel="noopener">thaicert.or.th</a>
+- SecurityOnline (พ.ย. 2569): <a href="https://securityonline.info/drupal-remote-code-execution-cve-2026-132165/" rel="noopener">securityonline.info</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพในเนื้อข่าว: ภาพหน้าจอประกาศ SA-CORE-2026-017 จาก drupal.org
+- ภาพปก: by dojojin.tech (ภาพประกอบจาก DOJOJIN.TECH ไม่ใช่ภาพเหตุการณ์จริง)
+
+ภาพใช้ประกอบข่าว (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>

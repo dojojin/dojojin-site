@@ -1,0 +1,184 @@
+---
+title: "PHP ปิดช่องโหว่ Critical 7 รายการ (CVSS 9.2) ให้อัปเป็น 8.5.13 / 8.4.28 / 8.3.37 / 8.2.36 หรือ 8.6.0"
+topic: infra-ai
+type: news
+tags: [security, php]
+date: 2026-11-20T17:54:00+07:00
+section: security
+sourceName: "php.net, GitHub php-src Security Advisories และ ThaiCERT"
+sourceUrl: "https://www.php.net/ChangeLog-8.php"
+description: "PHP ออกรุ่นความปลอดภัย 8.5.13, 8.4.28, 8.3.37, 8.2.36 เมื่อ 19 พ.ย. 2569 ปิดช่องโหว่ 17 รายการ ในนี้เป็นระดับ Critical (CVSS 9.2) 7 รายการ ส่วน PHP 8.6.0 ตัวจริงที่ออกวันเดียวกันก็มีแพตช์ชุดเดียวกัน สรุปให้ว่าแต่ละรายการกระทบรุ่นไหน ต้องมีเงื่อนไขอะไร และต้องอัปเป็นรุ่นไหน"
+kicker: "ข่าวความปลอดภัยไซเบอร์"
+lead: "ใครรัน PHP บนเซิร์ฟเวอร์ เช็กเลขรุ่นวันนี้เลยครับ ทีม PHP ออกรุ่นความปลอดภัยครบทุกสาย 8.2 ถึง 8.5 เมื่อ 19 พ.ย. 2569 ปิดช่องโหว่ 17 รายการ เป็นระดับ Critical 7 รายการ ได้ CVSS 9.2 ทุกตัว ตอนนี้ทั้ง php.net, GitHub และ ThaiCERT ยังไม่ได้ระบุว่ามีการโจมตีจริง และหลายรายการต้องตั้งค่าเฉพาะถึงจะโดน แต่ก็ควรอัปครับ"
+meta: "เรียบเรียงจาก php.net (ChangeLog และข่าวประกาศ), GitHub php-src Security Advisories และ ThaiCERT 2 ประกาศ · ข้อมูล ณ 20 พฤศจิกายน 2569"
+cover: "/media/posts/news/php-security-update-8-5-13-8-6-0/cover.jpg"
+coverAlt: "ปกข่าว PHP ออกรุ่นความปลอดภัย ปิดช่องโหว่ Critical 7 รายการ ให้อัปเดตเป็น 8.5.13 หรือ 8.6.0 (ภาพประกอบทางเดินห้องเซิร์ฟเวอร์ ไม่มีโลโก้)"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="split">
+<div class="prose">
+
+วันที่ 19 พฤศจิกายน 2569 หน้าแรกของ php.net ประกาศออกพร้อมกัน 5 รุ่นครับ
+
+PHP 8.6.0 คือรุ่นหลักตัวจริง ส่วน 8.5.13, 8.4.28, 8.3.37 และ 8.2.36 ทีม PHP เขียนไว้ชัดว่า "This is a security release" แปลว่าเป็นรุ่นแก้ช่องโหว่ และแนะนำให้คนที่ใช้สายนั้นอัปเดต
+
+ใน ChangeLog ของ php.net รุ่นความปลอดภัยทั้งสี่รุ่นลงวันที่ 19 พ.ย. 2569 เหมือนกัน ส่วน 8.6.0 ก็มีรายการแก้ช่องโหว่ชุดเดียวกันอยู่ในบันทึกการเปลี่ยนแปลง
+
+เรื่องนี้ต่อเนื่องมาจาก PHP2Shell เมื่อ 21 ต.ค. ครับ (อ่านได้ใน <a href="/news/php2shell/">ข่าวก่อนหน้า</a>) ในชุดนี้มี 2 ช่องโหว่ที่ GitHub ระบุว่าเกิดจากการแก้ CVE-2026-109619 ตัวเดิมที่ยังไม่ครบ
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/php-security-update-8-5-13-8-6-0/photo-2.jpg" width="1200" height="588" loading="lazy" alt="หน้าแรก php.net ประกาศ PHP 8.5.13 Released วันที่ 19 Nov 2026 ข้อความระบุว่า This is a security release และมี PHP 8.4.28 ต่อด้านล่าง" /></div><figcaption><span class="news-fig__credit">ภาพ: ภาพหน้าจอ <a href="https://www.php.net/" rel="noopener">php.net</a> (20 พ.ย. 2569)</span></figcaption></figure>
+</div>
+
+<div class="news-stats">
+<div class="news-stat"><b>17</b>ช่องโหว่ที่แก้ในชุดนี้ (Critical 7, High 4, Medium 6 ตาม GitHub)</div>
+<div class="news-stat"><b>9.2</b>คะแนน CVSS v4 ของทุกรายการระดับ Critical (เต็ม 10)</div>
+<div class="news-stat"><b>5</b>รุ่นที่ออกวันเดียวกัน: 8.6.0, 8.5.13, 8.4.28, 8.3.37, 8.2.36</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ช่องโหว่ Critical ทั้ง 7 รายการ
+
+<div class="prose">
+
+ThaiCERT นับ Critical ไว้ 7 รายการ ตรงกับหน้า advisory ของ php-src บน GitHub ครับ ครบ 7 รายการ ระดับ Critical และได้ CVSS v4 9.2 ทุกตัว
+
+แต่คะแนนเท่ากันไม่ได้แปลว่าเสี่ยงเท่ากันครับ แต่ละตัวมีเงื่อนไขของตัวเอง บางตัวกระทบแค่ PHP 8.5 เลยเรียงเป็นการ์ดไว้ให้เช็กทีละรายการ
+
+<div class="news-cards">
+<div class="news-card is-bad"><b>CVE-2026-129289 · PHP-FPM request smuggling</b><span class="news-pill">8.2 ถึง 8.5</span> PHP ไม่ทิ้งข้อมูลส่วนที่ยังไม่ได้อ่านของคำขอ HTTP ก่อนเอาการเชื่อมต่อ FastCGI ที่ค้างไว้ไปใช้ต่อ ผู้โจมตีที่ไม่ต้องล็อกอินจึงแอบแทรกคำขอใหม่เข้าไป ข้ามเว็บเซิร์ฟเวอร์ด้านหน้า แล้วสั่งรันโค้ด PHP ได้ ThaiCERT ระบุว่าต้องเปิดใช้การเชื่อมต่อค้างไว้ (เช่น NGINX ที่ตั้ง fastcgi_keep_conn on) และแอปต้องเปิด php://input แล้วอ่านไม่จบ ThaiCERT แนะนำให้แก้ตัวนี้ก่อน</div>
+<div class="news-card is-bad"><b>CVE-2026-129474 · Use-after-free ตอนเก็บ backtrace</b><span class="news-pill">เฉพาะ 8.5</span> เกิดตอน PHP เก็บอาร์กิวเมนต์ของเมธอดที่เรียกผ่าน __call() หรือ __callStatic() ตอนเกิด fatal error คำขอที่สร้างมาเฉพาะอาจรันโค้ดด้วยสิทธิ์ของ PHP worker ได้ เงื่อนไขคือ fatal_error_backtraces=1 (ค่าเริ่มต้นของ PHP 8.5) และ zend.exception_ignore_args=0 ส่วนไฟล์ php.ini-production ตั้ง zend.exception_ignore_args เป็น 1 ไว้ จึงกันทางนี้อยู่แล้ว</div>
+<div class="news-card is-warn"><b>CVE-2026-129182 · Use-after-free ของ last_fatal_error_backtrace</b><span class="news-pill">เฉพาะ 8.5</span> เกิดจากการแก้ CVE-2026-109619 ที่ยังไม่ครบ ค่าที่ควรถูกล้างทิ้งหลังจบคำขอกลับถูกสร้างขึ้นใหม่ แล้วคำขอถัดไปใน worker ตัวเดิมไปอ่านต่อ ต้องมีการตั้งค่าเฉพาะ เช่น ตั้ง max_memory_limit ไว้ทั้งระดับ global และระดับ path ThaiCERT ระบุว่ายังไม่มีการสาธิตว่ารันคำสั่งผ่านทางนี้ได้</div>
+<div class="news-card is-bad"><b>CVE-2026-129496 · Use-after-free ของ timezone cache</b><span class="news-pill">8.2 ถึง 8.5</span> เกิดเมื่อมีข้อความเตือนตอนเริ่มระบบถูกเขียนลงไฟล์ error log แล้วมีข้อความเตือนอีกครั้งในคำขอแรกของ worker ตัวใหม่ อาจทำให้ worker ล่ม หรือถูกรันโค้ดได้ ThaiCERT ระบุว่ากระทบ PHP-FPM, Apache mod_php และ CGI ที่เป็น non-thread-safe build</div>
+<div class="news-card is-warn"><b>CVE-2026-129481 · Use-after-free ตอนปิด session</b><span class="news-pill">8.3 ขึ้นไป</span> เกิดจากการแก้ CVE-2026-109619 ที่ยังไม่ครบอีกตัว คำขอถัดไปใน worker ตัวเดิมอาจปล่อยหน่วยความจำที่ค้างอยู่ซ้ำอีกรอบ GitHub ระบุว่า PHP 8.2 ไม่มีฟิลด์ที่เป็นต้นเหตุ จึงไม่โดนตัวนี้</div>
+<div class="news-card is-warn"><b>CVE-2026-126714 · ไฟล์ session เขียนไม่จบ</b><span class="news-pill">8.2 ถึง 8.5</span> ถ้าตัวจัดการ session แบบ files (ค่าเริ่มต้น) เขียนไฟล์ไม่จบ ไฟล์จะมีข้อมูลของสอง session ปนกัน ผู้โจมตีอาจทำให้ PHP deserialize วัตถุที่ตัวเองสร้างขึ้นได้ แต่ต้องมี gadget chain ในแอปด้วยถึงจะรันโค้ดได้</div>
+<div class="news-card is-warn"><b>CVE-2026-115560 · session serializer ไม่ตรงกัน</b><span class="news-pill">8.2 ถึง 8.5</span> ฟีเจอร์ session upload progress เขียนข้อมูลด้วยรูปแบบหนึ่ง แต่ถูกอ่านกลับด้วยอีกรูปแบบ เงื่อนไขคือต้องเปิดฟีเจอร์นี้ ใช้ serializer แบบ php_binary หรือ php_serialize และมี gadget chain ในแอป GitHub ระบุว่ารุ่นเก่าที่หมดซัพพอร์ตแล้วอาจโดนด้วย</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## แล้วต้องอัปเป็นรุ่นไหน
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/php-security-update-8-5-13-8-6-0/photo-3.jpg" width="1600" height="897" loading="lazy" alt="หน้า GitHub Security Advisory ของ php-src เรื่อง PHP-FPM request smuggling through an unread HTTP request body ระดับ Critical 9.2 จาก 10 รุ่นที่แก้คือ 8.2.36 8.3.37 8.4.28 และ 8.5.13" /></div><figcaption><span class="news-fig__credit">ภาพ: ภาพหน้าจอ <a href="https://github.com/php/php-src/security/advisories/GHSA-qc49-hpvq-g2w6" rel="noopener">GitHub php-src Security Advisories</a> (20 พ.ย. 2569 ตัดแต่งให้กระชับ)</span></figcaption></figure>
+<div class="prose">
+
+ThaiCERT ระบุรุ่นที่แก้แล้วไว้ คือ 8.2.36, 8.3.37, 8.4.28, 8.5.13 หรือขยับไป 8.6.0 ตรงกับที่ประกาศไว้บน php.net
+
+ภาพนี้คือหน้า advisory ของ CVE-2026-129289 บน GitHub ครับ มีตารางรุ่นที่โดน รุ่นที่แก้ และคะแนน Critical 9.2 ตรงกับที่ ThaiCERT สรุป
+
+ใช้ PHP สายไหนอยู่ ก็อัปเป็นเลขล่าสุดของสายนั้น ถ้ายังไม่พร้อมก็ไม่ต้องข้ามสาย ส่วน 8.6.0 เป็นรุ่นหลักใหม่ มีทั้งฟีเจอร์ใหม่และของที่เลิกใช้ ผมแนะนำให้อ่านคู่มือย้ายรุ่นก่อนครับ
+
+</div>
+</div>
+
+<div class="prose">
+
+<div class="news-cards">
+<div class="news-card is-ok"><b>PHP 8.5</b><span class="news-pill">อัปเป็น 8.5.13</span> โดนครบทั้ง 7 รายการ</div>
+<div class="news-card is-ok"><b>PHP 8.4</b><span class="news-pill">อัปเป็น 8.4.28</span> โดน 5 รายการ (ไม่โดน 129474 และ 129182 ที่มีเฉพาะใน 8.5)</div>
+<div class="news-card is-ok"><b>PHP 8.3</b><span class="news-pill">อัปเป็น 8.3.37</span> โดน 5 รายการ เหมือน 8.4</div>
+<div class="news-card is-ok"><b>PHP 8.2</b><span class="news-pill">อัปเป็น 8.2.36</span> โดน 4 รายการ (129289, 129496, 126714, 115560)</div>
+<div class="news-card is-bad"><b>PHP 8.1 และเก่ากว่า</b><span class="news-pill">ไม่พบรุ่นแก้</span> ใน ChangeLog รุ่นล่าสุดของสายนี้คือ 8.1.34 (18 ธ.ค. 2568) ไม่มีรุ่นใหม่ออกวันที่ 19 พ.ย. และ GitHub ระบุว่าช่องโหว่ระดับ High 2 รายการ (CVE-2026-129291 และ CVE-2026-127960) กระทบ 8.1 โดยไม่มีรุ่นที่แก้ ถ้ายังใช้อยู่ ควรย้ายไปสายใหม่ หรือติดตามแพตช์จากผู้ดูแลระบบปฏิบัติการที่ใช้อยู่</div>
+</div>
+
+จำนวนรายการที่แต่ละสายโดน นับจากช่วงรุ่นที่โดนในหน้า advisory ของแต่ละรายการบน GitHub ไม่ได้มาจากประกาศของ ThaiCERT ครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ที่เหลืออีก 10 รายการ
+
+<div class="prose">
+
+นอกจาก 7 ตัวข้างบน รุ่นเดียวกันนี้ยังปิดช่องโหว่ระดับ High อีก 4 รายการ และ Medium อีก 6 รายการ
+
+ตัวที่น่าสนใจคือ CVE-2026-129291 ที่ PHP-FPM อาจถูกหลอกให้ใช้หน่วยความจำที่ถูกปล่อยไปแล้ว ทำให้ผู้โจมตีที่รันโค้ดใน worker ได้อยู่แล้ว ยกสิทธิ์ตัวเองขึ้นเป็นสิทธิ์ของ FPM master ซึ่งมักรันเป็น root (ต้องเปิด catch_workers_output) ตัวนี้ต่างจาก 7 ตัวแรกที่เข้ามาจากข้างนอก เพราะผู้โจมตีต้องรันโค้ดบนเครื่องได้ก่อน
+
+อีก 3 รายการระดับ High คือ ไฟล์ PHAR ข้ามการตรวจลายเซ็น OpenSSL ได้ (CVE-2026-128090), URL แบบ HTTPS หรือ FTPS ที่สะกดตัวพิมพ์เล็กใหญ่ปนกัน ทำให้ข้อมูลถูกส่งเป็นข้อความธรรมดาไม่เข้ารหัส (CVE-2026-128064) และเซิร์ฟเวอร์ HTTP ที่ส่งเฮดเดอร์แบบพับบรรทัดมาเยอะ ๆ ทำให้ PHP กิน CPU หนัก (CVE-2026-127960)
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ถ้ายังอัปไม่ได้ทันที
+
+<div class="prose">
+
+ThaiCERT รวมวิธีลดความเสี่ยงชั่วคราวไว้ในประกาศ และบางข้อ GitHub ก็เขียนไว้ในหน้า advisory ครับ ทั้งหมดนี้แค่ช่วยลดความเสี่ยง ไม่ได้กันได้ทุกช่องโหว่ และ ThaiCERT ย้ำให้ลงรุ่นที่แก้แล้วโดยเร็วที่สุด
+
+<ol class="news-steps">
+<li><b>กันช่องโหว่ backtrace ของ PHP 8.5</b>ตั้ง zend.exception_ignore_args=1 หรือ fatal_error_backtraces=0 ในค่าที่ worker ใช้งานจริง รวมถึง pool ของ PHP-FPM แล้วรีสตาร์ต worker แก้แค่ค่าของ CLI ไม่พอ</li>
+<li><b>ปิด session upload progress</b>ตั้ง session.upload_progress.enabled=0 ในค่าระดับผู้ดูแลระบบ ใช้ ini_set() ในแอปไม่พอ ช่วยกัน CVE-2026-126714 และ 115560</li>
+<li><b>แก้ต้นเหตุของคำเตือนตอนเริ่มระบบ</b>เช่น date.timezone ที่ตั้งผิด หรือส่ง error log ไป syslog แทนไฟล์ ช่วยกัน CVE-2026-129496</li>
+<li><b>ลดอายุของ worker ชั่วคราว</b>ThaiCERT เสนอให้ตั้ง pm.max_requests=1 บน PHP-FPM สำหรับ CVE-2026-129481 แต่จะกระทบประสิทธิภาพ</li>
+<li class="is-key"><b>ตรวจให้ทั่ว ไม่ใช่แค่เซิร์ฟเวอร์หลัก</b>ThaiCERT ให้สำรวจทุกที่ที่มี PHP ทั้ง CMS, container image และอุปกรณ์ที่ฝัง PHP มาในตัว เพราะ PHP ที่ติดมากับผลิตภัณฑ์ของคนอื่น ต้องรอเจ้าของผลิตภัณฑ์ออกแพตช์</li>
+</ol>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ThaiCERT ว่าอย่างไร และสิ่งที่ยังไม่พบ
+
+<div class="prose">
+
+ThaiCERT ออกประกาศ 2 ฉบับเมื่อ 20 พ.ย. 2569 ฉบับหนึ่งอธิบายช่องโหว่ทีละรายการพร้อมวิธีลดความเสี่ยง อีกฉบับเป็นประกาศเตือนเลขที่ 640/69 แบบสรุปสั้น ทั้งสองฉบับนับ Critical ไว้ 7 รายการ ตรงกับ php.net และ GitHub
+
+ฉบับที่สองยังเทียบกับ PHP2Shell เมื่อเดือนที่แล้วว่า ช่องโหว่ชุดนี้ส่วนใหญ่ต้องอาศัยการตั้งค่าที่ไม่ใช่ค่าเริ่มต้น หรือสภาพแวดล้อมเฉพาะ จึงน่าจะไม่ถูกโจมตีเป็นวงกว้างได้ง่ายเท่า แต่ก็ย้ำให้รีบอัป
+
+ทั้งหน้า php.net, ChangeLog, หน้า advisory บน GitHub และประกาศของ ThaiCERT 2 ฉบับ ยังไม่มีที่ไหนบอกว่าช่องโหว่ชุดนี้ถูกโจมตีจริงแล้ว และผมยังไม่พบรายงานผู้เสียหายในไทยครับ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- php.net ChangeLog (PHP 8.6.0, 8.5.13, 8.4.28, 8.3.37, 8.2.36 ลงวันที่ 19 พ.ย. 2569): <a href="https://www.php.net/ChangeLog-8.php" rel="noopener">php.net/ChangeLog-8.php</a>
+- php.net ประกาศรุ่นความปลอดภัยและ PHP 8.6.0 (19 พ.ย. 2569): <a href="https://www.php.net/" rel="noopener">php.net</a>
+- GitHub php-src Security Advisories (ระดับความรุนแรง CVSS รุ่นที่โดนและรุ่นที่แก้ ของแต่ละรายการ): <a href="https://github.com/php/php-src/security/advisories" rel="noopener">github.com/php/php-src</a>
+- ThaiCERT ประกาศ "PHP เผยแพร่อัปเดตแก้ไขช่องโหว่ระดับ Critical หลายรายการ" (20 พ.ย. 2569): <a href="https://www.thaicert.or.th/2026/11/20/%e0%b9%81%e0%b8%88%e0%b9%89%e0%b8%87%e0%b9%80%e0%b8%95%e0%b8%b7%e0%b8%ad%e0%b8%99-php-%e0%b9%80%e0%b8%9c%e0%b8%a2%e0%b9%81%e0%b8%9e%e0%b8%a3%e0%b9%88%e0%b8%ad%e0%b8%b1%e0%b8%9b%e0%b9%80%e0%b8%94/" rel="noopener">thaicert.or.th</a>
+- ThaiCERT ประกาศ "PHP ออกอัปเดตเพื่อแก้ไข 7 ช่องโหว่ระดับวิกฤต" (20 พ.ย. 2569): <a href="https://www.thaicert.or.th/2026/11/20/php-%e0%b8%ad%e0%b8%ad%e0%b8%81%e0%b8%ad%e0%b8%b1%e0%b8%9b%e0%b9%80%e0%b8%94%e0%b8%95%e0%b9%80%e0%b8%9e%e0%b8%b7%e0%b9%88%e0%b8%ad%e0%b9%81%e0%b8%81%e0%b9%89%e0%b9%84%e0%b8%82-7-%e0%b8%8a%e0%b9%88/" rel="noopener">thaicert.or.th</a>
+- ข่าวเกี่ยวข้อง: <a href="/news/php2shell/">PHP2Shell ช่องโหว่ร้ายแรงใน PHP</a> · <a href="/news/php-8-6-release-date/">PHP 8.6 ตัวจริงกำหนดออก 19 พ.ย. 2569</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพในเนื้อข่าว: ภาพหน้าจอของ php.net และหน้า advisory บน GitHub ที่แคปเมื่อ 20 พ.ย. 2569 (ภาพที่สองตัดแต่งให้กระชับ) ลิขสิทธิ์เป็นของเจ้าของเว็บไซต์ตามที่ระบุ
+- ภาพปก: by dojojin.tech (ภาพประกอบจาก DOJOJIN.TECH ไม่ใช่ภาพเหตุการณ์จริง ไม่มีโลโก้)
+
+ภาพใช้ประกอบข่าว (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>
