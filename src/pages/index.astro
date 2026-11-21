@@ -31,7 +31,7 @@ const block = (type) => {
 const hub = HUB.filter((type) => TYPES[type]).map(block).filter((b) => b.lead);
 const pair = PAIR.filter((type) => type === 'app' || TYPES[type]).map(block).filter((b) => b.lead);
 const others = sections.filter((s) => !HUB.includes(s.type) && !PAIR.includes(s.type));
-const day = (d) => d.toLocaleDateString('th-TH', { day: 'numeric', month: 'short', year: '2-digit' });
+const day = (d) => d.toLocaleDateString('th-TH', { day: 'numeric', month: 'short', year: '2-digit', timeZone: 'Asia/Bangkok' });
 // Spotlight (right of the hero): the newest post is rendered here; the rest come from /spot.json after load.
 const f0 = spaceApps(feed)[0];   // same order as /spot.json
 const first = { href: f0.href, title: f0.title, cover: f0.cover, kind: TYPES[f0.type]?.name ?? '', sub: f0.sub ?? '' };

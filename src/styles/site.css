@@ -677,7 +677,7 @@ a.grade-card.project:hover { border-color: var(--accent); }
   border: 1px solid var(--border-hairline); border-radius: var(--radius-lg); padding: var(--space-4); }
 .hub__block > .meta { margin: 0 0 var(--space-3); }
 .hub__lead { display: grid; gap: var(--space-1); text-decoration: none; color: inherit; }
-.hub__lead img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--radius); background: var(--surface-sunken); }
+.hub__lead img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); background: var(--surface-sunken); }
 .hub__lead b { font-size: var(--fs-h2); line-height: 1.4; margin-top: var(--space-2); }
 .hub__lead:hover b { color: var(--accent); }
 .hub__list { list-style: none; margin: var(--space-3) 0 0; padding: 0; }

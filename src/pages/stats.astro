@@ -96,7 +96,7 @@ const names = {
       const li = document.createElement('li'), a = document.createElement('a'), meta = document.createElement('span'), n = document.createElement('b');
       a.href = r.href; a.textContent = r.title;
       meta.className = 'meta';
-      meta.textContent = [typeName[r.type] ?? 'หน้าอื่น', r.date && new Date(r.date).toLocaleDateString('th-TH', { dateStyle: 'medium' })].filter(Boolean).join(' · ');
+      meta.textContent = [typeName[r.type] ?? 'หน้าอื่น', r.date && new Date(r.date).toLocaleDateString('th-TH', { dateStyle: 'medium', timeZone: 'Asia/Bangkok' })].filter(Boolean).join(' · ');
       n.textContent = fmt(r.n);
       const t = document.createElement('div'); t.append(a, meta);
       li.append(t, n); return li;
