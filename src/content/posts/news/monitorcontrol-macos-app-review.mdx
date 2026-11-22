@@ -1,0 +1,176 @@
+---
+title: "แอปแนะนำ: MonitorControl ปรับความสว่างและเสียงจอแยกบน Mac ด้วยปุ่มคีย์บอร์ด ฟรีและโอเพนซอร์ส"
+topic: software
+type: news
+tags: [app, open-source]
+date: 2026-11-22T13:05:00+07:00
+section: app
+sourceName: "MonitorControl (GitHub)"
+sourceUrl: "https://github.com/MonitorControl/MonitorControl"
+description: "แนะนำ MonitorControl แอปบน macOS ที่ให้ปรับความสว่าง เสียง และคอนทราสต์ของจอแยกด้วยปุ่มบนคีย์บอร์ดหรือแถบเลื่อนบนเมนูบาร์ โอเพนซอร์สไลเซนส์ MIT ใช้ฟรี รุ่นล่าสุด 4.4.0 (15 ก.ย. 2569) รองรับ macOS 26 และ 27"
+kicker: "แอปแนะนำ"
+lead: "ต่อจอแยกกับ Mac แล้วเคยเจอไหมครับ กดปุ่มความสว่างบนคีย์บอร์ดแต่จอไม่ขยับ ต้องไปคลำปุ่มเล็ก ๆ ที่ตัวจอทุกครั้ง ตัวช่วยที่ผมแนะนำคือ MonitorControl ครับ ปรับความสว่างและเสียงของจอแยกจาก Mac ได้เลย ใช้ฟรีและเป็นโอเพนซอร์ส"
+meta: "เรียบเรียงจากหน้า GitHub ของ MonitorControl และ GitHub releases · ข้อมูล ณ 22 พฤศจิกายน 2569"
+cover: "/media/posts/news/monitorcontrol-macos-app-review/cover.jpg"
+coverAlt: "เมนูบาร์ของ MonitorControl แสดงแถบเลื่อนความสว่างและเสียงของจอ LG Ultra HD กับความสว่างของ Color LCD วางบนหน้าต่างตั้งค่าทั่วไปของแอป"
+---
+
+<section class="section">
+
+## MonitorControl คืออะไร
+
+<div class="prose">
+
+MonitorControl เป็นแอปบน macOS ที่ให้คุมความสว่าง เสียง และคอนทราสต์ของจอแยก (external display) จาก Mac ได้โดยตรง ตามที่หน้า GitHub สรุปไว้
+
+ปรับได้ทั้งแถบเลื่อนบนเมนูบาร์และปุ่มบนคีย์บอร์ด รวมถึงปุ่มความสว่างกับปุ่มเสียงของคีย์บอร์ด Apple ด้วยครับ
+
+หัวใจของแอปคือ DDC ครับ DDC คือช่องทางที่ Mac ใช้ส่งคำสั่งไปหาตัวจอผ่านสายที่ต่ออยู่ แอปจึงปรับความสว่างจริงของจอ ไม่ใช่แค่ทำให้ภาพดูมืดลงเฉย ๆ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ทำอะไรได้บ้าง
+
+<div class="split">
+<div class="prose">
+
+หน้า GitHub ไล่ฟีเจอร์ไว้ตามนี้ครับ
+
+- ปรับความสว่าง เสียง และคอนทราสต์ของจอได้ ตอนปรับมี OSD ของ macOS ขึ้นให้เห็น
+- จอไม่รองรับ DDC ก็ยังหรี่ได้ แอปจะหรี่ภาพด้วยซอฟต์แวร์แทน (ปรับ gamma table) ส่วนจอ AirPlay, Sidecar, DisplayLink และจอเสมือนอื่น ๆ ใช้วิธีหรี่แบบ shade
+- เลือกให้ค่อย ๆ ปรับแบบนุ่ม ๆ (smooth transition) ได้
+- หรี่ได้ต่ำกว่าความสว่างต่ำสุดของจอ จนดำสนิทก็ได้ เพราะรวมการหรี่ด้วยฮาร์ดแวร์กับซอฟต์แวร์เข้าด้วยกัน
+- ให้จอแยกที่ไม่ใช่ของ Apple ปรับความสว่างตามจอในตัวหรือจอ Apple ได้ รวมถึงตอนที่ความสว่างเปลี่ยนตามเซนเซอร์แสงรอบข้าง
+- ปรับทุกจอพร้อมกันด้วยแถบเลื่อนเดียวหรือคีย์ลัดเดียวได้
+- ตั้งคีย์ลัดเองได้ และยังมีตัวเลือกปรับแต่งอีกหลายสิบอย่าง (เปิดที่ "Show advanced settings")
+
+ภาพปกเป็นภาพจากหน้าโปรเจกต์ครับ จะเห็นแถบเลื่อนของจอ LG Ultra HD (ความสว่างกับเสียง) และ Color LCD (ความสว่าง) วางอยู่บนหน้าต่างตั้งค่าทั่วไป
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/monitorcontrol-macos-app-review/img-1.jpg" width="940" height="857" loading="lazy" alt="หน้าตั้งค่าแท็บ Displays ของ MonitorControl จอ LG Ultra HD วิธีควบคุมแบบ Hardware (DDC) มีช่องติ๊ก Enable keyboard control, Use hardware DDC control, Disable macOS volume OSD, Avoid gamma table manipulation และส่วนขั้นสูงสำหรับปรับ DDC ของความสว่าง เสียง และคอนทราสต์" /></div><figcaption><span class="news-fig__credit">ภาพ: MonitorControl · <a href="https://github.com/MonitorControl/MonitorControl" rel="noopener">github.com</a> (วางบนพื้นสีโดย DOJOJIN.TECH)</span></figcaption></figure>
+</div>
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/monitorcontrol-macos-app-review/img-2.jpg" width="940" height="867" loading="lazy" alt="หน้าตั้งค่าแท็บ Keyboard ของ MonitorControl เลือกใช้ปุ่มมาตรฐานและคีย์ลัดที่ตั้งเอง ตัวเลือกไม่ใช้ปุ่มความสว่างสำรอง F14 F15 เลือกจอที่จะควบคุมตามตำแหน่งเมาส์ และตัวเลือกขนาด OSD" /></div><figcaption><span class="news-fig__credit">ภาพ: MonitorControl · <a href="https://github.com/MonitorControl/MonitorControl" rel="noopener">github.com</a> (วางบนพื้นสีโดย DOJOJIN.TECH)</span></figcaption></figure>
+<div class="prose">
+
+อีกสองภาพเป็นหน้าตั้งค่าครับ ทุกภาพในข่าวนี้มาจาก README ของโปรเจกต์ ซึ่งเป็นหน้าตาบน macOS รุ่นเก่า ของจริงบนเครื่องอาจต่างไปบ้าง
+
+หน้า Displays เลือกได้ว่าจะคุมจอด้วยวิธีไหน เช่น Hardware (DDC) และเปิดปิดการคุมด้วยคีย์บอร์ดได้
+
+ส่วนหน้า Keyboard เลือกได้ว่าจะใช้ปุ่มมาตรฐานของ Mac อย่างเดียว หรือเพิ่มคีย์ลัดที่ตั้งเองด้วย และเลือกได้ว่าจะให้ปุ่มไปคุมจอไหน เช่น จอที่เมาส์ชี้อยู่ ถ้าใช้คีย์บอร์ดพีซี หน้านี้มีตัวเลือกปุ่มสำรองอย่าง F14/F15 หรือ Scroll Lock/Pause ให้ด้วยครับ
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ราคา ไลเซนส์ และรุ่นล่าสุด
+
+<div class="prose">
+
+MonitorControl ใช้ฟรี (หน้า GitHub เขียนว่า "Completely FREE") และเป็นโอเพนซอร์สไลเซนส์ MIT ครับ
+
+**รุ่นล่าสุดคือ v4.4.0** ออกวันที่ 15 กันยายน 2569 บันทึกรุ่นเรียกว่าเป็นการอัปเดตดูแลระบบ (maintenance update) เพื่อแก้ปัญหาความเข้ากันได้กับ macOS 27 Golden Gate และ macOS 26 Tahoe สิ่งที่แก้มีตามนี้ครับ
+
+<div class="news-cards">
+<div class="news-card is-ok"><b>OSD แบบเดิมกลับมา</b>บันทึกรุ่นระบุว่าคืน OSD แบบดั้งเดิมสำหรับ macOS 26 และ macOS 27</div>
+<div class="news-card is-ok"><b>หน้าตั้งค่าเด้งขึ้นตอนใช้ Siri</b>แก้ปัญหาหน้าตั้งค่าของแอปเด้งขึ้นทุกครั้งที่โต้ตอบกับแอป Siri บน macOS 27</div>
+<div class="news-card is-ok"><b>บันทึกคีย์ลัด</b>แก้ปัญหาการบันทึกคีย์ลัดที่ตั้งเองบน macOS 27</div>
+</div>
+
+ใครใช้ macOS 27 อยู่ README ระบุว่าต้องใช้ v4.4.0 ขึ้นไปครับ รุ่นก่อนหน้าคือ v4.3.3 ออกเมื่อ 4 ตุลาคม 2567 ห่างกันเกือบสองปี
+
+**ระบบที่ใช้ได้:** ตารางใน README ระบุว่า v4 ใช้ได้ตั้งแต่ macOS 10.15 Catalina แต่ฟีเจอร์ครบตั้งแต่ macOS 11 Big Sur
+
+ถ้าอยากได้ฟีเจอร์มากกว่านี้ บันทึกรุ่นเองก็แนะนำให้พิจารณา BetterDisplay ครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## วิธีติดตั้ง
+
+<div class="prose">
+
+ติดตั้งได้ 2 ทาง โหลดจาก GitHub หรือใช้ Homebrew ครับ
+
+<ol class="news-steps">
+<li><b>ไฟล์ DMG</b>โหลดไฟล์ .dmg รุ่นล่าสุดจาก <a href="https://github.com/MonitorControl/MonitorControl/releases/latest" rel="noopener">GitHub Releases</a> เปิดไฟล์ แล้วลากแอปไปไว้ในโฟลเดอร์ Applications</li>
+<li><b>Homebrew</b>เปิดแอป Terminal แล้วพิมพ์ <code>brew install --cask monitorcontrol</code></li>
+<li><b>เปิดแอป</b>ตามขั้นตอนใน README ถ้าอยากใช้ปุ่มความสว่างและปุ่มเสียงของคีย์บอร์ด Apple ต้องอนุญาตสิทธิ์ Accessibility ให้แอปก่อน</li>
+</ol>
+
+ตัวเลือกส่วนใหญ่ปรับได้ที่หน้าตั้งค่า และมีตัวเลือกให้เริ่มแอปตอนเปิดเครื่อง (Start at Login) กับตรวจอัปเดตอัตโนมัติ ตามที่เห็นในภาพปกครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ข้อควรรู้ก่อนใช้
+
+<div class="prose">
+
+แอปจะทำได้แค่ไหน ขึ้นกับว่าจอและสายที่ต่อรองรับ DDC หรือเปล่า README เตือนไว้ 4 เรื่องครับ
+
+<div class="news-cards">
+<div class="news-card is-warn"><b>พอร์ต HDMI ในตัว Mac บางรุ่น</b>README ระบุว่าไม่รองรับ DDC ผ่านพอร์ต HDMI ในตัวของ Mac mini Intel ปี 2018, Mac รุ่น M1 ทุกรุ่น (MacBook Pro 14" และ 16", Mac mini, Mac Studio) และ Mac mini M2 รุ่นเริ่มต้น ให้ใช้ USB-C แทน ถ้าต่อแบบนี้ยังหรี่ภาพด้วยซอฟต์แวร์ได้</div>
+<div class="news-card is-warn"><b>ด็อกและดองเกิล DisplayLink</b>ใช้ DDC ไม่ได้บน Mac ได้เฉพาะการหรี่ด้วยซอฟต์แวร์</div>
+<div class="news-card is-warn"><b>จอบางยี่ห้อ เช่น EIZO</b>ใช้ MCCS ผ่าน USB หรือโปรโตคอลเฉพาะของตัวเอง แอปรองรับแค่การหรี่ด้วยซอฟต์แวร์</div>
+<div class="news-card is-warn"><b>ทีวี</b>ทีวี LCD และ LED ส่วนใหญ่ไม่มี DDC แอปใช้วิธีหรี่ภาพด้วยซอฟต์แวร์แทน</div>
+</div>
+
+พูดง่าย ๆ คือ การหรี่ด้วยซอฟต์แวร์เป็นการปรับภาพที่ Mac ส่งไป ไม่ได้ปรับไฟหลังจอของตัวจอเองเหมือน DDC ครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ใครควรใช้
+
+<div class="prose">
+
+ใครต่อจอแยกกับ Mac แล้วอยากปรับความสว่างหรือเสียงจากคีย์บอร์ด ไม่ต้องไปกดปุ่มที่ตัวจอ ผมแนะนำให้ลอง MonitorControl ครับ ยิ่งใช้หลายจอยิ่งคุ้ม เพราะปรับทุกจอพร้อมกันได้ และเป็นแอปฟรีที่เปิดซอร์ส ตรวจสอบโค้ดได้ ก่อนใช้แค่เช็กก่อนว่าจอและพอร์ตที่ต่ออยู่ ติดข้อควรรู้ข้างบนหรือเปล่าครับ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- หน้าโปรเจกต์และซอร์สโค้ด: <a href="https://github.com/MonitorControl/MonitorControl" rel="noopener">github.com/MonitorControl/MonitorControl</a>
+- รุ่นล่าสุดและวันที่: <a href="https://github.com/MonitorControl/MonitorControl/releases/tag/v4.4.0" rel="noopener">GitHub releases v4.4.0</a>
+- ติดตั้งผ่าน Homebrew: <a href="https://formulae.brew.sh/cask/monitorcontrol" rel="noopener">formulae.brew.sh/cask/monitorcontrol</a>
+
+</div>
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปกและภาพตัวอย่างทั้งหมด: ภาพ: MonitorControl จากหน้า README บน <a href="https://github.com/MonitorControl/MonitorControl" rel="noopener">github.com</a> วางบนพื้นสีโดย DOJOJIN.TECH
+
+ภาพใช้ประกอบการแนะนำ (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>

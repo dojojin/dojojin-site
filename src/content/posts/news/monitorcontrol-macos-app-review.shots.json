@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "title": "หน้าตั้งค่า Displays",
+    "src": "/media/posts/news/monitorcontrol-macos-app-review/img-1.jpg",
+    "w": 940,
+    "h": 857,
+    "fit": "contain",
+    "group": "ภาพประกอบ",
+    "alt": "หน้าตั้งค่าแท็บ Displays ของ MonitorControl",
+    "summary": "เลือกวิธีควบคุมจอ เช่น Hardware (DDC) และตัวเลือกขั้นสูงของความสว่าง เสียง คอนทราสต์",
+    "credit": "ภาพ: MonitorControl · <a href=\"https://github.com/MonitorControl/MonitorControl\" rel=\"noopener\">github.com</a> (วางบนพื้นสีโดย DOJOJIN.TECH)",
+    "analysis": [
+      "ภาพจาก README เป็นหน้าตาของ macOS รุ่นเก่า"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "หน้าตั้งค่า Keyboard",
+    "src": "/media/posts/news/monitorcontrol-macos-app-review/img-2.jpg",
+    "w": 940,
+    "h": 867,
+    "fit": "contain",
+    "group": "ภาพประกอบ",
+    "alt": "หน้าตั้งค่าแท็บ Keyboard ของ MonitorControl",
+    "summary": "เลือกปุ่มมาตรฐานหรือคีย์ลัดที่ตั้งเอง และเลือกว่าจะคุมจอไหน",
+    "credit": "ภาพ: MonitorControl · <a href=\"https://github.com/MonitorControl/MonitorControl\" rel=\"noopener\">github.com</a> (วางบนพื้นสีโดย DOJOJIN.TECH)",
+    "analysis": [
+      "ภาพจาก README เป็นหน้าตาของ macOS รุ่นเก่า"
+    ]
+  }
+]

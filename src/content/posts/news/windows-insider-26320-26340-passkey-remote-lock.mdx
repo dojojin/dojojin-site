@@ -1,19 +1,67 @@
 ---
-title: "Windows 11 Insider 16 พ.ย.: ลบ passkey ใน FIDO2 ทีละตัว, ล็อกเครื่องทางไกล, Taskbar แบบรายชื่อ"
+title: "Windows 11 Insider 20 พ.ย.: หูฟัง LE Audio ได้เสียงสเตอริโอแม้เปิดไมค์ + รอบ 16 พ.ย. ลบ passkey ใน FIDO2, ล็อกเครื่องทางไกล"
 topic: infra-ai
 type: news
 tags: [microsoft, windows, security]
 date: 2026-11-17T13:40:00+07:00
+updated: 2026-11-22T13:10:00+07:00
+bumped: 2026-11-22T13:10:00+07:00
 section: tech
 sourceName: "Windows Insider Blog และ Microsoft Learn"
 sourceUrl: "https://blogs.windows.com/windows-insider/2026/11/16/announcing-new-builds-for-16-november-2026/"
-description: "Microsoft ปล่อย Windows 11 Insider Beta 26320.10003 และ Experimental 26340.10013 (16 พ.ย. 2569) ฟีเจอร์เด่นอย่างลบ passkey ในกุญแจ FIDO2 ทีละตัว, Remote Lock ผ่าน Intune, Taskbar แบบรายชื่อ และท่าทางนิ้วของ Magnifier มีเฉพาะใน Experimental สรุปให้ว่าใครได้ประโยชน์ เปิดตรงไหน และข้อจำกัดที่ต้องรู้"
+description: "Windows 11 Insider รอบ 20 พ.ย. 2569 (Beta 26320.10022, Experimental 26340.10032) ให้หูฟัง Bluetooth LE Audio เล่นเสียงสเตอริโอ 48 kHz ได้แม้เปิดไมค์ และมีวิดเจ็ต People ส่วนรอบ 16 พ.ย. มีลบ passkey ใน FIDO2 ทีละตัว, Remote Lock ผ่าน Intune, Taskbar แบบรายชื่อ สรุปว่าต้องมีอะไร และเปิดตรงไหน"
 kicker: "ข่าวเทคโนโลยี · Windows"
-lead: "ฟีเจอร์เด่นของรอบนี้ ทั้งลบ passkey ในกุญแจ FIDO2 ทีละตัว, สั่งล็อกเครื่องทางไกลจาก Intune, Taskbar แบบรายชื่อ และท่าทางนิ้วของ Magnifier อยู่ในรุ่น Experimental 26340.10013 เท่านั้นครับ ส่วน Beta 26320.10003 ได้ของเล็กกว่านั้น และยังไม่มีอะไรประกาศว่าจะเข้า Windows 11 ที่คนทั่วไปใช้"
-meta: "เรียบเรียงจาก Windows Insider Blog, Microsoft Learn (release notes) และ Windows Latest · ข้อมูล ณ 17 พฤศจิกายน 2569"
-cover: "/media/posts/news/windows-insider-26320-26340-passkey-remote-lock/cover.jpg"
-coverAlt: "ปกข่าว Windows 11 Insider ภาพหน้าจอจริงจาก Microsoft: หน้า Manage Security Key ที่มี Manage Passkeys และหน้าจอ Device Locked ของ Remote Lock"
+lead: "รอบล่าสุด 20 พ.ย. หูฟัง Bluetooth LE Audio เล่นเสียงสเตอริโอเต็มคุณภาพได้แม้เปิดไมค์แล้วครับ และมีวิดเจ็ต People เพิ่มมา บล็อกระบุว่าทั้งสองอย่างเป็น Release channel: Experimental ส่วนรอบ 16 พ.ย. ที่มีลบ passkey ใน FIDO2 ทีละตัว ล็อกเครื่องทางไกล และ Taskbar แบบรายชื่อ ก็อยู่ใน Experimental เหมือนกัน ยังไม่มีอะไรประกาศว่าจะเข้า Windows 11 ที่คนทั่วไปใช้"
+meta: "เรียบเรียงจาก Windows Insider Blog, Microsoft Learn (release notes) และ Windows Latest · ข้อมูล ณ 17 พฤศจิกายน 2569 · อัปเดต 22 พ.ย. 2569: เพิ่ม build รอบ 20 พ.ย."
+cover: "/media/posts/news/windows-insider-26320-26340-passkey-remote-lock/cover-v2.jpg"
+coverAlt: "ปกข่าว Windows 11 Insider ภาพหน้าจอจริงจาก Microsoft: หน้า Sound Properties ของหูฟัง Xbox Wireless Headset ที่เลือก Format when microphone is active เป็น 2 channels, 16 bit, 48000 Hz และวิดเจ็ต People ที่แสดงรายชื่อผู้ติดต่อ"
 ---
+
+<section class="section">
+
+**อัปเดต 22 พ.ย. 2569:** Microsoft ปล่อยรุ่นใหม่อีกรอบเมื่อ 20 พ.ย. ครับ คือ Beta 26320.10022 กับ Experimental 26340.10032 (เนื้อหาด้านล่างเป็นของรอบ 16 พ.ย.) ของใหม่ที่น่าสนใจมี 2 อย่าง คือหูฟัง Bluetooth LE Audio กับวิดเจ็ต People ซึ่งบล็อกเขียนว่า "Release channel: Experimental" ทั้งคู่ ส่วนรายการแก้บั๊กและปัญหาที่รู้อยู่ โพสต์รอบนี้ไม่ได้ลงไว้
+
+<div class="split">
+<div class="prose">
+
+### หูฟัง Bluetooth LE Audio ได้เสียงสเตอริโอ แม้เปิดไมค์
+
+ปกติพอเปิดไมค์หูฟังบลูทูธ Windows จะสลับไปใช้โหมดคุยโทรศัพท์ที่คุณภาพต่ำกว่า เสียงเพลงหรือเสียงเกมเลยแย่ลงทันทีครับ (พื้นฐานเรื่องนี้ผมเขียนไว้ใน <a href="/knowledge/bluetooth-guide/">คู่มือ Bluetooth</a>)
+
+รอบนี้ Microsoft บอกว่าหูฟัง LE Audio เล่นเสียงสเตอริโอเต็มช่วงได้ไปพร้อมกับใช้ไมค์ ใช้ได้ทั้งแชตในเกม โทรเสียง พิมพ์ด้วยเสียง และแชตเสียงใน Copilot Chat
+
+วิธีเปิด ต้องมีหูฟัง LE Audio กับพีซีที่รองรับ "Super Wideband Stereo" ก่อน แล้วไปที่ Settings > System > Sound > Output > เลือกหูฟังบลูทูธ > Output settings > Format when microphone is active แล้วเลือก "2 channels, 16 bit, 48000Hz" ครับ
+
+ในภาพคือหน้า Properties ของ Xbox Wireless Headset ที่เปิดรายการ Format ไว้ มีให้เลือก 32000 Hz กับ 48000 Hz (DVD Quality) ซึ่งเป็นตัวที่ถูกเลือกอยู่ ถ้าใช้แล้วเจอปัญหาเข้ากันไม่ได้ Microsoft ให้แจ้งผ่าน Feedback Hub ครับ
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/windows-insider-26320-26340-passkey-remote-lock/le-audio-mic.jpg" width="1600" height="1331" loading="lazy" alt="ภาพหน้าจอ Settings ของ Windows 11 หน้า Properties ของ Xbox Wireless Headset ช่อง Format when microphone is active เปิดรายการ มีตัวเลือก 32000 Hz และ 2 channels 16 bit 48000 Hz (DVD Quality) ที่ถูกเลือก" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft · blogs.windows.com (วางบนพื้นสีโดย DOJOJIN.TECH)</span></figcaption></figure>
+</div>
+
+<div class="split">
+<div class="prose">
+
+### วิดเจ็ต People
+
+วิดเจ็ต People ดึงรายชื่อคนที่เกี่ยวข้องจากแอปสื่อสารที่รองรับ มาไว้บนแผง Widgets ครับ กดชื่อไหน ก็เปิดบทสนทนานั้นในแอปที่ใช้อยู่ได้เลย
+
+วิธีเพิ่ม กด Win+W แล้วกด + เลือก People แต่ต้องตั้งค่า Phone Link หรือ WhatsApp ไว้ก่อน (อันไหนก็ได้ หรือทั้งสองอัน) ในภาพคือการ์ด People บนแผง Widgets ครับ
+
+</div>
+<figure class="news-fig news-fig--tall news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/windows-insider-26320-26340-passkey-remote-lock/people-widget.jpg" width="376" height="544" loading="lazy" alt="ภาพการ์ดวิดเจ็ต People บนแผง Widgets ของ Windows 11 แสดงรายชื่อผู้ติดต่อ" /></div><figcaption><span class="news-fig__credit">ภาพ: Microsoft · blogs.windows.com (วางบนพื้นสีโดย DOJOJIN.TECH)</span></figcaption></figure>
+</div>
+
+สรุปว่าต้องมีอะไรบ้าง
+
+<div class="news-cards">
+<div class="news-card"><b>ช่อง Experimental</b>ต้องอยู่ในช่องนี้ (build 26340.10032) ตามที่บล็อกระบุ</div>
+<div class="news-card"><b>เสียงสเตอริโอตอนเปิดไมค์</b>พีซีที่รองรับ Super Wideband Stereo + อุปกรณ์ LE Audio ที่เล่นเสียง 48 kHz ได้ (หูฟังแบบ headset, earbuds หรือลำโพง)</div>
+<div class="news-card"><b>People widget</b>ตั้งค่า Phone Link หรือ WhatsApp ไว้ก่อน</div>
+</div>
+
+อีกเรื่องคือ รอบนี้ Insider ย้ายเข้าช่อง Experimental (Future Platforms) ได้อีกครั้ง หลังหยุดรับไปเมื่อสัปดาห์ก่อน แต่ย้ายเข้าไปแล้ว ถ้าจะออกต้องติดตั้ง Windows ใหม่ทั้งหมดครับ ส่วนรุ่นอื่นที่ออกรอบนี้คือ Beta (26H1) 28020.3562, Experimental (26H1) 28120.3571 และ Experimental (Future Platforms) 29712.1013
+
+</section>
 
 <section class="section">
 
@@ -193,6 +241,7 @@ Beta ไม่ได้ฟีเจอร์ 4 ข้อข้างบนเล
 
 <div class="prose">
 
+- Windows Insider Blog (Stephen Lines, 20 พ.ย. 2569): <a href="https://blogs.windows.com/windows-insider/2026/11/20/announcing-new-builds-for-20-november-2026/" rel="noopener">blogs.windows.com</a>
 - Windows Insider Blog (Stephen Lines, 16 พ.ย. 2569): <a href="https://blogs.windows.com/windows-insider/2026/11/16/announcing-new-builds-for-16-november-2026/" rel="noopener">blogs.windows.com</a>
 - Release notes Beta 26320.10003: <a href="https://learn.microsoft.com/en-us/windows-insider/release-notes/beta/preview-build-26320-10003" rel="noopener">learn.microsoft.com</a>
 - Release notes Experimental 26340.10013: <a href="https://learn.microsoft.com/en-us/windows-insider/release-notes/experimental/preview-build-26340-10013" rel="noopener">learn.microsoft.com</a>
@@ -209,7 +258,8 @@ Beta ไม่ได้ฟีเจอร์ 4 ข้อข้างบนเล
 <div class="prose">
 
 - ภาพในเนื้อข่าว: Microsoft (Windows Insider Blog) วางบนพื้นสีโดย DOJOJIN.TECH
-- ภาพปก: Microsoft (Windows Insider Blog) วางบนพื้นสีโดย DOJOJIN.TECH
+- ภาพ le-audio-mic.jpg และ people-widget.jpg (ส่วนอัปเดต 22 พ.ย.): Microsoft · blogs.windows.com วางบนพื้นสีโดย DOJOJIN.TECH
+- ภาพปก (อัปเดต 22 พ.ย.): Microsoft (Windows Insider Blog 20 พ.ย.) วางบนพื้นสีโดย DOJOJIN.TECH · ปกเดิม: Microsoft (Windows Insider Blog 16 พ.ย.)
 
 ภาพใช้ประกอบข่าว (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
 
