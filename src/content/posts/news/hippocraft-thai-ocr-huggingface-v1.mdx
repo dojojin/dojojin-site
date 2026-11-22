@@ -1,0 +1,186 @@
+---
+title: "HippoCraft ปล่อยโมเดล OCR ไทย v1 บน Hugging Face แก้เลข ๙ ที่ถูกอ่านเป็น ๕ ในเอกสารพิมพ์ดีดเก่า"
+topic: software
+type: news
+tags: [hippocraft, ai, open-source]
+date: 2026-11-22T18:10:00+07:00
+section: tech
+sourceName: "HippoCraft Thai OCR recognizer v1 บน Hugging Face (DOJOJIN.TECH)"
+sourceUrl: "https://huggingface.co/dojojin/hippocraft-thai-ocr-rec"
+description: "HippoCraft Thai OCR recognizer v1 ขึ้น Hugging Face แล้ว วันที่ 22 พ.ย. 2569 ใช้ได้ตามสัญญาอนุญาต Apache-2.0 เทรนต่อจากโมเดล OpenThai ของ iApp Technology แก้ปัญหาเลขไทย ๙ ถูกอ่านเป็น ๕ ในพระราชกฤษฎีกาที่พิมพ์ดีดช่วงปี 2496-2520 เอาไปแทนไฟล์ rec.onnx ของ OpenThai ได้เลย มีผลทดสอบและข้อจำกัดให้ดูครบ"
+kicker: "ข่าวซอฟต์แวร์ · HippoCraft"
+lead: "ผมเอาโมเดลอ่านตัวหนังสือไทยของ HippoCraft ขึ้น Hugging Face แล้วครับ ตัวนี้แก้ปัญหาที่เจอหนักสุดในเอกสารพิมพ์ดีดเก่า คือโมเดลเดิมอ่านเลข ๙ เป็น ๕ แบบมั่นใจ ปี พ.ศ. กับเลขมาตราเลยผิด ทั้งที่ดูเหมือนถูก"
+meta: "HippoCraft Thai OCR recognizer v1 (v1.0.0) · ปล่อยเมื่อ 22 พฤศจิกายน 2569 · Apache-2.0"
+cover: "/media/posts/news/hippocraft-thai-ocr-huggingface-v1/cover.jpg"
+coverAlt: "ภาพวาดฮิปโปสีเขียวของ HippoCraft กับข้อความ Thai OCR recognizer v1.0.0 โมเดล OCR ไทยขึ้น Hugging Face แล้ว โหลดได้ฟรี Apache-2.0 แก้ ๙ ที่ถูกอ่านเป็น ๕ ในเอกสารพิมพ์ดีด เลข ๙ อ่านถูก 8 จาก 8 ตัว ใช้แทน rec.onnx ของ OpenThai ได้ทันที"
+---
+
+<section class="section">
+
+## ปล่อยอะไร
+
+<div class="split">
+<div class="prose">
+
+วันที่ 22 พ.ย. 2569 ผมปล่อย **HippoCraft Thai OCR recognizer v1** (แท็ก v1.0.0) บน Hugging Face ครับ OCR ใน HippoCraft ทำงานสองขั้น ขั้นแรกหาว่าบรรทัดอยู่ตรงไหน ขั้นที่สองอ่านตัวหนังสือในบรรทัดนั้น ตัวที่ปล่อยนี้คือขั้นที่สอง เรียกว่า recognizer อ่านได้ทั้งไทยและอังกฤษ
+
+ผมไม่ได้ทำขึ้นใหม่ทั้งหมด แต่เอา recognizer ของ <a href="https://huggingface.co/iapp/OpenThai2.1-OCR-Text-20261118" rel="noopener">OpenThai2.1-OCR-Text-20261118</a> รุ่น v2.2.0 ของ iApp Technology มาเทรนต่อ (fine-tune คือสอนเพิ่มจากโมเดลที่เก่งอยู่แล้ว ไม่ได้เริ่มจากศูนย์) ตัว OpenThai เองก็ต่อยอดมาจาก PP-OCRv6-tiny ของ PaddlePaddle อีกที
+
+โครงสร้างโมเดล ขนาดภาพที่รับ และรายการตัวอักษรเหมือนเดิมทุกอย่าง ใครใช้ OpenThai อยู่ เอาไฟล์นี้ไปวางแทน `rec.onnx` ได้เลย ไม่ต้องแก้โค้ด
+
+รุ่นนี้ผมแก้ต่อเองนะครับ OpenThai และ iApp Technology ไม่ได้ทำหรือตรวจรุ่นนี้
+
+</div>
+<div class="news-stats">
+<div class="news-stat"><b>8 จาก 8</b>เลข ๙ ที่อ่านถูกในหน้าทดสอบ (เดิมถูก 1 ตัว)</div>
+<div class="news-stat"><b>2.4 MB</b>ไฟล์ ONNX วางแทน rec.onnx ของ OpenThai ได้เลย</div>
+<div class="news-stat"><b>ฟรี</b>สัญญาอนุญาต Apache-2.0 เอาไปใช้และเทรนต่อได้</div>
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ปัญหา: ๙ กลายเป็น ๕ แบบมั่นใจ
+
+<div class="split">
+<div class="prose">
+
+ผมใช้ HippoCraft ทำ OCR พระราชกฤษฎีกาที่พิมพ์ดีดช่วงปี 2496-2520 แล้วเจอว่าโมเดลเดิมอ่านเลขไทย ๙ เป็น ๕ แถมมั่นใจถึง 86-92%
+
+ตัวเลขที่ได้เลยดูปกติ แต่ค่าผิด เช่น "พ.ศ. ๒๔๙๖" กลายเป็น "พ.ศ. ๒๔๕๖" หรือ "มาตรา ๙๕" กลายเป็น "มาตรา ๕๕" ตัวกรองที่ไว้คัดคำที่โมเดลไม่แน่ใจก็จับไม่ได้ เพราะโมเดลมั่นใจสูง
+
+ในเอกสารกฎหมาย ปีกับเลขมาตราที่ผิดแบบเนียน ๆ อันตรายกว่าตัวหนังสือเพี้ยนที่เห็นแล้วรู้เลยว่าผิดอีกครับ
+
+ในภาพเป็นภาพสแกนจริง 4 จุด จากหน้าที่ไม่ได้ใช้เทรนเลย สีแดงคือที่ OpenThai v2.2.0 อ่าน สีเขียวคือที่ HippoCraft v1 อ่าน
+
+</div>
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/news/hippocraft-thai-ocr-huggingface-v1/img-1.jpg" width="1368" height="808" loading="lazy" alt="ตารางเทียบ 4 แถว ภาพสแกนพิมพ์ดีดปี 1953-1960 OpenThai v2.2.0 อ่าน พ.ศ. ๒๔๕๖, ๒๔๕๘, มาตรา ๑๕, มาตรา ๕ ผิด ส่วน HippoCraft v1 อ่าน พ.ศ. ๒๔๙๖, ๒๔๙๘, มาตรา ๑๙, มาตรา ๙ ถูก" /></div><figcaption><span class="news-fig__credit">ภาพ: HippoCraft Thai OCR v1 model card · DOJOJIN.TECH (สแกนจากราชกิจจานุเบกษา)</span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## แก้ยังไง
+
+<div class="prose">
+
+สรุปเป็นขั้น ๆ ได้แบบนี้ครับ
+
+<ol class="news-steps">
+<li><b>เริ่มจากน้ำหนักที่ OpenThai เปิดให้เทรนต่อ</b>น้ำหนักคือตัวเลขข้างในที่โมเดลเรียนรู้มา ก่อนเริ่มผมเช็กว่าน้ำหนักแบบ PyTorch ให้ผลตรงกับไฟล์ ONNX (ไฟล์โมเดลที่แอปโหลดไปใช้จริง) ผลตรงกันครบ 916 จาก 916 ขั้น</li>
+<li><b>ไม่ให้โมเดลเป็นคนเฉลย</b>เพราะโมเดลเดิมมั่นใจผิดอยู่แล้ว ปีของพระราชกฤษฎีกาเอามาจากบุ๊กมาร์กในไฟล์ PDF ส่วนเลขมาตราดูจากลำดับที่เรียงกันมา (มาตรา ๑, ๒, ๓ …) ได้ภาพตัวเลขมา 198 ภาพ</li>
+<li><b>ตรวจด้วยตาทุกภาพที่มี ๙ หรือ ๕</b>มี 87 ภาพ ถูกหมดทุกภาพ</li>
+<li><b>เทรนแค่ส่วนท้าย</b>เทรนเฉพาะส่วนหัว (head) ที่ตัดสินว่าเป็นตัวอะไร กับชั้นสุดท้ายของส่วนที่ดูภาพ (backbone) 400 รอบ ใช้เวลาราว 2 นาทีบน GPU ของ MacBook</li>
+<li class="is-key"><b>กันตัวอักษรอื่นเพี้ยน</b>ระหว่างเทรน ให้โมเดลอ่านบรรทัดอื่นที่ไม่มี ๕ หรือ ๙ ไปด้วย และต้องอ่านออกมาเหมือนโมเดลเดิม ตัวหนังสือที่เคยอ่านถูกจะได้ไม่เปลี่ยน</li>
+</ol>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ยากตรงไหน
+
+<div class="prose">
+
+ผมลองไป 10 ครั้ง แล้วเลือกเก็บครั้งที่ 8 ครับ ทุกครั้งวัดผลผ่าน OCR ทั้งระบบของแอป (หาบรรทัด ตัดบรรทัด ตัวกรอง) ไม่ได้วัดแค่ภาพตัวเลขที่ตัดไว้
+
+<ol class="news-steps">
+<li><b>ครั้งที่ 5 แก้ ๙ ได้ แต่ ๘ เพี้ยน</b>บนราชกิจจาฯ ที่พิมพ์ด้วยตัวเรียงพิมพ์ (letterpress) ๘ กลายเป็น ๗ เช่น ๒๔๘๘ อ่านเป็น ๒๔๗๘ ที่จับได้เพราะลองกับเอกสารชุดอื่นด้วย คือราชกิจจาฯ ปี ค.ศ. 1933, 1938 และ 1945</li>
+<li><b>เทรนแค่ชั้นสุดท้ายชั้นเดียว</b>กลับเป็นว่าอ่าน ๕ เป็น ๙ แทน</li>
+<li><b>เพิ่มภาพเลขหน้า 254 ภาพ</b>อ่านเลขหน้าดีขึ้น แต่จุดสกปรกบนกระดาษกลับถูกอ่านเป็นตัวเลขมากขึ้น</li>
+</ol>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ผลทดสอบ
+
+<div class="prose">
+
+วัดบนพระราชกฤษฎีกาที่ไม่ได้ใช้เทรน ผ่าน CLI ของ HippoCraft (แบบสั่งงานด้วยคำสั่ง) บน MacBook ครับ
+
+<div class="news-cards">
+<div class="news-card is-ok"><b>หน้าที่มีเฉลยพิมพ์ด้วยมือ 3 หน้า (1,923 ตัวอักษร)</b><span class="news-pill">แม่นขึ้น</span> ความแม่นยำจาก 94.44% เป็น 94.85%</div>
+<div class="news-card is-ok"><b>เลข ๙ ในหน้าเหล่านั้น 8 ตัว</b><span class="news-pill">ถูกครบ</span> อ่านเป็น ๙ ถูกจาก 1 ตัว เป็น 8 ตัว</div>
+<div class="news-card is-ok"><b>๕ ที่โผล่มาแทน ๙</b><span class="news-pill">หายหมด</span> จาก 7 จุด เหลือ 0</div>
+<div class="news-card is-warn"><b>หน้าภาษาไทยที่สร้างขึ้นเพื่อทดสอบ 4 แบบ</b><span class="news-pill">พอ ๆ เดิม</span> 200 dpi, 150 dpi, JPEG และเอียง 2° อ่านผิดต่างจากโมเดลเดิมไม่เกิน 0.07 จุด</div>
+<div class="news-card is-warn"><b>ราชกิจจาฯ ตัวเรียงพิมพ์ 3 ฉบับ</b><span class="news-pill">ได้บ้างเสียบ้าง</span> ดีขึ้น 4 จุด แย่ลง 3 จุด แต่ปีอ่านถูกทุกปี</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ข้อจำกัด
+
+<div class="prose">
+
+- เทรนและวัดผลกับเอกสารพิมพ์ดีดจากแหล่งเดียว ถ้าเป็นเครื่องพิมพ์ดีดอื่น เครื่องสแกนอื่น หรืองานพิมพ์แบบอื่น อาจไม่ได้ดีขึ้น
+- ราชกิจจาฯ ตัวเรียงพิมพ์หน้าหนึ่ง มีแถววรรณยุกต์ที่หลุดออกจากบรรทัด แล้วถูกอ่านเป็น "ฬ ๐๘" โมเดลเดิมมั่นใจแค่ 79.4 ต่ำกว่าเกณฑ์ตัวกรองจุดสกปรก (80) นิดเดียว เลยถูกตัดทิ้ง แต่โมเดลนี้มั่นใจ 87 จึงหลุดออกมาให้เห็น
+- อ่านได้เฉพาะตัวพิมพ์เหมือนโมเดลเดิม ลายมือกับข้อความในภาพถ่ายทั่วไปยังไม่รองรับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## โหลดและใช้งาน
+
+<div class="prose">
+
+<div class="spec-list">
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-download" /></svg><div><b>ไฟล์ ONNX (2.4 MB)</b><code>hippocraft-thai-rec-v1.onnx</code> ใช้คู่กับรายการตัวอักษร <code>rec_dict.txt</code> ชุดเดิมของ OpenThai ส่วนขั้นหาบรรทัด (detection) ใช้ <code>det.onnx</code> ของ OpenThai ได้เลย</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-chip" /></svg><div><b>น้ำหนักสำหรับเทรนต่อ</b>ไฟล์ <code>.safetensors</code> อยู่ในโฟลเดอร์ pytorch</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-file" /></svg><div><b>คำอธิบายโมเดล</b>มีทั้งภาษาอังกฤษและภาษาไทย ส่วนภาพสแกนกับภาพที่ตัดไว้ใช้เทรน ผมไม่ได้แจกครับ</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-copy" /></svg><div><b>ใน HippoCraft</b>ใส่ไว้ในรุ่น th27.10 แล้ว ตอนนี้กำลังทดสอบกับหนังสือพระราชกฤษฎีกา 450 หน้า ยังไม่ได้ออกเป็นตัวติดตั้งให้โหลดครับ</div></div>
+</div>
+
+ลิขสิทธิ์: Copyright iApp Technology (OpenThai); PP-OCRv6 © PaddlePaddle Authors; modifications © 2026 DOJOJIN.TECH
+
+</div>
+
+<p class="hero-links"><a href="https://huggingface.co/dojojin/hippocraft-thai-ocr-rec" rel="noopener">ไปหน้าโมเดลบน Hugging Face</a><a href="/projects/hippocraft/">หน้าโปรเจกต์ HippoCraft</a></p>
+
+</section>
+
+<section class="section">
+
+## ขอบคุณ
+
+<div class="prose">
+
+ขอบคุณ iApp Technology / OpenThai ที่ทำโมเดลต้นฉบับ และเปิดน้ำหนักให้คนอื่นเทรนต่อได้ ขอบคุณ PaddlePaddle ที่ทำ PP-OCRv6 ซึ่งเป็นฐานของโมเดลนี้ และขอบคุณ Hugging Face ที่ให้พื้นที่แจกโมเดลครับ
+
+ใครลองแล้วเจอปัญหา หรืออยากเล่าว่าเอาไปใช้กับเอกสารแบบไหน บอกผมได้ที่ <a href="/guestbook/">Guestbook</a> ครับ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- HippoCraft Thai OCR recognizer v1 (model card, ผลทดสอบ, สัญญาอนุญาต): <a href="https://huggingface.co/dojojin/hippocraft-thai-ocr-rec" rel="noopener">huggingface.co/dojojin/hippocraft-thai-ocr-rec</a>
+- โมเดลต้นฉบับ OpenThai2.1-OCR-Text-20261118 โดย iApp Technology (Apache-2.0): <a href="https://huggingface.co/iapp/OpenThai2.1-OCR-Text-20261118" rel="noopener">huggingface.co/iapp</a>
+
+- **ที่มาของภาพ**
+  - ภาพเทียบผล: จาก model card ของ HippoCraft Thai OCR v1 · DOJOJIN.TECH ภาพสแกนมาจากราชกิจจานุเบกษา
+  - ภาพปก: DOJOJIN.TECH
+
+</div>
+
+</section>
