@@ -902,6 +902,18 @@ main[data-type="news"] .shot__more .shot__credit { font-size: var(--fs-caption);
 .tint { --tone: var(--tone-green); --tone-bg: var(--tone-green-bg); min-width: 0; padding: 0 var(--space-4) var(--space-4); border: 1.5px solid var(--tone); border-radius: var(--radius); background: var(--surface-elevated); color: var(--text-primary); overflow: hidden; }
 .tint--blue { --tone: var(--tone-blue); --tone-bg: var(--tone-blue-bg); }
 .tint--purple { --tone: var(--tone-purple); --tone-bg: var(--tone-purple-bg); }
+.tint--red { --tone: var(--tier-4-fg); --tone-bg: var(--tier-4-bg); }
+.tint--amber { --tone: var(--tier-3-fg); --tone-bg: var(--tier-3-bg); }
+.tint-grid--stack { grid-template-columns: minmax(0, 1fr); }
+.tint ul { margin: 0; padding-left: 1.25em; line-height: 1.7; }
+.tint ul li::marker { color: var(--tone); }
+.tint__sub { margin: 0; color: var(--text-secondary); font-size: var(--fs-caption); }
+.tint__foot { margin: var(--space-3) 0 0; padding-top: var(--space-2); border-top: 1px solid var(--border-hairline); }
+.tint-pills { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); margin: var(--space-3) 0 0; }
+.tint-pills span { padding: 0 var(--space-3); border: 1.5px solid var(--tone); border-radius: 99px; font-size: var(--fs-caption); font-weight: 600; line-height: 1.9; }
+.tint-pills span.is-new { background: var(--tone); color: var(--surface-elevated); }
+.tint-pills .tint-pills__label { padding: 0; border: 0; color: var(--text-secondary); }
+.tint-sum { text-align: center; }
 .tint > h3:first-child { margin: 0 calc(-1 * var(--space-4)) var(--space-3); padding: var(--space-2) var(--space-4); background: var(--tone-bg); color: var(--tone); font-size: var(--fs-body); letter-spacing: 0.02em; }
 .tint > :last-child { margin-bottom: 0; }
 .split > .tint { align-self: start; }
