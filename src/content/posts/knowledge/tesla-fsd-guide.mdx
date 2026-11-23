@@ -4,6 +4,7 @@ topic: car
 type: knowledge
 tags: [ev]
 date: 2026-11-23
+updated: 2026-11-23T19:30:00+07:00
 description: "FSD (Supervised) ของ Tesla ไม่ใช่รถขับเอง แต่เป็นระบบช่วยขับ Level 2 ที่คนขับต้องมองถนนตลอด อธิบายความต่างจากแผนที่นำทาง Cruise Control และ ACC ระดับ SAE 0-5 ไล่ประวัติตั้งแต่สิทธิบัตร Cruise Control ปี 2491 (ค.ศ. 1948) Autopilot ปี 2557 ถึง FSD v15 ของ พ.ย. 2569 สิ่งที่ Elon Musk แจกฟรีจริงกับที่ไม่ได้แจก ระบบช่วยขับของจีน และสถานะในไทย"
 kicker: "ความรู้ · ระบบช่วยขับ"
 lead: "FSD ของ Tesla ขับเองได้จริงไหม ต่างจากเปิด Google Maps นำทางยังไง แล้วที่ Elon Musk บอกว่า \"แจกฟรี\" แจกอะไรบ้าง ผมสรุปจากเอกสารของ Tesla หน่วยงานกำกับ และสื่อต่างประเทศ ไล่ตั้งแต่สิทธิบัตร Cruise Control ปี 2491 (ค.ศ. 1948) จนถึง FSD v15 ที่เริ่มทยอยปล่อยรอบแรกเมื่อ 21 พ.ย. 2569 (ตามเวลาสหรัฐฯ) แล้วเทียบกับฝั่งจีนและสถานะในไทยครับ"
@@ -264,7 +265,31 @@ Tesla เคยใส่ lidar แล้วถอดออกหรือเป�
 
 <div class="prose">
 
-ผมว่าเรื่องนี้ไม่ได้แปลว่ากล้องใช้ไม่ได้นะครับ คนเราก็ขับด้วยตา และตาเราก็มองไม่ค่อยเห็นตอนฝนหนักหรือแดดแยงเหมือนกัน ต่างกันตรงที่ระบบกล้องอย่างเดียว ถ้ากล้องมองไม่เห็น ก็ไม่มีเซนเซอร์อื่นมาช่วย ช่วงฝนตกหนักหรือกลางคืนถนนมืด เลยควรพร้อมจับพวงมาลัยมากกว่าปกติครับ
+### Tesla แก้ยังไง: Direct Photon Counting
+
+แล้ว Tesla ทำอะไรกับปัญหานี้บ้าง เรื่องที่ Tesla พูดถึงคือ "direct photon counting" ครับ
+
+ก่อนอื่นต้องรู้จัก ISP (Image Signal Processor) ก่อน มันคือชิปที่แปลงข้อมูลดิบจากเซนเซอร์กล้องให้กลายเป็นภาพสวย ๆ แบบที่เราเห็นในมือถือ ทั้งปรับสี ปรับแสง ลดจุดรบกวน ปัญหาคือภาพที่แต่งมาให้คนดู ไม่จำเป็นต้องดีที่สุดสำหรับคอมพิวเตอร์ ตอนแดดแยง ISP อาจทำให้ภาพขาวโพลนทั้งจอ
+
+วิธีของ Tesla คือข้าม ISP ไปเลย แล้วป้อนค่าแสงดิบที่เซนเซอร์นับได้เข้าโมเดลตรง ๆ เหมือนให้คอมพิวเตอร์อ่านตัวเลขจากเซนเซอร์เอง ไม่ต้องรอให้ใครแต่งภาพให้ก่อน
+
+</div>
+
+<div class="news-cards">
+<div class="news-card is-ok"><span class="news-pill">Tesla อ้าง</span><b>Elon Musk บอกว่าสู้แดดได้ เห็นในที่มืดมาก และในหมอกพอ ๆ กับคน</b>ในการประชุมผลประกอบการไตรมาส 1 ปี 2568 (22 เม.ย. 2568) Elon Musk บอกว่า Tesla เลือก "go with direct photon counting and bypass the image signal processor" (ใช้การนับโฟตอนตรง ๆ และข้ามตัวประมวลผลภาพไป) แล้ว "you can drive pretty much straight at the sun, and you can also see in what appears to be the blackest of night" (ขับสวนแดดได้ และเห็นในที่ที่ดูมืดสนิท) ส่วนหมอก "we can see as well as people can, probably better" (เห็นได้พอ ๆ กับคน หรืออาจดีกว่า) ทั้งหมดนี้เป็นคำของ Elon Musk เอง และในคำพูดนี้ไม่มีเรื่องฝน</div>
+<div class="news-card is-warn"><span class="news-pill">NHTSA</span><b>NHTSA ยังขอหลักฐานอยู่</b>ในเอกสารปิดการสอบสวนขั้นต้น (18 มี.ค. 2569) NHTSA เขียนว่า "does not have information on when the update was deployed and which vehicles have the updated system" (ไม่มีข้อมูลว่าอัปเดตนี้ปล่อยเมื่อไหร่ และรถคันไหนได้) ต่อมา 2 ก.ค. 2569 NHTSA ส่งหนังสือขอข้อมูลในการสอบสวนเชิงลึก EA26002 ให้ Tesla อธิบายว่าระบบนี้ลดปัญหาแสงจ้า หมอก และฝุ่นได้แค่ไหน และรถฮาร์ดแวร์รุ่นไหนเปิดใช้แล้ว ณ 23 พ.ย. 2569 การสอบสวนนี้ยังไม่ปิด</div>
+<div class="news-card"><span class="news-pill">ยังไม่รู้</span><b>รถรุ่นไหนได้ และฝนช่วยได้แค่ไหน</b>Tesla ยังไม่ได้บอกต่อสาธารณะว่าใช้กับคอมพิวเตอร์ HW3 หรือ HW4 และ FSD เวอร์ชันไหน ในการประชุมไตรมาส 1 ปี 2569 Elon Musk ตอบเพียงว่า "we did change the cameras some months ago" (เปลี่ยนกล้องไปหลายเดือนแล้ว) และ "The NHTSA filing is referring to older vehicles" (เอกสารของ NHTSA พูดถึงรถรุ่นเก่า) ส่วนผลทดสอบอิสระเรื่องฝนหรือหมอกที่ใช้เทคนิคนี้ ยังไม่พบ</div>
+</div>
+
+<div class="prose">
+
+ผมว่า Tesla แก้ถูกจุดในเรื่องแสงจ้ากับความมืด เพราะสองเรื่องนี้คือข้อมูลที่ ISP ทิ้งไปจริง แต่หมอกกับฝนหนักเป็นอีกเรื่องครับ ละอองน้ำบังและกระจายแสงตั้งแต่ก่อนแสงจะถึงเลนส์ อ่านข้อมูลดิบเก่งแค่ไหนก็ได้แสงเท่าที่ผ่านมาถึงเท่านั้น ตรงนี้เป็นความเห็นผมนะครับ ไม่ใช่ผลทดสอบ
+
+</div>
+
+<div class="prose">
+
+สรุปแล้วผมว่าเรื่องนี้ไม่ได้แปลว่ากล้องใช้ไม่ได้นะครับ คนเราก็ขับด้วยตา และตาเราก็มองไม่ค่อยเห็นตอนฝนหนักหรือแดดแยงเหมือนกัน ต่างกันตรงที่ระบบกล้องอย่างเดียว ถ้ากล้องมองไม่เห็น ก็ไม่มีเซนเซอร์อื่นมาช่วย ช่วงฝนตกหนักหรือกลางคืนถนนมืด เลยควรพร้อมจับพวงมาลัยมากกว่าปกติครับ
 
 </div>
 
@@ -957,7 +982,7 @@ v15 เริ่มทยอยปล่อยรอบแรกเมื่อ 
 - Electrek (Elon Musk เรื่อง sensor contention และเรดาร์ความละเอียดสูง, 28 ส.ค. 2568): <a href="https://electrek.co/2025/08/28/elon-musk-lying-tesla-self-driving-dms-prove-it/" rel="noopener">electrek.co</a>
 - Notebookcheck (เรดาร์ใน Model S/X HW4): <a href="https://www.notebookcheck.net/Tesla-Hardware-4-0-radar-kit-gets-torn-down-as-HW4-models-gain-Park-Assist-at-long-last.725568.0.html" rel="noopener">notebookcheck.net</a>
 - InsideEVs (เรดาร์ใน Model X HW4): <a href="https://insideevs.com/news/671961/tesla-model-x-hardware-4-radar-confirmed/" rel="noopener">insideevs.com</a>
-- NHTSA PE24031 (ปิดและยกระดับ 18 มี.ค. 2569): <a href="https://static.nhtsa.gov/odi/inv/2026/INCLA-PE24031-87755.pdf" rel="noopener">nhtsa.gov</a>
+- NHTSA PE24031 (ปิดและยกระดับ 18 มี.ค. 2569): <a href="https://static.nhtsa.gov/odi/inv/2024/INCLA-PE24031-87755.pdf" rel="noopener">nhtsa.gov</a>
 - AAA ทดสอบระบบเบรกหลบคนเดินถนน (ต.ค. 2562): <a href="https://newsroom.aaa.com/2019/10/aaa-warns-pedestrian-detection-systems-dont-work-when-needed-most/" rel="noopener">newsroom.aaa.com</a>
 - AAA ทดสอบซ้ำ (ต.ค. 2568): <a href="https://info.oregon.aaa.com/wp-content/uploads/2025/10/Fact-Sheet-AAA-Pedestrian-AEB-Effectiveness_FINAL-10.2025.pdf" rel="noopener">aaa.com</a>
 - Waymo เทคโนโลยีเซนเซอร์: <a href="https://waymo.com/tech" rel="noopener">waymo.com</a>
@@ -1006,6 +1031,9 @@ v15 เริ่มทยอยปล่อยรอบแรกเมื่อ 
 - CarNewsChina (Huawei NCA ไม่ใช้ HD map, ก.พ. 2567): <a href="https://carnewschina.com/2024/02/01/huawei-aito-launched-the-first-batch-of-map-free-nca-in-all-cities-in-china/" rel="noopener">carnewschina.com</a>
 - Gasgoo (Xiaomi SU7 NOA ในเมือง, มิ.ย. 2567): <a href="https://autonews.gasgoo.com/articles/icv/xiaomi-su7-to-roll-out-urban-noa-feature-in-ten-cities-70033308" rel="noopener">gasgoo.com</a>
 - CnEVPost (Li Auto OTA 6.0, ก.ค. 2567): <a href="https://cnevpost.com/2024/07/15/li-auto-brings-hd-map-free-noa-software-update" rel="noopener">cnevpost.com</a>
+- บันทึกคำพูดการประชุมผลประกอบการ Tesla ไตรมาส 1 ปี 2568 (Rev, 22 เม.ย. 2568): <a href="https://www.rev.com/transcripts/tesla-q1-2025-earnings-call" rel="noopener">rev.com</a>
+- บันทึกคำพูดการประชุมผลประกอบการ Tesla ไตรมาส 1 ปี 2569: <a href="https://stockanalysis.com/stocks/tsla/transcripts/547944-q1-2026/" rel="noopener">stockanalysis.com</a>
+- NHTSA หนังสือขอข้อมูล EA26002 (2 ก.ค. 2569): <a href="https://static.nhtsa.gov/odi/inv/2026/INIM-EA26002-14414.pdf" rel="noopener">static.nhtsa.gov</a>
 </div>
 
 </section>

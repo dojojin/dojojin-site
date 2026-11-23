@@ -5,7 +5,7 @@ import { ATLASES } from '../data/atlases.js';
 
 export async function getFeed(type, tag) {
   const posts = (await getCollection('posts', (p) => !p.data.draft)).map((p) => ({
-    href: `/${p.id}/`, title: p.data.title, topic: p.data.topic, type: p.data.type, tags: p.data.tags, date: p.data.bumped ?? p.data.date, bumped: !!p.data.bumped, reading: p.data.reading, news: [p.data.pr && 'pr', p.data.section].filter(Boolean),
+    href: `/${p.id}/`, title: p.data.title, topic: p.data.topic, type: p.data.type, tags: p.data.tags, date: p.data.bumped ?? p.data.date, bumped: !!p.data.bumped, pinned: !!p.data.pinned, reading: p.data.reading, news: [p.data.pr && 'pr', p.data.section].filter(Boolean),
     cover: p.data.cover, coverW: 1600, coverH: 1200, sub: p.data.description,
   }));
   const atlases = ATLASES.map((a) => ({
@@ -13,7 +13,7 @@ export async function getFeed(type, tag) {
     cover: `/${a.type}/${a.slug}/og.png`, coverW: 1200, coverH: 630,
     sub: `${a.models} รุ่น · ${a.years} · ราคาไทย ฿${a.thbMin.toLocaleString('en-US')}–฿${a.thbMax.toLocaleString('en-US')}`,
   }));
-  return [...posts, ...atlases].filter((i) => (!type || i.type === type) && (!tag || i.tags.includes(tag))).sort((a, b) => b.date - a.date);
+  return [...posts, ...atlases].filter((i) => (!type || i.type === type) && (!tag || i.tags.includes(tag))).sort((a, b) => (b.pinned ?? false) - (a.pinned ?? false) || b.date - a.date);
 }
 
 // App recommendations (news section "app") must not crowd out the news in mixed lists: at most every 4th item is an
