@@ -114,8 +114,38 @@ const TEXT_FIXES = {
     ['col_usd">US price</th>', 'col_usd">ราคาจีน (หยวน)</th>'],
   ],
 };
+// Chart hint for every atlas: the original only talks about mouse hover; on phones a tap opens the model.
+const HINT_FIXES = [
+  ['Hover for details. Click a bar or dot to open the model. Scroll sideways on narrow screens.',
+   'Hover for details (mouse). Tap or click a bar or dot to open the model. On phones, swipe sideways to see other years.'],
+  ['ชี้ที่กราฟเพื่อดูรายละเอียด คลิกแท่งหรือจุดเพื่อเปิดรุ่นนั้น บนจอแคบเลื่อนซ้ายขวาได้',
+   'ชี้เมาส์ที่กราฟเพื่อดูรายละเอียด แตะหรือคลิกแท่ง/จุดเพื่อเปิดรุ่นนั้น บนมือถือปัดซ้าย-ขวาเพื่อดูปีอื่น'],
+];
+// CLS: the static markup ships English text that the atlas swaps for Thai (its default) after its big script runs,
+// so headings re-wrap and push the page. Pre-fill every empty-of-tags [data-i18n] element with the Thai string.
+function prefillThai(html, slug) {
+  const at = html.search(/\bth\s*:\s*\{/);
+  if (at < 0) throw new Error(`${slug}: Thai i18n dictionary not found`);
+  const open = html.indexOf('{', at);
+  let depth = 0, k = open, inStr = false;
+  for (; k < html.length; k++) {
+    const c = html[k];
+    if (inStr) { if (c === '\\') k++; else if (c === '"') inStr = false; continue; }
+    if (c === '"') inStr = true; else if (c === '{') depth++; else if (c === '}' && --depth === 0) break;
+  }
+  const dict = {};
+  for (const m of html.slice(open, k).matchAll(/(\w+)\s*:\s*"((?:[^"\\]|\\.)*)"/g)) dict[m[1]] = JSON.parse(`"${m[2]}"`);
+  const bodyAt = html.search(/<body[^>]*>/i);
+  let n = 0;
+  const body = html.slice(bodyAt).replace(/(<(\w+)[^>]*\sdata-i18n="(\w+)"[^>]*>)([^<]*)(<\/\2>)/g, (all, openTag, tag, key, text, close) => {
+    if (dict[key] === undefined) return all;
+    n++; return openTag + esc(dict[key]).replace(/&quot;/g, '"') + close;
+  });
+  if (!n) throw new Error(`${slug}: no [data-i18n] text pre-filled`);
+  return html.slice(0, bodyAt) + body;
+}
 function patchText(html, slug) {
-  for (const [from, to] of TEXT_FIXES[slug] || []) {
+  for (const [from, to] of [...(TEXT_FIXES[slug] || []), ...HINT_FIXES]) {
     if (!html.includes(from)) throw new Error(`${slug}: text to fix not found: ${from.slice(0, 60)}`);
     html = html.split(from).join(to);
   }
@@ -180,7 +210,108 @@ html { scroll-padding-top: calc(var(--dj-h, 0px) + 72px); }
   .dj-nav { width: 100%; flex-wrap: wrap; overflow: visible; margin-left: -12px; }
   .dj-nav a { padding: 4px 8px; }
 }
+
+/* ---------- dojojin.tech redesign layer (owner 2026-11-24: livelier, same data density) ----------
+   Only colour, spacing, sticky/scroll behaviour and transform/opacity motion — nothing that moves layout after load (CLS). */
+/* CLS: on a slow connection the browser paints the hero before the atlas script has filled #stats / #chart-box
+   (0.61 desktop / 0.44 phone on the original page). Reserve their space up front; values = tallest rendered height
+   measured on all three atlases at 360-1920 px (2026-11-24). */
+#stats { min-height: 124px; } #chart-box { min-height: 488px; } #fam-chips { min-height: 29px; } #chart-legend { min-height: 32px; }
+@media (min-width: 1600px) { #stats { min-height: 100px; } }
+@media (max-width: 1100px) { #stats { min-height: 135px; } }
+@media (max-width: 768px) { #fam-chips { min-height: 64px; } #chart-legend { min-height: 66px; } }
+@media (max-width: 760px) { #stats { min-height: 230px; } }
+.hero { position: relative; }
+.hero::before { content: ""; position: absolute; inset: 0 0 auto; height: 100%; z-index: -1; pointer-events: none;
+  background: radial-gradient(80% 120% at 0% 0%, var(--accent-soft), transparent 60%), radial-gradient(60% 90% at 100% 0%, #fff4d6, transparent 55%); }
+.eyebrow { display: inline-block; padding: 3px 10px; border-radius: 999px; background: var(--sheet); border: 1px solid var(--rule); color: var(--accent); }
+.stats { background: transparent; border: 0; gap: 10px; overflow: visible; }
+.stat { border: 1px solid var(--rule); border-radius: var(--r); border-top: 3px solid var(--accent); box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+.stat:nth-child(2) { border-top-color: #f7c433; } .stat:nth-child(3) { border-top-color: #2c66a8; } .stat:nth-child(4) { border-top-color: #b4561f; }
+.stat b { font-size: clamp(22px, 2.4vw, 30px); color: var(--ink); }
+.sec-head h2 { display: flex; align-items: center; gap: 10px; }
+.sec-head h2::before { content: ""; width: 6px; height: 1.1em; border-radius: 3px; background: linear-gradient(var(--accent), #f7c433); flex: none; }
+.sheet { box-shadow: 0 1px 2px rgba(0,0,0,.03); }
+/* chart: fade the scroll edges so it is obvious the chart continues sideways */
+.chart-box { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 14px, #000 calc(100% - 28px), transparent);
+  mask-image: linear-gradient(90deg, transparent 0, #000 14px, #000 calc(100% - 28px), transparent); scroll-behavior: smooth; }
+.tabs button { border-radius: 8px 8px 0 0; transition: background .15s, color .15s; }
+.tabs button:hover { background: var(--band); }
+.tabs button[aria-selected="true"] { color: var(--accent); border-bottom-width: 3px; }
+/* model cards: lift on hover, bigger compare button */
+.card { transition: transform .18s ease, box-shadow .18s ease, border-color .18s; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.08); border-color: var(--accent); background: var(--sheet); }
+.card-ph { transition: transform .25s ease; }
+.card:hover .card-ph { transform: scale(1.06) rotate(-2deg); }
+.card .cmp { min-width: 26px; min-height: 22px; display: inline-flex; align-items: center; justify-content: center; }
+.card .nm { padding-right: 34px; }
+.dj-n { display: block; margin-top: 2px; font-family: var(--body); font-size: 12px; color: var(--accent); font-weight: 600; }
+/* tables: keep the model column readable while scrolling sideways */
+.pill { white-space: nowrap; }
+#ptable tbody td:first-child, #ptable thead th:first-child { position: sticky; left: 0; background: var(--sheet); z-index: 1; }
+#ptable thead th:first-child { background: var(--band); z-index: 2; }
+#ptable tbody tr:hover td { background: var(--accent-soft); }
+.tray .go { white-space: nowrap; }
+/* section menu: highlight the section being read */
+.nav a.dj-on { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+/* reveal on scroll (only after the script marks the page; reduced motion = no animation) */
+.dj-js .dj-rv { opacity: 0; transform: translateY(18px); transition: opacity .5s ease, transform .5s ease; }
+.dj-js .dj-rv.dj-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .dj-js .dj-rv { opacity: 1; transform: none; transition: none; } .card, .card-ph { transition: none; } }
+@media (max-width: 760px) {
+  /* phones: the site bar scrolls away; the atlas's section menu stays pinned as one swipeable row */
+  .dj-bar { position: static; }
+  .bar { position: sticky !important; top: 0 !important; }
+  .bar .wrap { flex-wrap: nowrap; min-height: 46px; gap: 8px; }
+  .bar .brand { display: none; }
+  .bar .nav { order: 0; flex: 1 1 auto; }
+  html { scroll-padding-top: 58px; }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  /* models: each year is a swipeable row of cards instead of a long list */
+  .year-row .cards { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 82%; overflow-x: auto;
+    scroll-snap-type: x mandatory; padding-bottom: 6px; scrollbar-width: thin; }
+  .year-row .card { scroll-snap-align: start; }
+  .d-head h2 { flex: 1 1 100%; }
+  .card .cmp { min-width: 32px; min-height: 28px; font-size: 13px; }
+}
 `;
+
+/* Small enhancement script (no data changes): reveal-on-scroll, section highlight, charts open at the latest year,
+   model count per year. Everything re-applies when the atlas re-renders (language switch, filters). */
+const PATCH_JS = `(() => {
+  const d = document, reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // reveal blocks below the first screen
+  if (!reduce && 'IntersectionObserver' in window) {
+    d.documentElement.classList.add('dj-js');
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('dj-in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+    d.querySelectorAll('main section .sec-head, main section .sheet, main section .ops').forEach((el) => {
+      if (el.getBoundingClientRect().top > innerHeight) { el.classList.add('dj-rv'); io.observe(el); }
+    });
+  }
+  // highlight the section being read in the atlas menu and keep it in view
+  const nav = d.querySelector('.bar .nav'), links = nav ? [...nav.querySelectorAll('a[href^="#"]')] : [];
+  const secs = links.map((a) => d.querySelector(a.getAttribute('href'))).filter(Boolean);
+  let cur = null;
+  const spy = () => {
+    let on = secs[0];
+    for (const s of secs) if (s.getBoundingClientRect().top < innerHeight * 0.35) on = s;
+    if (on === cur) return; cur = on;
+    links.forEach((a) => { const hit = a.getAttribute('href') === '#' + on.id; a.classList.toggle('dj-on', hit);
+      if (hit && nav.scrollWidth > nav.clientWidth) nav.scrollTo({ left: a.offsetLeft - nav.clientWidth / 2 + a.offsetWidth / 2, behavior: reduce ? 'auto' : 'smooth' }); });
+  };
+  addEventListener('scroll', () => requestAnimationFrame(spy), { passive: true }); spy();
+  // charts that run in time order open at the newest models (right end); the price-sorted view stays at the start
+  const box = d.getElementById('chart-box');
+  const toEnd = () => { const t = d.querySelector('.tabs [aria-selected="true"]'); if (!box || (t && t.dataset.view === 'sorted')) return;
+    box.style.scrollBehavior = 'auto'; box.scrollLeft = box.scrollWidth; box.style.scrollBehavior = ''; };
+  if (box) { new MutationObserver(toEnd).observe(box, { childList: true }); toEnd(); }
+  // "n รุ่น" next to each year in the model index
+  const years = d.getElementById('years');
+  const count = () => years.querySelectorAll('.year-row').forEach((r) => { const h = r.querySelector('h3');
+    if (!h || h.querySelector('.dj-n')) return; const n = r.querySelectorAll('.card').length;
+    h.insertAdjacentHTML('beforeend', '<span class="dj-n">' + n + (d.documentElement.lang === 'th' ? ' รุ่น' : n > 1 ? ' models' : ' model') + '</span>'); });
+  if (years) { new MutationObserver(count).observe(years, { childList: true }); count(); }
+})();`;
 
 const topBar = (active) => `
 <div class="dj-bar">
@@ -230,7 +361,7 @@ function patchPage(html, a) {
   html = html.replace(/<\/head>/i, `${head}</head>`);
   html = html.replace(/<body([^>]*)>/i, (m) => `${m}${topBar(a.type)}`);
   if (!/<\/body>/i.test(html)) throw new Error(`${a.slug}: no </body>`);
-  html = html.replace(/<\/body>(?![\s\S]*<\/body>)/i, () => `<script type="module" id="dojojin-counter">${COUNTER}</script>\n</body>`);
+  html = html.replace(/<\/body>(?![\s\S]*<\/body>)/i, () => `<script id="dojojin-ui">${PATCH_JS}</script>\n<script type="module" id="dojojin-counter">${COUNTER}</script>\n</body>`);
   // the atlas's own section menu: add a direct link to the photo credits
   const navEnd = html.indexOf('</nav>', html.indexOf('class="nav"'));
   if (navEnd < 0) throw new Error(`${a.slug}: atlas nav not found`);
@@ -242,7 +373,7 @@ for (const a of ATLASES) {
   const out = `public/${a.type}/${a.slug}`;
   mkdirSync(out, { recursive: true });
   const { html: data, models, count } = patchData(readFileSync(`_sources/data/${a.slug}.html`, 'utf8'), a.slug);
-  const html = patchPage(patchText(data, a.slug), a);
+  const html = patchPage(prefillThai(patchText(data, a.slug), a.slug), a);
   writeFileSync(`${out}/index.html`, html);
   copyFileSync(`_sources/data/${a.slug}.og.png`, `${out}/og.png`);
   const s = stats(models);

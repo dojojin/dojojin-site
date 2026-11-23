@@ -229,5 +229,285 @@
     "source": "https://droidsans.com/samsung-galaxy-s21-fe-officially-launched/",
     "snippet": "รุ่น RAM 8GB + ROM 128GB ราคา 22,900 บาท",
     "checked": "2026-11-16, source fetched and quoted (audit agent)"
+  },
+  {
+    "id": "galaxy-s21-fe",
+    "path": "th_launch",
+    "op": "set",
+    "old": "2022-01-24",
+    "new": "2022-01-11",
+    "why": "Thai sale started 11 Jan 2022 (\"available from today\"), not 24 Jan.",
+    "source": "https://www.checkraka.com/mobilephone/news/129684",
+    "snippet": "Galaxy S21 FE 5G ที่มาพร้อมกับราคาสุดคุ้มที่ 22,900 บาท (128GB) และ 25,900 บาท (256GB) ได้แล้วตั้งแต่วันนี้ (page dated 11 ม.ค. 65)",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "galaxy-s21-fe",
+    "path": "th_channel",
+    "op": "set",
+    "old": "Sale 24 Jan 2022 at Samsung Experience Store and samsung.com/th",
+    "new": "On sale 11 Jan 2022 (Samsung TH launch day; checkraka \"ได้แล้วตั้งแต่วันนี้\")",
+    "why": "Channel text carried the old 24 Jan date.",
+    "source": "https://www.checkraka.com/mobilephone/news/129684",
+    "snippet": "พร้อมวางจำหน่ายแล้ววันนี้ เริ่มที่ 22,900 บาท 11 ม.ค. 65",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "galaxy-s22",
+    "path": "price_flags",
+    "op": "set",
+    "old": "Thai variant Exynos 2200.",
+    "new": "Thai models are Snapdragon 8 Gen 1 (Samsung TH: all three S22 models).",
+    "why": "Note said \"Thai variant Exynos 2200\", contradicting soc/thai_variant and Samsung TH.",
+    "source": "https://news.samsung.com/th/galaxy-s22-series-pre-order-price-annoucement",
+    "snippet": "Galaxy S22 | S22+ | S22 Ultra โดยทุกรุ่นมาพร้อมชิปเซ็ต Snapdragon 8 Gen 1 ขนาด 4 นาโนเมตร",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "galaxy-s20-ultra",
+    "path": "cell.thai_variant",
+    "op": "set",
+    "old": "SM-G988B/DS (Galaxy S20 Ultra 5G, Exynos 990 + Exynos Modem 5123); Thailand got only the 5G Ultra, sold by Samsung, AIS and TrueMove H from May 2020 (SamMobile)",
+    "new": "SM-G988B/DS (Galaxy S20 Ultra 5G, Exynos 990 + Exynos Modem 5123); Thailand got only the 5G Ultra, sold by Samsung, AIS and TrueMove H from 6 Mar 2020 (AIS nationwide sale)",
+    "why": "Text said Thai sale from May 2020; AIS sold it nationwide from 6 Mar 2020 (matches th_launch 2020-03).",
+    "source": "https://www.telecomlover.com/2020/03/05/s205gais/",
+    "snippet": "เปิดวางจำหน่าย Samsung Galaxy S20 Ultra 5G สมาร์ทโฟน 5G เรือธงระดับโลก พร้อมกันทั่วประเทศ ในวันที่ 6 มีนาคม 2563 ที่เอไอเอสช็อปทุกสาขา",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "galaxy-s23-fe",
+    "path": "price_flags",
+    "op": "set",
+    "old": "US variant Snapdragon 8 Gen 1; Thai variant Exynos 2200.",
+    "new": "US variant Snapdragon 8 Gen 1; Thai variant Exynos 2200. US prices shown are the announced/carrier prices; Samsung.com sold the unlocked phone for $629 (128GB) / $689 (256GB) at its 26 Oct 2023 US launch (+$30).",
+    "why": "Add the Samsung.com unlocked launch price (owner: keep numbers, add note).",
+    "source": "https://sammobile.com/news/samsung-galaxy-s23-fe-now-available-usa",
+    "snippet": "you can buy the Galaxy S23 FE in the USA for $629. That price tag belongs to the 128GB model. ... the 256GB variant ... It costs $689.",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "galaxy-s26",
+    "path": "released",
+    "op": "set",
+    "old": "2026-03-11 (Thailand; GSMArena lists 2026-03-06 globally)",
+    "new": "2026-03-11",
+    "why": "Date field held free text; Samsung Global Newsroom: series on sale from 11 Mar 2026 (GSMArena 6 Mar was wrong).",
+    "source": "https://news.samsung.com/global/samsung-galaxy-s26-series-and-galaxy-buds4-series-now-available",
+    "snippet": "Starting March 11, the Galaxy S26 series is available through carriers, retailers and Samsung.com",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "galaxy-s26-plus",
+    "path": "released",
+    "op": "set",
+    "old": "2026-03-11 (Thailand)",
+    "new": "2026-03-11",
+    "why": "Date field held free text; Samsung Global Newsroom: series on sale from 11 Mar 2026 (GSMArena 6 Mar was wrong).",
+    "source": "https://news.samsung.com/global/samsung-galaxy-s26-series-and-galaxy-buds4-series-now-available",
+    "snippet": "Starting March 11, the Galaxy S26 series is available through carriers, retailers and Samsung.com",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "galaxy-s26-ultra",
+    "path": "released",
+    "op": "set",
+    "old": "2026-03-11 (Thailand; GSMArena 2026-03-06)",
+    "new": "2026-03-11",
+    "why": "Date field held free text; Samsung Global Newsroom: series on sale from 11 Mar 2026 (GSMArena 6 Mar was wrong).",
+    "source": "https://news.samsung.com/global/samsung-galaxy-s26-series-and-galaxy-buds4-series-now-available",
+    "snippet": "Starting March 11, the Galaxy S26 series is available through carriers, retailers and Samsung.com",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "galaxy-s22",
+    "path": "th_launch",
+    "op": "set",
+    "old": "2022-03",
+    "new": "2022-03-04",
+    "why": "Samsung TH: S22 series on general sale from 4 Mar 2022 (page published 2022-03-04).",
+    "source": "https://news.samsung.com/th/samsung-galaxy-s22-series-pre-order-success-story",
+    "snippet": "Galaxy S22 Series เปิดวางจำหน่ายอย่างเป็นทางการแล้วตั้งแต่วันนี้เป็นต้นไป (04-03-2022)",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "galaxy-s22-plus",
+    "path": "th_launch",
+    "op": "set",
+    "old": "2022-03",
+    "new": "2022-03-04",
+    "why": "Samsung TH: S22 series on general sale from 4 Mar 2022 (page published 2022-03-04).",
+    "source": "https://news.samsung.com/th/samsung-galaxy-s22-series-pre-order-success-story",
+    "snippet": "Galaxy S22 Series เปิดวางจำหน่ายอย่างเป็นทางการแล้วตั้งแต่วันนี้เป็นต้นไป (04-03-2022)",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "galaxy-s22-ultra",
+    "path": "th_launch",
+    "op": "set",
+    "old": "2022-03",
+    "new": "2022-03-04",
+    "why": "Samsung TH: S22 series on general sale from 4 Mar 2022 (page published 2022-03-04).",
+    "source": "https://news.samsung.com/th/samsung-galaxy-s22-series-pre-order-success-story",
+    "snippet": "Galaxy S22 Series เปิดวางจำหน่ายอย่างเป็นทางการแล้วตั้งแต่วันนี้เป็นต้นไป (04-03-2022)",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "galaxy-s22",
+    "path": "th_channel",
+    "op": "set",
+    "old": "Pre-order 10 Feb–3 Mar 2022 (Samsung TH); general sale date not stated",
+    "new": "Pre-order 10 Feb–3 Mar 2022 (Samsung TH); general sale from 4 Mar 2022",
+    "why": "General sale date now known.",
+    "source": "https://news.samsung.com/th/samsung-galaxy-s22-series-pre-order-success-story",
+    "snippet": "Galaxy S22 Series เปิดวางจำหน่ายอย่างเป็นทางการแล้วตั้งแต่วันนี้เป็นต้นไป",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "galaxy-s8",
+    "path": "th_launch",
+    "op": "set",
+    "old": "2017-04-28",
+    "new": "2017-05-05",
+    "why": "th_launch = first general retail day (owner rule); 28-30 Apr was pre-order pickup. Nationwide sale 5 May 2017.",
+    "source": "https://www.checkraka.com/mobilephone/news/107974",
+    "snippet": "Samsung เปิดตัว Galaxy S8 และ Galaxy S8+ ในประเทศไทย ขายจริงทั่วประเทศ 5 พฤษภาคม!",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "galaxy-s8-plus",
+    "path": "th_launch",
+    "op": "set",
+    "old": "2017-04-28",
+    "new": "2017-05-05",
+    "why": "th_launch = first general retail day (owner rule); 28-30 Apr was pre-order pickup. Nationwide sale 5 May 2017.",
+    "source": "https://www.checkraka.com/mobilephone/news/107974",
+    "snippet": "Samsung เปิดตัว Galaxy S8 และ Galaxy S8+ ในประเทศไทย ขายจริงทั่วประเทศ 5 พฤษภาคม!",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "galaxy-s8",
+    "path": "th_channel",
+    "op": "set",
+    "old": "Pre-order 18–23 Apr 2017 (samsung.com/th + Samsung stores), pickup 28–30 Apr",
+    "new": "Pre-order 18–23 Apr 2017 (samsung.com/th + Samsung stores), pickup 28–30 Apr; nationwide sale from 5 May 2017",
+    "why": "Add the general sale day.",
+    "source": "https://www.checkraka.com/mobilephone/news/107974",
+    "snippet": "วางขายจริงทั่วประเทศในวันที่ 5 พฤษภาคม",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "galaxy-s8-plus",
+    "path": "th_channel",
+    "op": "set",
+    "old": "Pre-order 18–23 Apr 2017, pickup 28–30 Apr",
+    "new": "Pre-order 18–23 Apr 2017, pickup 28–30 Apr; nationwide sale from 5 May 2017",
+    "why": "Add the general sale day.",
+    "source": "https://www.checkraka.com/mobilephone/news/107974",
+    "snippet": "วางขายจริงทั่วประเทศในวันที่ 5 พฤษภาคม",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "galaxy-s",
+    "path": "tiers[gb=16].thb",
+    "op": "set",
+    "old": null,
+    "new": 22898,
+    "why": "Samsung sold the Galaxy S in Thailand through AIS at 22,898 THB incl. VAT (14,300 on Siamphone is a later average price).",
+    "source": "https://web.archive.org/web/2012/https://www.blognone.com/news/16849/",
+    "snippet": "สำหรับในเมืองไทย ซัมซุงขายผ่าน AIS ในราคา 22,898 รว(ม VAT) (Blognone, 21 Jun 2010)",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "galaxy-s",
+    "path": "price_flags",
+    "op": "set",
+    "old": "THB unverified: siamphone spec page shows 14,300 with an implausible 25 Mar 2010 sale date (before global release), so treated as a later street price, not launch. US: no unlocked I9000; carrier variants Captivate (AT&T, $199.99 2-yr contract, Jul 2010), Vibrant (T-Mobile, $199.99 contract), Epic 4G (Sprint $249.99), Fascinate (Verizon $199.99). Thai unit was 8GB/16GB GT-I9000.",
+    "new": "Thai launch price 22,898 THB incl. VAT via AIS (Blognone 21 Jun 2010, already on sale); exact first sale day not found. Siamphone 14,300 is a later average price. US: no unlocked I9000; carrier variants Captivate (AT&T, $199.99 2-yr contract, Jul 2010), Vibrant (T-Mobile, $199.99 contract), Epic 4G (Sprint $249.99), Fascinate (Verizon $199.99). Thai unit was 8GB/16GB GT-I9000.",
+    "why": "Record the sourced Thai price.",
+    "source": "https://web.archive.org/web/2012/https://www.blognone.com/news/16849/",
+    "snippet": "สำหรับในเมืองไทย ซัมซุงขายผ่าน AIS ในราคา 22,898",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "galaxy-s",
+    "path": "price_sources",
+    "op": "set",
+    "old": [
+      "https://www.siamphone.com/spec/samsung/i9000_galaxy_s.htm"
+    ],
+    "new": [
+      "https://web.archive.org/web/2012/https://www.blognone.com/news/16849/",
+      "https://www.siamphone.com/spec/samsung/i9000_galaxy_s.htm"
+    ],
+    "why": "Add the Thai price source.",
+    "source": "https://web.archive.org/web/2012/https://www.blognone.com/news/16849/",
+    "snippet": "ซัมซุงขายผ่าน AIS ในราคา 22,898",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "galaxy-s6-edge-plus",
+    "path": "tiers[gb=64].thb",
+    "op": "set",
+    "old": 29900,
+    "new": null,
+    "why": "29,900 was a pre-launch leak; Samsung TH launched at 26,900 and no official 64GB Thai price was found.",
+    "source": "https://droidsans.com/samsung-galaxy-s6edge-plus-price-spec/",
+    "snippet": "ก่อนหน้านี้มีข่าวหลุดราคาที่เว่อร์วังพุ่งปรี๊ดขึ้นไปสูงถึง 29,900 บาทเลยทีเดียว แต่สุดท้ายก็จบออกมาที่ ร(าคา 26,900)",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "galaxy-s6-edge-plus",
+    "path": "th_launch",
+    "op": "set",
+    "old": "2015-09-25",
+    "new": "2015-09-24",
+    "why": "On sale in Thailand from 24 Sep 2015.",
+    "source": "https://www.iphone-droid.net/samsung-galaxy-s6-edge-plus-for-26900thb/",
+    "snippet": "Samsung Galaxy S6 edge+ ประกาศราคาอย่างเป็นทางการแล้ว 26,900 บาท เริ่มวางจำหน่ายในไทยแล้ววันนี้ (24 ก.ย. 2015)",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "galaxy-s6-edge-plus",
+    "path": "th_channel",
+    "op": "set",
+    "old": "Samsung TH dealers + AIS/dtac/TrueMove H from 25 Sep 2015",
+    "new": "Samsung TH dealers + AIS/dtac/TrueMove H from 24 Sep 2015",
+    "why": "Date corrected.",
+    "source": "https://droidsans.com/samsung-galaxy-s6edge-plus-price-spec/",
+    "snippet": "Samsung Galaxy S6 Edge Plus เปิดขายแล้ววันนี้ในราคา 26,900 บาท (Posted on September 24, 2015)",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "galaxy-s6-edge-plus",
+    "path": "price_flags",
+    "op": "set",
+    "old": "CONFLICT: Blognone (21 Sep 2015, Samsung TH announcement) gives a single 29,900; Thaimobilecenter (25 Sep, sale day) gives 26,900 for 32GB; Siamphone (Feb 2016) calls 26,900 the standard price; Checkraka (Oct 2015 Mobile Expo) shows 26,900 special 'from 29,900'. Best reading: 32GB 26,900 / 64GB 29,900. US: no unlocked at launch; T-Mobile-level full retail ~$779.99/$879.99 (AT&T ~$815, Verizon ~$768).",
+    "new": "Thai launch 26,900 THB (32GB), on sale 24 Sep 2015 (Droidsans, iphone-droid). The 29,900 seen earlier was a pre-launch leak; no official 64GB Thai price was found. US: no unlocked at launch; T-Mobile-level full retail ~$779.99/$879.99 (AT&T ~$815, Verizon ~$768).",
+    "why": "Resolve the price conflict.",
+    "source": "https://droidsans.com/samsung-galaxy-s6edge-plus-price-spec/",
+    "snippet": "ข่าวหลุดราคา...สูงถึง 29,900 บาท แต่สุดท้ายก็จบออกมาที่ ราคา 26,900",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "galaxy-s",
+    "path": "th_status",
+    "op": "set",
+    "old": "unverified",
+    "new": "ok",
+    "why": "Thai launch price now sourced (22,898 THB via AIS).",
+    "source": "https://web.archive.org/web/2012/https://www.blognone.com/news/16849/",
+    "snippet": "สำหรับในเมืองไทย ซัมซุงขายผ่าน AIS ในราคา 22,898",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "galaxy-s",
+    "path": "price_conf",
+    "op": "set",
+    "old": "low",
+    "new": "medium",
+    "why": "Single dated source quoting Samsung TH pricing.",
+    "source": "https://web.archive.org/web/2012/https://www.blognone.com/news/16849/",
+    "snippet": "สำหรับในเมืองไทย ซัมซุงขายผ่าน AIS ในราคา 22,898",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
   }
 ]

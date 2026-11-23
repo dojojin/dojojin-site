@@ -721,5 +721,296 @@
     "source": "https://mgronline.com/cyberbiz/detail/9690000110446",
     "snippet": "X500 Pro (12GB+256GB) 48,999 บาท - X500 Pro Max (12GB+256GB) 54,999 บาท - X500 Pro Max (12GB+512GB) 59,999 บาท - X500 Pro Max (12GB+1TB) Photographer Kit 82,999 บาท ... พร้อมวางจำหน่าย 19 พฤศจิกายน 2569",
     "checked": "2026-11-19, source re-fetched and quoted"
+  },
+  {
+    "id": "vivo-x5",
+    "path": "thai_variant",
+    "op": "set",
+    "old": "Not sold in Thailand (China only; no Thai launch found)",
+    "new": "Sold in Thailand: on sale 6 Jan 2015 at 12,990 THB (Siamphone)",
+    "why": "Text said not sold in Thailand, but the model has a Thai launch price and date.",
+    "source": "https://www.siamphone.com/spec/vivo/vivo-x5",
+    "snippet": "วันวางจำหน่าย Released 6 ม.ค. 2558 6 Jan 2015 ราคาเปิดตัว Launch price ฿12,990",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x5",
+    "path": "cell.thai_variant",
+    "op": "set",
+    "old": "Not sold in Thailand; China X5L (China Mobile TD-LTE) described. Other sub-variants X5V/X5M/X5SL out of scope",
+    "new": "Sold in Thailand (6 Jan 2015, Siamphone); bands below are the China X5L (China Mobile TD-LTE) — the Thai unit's bands were not published. Other sub-variants X5V/X5M/X5SL out of scope",
+    "why": "Text said not sold in Thailand.",
+    "source": "https://www.siamphone.com/spec/vivo/vivo-x5",
+    "snippet": "vivo X5 ฿12,990 วางจำหน่าย 6 ม.ค. 2558",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x5-max",
+    "path": "thai_variant",
+    "op": "set",
+    "old": "Not sold in Thailand (China only; no Thai launch found)",
+    "new": "Sold in Thailand at 15,990 THB (Droidsans, early 2015)",
+    "why": "Text said not sold in Thailand, but Droidsans lists the Thai price and says it was already on sale.",
+    "source": "https://droidsans.com/vivo-x5max-preview/",
+    "snippet": "วางขายกันไปได้สักพักแล้วกับ vivo X5Max ... Galaxy A7 vivo X5Max Oppo R5 ราคา 14,900 บาท 15,990 15,990",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x5-max",
+    "path": "cell.thai_variant",
+    "op": "set",
+    "old": "Thai sale not confirmed; global/Asia X5Max (Snapdragon 615) as listed by GSMArena described. X5Max+ (MT6752) and X5Max Platinum Edition are separate listings",
+    "new": "Sold in Thailand (Droidsans, 15,990 THB); global/Asia X5Max (Snapdragon 615) as listed by GSMArena described. X5Max+ (MT6752) and X5Max Platinum Edition are separate listings",
+    "why": "Text said Thai sale not confirmed.",
+    "source": "https://droidsans.com/vivo-x5max-preview/",
+    "snippet": "วางขายกันไปได้สักพักแล้วกับ vivo X5Max",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x500",
+    "path": "cell.thai_variant",
+    "op": "set",
+    "old": "Not sold in Thailand (China launch 2026-09-21) — China model V2609A (Dimensity 9600M) described",
+    "new": "Sold in Thailand from 19 Nov 2026 (12+256 / 12+512); Thai model number not published — bands below are the China model V2609A (Dimensity 9600M)",
+    "why": "Text said not sold in Thailand; Thai sale began 19 Nov 2026.",
+    "source": "https://instore.bnn.in.th/vivo-x500-series/",
+    "snippet": "vivo X500 12GB + 256GB 42,999.- vivo X500 12GB + 512GB 48,999.-",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x500-pro",
+    "path": "cell.thai_variant",
+    "op": "set",
+    "old": "Not sold in Thailand (China launch 2026-09-21) — China model V2608A (Dimensity 9600 Pro) described",
+    "new": "Sold in Thailand from 19 Nov 2026 (12+256); Thai model number not published — bands below are the China model V2608A (Dimensity 9600 Pro)",
+    "why": "Text said not sold in Thailand; Thai sale began 19 Nov 2026.",
+    "source": "https://instore.bnn.in.th/vivo-x500-series/",
+    "snippet": "vivo X500 Pro 12GB + 256GB 48,999.-",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x500-pro-max",
+    "path": "cell.thai_variant",
+    "op": "set",
+    "old": "Not sold in Thailand (China launch 2026-09-21) — China model V2602A (Dimensity 9600 Pro) described; global code V2610 listed",
+    "new": "Sold in Thailand from 19 Nov 2026 (global code V2610); bands below are the China model V2602A (Dimensity 9600 Pro)",
+    "why": "Text said not sold in Thailand; Thai sale began 19 Nov 2026.",
+    "source": "https://mgronline.com/cyberbiz/detail/9690000110446",
+    "snippet": "เปิดราคาเริ่มต้น 54,999 บาท พร้อมวางจำหน่าย 19 พฤศจิกายน 2569 สำหรับ vivo X500 Pro Max",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x60-pro",
+    "path": "released",
+    "op": "set",
+    "old": "2021-04-02",
+    "new": "2021-01-08",
+    "why": "X60 series (incl. X60 Pro) went on sale in China on 8 Jan 2021, not 2 Apr.",
+    "source": "https://www.ithome.com/0/528/905.htm",
+    "snippet": "IT之家 1月8日消息 今日，vivo X60 系列新机正式开售， 搭载 Exynos 1080 处理器",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x60s",
+    "path": "name",
+    "op": "set",
+    "old": "vivo X60s",
+    "new": "vivo X60t",
+    "why": "No \"X60s\" exists; the Dimensity 1100 X60 refresh is the X60t (offline-only, 2 Apr 2021).",
+    "source": "https://www.ithome.com/0/543/832.htm",
+    "snippet": "vivo X60t 悄然登场：换芯天玑 1100，线下特供",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x60s",
+    "path": "announced",
+    "op": "set",
+    "old": "2021",
+    "new": "2021-04-02",
+    "why": "X60t appeared quietly on 2 Apr 2021.",
+    "source": "https://www.ithome.com/0/543/832.htm",
+    "snippet": "vivo X60t 悄然登场：换芯天玑 1100，线下特供 (IT之家 2021-04-02)",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x60s",
+    "path": "released",
+    "op": "set",
+    "old": "2021",
+    "new": "2021-04-02",
+    "why": "Offline sale from appearance date.",
+    "source": "https://www.ithome.com/0/543/832.htm",
+    "snippet": "vivo X60t 暂时只提供 8+128G 版，售价 3498 元",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x60s",
+    "path": "tiers[gb=256].gb",
+    "op": "set",
+    "old": 256,
+    "new": 128,
+    "why": "Only 8+128 GB was offered at 3498 CNY.",
+    "source": "https://www.ithome.com/0/543/832.htm",
+    "snippet": "vivo X60t 暂时只提供 8+128G 版，售价 3498 元",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x60s",
+    "path": "price_flags",
+    "op": "set",
+    "old": "China-only Dimensity 1100 refresh; launch day and price from memory, low certainty.",
+    "new": "China offline-only model; 8+128 GB at 3498 CNY (IT之家, 2 Apr 2021).",
+    "why": "Note said \"from memory\".",
+    "source": "https://www.ithome.com/0/543/832.htm",
+    "snippet": "vivo X60t 暂时只提供 8+128G 版，售价 3498 元，与 vivo X60 8GB+128GB 定价相同",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x60s",
+    "path": "price_sources",
+    "op": "set",
+    "old": [
+      "memory"
+    ],
+    "new": [
+      "https://www.ithome.com/0/543/832.htm",
+      "https://www.fonearena.com/blog/337044/vivo-x60t-price-specifications.html"
+    ],
+    "why": "Replace \"memory\" with real sources.",
+    "source": "https://www.ithome.com/0/543/832.htm",
+    "snippet": "vivo X60t 暂时只提供 8+128G 版，售价 3498 元",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x60s",
+    "path": "notes",
+    "op": "set",
+    "old": "Chip: Dimensity 1100 per vivo China launch reports; GSMArena/Kimovil list Exynos 1080, which belongs to the X60/X60 Pro China models. China-only mid-cycle X60 refresh. SoC conflict unresolved: GSMArena and Kimovil list Exynos 1080 (V2059A, May 2021) while the brief and some news claim Dimensity 1100 (the D1100 X60 variant confirmed by ithome is the X60t, 2021-04-02, CNY 3,498). Verify against vivo.com.cn before publishing. Dates — released: 2021 (China); announced: 2021 (see notes: May 24 per GSMArena; July 2021 per other reports).",
+    "new": "vivo X60t: China offline-only X60 refresh that swaps Exynos 1080 for MediaTek Dimensity 1100; 8+128 GB at 3498 CNY, same price as the X60 8+128. (Listed in older data as \"X60s\".)",
+    "why": "Old note held unresolved research text.",
+    "source": "https://www.ithome.com/0/543/832.htm",
+    "snippet": "将处理器从 Exynos 1080 换成了天玑 1100",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x300-ultra",
+    "path": "th_launch",
+    "op": "set",
+    "old": "2026-05-21",
+    "new": "2026-05-22",
+    "why": "No source for 21 May; Thai launch and pre-order opened 22 May 2026 (general on-sale date not published).",
+    "source": "https://www.thairath.co.th/lifestyle/tech/2934482",
+    "snippet": "วีโว่ส่งสมาร์ทโฟนระดับเรือธงเข้าสู่ตลาดประเทศไทย พร้อมกันสองรุ่นได้แก่ vivo X300 Ultra และ vivo X300 FE (22 พ.ค. 2569)",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x300-fe",
+    "path": "th_launch",
+    "op": "set",
+    "old": "2026-05-21",
+    "new": "2026-05-22",
+    "why": "No source for 21 May; Thai launch and pre-order opened 22 May 2026 (general on-sale date not published).",
+    "source": "https://www.thairath.co.th/lifestyle/tech/2934482",
+    "snippet": "วีโว่ส่งสมาร์ทโฟนระดับเรือธงเข้าสู่ตลาดประเทศไทย พร้อมกันสองรุ่นได้แก่ vivo X300 Ultra และ vivo X300 FE (22 พ.ค. 2569)",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x80-pro",
+    "path": "price_flags",
+    "op": "set",
+    "old": "TH 12/256 39,999 (Dimensity 9000 in TH; China also had Snapdragon 8 Gen 1 version). Pre-order 19-26 May, sale 27 May 2022. CNY from memory.",
+    "new": "TH 12/256 39,999 (Snapdragon 8 Gen 1 in TH; the X80 non-Pro uses Dimensity 9000). Pre-order 19-26 May, sale 27 May 2022. CNY from memory.",
+    "why": "Note said the Thai X80 Pro used Dimensity 9000; Thai X80 Pro is Snapdragon 8 Gen 1.",
+    "source": "https://www.checkraka.com/mobilephone/article/131955",
+    "snippet": "vivo X80 Pro 5G จะมาพร้อม Qualcomm Snapdragon 8 Gen 1 (4 nm) และ vivo X80 5G มาพร้อม MediaTek Dimensity 9000 (4 nm)",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x200",
+    "path": "cell.thai_variant",
+    "op": "set",
+    "old": "V2415 (Thailand/global; Dimensity 9400; TH launch 29 Nov 2024; bands from vivo TH spec page)",
+    "new": "V2415 (Thailand/global; Dimensity 9400; TH launch 2 Dec 2024, on sale 4 Dec 2024; bands from vivo TH spec page)",
+    "why": "29 Nov was only a news-post date; Thai sale began 4 Dec 2024.",
+    "source": "https://www.thansettakij.com/technology/technology/613467",
+    "snippet": "vivo X200 Series จะวางจำหน่ายอย่างเป็นทางการตั้งแต่วันที่ 4 ธันวาคม 2024 เป็นต้นไป",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x20",
+    "path": "price_flags",
+    "op": "set",
+    "old": "No evidence of a vivo Thailand launch; China-market model (Thai counterpart V7+). China sales 30 Sep 2017; a 128GB tier was added later (price not captured).",
+    "new": "No evidence of a vivo Thailand launch; China-market model (Thai counterpart V7+). China sales 30 Sep 2017; 128GB at 3398 CNY was announced at launch.",
+    "why": "Note said the 128GB price was not captured; it is in the tiers and was announced at launch.",
+    "source": "https://www.gizchina.com/vivo-phones/vivo-x20-officially-unveiled",
+    "snippet": "the Vivo X20 will start at ¥2998 (~$455) for the 4GB RAM + 64GB model, and ¥3398 (~$515) for the 128GB variant",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x1s",
+    "path": "tiers[gb=0].gb",
+    "op": "set",
+    "old": 0,
+    "new": 16,
+    "why": "Tier storage was 0; the X1S has 16 GB (matches the storage field).",
+    "source": "https://www.gsmarena.com/vivo_x1s-5986.php",
+    "snippet": "Internal 16GB 1GB RAM",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x1s",
+    "path": "tiers[gb=16].ram",
+    "op": "set",
+    "old": null,
+    "new": 1,
+    "why": "Tier RAM missing; X1S has 1 GB RAM.",
+    "source": "https://www.gsmarena.com/vivo_x1s-5986.php",
+    "snippet": "Internal 16GB 1GB RAM",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x20-plus-ud",
+    "path": "announced",
+    "op": "set",
+    "old": "2018-01-09",
+    "new": "2018-01-24",
+    "why": "Launched 24 Jan 2018 (Beijing).",
+    "source": "https://www.ifanr.com/975227",
+    "snippet": "2018 年 1 月 24 日，vivo 终于推出了第一款搭载屏幕指纹识别技术的新机 vivo X20 Plus 屏幕指纹版，售价是 3598 元",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x200-fe",
+    "path": "released",
+    "op": "set",
+    "old": "2025-07-05",
+    "new": "2025-06-23",
+    "why": "First market was Taiwan, on sale from launch 23 Jun 2025 at NT$26,990 (Malaysia 5 Jul, Thailand 3 Jul).",
+    "source": "https://www.4gamers.com.tw/news/detail/72569/vivo-x200-fe-on-sale-in-taiwan",
+    "snippet": "vivo X200 FE登台售NT$26,990 (2025年6月23日)",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x9-plus",
+    "path": "modem",
+    "op": "set",
+    "old": "Qualcomm Snapdragon 653 integrated (X8 LTE, Cat 7)",
+    "new": "Qualcomm Snapdragon 653 integrated (X9 LTE, Cat 7)",
+    "why": "Snapdragon 653 integrates the X9 LTE modem (X8 was in the 652).",
+    "source": "https://www.androidpolice.com/2016/10/17/qualcomm-announces-three-new-mid-range-snapdragon-chipsets-653-626-427/",
+    "snippet": "The 653, 626, and 427 all receive a new X9 LTE modem",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x9s-plus",
+    "path": "modem",
+    "op": "set",
+    "old": "Qualcomm Snapdragon 653 integrated (X8 LTE, Cat 7)",
+    "new": "Qualcomm Snapdragon 653 integrated (X9 LTE, Cat 7)",
+    "why": "Snapdragon 653 integrates the X9 LTE modem (X8 was in the 652).",
+    "source": "https://www.androidpolice.com/2016/10/17/qualcomm-announces-three-new-mid-range-snapdragon-chipsets-653-626-427/",
+    "snippet": "The 653, 626, and 427 all receive a new X9 LTE modem",
+    "checked": "2026-11-24, source fetched and quoted (main session)"
   }
 ]
