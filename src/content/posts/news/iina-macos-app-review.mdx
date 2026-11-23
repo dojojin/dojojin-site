@@ -1,0 +1,216 @@
+---
+title: "แอปแนะนำ: IINA เครื่องเล่นวิดีโอและเพลงบน Mac หน้าตาแบบ macOS ฟรี โอเพนซอร์ส ใช้เอนจินของ mpv"
+topic: software
+type: news
+tags: [app, open-source]
+date: 2026-11-23T19:00:00+07:00
+section: app
+sourceName: "IINA (iina.io)"
+sourceUrl: "https://iina.io"
+description: "แนะนำ IINA เครื่องเล่นวิดีโอและเพลงบน macOS ที่สร้างบน mpv ใช้ฟรีและเป็นโอเพนซอร์ส (GPL-3.0) ไม่มีการติดตามหรือเก็บข้อมูลการใช้งานตามที่เว็บทางการระบุ รุ่นล่าสุด 1.5.1 (6 พ.ย. 2569) ต้องใช้ macOS 12 ขึ้นไป (Mac Intel ใช้ macOS 11 ได้) มีปลั๊กอินเสริม"
+kicker: "แอปแนะนำ"
+lead: "เปิดไฟล์วิดีโอบน Mac แล้วเล่นไม่ได้ หรือไม่ถูกใจเครื่องเล่นตัวที่ติดมา เคยเจอไหมครับ IINA เป็นเครื่องเล่นอีกตัวที่ผมอยากแนะนำ หน้าตาเข้ากับ macOS ตั้งค่าได้ละเอียด ใช้ฟรี และเป็นโอเพนซอร์ส เบื้องหลังใช้ mpv ซึ่งเป็นเครื่องเล่นโอเพนซอร์สที่ทำหน้าที่ถอดรหัสไฟล์ภาพและเสียง"
+meta: "เรียบเรียงจากเว็บ iina.io, บล็อกประกาศรุ่น 1.5.0, หน้า GitHub และ GitHub releases · ข้อมูล ณ 23 พฤศจิกายน 2569"
+cover: "/media/posts/news/iina-macos-app-review/cover.jpg"
+coverAlt: "หน้าต่างเครื่องเล่น IINA กำลังเล่นวิดีโอภาพโลกยามค่ำคืน มีแถบควบคุมด้านล่าง วางคู่กับหน้าต่างปลั๊กอินที่แสดงรายชื่อปลั๊กอินทางการและปลั๊กอินจากชุมชน"
+---
+
+<section class="section">
+
+## IINA คืออะไร
+
+<div class="split">
+<div class="prose">
+
+IINA เป็นเครื่องเล่นวิดีโอและเพลงบน macOS ครับ หน้าแรกของเว็บเขียนไว้ว่า "The modern media player for macOS" แปลว่าเครื่องเล่นมีเดียยุคใหม่สำหรับ macOS
+
+เว็บทางการบอกว่าออกแบบมาให้เข้ากับระบบ รองรับท่าทางบนทัชแพด ปุ่มควบคุมมีเดีย ภาพซ้อนภาพ (Picture in Picture) และ Live Text (เลือกข้อความในภาพนิ่งได้)
+
+แล้วเบื้องหลังใช้อะไร? คือ mpv ครับ mpv เป็นเครื่องเล่นโอเพนซอร์สที่ทำหน้าที่ถอดรหัสไฟล์ภาพและเสียง หน้า GitHub ของ IINA เขียนว่าเป็นตัวที่ถอดรหัสบน macOS ได้ดีที่สุด
+
+พูดง่าย ๆ คือ mpv เป็นเครื่องยนต์ ส่วน IINA เป็นหน้าตาที่ทำมาให้ใช้ง่ายบนเครื่องยนต์ตัวนั้น
+
+ผมว่าเหมาะกับคนที่อยากได้เครื่องเล่นที่ตั้งค่าได้เยอะ แต่ไม่อยากไปจัดการ mpv ผ่านไฟล์ตั้งค่าเองครับ
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/iina-macos-app-review/img-1.jpg" width="1600" height="1047" loading="lazy" alt="หน้าต่างเครื่องเล่น IINA บน macOS กำลังเล่นไฟล์ globe.mp4 เป็นภาพโลกยามค่ำคืน มีแถบควบคุมลอยอยู่ด้านล่าง ปุ่มเสียง ถอยหลัง หยุด เดินหน้า และปุ่มตั้งค่า" /></div><figcaption><span class="news-fig__credit">ภาพ: IINA · <a href="https://iina.io" rel="noopener">iina.io</a> (ภาพหน้าจอจากเว็บไซต์ทางการ วางบนพื้นสีโดย DOJOJIN.TECH)</span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## ทำอะไรได้บ้าง
+
+<div class="prose">
+
+หน้า GitHub ไล่ฟีเจอร์ไว้ตามนี้ครับ
+
+- เล่นได้ทั้งวิดีโอและเพลง มีคำบรรยาย (subtitle) เพลย์ลิสต์ และบท (chapter)
+- มี Music Mode แยกต่างหาก ออกแบบมาสำหรับไฟล์เสียงโดยเฉพาะ
+- ภาพตัวอย่างบนแถบเลื่อนเวลา (video thumbnails)
+- ค้นหาคำบรรยายออนไลน์ และจับคู่ไฟล์คำบรรยายในเครื่องให้อัตโนมัติ
+- เก็บประวัติการเล่นได้ไม่จำกัด
+- ปรับตัวกรองภาพและเสียงได้ ผ่านหน้าจอที่กดปรับได้เลย
+- ตั้งค่าได้ทั้งคีย์บอร์ด เมาส์ ทัชแพด และท่าทาง
+- ปรับสีหน้าต่างและตำแหน่งแถบควบคุมบนจอ (on screen controller) ได้
+- คนที่ใช้ mpv อยู่แล้ว ใช้ไฟล์ตั้งค่าและสคริปต์ของ mpv ต่อได้
+- มีเครื่องมือบรรทัดคำสั่ง (สั่งงานผ่าน Terminal) และส่วนเสริมสำหรับเบราว์เซอร์
+
+เว็บทางการยังเน้นว่าไม่มีการติดตามผู้ใช้หรือเก็บข้อมูลการใช้งาน (tracking, telemetry) ครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ข้อมูลหลัก
+
+<div class="prose">
+
+<div class="spec-list">
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-file" /></svg><div><b>ไลเซนส์</b>GPL-3.0 (ไฟล์ LICENSE ในโปรเจกต์เป็น GNU GPL เวอร์ชัน 3 และเว็บเขียนว่า "licensed under GPLv3" แปลว่าใช้สัญญาอนุญาต GPLv3) โค้ดเปิดอยู่บน GitHub · GPL คือไลเซนส์โอเพนซอร์สที่ให้เอาโค้ดไปใช้และแก้ได้ แต่ถ้าแจกจ่ายต่อต้องเปิดโค้ดด้วย</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-download" /></svg><div><b>รุ่นล่าสุด</b>1.5.1 ประกาศวันที่ 6 พฤศจิกายน 2569 เป็นรุ่นแก้ปัญหาหลังออก 1.5.0 บันทึกรุ่น (release notes) ระบุว่าตัวอัปเดตในแอปจะขึ้นให้ใน 24 ชั่วโมง</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-display" /></svg><div><b>ระบบที่รองรับ</b>เว็บทางการเขียนว่า "Requires macOS 12.0 (macOS 11.0 for Intel)" (ต้องใช้ macOS 12 ขึ้นไป ส่วน Mac ชิป Intel ใช้ macOS 11 ได้)</div></div>
+<div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-shapes" /></svg><div><b>ราคา</b>ฟรี เว็บทางการเขียนว่า "free and open-source" (ฟรีและเปิดโค้ด) มีปุ่ม Donate ให้บริจาคสนับสนุนทีมพัฒนา</div></div>
+</div>
+
+เลขรุ่นและวันที่ตรงกันทั้งหน้า GitHub releases และเว็บทางการครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## 1.5.0 ปรับหน้าตาใหม่หมด
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/iina-macos-app-review/img-2.jpg" width="1600" height="693" loading="lazy" alt="แผงควบคุมของ IINA แสดงตัวเลือก Compact Interface, Delay, Equalizer 10 แบนด์, Aspect Ratio, Crop, Rotation, Scale ตัวอักษรคำบรรยาย, Theme Dark Light Auto, Liquid Glass, ปุ่มเปิดปิด OSD OSC และ Sidebar, ความสว่าง คอนทราสต์ และความเร็วการเล่น" /></div><figcaption><span class="news-fig__credit">ภาพ: IINA · <a href="https://iina.io" rel="noopener">iina.io</a> (ภาพหน้าจอจากเว็บไซต์ทางการ วางบนพื้นสีโดย DOJOJIN.TECH)</span></figcaption></figure>
+<div class="prose">
+
+IINA 1.5.0 ออกวันที่ 28 กันยายน 2569 ครับ บล็อกของทีมเรียกว่าเป็นการปรับหน้าตาครั้งใหญ่ที่สุดนับตั้งแต่เปิดตัว และบอกว่าใช้เวลาทำเกือบหนึ่งปี
+
+เปลี่ยนอะไรบ้าง? ตามนี้ครับ
+
+- **ย่อขยายหน้าต่างได้อิสระ** มีแถบ Layout ให้ปรับหน้าตาขณะดูวิดีโอ และล็อกสัดส่วนหน้าต่างได้ทั้งจากแถบนี้และเมนู
+- **แถบข้างซ้ายและขวาแสดงพร้อมกันได้** เช่น เพลย์ลิสต์ทางซ้าย ตั้งค่าทางขวา และตรึงแถบข้างหรือแถบควบคุมให้เห็นตลอดได้ ใกล้เคียงเครื่องเล่นแบบดั้งเดิมอย่าง VLC (เครื่องเล่นโอเพนซอร์สที่คนใช้กันเยอะ)
+- **หน้าตั้งค่าเขียนใหม่ทั้งหน้า** เน้นให้เห็นข้อมูลในหน้าเดียว ไม่ซ่อนในเมนูย่อย
+- **Compact Interface** ถ้าชอบความแน่นแบบรุ่นเก่า เปิดตัวเลือกนี้ได้
+- **Liquid Glass** (ดีไซน์โปร่งแสงแบบกระจกของ Apple) รองรับบน macOS 26 และ 27 เปิดแยกได้ทั้ง OSD (ข้อความที่ขึ้นบนจอ เช่น ระดับเสียง), แถบควบคุม และแถบข้าง
+
+ในภาพคือแผงควบคุมที่ใช้ปรับขณะเล่นครับ มีดีเลย์คำบรรยาย อีควอไลเซอร์ อัตราส่วนภาพ ธีม และความเร็วการเล่น
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ปลั๊กอินเสริม
+
+<div class="split">
+<div class="prose">
+
+IINA มีระบบปลั๊กอินครับ เว็บทางการบอกว่าปลั๊กอินเพิ่มแหล่งคำบรรยาย เครื่องมือจัดการวิดีโอ หน้าจอใหม่ และฟีเจอร์อื่นที่ชุมชนทำได้
+
+หน้า GitHub แยกปลั๊กอินเป็น 2 กลุ่มครับ
+
+<div class="news-cards">
+<div class="news-card is-ok"><b>ปลั๊กอินทางการ 3 ตัว</b>Online Media (ช่วยเล่นและดาวน์โหลดจากสตรีมออนไลน์), OpenSubtitles (ค้นหาและโหลดคำบรรยาย) และ User Scripts (รันโค้ด JavaScript สั้น ๆ ที่เขียนเอง)</div>
+<div class="news-card is-ok"><b>ปลั๊กอินจากชุมชน</b>เลือกติดตั้งได้จากร้านปลั๊กอินในแอป ที่ Settings → Plugins</div>
+</div>
+
+ในภาพจะเห็นว่ามีช่องให้ใส่ลิงก์ GitHub เองได้ด้วย ผมว่าถ้าเป็นปลั๊กอินที่ไม่รู้จัก ควรดูก่อนว่าใครเป็นคนทำนะครับ
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/iina-macos-app-review/img-3.jpg" width="1498" height="1290" loading="lazy" alt="หน้าต่างติดตั้งปลั๊กอินของ IINA ช่องใส่ลิงก์ GitHub ด้านบน รายชื่อปลั๊กอินทางการ 3 ตัว คือ Online Media, Userscript และ Online Subtitles และปลั๊กอินจากชุมชน เช่น AirPlay, Anime4K, Auto Skip" /></div><figcaption><span class="news-fig__credit">ภาพ: IINA · <a href="https://iina.io/blog/150-release/" rel="noopener">iina.io/blog</a> (ภาพหน้าจอจากบล็อกทางการ วางบนพื้นสีโดย DOJOJIN.TECH)</span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## วิธีติดตั้ง
+
+<div class="prose">
+
+ติดตั้งได้ 2 ทางครับ
+
+<ol class="news-steps">
+<li><b>โหลดไฟล์ DMG</b>DMG คือไฟล์ติดตั้งแบบดิสก์อิมเมจของ Mac โหลดจากปุ่ม Download ที่ <a href="https://iina.io" rel="noopener">iina.io</a> หรือจากหน้า <a href="https://github.com/iina/iina/releases/latest" rel="noopener">GitHub Releases</a> ไฟล์รุ่น 1.5.1 ชื่อ IINA.v1.5.1.dmg</li>
+<li><b>ลากไปไว้ใน Applications</b>เปิดไฟล์ DMG แล้วลากแอป IINA ไปไว้ในโฟลเดอร์ Applications</li>
+<li><b>หรือใช้ Homebrew</b>Homebrew คือโปรแกรมติดตั้งแอปด้วยคำสั่งบน Mac เปิดแอป Terminal แล้วพิมพ์ <code>brew install --cask iina</code> (cask คือสูตรติดตั้งแอปแบบมีหน้าตาของ Homebrew ตอนนี้มี cask ชื่อ iina รุ่น 1.5.1 ในรายการ)</li>
+</ol>
+
+มีรุ่นทดลอง (nightly) ให้โหลดด้วย แต่หน้า GitHub เตือนว่ารุ่นนี้สร้างอัตโนมัติทุกครั้งที่แก้โค้ด อาจมีบั๊กจนใช้ไม่ได้ ใช้งานทั่วไปผมว่าโหลดรุ่นปกติดีกว่าครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ข้อควรรู้ก่อนใช้
+
+<div class="prose">
+
+<div class="news-cards">
+<div class="news-card is-warn"><b>เช็กรุ่น macOS ก่อน</b>ต้อง macOS 12 ขึ้นไป ถ้าเป็น Mac ชิป Intel ที่ยังใช้ macOS 11 เว็บบอกว่าลงได้ แต่บล็อกของทีมบอกว่า 1.5.0 น่าจะเป็นรุ่นสุดท้ายที่รองรับ macOS 11 เพราะ Xcode (เครื่องมือเขียนแอปของ Apple) รุ่นใหม่ทำให้รองรับต่อยาก</div>
+<div class="news-card is-warn"><b>ทีมเล็ก ออกรุ่นไม่เร็ว</b>บล็อกของทีมบอกเองว่าดูแลด้วยทีมเล็ก ทรัพยากรจำกัด การพัฒนาจึงบางครั้งช้า</div>
+<div class="news-card is-warn"><b>รุ่นใหม่หลังปรับหน้าตา</b>1.5.1 แก้ปัญหาที่เจอใน 1.5.0 หลายข้อ เช่น หน้าต่างสูงกว่าที่ควร ปุ่มล้างประวัติการเล่นไม่ทำงาน และค้นหาคำบรรยายจาก Assrt ไม่ได้ ใครอัปเดตแล้วเจอเรื่องผิดปกติ ลองเช็กบันทึกรุ่นก่อนครับ</div>
+</div>
+
+ข้อมูลทั้งหมดในโพสต์นี้มาจากเว็บทางการ บล็อกของทีม และหน้า GitHub ครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ใครควรใช้
+
+<div class="prose">
+
+ใครดูวิดีโอหรือฟังเพลงบน Mac เป็นประจำ และอยากได้เครื่องเล่นที่หน้าตาเข้ากับระบบ ตั้งค่าได้ละเอียด ผมแนะนำให้ลอง IINA ครับ ฟรี โค้ดเปิดให้ตรวจสอบได้ ติดตั้งแล้วไม่ถูกใจก็ลบทิ้งได้เลย
+
+ก่อนโหลดเช็กแค่ว่าเครื่องเป็น macOS 12 ขึ้นไป หรือเป็น Intel ที่ใช้ macOS 11
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- หน้าแรก ข้อกำหนดระบบ และไลเซนส์: <a href="https://iina.io" rel="noopener">iina.io</a>
+- บล็อกประกาศรุ่น 1.5.0: <a href="https://iina.io/blog/150-release/" rel="noopener">iina.io/blog/150-release</a>
+- ซอร์สโค้ดและรายชื่อฟีเจอร์ ปลั๊กอิน: <a href="https://github.com/iina/iina" rel="noopener">github.com/iina/iina</a>
+- รุ่นล่าสุดและวันที่: <a href="https://github.com/iina/iina/releases/tag/v1.5.1" rel="noopener">GitHub releases v1.5.1</a>
+- ไฟล์ไลเซนส์: <a href="https://github.com/iina/iina/blob/develop/LICENSE" rel="noopener">LICENSE (GPL-3.0)</a>
+- ติดตั้งผ่าน Homebrew: <a href="https://formulae.brew.sh/cask/iina" rel="noopener">formulae.brew.sh/cask/iina</a>
+
+</div>
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพเครื่องเล่นและภาพปก: ภาพ: IINA จากหน้าแรกเว็บ <a href="https://iina.io" rel="noopener">iina.io</a> วางบนพื้นสีโดย DOJOJIN.TECH
+- ภาพแผงควบคุม: ภาพ: IINA จากหน้าแรกเว็บ <a href="https://iina.io" rel="noopener">iina.io</a> ต้นฉบับเป็นภาพพื้นโปร่งใส DOJOJIN.TECH ใส่พื้นสีเข้มรองให้อ่านได้ และวางบนพื้นสี
+- ภาพหน้าต่างปลั๊กอิน (และส่วนของภาพปก): ภาพ: IINA จากบล็อก <a href="https://iina.io/blog/150-release/" rel="noopener">iina.io/blog/150-release</a> วางบนพื้นสีโดย DOJOJIN.TECH
+
+ภาพใช้ประกอบการแนะนำ (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>

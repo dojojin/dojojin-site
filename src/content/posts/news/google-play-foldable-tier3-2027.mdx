@@ -1,0 +1,206 @@
+---
+title: "Google Play บังคับแอปรองรับมือถือจอพับ เริ่มเมษายน 2570 ไม่ผ่าน Tier 3 อัปเดตแอปไม่ได้"
+topic: software
+type: news
+tags: [google, android, foldable]
+date: 2026-11-23T18:40:00+07:00
+section: tech
+sourceName: "Android Developers Blog (Google) และ 9to5Google"
+sourceUrl: "https://developer.android.com/blog/posts/google-play-adaptive-quality-standards"
+description: "Google Play ประกาศ 18 พ.ย. 2569 ว่าตั้งแต่เมษายน 2570 (ค.ศ. 2027) แอปต้องผ่าน Tier 3 ด้านการรองรับจอพับ และต้องอัปโหลดภาพหน้าจอแบบจอพับ ไม่งั้นเผยแพร่หรืออัปเดตแอปไม่ได้ พร้อมกำหนดให้ target API 37 (Android 17) ในเดือนสิงหาคม 2570 สรุปว่า Tier 1/2/3 คืออะไร และคนไทยได้ผลอย่างไร"
+kicker: "ข่าวเทคโนโลยี · Android"
+lead: "Google Play จะเริ่มบังคับให้แอปรองรับมือถือจอพับในระดับพื้นฐาน (Tier 3) ตั้งแต่เมษายน 2570 ใครไม่ผ่านจะเผยแพร่หรืออัปเดตแอปไม่ได้ ผมสรุปให้ว่า Tier คืออะไร นักพัฒนาต้องทำอะไร และผู้ใช้จะเห็นอะไร"
+meta: "เรียบเรียงจาก Android Developers Blog และ 9to5Google · ข้อมูล ณ 23 พฤศจิกายน 2569"
+cover: "/media/posts/news/google-play-foldable-tier3-2027/cover.jpg"
+coverAlt: "ปกข่าว ภาพประกอบทางการของ Google เป็นมือถือจอพับสีขาวกับดาวและเข็มวัดสีฟ้า พร้อมข้อความ Google Play บังคับแอปรองรับจอพับ เริ่มเมษายน 2570 ไม่ผ่านอัปเดตแอปไม่ได้ Tier 3 แคปภาพจอพับ 3 ภาพ"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="prose">
+
+Google เขียนบนบล็อก Android Developers เมื่อ 18 พฤศจิกายน 2569 (ตามเวลาสหรัฐฯ) ว่า Google Play จะมีข้อบังคับใหม่ 2 ข้อ เริ่มเมษายน 2570 (ค.ศ. 2027)
+
+1. แอปต้องผ่านเกณฑ์ **Tier 3** ของมาตรฐานคุณภาพแอปแบบ adaptive (ปรับตามขนาดจอ) สำหรับมือถือจอพับ
+2. ต้องอัปโหลดภาพหน้าจอแบบจอพับขึ้นหน้าแอปบน Play Store
+
+แอปที่ไม่ผ่านเกณฑ์ Google บอกว่า "will no longer be able to publish or update on Google Play, and may have reduced visibility on the store" (จะเผยแพร่หรืออัปเดตบน Google Play ไม่ได้อีก และอาจถูกลดการมองเห็นบนสโตร์)
+
+9to5Google เว็บข่าวสาย Android และ Google ของสหรัฐฯ ก็รายงานตรงกับบล็อกของ Google ครับ
+
+อีกเรื่องที่มาด้วยกันคือ แอปต้อง target API 37 (ตั้งให้ทำงานตามกฎของ Android 17) ในเดือนสิงหาคม 2570 ผมอธิบายไว้ในหัวข้อ target API ด้านล่าง
+
+ข่าวนี้เป็นเรื่องฝั่งนักพัฒนาเป็นหลักครับ แต่คนใช้มือถือจอพับก็ได้ผลตามมาด้วย ผมแยกให้อ่านทีละส่วน
+
+<div class="news-stats">
+<div class="news-stat"><b>เม.ย. 2570</b>เริ่มบังคับ Tier 3 และภาพหน้าจอจอพับ</div>
+<div class="news-stat"><b>ส.ค. 2570</b>ต้อง target API 37 (Android 17)</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## Tier 1, 2, 3 คืออะไร
+
+<div class="split">
+<div class="prose">
+
+Tier คือระดับคุณภาพของแอปบนจอใหญ่ครับ เลขยิ่งน้อย ระดับยิ่งสูง
+
+ที่จะบังคับก่อนคือ Tier 3 ระดับพื้นฐาน Google เรียกว่า "Adaptive ready" (พร้อมปรับตามจอ)
+
+ในภาพ ฝั่งซ้ายคือแอปที่ไม่ผ่าน เพราะแสดงผลเป็นแท่งแคบตรงกลาง เหลือแถบดำสองข้าง (ที่เรียกว่า letterbox) ฝั่งขวาคือแอปที่ผ่าน ขยายเต็มจอและใช้พื้นที่เพิ่มแสดงรายละเอียดเที่ยวบิน
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/google-play-foldable-tier3-2027/letterbox.jpg" width="1600" height="849" loading="lazy" alt="ภาพของ Google เปรียบเทียบมือถือจอพับสองเครื่อง ซ้ายมีแถบดำด้านข้างและเครื่องหมายกากบาท ขวาแอปขยายเต็มจอแสดงรายละเอียดเที่ยวบินข้างรายการทริป และเครื่องหมายถูก" /></div><figcaption><span class="news-fig__credit">ภาพ: Google / Android Developers Blog · <a href="https://developer.android.com/blog/posts/google-play-adaptive-quality-standards" rel="noopener">developer.android.com</a></span></figcaption></figure>
+</div>
+
+<div class="news-cards">
+<div class="news-card is-ok"><b>Tier 3 · Adaptive ready</b><span class="news-pill">บังคับเม.ย. 2570</span> แอปต้องเต็มพื้นที่จอ ไม่มี letterbox หรือโหมดความเข้ากันได้ (compatibility mode) และต้องจำสถานะไว้ (ตำแหน่งเลื่อนหน้า ข้อความที่พิมพ์ การเล่นสื่อ) ตอนหมุนจอ พับ/กางเครื่อง หรือย่อขยายหน้าต่าง รวมถึงรองรับการแบ่งหน้าต่าง (multi-window)</div>
+<div class="news-card is-warn"><b>Tier 2 · Adaptive optimized</b><span class="news-pill">ยังไม่บังคับ</span> ดูเรื่องเลย์เอาต์หลายช่อง (multi-pane) ไม่ยืด UI จนเพี้ยน และรองรับคีย์บอร์ด เมาส์ แทร็กแพด ปากกาสไตลัสเบื้องต้น</div>
+<div class="news-card is-warn"><b>Tier 1 · Adaptive differentiated</b><span class="news-pill">ยังไม่บังคับ</span> ดูท่าวางเครื่องแบบตั้งโต๊ะและแบบหนังสือ (tabletop, book) กล้องที่ต่อเนื่องเมื่อพับกาง ภาพซ้อนภาพที่โต้ตอบได้ และเปิดหลายหน้าต่างของแอปเดียวกัน สำหรับแอปสื่อ วิดีโอ อ่านหนังสือ และมัลติทาสก์</div>
+</div>
+
+<div class="prose">
+
+แล้ว Tier 2 กับ Tier 1 ล่ะ? Google บอกว่ากรอบคุณภาพนี้จะ "progressively expand" (ขยายทีละขั้น) ไปถึง Tier 2 และ Tier 1 และครอบคลุมทั้งจอพับ แท็บเล็ต Googlebook และ Android XR (Android สำหรับแว่นและเฮดเซ็ต XR)
+
+ตอนนี้แอปที่ถึง Tier 2 หรือ Tier 1 สมัครขอป้ายพิเศษและการโปรโมตเพิ่มบน Google Play ได้ตั้งแต่เดือนนี้ครับ
+
+</div>
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/google-play-foldable-tier3-2027/multipane.jpg" width="1600" height="900" loading="lazy" alt="ภาพของ Google แสดงแอปบนจอใหญ่แบบหลายช่อง มีรายการด้านซ้ายและรายละเอียดด้านขวา" /></div><figcaption><span class="news-fig__credit">ภาพ: Google / Android Developers Blog · <a href="https://developer.android.com/blog/posts/google-play-adaptive-quality-standards" rel="noopener">developer.android.com</a></span></figcaption></figure>
+<div class="prose">
+
+ภาพนี้ Google ใช้ประกอบ Tier 2 คือเลย์เอาต์หลายช่อง จอใหญ่แบ่งเป็นรายการกับรายละเอียดข้างกัน ไม่ใช่ยืดหน้าจอมือถือให้กว้างขึ้นเฉย ๆ
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ภาพหน้าจอจอพับ ต้องส่งกี่ภาพ
+
+<div class="split">
+<div class="prose">
+
+ตั้งแต่เมษายน 2570 Google บอกว่าต้องส่งภาพหน้าจอแบบจอพับ **3 ภาพ** เพิ่มจากภาพมือถือปกติ 2 ภาพ และถือเป็นเงื่อนไขมาตรฐานตอนเผยแพร่แอปใหม่หรืออัปเดตหน้าแอป
+
+ตอนนี้อัปโหลดล่วงหน้าได้แล้วที่ Play Console (หน้าจัดการแอปของนักพัฒนา) เมนู Grow แล้ว Store presence แล้ว Store listings ภาพจะขึ้นหน้าแอปในอีกไม่กี่สัปดาห์
+
+ในภาพคือชุดภาพหน้าจอของเครื่องที่จอด้านในเป็น 4:3 มีทั้งจอด้านใน จอด้านนอกแนวตั้ง และแนวนอน บล็อกยกตัวอย่างเครื่องแบบนี้เป็น Samsung Galaxy Z Fold8 ครับ
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/google-play-foldable-tier3-2027/shot-4x3.jpg" width="1600" height="562" loading="lazy" alt="ภาพของ Google แสดงภาพหน้าจอ 3 แบบสำหรับจอพับ จอด้านในอัตราส่วน 4:3 จอด้านนอกแนวตั้ง 10:16 และจอด้านนอกแนวนอน 16:10" /></div><figcaption><span class="news-fig__credit">ภาพ: Google / Android Developers Blog · <a href="https://developer.android.com/blog/posts/google-play-adaptive-quality-standards" rel="noopener">developer.android.com</a></span></figcaption></figure>
+</div>
+
+<div class="news-cards">
+<div class="news-card is-ok"><b>มือถือปกติ</b><span class="news-pill">เพิ่มแนวนอน 16:9 ได้</span> นอกจากภาพแนวตั้ง 9:16 เดิม ตอนนี้ใส่ภาพแนวนอนได้ ตัวอย่างในบล็อกคือ Samsung Galaxy S26 และ Google Pixel 11 Pro</div>
+<div class="news-card is-ok"><b>จอพับที่จอด้านในเป็น 1:1</b><span class="news-pill">อย่างน้อย 1 ภาพ</span> ภาพจอด้านในตอนกางเครื่องอัตราส่วน 1:1 ตัวอย่างคือ Samsung Galaxy Z Fold8 Ultra และ Google Pixel 11 Pro Fold</div>
+<div class="news-card is-ok"><b>จอพับที่จอด้านในเป็น 4:3</b><span class="news-pill">อย่างน้อย 2 ภาพ</span> ภาพจอด้านในแบบ 4:3 อย่างน้อย 1 ภาพ และภาพแนวตั้งของจอด้านนอกตอนพับ (10:16) อย่างน้อย 1 ภาพ จะเพิ่มแนวนอน 16:10 ด้วยก็ได้ ตัวอย่างคือ Samsung Galaxy Z Fold8</div>
+</div>
+
+<div class="prose">
+
+ไม่มีมือถือจอพับจะทำยังไง? ภาพมาจากเครื่องจริงหรือจาก Android Emulator (โปรแกรมจำลองมือถือบนคอมพิวเตอร์) ก็ได้ครับ Google บอกว่าภาพจากอีมูเลเตอร์จอพับ 1:1 และ 4:3 ผ่านเกณฑ์ของ Play Console เลย
+
+</div>
+
+</section>
+
+<section class="section">
+
+## target API level คืออะไร แล้ว ส.ค. 2570 เกี่ยวอะไร
+
+<div class="prose">
+
+ทุกเวอร์ชันของ Android มีหมายเลขประจำเรียกว่า API level ครับ เช่น Android 17 คือ API 37
+
+นักพัฒนาต้องตั้งในแอปว่าจะ "target" (ตั้งเป้า) ไว้ที่เลขไหน พูดง่าย ๆ คือบอกระบบว่าแอปนี้ทดสอบกับ Android เวอร์ชันนั้นแล้ว ระบบก็จะใช้กฎของเวอร์ชันนั้นกับแอป ถ้า target เลขต่ำ แอปก็ยังใช้พฤติกรรมแบบเก่าได้
+
+Google บอกว่าเดือนสิงหาคม 2570 แอปใหม่และแอปที่อัปเดตต้อง target API 37 ซึ่งจะ "removing developer opt-outs for orientation and resizability restrictions on large screens" (ยกเลิกช่องทางที่นักพัฒนาใช้ปฏิเสธเรื่องการล็อกการหมุนจอและการปรับขนาดบนจอใหญ่)
+
+แปลว่าอะไร? แอปที่เคยล็อกให้เป็นแนวตั้งอย่างเดียว หรือห้ามย่อขยายหน้าต่าง จะทำแบบนั้นบนจอใหญ่ไม่ได้อีกครับ
+
+</div>
+
+<ol class="news-tl">
+<li><span class="news-tl__date">พฤศจิกายน 2569 (ตอนนี้)</span><div>อัปโหลดภาพหน้าจอจอพับที่ Play Console ได้แล้ว และแอปที่ถึง Tier 2 / Tier 1 สมัครขอป้ายและการโปรโมตได้<span class="news-tl__src">Android Developers Blog</span></div></li>
+<li><span class="news-tl__date">เมษายน 2570</span><div>แอปใหม่และอัปเดตต้องแนบภาพหน้าจอจอพับ และเกณฑ์ Tier 3 เริ่มมีผล ส่วนแอปเดิม Google เขียนว่า "Existing un-updated apps will remain downloadable" (แอปเดิมที่ไม่ได้อัปเดตยังดาวน์โหลดได้)<span class="news-tl__src">Android Developers Blog</span></div></li>
+<li><span class="news-tl__date">สิงหาคม 2570</span><div>แอปใหม่และแอปที่อัปเดตต้อง target API 37 (Android 17)<span class="news-tl__src">Android Developers Blog, 9to5Google</span></div></li>
+</ol>
+
+</section>
+
+<section class="section">
+
+## เกมได้รับการยกเว้นไหม
+
+<div class="prose">
+
+ไม่ได้ยกเว้น แต่แยกเกณฑ์ครับ บล็อกประกาศของ Google บอกให้ไปดูหน้าข้อกำหนดสำหรับเกมแยกต่างหาก
+
+ส่วน 9to5Google สรุปว่าเกมต้องใส่ภาพหน้าจอจอพับภายในเมษายน 2570 เหมือนกัน แต่เกณฑ์ Tier 3 ของเกมเริ่มบังคับเดือนสิงหาคม 2570
+
+ต่างจากแอปตรงไหน? ตามที่ 9to5Google สรุป Tier 3 ของเกมให้แสดงเต็มจอตามแนวที่เกมรองรับ และมีแถบดำ (letterbox หรือ pillarbox คือแถบดำบนล่างหรือซ้ายขวา) ได้ถ้าหมุนไปแนวที่เกมไม่รองรับ แต่ต้องทำในตัวเกมเอง
+
+รายละเอียดวันบังคับและเกณฑ์ Tier 3 ของเกม อ้างจาก 9to5Google เท่านั้น ยังไม่ได้ยืนยันกับหน้าข้อกำหนดเกมของ Google ครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## คนไทยได้ผลอย่างไร
+
+<div class="prose">
+
+ผมไม่พบประกาศของ Google ที่พูดถึงไทยโดยเฉพาะ ข้อบังคับนี้ใช้กับ Google Play ทั่วไป เท่าที่เห็นจากบล็อกมีผลกับคน 3 กลุ่มครับ
+
+<div class="news-cards">
+<div class="news-card is-warn"><b>นักพัฒนาและบริษัทที่ทำแอปในไทย</b><span class="news-pill">ต้องเตรียมตัว</span> แอปธนาคาร ร้านค้า เดลิเวอรี และแอปองค์กรที่ล็อกแนวตั้งหรือแสดงเป็นแท่งแคบบนจอพับ ต้องแก้ให้เต็มจอและจำสถานะให้ได้ก่อนเมษายน 2570 ไม่งั้นอัปเดตแอปไม่ได้ รวมทั้งการแก้บั๊กด่วนด้วย (ผมสรุปเองจากเงื่อนไข "publish or update" คือเผยแพร่หรืออัปเดต)</div>
+<div class="news-card is-ok"><b>คนใช้มือถือจอพับ</b><span class="news-pill">น่าจะเห็นแอปดีขึ้น</span> แอปที่อัปเดตหลังเมษายน 2570 ควรเต็มจอและต่อเนื่องเวลาพับกางมากขึ้น และหน้าแอปบน Play Store จะมีภาพตัวอย่างบนจอพับให้ดูก่อนโหลด</div>
+<div class="news-card is-ok"><b>คนใช้มือถือทั่วไป</b><span class="news-pill">ไม่ต้องทำอะไร</span> แอปเดิมที่ไม่มีใครอัปเดตยังดาวน์โหลดได้ตามที่ Google บอก แต่ถ้านักพัฒนาไม่ปรับ แอปนั้นจะอัปเดตไม่ได้ และบล็อกบอกว่าอาจถูกลดการมองเห็นบนสโตร์</div>
+</div>
+
+Google ใช้ตัวเลขว่ามีอุปกรณ์จอใหญ่ในมือผู้ใช้ "over 580 million" (มากกว่า 580 ล้านเครื่อง) ทั่วโลก ผมไม่พบตัวเลขเฉพาะของไทยครับ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- Android Developers Blog, Mekka Okereke (18 พ.ย. 2569): <a href="https://developer.android.com/blog/posts/google-play-adaptive-quality-standards" rel="noopener">บทความประกาศมาตรฐานคุณภาพแอปแบบ adaptive บน Google Play</a>
+- 9to5Google, Abner Li (18 พ.ย. 2569): <a href="https://9to5google.com/2026/11/18/android-foldable-apps-google-play/" rel="noopener">Google Play wants Android apps to nail foldable basics by April 2027</a>
+- Droidsans (อ่านเทียบวันที่ ไม่ได้ใช้ภาพ): <a href="https://droidsans.com/google-play-adaptive-app-quality-standards-guide/" rel="noopener">Google เอาจริง บังคับนักพัฒนาปรับแอปให้รองรับมือถือจอพับ</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพเปรียบเทียบ letterbox, ภาพเลย์เอาต์หลายช่อง และภาพหน้าจอ 3 แบบ: Google / Android Developers Blog ผ่าน <a href="https://developer.android.com/blog/posts/google-play-adaptive-quality-standards" rel="noopener">developer.android.com</a>
+- ภาพปก: by dojojin.tech (ภาพประกอบทางการจาก Google / Android Developers Blog)
+
+</div>
+
+</section>
