@@ -1,0 +1,1059 @@
+---
+title: "FSD ของ Tesla คืออะไร ต่างจากระบบนำทางยังไง ไล่ประวัติระบบช่วยขับตั้งแต่ Cruise Control ถึง FSD v15 และฝั่งจีน"
+topic: car
+type: knowledge
+tags: [ev]
+date: 2026-11-23
+description: "FSD (Supervised) ของ Tesla ไม่ใช่รถขับเอง แต่เป็นระบบช่วยขับ Level 2 ที่คนขับต้องมองถนนตลอด อธิบายความต่างจากแผนที่นำทาง Cruise Control และ ACC ระดับ SAE 0-5 ไล่ประวัติตั้งแต่สิทธิบัตร Cruise Control ปี 2491 (ค.ศ. 1948) Autopilot ปี 2557 ถึง FSD v15 ของ พ.ย. 2569 สิ่งที่ Elon Musk แจกฟรีจริงกับที่ไม่ได้แจก ระบบช่วยขับของจีน และสถานะในไทย"
+kicker: "ความรู้ · ระบบช่วยขับ"
+lead: "FSD ของ Tesla ขับเองได้จริงไหม ต่างจากเปิด Google Maps นำทางยังไง แล้วที่ Elon Musk บอกว่า \"แจกฟรี\" แจกอะไรบ้าง ผมสรุปจากเอกสารของ Tesla หน่วยงานกำกับ และสื่อต่างประเทศ ไล่ตั้งแต่สิทธิบัตร Cruise Control ปี 2491 (ค.ศ. 1948) จนถึง FSD v15 ที่เริ่มทยอยปล่อยรอบแรกเมื่อ 21 พ.ย. 2569 (ตามเวลาสหรัฐฯ) แล้วเทียบกับฝั่งจีนและสถานะในไทยครับ"
+meta: "Dojo-mAn Fotographer · เรียบเรียงจากเอกสารของผู้ผลิต หน่วยงานกำกับ และสื่อต่างประเทศ"
+cover: "/media/posts/knowledge/tesla-fsd-guide/cover.jpg"
+coverAlt: "ภาพรถ Tesla Model Y สีเทาจอดในลานจอดรถ มองจากมุมหน้าเฉียง อยู่ในกรอบภาพมุมโค้งบนพื้นหลังสีอ่อน พร้อมหัวข้อ FSD ของ Tesla คืออะไร ข้อความ L2 คนขับต้องคุมตลอด และป้ายหัวข้อย่อย"
+---
+
+<section class="section">
+
+## เกริ่นนำ
+
+<div class="split">
+<div class="prose">
+
+เคยเห็นคลิปรถ Tesla เลี้ยวซ้ายเลี้ยวขวาเองกลางเมืองไหมครับ ดูแล้วก็สงสัยว่ามันขับเองได้จริงไหม แล้วต่างอะไรกับเปิด Google Maps ให้พูดบอกทาง
+
+**ไม่ใช่รถขับเองครับ** ข้อนี้ Tesla เขียนเองในหน้า FSD ของตัวเองว่า "Currently enabled features require active driver supervision and do not make the vehicle autonomous" แปลง่าย ๆ คือ ฟีเจอร์ที่เปิดใช้อยู่ตอนนี้ต้องมีคนขับคอยดูแลอย่างจริงจัง และไม่ได้ทำให้รถกลายเป็นรถขับเอง
+
+ในภาพคือ Model Y รุ่นปรับโฉมครับ มองจากข้างนอกก็รถธรรมดาคันหนึ่ง ของที่คนพูดถึงกันอยู่ในซอฟต์แวร์ เดี๋ยวผมแกะให้ดูทีละชั้น
+
+</div>
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/knowledge/tesla-fsd-guide/model-y.jpg" width="1600" height="1200" loading="lazy" alt="Tesla Model Y สีขาวกำลังวิ่งบนถนนในเมือง มองจากด้านหลังรถ" /></div><figcaption><span class="news-fig__credit">ภาพ: Damian B Oh · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Tesla_Model_Y_Dual_Motor_Juniper_Pearl_White_Multi-Coat_(7).jpg" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+</div>
+
+<div class="prose">
+
+ผมเรียงตามคำถามที่คนถามบ่อยครับ FSD คืออะไร ต่างจากระบบนำทางและ Cruise Control (ระบบล็อกความเร็วรถให้คงที่) ยังไง ระดับการขับอัตโนมัติ 0 ถึง 5 แปลว่าอะไร ระบบพวกนี้มาจากไหน แล้วค่อยมาถึง Tesla กับ FSD v15 ที่เริ่มทยอยปล่อยรอบแรกเมื่อ 21 พ.ย. 2569 (ค.ศ. 2026) ตามเวลาสหรัฐฯ
+
+ปิดด้วยสามเรื่องที่คนถามกันเยอะ Elon Musk แจกอะไรฟรีจริง ๆ บ้าง ฝั่งจีนไปถึงไหนแล้ว และในไทยใช้ได้หรือยัง
+
+</div>
+
+<div class="news-cards">
+<div class="news-card is-ok"><span class="news-pill">คำตอบสั้น</span><b>FSD (Supervised) คือระบบช่วยขับ Level 2</b>Level 2 คือระดับที่ 2 จาก 0 ถึง 5 (อธิบายไว้ในหัวข้อระดับการขับอัตโนมัติ SAE 0 ถึง 5) รถบังคับพวงมาลัย เบรก เร่ง ให้ แต่คนขับต้องมองถนนและพร้อมรับช่วงตลอดเวลา ความรับผิดชอบยังเป็นของคนขับ</div>
+<div class="news-card is-warn"><span class="news-pill">ต่างจากแผนที่</span><b>แผนที่นำทางบอกแค่เส้นทาง</b>มือเรายังต้องหมุนพวงมาลัยเอง FSD เอาเส้นทางนั้นไปขับตามให้ แต่เรายังต้องคอยดูแล</div>
+<div class="news-card is-bad"><span class="news-pill">ที่มักเข้าใจผิด</span><b>\"ฟรี\" ไม่ได้แปลว่าเปิดให้ทุกคน</b>Tesla แจกบางอย่างจริง แต่ FSD ไม่อยู่ในนั้น เล่าไว้ในหัวข้อสิ่งที่ Elon Musk แจกฟรีจริง ๆ</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## FSD คืออะไร
+
+<div class="prose">
+
+FSD ย่อมาจาก Full Self-Driving แปลตรงตัวว่า "ขับเองได้เต็มรูปแบบ" ครับ แต่ชื่อเต็มที่ Tesla ใช้ในสหรัฐฯ และอีกหลายตลาดตอนนี้คือ **Full Self-Driving (Supervised)** คำว่า Supervised ที่ต่อท้าย Tesla ใส่เอง แปลว่ามีคนคอยคุมอยู่ ชื่อเลยขัดกันเองในตัว ขับเองเต็มรูปแบบ แต่ต้องมีคนคุม
+
+แล้วตกลงมันทำอะไรได้ คำอธิบายในหน้าของ Tesla (ฉบับเก็บถาวร 16 พ.ย. 2569 หรือ ค.ศ. 2026) เขียนว่า "When enabled, your vehicle will drive you almost anywhere with your active supervision, requiring minimal intervention" คือเปิดแล้ว รถจะพาเราไปได้เกือบทุกที่ โดยคนขับคอยดูแล และแทบไม่ต้องเข้าไปแตะ
+
+ส่วน Full Self-Driving (Unsupervised) หรือแบบไม่ต้องมีคนดูแล หน้าเดียวกันวางไว้เป็นเป้าหมายในอนาคต ผูกกับ robotaxi (แท็กซี่ไร้คนขับ) และรถ Cybercab (รถที่ Tesla ทำมาเป็น robotaxi) ครับ ยังไม่ใช่ของที่ซื้อได้วันนี้
+
+</div>
+
+<div class="news-cards">
+<div class="news-card"><b>ชื่อในยุโรปคือ Tesla Assisted Driving (TAD)</b>RDW หน่วยงานรถยนต์ของเนเธอร์แลนด์ อนุมัติ "FSD Supervised" เมื่อ 10 เม.ย. 2569 พร้อมเขียนว่า "A vehicle with FSD Supervised is not self-driving… the driver remains responsible and must always remain in control" (รถที่มี FSD Supervised ไม่ใช่รถขับเอง… คนขับยังต้องรับผิดชอบ และต้องคุมรถเองตลอดเวลา) พอ 3 พ.ย. 2569 ระบบถูกเปลี่ยนชื่อเป็น TAD ในยุโรป และความเร็วที่ยอมให้เกินป้ายจำกัดลดจากไม่เกิน +50% เหลือไม่เกิน +10% ใช้ได้กับรถที่มีคอมพิวเตอร์ HW4 (Hardware 4 คือคอมพิวเตอร์ขับรถรุ่นที่ 4 ในรถ Tesla ซึ่ง Tesla เรียก AI4) ขึ้นไป ตอนนี้เบลเยียม โครเอเชีย เช็กเกีย เดนมาร์ก เอสโตเนีย ลัตเวีย ลิทัวเนีย สโลวาเกีย และสโลวีเนีย รับรองแล้ว ส่วนมติระดับสหภาพยุโรปยังอยู่ระหว่างพิจารณา</div>
+<div class="news-card"><b>ราคาตอนนี้: $99 ต่อเดือน (สมัครรายเดือน)</b>หลัง 14 ก.พ. 2569 ในสหรัฐฯ ขายแบบสมัครรายเดือนอย่างเดียว ส่วนช่วงราคาตอนซื้อขาด Electrek (เว็บข่าวรถไฟฟ้าของสหรัฐฯ) ระบุว่าอยู่ระหว่าง $5,000 ในยุคแรก ถึง $15,000 ปลายปี 2565 (ค.ศ. 2022)</div>
+<div class="news-card"><b>ปลอดภัยกว่า 7 เท่า: ตัวเลขที่ Tesla อ้างเอง</b>Tesla บอกว่าเปิด FSD (Supervised) แล้วปลอดภัยกว่าคนขับ 7 เท่า เทียบกับค่าเฉลี่ยโดยประมาณของสหรัฐฯ (ตัวเลขของ Tesla เอง)</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## Autopilot, EAP กับ FSD ต่างกันยังไง
+
+<div class="prose">
+
+Autopilot กับ FSD คืออันเดียวกันไหม ไม่ใช่ครับ คนชอบเรียกรวม ๆ ว่า "Autopilot" (แปลตรงตัวว่านักบินอัตโนมัติ) แต่จริง ๆ Tesla แบ่งเป็น 3 แพ็ก ซ้อนกันเหมือนขั้นบันได ขึ้นขั้นบนก็ได้ของขั้นล่างมาด้วยทั้งหมด
+
+ข้อมูลข้างล่างมาจากหน้าสั่งซื้อของ Tesla ไทย ฉบับที่เก็บไว้ใน Wayback Machine (เว็บที่เก็บสำเนาหน้าเว็บย้อนหลัง) ของ Model 3 วันที่ 13 ก.ค. 2569 และ Model Y วันที่ 10 ส.ค. 2569 (ค.ศ. 2026) ชื่อฟีเจอร์ผมใช้คำของ Tesla ไทยเลย จะได้ตรงกับที่เห็นตอนสั่งรถครับ
+
+</div>
+
+<div class="news-cards">
+<div class="news-card is-ok"><span class="news-pill">มีในรถทุกคัน</span><b>ชั้นที่ 1: Autopilot พื้นฐาน</b>Autosteer (ช่วยหมุนพวงมาลัยให้อยู่ในเลน) ทำงานคู่กับ "ครูสคอนโทรลแบบปรับตามสภาพจราจร" (TACC ย่อมาจาก Traffic-Aware Cruise Control) ตัวนี้คือ ACC แบบของ Tesla ส่วน ACC ก็คือ Cruise Control ที่รักษาระยะห่างจากรถคันหน้าให้เอง สองตัวนี้ทำงานรวมกัน รถจะเลี้ยวตามโค้ง เร่ง และเบรกตามรถคันหน้าในเลนเดียวกันให้เอง แถมฟีเจอร์ความปลอดภัยมาด้วย เช่น เบรกฉุกเฉินอัตโนมัติ เตือนชนด้านหน้า เตือนจุดอับสายตา และกันรถออกนอกเลน</div>
+<div class="news-card is-warn"><span class="news-pill">122,000 บาท</span><b>ชั้นที่ 2: EAP (Enhanced Autopilot หรือ Autopilot แบบยกระดับ)</b>เพิ่ม "การนำทางเมื่อใช้ Autopilot" คือบนทางหลวง ระบบพาไปตามเส้นทางนำทางตั้งแต่ทางเข้าถึงทางออก เปลี่ยนเลนและแซงรถที่ขับช้าให้เอง นอกจากนี้ยังได้เปลี่ยนเลนอัตโนมัติ กับระบบจอดรถอัตโนมัติ ส่วนที่หน้าเว็บยังเขียนว่า "กำลังจะมาถึง" คือระบบจอดแบบไร้คนขับ กับระบบเรียกรถอัจฉริยะ (Smart Summon) แบบปรับปรุง</div>
+<div class="news-card is-bad"><span class="news-pill">244,000 บาท</span><b>ชั้นที่ 3: FSD</b>ได้ทุกอย่างของ Autopilot พื้นฐานกับ EAP (ถ้ามี EAP อยู่แล้ว หน้าเว็บคิดเพิ่ม 122,000 บาท) ของที่เป็นจุดขายจริงของ FSD มีสองอย่าง คือหยุดตามไฟจราจรและป้ายหยุด กับ Autosteer บนถนนในเมือง แต่หน้าไทยยังเขียนว่า "กำลังจะมาถึง" ทั้งคู่</div>
+</div>
+
+<div class="prose">
+
+ผมว่าตรงนี้ต้องรู้ก่อนจ่ายครับ คนไทยที่จ่าย FSD วันนี้ ใช้ได้จริงเท่ากับ EAP ส่วนที่เหลือเหมือนซื้อตั๋วไว้ก่อน แล้วรอรถเที่ยวที่ยังไม่ประกาศวันออก (ดูรายละเอียดในหัวข้อในไทยเป็นยังไง)
+
+ฝั่งสหรัฐฯ ไปไกลกว่านั้นครับ Tesla บอกว่า FSD (Supervised) พารถไปได้ "almost anywhere" (เกือบทุกที่) แล้ว แต่คนขับยังต้องคุมตลอด
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ต่างจากระบบนำทางและ Cruise Control ยังไง
+
+<div class="prose">
+
+รถหลายคันมี Cruise Control อยู่แล้ว แล้ว FSD ต่างตรงไหน คำว่า "ระบบช่วยขับ" (ภาษาอังกฤษเรียก ADAS ย่อมาจาก Advanced Driver-Assistance Systems) เป็นคำเดียวที่รวมของหลายชิ้นไว้ครับ แต่ละชิ้นคุมคนละอย่าง เหมือนแบ่งงานกันระหว่างตา มือ กับเท้า ผมเรียงจากง่ายไปยากให้ดู
+
+</div>
+
+<div class="news-cards">
+<div class="news-card"><b>แผนที่นำทาง (เช่น Google Maps)</b>บอกเส้นทางด้วย GPS (ระบบดาวเทียมบอกตำแหน่ง) กับแผนที่ แล้วพูดว่าให้เลี้ยวตรงไหน พวงมาลัย เบรก คันเร่ง เป็นหน้าที่ของคนทั้งหมด</div>
+<div class="news-card"><b>Cruise Control</b>ล็อกความเร็วไว้ค่าเดียว ไม่สนรถข้างหน้า คนยังต้องเลี้ยวและเบรกเอง</div>
+<div class="news-card"><b>ACC (Adaptive Cruise Control)</b>ล็อกความเร็วเหมือนกัน แต่รักษาระยะห่างจากรถคันหน้าให้ด้วย คนยังต้องเลี้ยวเอง</div>
+<div class="news-card"><b>Lane keeping (ช่วยรักษาเลน)</b>ช่วยหมุนพวงมาลัยให้รถอยู่ในเลน แต่ไม่ได้คุมความเร็ว และไม่ได้เลี้ยวตามเส้นทาง</div>
+<div class="news-card is-warn"><span class="news-pill">ชิ้นเดียวที่รวมครบ</span><b>FSD (Supervised)</b>เอาเส้นทางนำทางมาเป็นตัวตั้ง แล้วระบบหมุนพวงมาลัย เบรก เร่ง เลี้ยวตามสี่แยก และเปลี่ยนเลนตามเส้นทางให้ แต่ทั้งตามกฎและตามเทคนิคยังเป็น Level 2 คนขับต้องดูแลตลอด</div>
+</div>
+
+<div class="prose">
+
+### ระบบนำทางมาจากไหน แล้วนำไปสู่อะไร
+
+แผนที่นำทางในมือถือเรา เริ่มมาจาก GPS เลยหรือเปล่า ไม่ใช่ครับ ช่วงแรก GPS ยังเป็นของทหาร เครื่องนำทางในรถยุคแรกเลยต้องเดาเองว่ารถอยู่ตรงไหน จากที่ล้อหมุนไปกี่รอบและเลี้ยวไปกี่องศา เหมือนเราหลับตาเดินแล้วนับก้าวเอา
+
+<ol class="news-tl">
+<li><span class="news-tl__date">2516–2521 (ค.ศ. 1973–1978)</span><div>สหรัฐฯ อนุมัติโครงการ GPS ปลายปี 2516 แล้วยิงดาวเทียม GPS ดวงแรกขึ้นไปเมื่อ ก.พ. 2521 ตอนนั้นยังเป็นของทหาร<span class="news-tl__src">GPS World (Parkinson)</span></div></li>
+<li><span class="news-tl__date">2524 (ค.ศ. 1981)</span><div>Honda ขาย Electro Gyrocator ใน Accord ใช้ไจโรวัดว่ารถเลี้ยวไปเท่าไหร่ บวกกับระยะทางที่ล้อวิ่ง แล้วโชว์เป็นจุดบนจอ CRT (จอหลอดภาพแบบทีวีรุ่นเก่า) ส่วนแผนที่เป็นแผ่นใสวางทับหน้าจออีกที ยังไม่มี GPS เลย นิตยสาร IEEE Spectrum ของสมาคมวิศวกร IEEE เรียกว่า "world's first map-based automotive navigation system" (ระบบนำทางในรถแบบใช้แผนที่ระบบแรกของโลก)<span class="news-tl__src">IEEE Spectrum · Honda</span></div></li>
+<li class="is-key"><span class="news-tl__date">16 ก.ย. 2526 (ค.ศ. 1983)</span><div>หลังเครื่องบินโดยสารของ KAL (สายการบิน Korean Air Lines) ถูกยิงตก ทำเนียบขาวประกาศว่าเมื่อระบบพร้อม จะเปิด GPS ให้เครื่องบินพลเรือนใช้ด้วย<span class="news-tl__src">Reagan Library</span></div></li>
+<li><span class="news-tl__date">2528 (ค.ศ. 1985)</span><div>Etak Navigator เก็บแผนที่ดิจิทัลไว้ในเทปคาสเซ็ต แล้วขยับตำแหน่งรถให้ตรงกับถนนบนแผนที่ (map matching) ก็ยังไม่ใช้ GPS<span class="news-tl__src">ETHW (Stan Honey) · Computer History Museum</span></div></li>
+<li class="is-key"><span class="news-tl__date">2533 (ค.ศ. 1990)</span><div>ระบบนำทาง GPS ในรถรุ่นแรก ๆ มาพร้อมกันสองเจ้า Mazda บอกว่า Eunos Cosmo มี "world's first GPS navigation system" (ระบบนำทาง GPS ระบบแรกของโลก) ส่วน Pioneer บอกว่า AVIC-1 (มิ.ย. 2533) เป็นเครื่องแรกแบบติดตั้งเพิ่ม ใครแรกจริงเลยยังเถียงกันได้<span class="news-tl__src">Mazda · Pioneer</span></div></li>
+<li><span class="news-tl__date">27 เม.ย. 2538 (ค.ศ. 1995)</span><div>GPS ถูกประกาศว่าใช้งานได้เต็มระบบ (NASA ใช้ปี 2536 ซึ่งเป็นปีที่ดาวเทียมครบ)<span class="news-tl__src">GPS World · NASA</span></div></li>
+<li><span class="news-tl__date">2541 (ค.ศ. 1998)</span><div>Garmin StreetPilot เครื่องนำทางพกพาราคา $400 ที่ IEEE Spectrum เรียกว่าหนึ่งในเครื่องแรกที่ใช้ได้จริงและราคาจับต้องได้<span class="news-tl__src">IEEE Spectrum</span></div></li>
+<li class="is-key"><span class="news-tl__date">1 พ.ค. 2543 (ค.ศ. 2000)</span><div>สหรัฐฯ เลิกจงใจทำให้สัญญาณ GPS ของพลเรือนคลาดเคลื่อน (Selective Availability) ทำเนียบขาวบอกว่าพลเรือนจะหาตำแหน่งได้แม่นขึ้น "up to ten times" (สูงสุดถึง 10 เท่า)<span class="news-tl__src">ทำเนียบขาว · gps.gov</span></div></li>
+<li><span class="news-tl__date">8 ก.พ. 2548 (ค.ศ. 2005)</span><div>Google Maps เปิดตัว ค้นเส้นทางแบบทีละขั้นบนเว็บได้<span class="news-tl__src">Google Blog</span></div></li>
+<li class="is-key"><span class="news-tl__date">28 ต.ค. 2552 (ค.ศ. 2009)</span><div>Google Maps Navigation บน Android บอกทางด้วยเสียงทีละเลี้ยว คำนวณเส้นทางใหม่เอง และดึงข้อมูลรถติดสดผ่านเน็ต มือถือเลยกลายเป็นเครื่องนำทางไปในตัว<span class="news-tl__src">Google Blog</span></div></li>
+<li><span class="news-tl__date">2555–2556 (ค.ศ. 2012–2013)</span><div>Apple เพิ่มการนำทางทีละเลี้ยวใน iOS 6 (เปิดตัว มิ.ย. 2555) และ Google ซื้อ Waze ที่ใช้ข้อมูลรถติดจากผู้ใช้ด้วยกัน (11 มิ.ย. 2556)<span class="news-tl__src">Apple Newsroom · Google Blog</span></div></li>
+<li class="is-key"><span class="news-tl__date">2560 (ค.ศ. 2017)</span><div>แผนที่เริ่มกลายเป็น "ตา" ของระบบช่วยขับ Cadillac Super Cruise ใช้แผนที่ทางด่วนที่สแกนด้วย lidar (เซนเซอร์ที่ยิงเลเซอร์ออกไปวัดระยะ ดูหัวข้อกล้อง lidar และเรดาร์ ต่างกันยังไง) วิศวกร GM บอก CNBC ว่าทำแผนที่ไว้ 160,000 ไมล์ ละเอียดระดับ 5 เซนติเมตร<span class="news-tl__src">CNBC · Cadillac</span></div></li>
+<li class="is-key"><span class="news-tl__date">26 ต.ค. 2561 (ค.ศ. 2018)</span><div>Tesla ปล่อย Navigate on Autopilot ใน EAP ระบบพารถตามเส้นทางนำทางบนทางหลวง ตั้งแต่ทางเข้าถึงทางออก เปลี่ยนเลน ผ่านทางแยกต่างระดับ และออกทางออกเอง โดยคนขับยังต้องคุม<span class="news-tl__src">Tesla Blog</span></div></li>
+</ol>
+
+</div>
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/knowledge/tesla-fsd-guide/honda-gyrocator.jpg" width="1399" height="598" loading="lazy" alt="ซ้าย ตัวเครื่อง Honda Electro Gyrocator มีจอ CRT แสดงแผนที่สีเขียว ปุ่มปรับและปุ่มทิศทางรอบจอ ช่องเสียบแผนที่ใต้จอ ขวา ซองแผ่นแผนที่ใสเขียนว่า Carrying Case 20 sheets กับสมุดแผนที่ถนนภาษาญี่ปุ่นและปากกาสองแท่ง" /></div><figcaption><span class="news-fig__credit">ภาพ: Honda · <a href="https://global.honda/en/about/history-digest/75years-history/chapter3/section2_4/" rel="noopener">Honda 75 Years of History</a> · จัดวางสองภาพคู่กันโดย DOJOJIN.TECH</span></figcaption></figure>
+<div class="prose">
+
+หน้าตาของ Honda Electro Gyrocator เป็นแบบนี้ครับ ภาพซ้ายคือตัวเครื่องที่ติดบนคอนโซล จอเป็น CRT ขนาดราว 15 เซนติเมตร (ตามที่ IEEE Spectrum บอก) ภาพขวาคือสมุดแผ่นแผนที่ใสที่มากับเครื่อง บนซองเขียนว่ามี 20 แผ่น
+
+วิธีใช้คือเลือกแผ่นแผนที่ของพื้นที่ที่จะไป แล้วเสียบเข้าช่องใต้จอให้แผ่นใสไปทาบหน้าจอ ตัวเครื่องจะใช้ไจโรวัดว่ารถเลี้ยวไปเท่าไหร่ บวกกับระยะทางที่ล้อหมุน แล้ววาดจุดตำแหน่งรถบนจอ จุดนั้นก็ไปตกบนแผนที่ที่ทาบอยู่ เหมือนเอาไฟฉายส่องจุดบนแผนที่กระดาษให้เราดู
+
+ยังไม่มี GPS ยังไม่บอกทางให้เลี้ยว แต่เป็นจุดเริ่มของการ "รู้ว่ารถอยู่ตรงไหนบนแผนที่" ซึ่งทุกระบบหลังจากนี้ต่อยอดไป
+
+</div>
+</div>
+
+<div class="split">
+<div class="prose">
+
+ดาวเทียมแบบในภาพนี่แหละครับ ที่ทำให้มือถือทุกเครื่องรู้ว่าเราอยู่ตรงไหน ภาพนี้เป็นภาพวาดดาวเทียม GPS รุ่น IIR ของรัฐบาลสหรัฐฯ
+
+ไล่ไทม์ไลน์ข้างบนแล้วจะเห็นว่าระบบนำทางเดินมาสามขั้น ขั้นแรกบอกว่าเราอยู่ไหน ขั้นสองบอกว่าต้องเลี้ยวตรงไหน ขั้นสามคือเอาเส้นทางนั้นมาให้รถขับตามเอง
+
+FSD อยู่ขั้นที่สามครับ นึกภาพนั่งรถไปกับเพื่อน แอปนำทางคือเพื่อนที่คอยบอกทาง ส่วน FSD คือคนขับที่ฟังเพื่อนแล้วขับให้ แต่เรายังต้องนั่งคุมอยู่ข้าง ๆ ตลอด
+
+</div>
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/knowledge/tesla-fsd-guide/gps-satellite.jpg" width="1600" height="1200" loading="lazy" alt="ภาพวาดดาวเทียม GPS รุ่น IIR โคจรเหนือโลก มีแผงโซลาร์เซลล์และเสาอากาศยื่นออกมา" /></div><figcaption><span class="news-fig__credit">ภาพ: รัฐบาลสหรัฐฯ (pnt.gov) · สาธารณสมบัติ · <a href="https://commons.wikimedia.org/wiki/File:GPS-IIR.jpg" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+</div>
+
+<div class="split">
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/knowledge/tesla-fsd-guide/cadillac-ct6.jpg" width="1600" height="875" loading="lazy" alt="รถเก๋ง Cadillac CT6 สีน้ำเงินเข้มจอดในลานจอด มองจากด้านหน้าเฉียงขวา" /></div><figcaption><span class="news-fig__credit">ภาพ: Mr.choppers · CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File:2018_Cadillac_CT6_Premium_Luxury_AWD_Super_Cruise,_front_right.jpg" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+<div class="prose">
+
+ในภาพคือ Cadillac CT6 ปี 2018 รุ่นที่มี Super Cruise ครับ ระบบนี้ให้ปล่อยมือจากพวงมาลัยได้บนทางด่วน แต่ใช้ได้เฉพาะถนนที่ Cadillac ทำแผนที่ไว้ก่อน
+
+แผนที่นี้ไม่ใช่แผนที่แบบ Google Maps นะครับ Cadillac สแกนถนนจริงด้วย lidar ให้ได้แผนที่ละเอียดระดับเซนติเมตร วิศวกร GM บอก CNBC ปี 2560 ว่า "This is the first use of a LIDAR map" (นี่คือครั้งแรกที่เอาแผนที่จาก lidar มาใช้) ตอนนี้หน้าเว็บ Cadillac บอกว่าถนนในอเมริกาเหนือที่ใช้ Super Cruise ได้มีเกิน 630,000 ไมล์แล้ว
+
+ตรงนี้แหละที่แผนที่เปลี่ยนบทบาท จากเดิมที่บอกทางให้คน กลายเป็นข้อมูลที่รถใช้ตัดสินใจเองว่าจะขับยังไง
+
+</div>
+</div>
+
+<div class="split">
+<div class="prose">
+
+Tesla เองก็ไม่ได้เริ่มที่ FSD ครับ Autopilot ตัวพื้นฐานที่ Tesla อธิบายไว้ปี 2558 (ค.ศ. 2015) คือ "steer within a lane, change lanes with the simple tap of a turn signal, and manage speed by using active, traffic-aware cruise control" คือหมุนพวงมาลัยในเลน เปลี่ยนเลนเมื่อกดไฟเลี้ยว และคุมความเร็วด้วย Cruise Control ที่ดูการจราจร พูดง่าย ๆ ก็ ACC บวก lane keeping บวกเปลี่ยนเลนเมื่อเราสั่ง
+
+ในภาพคือกลุ่มกล้องหลังกระจกหน้าของ Model 3 Highland ครับ ตรงนี้แหละคือตาหลักของรถ Tesla แนวทางใช้กล้องเป็นตานี้ Tesla ตั้งชื่อว่า Tesla Vision
+
+ทำไม Tesla เลือกกล้องอย่างเดียว และกลางคืนหรือฝนตกเป็นยังไง ผมแยกไว้ในหัวข้อถัดไปครับ
+
+</div>
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/knowledge/tesla-fsd-guide/tesla-camera.jpg" width="1600" height="1205" loading="lazy" alt="กลุ่มกล้องหลายตัวที่ติดบนกระจกหน้าตรงตำแหน่งกระจกมองหลัง ของ Tesla Model 3 Highland" /></div><figcaption><span class="news-fig__credit">ภาพ: Mliu92 · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Front_camera_cluster,_Tesla_Model_3_Highland.jpg" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+</div>
+
+<div class="prose">
+
+### แล้ว end-to-end คืออะไร
+
+ระบบช่วยขับแบบเก่าคือคนเขียนกฎทีละข้อครับ เห็นเส้น ให้หมุนพวงมาลัยแบบนี้ เห็นไฟแดง ให้เบรกแบบนั้น เหมือนคู่มือที่ต่อกันยาวเป็นเล่ม
+
+**End-to-end neural network** แปลตรง ๆ คือโครงข่ายประสาทเทียม (โปรแกรมที่เรียนรู้จากตัวอย่างจำนวนมาก แทนการให้คนเขียนกฎ) แบบต้นทางถึงปลายทาง ทำงานคือโยนคู่มือเล่มนั้นทิ้ง เหลือโมเดลก้อนใหญ่ก้อนเดียวที่ถูกฝึกให้รับภาพจากกล้องเข้าไป แล้วส่งคำสั่งขับออกมาเลย ตรงกลางไม่มีกฎที่คนเขียนต่อ ๆ กันอีก
+
+ผมมองว่าเป็นการแลกกันครับ ไม่ต้องนั่งเขียนกฎให้ครบทุกกรณีแล้ว แต่พอรถทำอะไรแปลก ๆ ก็ไม่มีกฎข้อไหนให้เปิดดูว่าพลาดตรงไหน
+
+Electrek รายงานว่า FSD v12 คือเวอร์ชันที่เป็น end-to-end เริ่มปล่อยให้คนกลุ่มเล็กเดือน ม.ค. 2567 (ค.ศ. 2024) และกว้างขึ้นเดือน มี.ค. 2567
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ทำไม Tesla ใช้กล้องอย่างเดียว กลางคืนกับฝนตกแม่นไหม
+
+<div class="prose">
+
+Tesla เคยใส่ lidar แล้วถอดออกหรือเปล่า ไม่ใช่ครับ Tesla ไม่เคยใส่ lidar ในรถที่ขายให้ลูกค้าเลย ปี 2564 Tesla ปฏิเสธข่าวลือเรื่องนี้ว่า "fundamentally untrue" (ไม่จริงตั้งแต่ต้น) และบอกว่ารถทดสอบที่มีคนเห็นติด lidar ใช้แค่เทียบความแม่นของกล้อง (ตามที่ Electrek รายงาน)
+
+แล้วถอดอะไรออกไป ของที่ถอดจริงคือเรดาร์ (ตัวยิงคลื่นวิทยุวัดระยะ) กับเซนเซอร์อัลตราโซนิก (ตัววัดระยะตอนจอด ใช้คลื่นเสียงที่คนไม่ได้ยิน) ครับ Tesla เขียนไว้เองในหน้า "Transitioning to Tesla Vision" (เปลี่ยนผ่านไปใช้ Tesla Vision) ไล่ตามปีได้แบบนี้
+
+</div>
+
+<ol class="news-tl">
+<li><span class="news-tl__date">พ.ค. 2564 (ค.ศ. 2021)</span><div>Model 3 และ Model Y ที่ส่งมอบในอเมริกาเหนือไม่มีเรดาร์แล้ว ช่วงแรก Autosteer ถูกจำกัดความเร็วไม่เกิน 75 ไมล์ต่อชั่วโมง บางฟีเจอร์ถูกปิดไว้ก่อน แล้วค่อยเปิดคืนผ่านอัปเดต<span class="news-tl__src">Tesla</span></div></li>
+<li><span class="news-tl__date">2565 (ค.ศ. 2022)</span><div>Model S และ Model X ถอดเรดาร์ ส่วนเดือน ต.ค. 2565 Model 3 และ Model Y ในหลายตลาดเริ่มไม่มีเซนเซอร์อัลตราโซนิก Tesla ใช้กล้องคำนวณพื้นที่รอบรถแทน<span class="news-tl__src">Tesla</span></div></li>
+<li><span class="news-tl__date">2566 (ค.ศ. 2023)</span><div>Model S และ Model X ถอดอัลตราโซนิกตาม ส่วนรถ S/X ที่ใช้ HW4 มีเรดาร์กลับมาตามที่ Notebookcheck และ InsideEVs รายงาน แต่ Tesla ไม่ได้บอกเองว่า FSD ใช้เรดาร์ตัวนี้ และ NHTSA (หน่วยงานความปลอดภัยทางถนนของสหรัฐฯ) เขียนว่า FSD "relies exclusively on vision-based cameras" (พึ่งกล้องที่มองภาพอย่างเดียวเท่านั้น)<span class="news-tl__src">Tesla · Notebookcheck · InsideEVs · NHTSA</span></div></li>
+</ol>
+
+<div class="prose">
+
+### Elon Musk ให้เหตุผลว่าอะไร
+
+**ปี 2562** ในงาน Autonomy Day (งานที่ Tesla จัดแถลงเรื่องรถขับเอง) Elon Musk พูดว่า "Lidar is a fool's errand" แปลว่าทำไปก็เหนื่อยเปล่า และเปรียบว่า lidar เหมือน "expensive appendices" คือไส้ติ่งราคาแพง มีไว้ก็ไม่จำเป็น (TechCrunch) ส่วน Andrej Karpathy หัวหน้าทีม AI ของ Tesla ตอนนั้น บอกว่า lidar เป็น "a shortcut" และ "a crutch" คือทางลัด หรือไม้ค้ำ ที่ทำให้ไม่ต้องแก้โจทย์จริง ซึ่งก็คือการมองให้เข้าใจด้วยกล้อง
+
+**ปี 2564** Elon Musk ทวีตว่า "When radar and vision disagree, which one do you believe? Vision has much more precision" คือถ้าเรดาร์กับกล้องเห็นไม่ตรงกัน จะเชื่ออันไหน แล้วเขาก็ตอบเองว่ากล้องแม่นกว่ามาก Tesla เลยเลือกเชื่อกล้องอย่างเดียว (CleanTechnica) เหมือนใส่นาฬิกาสองเรือนที่บอกเวลาไม่ตรงกัน เลยถอดเหลือเรือนเดียว เขายังพูดเรื่องนี้ซ้ำอีกในปี 2568
+
+**อีกเหตุผลคือราคา** อาจารย์ Kilian Weinberger จาก Cornell บอก IEEE Spectrum ว่ากล้อง "dirt cheap" คือถูกมากเมื่อเทียบกับ lidar Tesla จึงใส่ได้ทุกคันที่ขาย และได้ข้อมูลจากรถทั้งฝูงกลับมาเทรนโมเดล
+
+ที่น่าสนใจคือ Elon Musk ก็เคยพูดเองว่า เรดาร์ความละเอียดสูงมาก ถ้าใช้ร่วมกับกล้องจะดีกว่ากล้องอย่างเดียว เพียงแต่ตอนนั้นยังไม่มีเรดาร์แบบนั้น (Electrek)
+
+### กล้อง lidar และเรดาร์ ต่างกันยังไง
+
+แล้วสามอย่างนี้ต่างกันตรงไหน ถ้าเทียบจากคำของ Tesla, Waymo (บริษัทรถขับเองที่เริ่มมาจากโครงการของ Google) และคู่มือรถของ Tesla จะเห็นว่าไม่มีตัวไหนดีทุกด้านครับ แต่ละตัวเก่งคนละเรื่อง
+
+</div>
+
+<div class="news-cards">
+<div class="news-card is-ok"><span class="news-pill">กล้อง</span><b>เห็นสี ป้าย และไฟจราจร ราคาถูก</b>อ่านป้าย สีไฟจราจร และเส้นถนนได้เหมือนตาคน ราคาถูกจนใส่ได้ทุกคัน แต่ก็ต้องมีแสงถึงจะเห็น Tesla เขียนในคู่มือเองว่า ฝนหนัก หมอก หิมะ ถนนมืดตอนกลางคืน ไฟหน้ารถสวน หรือแดดส่องตรง ทำให้ระบบทำงานได้ไม่ดี และกล้องต้องสะอาด ไม่มีโคลน น้ำแข็ง หรือหิมะบัง</div>
+<div class="news-card is-warn"><span class="news-pill">lidar</span><b>วัดระยะแม่นเป็น 3 มิติ ไม่ต้องพึ่งแสง</b>ยิงเลเซอร์ออกไปแล้วจับเวลาที่แสงสะท้อนกลับ คล้ายค้างคาวที่ส่งเสียงแล้วฟังเสียงก้อง แต่ใช้แสงแทน เลยได้รูปทรงและระยะของทุกอย่างรอบรถ Waymo บอกว่า lidar ของตัวเองใช้ได้ "No matter the time of day" (ไม่ว่าจะกลางวันหรือกลางคืน) และเห็นคนเดินถนนมืด ๆ ได้ไกลถึง 300 เมตร แต่ lidar อ่านสีไฟจราจรหรือตัวหนังสือบนป้ายไม่ได้ ต้องใช้คู่กับกล้อง และ Waymo ยอมรับเองว่าหมอกก็กระทบเซนเซอร์แสงได้</div>
+<div class="news-card is-warn"><span class="news-pill">เรดาร์</span><b>ฝ่าฝนกับหมอกได้ บอกความเร็วของวัตถุได้ทันที</b>ใช้คลื่นวิทยุ คล้ายเครื่องจับความเร็วที่เห็นตำรวจตั้งไว้ข้างทาง Waymo บอกว่า "Radar is effective in rain, fog, and snow" (เรดาร์ใช้ได้ดีทั้งตอนฝนตก หมอก และหิมะ) และรู้ความเร็วกับทิศทางของรถหรือคนได้ทันที แต่ภาพที่ได้หยาบกว่ากล้องกับ lidar มาก ตรงนี้คือเหตุผลที่ Elon Musk บอกว่าถ้าเรดาร์กับกล้องเห็นไม่ตรงกันจะเชื่ออันไหน</div>
+<div class="news-card"><span class="news-pill">ทางเลือก</span><b>Tesla ใช้กล้องอย่างเดียว ส่วน Waymo ใช้ทั้งสามแบบ</b>Waymo บอกว่า Jaguar I-PACE ของตัวเองมีกล้อง 29 ตัว ทำงานร่วมกับ lidar และเรดาร์ ส่วนระบบช่วยขับจีนหลายค่ายมีทั้งรุ่นที่ใช้ lidar และรุ่นที่ใช้กล้องล้วน (ดูหัวข้อจุดกำเนิดระบบช่วยขับของจีน)</div>
+</div>
+
+<div class="prose">
+
+### แล้วกลางคืนกับฝนตกล่ะ
+
+กลางคืนหรือฝนตก FSD ยังแม่นเท่าเดิมไหม เอกสารของ Tesla เองตอบว่า **แย่ลงครับ** คู่มือ Model Y เขียนไว้ในส่วน FSD (Supervised) ว่า "Low visibility, such as low light or poor weather conditions (rain, snow, direct sun, fog, etc.) can significantly degrade performance" แปลว่าแสงน้อยหรืออากาศไม่ดี ทั้งฝน หิมะ แดดส่องตรง และหมอก ทำให้ระบบทำงานแย่ลงได้มาก
+
+</div>
+
+<div class="news-cards">
+<div class="news-card is-bad"><span class="news-pill">NHTSA</span><b>หน่วยงานสหรัฐฯ กำลังสอบสวนเรื่องนี้อยู่</b>NHTSA เปิดสอบสวนเมื่อ ต.ค. 2567 หลังมีรถชนตอนที่เปิด FSD อยู่ ในสภาพแดดแยงตา หมอก หรือฝุ่นฟุ้ง มีรายหนึ่งชนคนเดินถนนเสียชีวิต พอปิดการสอบสวนขั้นแรกเมื่อ 18 มี.ค. 2569 พบรวม 9 ครั้ง NHTSA เขียนว่าในสภาพแบบนี้ "the camera-based system performance degrades significantly" (ระบบที่ใช้กล้องทำงานแย่ลงอย่างมาก) และระบบไม่เตือนคนขับ "until immediately before the crash" คือเตือนตอนจะชนอยู่แล้ว เลยยกระดับเป็นการสอบสวนเชิงลึก ครอบคลุมราว 3.2 ล้านคัน</div>
+<div class="news-card is-warn"><span class="news-pill">AAA</span><b>ผลทดสอบเบรกหลบคนตอนกลางคืน</b>ปี 2562 สมาคมรถยนต์ AAA ทดสอบรถ 4 รุ่นตอนกลางคืน ในนั้นมี Model 3 (ยุคที่ยังมีเรดาร์) ผลคือ "none of the systems detected or reacted" (ไม่มีระบบไหนตรวจเจอหรือตอบสนองเลย) แปลว่าไม่มีคันไหนเห็นคนเดินข้าม ปี 2568 ทดสอบซ้ำ คราวนี้มี Model 3 ปี 2025 (กล้องล้วน) ภาพรวมทุกคันหลบได้ 60% แต่ AAA ไม่ได้แยกผลรายคัน และทดสอบบนถนนแห้ง ไม่ได้ทดสอบตอนฝนตก</div>
+<div class="news-card is-ok"><span class="news-pill">Tesla</span><b>Tesla บอกว่ากำลังแก้</b>บันทึกการอัปเดต v15 เขียนว่าปรับความเร็วตอนอากาศไม่ดี และหลบน้ำขังลึกได้ดีขึ้น แต่ตอนกลางคืนหรือฝนตกดีขึ้นแค่ไหน Tesla ยังไม่ได้เปิดเผยตัวเลข</div>
+</div>
+
+<div class="prose">
+
+ผมว่าเรื่องนี้ไม่ได้แปลว่ากล้องใช้ไม่ได้นะครับ คนเราก็ขับด้วยตา และตาเราก็มองไม่ค่อยเห็นตอนฝนหนักหรือแดดแยงเหมือนกัน ต่างกันตรงที่ระบบกล้องอย่างเดียว ถ้ากล้องมองไม่เห็น ก็ไม่มีเซนเซอร์อื่นมาช่วย ช่วงฝนตกหนักหรือกลางคืนถนนมืด เลยควรพร้อมจับพวงมาลัยมากกว่าปกติครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ระดับการขับอัตโนมัติ SAE 0 ถึง 5
+
+<div class="prose">
+
+Level 2 หรือ Level 3 ที่ได้ยินกันบ่อย ๆ มาจากไหน มาจากมาตรฐาน **SAE J3016** ครับ (SAE คือสมาคมวิศวกรยานยนต์ SAE International ส่วน J3016 คือเลขมาตรฐานฉบับนี้) ออกครั้งแรก ม.ค. 2557 (ค.ศ. 2014) แก้ไขปี 2559 2561 และ เม.ย. 2564 ทุกระดับแบ่งด้วยคำถามเดียว "ใครรับผิดชอบการมองถนนตอนนี้" นึกภาพครูฝึกขับนั่งข้าง ๆ ถ้าครูยังต้องจ้องถนนตลอด ต่อให้นักเรียนขับเก่งแค่ไหน คนรับผิดชอบก็ยังเป็นครู
+
+J3016 เขียนไว้เองด้วยว่าระดับที่สูงกว่าไม่ได้แปลว่า "ดีกว่า" ระดับที่ต่ำกว่า เลขแค่บอกว่างานแบ่งกันยังไง
+
+</div>
+
+<ol class="news-steps">
+<li><b>Level 0 คนทำทุกอย่าง</b>ต่อให้รถมีเสียงเตือนหรือเบรกฉุกเฉินอัตโนมัติ (AEB) ก็ยังนับเป็น Level 0</li>
+<li><b>Level 1 ระบบทำอย่างเดียว</b>ระบบคุมพวงมาลัยหรือความเร็วอย่างใดอย่างหนึ่ง คนทำที่เหลือและคอยดูแล</li>
+<li class="is-key"><b>Level 2 ระบบทำทั้งสองอย่าง แต่คนมองถนนตลอด</b>ระบบคุมทั้งพวงมาลัยและความเร็ว ส่วนคนขับ "completes the OEDR subtask and supervises" คือคนขับเป็นคนมองสิ่งรอบตัวและตอบสนอง (งานนี้เรียกว่า OEDR ย่อมาจาก Object and Event Detection and Response) และคอยกำกับระบบ FSD (Supervised) Autopilot และ NOA ของจีนส่วนใหญ่ (NOA คือระบบช่วยขับตามเส้นทางนำทาง ชื่อที่ค่ายจีนใช้กันบ่อย) อยู่ระดับนี้ NHTSA ในเอกสาร recall (การเรียกรถกลับมาแก้) 23V-838 ก็เรียก Autosteer ว่า "the SAE Level 2 advanced driver-assistance feature" (ฟีเจอร์ช่วยขับขั้นสูงระดับ SAE Level 2)</li>
+<li><b>Level 3 ระบบขับเองในเงื่อนไขที่กำหนด</b>ภายในขอบเขตที่เรียกว่า ODD (Operational Design Domain คือเงื่อนไขที่ระบบถูกออกแบบมาให้ใช้ได้ เช่น ถนนชนิดไหน ความเร็วเท่าไร) คนไม่ต้องมองถนน แต่ต้องพร้อมรับช่วงเมื่อระบบขอ ตัวอย่างอยู่ในหัวข้อถัดไป</li>
+<li><b>Level 4 ระบบขับและรับมือเองในพื้นที่ของมัน</b>ผู้โดยสารไม่ต้องตอบสนอง เป็นแนวของ robotaxi ที่วิ่งในพื้นที่กำหนด</li>
+<li><b>Level 5 ทุกที่ ไม่มีเงื่อนไข</b>ยังเป็นปลายทางของมาตรฐาน</li>
+</ol>
+
+<div class="prose">
+
+เทียบให้เห็นภาพ FSD (Supervised) กับ Autopilot อยู่ Level 2 คือคนยังเป็นเจ้าของงานมองถนน ส่วน robotaxi ที่วิ่งในเขตที่กำหนด คือ Level 4 ครับ ห่างกันสองขั้น แต่ในแง่ความรับผิดชอบคือคนละโลกกันเลย
+
+</div>
+
+</section>
+
+<section class="section">
+
+## Level 3: ค่ายที่ได้รับอนุมัติแล้ว (Tesla ยังไม่มี)
+
+<div class="prose">
+
+ค่ายข้างล่างได้รับอนุมัติ Level 3 แล้วครับ ส่วน Tesla ยังไม่มี เพราะ FSD (Supervised) เป็น Level 2 (L2 กับ L3 ต่างกันยังไง ดูหัวข้อระดับการขับอัตโนมัติข้างบน)
+
+แล้วเขาอนุมัติกันด้วยอะไร ในยุโรปใช้มาตรฐาน UN-R157 (ข้อบังคับของสหประชาชาติ ฉบับที่ 157) เป็นฐานของการอนุมัติ Level 3 ข้อบังคับนี้มีผลตั้งแต่ต้นปี 2564 (ค.ศ. 2021) ตามหน้าของ Mercedes
+
+</div>
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/knowledge/tesla-fsd-guide/e-mark.jpg" width="1600" height="507" loading="lazy" alt="ซ้าย เครื่องหมาย E1 ตัว E ในวงกลมกับเลข 1 ขวา ภาพถ่ายเครื่องหมาย E1 บนกระจกหน้ารถ ข้าง ๆ มีข้อความ 43R-001586 และ HI LAMINATED" /></div><figcaption><span class="news-fig__credit">ภาพ: E1logo (สาธารณสมบัติ) และ Daniele Pugliesi (CC BY-SA 4.0) · <a href="https://commons.wikimedia.org/wiki/File:Marchio_E1_sul_parabrezza_di_un%27autovettura.jpg" rel="noopener">Wikimedia Commons</a> · จัดวางคู่กันโดย DOJOJIN.TECH</span></figcaption></figure>
+<div class="prose">
+
+UN-R157 ไม่มีโลโก้ของตัวเองครับ มันเป็นข้อบังคับของ UNECE (คณะกรรมาธิการเศรษฐกิจแห่งสหประชาชาติสำหรับยุโรป) ของที่ผ่านการรับรองตามข้อบังคับ UN จะได้เครื่องหมาย "E-mark" คือตัว E ในวงกลม ตามด้วยเลขประเทศที่ออกใบรับรอง เช่น E1 คือเยอรมนี
+
+ในภาพขวาคือ E1 ที่พิมพ์อยู่บนกระจกหน้ารถคันหนึ่ง ตัวเลข 43R ข้าง ๆ คือเลขข้อบังคับที่กระจกบานนั้นผ่าน (R43 ว่าด้วยกระจกนิรภัย) ระบบ Level 3 ที่ผ่าน R157 ก็ได้การรับรองแบบเดียวกันนี้ แต่ไม่ได้มีป้ายติดให้เห็นบนตัวรถแบบกระจก
+
+</div>
+</div>
+
+<div class="split">
+<div class="prose">
+
+**Honda Legend (Traffic Jam Pilot หรือระบบขับให้ตอนรถติด)** คือรถคันแรกในลิสต์นี้ครับ Honda ปล่อยให้เช่าแบบลีสตั้งแต่ 5 มี.ค. 2564 จำนวนแค่ 100 คัน และขายเฉพาะในญี่ปุ่น
+
+ในภาพคือ Legend Hybrid EX ตัวถัง KC2 ที่โชว์รูมของ Honda เป็นรุ่นเดียวกับที่ใช้ทำ Level 3 แต่ภาพนี้ไม่ได้ยืนยันว่าเป็นคันที่ติดระบบนั้น
+
+</div>
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/knowledge/tesla-fsd-guide/honda-legend.jpg" width="1600" height="1112" loading="lazy" alt="รถเก๋ง Honda Legend Hybrid EX สีดำ จอดโชว์ในโชว์รูม Honda มีป้ายราคาวางบนกระจกหน้า" /></div><figcaption><span class="news-fig__credit">ภาพ: Tokumeigakarinoaoshima · CC0 · <a href="https://commons.wikimedia.org/wiki/File:Honda_LEGEND_Hybrid_EX_(KC2)_front.JPG" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+</div>
+
+<div class="split">
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/knowledge/tesla-fsd-guide/mercedes-s-class.jpg" width="1600" height="1043" loading="lazy" alt="Mercedes-Benz S-Class W223 สีเทาเงิน กำลังวิ่งบนทางด่วน มองจากด้านหลัง" /></div><figcaption><span class="news-fig__credit">ภาพ: Charles from Port Chester, New York · CC BY 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Mercedes-Benz_S-Klasse_(W223)_S_580_4MATIC_(2024)_(54206757976).jpg" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+<div class="prose">
+
+**Mercedes-Benz DRIVE PILOT** มากับ S-Class ครับ วันที่ 9 ธ.ค. 2564 KBA หน่วยงานรถยนต์ของเยอรมนีอนุมัติตาม UN-R157 Mercedes เรียกตัวเองว่า "first… in the world" (รายแรก… ของโลก) ตอนนั้นใช้ได้ถึง 60 km/h
+
+หลังจากนั้นรัฐเนวาดาอนุมัติเมื่อ 26 ม.ค. 2566 (40 mph ราว 64 km/h) และแคลิฟอร์เนียเมื่อ 9 มิ.ย. 2566 ส่วนเดือน ธ.ค. 2567 KBA อนุมัติเพิ่มเป็นถึง 95 km/h ในเยอรมนี ประกาศนั้นระบุราคาเริ่ม 5,950 ยูโร
+
+ในภาพคือ S-Class รุ่น W223 (S 580 4MATIC ปี 2024) กำลังวิ่งบนทางด่วนในสหรัฐฯ
+
+</div>
+</div>
+
+<div class="split">
+<div class="prose">
+
+**BMW 7 Series (Personal Pilot L3)** ประกาศเมื่อ 10 พ.ย. 2566 เริ่มติดตั้งตั้งแต่ มี.ค. 2567 ขายเฉพาะในเยอรมนี ราคา 6,000 ยูโร ใช้บนมอเตอร์เวย์ได้ถึง 60 km/h
+
+ในภาพคือ 7 Series รุ่น G70 (750e) ตัวถังเดียวกับที่ BMW ใส่ระบบนี้
+
+</div>
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/knowledge/tesla-fsd-guide/bmw-7-series.jpg" width="1600" height="768" loading="lazy" alt="BMW 7 Series G70 สีดำจอดริมถนน มองจากด้านหลังเฉียงซ้าย" /></div><figcaption><span class="news-fig__credit">ภาพ: Alexander-93 · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:BMW_7-Series_(G70)_750e_1X7A1899.jpg" rel="noopener">Wikimedia Commons</a> · เบลอป้ายทะเบียนโดย DOJOJIN.TECH</span></figcaption></figure>
+</div>
+
+<div class="prose">
+
+สังเกตว่า Mercedes กับ BMW จำกัดทั้งความเร็วและพื้นที่ครับ ผมว่านี่แหละหน้าตาของ Level 3 จริง ๆ เงื่อนไขแคบ แต่ในเงื่อนไขนั้นระบบรับผิดชอบเอง
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ไทม์ไลน์: ตั้งแต่ Cruise Control ถึงยุควิจัย
+
+<div class="split">
+<figure class="news-fig news-fig--tall"><div class="news-fig__img"><img src="/media/posts/knowledge/tesla-fsd-guide/teetor.jpg" width="562" height="914" loading="lazy" alt="ภาพถ่ายเก่าขาวดำของ Ralph Teetor ชายหนุ่มใส่สูทผูกเนกไท ถ่ายราวปี 1921 ถึง 1922" /></div><figcaption><span class="news-fig__credit">ภาพ: ไม่ทราบผู้ถ่าย · สาธารณสมบัติ · <a href="https://commons.wikimedia.org/wiki/File:Ralph_Teetor_circa_1921_or_1922.jpg" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+<div class="prose">
+
+### คนตาบอดที่คิด Cruise Control
+
+ระบบช่วยขับทั้งหมดในบทความนี้ เริ่มจากวิศวกรที่มองไม่เห็นครับ
+
+ในภาพคือ Ralph Teetor ราวปี 2464–2465 (ค.ศ. 1921–1922) เขาเกิดปี 2433 (ค.ศ. 1890) ที่เมือง Hagerstown รัฐอินเดียนา ตอนอายุ 5 ขวบ ตาข้างหนึ่งโดนมีดบาดจากอุบัติเหตุ ไม่ถึงปีก็มองไม่เห็นทั้งสองข้าง (ตามที่ National Inventors Hall of Fame หรือ NIHF หอเกียรติยศนักประดิษฐ์ของสหรัฐฯ และ Smithsonian เล่า)
+
+ตาบอดแล้วเป็นวิศวกรได้ยังไง เขาเรียนจบวิศวกรรมเครื่องกลจาก University of Pennsylvania ปี 2455 (ค.ศ. 1912) NIHF บันทึกว่าเป็น "the first blind engineer on record in the United States" (วิศวกรตาบอดคนแรกของสหรัฐฯ เท่าที่มีบันทึกไว้) แล้วไปทำงานที่ Perfect Circle บริษัทผลิตแหวนลูกสูบ จนได้เป็นประธานบริษัทปี 2489 (ค.ศ. 1946) ตลอดชีวิตเขามีสิทธิบัตรในสหรัฐฯ มากกว่า 40 ฉบับ
+
+</div>
+</div>
+
+<div class="prose">
+
+### จุดเริ่ม: ทนายที่ขับรถกระตุก
+
+เรื่องที่เล่ากันในครอบครัวคือ ราวปี 2479 (ค.ศ. 1936) Teetor นั่งรถที่เพื่อนซึ่งเป็นทนายด้านสิทธิบัตรชื่อ Harry Lindsey เป็นคนขับ Lindsey มีนิสัยพอพูดก็ชะลอ พอฟังก็เร่ง รถเลยกระตุกไปตลอดทาง Teetor นั่งอยู่ข้าง ๆ รู้สึกได้ชัด เลยคิดว่าต้องมีอะไรช่วยรักษาความเร็วให้คงที่ (NIHF ระบุปี 2479 ส่วน Smithsonian เรียกเรื่องนี้ว่า "family lore" (เรื่องเล่าในครอบครัว) และชื่อสะกดต่างกันเล็กน้อยระหว่างแหล่ง)
+
+Smithsonian ชี้ว่ายังมีแรงจูงใจอื่นด้วย เช่น ช่วงสงครามโลกครั้งที่ 2 สหรัฐฯ จำกัดความเร็วทั้งประเทศที่ 35 ไมล์ต่อชั่วโมงเพื่อประหยัดน้ำมันและยาง และหลานของเขาบอกว่าเรื่องความปลอดภัยก็มีส่วนมาก
+
+</div>
+
+<div class="split">
+<div class="prose">
+
+### ทดลองยังไง
+
+Teetor ใช้เวลาคิดเรื่องนี้นับสิบปีครับ ตามที่ Smithsonian เล่า ต้นแบบชื่อ "Speedostat" มีปุ่มหมุนตั้งความเร็วบนแผงหน้าปัด ต่อกับกลไกที่หมุนตามเพลาขับ พอรถวิ่งใกล้ความเร็วที่ตั้งไว้ ระบบจะใช้แรงสุญญากาศจากเครื่องยนต์ดันลูกสูบให้ไปต้านแป้นคันเร่ง
+
+ตอนทดสอบ เขานอนอยู่บนพื้นรถ เอามือจับแป้นคันเร่งไว้เพื่อสัมผัสว่ามันดันกลับยังไง ให้อีกคนเป็นคนขับ ก่อนจะลงตัวที่ชื่อ Speedostat ก็เคยตั้งชื่อเล่น ๆ ว่า Controlmatic, Touchomatic และ Pressomatic (ตามที่รายการ 99% Invisible เล่า)
+
+ในภาพคือหน้าแรกของภาพประกอบสิทธิบัตรเลขที่ 2,519,859 ยื่นเมื่อ 11 ส.ค. 2491 (ค.ศ. 1948) ออกเมื่อ 22 ส.ค. 2493 ชื่อว่า "Speed control device for resisting operation of the accelerator" แปลว่าอุปกรณ์ที่ต้านการกดคันเร่ง มุมขวาล่างมีลายเซ็นของ Teetor และชื่อสำนักงานกฎหมาย Davis, Lindsey, Hibben & Noyes ที่ยื่นให้
+
+</div>
+<figure class="news-fig news-fig--tall news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/knowledge/tesla-fsd-guide/teetor-patent.jpg" width="1009" height="1600" loading="lazy" alt="ภาพประกอบสิทธิบัตรสหรัฐฯ เลขที่ 2,519,859 ของ R. R. Teetor ลงวันที่ 22 ส.ค. 1950 แสดงภาพตัดของกลไกใต้แป้นคันเร่ง มีลายเซ็น Ralph R. Teetor มุมขวาล่าง" /></div><figcaption><span class="news-fig__credit">ภาพ: สิทธิบัตรสหรัฐฯ US 2,519,859 (สาธารณสมบัติ) · <a href="https://patents.google.com/patent/US2519859A/en" rel="noopener">Google Patents</a></span></figcaption></figure>
+</div>
+
+<div class="prose">
+
+สิ่งที่น่าสนใจคือ สิทธิบัตรฉบับแรกนี้ยังไม่ใช่ระบบที่ล็อกความเร็วให้เองครับ มันแค่ต้านเท้าเราเมื่อถึงความเร็วที่ตั้งไว้ ถ้าอยากเร็วกว่านั้นก็กดทะลุไปได้ ตัวสิทธิบัตรเองเขียนด้วยว่า "Numerous types of speed governing devices have been devised for automotive vehicles, but none of them has gained any widespread use" คือก่อนหน้านี้มีคนคิดตัวคุมความเร็วมาเยอะแล้ว แต่ไม่มีตัวไหนแพร่หลาย
+
+ก่อนหน้า Teetor ราว 40 ปี นิตยสาร Scientific American ฉบับ 9 พ.ย. 2450 (ค.ศ. 1907) เขียนถึงรถ Peerless ปี 1908 ว่ามีตัว governor (ตัวคุมรอบเครื่อง) ที่รักษารอบเครื่องยนต์ตามตำแหน่งคันโยกบนพวงมาลัยไว้แล้ว แต่นั่นคุมรอบเครื่อง ไม่ได้คุมความเร็วรถบนถนนแบบที่เราใช้กัน
+
+รุ่นต้นแบบที่ใช้งานได้ดีออกมาปี 2492 (ค.ศ. 1949) และต่อมาจึงเพิ่มมอเตอร์แม่เหล็กไฟฟ้าที่ล็อกความเร็วไว้จนกว่าคนขับจะแตะเบรก (Smithsonian) ตัวนี้แหละที่ใกล้กับ Cruise Control ที่เรารู้จัก
+
+</div>
+
+<div class="prose">
+
+### ฝั่งรถที่ขายจริง
+
+<ol class="news-tl">
+<li><span class="news-tl__date">9 พ.ย. 2450 (ค.ศ. 1907)</span><div>Scientific American เขียนถึงรถ Peerless ปี 1908 ที่มีตัว governor รักษารอบเครื่องยนต์ตามคันโยกบนพวงมาลัย<span class="news-tl__src">Scientific American</span></div></li>
+<li><span class="news-tl__date">ราว 2479 (ค.ศ. 1936)</span><div>Teetor ได้ไอเดียจากการนั่งรถที่ Harry Lindsey ขับเร่ง ๆ ชะลอ ๆ (เรื่องเล่าในครอบครัว)<span class="news-tl__src">NIHF · Smithsonian</span></div></li>
+<li class="is-key"><span class="news-tl__date">11 ส.ค. 2491 (ค.ศ. 1948)</span><div>Teetor ยื่นสิทธิบัตรสหรัฐฯ เลขที่ 2,519,859 ออกเมื่อ 22 ส.ค. 2493 (ค.ศ. 1950)<span class="news-tl__src">Google Patents</span></div></li>
+<li class="is-key"><span class="news-tl__date">2501 (ค.ศ. 1958)</span><div>Chrysler ใส่ระบบนี้ใน Imperial, New Yorker และ Windsor ในชื่อ "Auto-Pilot" (นักบินอัตโนมัติ เดิมชื่อ "Speedostat") ปีถัดมา Chrysler เสนอเป็นออปชันในทุกรุ่น<span class="news-tl__src">NIHF · Jalopnik</span></div></li>
+<li class="is-key"><span class="news-tl__date">2502 (ค.ศ. 1959)</span><div>Cadillac แบรนด์หรูของ General Motors ใส่ระบบนี้และเป็นคนตั้งชื่อว่า "Cruise Control" (cruise คือแล่นไปเรื่อย ๆ ด้วยความเร็วคงที่) ชื่อนี้เลยติดมาถึงทุกวันนี้<span class="news-tl__src">NIHF · Jalopnik</span></div></li>
+<li><span class="news-tl__date">14 ก.พ. 2511 (ค.ศ. 1968)</span><div>Daniel Wisner วิศวกรของ RCA ยื่นสิทธิบัตร Cruise Control แบบอิเล็กทรอนิกส์ ใช้แรงดันไฟฟ้าแทนความเร็วรถแล้ว "จำ" ไว้เมื่อกดสวิตช์ (ออกสิทธิบัตรปี 2513)<span class="news-tl__src">Google Patents US3511329</span></div></li>
+<li><span class="news-tl__date">2516 (ค.ศ. 1973)</span><div>วิกฤตน้ำมัน ทำให้ Cruise Control กลายเป็นของที่คนยอมรับเพราะช่วยประหยัดน้ำมัน (ตามที่ Smithsonian เล่า)<span class="news-tl__src">Smithsonian</span></div></li>
+<li><span class="news-tl__date">ช่วง พ.ศ. 2535–2538 (ค.ศ. 1992–1995)</span><div>Cruise Control ที่ดูระยะรถคันหน้า (ACC) มีหลายค่ายอ้างว่าเป็นเจ้าแรก ฝั่งญี่ปุ่นมีรายงานว่า Mitsubishi มีระบบเตือนระยะด้วยเลเซอร์ใน Debonair ปี 2535 (ค.ศ. 1992) ซึ่งเตือนอย่างเดียว และใน Diamante ปี 2538 ที่คุมคันเร่งด้วย จึงยังสรุปไม่ได้ว่าใครเป็นที่หนึ่ง</div></li>
+<li><span class="news-tl__date">ส.ค. 2540 (ค.ศ. 1997)</span><div>Toyota Celsior มี "radar cruise control" (ครูสคอนโทรลที่ใช้เรดาร์วัดระยะรถคันหน้า) ทำงานช่วง 40–100 km/h ตามข่าวแจกของ Toyota เอง<span class="news-tl__src">Toyota</span></div></li>
+<li><span class="news-tl__date">2541 (ค.ศ. 1998)</span><div>Mercedes-Benz S-Class รุ่น W220 เปิดตัว DISTRONIC ซึ่งเป็น adaptive cruise (ACC ในชื่อของ Mercedes) ตามหอจดหมายเหตุของ Mercedes<span class="news-tl__src">Mercedes-Benz Public Archive</span></div></li>
+<li><span class="news-tl__date">ม.ค. 2544 (ค.ศ. 2001)</span><div>Nissan Cima มี "lane-keeping assistance system" (ระบบช่วยรักษาเลน) ตามข่าวแจกของ Nissan (ไม่ได้แปลว่าเป็นรายแรกของโลก)<span class="news-tl__src">Nissan</span></div></li>
+<li><span class="news-tl__date">2546 (ค.ศ. 2003)</span><div>Toyota Prius มีระบบช่วยจอดถอยหลังที่หมุนพวงมาลัยอัตโนมัติ คนขับคุมความเร็วด้วยเบรก ตามที่วิศวกร Toyota เล่าไว้ในรางวัลของ JSME (สมาคมวิศวกรเครื่องกลแห่งญี่ปุ่น)<span class="news-tl__src">JSME</span></div></li>
+<li><span class="news-tl__date">4 มี.ค. 2551 (ค.ศ. 2008)</span><div>Volvo XC60 เปิดตัวพร้อม City Safety ระบบเบรกอัตโนมัติความเร็วต่ำ Volvo ระบุว่า 75% ของการชนที่มีรายงานเกิดที่ความเร็วไม่เกิน 30 km/h<span class="news-tl__src">Volvo</span></div></li>
+</ol>
+
+</div>
+
+<div class="split">
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/knowledge/tesla-fsd-guide/imperial.jpg" width="1600" height="900" loading="lazy" alt="Chrysler Imperial Crown ปี 1958 มองจากด้านหลัง จอดในงานแสดงรถที่เมือง Falköping ประเทศสวีเดน" /></div><figcaption><span class="news-fig__credit">ภาพ: Gunnar Creutz · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Chrysler_Imperial_Crown_1958_-_Falk%C3%B6ping_cruising_2016_-_4229.jpg" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+<div class="prose">
+
+ในภาพคือ Chrysler Imperial Crown ปี 2501 มองจากด้านหลัง ถ่ายในงานรถที่ Falköping ประเทศสวีเดน เมื่อปี 2559 (ค.ศ. 2016) ครับ รุ่นปี 2501 คือปีที่ Chrysler ขายระบบนี้ในชื่อ Auto-Pilot (ตามที่ Jalopnik เล่า) ระบบคุมแค่คันเร่ง คนยังต้องเลี้ยวเอง
+
+</div>
+</div>
+
+<div class="split">
+<div class="prose">
+
+**แล้ว Chrysler Imperial คืออะไร** Chrysler เป็นบริษัทรถยนต์ของอเมริกา Walter Chrysler ตั้งขึ้นเมื่อ 6 มิ.ย. 2468 (ค.ศ. 1925) โดยปรับโครงสร้างมาจากบริษัท Maxwell Motor เดิม ส่วน Imperial คือชื่อรถรุ่นหรูสุดของ Chrysler ที่ใช้มาตั้งแต่ปี 2469 และช่วงปี 2498–2518 Chrysler แยก Imperial ออกมาเป็นแบรนด์ของตัวเอง เพื่อสู้กับ Cadillac และ Lincoln (ข้อมูลประวัติบริษัทตาม Wikipedia) ทุกวันนี้แบรนด์ Chrysler อยู่ใต้กลุ่ม Stellantis
+
+**ส่วน Jalopnik ที่อ้างถึงในหัวข้อนี้** คือเว็บข่าวและบทความความเห็นเรื่องรถยนต์ของสหรัฐฯ หน้า About ของเว็บเขียนว่า "Launched in 2005" (เปิดตัวปี 2548) เดิมอยู่ในเครือ Gawker Media ตอนนี้เป็นของ Static Media ตามประกาศของ Static Media เมื่อ ก.พ. 2568
+
+ในภาพคือ Cadillac Series 62 ปี 2502 (ค.ศ. 1959) ครับ ปีเดียวกับที่ Cadillac แบรนด์หรูของ General Motors ใส่ระบบนี้ แล้วตั้งชื่อว่า "Cruise Control" ตามที่ NIHF บันทึกไว้ ชื่อนี้เลยติดปากมาถึงทุกวันนี้
+
+</div>
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/knowledge/tesla-fsd-guide/cadillac-1959.jpg" width="1600" height="1059" loading="lazy" alt="รถเปิดประทุน Cadillac Series 62 ปี 1959 สีแดง ครีบหางสูง จอดโชว์ในพิพิธภัณฑ์ Autoworld" /></div><figcaption><span class="news-fig__credit">ภาพ: Rutger van der Maar · CC BY 2.0 · <a href="https://commons.wikimedia.org/wiki/File:1959_Cadillac_Series_62_Convertible_(Autoworld).jpg" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+</div>
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/knowledge/tesla-fsd-guide/acc-cars.jpg" width="1576" height="976" loading="lazy" alt="ภาพรถ 4 คันเรียงสองแถว ซ้ายบน Mitsubishi Debonair สีขาว ขวาบน Mitsubishi Diamante สีม่วงเข้ม ซ้ายล่าง Toyota Celsior สีขาว ขวาล่าง Mercedes-Benz S-Class W220 สีฟ้าอ่อน" /></div><figcaption><span class="news-fig__credit">ภาพ: TTTNIS (CC0), Bull-Doser (สาธารณสมบัติ), TTTNIS (CC0), OSX (สาธารณสมบัติ) · Wikimedia Commons · จัดวางและเบลอป้ายทะเบียนโดย DOJOJIN.TECH</span></figcaption></figure>
+<div class="prose">
+
+**ยุคที่ Cruise Control เริ่มดูรถคันหน้า** ในภาพคือรถทั้งสี่รุ่นที่อยู่ในไทม์ไลน์ช่วง ACC เรียงจากซ้ายบนครับ
+
+ซ้ายบนคือ Mitsubishi Debonair รุ่นที่ 2 (ปี 2529–2532) ภาพนี้เป็นตัวถังรุ่นก่อนรุ่นปี 2535 ที่มีรายงานว่ามีระบบเตือนระยะ ใส่ไว้ให้เห็นหน้าตาของรุ่นนี้ ขวาบนคือ Mitsubishi Diamante รุ่นแรก (ภาพเป็นตัวขายในอเมริกาเหนือ) ซ้ายล่างคือ Toyota Celsior ตัวปรับโฉมปี 2540–2543 รุ่นเดียวกับที่ Toyota ใส่ radar cruise control และขวาล่างคือ Mercedes-Benz S-Class รุ่น W220 ที่เปิดตัว DISTRONIC
+
+สังเกตว่าเป็นรถหรูหมดเลยครับ ของใหม่แบบนี้มักเริ่มที่รถแพงก่อน แล้วค่อยไหลลงมารถทั่วไป
+
+</div>
+</div>
+
+<div class="split">
+<div class="prose">
+
+**ยุคช่วยรักษาเลน ช่วยจอด และเบรกเอง** จากซ้ายไปขวาคือ Nissan Cima รุ่น F50 ที่มีระบบช่วยรักษาเลน Toyota Prius รุ่นที่ 2 ที่มีระบบช่วยจอดถอยหลังแบบหมุนพวงมาลัยเอง และ Volvo XC60 รุ่นแรกที่มากับ City Safety
+
+สามอย่างนี้ทำงานคนละส่วนกันครับ ตัวหนึ่งคุมพวงมาลัย ตัวหนึ่งช่วยจอด อีกตัวเบรกให้ตอนจะชน ยังไม่มีใครเอามารวมกันเป็นระบบเดียว จนมาถึงยุค Autopilot
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/knowledge/tesla-fsd-guide/assist-cars.jpg" width="1592" height="360" loading="lazy" alt="ภาพรถ 3 คันเรียงกัน ซ้าย Nissan Cima สีดำ กลาง Toyota Prius รุ่นที่สองสีเงิน ขวา Volvo XC60 สีน้ำตาลทองในงานแสดงรถ" /></div><figcaption><span class="news-fig__credit">ภาพ: TTTNIS (สาธารณสมบัติ), KitsuneDP (CC0), IFCAR (สาธารณสมบัติ) · Wikimedia Commons · จัดวางและเบลอป้ายทะเบียนกับคนขับรถเมล์โดย DOJOJIN.TECH</span></figcaption></figure>
+</div>
+
+<div class="prose">
+
+### ฝั่งงานวิจัย
+
+ระหว่างที่รถในโชว์รูมค่อย ๆ เพิ่มทีละฟีเจอร์ ห้องวิจัยลองให้รถขับเองทั้งคันไปแล้วครับ
+
+<ol class="news-tl">
+<li><span class="news-tl__date">23 ก.ค. 2538 (ค.ศ. 1995)</span><div>Navlab 5 ของ Carnegie Mellon เริ่ม "No Hands Across America" (ข้ามอเมริกาแบบไม่ใช้มือ) จากพิตต์สเบิร์กไปซานดิเอโก รถบังคับพวงมาลัยเองเป็นระยะ 2,797 จาก 2,849 ไมล์ (98.2%) ส่วนคันเร่งและเบรกเป็นหน้าที่ของนักวิจัย<span class="news-tl__src">CMU</span></div></li>
+<li><span class="news-tl__date">พ.ย. 2538 (ค.ศ. 1995)</span><div>รถ VaMP ของ Ernst Dickmanns ในเยอรมนี วิ่งจากมิวนิกไปโอเดนเซ (เดนมาร์ก) "more than 1600 km" (มากกว่า 1,600 กิโลเมตร) ควบคุมทั้งความเร็วและเลี้ยวเอง ความเร็วสูงสุด 180 km/h ช่วงที่ยาวที่สุดราว 160 km และมีการเปลี่ยนเลนกว่า 400 ครั้งที่คนขับเพื่อความปลอดภัยสั่งให้ทำ<span class="news-tl__src">Dyna-Vision</span></div></li>
+<li><span class="news-tl__date">2547 (ค.ศ. 2004)</span><div>DARPA Grand Challenge ครั้งแรก เป็นการแข่งรถไร้คนขับที่ DARPA หน่วยงานวิจัยของกระทรวงกลาโหมสหรัฐฯ เป็นคนจัด ปีนั้นไม่มีทีมไหนเข้าเส้นชัย ทีมที่ไปได้ไกลสุด 7.5 ไมล์<span class="news-tl__src">DARPA</span></div></li>
+<li><span class="news-tl__date">2548 (ค.ศ. 2005)</span><div>5 จาก 195 ทีมเข้าเส้นชัยในเส้นทาง 132 ไมล์ Stanford "Stanley" ชนะด้วยเวลา 6 ชม. 53 นาที รับรางวัล $2 ล้าน<span class="news-tl__src">DARPA</span></div></li>
+<li><span class="news-tl__date">3 พ.ย. 2550 (ค.ศ. 2007)</span><div>Urban Challenge รอบชิงที่ Victorville แคลิฟอร์เนีย ทีม Tartan Racing ของ CMU กับรถ "Boss" ชนะ มี 6 ทีมเข้าเส้นชัย<span class="news-tl__src">CMU</span></div></li>
+<li class="is-key"><span class="news-tl__date">2552 (ค.ศ. 2009)</span><div>Google เริ่มโครงการรถขับเอง ต่อมาคือ Waymo Waymo เขียนเองว่า "From our beginnings as the Google self-driving car project" (เราเริ่มต้นจากโครงการรถขับเองของ Google)<span class="news-tl__src">Waymo</span></div></li>
+</ol>
+
+</div>
+
+<div class="split">
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/knowledge/tesla-fsd-guide/navlab.jpg" width="1500" height="1000" loading="lazy" alt="รถ Navlab 1 ถึง 5 ของ Carnegie Mellon จอดเรียงกัน" /></div><figcaption><span class="news-fig__credit">ภาพ: Firefly4342 · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Navlab-1-5-autonomous-vehicles.jpg" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+<div class="prose">
+
+ในภาพคือรถ CMU Navlab รุ่น 1 ถึง 5 จอดเรียงกัน รวมคันที่วิ่งข้ามอเมริกาด้วย หน้าตาไม่เหมือนรถที่ขายกันตอนนี้เลยครับ แต่หลักคิดให้รถมองเลนแล้วหมุนพวงมาลัยเอง ก็เริ่มมาจากรถหน้าตาแบบนี้
+
+เส้นเวลาจบที่โครงการรถขับเองของ Google ซึ่งต่อมากลายเป็น Waymo ครับ เพราะนั่นคือจุดที่งานวิจัยกลายเป็นบริการ
+
+</div>
+</div>
+
+<div class="split">
+<div class="prose">
+
+**รถจากการแข่ง DARPA และรถทดลองของ Google** เรียงจากซ้ายบนครับ
+
+ซ้ายบนคือ Sandstorm รถ Hummer H1 สีแดงหมายเลข 22 ของทีม Red Team จาก Carnegie Mellon ก่อนรอบคัดเลือกเดือน มี.ค. 2547 ปีนั้นไม่มีใครเข้าเส้นชัย ขวาบนคือ Stanley ของ Stanford ที่ชนะปี 2548 สังเกตเซนเซอร์ห้าตัวบนหลังคา ซ้ายล่างคือ Boss ของ CMU ที่ชนะ Urban Challenge ปี 2550 ภาพนี้ถ่ายตอนจัดแสดงปี 2561 และขวาล่างคือ Toyota Prius ของโครงการรถขับเองของ Google วิ่งในสนามทดสอบที่มีกรวยเมื่อปี 2554
+
+จากรถทดลองที่ติดเซนเซอร์เต็มหลังคา ไปจนถึงรถที่วิ่งรับคนจริง ใช้เวลาราว 15 ปีครับ
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/knowledge/tesla-fsd-guide/research-cars.jpg" width="1576" height="1056" loading="lazy" alt="ภาพรถ 4 คัน ซ้ายบน Hummer สีแดงหมายเลข 22 ติดเซนเซอร์ ขวาบน Volkswagen Touareg สีน้ำเงิน Stanley มีเซนเซอร์บนหลังคา ซ้ายล่าง Chevrolet Tahoe สีดำหมายเลข 19 Boss ในงานจัดแสดง ขวาล่าง Toyota Prius ติดเซนเซอร์บนหลังคาวิ่งผ่านกรวย" /></div><figcaption><span class="news-fig__credit">ภาพ: MikeMurphy (CC BY-SA 3.0), DARPA (สาธารณสมบัติ), Daderot (CC0), Steve Jurvetson (CC BY 2.0) · Wikimedia Commons · จัดวางและเบลอผู้ชมด้านหลังโดย DOJOJIN.TECH</span></figcaption></figure>
+</div>
+
+<div class="split">
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/knowledge/tesla-fsd-guide/waymo.jpg" width="1600" height="1200" loading="lazy" alt="รถ Waymo Jaguar I-Pace ที่ติดเซนเซอร์บนหลังคา ถ่ายที่ซานฟรานซิสโก" /></div><figcaption><span class="news-fig__credit">ภาพ: Dllu · CC BY 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Waymo_Jaguar_I-Pace_in_San_Francisco_2023_dllu.jpg" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+<div class="prose">
+
+Waymo เปิด Waymo One ที่ฟีนิกซ์ปี 2561 (ค.ศ. 2018) Waymo เรียกเองว่า "world's first commercial autonomous ride-hailing service" (บริการเรียกรถไร้คนขับแบบเก็บเงินจริงรายแรกของโลก) พอปี 2563 (ค.ศ. 2020) ก็เปิดบริการแบบไม่มีคนขับให้คนทั่วไปที่ฟีนิกซ์
+
+ตัวเลขจาก Waymo เอง คือสะสม 271.3 ล้านไมล์ (ราว 437 ล้านกิโลเมตร ผมคำนวณเอง) แบบไม่มีคนขับ ณ มิ.ย. 2569 ส่วนจำนวนเที่ยว ปี 2568 ปีเดียวมี 15 ล้านเที่ยว และรวมตั้งแต่เปิดเกิน 20 ล้านเที่ยว ตามบล็อกของ Waymo เมื่อ ก.พ. 2569
+
+ในภาพคือ Jaguar I-Pace ของ Waymo ที่ซานฟรานซิสโกปี 2566 (ค.ศ. 2023) สังเกตเซนเซอร์บนหลังคาครับ รถ Tesla ไม่มีของแบบนี้ ใช้กล้องเป็นหลักตามที่เล่าในหัวข้อทำไม Tesla ใช้กล้องอย่างเดียว
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ประวัติ Tesla Autopilot ถึง FSD
+
+<div class="prose">
+
+ทีนี้มาดูฝั่ง Tesla ครับ ผมใส่ recall และการสอบสวนของ NHTSA ไว้ในเส้นเวลาเดียวกับการปล่อยฟีเจอร์ เพราะสองเรื่องนี้เดินคู่กันมาตลอด
+
+ในไทม์ไลน์จะเจอรหัสหน้าตาแปลก ๆ อย่าง 23V-085 หรือ PE24031 เยอะเลยครับ การ์ดสี่ใบข้างล่างแกะให้ก่อนว่าแต่ละตัวคืออะไร
+
+</div>
+
+<div class="news-cards">
+<div class="news-card"><span class="news-pill">หน่วยงาน</span><b>NHTSA คือใคร</b>National Highway Traffic Safety Administration หน่วยงานความปลอดภัยการจราจรทางถนนของสหรัฐฯ สังกัดกระทรวงคมนาคมสหรัฐฯ (U.S. Department of Transportation) หน้าที่ตามที่ NHTSA เขียนเองคือ "keeping people safe on America's roadways" ดูแลให้ถนนในอเมริกาปลอดภัย บังคับใช้มาตรฐานความปลอดภัยของรถ และสั่งหรือรับเรื่อง recall</div>
+<div class="news-card"><span class="news-pill">recall</span><b>Recall ไม่ได้แปลว่าต้องเปลี่ยนอะไหล่เสมอไป</b>Recall คือการที่ผู้ผลิตแจ้ง NHTSA ว่ารถมีจุดบกพร่องด้านความปลอดภัย แล้วต้องแก้ให้ลูกค้าฟรี รถทั่วไปอาจต้องเข้าศูนย์เปลี่ยนชิ้นส่วน แต่ recall ของ Tesla ในบทความนี้แก้ด้วย OTA (over-the-air) คือส่งอัปเดตซอฟต์แวร์เข้ารถผ่านอินเทอร์เน็ต ไม่ต้องเข้าศูนย์ ใน recall 23V-838 Tesla เขียนว่า "free of charge" (ฟรี)</div>
+<div class="news-card"><span class="news-pill">รหัส recall</span><b>23V-085 อ่านยังไง</b>เป็นเลขแคมเปญ recall ที่ NHTSA ออกให้ 23 คือปี 2023 ตัว V หมายถึง recall ของตัวรถ (Vehicle) และ 085 คือลำดับ ความหมายของแต่ละส่วนนี้มาจากคำอธิบายของเว็บรวบรวม recall ไม่ใช่คำอธิบายของ NHTSA เอง ใครอยากเช็กเอง ให้พิมพ์เลขนี้ในช่องค้นหาที่ <a href="https://www.nhtsa.gov/recalls" rel="noopener">nhtsa.gov/recalls</a></div>
+<div class="news-card"><span class="news-pill">รหัสสอบสวน</span><b>PE24031 กับ EA26002 คืออะไร</b>เป็นเลขการสอบสวนข้อบกพร่องของสำนักงานสอบสวนข้อบกพร่อง (ODI) ใน NHTSA ตัวอักษรนำหน้าบอกขั้น PE คือ Preliminary Evaluation (การสอบสวนขั้นต้น) ส่วน EA คือ Engineering Analysis (การวิเคราะห์เชิงวิศวกรรม หรือสอบสวนเชิงลึก) ตัวเลขตามหลังคือปีกับลำดับ เช่น PE24031 เปิดปี 2024 ส่วน EA26002 เปิดปี 2026 NHTSA เขียนในเอกสารปิด PE24031 ว่า "This (PE) Preliminary Evaluation has been upgraded to an Engineering Analysis" คือเรื่องนี้หนักพอจะยกระดับไปสอบสวนลึกขึ้น ขั้นนี้ยังไม่ใช่คำตัดสินว่ารถบกพร่อง แต่อาจจบที่การสั่ง recall ได้ เอกสารทุกฉบับลิงก์ไว้ในหัวข้อแหล่งข้อมูล</div>
+</div>
+
+<ol class="news-tl">
+<li class="is-key"><span class="news-tl__date">9–10 ต.ค. 2557 (ค.ศ. 2014)</span><div>ประกาศฮาร์ดแวร์ Autopilot ในบล็อก "Dual Motor Model S and Autopilot" (Model S มอเตอร์คู่ กับ Autopilot) Tesla เขียนว่า "driver is still responsible" (คนขับยังต้องรับผิดชอบ) และรถขับเองเต็มรูปแบบ "still years away" (ยังต้องรออีกหลายปี)<span class="news-tl__src">Tesla</span></div></li>
+<li><span class="news-tl__date">14 ต.ค. 2558 (ค.ศ. 2015)</span><div>ซอฟต์แวร์ v7.0 "Your Autopilot has arrived" (Autopilot ของคุณมาถึงแล้ว) หมุนพวงมาลัยในเลน เปลี่ยนเลนด้วยการกดไฟเลี้ยว และ Cruise Control ที่ดูการจราจร<span class="news-tl__src">Tesla</span></div></li>
+<li><span class="news-tl__date">30 มิ.ย. 2559 (ค.ศ. 2016)</span><div>อุบัติเหตุถึงชีวิตของ Autopilot ที่ฟลอริดา เดือน พ.ค. 2559 ที่ Tesla ระบุในบล็อก "A Tragic Loss" (การสูญเสียอันน่าเศร้า) ว่าเป็นครั้งแรกที่ทราบ<span class="news-tl__src">Tesla</span></div></li>
+<li><span class="news-tl__date">26 ก.ค. 2559</span><div>Mobileye (บริษัททำชิปและซอฟต์แวร์กล้องช่วยขับ) บอกว่างานที่ทำร่วมกับ Tesla "will not extend beyond EyeQ3" (จะไม่ไปต่อหลัง EyeQ3) EyeQ3 คือชิปประมวลผลภาพของ Mobileye เอง และ Mobileye ไม่ได้บอกว่าใครเป็นฝ่ายยุติ<span class="news-tl__src">TechCrunch</span></div></li>
+<li><span class="news-tl__date">19 ต.ค. 2559</span><div>Tesla ประกาศว่ารถใหม่ทุกคันมี "hardware needed for full self-driving capability" (ฮาร์ดแวร์ที่จำเป็นสำหรับการขับเองเต็มรูปแบบ) ชุดนี้เรียกกันว่า HW2 หรือคอมพิวเตอร์ขับรถรุ่นที่ 2<span class="news-tl__src">Tesla</span></div></li>
+<li><span class="news-tl__date">22 เม.ย. 2562 (ค.ศ. 2019)</span><div>Autonomy Day เปิดตัวคอมพิวเตอร์ FSD ที่ Tesla ออกแบบเอง (HW3 คือคอมพิวเตอร์ขับรถรุ่นที่ 3) สไลด์ของ Tesla เทียบ 144 ล้านล้านการคำนวณต่อวินาที กับ Nvidia Xavier (ชิปสำหรับรถของ Nvidia) ที่ 21 ล้านล้าน ผู้วิเคราะห์ที่ The Register อ้างถึงเรียกการเทียบนี้ว่าชวนให้เข้าใจผิด<span class="news-tl__src">The Register</span></div></li>
+<li><span class="news-tl__date">20 ต.ค. 2563 (ค.ศ. 2020)</span><div>เริ่มปล่อย "FSD Beta" (FSD รุ่นทดลอง) ให้ "a small number of people who are expert and careful drivers" (คนกลุ่มเล็ก ๆ ที่ขับเก่งและขับอย่างระมัดระวัง) ตามคำของ Elon Musk<span class="news-tl__src">Engadget</span></div></li>
+<li><span class="news-tl__date">2564–2565 (ค.ศ. 2021–2022)</span><div>Tesla Vision ถอดเรดาร์ แล้วถอดเซนเซอร์อัลตราโซนิกออกจากรถใหม่<span class="news-tl__src">Tesla</span></div></li>
+<li class="is-warn"><span class="news-tl__date">ก.พ. 2566 (ค.ศ. 2023)</span><div>Recall 23V-085 จำนวน 362,758 คัน รายงานบอกว่า FSD Beta "may allow the vehicle to act unsafe around intersections" (อาจทำให้รถขับแบบไม่ปลอดภัยตอนผ่านสี่แยก) เช่น ผ่านสี่แยกตอนไฟเหลืองค้างมานานแล้ว ("stale yellow") เรื่องระยะเวลาที่รถหยุดนิ่งที่ป้ายหยุด (Stop) บางจุด ปรับความเร็วไม่ทันในเขตที่ป้ายความเร็วเปลี่ยน และเปลี่ยนเลนออกจากเลนบังคับเลี้ยวเพื่อขับตรงไป Tesla แก้ด้วย OTA (อัปเดตซอฟต์แวร์ผ่านอินเทอร์เน็ต)<span class="news-tl__src">NHTSA (รายงาน recall 23V-085)</span></div></li>
+<li class="is-warn"><span class="news-tl__date">ธ.ค. 2566</span><div>Recall 23V-838 จำนวน 2,031,220 คัน เรื่อง Autosteer (ฟีเจอร์ที่ Tesla อธิบายว่าช่วยคุมพวงมาลัย เบรก และคันเร่งภายใต้เงื่อนไขจำกัด) รายงานบอกว่าระบบเตือนและระบบคุมของมัน "may not be sufficient to prevent driver misuse" (อาจไม่พอจะกันคนขับใช้ผิดวิธี) ประโยคนี้เป็นคำในเอกสาร recall ไม่ใช่ข้อความที่ขึ้นบนจอรถ Tesla แก้ด้วยซอฟต์แวร์ 2023.44.30 ผ่าน OTA ให้เตือนบนจอชัดขึ้น เปิดปิด Autosteer ง่ายขึ้น ตรวจเพิ่มเมื่อใช้นอกทางด่วนหรือใกล้ไฟจราจร และระงับการใช้ Autosteer ถ้าคนขับละเลยซ้ำ ๆ<span class="news-tl__src">NHTSA (รายงาน recall 23V-838)</span></div></li>
+<li><span class="news-tl__date">ต้นปี 2567 (ค.ศ. 2024)</span><div>FSD v12 แบบ end-to-end เริ่ม ม.ค. กับคนกลุ่มเล็ก กว้างขึ้น มี.ค.<span class="news-tl__src">Electrek</span></div></li>
+<li class="is-warn"><span class="news-tl__date">17 ต.ค. 2567</span><div>NHTSA เปิดการสอบสวนขั้นต้น PE24031 เรื่องการชนของ FSD ในที่ทัศนวิสัยต่ำ (แดดแยงตา หมอก ฝุ่น) ราว 2.41 ล้านคัน 4 เหตุการณ์ มีผู้เสียชีวิต 1 ราย แล้ว 18 มี.ค. 2569 ยกระดับเป็น Engineering Analysis (ขั้นสอบสวนเชิงลึกของ NHTSA) EA26002 ราว 3.2 ล้านคัน<span class="news-tl__src">NHTSA</span></div></li>
+<li><span class="news-tl__date">ปลายปี 2567</span><div>FSD v13 สำหรับรถ HW4<span class="news-tl__src">Electrek</span></div></li>
+<li><span class="news-tl__date">25 ก.พ. 2568 (ค.ศ. 2025)</span><div>จีน: เปิดฟีเจอร์ช่วยขับบนถนนในเมือง ("city streets") ให้รถที่ซื้อ FSD และมี HW4 ในจีน Tesla เลี่ยงคำว่า FSD และเรียกฟีเจอร์ตามคำว่า "city streets" (ถนนในเมือง) ราคา FSD ในจีน 64,000 หยวน<span class="news-tl__src">CnEVPost</span></div></li>
+<li><span class="news-tl__date">22 มิ.ย. 2568</span><div>Robotaxi เริ่มที่ออสติน มีพนักงานเป็น "safety monitor" (คนคอยดูความปลอดภัย) นั่งที่นั่งผู้โดยสารด้านหน้า ค่าโดยสารเหมา $4.20<span class="news-tl__src">TechCrunch</span></div></li>
+<li><span class="news-tl__date">6–7 ต.ค. 2568</span><div>FSD v14 ซึ่ง Electrek เรียกว่า "first significant update in a year" (อัปเดตใหญ่ครั้งแรกในรอบปี)<span class="news-tl__src">Electrek</span></div></li>
+<li class="is-warn"><span class="news-tl__date">7 ต.ค. 2568</span><div>NHTSA เปิดการสอบสวนขั้นต้น PE25012 (ปี 2025 ลำดับที่ 012) เรื่องการฝ่าฝืนกฎจราจรเมื่อใช้ FSD เช่น ฝ่าไฟแดงและขับย้อนศร ครอบคลุมราว 2.88 ล้านคัน จาก 58 เหตุการณ์ที่มีรายงาน เปิดเอกสารฉบับเต็มได้ที่ <a href="https://static.nhtsa.gov/odi/inv/2025/INOA-PE25012-19171.pdf" rel="noopener">static.nhtsa.gov</a><span class="news-tl__src">NHTSA</span></div></li>
+<li><span class="news-tl__date">22 ม.ค. 2569 (ค.ศ. 2026)</span><div>Robotaxi ที่ออสตินบางคันไม่มี safety monitor ในรถ ("a few unsupervised vehicles mixed in" คือมีรถที่ไม่มีคนคุมในรถปนอยู่ไม่กี่คัน) และดูเหมือนมีรถตามหลัง<span class="news-tl__src">TechCrunch</span></div></li>
+<li><span class="news-tl__date">14 ก.พ. 2569</span><div>วันสุดท้ายที่ซื้อ FSD ขาดได้ในสหรัฐฯ<span class="news-tl__src">Electrek</span></div></li>
+<li><span class="news-tl__date">10 เม.ย. 2569</span><div>RDW เนเธอร์แลนด์อนุมัติ FSD Supervised<span class="news-tl__src">RDW</span></div></li>
+<li><span class="news-tl__date">23 เม.ย. 2569</span><div>Elon Musk บอกในการประชุมผลประกอบการไตรมาสแรกว่าเริ่มผลิต Cybercab ที่ Giga Texas (โรงงานของ Tesla ในเท็กซัส) แล้ว<span class="news-tl__src">Electrek</span></div></li>
+<li><span class="news-tl__date">3 พ.ย. 2569</span><div>ยุโรปเปลี่ยนชื่อเป็น Tesla Assisted Driving<span class="news-tl__src">RDW</span></div></li>
+<li class="is-key"><span class="news-tl__date">21 พ.ย. 2569 (วันที่ตามเวลาสหรัฐฯ)</span><div>FSD (Supervised) v15.0.1 เริ่มทยอยปล่อย (ซอฟต์แวร์ 2026.38.6.11) เป็นรอบแรกที่จำกัด TeslaFi (เว็บที่เจ้าของรถส่งข้อมูลรุ่นซอฟต์แวร์) เห็น 6 คัน<span class="news-tl__src">Electrek, Not a Tesla App</span></div></li>
+</ol>
+
+<div class="news-cards">
+<div class="news-card is-warn"><span class="news-pill">เรื่องชื่อ</span><b>แคลิฟอร์เนียบีบให้ Tesla เลิกใช้คำว่า Autopilot ในโฆษณา</b>เรื่องเริ่มจากการยื่นข้อกล่าวหาเมื่อ พ.ย. 2566 (ค.ศ. 2023) แล้ว 16 ธ.ค. 2568 กรมยานยนต์แคลิฟอร์เนีย (DMV) ตัดสินว่าการใช้คำว่า "Autopilot" ของ Tesla ทำให้เข้าใจผิด คำสั่งพักใบอนุญาตผู้ผลิตและผู้จำหน่ายรถในแคลิฟอร์เนียถูกชะลอไว้ก่อน พอ ก.พ. 2569 Tesla เลิกใช้คำว่า Autopilot ในการตลาดที่แคลิฟอร์เนีย จึงรอดการพักใบอนุญาต ระหว่างทาง Tesla ก็เปลี่ยนชื่อจาก "Full Self-Driving Capability" (ความสามารถขับเองเต็มรูปแบบ) มาเป็น "Full Self-Driving (Supervised)" (ขับเองเต็มรูปแบบ แบบมีคนคุม) ผมว่าแค่คำว่า Supervised ที่เติมมา ก็บอกอะไรได้เยอะแล้วครับ</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## FSD v15 ทำอะไรได้บ้าง
+
+<div class="prose">
+
+v15 เริ่มทยอยปล่อยรอบแรกเมื่อ 21 พ.ย. 2569 (ค.ศ. 2026) ตามเวลาสหรัฐฯ ครับ แล้วมีอะไรใหม่ ทุกข้อข้างล่างมาจากบันทึกการอัปเดตของ Tesla ที่ Electrek ยกมา เป็นคำของ Tesla เอง ภาพรวม Tesla บอกว่า "v15 upgrades every part of the end-to-end driving network" (v15 อัปเกรดทุกส่วนของโครงข่ายขับรถแบบ end-to-end)
+
+</div>
+
+<div class="news-cards">
+<div class="news-card"><b>ส่วนแปลภาพจากกล้องตัวใหม่ ใช้ร่วมกับ Robotaxi และ Optimus</b>vision encoder (ส่วนที่แปลงภาพจากกล้องให้โมเดลเข้าใจ) ตัวเดียวใช้กับ FSD, Robotaxi และ Optimus (หุ่นยนต์ของ Tesla) ฝึกจากวิดีโอในอินเทอร์เน็ตหลายล้านคลิป Tesla บอกว่าช่วยให้ "critical intervention rate" (อัตราที่คนขับต้องเข้าไปแย่งคุมรถในจังหวะสำคัญ) ดีขึ้น 25 เท่า</div>
+<div class="news-card"><b>Reality View: ภาพสดว่า FSD กำลังจะทำอะไร</b>Tesla Augmented Reality (Reality View) หรือภาพเสมือนซ้อนบนโลกจริง แสดงภาพที่สร้างสดว่า FSD วางแผนจะทำอะไร ใช้พลังประมวลผลน้อยกว่าการแสดงผลแบบเดิม (ตามที่ Tesla บอก)</div>
+<div class="news-card"><b>ระบบนำทางเรียนรู้จากเส้นทางที่รถคันอื่นเลือก</b>ใช้ข้อมูลเส้นทางที่รถในกลุ่มเลือกใช้ ตอนนี้ดูจากต้นทางกับปลายทางของทริป</div>
+<div class="news-card"><b>เลือกที่จอดจากประวัติของเจ้าของรถ</b>เลือกที่จอดจากประวัติการจอดของเจ้าของ และแผนที่แสดงที่จอดหลายตัวเลือก</div>
+<div class="news-card"><b>ระบบตรวจว่าคนขับมองถนน ใช้ได้แม้ใส่หมวกหรือแว่น</b>ทำงานได้เมื่อใส่หมวกหรือแว่นกันแดด</div>
+<div class="news-card"><b>มองเห็นป้าย สัตว์ และหลุมบ่อได้ดีขึ้น</b>ป้ายถนน สัตว์ตัวเล็ก เศษวัสดุ โซ่ หลุมบ่อ น้ำท่วมขังลึก รวมถึงการจัดการความเร็วในโซนโรงเรียน ป้ายจำกัดความเร็ว และอากาศแย่</div>
+<div class="news-card"><b>ฟีเจอร์ย่อยอีกสามตัว</b>Autoshift (เปลี่ยนเกียร์อัตโนมัติ) รวมกับการทำนายเกียร์ของ FSD, Speed Camera Slowdown (ชะลอเมื่อเจอกล้องจับความเร็ว) และ Bike Rack Mode (โหมดเมื่อติดแร็กจักรยาน)</div>
+</div>
+
+<div class="prose">
+
+### ข้อควรรู้ก่อนเชื่อตัวเลข
+
+</div>
+
+<div class="news-cards">
+<div class="news-card is-warn"><span class="news-pill">ไม่มีตัวตั้ง</span><b>"25 เท่า" เทียบกับอะไร</b>Tesla ไม่ได้เปิดเผยตัวเลขตั้งต้นที่ใช้เป็นฐาน เหมือนบอกว่าลดน้ำหนักได้เยอะ แต่ไม่บอกว่าเริ่มจากกี่กิโล ตัวเลขนี้จึงบอกได้แค่ทิศทางที่ Tesla อยากให้เห็น</div>
+<div class="news-card is-warn"><span class="news-pill">ผ่อนเกณฑ์</span><b>ตรวจคนขับ "less strict" (เข้มงวดน้อยลง) ในโปรไฟล์ขับเร็ว</b>คำนี้ Tesla เขียนเอง อ่านได้ว่าระบบเตือนคนขับน้อยลงตอนเลือกโปรไฟล์ขับเร็ว ทั้งที่ระบบยังต้องให้คนมองถนนตลอด กลับมาผ่อนเกณฑ์ตรงนี้ ผมว่าข้อนี้น่าจับตาครับ</div>
+<div class="news-card is-warn"><span class="news-pill">ผลทดสอบ</span><b>Johanna.be ทดสอบ FSD ในโซน 30 km/h</b>องค์กรไม่แสวงกำไรในบรัสเซลส์ Johanna.be เผยแพร่ผลทดสอบเมื่อ ก.ย. 2569 (ตามที่ Electrek เล่า) FSD ขับเกินกำหนดในโซน 30 km/h ถึง 55% ของกรณีที่ทดสอบ ความเร็วเฉลี่ย 44 km/h แหล่งข่าวไม่ได้บอกว่าทดสอบรุ่นไหน จึงใช้ตัดสิน v15 ไม่ได้</div>
+<div class="news-card"><span class="news-pill">กำหนดการ</span><b>v15 จะปล่อยวงกว้างเมื่อไร</b>Elon Musk เขียนเมื่อ 21 พ.ย. 2569 ว่า v15 จะปล่อยวงกว้าง "เดือนหน้า" คือ ธ.ค. 2569 (อ้างผ่าน Tesla Oracle เว็บข่าว Tesla) ส่วน Tesla เคยบอกนักลงทุนว่า HW4 เพียงพอสำหรับ v15</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## สิ่งที่ Elon Musk แจกฟรีจริง ๆ (และสิ่งที่ไม่ได้แจก)
+
+<div class="prose">
+
+ข่าว Elon Musk มักมีคำว่า "open source" (เปิดซอร์สโค้ดให้คนอื่นเอาไปใช้และแก้ต่อได้) ติดมาด้วยครับ แต่แจกจริงแค่ไหน ต้องดูทีละเรื่อง บางอย่างแจกจริง บางอย่างแค่สัญญา บางอย่างไม่ได้แจกเลย
+
+</div>
+
+<div class="news-cards">
+<div class="news-card is-warn"><span class="news-pill">คำสัญญา ไม่ใช่ใบอนุญาต</span><b>สิทธิบัตร Tesla (12 มิ.ย. 2557 หรือ ค.ศ. 2014): สัญญาว่าจะไม่ฟ้องก่อน</b>บล็อก "All Our Patent Are Belong To You" (สิทธิบัตรทั้งหมดของเราเป็นของคุณ) เขียนว่า "Tesla will not initiate patent lawsuits against anyone who, in good faith, wants to use our technology" (Tesla จะไม่เป็นฝ่ายเริ่มฟ้องเรื่องสิทธิบัตรกับใครก็ตามที่อยากใช้เทคโนโลยีของเราโดยสุจริตใจ) นี่คือคำสัญญาว่าจะไม่ฟ้องก่อน ไม่ใช่การให้ใบอนุญาต และบล็อกไม่ได้นิยามว่า "good faith" (สุจริตใจ) แค่ไหนถึงนับ Tesla ฟ้อง CAP-XX ผู้ผลิตซูเปอร์คาปาซิเตอร์ เมื่อ ก.ค. 2566 (ค.ศ. 2023) ตามที่ Electrek รายงาน ณ 23 พ.ย. 2569 ยังไม่พบหลักฐานว่าค่ายรถไหนใช้คำสัญญานี้</div>
+<div class="news-card is-ok"><span class="news-pill">แจกจริง</span><b>แบบหัวชาร์จ (11 พ.ย. 2565): กลายเป็นมาตรฐาน SAE</b>Tesla เปิดแบบหัวชาร์จรถ EV ให้ทั้งโลก ต่อมากลายเป็นมาตรฐาน SAE J3400 (รายงานทางเทคนิคเดือน ธ.ค. 2566 และ recommended practice หรือแนวปฏิบัติที่แนะนำ ฉบับเต็มเดือน ก.ย. 2567 ตามรายงาน) ตามรายงาน Ford, GM และค่ายอื่นรับไปใช้</div>
+<div class="news-card is-warn"><span class="news-pill">แจกบางส่วน</span><b>Roadster (พ.ย. 2566): มีไฟล์ แต่ไม่มีใบอนุญาต</b>"Roadster open source" (Roadster แบบเปิดซอร์ส) คือ repository (ที่เก็บไฟล์บน GitHub) ที่มีไฟล์ CAN (ข้อมูลของสายสื่อสารที่กล่องควบคุมต่าง ๆ ในรถใช้คุยกัน) ซอฟต์แวร์วินิจฉัย และไฟล์ PDF แต่ไม่มีใบอนุญาต open source ระบุ (licence = none) Electrek เขียนว่าไม่ใช่ open source จริง</div>
+<div class="news-card is-warn"><span class="news-pill">แจกตามกฎ</span><b>ซอร์ส Linux ในรถ (ปี 2561)</b>ทำไมต้องแจก เพราะ Linux ในรถใช้ใบอนุญาต GPL ซึ่งบังคับว่าใครแจกโปรแกรม ต้องแจกซอร์สโค้ดด้วย Tesla เผยแพร่ซอร์สส่วน Linux/Buildroot (Buildroot คือชุดเครื่องมือประกอบระบบ Linux) ภายใต้ GPL หลังถูก Software Freedom Conservancy กดดัน องค์กรนี้ดูแลเรื่องใบอนุญาตซอฟต์แวร์เสรี และชุดนั้นไม่รวมซอฟต์แวร์แอปพลิเคชันของ Autopilot (ตามรายงาน)</div>
+<div class="news-card is-warn"><span class="news-pill">ต่างกันตามรุ่น</span><b>Grok ของ xAI: แต่ละรุ่นเปิดไม่เท่ากัน</b>Grok คือแชตบอตของ xAI บริษัทของ Elon Musk ครับ Grok-1 เปิดน้ำหนักโมเดล (ไฟล์ตัวโมเดลที่ฝึกแล้ว) เมื่อ 17 มี.ค. 2567 ใบอนุญาต Apache-2.0 ขนาด 314B คือมีพารามิเตอร์ราว 314,000 ล้านตัว Apache-2.0 เป็นใบอนุญาต open source ที่ให้เอาไปใช้ได้กว้าง ส่วน Grok 2 (เรียกว่า 2.5) เปิดน้ำหนักเมื่อ ส.ค. 2568 ภายใต้ xAI Community License ซึ่งเข้มกว่า และไม่ใช่ open source ตามนิยามของ OSI (Open Source Initiative) องค์กรที่ตั้งนิยามคำว่า open source ส่วน Grok 3 สัญญาไว้ แต่ยังไม่ปล่อย ณ 23 พ.ย. 2569</div>
+<div class="news-card is-ok"><span class="news-pill">แจกจริง</span><b>โค้ดอัลกอริทึมแนะนำของ X</b>ตัวที่เลือกว่าจะโชว์โพสต์ไหนให้เราเห็นบน X (ชื่อเดิม Twitter) ปล่อยมาสองรอบ ปี 2566 (twitter/the-algorithm, AGPL-3.0 ใบอนุญาตตระกูลเดียวกับ GPL) และ ม.ค. 2569 (xai-org/x-algorithm, Apache-2.0)</div>
+<div class="news-card"><span class="news-pill">ยังไม่ทำ</span><b>แบบ Model S และ X: พูดแล้ว แต่ยังไม่ปล่อย</b>Elon Musk พูดเมื่อ 24 ก.ค. 2569 ว่า Tesla "plans" (มีแผน) จะเปิดแบบ Model S และ X แบบเดียวกับ Roadster ณ 23 พ.ย. 2569 ยังไม่มี repository</div>
+</div>
+
+<div class="news-cards">
+<div class="news-card is-bad"><span class="news-pill">ความเข้าใจผิด</span><b>"Tesla เปิด FSD ให้ใช้ฟรี" ไม่ใช่ครับ</b>ณ 23 พ.ย. 2569 ใน github.com/teslamotors ไม่มีโมเดล FSD โค้ดฝึก หรือข้อมูลฝึก การให้ทดลองใช้หรือย้ายสิทธิ์ FSD ไม่ใช่การเปิดซอร์ส ส่วนการให้ค่ายรถอื่นใช้ FSD (licensing) Tesla เสนอมาหลายปี แต่ Elon Musk บอกเมื่อ พ.ย. 2568 ว่าค่ายอื่น "don't want it" (ไม่ได้อยากได้) ตามที่ Electrek รายงาน</div>
+</div>
+
+<div class="prose">
+
+ถ้าอยากเห็นการแจกจริงในเรื่องรถขับเอง ต้องข้ามไปดูฝั่งจีนครับ Baidu (บริษัทเสิร์ชเอนจินรายใหญ่ของจีน) ประกาศโครงการ Apollo เมื่อ 19 เม.ย. 2560 (ค.ศ. 2017) เป็นแพลตฟอร์มเปิด แล้วปล่อยโค้ดลง GitHub เดือน ก.ค. 2560 (repository สร้างเมื่อ 4 ก.ค. 2560) ใช้ใบอนุญาต Apache-2.0 และมีเวอร์ชันถึง 9.0 เมื่อ ธ.ค. 2566 (เรื่องของ Baidu ต่อจากนั้น ดูหัวข้อจุดกำเนิดระบบช่วยขับของจีน)
+
+</div>
+
+</section>
+
+<section class="section">
+
+## จุดกำเนิดระบบช่วยขับของจีน
+
+<div class="prose">
+
+จีนตามหลัง Tesla หรือเปล่า ไม่ใช่ครับ ฝั่งจีนเริ่มก่อน Tesla ประกาศ Autopilot เสียอีก
+
+</div>
+
+<ol class="news-tl">
+<li class="is-key"><span class="news-tl__date">14 ก.ค. 2554 (ค.ศ. 2011)</span><div>รถ Hongqi HQ3 ของ NUDT (มหาวิทยาลัยเทคโนโลยีการป้องกันประเทศของจีน) ขับเองจากฉางซาไปอู่ฮั่นในราว 3 ชม. 20 นาที<span class="news-tl__src">Talking Points Memo</span></div></li>
+<li><span class="news-tl__date">2556 (ค.ศ. 2013)</span><div>Baidu ให้ Institute of Deep Learning (สถาบันวิจัยการเรียนรู้เชิงลึกของ Baidu) นำงานรถขับเอง<span class="news-tl__src">IEEE Spectrum</span></div></li>
+<li><span class="news-tl__date">10 ธ.ค. 2558 (ค.ศ. 2015)</span><div>Baidu ทดสอบ BMW 3 Series ที่ดัดแปลง ระยะ 30 km ในปักกิ่ง ความเร็วสูงสุด 100 km/h<span class="news-tl__src">CNBC</span></div></li>
+<li><span class="news-tl__date">19 เม.ย. 2560 (ค.ศ. 2017)</span><div>Baidu ประกาศ Apollo เป็นแพลตฟอร์มเปิด (รายละเอียดในหัวข้อสิ่งที่ Elon Musk แจกฟรีจริง ๆ)<span class="news-tl__src">MIT Technology Review, GitHub</span></div></li>
+<li><span class="news-tl__date">25 ต.ค. และ 27 พ.ย. 2567</span><div>WeRide เข้า Nasdaq (ตลาดหุ้นสหรัฐฯ) 25 ต.ค. ราคา $15.50 ต่อหุ้น ADS (หน่วยหุ้นที่ซื้อขายในตลาดสหรัฐฯ) และ Pony.ai เข้า Nasdaq 27 พ.ย. ($13 ระดมราว $260 ล้าน)<span class="news-tl__src">Caixin</span></div></li>
+<li><span class="news-tl__date">6 พ.ย. 2568</span><div>WeRide และ Pony.ai เข้าตลาดฮ่องกง<span class="news-tl__src">Caixin</span></div></li>
+<li><span class="news-tl__date">15 ธ.ค. 2568</span><div>ใบอนุญาต L3 ชุดแรกของจีน<span class="news-tl__src">CarNewsChina</span></div></li>
+<li class="is-key"><span class="news-tl__date">16 พ.ย. 2569 (ค.ศ. 2026)</span><div>Baidu รายงานผลไตรมาส 3 Apollo Go (บริการ robotaxi ของ Baidu) วิ่งใน 30 เมือง สะสมกว่า 390 ล้าน km แบบขับเอง (ถึง 31 ต.ค. 2569)<span class="news-tl__src">Baidu ผ่าน Finviz</span></div></li>
+</ol>
+
+<div class="split">
+<div class="prose">
+
+**Hongqi HQ3 คือรถอะไร** Hongqi (หงฉี) เป็นแบรนด์รถของ FAW กลุ่มบริษัทรถยนต์ของจีน ส่วน HQ3 คือรถเก๋งรุ่นหนึ่งของแบรนด์นี้ ทีมจากมหาวิทยาลัยเทคโนโลยีการป้องกันประเทศของจีน (NUDT) เอา HQ3 ไปดัดแปลงให้ขับเองจากฉางซาไปอู่ฮั่นเมื่อ 14 ก.ค. 2554 ใช้เวลาราว 3 ชั่วโมง 20 นาที (ตามที่ Talking Points Memo รายงาน)
+
+ในภาพคือ HQ3 รุ่นที่ขายทั่วไป ถ่ายที่จีนปี 2555 ไม่ใช่คันที่ NUDT ดัดแปลง เพราะภาพของคันนั้นที่ใช้ได้ถูกลิขสิทธิ์ยังไม่พบ ใส่ไว้ให้เห็นหน้าตาของรถรุ่นที่ใช้ทดลองครับ
+
+</div>
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/knowledge/tesla-fsd-guide/hongqi-hq3.jpg" width="1300" height="902" loading="lazy" alt="รถเก๋ง Hongqi HQ3 สีดำ จอดในลานจอด มองจากด้านหน้าเฉียงขวา ป้ายทะเบียนสีน้ำเงินว่าง" /></div><figcaption><span class="news-fig__credit">ภาพ: Navigator84 · CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File:Hongqi_HQ3_China_2012-04-15.JPG" rel="noopener">Wikimedia Commons</a> · เบลอทะเบียนรถบรรทุกด้านหลังโดย DOJOJIN.TECH</span></figcaption></figure>
+</div>
+
+<div class="split">
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/knowledge/tesla-fsd-guide/apollo-go.jpg" width="1600" height="900" loading="lazy" alt="รถ robotaxi Baidu Apollo Go RT6 จอดบนถนนที่มณฑลหูเป่ย์ ติดแผ่นป้ายทะเบียนชั่วคราว" /></div><figcaption><span class="news-fig__credit">ภาพ: S5A-0043 · CC BY 4.0 · <a href="https://commons.wikimedia.org/wiki/File:(CHN-Hubei)_Apollo_Go_Apollo_RT6_Temporary-%E9%84%82A1395%E8%AF%95_2025-12-17.jpg" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+<div class="prose">
+
+ในภาพคือ Apollo Go RT6 ของ Baidu ที่มณฑลหูเป่ย์ เมื่อ ธ.ค. 2568 ครับ สังเกตเซนเซอร์ที่ติดบนหลังคา รถแบบนี้คือ robotaxi ที่ Baidu เปิดให้บริการจริงแล้ว ไม่ใช่แค่งานวิจัย
+
+</div>
+</div>
+
+<div class="split">
+<div class="prose">
+
+อีกสายคือบริษัทที่ทำ robotaxi เป็นหลัก WeRide และ Pony.ai เข้าตลาดหุ้นสหรัฐฯ ปลายปี 2567 แล้วจดทะเบียนที่ฮ่องกงเพิ่มเมื่อ 6 พ.ย. 2568 ตามรายงานของ Caixin (สื่อธุรกิจของจีน)
+
+ในภาพคือ WeRide Robotaxi GXR ซึ่งเป็นรถตู้ครับ robotaxi ไม่จำเป็นต้องเป็นรถเก๋งแบบที่เราคุ้นตา
+
+</div>
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/knowledge/tesla-fsd-guide/weride.jpg" width="1600" height="1199" loading="lazy" alt="รถตู้ WeRide Robotaxi GXR วิ่งอยู่บนถนน" /></div><figcaption><span class="news-fig__credit">ภาพ: Kk0521 · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:WeRide_Robotaxi_GXR.jpg" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+</div>
+
+<div class="prose">
+
+### รถส่วนตัวในจีน: ใครทำอะไรก่อน
+
+ฝั่งรถส่วนตัวในจีนไม่ได้มีเจ้าเดียวที่ทำแล้วคนอื่นตามครับ หลายค่ายแข่งกันออกแทบจะพร้อมกัน ห่างกันเป็นเดือนหรือไม่กี่วัน ระบบที่แข่งกันคือ NOA (Navigate on Autopilot) แต่ละค่ายตั้งชื่อเองต่างกัน เช่น NOP, NGP, NCA, NZP แต่ทำงานแบบเดียวกัน คือขับตามเส้นทางในแอปนำทาง
+
+ถ้าแบ่งเป็นด่าน จะเห็นการแข่งขันสามด่านครับ
+
+</div>
+
+<ol class="news-steps">
+<li><b>ด่าน 1: บนทางด่วน (ต้องมีแผนที่ละเอียด)</b>ขับตามเส้นทาง เปลี่ยนเลน เข้าออกทางแยกต่างระดับเอง ง่ายสุดเพราะไม่มีไฟแดง ไม่มีคนข้ามถนน แต่ต้องมี HD map คือแผนที่ละเอียดระดับเซนติเมตรที่บอกว่าแต่ละเลนอยู่ตรงไหน</li>
+<li><b>ด่าน 2: ในเมือง (ยังต้องมีแผนที่ละเอียด)</b>ยากขึ้นมาก มีไฟแดง สี่แยก รถจักรยานยนต์ คนเดินถนน และใช้ได้เฉพาะเมืองที่มี HD map เท่านั้น</li>
+<li class="is-key"><b>ด่าน 3: ในเมืองแบบไม่ต้องพึ่งแผนที่ละเอียด (mapless)</b>รถดูถนนจากกล้องและเซนเซอร์เองแล้วเข้าใจว่าเลนอยู่ตรงไหน ใช้ได้แทบทุกเมือง ไม่ต้องรอให้ใครไปทำแผนที่ก่อน ด่านนี้แหละที่ทำให้ระบบกระจายไปได้ทั้งประเทศ</li>
+</ol>
+
+<div class="prose">
+
+<ol class="news-tl">
+<li><span class="news-tl__date">26 ต.ค. 2561 (ค.ศ. 2018)</span><div><b>อ้างอิง:</b> Tesla ปล่อย Navigate on Autopilot บนทางด่วนในสหรัฐฯ มาก่อนค่ายจีนทั้งหมด<span class="news-tl__src">Tesla Blog</span></div></li>
+<li class="is-key"><span class="news-tl__date">ต.ค. 2563 (ค.ศ. 2020)</span><div><b>ด่าน 1:</b> NIO ปล่อย NOP (Navigate on Pilot) บนทางด่วนและถนนวงแหวน เป็นค่ายจีนรายแรกที่ทำระบบแบบนี้ ตามที่ CnEVPost เรียงลำดับไว้<span class="news-tl__src">CnEVPost</span></div></li>
+<li><span class="news-tl__date">21–26 ม.ค. 2564 (ค.ศ. 2021)</span><div><b>ด่าน 1:</b> XPeng เปิด NGP (Navigation Guided Pilot) บน P7 แบบทดสอบสาธารณะ<span class="news-tl__src">CnEVPost</span></div></li>
+<li><span class="news-tl__date">17 เม.ย. 2564</span><div>รถคันแรกที่ใช้ชุดเต็มของ Huawei คือ Arcfox Alpha S HI มี lidar 3 ตัว<span class="news-tl__src">Huawei · CnEVPost</span></div></li>
+<li><span class="news-tl__date">6 ธ.ค. 2564</span><div><b>ด่าน 1:</b> Li Auto ปล่อย NOA บน Li ONE CnEVPost เขียนว่า NIO มีก่อนตั้งแต่ ต.ค. 2563 และ XPeng เมื่อ ม.ค. 2564<span class="news-tl__src">CnEVPost</span></div></li>
+<li class="is-key"><span class="news-tl__date">17 ก.ย. 2565 (ค.ศ. 2022)</span><div><b>ด่าน 2:</b> XPeng ทดลอง City NGP ในกวางโจว กับ P5 บางคัน XPeng บอกเองว่าเป็น "the first Chinese auto company" (บริษัทรถจีนรายแรก) ที่ทำได้ (เป็นคำของ XPeng)<span class="news-tl__src">XPeng IR · CnEVPost</span></div></li>
+<li><span class="news-tl__date">23 ก.ย. 2565</span><div><b>ด่าน 2:</b> หกวันต่อมา Huawei กับ Arcfox ปล่อย NCA ให้เจ้าของรถในเซินเจิ้น ทั้งทางด่วนและถนนในเมือง (ยังใช้ HD map)<span class="news-tl__src">TechNode</span></div></li>
+<li><span class="news-tl__date">15–16 เม.ย. 2566 (ค.ศ. 2023)</span><div><b>ด่าน 3 (ประกาศ):</b> Huawei เปิดตัว ADS 2.0 (ชุดระบบช่วยขับของ Huawei) บอกว่าไม่ต้องพึ่งแผนที่ละเอียด<span class="news-tl__src">Jiemian</span></div></li>
+<li><span class="news-tl__date">ปลาย มิ.ย. 2566</span><div><b>ด่าน 3 (ทดลองกลุ่มเล็ก):</b> Li Auto ให้ลูกค้ากลุ่มแรกในปักกิ่งและเซี่ยงไฮ้ลอง NOA ในเมืองแบบไม่ใช้ HD map Li Auto อ้างว่าเป็นรายแรก (เป็นคำของบริษัท)<span class="news-tl__src">TMTPost</span></div></li>
+<li><span class="news-tl__date">10 ก.ค. 2566</span><div>NIO ปล่อย NOP+ ในปักกิ่ง (ทางด่วนในวงแหวนที่ 5)<span class="news-tl__src">Electrek</span></div></li>
+<li><span class="news-tl__date">4–5 ก.ย. 2566</span><div><b>ด่าน 1:</b> Zeekr ส่ง NZP (ใช้ชิปและระบบ SuperVision ของ Mobileye) ให้รถ 110,000 คัน<span class="news-tl__src">Mobileye</span></div></li>
+<li class="is-key"><span class="news-tl__date">28 พ.ย. 2566</span><div><b>ด่าน 3 (ปล่อยวงกว้าง):</b> XPeng ปล่อย XNGP แบบไม่ใช้ HD map ใน 20 เมือง แล้วขยายเป็น 243 เมืองเมื่อ 2 ม.ค. 2567<span class="news-tl__src">CnEVPost</span></div></li>
+<li><span class="news-tl__date">31 ม.ค.–1 ก.พ. 2567 (ค.ศ. 2024)</span><div><b>ด่าน 3:</b> Huawei ส่ง NCA แบบไม่ใช้ HD map ให้เจ้าของ AITO กลุ่มแรก 200 คัน แล้วขยายให้เจ้าของ ADS 2.0 ทั้งหมด<span class="news-tl__src">CarNewsChina</span></div></li>
+<li><span class="news-tl__date">24 เม.ย. 2567</span><div>Huawei เปิด Qiankun ADS 3.0 ชูว่าไม่ต้องพึ่งแผนที่ละเอียด<span class="news-tl__src">CarNewsChina</span></div></li>
+<li><span class="news-tl__date">6 มิ.ย. 2567</span><div><b>ด่าน 2:</b> Xiaomi SU7 ได้ NOA ในเมือง 10 เมือง<span class="news-tl__src">Gasgoo</span></div></li>
+<li><span class="news-tl__date">ก.ค. 2567</span><div><b>ด่าน 3:</b> Li Auto ปล่อย NOA แบบไม่ใช้ HD map ให้เจ้าของ AD Max ทั้งประเทศ (OTA 6.0)<span class="news-tl__src">CnEVPost · CarNewsChina</span></div></li>
+<li class="is-key"><span class="news-tl__date">10 ก.พ. 2568 (ค.ศ. 2025)</span><div>BYD เปิด God's Eye (ชื่อระบบช่วยขับของ BYD แปลว่าดวงตาพระเจ้า) ใส่ในรถราคาถูก รุ่น A และ B ทำ NOA ในเมืองได้ ส่วนรุ่น C ตอนเปิดตัวได้แค่ทางด่วน<span class="news-tl__src">BYD · CarNewsChina</span></div></li>
+</ol>
+
+</div>
+
+<div class="news-cards">
+<div class="news-card is-ok"><span class="news-pill">สรุป</span><b>ใครมาก่อนในจีน</b>ทางด่วน: NIO (ต.ค. 2563) แล้วตามด้วย XPeng (ม.ค. 2564) ส่วนในเมือง XPeng เริ่มทดลองก่อน (17 ก.ย. 2565) และ Huawei ตามมาหกวัน แบบไม่ใช้แผนที่ละเอียด Huawei ประกาศก่อน (เม.ย. 2566) Li Auto ทดลองกลุ่มเล็กก่อน (มิ.ย. 2566) แต่ XPeng ปล่อยวงกว้างก่อน (พ.ย. 2566)</div>
+<div class="news-card is-warn"><span class="news-pill">ลอกกันไหม</span><b>ยังไม่มีหลักฐานว่าใครลอกใคร</b>เท่าที่มีรายงาน ไม่มีแหล่งไหนบอกว่าค่ายไหนลอกค่ายไหน และคำว่า "เจ้าแรก" ส่วนใหญ่เป็นคำของบริษัทเอง ที่เห็นชัดคือทุกค่ายเดินเส้นทางเดียวกับ Tesla คือเริ่มจากทางด่วนแล้วค่อยเข้าเมือง ต่างกันตรงที่ค่ายจีนหลายค่ายใช้ lidar กับ HD map ช่วงแรก ก่อนจะค่อย ๆ เลิกพึ่งแผนที่</div>
+</div>
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/knowledge/tesla-fsd-guide/china-noa-cars.jpg" width="1592" height="390" loading="lazy" alt="รถ 3 คันเรียงกัน ซ้าย XPeng P7 สีเทา กลาง XPeng P5 สีเทา ขวา Arcfox αS สีขาวในงานแสดงรถ" /></div><figcaption><span class="news-fig__credit">ภาพ: Jengtingchen (CC BY-SA 4.0), Evnerd (CC BY-SA 4.0), JustAnotherCarDesigner (CC BY-SA 4.0) · Wikimedia Commons · จัดวางและเบลอป้ายทะเบียนโดย DOJOJIN.TECH</span></figcaption></figure>
+<div class="prose">
+
+ในภาพคือรถที่อยู่ในช่วงแข่งด่าน 1 กับด่าน 2 ครับ จากซ้ายไปขวา XPeng P7 รถที่ได้ NGP บนทางด่วนเมื่อต้นปี 2564 XPeng P5 รุ่นที่ได้ทดลอง City NGP ในกวางโจวก่อนใคร และ Arcfox αS ของ BAIC รุ่นเดียวกับที่ใช้ชุดระบบของ Huawei (ภาพนี้ถ่ายในงานแสดงรถ ยืนยันไม่ได้ว่าเป็นตัว HI ที่มี lidar)
+
+</div>
+</div>
+
+<div class="prose">
+
+### ฝั่งรถส่วนตัว: Huawei, BYD, Xiaomi
+
+</div>
+
+<div class="news-cards">
+<div class="news-card"><b>Huawei ADS 4.0</b>เปิดตัวเมื่อ 22 เม.ย. 2568 (รุ่นก่อนหน้าอยู่ในเส้นเวลาข้างบน)</div>
+<div class="news-card is-ok"><span class="news-pill">ลงรถราคาถูก</span><b>BYD DiPilot ("God's Eye" ดวงตาพระเจ้า) 10 ก.พ. 2568</b>แบ่งสามระดับ DiPilot 600 (lidar 3 ตัว, Yangwang), 300 (lidar 1 ตัว, Denza และบางรุ่นของ BYD), 100 (กล้องหน้า 3 ตัว, รุ่น BYD) Reuters รายงานว่าอย่างน้อย 21 รุ่น รวมรถที่ราคาต่ำกว่า $10,000 ได้ฟีเจอร์ขับขี่อัจฉริยะแบบ "ฟรี" Seagull ราคา 69,800 หยวน</div>
+<div class="news-card is-bad"><span class="news-pill">เหตุร้ายแรง</span><b>Xiaomi SU7 ชนเมื่อ 29 มี.ค. 2568</b>ราว 22:44 บนทางด่วนในมณฑลอานฮุย นักศึกษา 3 คนเสียชีวิต ตามข้อมูลของ Xiaomi เอง NOA เปิดอยู่ที่ 116 km/h ระบบเตือนสิ่งกีดขวางที่จุดก่อสร้าง คนขับเข้าควบคุมหลังจากนั้นราว 1 วินาที และชนแบริเออร์ที่ราว 97 km/h</div>
+<div class="news-card is-warn"><span class="news-pill">กฎใหม่</span><b>จีนเรียกค่ายรถคุยเรื่องโฆษณาและ OTA (16 เม.ย. 2568)</b>กระทรวงอุตสาหกรรมและเทคโนโลยีสารสนเทศจีน (MIIT) เรียกประชุมค่ายรถราว 60 ราย Reuters รายงานว่าห้ามใช้คำว่า "smart driving" (ขับขี่อัจฉริยะ) หรือ "autonomous driving" (ขับขี่อัตโนมัติ) ในโฆษณา และการอัปเดต OTA ของระบบช่วยขับต้องได้รับอนุมัติ</div>
+<div class="news-card is-warn"><span class="news-pill">มาตรฐาน</span><b>จีนออกมาตรฐาน L2 ภาคบังคับ ตรวจมือและตาคนขับ</b>ร่างประกาศ 17 ก.ย. 2568 มีการตรวจว่ามือไม่อยู่บนพวงมาลัย และตาไม่อยู่บนถนน (hands-off และ eyes-off detection) MIIT ประกาศเมื่อ 2 ก.ค. 2569 ว่าจะมีผลบังคับตั้งแต่ 1 ม.ค. 2570 (ค.ศ. 2027) (ตามรายงานของ S&P)</div>
+<div class="news-card is-ok"><span class="news-pill">Level 3</span><b>ใบอนุญาต L3 ชุดแรก 15 ธ.ค. 2568</b>Changan Deepal SL03 (50 km/h บนทางด่วนที่กำหนดในฉงชิ่ง) และ BAIC Arcfox Alpha S (80 km/h บนทางด่วนที่กำหนดในปักกิ่ง) ชุดที่สองกำลังดำเนินการ ตามที่ CnEVPost รายงานเมื่อ ต.ค. 2569</div>
+</div>
+
+<div class="split">
+<div class="prose">
+
+ในภาพคือรถจีนยุคปัจจุบันครับ ซ้ายบน Luxeed S7 ที่ใช้ระบบช่วยขับของ Huawei สังเกตกล่อง lidar บนหลังคาเหนือกระจกหน้า ขวาบน Xiaomi SU7 ที่มี lidar ตรงตำแหน่งเดียวกัน ซ้ายล่าง BYD Seagull รถราคาเริ่ม 69,800 หยวนที่ได้ God's Eye และขวาล่าง Changan Deepal SL03 รุ่นที่ได้ใบอนุญาต L3 ชุดแรกของจีน
+
+เรื่องที่ผมว่าน่าสนใจที่สุดของฝั่งจีน คือเอาระบบช่วยขับไปใส่รถราคาต่ำกว่า $10,000 ขณะที่ Tesla ขาย FSD เป็นแพ็กเกจแยก
+
+ส่วน Tesla ในจีนเปิดฟีเจอร์ขับในเมืองให้เฉพาะรถที่ซื้อ FSD (ดูหัวข้อประวัติ Tesla Autopilot ถึง FSD)
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/knowledge/tesla-fsd-guide/china-now-cars.jpg" width="1576" height="1136" loading="lazy" alt="รถ 4 คัน ซ้ายบน Luxeed S7 สีเงินมี lidar บนหลังคา ขวาบน Xiaomi SU7 สีส้มมี lidar บนหลังคา ซ้ายล่าง BYD Seagull สีขาว ขวาล่าง Deepal SL03 สีน้ำเงิน" /></div><figcaption><span class="news-fig__credit">ภาพ: JustAnotherCarDesigner (CC0), S5A-0043 (CC BY 4.0), User3204 (CC BY-SA 4.0), SAIC GM sucks (CC BY-SA 4.0) · Wikimedia Commons · จัดวางและเบลอป้ายทะเบียนโดย DOJOJIN.TECH</span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## ในไทยเป็นยังไง
+
+<div class="prose">
+
+แล้วคนไทยใช้ FSD ได้ไหม หน้าสั่งซื้อของ Tesla ไทยมีแพ็ก FSD ขายครับ แต่ส่วนที่เป็น FSD จริง ๆ Tesla ไทยบอกว่าจะใช้ได้ "ในอนาคต" ข้อมูลฝั่งไทยมีน้อยกว่าที่คิด ผมแยกให้ว่าอันไหนยืนยันได้ อันไหนยังไม่พบ
+
+</div>
+
+<div class="news-cards">
+<div class="news-card is-warn"><span class="news-pill">Tesla ไทย</span><b>ซื้อแพ็ก FSD ได้ แต่ส่วนที่เป็น FSD จริงยังเป็น "อนาคต"</b>หน้าสั่งซื้อของ Tesla ไทย (Model 3 ฉบับ 13 ก.ค. 2569 และ Model Y ฉบับ 10 ส.ค. 2569 หรือ ค.ศ. 2026) ขายแพ็ก FSD ราคา 244,000 บาท และ EAP ราคา 122,000 บาท แต่ก็เขียนไว้ว่า "ความสามารถในการขับขี่อัตโนมัติเต็มรูปแบบ (ภายใต้การควบคุม) จะสามารถใช้งานได้ในอนาคต" และ "อยู่ระหว่างรอการพัฒนาเพิ่มเติมและการอนุมัติตามกฎข้อบังคับ" แปลว่าของที่ทำให้ FSD ต่างจาก EAP (หยุดตามไฟจราจร, Autosteer บนถนนในเมือง) ยังเป็น "กำลังจะมาถึง" อยู่ครับ (ดูหัวข้อ Autopilot, EAP กับ FSD ต่างกันยังไง)</div>
+<div class="news-card is-warn"><span class="news-pill">ซื้อขาด</span><b>หน้าไทยบอกว่าซื้อขาดจบ 30 มิ.ย. 2569 แต่ยังโชว์ราคาอยู่</b>ทั้งสองหน้าเขียนว่า "ตัวเลือกการซื้อ ความสามารถในการขับอัตโนมัติเต็มรูปแบบ (FSD) แบบชำระครั้งเดียวจะสิ้นสุดการให้บริการหลังเวลา 23:00 น. ของวันที่ 30 มิถุนายน 2569" และ "แบบชำระรายเดือนเตรียมเปิดให้ใช้งานเร็วๆนี้" แต่แปลกตรงที่หน้า Model Y ฉบับ 10 ส.ค. 2569 ซึ่งเก็บไว้หลังวันนั้นแล้ว ยังแสดงราคา 244,000 บาทอยู่ เลยมีคำถามว่าตอนนี้ในไทยยังซื้อขาดได้ไหม หรือมีแบบรายเดือนแล้วหรือยัง ข้อนี้ยังยืนยันไม่ได้ ใครจะซื้อ ถามที่ศูนย์ Tesla ให้ชัวร์ก่อนครับ</div>
+<div class="news-card is-bad"><span class="news-pill">ไม่อยู่ในรายชื่อ</span><b>ไทยไม่อยู่ในรายชื่อประเทศที่มี FSD (Supervised)</b>หน้า FSD ของ Tesla (16 พ.ย. 2569) ระบุประเทศไว้ 19 แห่ง ไม่มีไทย</div>
+<div class="news-card"><b>มอก. ใหม่ 5 ฉบับ เรื่องระบบอัตโนมัติในรถ</b>มอก. คือมาตรฐานผลิตภัณฑ์อุตสาหกรรมของไทย ราชกิจจานุเบกษา 3 ส.ค. 2569 ประกาศมาตรฐานที่ลงนามเมื่อ 30 มิ.ย. 2569 ตามที่ Nation Thailand รายงาน คือ มอก. 4653 เล่ม 1-2568 (การหยุดรถให้เสี่ยงน้อยที่สุด สำหรับระดับ 3-5) · 4654-2568 (ระบบเบรกอัตโนมัติความเร็วต่ำ) · 4655 เล่ม 2-2568 (บริการขับอัตโนมัติความเร็วต่ำ เช่น รถชัตเทิล) · 4656-2568 (การหลบการชนด้วยการหักเลี้ยว) · 4657-2568 (ระบบจอดรถกึ่งอัตโนมัติ)</div>
+<div class="news-card"><b>BYD Sealion 7 ในไทย: สเปกไม่มี DiPilot</b>เอกสารสเปกทางการของ BYD ไทยรุ่น Sealion 7 ระบุ ICC, AEB, FCW, BSD (Cruise Control อัจฉริยะ เบรกฉุกเฉิน เตือนชนด้านหน้า เตือนจุดบอด) และอื่น ๆ แต่ไม่มี DiPilot / God's Eye สเปกที่เห็นคือ Sealion 7 รุ่นเดียว</div>
+<div class="news-card is-warn"><span class="news-pill">หาไม่เจอ</span><b>กฎ Level 2 ของกรมการขนส่งทางบก และ XPeng XNGP ในไทย: ยังไม่พบ</b>ณ 23 พ.ย. 2569 ยังไม่พบกฎของกรมการขนส่งทางบกเรื่องการใช้ระบบ Level 2 บนถนนไทย และยังไม่พบ XPeng XNGP ในไทย</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ความเข้าใจผิดที่เจอบ่อย
+
+<div class="news-cards">
+<div class="news-card is-bad"><span class="news-pill">ไม่ใช่</span><b>"FSD = รถขับเองได้"</b>ไม่ใช่ครับ FSD (Supervised) เป็น Level 2 คนขับยังต้องดูแลและรับผิดชอบตลอด (ดูหัวข้อ FSD คืออะไร)</div>
+<div class="news-card is-bad"><span class="news-pill">ไม่ใช่</span><b>"Level ยิ่งสูงยิ่งดี"</b>ไม่ใช่ครับ J3016 เขียนเองว่าเลขระดับแค่บอกว่างานแบ่งกันยังไง (ดูหัวข้อระดับการขับอัตโนมัติ SAE 0 ถึง 5)</div>
+<div class="news-card is-bad"><span class="news-pill">ไม่ใช่</span><b>"Tesla เปิดสิทธิบัตรให้ใช้ฟรีทุกอย่าง"</b>ไม่ใช่ครับ ปี 2557 (ค.ศ. 2014) เป็นคำสัญญาว่าจะไม่ฟ้องก่อน ไม่ใช่ใบอนุญาต และ FSD ไม่ได้เปิดซอร์ส (ดูหัวข้อสิ่งที่ Elon Musk แจกฟรีจริง ๆ)</div>
+<div class="news-card is-bad"><span class="news-pill">ไม่ใช่</span><b>"Autopilot กับ FSD คือตัวเดียวกัน"</b>ไม่ใช่ครับ Autopilot คุมเลนกับความเร็ว ส่วน FSD (Supervised) ขับตามเส้นทางนำทางในเมืองด้วย แต่ทั้งคู่ยังเป็น Level 2 (ดูหัวข้อ Autopilot, EAP กับ FSD ต่างกันยังไง)</div>
+<div class="news-card is-bad"><span class="news-pill">ไม่ใช่</span><b>"จีนตามหลัง Tesla"</b>ไม่ใช่ครับ รถ HQ3 ขับเองได้ตั้งแต่ปี 2554 ก่อน Tesla ประกาศ Autopilot ปี 2557 (ดูหัวข้อจุดกำเนิดระบบช่วยขับของจีน)</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## คำศัพท์
+
+<div class="news-cards">
+<div class="news-card"><b>ADAS</b>ระบบช่วยขับ คือฟีเจอร์ที่ช่วยคนขับ เช่น เบรกฉุกเฉิน ช่วยรักษาเลน ไม่ได้ขับแทนทั้งคัน</div>
+<div class="news-card"><b>ACC</b>Cruise Control ที่รักษาระยะห่างจากรถคันหน้าให้ด้วย</div>
+<div class="news-card"><b>NOA</b>ระบบช่วยขับที่ขับตามเส้นทางนำทาง ชื่อที่ค่ายจีนใช้กันบ่อย</div>
+<div class="news-card"><b>ODD</b>ขอบเขตที่ระบบถูกออกแบบให้ใช้ได้ เช่น ชนิดถนน ความเร็ว สภาพอากาศ</div>
+<div class="news-card"><b>OEDR</b>งานมองสิ่งรอบตัวและตอบสนอง ที่ใน Level 2 เป็นของคนขับ</div>
+<div class="news-card"><b>L2 / L3</b>Level 2 คนขับมองถนนตลอด · Level 3 ระบบขับเองในเงื่อนไข คนรับช่วงเมื่อถูกขอ</div>
+<div class="news-card"><b>End-to-end</b>โมเดลเดียวที่รับภาพจากกล้องแล้วส่งคำสั่งขับออกมา</div>
+<div class="news-card"><b>Lidar</b>เซนเซอร์ที่ยิงเลเซอร์เพื่อวัดระยะของสิ่งรอบตัว</div>
+<div class="news-card"><b>OTA</b>การอัปเดตซอฟต์แวร์ผ่านอินเทอร์เน็ต ไม่ต้องเข้าศูนย์</div>
+<div class="news-card"><b>HW3 / HW4 (AI4)</b>รุ่นของคอมพิวเตอร์ขับรถในรถ Tesla</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ปิดท้าย
+
+<div class="prose">
+
+เรื่องที่เห็นชัดที่สุดคือ ชื่อเรียกกับสิ่งที่ระบบทำจริงห่างกันมากกว่าที่คิด Tesla เขียนเองในหน้าของตัวเองว่าไม่ใช่รถขับเอง RDW ก็เขียนแบบเดียวกัน แต่ภาพที่คนเห็นในคลิปคือรถขับไปเอง
+
+ผมว่าวิธีอ่านข่าวเรื่องนี้ที่ง่ายที่สุดคือถามว่า "ใครรับผิดชอบการมองถนน" ถ้าคำตอบคือคนขับ ก็คือ Level 2 ไม่ว่าจะตั้งชื่อว่าอะไร ส่วนในไทย Tesla ยังบอกว่า FSD จะใช้งานได้ในอนาคตครับ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- Tesla หน้า FSD (เก็บถาวร 16 พ.ย. 2569): <a href="http://web.archive.org/web/20261116223723/https://www.tesla.com/fsd" rel="noopener">web.archive.org</a>
+- Tesla ไทย หน้าสั่งซื้อ Model 3 (เก็บถาวร 13 ก.ค. 2569): <a href="http://web.archive.org/web/20260713151626/https://www.tesla.com/th_TH/model3/design" rel="noopener">web.archive.org</a>
+- Tesla ไทย หน้าสั่งซื้อ Model Y (เก็บถาวร 10 ส.ค. 2569): <a href="http://web.archive.org/web/20260810032811/https://www.tesla.com/th_TH/modely/design" rel="noopener">web.archive.org</a>
+- RDW อนุมัติ FSD Supervised: <a href="https://www.rdw.nl/en/news/2026/rdw-explanation-of-european-type-approval-tesla-with-provisional-validity-in-the-netherlands" rel="noopener">rdw.nl</a>
+- RDW เปลี่ยนชื่อเป็น Tesla Assisted Driving: <a href="https://www.rdw.nl/en/news/2026/rdw-approves-changes-to-tesla-driver-assistance-system" rel="noopener">rdw.nl</a>
+- Electrek หยุดขาย FSD แบบซื้อขาด: <a href="https://electrek.co/2026/01/14/tesla-tsla-stop-selling-full-self-driving-package-subscription-only/" rel="noopener">electrek.co</a>
+- California DMV: <a href="https://www.dmv.ca.gov/portal/news-and-media/tesla-takes-corrective-action-to-avoid-dmv-suspension/" rel="noopener">dmv.ca.gov</a>
+- SAE J3016: <a href="https://www.sae.org/standards/content/j3016_202104/" rel="noopener">sae.org</a>
+- สิทธิบัตร US 2,519,859: <a href="https://patents.google.com/patent/US2519859A" rel="noopener">patents.google.com</a>
+- Jalopnik เรื่อง Chrysler Auto-Pilot ปี 2501: <a href="https://www.jalopnik.com/2222940/chrysler-auto-pilot-technology-1958/" rel="noopener">jalopnik.com</a>
+- Toyota Celsior radar cruise control: <a href="https://global.toyota/detail/245359" rel="noopener">global.toyota</a>
+- Mercedes S-Class W220: <a href="https://mercedes-benz-publicarchive.com/marsClassic/en/instance/ko/220-series-S-Class-Saloons-1998---2002.xhtml?oid=453360" rel="noopener">mercedes-benz-publicarchive.com</a>
+- Nissan Cima ม.ค. 2544: <a href="https://global.nissannews.com/en/releases/010112-01" rel="noopener">global.nissannews.com</a>
+- JSME รางวัลระบบช่วยจอด Prius: <a href="https://www.jsme.or.jp/archive/eng/awards/awardsn04-2.html" rel="noopener">jsme.or.jp</a>
+- Volvo XC60 City Safety: <a href="https://web.archive.org/web/2024/https://www.volvocars.com/intl/media/press-releases/B4E3F76285899FA8/" rel="noopener">web.archive.org</a>
+- Dyna-Vision เรื่อง VaMP 2538: <a href="https://dyna-vision.de/application-areas-and-tasks/road-vehicle-guidance/long-distance-drive-vamp-1995/" rel="noopener">dyna-vision.de</a>
+- CMU No Hands Across America: <a href="https://www.cs.cmu.edu/~tjochem/nhaa/nhaa_home_page.html" rel="noopener">cs.cmu.edu</a>
+- DARPA Grand Challenge สิบปีต่อมา: <a href="https://www.darpa.mil/news/2014/grand-challenge-ten-years-later" rel="noopener">darpa.mil</a>
+- CMU Tartan Racing ชนะ Urban Challenge: <a href="https://cs.cmu.edu/news/2007/tartan-racing-wins-2-million-prize-darpa-urban-challenge-stanford-racing-wins-1-million-second" rel="noopener">cs.cmu.edu</a>
+- Waymo About: <a href="https://waymo.com/about/" rel="noopener">waymo.com</a>
+- Waymo Safety Impact: <a href="https://waymo.com/safety/impact/" rel="noopener">waymo.com</a>
+- Waymo blog ก.พ. 2569: <a href="https://waymo.com/blog/2026/02/waymo-raises-usd16-billion-investment-round/" rel="noopener">waymo.com</a>
+- Honda Legend: <a href="https://global.honda/en/newsroom/news/2021/4210304eng-legend.html" rel="noopener">global.honda</a>
+- Mercedes อนุมัติ Level 3 ในเยอรมนี: <a href="https://web.archive.org/web/2025/https://group.mercedes-benz.com/innovation/product-innovation/autonomous-driving/system-approval-for-conditionally-automated-driving.html" rel="noopener">web.archive.org</a>
+- Mercedes DRIVE PILOT เนวาดา: <a href="https://web.archive.org/web/2025/https://group.mercedes-benz.com/innovation/product-innovation/autonomous-driving/drive-pilot-nevada.html" rel="noopener">web.archive.org</a>
+- Mercedes DRIVE PILOT แคลิฟอร์เนีย: <a href="https://web.archive.org/web/2024/https://group.mercedes-benz.com/innovation/product-innovation/autonomous-driving/drive-pilot-california.html" rel="noopener">web.archive.org</a>
+- Mercedes 95 km/h (Automotive World): <a href="https://www.automotiveworld.com/news-releases/mercedes-benz-is-approved-for-95-km-h-level-3-autonomous-driving-in-germany/" rel="noopener">automotiveworld.com</a>
+- BMW 7 Series Level 3: <a href="https://www.press.bmwgroup.com/global/article/detail/T0438214EN/level-3-highly-automated-driving-available-in-the-new-bmw-7-series" rel="noopener">press.bmwgroup.com</a>
+- Tesla บล็อก Dual Motor Model S and Autopilot (2557): <a href="https://web.archive.org/web/2014/http://www.teslamotors.com/blog/dual-motor-model-s-and-autopilot" rel="noopener">web.archive.org</a>
+- Tesla บล็อก Your Autopilot has arrived (2558): <a href="https://web.archive.org/web/2015/https://www.teslamotors.com/blog/your-autopilot-has-arrived" rel="noopener">web.archive.org</a>
+- Tesla บล็อก A Tragic Loss (2559): <a href="https://web.archive.org/web/2016/https://www.tesla.com/blog/tragic-loss" rel="noopener">web.archive.org</a>
+- Tesla บล็อกฮาร์ดแวร์ full self-driving (2559): <a href="https://web.archive.org/web/2016/https://www.tesla.com/blog/all-tesla-cars-being-produced-now-have-full-self-driving-hardware" rel="noopener">web.archive.org</a>
+- Tesla Vision: <a href="https://web.archive.org/web/2022/https://www.tesla.com/support/transitioning-tesla-vision" rel="noopener">web.archive.org</a>
+- TechCrunch เรื่อง Mobileye กับ EyeQ3: <a href="https://techcrunch.com/2016/07/26/mobileye-wont-supply-tesla-self-driving-tech-beyond-current-eyeq3-processor" rel="noopener">techcrunch.com</a>
+- The Register เรื่อง Autonomy Day: <a href="https://www.theregister.com/2019/04/22/tesla_self_driving_cars/" rel="noopener">theregister.com</a>
+- Engadget เรื่อง FSD Beta: <a href="https://www.engadget.com/tesla-full-self-driving-beta-october-20-171500591.html" rel="noopener">engadget.com</a>
+- NHTSA recall 23V-085: <a href="https://static.nhtsa.gov/odi/rcl/2023/RCLRPT-23V085-3451.PDF" rel="noopener">static.nhtsa.gov</a>
+- NHTSA recall 23V-838: <a href="https://api.nhtsa.gov/recalls/campaignNumber?campaignNumber=23V838" rel="noopener">api.nhtsa.gov</a>
+- NHTSA PE24031: <a href="https://static.nhtsa.gov/odi/inv/2024/INOA-PE24031-23232.pdf" rel="noopener">static.nhtsa.gov</a>
+- NHTSA EA26002: <a href="https://static.nhtsa.gov/odi/inv/2026/INOV-EA26002-10024.pdf" rel="noopener">static.nhtsa.gov</a>
+- NHTSA PE25012: <a href="https://static.nhtsa.gov/odi/inv/2025/INOA-PE25012-19171.pdf" rel="noopener">static.nhtsa.gov</a>
+- Electrek FSD v12: <a href="https://electrek.co/2024/03/16/tesla-full-self-driving-beta-v12-finally-rolls-out/" rel="noopener">electrek.co</a>
+- Electrek FSD v14 (รวมเรื่อง v13 สำหรับรถ HW4 ปลายปี 2567): <a href="https://electrek.co/2025/10/07/tesla-fsd-v14-release-notes/" rel="noopener">electrek.co</a>
+- CnEVPost เรื่อง Tesla ในจีน: <a href="https://cnevpost.com/2025/02/25/tesla-rolling-fsd-like-features-china/" rel="noopener">cnevpost.com</a>
+- TechCrunch Robotaxi ออสติน (2568): <a href="https://techcrunch.com/2025/06/22/tesla-launches-robotaxi-rides-in-austin-with-big-promises-and-unanswered-questions" rel="noopener">techcrunch.com</a>
+- TechCrunch Robotaxi ไม่มีคนคุม (2569): <a href="https://techcrunch.com/2026/01/22/tesla-launches-robotaxi-rides-in-austin-with-no-human-safety-driver/" rel="noopener">techcrunch.com</a>
+- Electrek Cybercab: <a href="https://electrek.co/2026/04/23/tesla-cybercab-production-starts-no-nhtsa-2500-vehicle-cap/" rel="noopener">electrek.co</a>
+- Electrek FSD v15: <a href="https://electrek.co/2026/11/21/tesla-fsd-v15-rollout-25x-safety-reality-view/" rel="noopener">electrek.co</a>
+- Tesla Oracle เรื่อง Elon Musk บอกว่า v15 ปล่อยวงกว้างเดือน ธ.ค. 2569: <a href="https://www.teslaoracle.com/2026/11/21/tesla-fsd-v15-to-go-wide-release-with-the-2026-holiday-update-and-mind-bending-reality-renders-in-december-says-musk/" rel="noopener">teslaoracle.com</a>
+- Not a Tesla App ซอฟต์แวร์ 2026.38.6.11: <a href="https://www.notateslaapp.com/software-updates/version/2026.38.6.11/release-notes" rel="noopener">notateslaapp.com</a>
+- Tesla บล็อก All Our Patent Are Belong To You: <a href="https://web.archive.org/web/20160722033909/https://www.tesla.com/blog/all-our-patent-are-belong-you" rel="noopener">web.archive.org</a>
+- Electrek Tesla ฟ้อง CAP-XX: <a href="https://electrek.co/2023/07/17/tesla-sues-supercapacitor-company-over-patent-infringement-despite-open-patent-pledge/" rel="noopener">electrek.co</a>
+- Tesla เปิดแบบหัวชาร์จ: <a href="https://web.archive.org/web/2022/https://www.tesla.com/blog/opening-north-american-charging-standard" rel="noopener">web.archive.org</a>
+- GitHub teslamotors/roadster: <a href="https://github.com/teslamotors/roadster" rel="noopener">github.com</a>
+- xAI Grok-1: <a href="https://x.ai/news/grok-os" rel="noopener">x.ai</a> · Grok 2: <a href="https://huggingface.co/xai-org/grok-2" rel="noopener">huggingface.co</a>
+- GitHub xai-org/x-algorithm: <a href="https://github.com/xai-org/x-algorithm" rel="noopener">github.com</a>
+- Electrek แผนเปิด Model S และ X: <a href="https://electrek.co/2026/07/24/tesla-open-source-model-s-x-roadster-release-audit/" rel="noopener">electrek.co</a>
+- Electrek เรื่อง licensing FSD: <a href="https://electrek.co/2025/11/24/elon-musk-admits-automakers-dont-want-license-tesla-full-self-driving/" rel="noopener">electrek.co</a>
+- Talking Points Memo เรื่อง HQ3: <a href="https://talkingpointsmemo.com/idealab/china-builds-and-tests-its-own-robot-car" rel="noopener">talkingpointsmemo.com</a>
+- IEEE Spectrum เรื่อง Baidu: <a href="https://spectrum.ieee.org/baidus-robot-car-marks-selfdriving-milestone-in-beijing" rel="noopener">spectrum.ieee.org</a>
+- CNBC เรื่อง Baidu ทดสอบรถ: <a href="https://www.cnbc.com/2015/12/10/baidu-challenges-google-with-driverless-car-test.html" rel="noopener">cnbc.com</a>
+- MIT Technology Review เรื่อง Apollo: <a href="https://www.technologyreview.com/2017/04/19/152467/baidu-will-release-a-free-operating-system-for-self-driving-cars/" rel="noopener">technologyreview.com</a>
+- GitHub ApolloAuto/apollo: <a href="https://github.com/ApolloAuto/apollo" rel="noopener">github.com</a>
+- Baidu ผลไตรมาส 3 ปี 2569 (ผ่าน Finviz): <a href="https://finviz.com/news/422901/baidu-announces-third-quarter-2026-results" rel="noopener">finviz.com</a>
+- Caixin เรื่อง Pony.ai และ WeRide: <a href="https://www.caixinglobal.com/2025-11-06/pony-ai-weride-tumble-in-hong-kong-debut-amid-robotaxi-doubts-102379913.html" rel="noopener">caixinglobal.com</a>
+- CarNewsChina เรื่อง XPeng XNGP: <a href="https://carnewschina.com/2024/02/29/xpengs-xngp-assisted-driving-system-goes-nationwide/" rel="noopener">carnewschina.com</a>
+- Huawei: <a href="https://auto.huawei.com/en/about-us" rel="noopener">auto.huawei.com</a> · <a href="https://carnewschina.com/2024/04/24/huawei-qiankun-ads-3-0-announced-brings-intelligent-driving-upgrade/" rel="noopener">CarNewsChina เรื่อง ADS 3.0</a>
+- BYD DiPilot: <a href="https://www.byd.com/mea/news-list/byd-dipilot-intelligent-driving-assistance" rel="noopener">byd.com</a>
+- CarNewsChina เรื่อง Xiaomi SU7: <a href="https://carnewschina.com/2025/04/11/xiaomi-discloses-logs-after-su7s-fatal-crash-that-killed-3-students" rel="noopener">carnewschina.com</a>
+- Insurance Journal (Reuters) เรื่อง MIIT เรียกประชุมค่ายรถ และ BYD ให้ฟีเจอร์ขับขี่อัจฉริยะ "ฟรี" อย่างน้อย 21 รุ่น: <a href="https://www.insurancejournal.com/news/international/2025/04/17/820150.htm" rel="noopener">insurancejournal.com</a>
+- S&P AutoTechInsight เรื่องวันมีผลของมาตรฐาน L2 ภาคบังคับ: <a href="https://autotechinsight.spglobal.com/news/5289441/mainland-china-issues-mandatory-standard-for-combined-driver-assistance-systems" rel="noopener">autotechinsight.spglobal.com</a>
+- China Daily เรื่องมาตรฐาน L2: <a href="https://www.chinadaily.com.cn/a/202509/17/WS68ca620da3108622abca149e.html" rel="noopener">chinadaily.com.cn</a>
+- CarNewsChina เรื่องใบอนุญาต L3: <a href="https://carnewschina.com/2025/12/15/china-grants-first-conditional-l3-self-driving-permits-to-changans-deepal-sl03-and-baics-arcfox-s6/" rel="noopener">carnewschina.com</a>
+- CnEVPost เรื่อง L3 ชุดที่สอง (ต.ค. 2569): <a href="https://cnevpost.com/2026/10/22/china-advances-2nd-batch-level-3-approvals/" rel="noopener">cnevpost.com</a>
+- Nation Thailand เรื่อง มอก. 4653-4657: <a href="https://www.nationthailand.com/business/automobile/40069388" rel="noopener">nationthailand.com</a>
+- BYD ไทย สเปก Sealion 7: <a href="https://www.byd.com/material/__CN/byd-site/th/product/sealion7/BYD_SEALION_7.pdf" rel="noopener">byd.com</a>
+
+- Tesla "Transitioning to Tesla Vision" (ฉบับ มิ.ย. 2564 และฉบับปรับล่าสุด ธ.ค. 2567): <a href="https://web.archive.org/web/20250405105729/https://www.tesla.com/support/transitioning-tesla-vision" rel="noopener">web.archive.org</a>
+- คู่มือ Tesla Model Y หัวข้อข้อจำกัดและคำเตือน (ฉบับเก็บ เม.ย. 2568): <a href="https://web.archive.org/web/20250404050341/https://www.tesla.com/ownersmanual/modely/en_us/GUID-E5FF5E84-6AAC-43E6-B7ED-EC1E9AEB17B7.html" rel="noopener">web.archive.org</a>
+- Electrek (Tesla ปฏิเสธเรื่อง lidar, 24 พ.ค. 2564): <a href="https://electrek.co/2021/05/24/tesla-test-vehicle-spotted-lidar-starts-rumors-confuses-people/" rel="noopener">electrek.co</a>
+- TechCrunch (Autonomy Day, Elon Musk และ Karpathy เรื่อง lidar, 22 เม.ย. 2562): <a href="https://techcrunch.com/2019/04/22/anyone-relying-on-lidar-is-doomed-elon-musk-says/" rel="noopener">techcrunch.com</a>
+- CleanTechnica (ทวีตของ Elon Musk เรื่องเรดาร์กับกล้อง, 10 เม.ย. 2564): <a href="https://cleantechnica.com/2021/04/10/elon-musk-shares-a-bit-more-detail-about-tesla-fsds-pure-vision/" rel="noopener">cleantechnica.com</a>
+- IEEE Spectrum (Tesla vision-only, ก.ค. 2564): <a href="https://spectrum.ieee.org/tesla-places-big-bet-vision-only-self-driving" rel="noopener">spectrum.ieee.org</a>
+- Electrek (Elon Musk เรื่อง sensor contention และเรดาร์ความละเอียดสูง, 28 ส.ค. 2568): <a href="https://electrek.co/2025/08/28/elon-musk-lying-tesla-self-driving-dms-prove-it/" rel="noopener">electrek.co</a>
+- Notebookcheck (เรดาร์ใน Model S/X HW4): <a href="https://www.notebookcheck.net/Tesla-Hardware-4-0-radar-kit-gets-torn-down-as-HW4-models-gain-Park-Assist-at-long-last.725568.0.html" rel="noopener">notebookcheck.net</a>
+- InsideEVs (เรดาร์ใน Model X HW4): <a href="https://insideevs.com/news/671961/tesla-model-x-hardware-4-radar-confirmed/" rel="noopener">insideevs.com</a>
+- NHTSA PE24031 (ปิดและยกระดับ 18 มี.ค. 2569): <a href="https://static.nhtsa.gov/odi/inv/2026/INCLA-PE24031-87755.pdf" rel="noopener">nhtsa.gov</a>
+- AAA ทดสอบระบบเบรกหลบคนเดินถนน (ต.ค. 2562): <a href="https://newsroom.aaa.com/2019/10/aaa-warns-pedestrian-detection-systems-dont-work-when-needed-most/" rel="noopener">newsroom.aaa.com</a>
+- AAA ทดสอบซ้ำ (ต.ค. 2568): <a href="https://info.oregon.aaa.com/wp-content/uploads/2025/10/Fact-Sheet-AAA-Pedestrian-AEB-Effectiveness_FINAL-10.2025.pdf" rel="noopener">aaa.com</a>
+- Waymo เทคโนโลยีเซนเซอร์: <a href="https://waymo.com/tech" rel="noopener">waymo.com</a>
+- Waymo Driver Handbook: Perception (ต.ค. 2564): <a href="https://waymo.com/blog/2021/10/the-waymo-driver-handbook-perception" rel="noopener">waymo.com</a>
+- IEEE Spectrum (Honda Electro Gyrocator): <a href="https://spectrum.ieee.org/first-mapbased-car-navigation-system-debuted-14-years-before-gps" rel="noopener">spectrum.ieee.org</a>
+- Honda Heritage (Electro Gyrocator): <a href="https://global.honda/en/heritage/episodes/1981navigationsystem.html" rel="noopener">global.honda</a>
+- GPS World (ประวัติ GPS โดย Parkinson): <a href="https://www.gpsworld.com/origins-gps-part-1/" rel="noopener">gpsworld.com</a>
+- NASA (ประวัติ GPS): <a href="https://www.nasa.gov/history/global-positioning-system-history/" rel="noopener">nasa.gov</a>
+- Reagan Library (แถลงการณ์ 16 ก.ย. 2526): <a href="https://www.reaganlibrary.gov/research/speeches/91683c" rel="noopener">reaganlibrary.gov</a>
+- ETHW (Etak Navigator เล่าโดย Stan Honey): <a href="https://ethw.org/First-Hand:ETAK,_an_early_vehicle_navigation_system" rel="noopener">ethw.org</a>
+- Mazda (Eunos Cosmo): <a href="https://www2.mazda.com/en/100th/virtual_museum/episode/episode008.html" rel="noopener">mazda.com</a>
+- Pioneer (AVIC-1, 2533): <a href="https://global.pioneer/en/corp/info/history/chronology/archives/1990/" rel="noopener">global.pioneer</a>
+- IEEE Spectrum (Garmin StreetPilot): <a href="https://spectrum.ieee.org/consumer-electronics/gadgets/the-consumer-electronics-hall-of-fame-garmin-streetpilot-gps-navigation-system" rel="noopener">spectrum.ieee.org</a>
+- ทำเนียบขาว (เลิก Selective Availability, 1 พ.ค. 2543): <a href="https://clintonwhitehouse3.archives.gov/WH/EOP/OSTP/html/0053_2.html" rel="noopener">archives.gov</a>
+- Google Blog (Google Maps, 8 ก.พ. 2548): <a href="https://googleblog.blogspot.com/2005/02/mapping-your-way.html" rel="noopener">googleblog.blogspot.com</a>
+- Google Blog (Google Maps Navigation, 28 ต.ค. 2552): <a href="https://googleblog.blogspot.com/2009/10/announcing-google-maps-navigation-for.html" rel="noopener">googleblog.blogspot.com</a>
+- Apple Newsroom (iOS 6 Maps, 11 มิ.ย. 2555): <a href="https://www.apple.com/newsroom/2012/06/11Apple-Previews-iOS-6-With-All-New-Maps-Siri-Features-Facebook-Integration-Shared-Photo-Streams-New-Passbook-App/" rel="noopener">apple.com</a>
+- Google Blog (ซื้อ Waze, 11 มิ.ย. 2556): <a href="https://blog.google/products/maps/google-maps-and-waze-outsmarting/" rel="noopener">blog.google</a>
+- CNBC (Cadillac Super Cruise แผนที่ lidar, 16 เม.ย. 2560): <a href="https://www.cnbc.com/2017/04/16/cadillac-has-a-secret-weapon-in-its-quest-to-beat-tesla-at-self-driving.html" rel="noopener">cnbc.com</a>
+- Cadillac Super Cruise (ถนนที่ทำแผนที่ด้วย LiDAR): <a href="https://www.cadillac.com/technology/super-cruise" rel="noopener">cadillac.com</a>
+- Tesla Blog (Introducing Navigate on Autopilot, 26 ต.ค. 2561): <a href="http://web.archive.org/web/20240730030744/https://www.tesla.com/blog/introducing-navigate-autopilot" rel="noopener">web.archive.org</a>
+- National Inventors Hall of Fame (Ralph Teetor): <a href="https://www.invent.org/inductees/ralph-teetor" rel="noopener">invent.org</a>
+- Smithsonian Magazine (The Sightless Visionary Who Invented Cruise Control): <a href="https://www.smithsonianmag.com/innovation/sightless-visionary-who-invented-cruise-control-180968418/" rel="noopener">smithsonianmag.com</a>
+- Penn Engineering (Ralph Teetor, พ.ย. 2568): <a href="https://www.engineering.upenn.edu/stories/ralph-teetor-the-blind-penn-engineer-who-changed-the-way-we-drive/" rel="noopener">engineering.upenn.edu</a>
+- 99% Invisible (Speed Lock, ส.ค. 2561): <a href="https://99percentinvisible.org/article/speed-lock-the-blind-engineer-who-brought-cruise-control-to-modern-cars/" rel="noopener">99percentinvisible.org</a>
+- Scientific American (รถ Peerless ปี 1908, 9 พ.ย. 2450): <a href="https://www.scientificamerican.com/article/the-1908-peerless-motors-and-trans/" rel="noopener">scientificamerican.com</a>
+- สิทธิบัตร US3511329 (Wisner, RCA): <a href="https://patents.google.com/patent/US3511329A/en" rel="noopener">patents.google.com</a>
+- NHTSA About (หน้าที่ของ NHTSA, ฉบับเก็บ 2568): <a href="https://web.archive.org/web/2025/https://www.nhtsa.gov/about-nhtsa" rel="noopener">web.archive.org</a>
+- NHTSA รายงาน recall 23V-838 ฉบับเต็ม (Part 573): <a href="https://static.nhtsa.gov/odi/rcl/2023/RCLRPT-23V838-8276.PDF" rel="noopener">static.nhtsa.gov</a>
+- NHTSA ค้นหา recall ด้วยเลขแคมเปญ: <a href="https://www.nhtsa.gov/recalls" rel="noopener">nhtsa.gov</a>
+- Jalopnik About: <a href="https://jalopnik.com/about" rel="noopener">jalopnik.com</a>
+- Static Media ซื้อ Jalopnik (PR Newswire, 24 ก.พ. 2568): <a href="https://www.prnewswire.com/news-releases/static-media-drives-further-into-auto-vertical-with-acquisition-of-jalopnik-302383435.html" rel="noopener">prnewswire.com</a>
+- Wikipedia: Chrysler: <a href="https://en.wikipedia.org/wiki/Chrysler" rel="noopener">wikipedia.org</a>
+- Wikipedia: Imperial (automobile): <a href="https://en.wikipedia.org/wiki/Imperial_(automobile)" rel="noopener">wikipedia.org</a>
+- CnEVPost (NIO NOP, ก.ย. 2563): <a href="https://cnevpost.com/2020/09/29/nio-os-2-7-0-makes-high-precision-maps-available-for-chinese-car-models-for-first-time" rel="noopener">cnevpost.com</a>
+- CnEVPost (XPeng NGP, ม.ค. 2564): <a href="https://cnevpost.com/2021/01/26/xpeng-releases-xmart-os-v2-5-0-brings-public-beta-of-ngp-navigation-assisted-driving-feature" rel="noopener">cnevpost.com</a>
+- CnEVPost (Li Auto NOA และลำดับ NIO/XPeng, ธ.ค. 2564): <a href="https://cnevpost.com/2021/12/06/li-auto-rolls-out-ota-3-0-update-to-li-ones-brings-highly-anticipated-navigate-on-autopilot-feature" rel="noopener">cnevpost.com</a>
+- CnEVPost (XPeng City NGP กวางโจว, ก.ย. 2565): <a href="https://cnevpost.com/2022/09/17/xpeng-launches-city-ngp-guangzhou-pilot/" rel="noopener">cnevpost.com</a>
+- XPeng IR (City NGP pilot): <a href="https://web.archive.org/web/2023/https://ir.xiaopeng.com/news-releases/news-release-details/xpeng-debuts-city-ngp-pilot-program" rel="noopener">web.archive.org</a>
+- TechNode (Huawei/Arcfox NCA เซินเจิ้น, ก.ย. 2565): <a href="https://technode.com/2022/09/26/huawei-powered-arcfox-releases-semi-autonomous-driving-features-in-shenzhen/" rel="noopener">technode.com</a>
+- Jiemian (Huawei ADS 2.0, เม.ย. 2566): <a href="https://en.jiemian.com/article/9257842.html" rel="noopener">jiemian.com</a>
+- TMTPost (Li Auto NOA ไม่ใช้ HD map): <a href="https://en.tmtpost.com/post/6724158" rel="noopener">tmtpost.com</a>
+- Electrek (NIO NOP+ ปักกิ่ง, ก.ค. 2566): <a href="https://electrek.co/2023/07/11/nios-navigate-on-pilot-adas-available-beijing/" rel="noopener">electrek.co</a>
+- Mobileye (Zeekr NZP, ก.ย. 2566): <a href="https://www.mobileye.com/news/mobileye-supervision-pilot-functions-added-to-110000-zeekr-vehicles/" rel="noopener">mobileye.com</a>
+- CnEVPost (XPeng XNGP 243 เมือง, ม.ค. 2567): <a href="https://cnevpost.com/2024/01/02/xpeng-expands-xngp-243-cities/" rel="noopener">cnevpost.com</a>
+- CarNewsChina (Huawei NCA ไม่ใช้ HD map, ก.พ. 2567): <a href="https://carnewschina.com/2024/02/01/huawei-aito-launched-the-first-batch-of-map-free-nca-in-all-cities-in-china/" rel="noopener">carnewschina.com</a>
+- Gasgoo (Xiaomi SU7 NOA ในเมือง, มิ.ย. 2567): <a href="https://autonews.gasgoo.com/articles/icv/xiaomi-su7-to-roll-out-urban-noa-feature-in-ten-cities-70033308" rel="noopener">gasgoo.com</a>
+- CnEVPost (Li Auto OTA 6.0, ก.ค. 2567): <a href="https://cnevpost.com/2024/07/15/li-auto-brings-hd-map-free-noa-software-update" rel="noopener">cnevpost.com</a>
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: by dojojin.tech (ภาพรถ Tesla Model Y: Damian B Oh · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Tesla_Model_Y_Dual_Motor_First_Edition_Juniper_Quicksilver_(4).jpg" rel="noopener">Wikimedia Commons</a> เบลอป้ายทะเบียนรถคันอื่นโดย DOJOJIN.TECH · โลโก้ Tesla จาก Wikimedia Commons)
+- Tesla Model Y สีขาว: Damian B Oh, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:Tesla_Model_Y_Dual_Motor_Juniper_Pearl_White_Multi-Coat_(7).jpg" rel="noopener">Wikimedia Commons</a> (เบลอป้ายทะเบียนรถคันอื่นโดย DOJOJIN.TECH)
+- กลุ่มกล้องหน้า Tesla Model 3 Highland: Mliu92, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:Front_camera_cluster,_Tesla_Model_3_Highland.jpg" rel="noopener">Wikimedia Commons</a>
+- Ralph Teetor: ไม่ทราบผู้ถ่าย, สาธารณสมบัติ, <a href="https://commons.wikimedia.org/wiki/File:Ralph_Teetor_circa_1921_or_1922.jpg" rel="noopener">Wikimedia Commons</a>
+- Chrysler Imperial Crown ปี 2501: Gunnar Creutz, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:Chrysler_Imperial_Crown_1958_-_Falk%C3%B6ping_cruising_2016_-_4229.jpg" rel="noopener">Wikimedia Commons</a>
+- รถ Navlab 1 ถึง 5: Firefly4342, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:Navlab-1-5-autonomous-vehicles.jpg" rel="noopener">Wikimedia Commons</a>
+- Waymo Jaguar I-Pace: Dllu, CC BY 4.0, <a href="https://commons.wikimedia.org/wiki/File:Waymo_Jaguar_I-Pace_in_San_Francisco_2023_dllu.jpg" rel="noopener">Wikimedia Commons</a>
+- Baidu Apollo Go RT6: S5A-0043, CC BY 4.0, <a href="https://commons.wikimedia.org/wiki/File:(CHN-Hubei)_Apollo_Go_Apollo_RT6_Temporary-%E9%84%82A1395%E8%AF%95_2025-12-17.jpg" rel="noopener">Wikimedia Commons</a>
+- WeRide Robotaxi GXR: Kk0521, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:WeRide_Robotaxi_GXR.jpg" rel="noopener">Wikimedia Commons</a>
+- ดาวเทียม GPS IIR (ภาพวาด): รัฐบาลสหรัฐฯ (pnt.gov), สาธารณสมบัติ, <a href="https://commons.wikimedia.org/wiki/File:GPS-IIR.jpg" rel="noopener">Wikimedia Commons</a>
+- Honda Electro Gyrocator และแผ่นแผนที่: Honda, <a href="https://global.honda/en/about/history-digest/75years-history/chapter3/section2_4/" rel="noopener">Honda 75 Years of History</a> (จัดวางสองภาพคู่กันโดย DOJOJIN.TECH)
+- Cadillac CT6 ปี 2018 รุ่น Super Cruise: Mr.choppers, CC BY-SA 3.0, <a href="https://commons.wikimedia.org/wiki/File:2018_Cadillac_CT6_Premium_Luxury_AWD_Super_Cruise,_front_right.jpg" rel="noopener">Wikimedia Commons</a>
+- เครื่องหมาย E1: E1logo.svg, สาธารณสมบัติ, <a href="https://commons.wikimedia.org/wiki/File:E1logo.svg" rel="noopener">Wikimedia Commons</a> · ภาพ E1 บนกระจกหน้ารถ: Daniele Pugliesi, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:Marchio_E1_sul_parabrezza_di_un%27autovettura.jpg" rel="noopener">Wikimedia Commons</a>
+- Honda Legend Hybrid EX (KC2): Tokumeigakarinoaoshima, CC0, <a href="https://commons.wikimedia.org/wiki/File:Honda_LEGEND_Hybrid_EX_(KC2)_front.JPG" rel="noopener">Wikimedia Commons</a>
+- Mercedes-Benz S-Class W223: Charles from Port Chester, New York, CC BY 2.0, <a href="https://commons.wikimedia.org/wiki/File:Mercedes-Benz_S-Klasse_(W223)_S_580_4MATIC_(2024)_(54206757976).jpg" rel="noopener">Wikimedia Commons</a>
+- BMW 7 Series G70: Alexander-93, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:BMW_7-Series_(G70)_750e_1X7A1899.jpg" rel="noopener">Wikimedia Commons</a> (เบลอป้ายทะเบียนโดย DOJOJIN.TECH)
+- ภาพประกอบสิทธิบัตร US 2,519,859 (Ralph R. Teetor): สาธารณสมบัติ, <a href="https://patents.google.com/patent/US2519859A/en" rel="noopener">Google Patents</a>
+- Cadillac Series 62 ปี 1959: Rutger van der Maar, CC BY 2.0, <a href="https://commons.wikimedia.org/wiki/File:1959_Cadillac_Series_62_Convertible_(Autoworld).jpg" rel="noopener">Wikimedia Commons</a>
+- Mitsubishi Debonair รุ่นที่ 2: TTTNIS, CC0, <a href="https://commons.wikimedia.org/wiki/File:1986-1989_Mitsubishi_Debonair_V_3000_Royal.jpg" rel="noopener">Wikimedia Commons</a>
+- Mitsubishi Diamante รุ่นแรก: Bull-Doser, สาธารณสมบัติ, <a href="https://commons.wikimedia.org/wiki/File:Diamante_1992.JPG" rel="noopener">Wikimedia Commons</a>
+- Toyota Celsior (UCF20): TTTNIS, CC0, <a href="https://commons.wikimedia.org/wiki/File:1997-2000_Toyota_Celsior_front_left.jpg" rel="noopener">Wikimedia Commons</a>
+- Mercedes-Benz S-Class W220: OSX, สาธารณสมบัติ, <a href="https://commons.wikimedia.org/wiki/File:2001_Mercedes-Benz_S_430_(W_220)_sedan_(2010-09-23)_01.jpg" rel="noopener">Wikimedia Commons</a> (เบลอป้ายทะเบียนโดย DOJOJIN.TECH)
+- Nissan Cima F50: TTTNIS, สาธารณสมบัติ, <a href="https://commons.wikimedia.org/wiki/File:2001-2003_NISSAN_CIMA_450VIP.jpg" rel="noopener">Wikimedia Commons</a>
+- Toyota Prius รุ่นที่ 2: KitsuneDP, CC0, <a href="https://commons.wikimedia.org/wiki/File:Toyota_Prius_II_001.jpg" rel="noopener">Wikimedia Commons</a> (เบลอป้ายทะเบียนและคนขับรถเมล์โดย DOJOJIN.TECH)
+- Volvo XC60 รุ่นแรก: IFCAR, สาธารณสมบัติ, <a href="https://commons.wikimedia.org/wiki/File:2009_Volvo_XC60_NY.jpg" rel="noopener">Wikimedia Commons</a>
+- CMU Sandstorm: MikeMurphy, CC BY-SA 3.0, <a href="https://commons.wikimedia.org/wiki/File:CMU_Sandstorm.jpg" rel="noopener">Wikimedia Commons</a>
+- Stanford Stanley: DARPA, สาธารณสมบัติ, <a href="https://commons.wikimedia.org/wiki/File:Stanley2.JPG" rel="noopener">Wikimedia Commons</a>
+- CMU Boss: Daderot, CC0, <a href="https://commons.wikimedia.org/wiki/File:Carnegie_Mellon_Boss_self-driving_automobile_-_D60_Symposium_-_Defense_Advanced_Research_Projects_Agency_-_DSC05585.jpg" rel="noopener">Wikimedia Commons</a> (เบลอผู้ชมด้านหลังโดย DOJOJIN.TECH)
+- Google driverless Prius: Steve Jurvetson, CC BY 2.0, <a href="https://commons.wikimedia.org/wiki/File:Jurvetson_Google_driverless_car.jpg" rel="noopener">Wikimedia Commons</a>
+- Hongqi HQ3: Navigator84, CC BY-SA 3.0, <a href="https://commons.wikimedia.org/wiki/File:Hongqi_HQ3_China_2012-04-15.JPG" rel="noopener">Wikimedia Commons</a> (เบลอทะเบียนรถบรรทุกโดย DOJOJIN.TECH)
+- XPeng P7: Jengtingchen, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:Xpeng_P7_012.jpg" rel="noopener">Wikimedia Commons</a> (เบลอป้ายทะเบียนโดย DOJOJIN.TECH)
+- XPeng P5: Evnerd, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:XPeng_P5_2021112001.jpg" rel="noopener">Wikimedia Commons</a>
+- Arcfox αS: JustAnotherCarDesigner, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:Arcfox_α-S_001.jpg" rel="noopener">Wikimedia Commons</a>
+- Luxeed S7: JustAnotherCarDesigner, CC0, <a href="https://commons.wikimedia.org/wiki/File:Luxeed_S7_001.jpg" rel="noopener">Wikimedia Commons</a> (เบลอป้ายทะเบียนโดย DOJOJIN.TECH)
+- Xiaomi SU7: S5A-0043, CC BY 4.0, <a href="https://commons.wikimedia.org/wiki/File:(CHN-Shanghai)_Private_Xiaomi_SU7_%E6%B2%AAA7WE106_2024-11-24.jpg" rel="noopener">Wikimedia Commons</a> (เบลอป้ายทะเบียนโดย DOJOJIN.TECH)
+- BYD Seagull: User3204, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:2023_BYD_Seagull_(front).jpg" rel="noopener">Wikimedia Commons</a>
+- Changan Deepal SL03: SAIC GM sucks, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:Shenlan_SL03_001.jpg" rel="noopener">Wikimedia Commons</a> (เบลอป้ายทะเบียนรถคันข้างโดย DOJOJIN.TECH)
+
+</div>
+
+</section>
