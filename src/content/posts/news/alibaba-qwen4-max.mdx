@@ -1,0 +1,188 @@
+---
+title: "Alibaba เปิดตัว Qwen4-Max 2.4 ล้านล้านพารามิเตอร์ รับบริบท 1 ล้านโทเคน ราคา API สิงคโปร์ $1.5/$4.5"
+topic: infra-ai
+type: news
+tags: [ai]
+date: 2026-11-24T11:00:00+07:00
+section: tech
+sourceName: "Alibaba Cloud Press Room และหน้าราคา Model Studio"
+sourceUrl: "https://www.alibabacloud.com/press-room/alibaba-unveils-qwen4-max"
+description: "Alibaba เปิดตัว Qwen4-Max เมื่อ 16 พ.ย. 2569 โมเดลแรงสุดของตระกูล Qwen ขนาด 2.4 ล้านล้านพารามิเตอร์ (ใช้จริง 71,000 ล้านต่อโทเคน) ความจำ 1 ล้านโทเคน ใช้ผ่าน QwenCloud API ราคา $1.5 ต่อล้านโทเคนขาเข้า $4.5 ขาออก (ภูมิภาคอื่นราคาต่างกัน) อันดับ Code Arena และคะแนนทดสอบเป็นคำอ้างของ Alibaba เอง ยังไม่พบข้อมูลสำหรับไทย"
+kicker: "ข่าวเทคโนโลยี · AI"
+lead: "Alibaba เปิด Qwen4-Max เมื่อ 16 พ.ย. โดยเรียกว่าเป็นรุ่นที่เก่งที่สุดในตระกูล Qwen ตอนนี้ใช้ผ่าน API และแอปของ Alibaba ได้ ฝั่งสิงคโปร์คิด $1.5 ต่อล้านโทเคนขาเข้า และ $4.5 ขาออก ภูมิภาคอื่นราคาไม่เท่ากัน ผมแยกราคาและคำอ้างเรื่องประสิทธิภาพให้ดูครับ"
+meta: "เรียบเรียงจากข่าวแจก Alibaba Cloud (16 พฤศจิกายน 2569), หน้าราคา Model Studio (อัปเดตล่าสุด 23 พฤศจิกายน 2569) และ TechNode (16 พฤศจิกายน 2569) · ข้อมูล ณ 24 พฤศจิกายน 2569"
+cover: "/media/posts/news/alibaba-qwen4-max/cover.jpg"
+coverAlt: "ปกข่าว Alibaba Qwen4-Max พร้อมโลโก้ Qwen ความจำ 1 ล้านโทเคน ราคา API $1.5/$4.5 ต่อล้านโทเคน พื้นหลังเป็นห้องเซิร์ฟเวอร์สว่าง (ภาพประกอบ)"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="split">
+<div class="prose">
+
+Alibaba ปล่อย Qwen4-Max เมื่อวันที่ 16 พ.ย. 2569 ครับ ข่าวแจกของ Alibaba Cloud เรียกว่าเป็นโมเดลที่ "most capable" (เก่งที่สุด) ในตระกูล Qwen จนถึงตอนนี้
+
+ข่าวนี้ออกมาหลายวันแล้ว ที่ผมหยิบมาเขียนตอนนี้เพราะหน้าราคาของ Alibaba เพิ่งอัปเดตเมื่อ 23 พ.ย. ตัวเลขหลายตัวควรแยกให้ชัดว่าอะไรยืนยันได้ อะไรเป็นคำอ้าง
+
+ข่าวแจกระบุว่าใช้ได้ผ่าน QwenCloud ทั้ง Token Plan และ API รวมถึงแอป QwenWork และ QwenStudio
+
+ตัวโมเดลรับภาพได้โดยตรง และมีหน้าต่างบริบท 1 ล้านโทเคน คือปริมาณข้อมูลที่ใช้ประกอบการตอบในแต่ละคำขอ โทเคนเป็นหน่วยที่โมเดลใช้ประมวลผล ไม่ใช่จำนวนคำหรือความจำถาวรครับ
+
+</div>
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/news/alibaba-qwen4-max/photo-1.jpg" width="1600" height="1200" loading="lazy" alt="โต๊ะทำงานริมหน้าต่างตอนกลางวัน มีโน้ตบุ๊กเปิดโปรแกรมเขียนโค้ดแบบเบลอ สมุดจดและแก้วกาแฟ ไม่มีคนในภาพ" /></div><figcaption><span class="news-fig__credit">ภาพประกอบจาก DOJOJIN.TECH</span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## ตัวเลขที่ยืนยันกับหน้าทางการแล้ว
+
+<div class="split">
+<div class="prose">
+
+ตัวเลขชุดนี้มาจากข่าวแจกของ Alibaba Cloud โดยตรงครับ พารามิเตอร์คือค่าที่โมเดลเรียนรู้ระหว่างฝึก จำนวนพารามิเตอร์บอกขนาดได้ส่วนหนึ่ง แต่ไม่ได้ยืนยันว่าโมเดลจะตอบดีกว่ารุ่นอื่นทุกงาน
+
+แต่ Qwen4-Max ไม่ได้ใช้ทั้งก้อนทุกครั้ง มันใช้โครงสร้างแบบ Mixture-of-Experts (MoE) คือแบ่งโมเดลเป็น "ผู้เชี่ยวชาญ" หลายชุด แต่ละโทเคนเรียกใช้แค่บางส่วน Alibaba บอกว่าใช้จริงเพียง 71,000 ล้านต่อโทเคน น้อยกว่า Qwen3.8-Max ที่ขนาดรวมเท่ากัน 25%
+
+ตัวเลข 2.4 ล้านล้านมาจากหน้าของ Alibaba เอง เลยลงได้ แต่ต้องจำไว้ว่าเป็นตัวเลขที่ Alibaba แจ้ง ยังไม่มีผู้ตรวจอิสระ
+
+</div>
+<div class="prose">
+
+<div class="news-stats">
+<div class="news-stat"><b>2.4 ล้านล้าน</b>พารามิเตอร์รวม (ตามข่าวแจก Alibaba)</div>
+<div class="news-stat"><b>71,000 ล้าน</b>พารามิเตอร์ที่ใช้จริงต่อโทเคน</div>
+<div class="news-stat"><b>1 ล้าน</b>โทเคนในหน้าต่างบริบท</div>
+</div>
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ราคา API เท่าไร
+
+<div class="prose">
+
+ราคาขึ้นกับภูมิภาคที่เลือกใช้ครับ ตัวเลขด้านล่างมาจากแถว qwen4-max ในหน้า "Model Invocation Pricing" ของ Alibaba Cloud Model Studio (หน้าบอกว่าอัปเดตล่าสุด 23 พ.ย. 2569) คิดเป็นต่อล้านโทเคน
+
+<div class="news-cards">
+<div class="news-card is-ok"><b>สิงคโปร์ (International)</b><span class="news-pill">$1.5 / $4.5</span> ขาเข้า / ขาออก ต่อล้านโทเคน ไม่แบ่งขั้นราคาถึง 1 ล้านโทเคนต่อคำขอ · หน้าราคาบอกว่าโควตาฟรี 1 ล้านโทเคน (เฉพาะสิงคโปร์)</div>
+<div class="news-card"><b>เวอร์จิเนีย (สหรัฐฯ)</b><span class="news-pill">$1.5 / $4.5</span> ราคาเท่าสิงคโปร์ในตารางของภูมิภาคนี้</div>
+<div class="news-card"><b>ฮ่องกง, แฟรงก์เฟิร์ต, โตเกียว (ขอบเขต Global)</b><span class="news-pill">$1.413 / $4.24</span> ถูกกว่าเล็กน้อย</div>
+<div class="news-card"><b>ปักกิ่ง</b><span class="news-pill">$1.413 / $4.24</span> หน้าราคาลงตัวเลขเป็น $ เหมือนกัน</div>
+</div>
+
+ข่าวแจกยังบอกอีกราคาหนึ่ง คือ $0.075 ต่อล้านโทเคน สำหรับขาเข้าที่แคชถูกใช้ซ้ำ (Implicit Cache Hit คือคำถามช่วงต้นซ้ำกับครั้งก่อน จนระบบดึงจากแคชได้)
+
+ราคานี้มาจากข่าวแจก ซึ่งไม่ได้ระบุภูมิภาค จึงยังนำมาคิดรวมกับราคาสิงคโปร์ตรง ๆ ไม่ได้ครับ หน้า Model Studio อธิบายค่าแคชแยกไว้อีกส่วน ควรตรวจราคาในบริการและภูมิภาคที่ใช้ก่อนคำนวณค่าใช้จ่าย
+
+เทียบกับรุ่นก่อน: ในหน้าราคาเดียวกัน qwen3.8-max ฝั่ง International อยู่ที่ $2 / $6 แปลว่า Qwen4-Max ถูกกว่า 25% ทั้งขาเข้าและขาออก (ผมคำนวณเอง) ตรงกับที่ TechNode พาดหัวว่า "lower API prices"
+
+</div>
+
+</section>
+
+<section class="section">
+
+## อันดับและคะแนนทดสอบ เป็นคำอ้างของ Alibaba
+
+<div class="split">
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/alibaba-qwen4-max/arena.jpg" width="800" height="800" loading="lazy" alt="แผนภูมิแท่ง Code Arena WebDev จาก Arena แสดง Qwen4-Max (xHigh) อันดับ 6 ที่ 1,750 คะแนน" /></div><figcaption><span class="news-fig__credit">ภาพ: Arena (arena.ai) ตามที่ลงในข่าวแจก Alibaba Cloud · <a href="https://www.alibabacloud.com/press-room/alibaba-unveils-qwen4-max" rel="noopener">alibabacloud.com</a></span></figcaption></figure>
+<div class="prose">
+
+ข่าวแจกเขียนว่า Qwen4-Max "achieves top rankings across leading benchmarks" (ได้อันดับต้น ๆ ในการทดสอบชั้นนำ) โดยเฉพาะงานเขียนโค้ด งานแบบเอเจนต์ (AI ที่ทำงานหลายขั้นตอนต่อกันเอง) และการอ่านภาพ
+
+ผมไม่ได้ทดสอบเอง และไม่พบผู้ทดสอบอิสระรายอื่นที่ยืนยัน ส่วนนี้จึงถือเป็นคำอ้างของ Alibaba ทั้งหมด
+
+ที่เห็นเป็นรูปธรรมที่สุดคือแผนภูมิ Code Arena: WebDev ที่ Alibaba นำมาลงในหน้าข่าวแจกเอง ในภาพ Qwen4-Max (xHigh) ได้ 1,750 คะแนน อยู่อันดับ 6 ตามหลัง
+
+- Claude Fable 5.2 (1,826)
+- Claude Opus 5.5 (1,816)
+- Claude Sonnet 5.5 (1,772)
+- Gemini 4 Carbon (1,768)
+- GPT-6 Astra (1,763)
+
+สรุปง่าย ๆ คือ ไม่ได้ที่หนึ่ง แต่ห่างอันดับ 5 แค่ 13 คะแนน และในภาพแถบความคลาดเคลื่อนคาบเกี่ยวกัน (ข้อนี้ผมอ่านจากภาพเอง)
+
+</div>
+</div>
+
+<div class="prose">
+
+คำอ้างอื่นในข่าวแจก (ทั้งหมดเป็นผลทดสอบของ Alibaba เอง):
+
+<div class="news-cards">
+<div class="news-card is-warn"><b>Work360</b> เกณฑ์ทดสอบของ Alibaba เอง ครอบคลุม 721 สาขา บริษัทบอกว่า Qwen4-Max ทำได้ดีกว่า Qwen3.8-Max โดยรวม ใช้โทเคนน้อยลง 35% ในโหมด High และต้นทุนต่องานลดราว 60% ตัวเลขนี้เป็นผลทดสอบของบริษัทเองครับ</div>
+<div class="news-card is-warn"><b>งานกลึงชิ้นส่วน</b> Alibaba บอกว่าเวลาเขียนโปรแกรมชิ้นงานด้วยมือลดจากราว 475 นาที เหลือ 24 นาที (ลด 95%) ในการสาธิตของ Alibaba เอง</div>
+<div class="news-card is-warn"><b>งานวิจัยเอเจนต์</b> Alibaba บอกว่าเอเจนต์ทำงานต่อเนื่อง 48 ชั่วโมงจนได้โมเลกุลสารระบายความร้อนที่ผ่านการทดลองยืนยัน และในงานวิจัยอัลไซเมอร์เรียกใช้เครื่องมือ 454 ครั้ง เพื่อออกแบบโมเลกุล 24 ตัว ยังไม่มีผู้ตรวจอิสระ</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## น้ำหนักโมเดลเปิดไหม
+
+<div class="prose">
+
+ตามที่ผมอ่านได้ Qwen4-Max ให้ใช้ผ่าน API และแอปของ Alibaba เท่านั้นครับ ข่าวแจกไม่ได้บอกว่าจะปล่อยน้ำหนัก (weights คือไฟล์โมเดลที่โหลดไปรันเองได้) ของตัว Max
+
+ข่าวแจกบอกเพียงว่าจะปล่อยโมเดลขนาดเล็กกว่าในตระกูล Qwen4 แบบเปิดน้ำหนักเร็ว ๆ นี้ ยังไม่มีวันที่แน่นอน และไม่ได้ประกาศว่าจะเปิดน้ำหนักของ Max ด้วย ผมจึงยังไม่สรุปสถานะไลเซนส์ของ Max เกินกว่าที่บริษัทเขียนครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## คนไทยเกี่ยวอะไร
+
+<div class="prose">
+
+ผมไม่พบข้อมูลเฉพาะของไทยครับ ทั้งราคาเป็นบาท ตัวแทนในไทย หรือการเปิดให้ใช้ในไทย
+
+ที่เห็นจากหน้าราคาคือ ภูมิภาคสิงคโปร์ใกล้ไทยที่สุดในรายการ และมีทั้งราคา $1.5/$4.5 กับโควตาฟรี 1 ล้านโทเคน แต่ผมไม่ได้ตรวจว่าบัญชีที่สมัครจากไทยเลือกภูมิภาคไหนได้ หรือต้องใช้เอกสารอะไร
+
+ผมยังไม่ได้ทดสอบว่า Qwen4-Max ตอบภาษาไทยดีแค่ไหน และข่าวแจกก็ไม่ได้พูดถึงภาษาไทย ผมว่าถ้าจะใช้งานภาษาไทยจริงจัง รอดูผลทดสอบอิสระก่อนจะดีกว่า ถ้ามีเมื่อไหร่ค่อยมาอัปเดตครับ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- Alibaba Cloud Press Room, Alibaba Unveils Qwen4-Max (16 พ.ย. 2569): <a href="https://www.alibabacloud.com/press-room/alibaba-unveils-qwen4-max" rel="noopener">alibabacloud.com</a>
+- Alibaba Cloud Model Studio, Model Invocation Pricing (อัปเดตล่าสุด 23 พ.ย. 2569): <a href="https://www.alibabacloud.com/help/en/model-studio/billing-for-model-studio" rel="noopener">alibabacloud.com</a>
+- TechNode, Alibaba launches Qwen4-Max with lower API prices and a million-token context window (16 พ.ย. 2569): <a href="https://technode.com/2026/11/16/alibaba-launches-qwen4-max-with-lower-api-prices-and-a-million-token-context-window/" rel="noopener">technode.com</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: by dojojin.tech · โลโก้ Qwen ไฟล์ Qwen_logo.svg จาก Wikimedia Commons (CC0) เครื่องหมายการค้าเป็นของ Alibaba
+- ภาพประกอบ: ภาพประกอบจาก DOJOJIN.TECH
+- แผนภูมิ Code Arena: Arena (arena.ai) ตามที่ Alibaba Cloud นำมาลงในข่าวแจก
+
+ภาพใช้ประกอบข่าว (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>

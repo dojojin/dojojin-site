@@ -4,18 +4,26 @@ topic: infra-ai
 type: news
 tags: [security]
 date: 2026-11-20T12:13:00+07:00
+updated: 2026-11-24T11:10:00+07:00
+bumped: 2026-11-24T11:10:00+07:00
 section: security
 sourceName: "Broadcom, Google Threat Intelligence Group และ BleepingComputer"
 sourceUrl: "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/39495"
 description: "Broadcom ออก VMSA-2026-0009 เมื่อ 19 พ.ย. 2569 แก้ CVE-2026-123890 ช่องโหว่ใน vCenter ที่ให้ผู้โจมตีข้ามการล็อกอิน (CVSS 9.8) และอีก 4 ช่องโหว่ Google Threat Intelligence Group รายงานว่า ARMORY CASTLE ใช้ช่องโหว่นี้มาตั้งแต่ต้นเดือน ก.ย. สรุปรุ่นที่แก้แล้ว วิธีเช็ก และสิ่งที่ผู้ดูแลต้องทำ"
 kicker: "ข่าวความปลอดภัยไซเบอร์"
 lead: "ใครดูแล VMware vCenter เช็กรุ่นวันนี้เลยครับ ช่องโหว่ตัวนี้ให้ผู้โจมตีที่เข้าถึง vCenter ทางเครือข่ายข้ามการล็อกอินจนได้สิทธิ์ผู้ดูแลระบบ Google Threat Intelligence Group บอกว่ามีกลุ่มผู้โจมตีใช้มาตั้งแต่ต้นเดือน ก.ย. และ Broadcom ไม่มีวิธีแก้ชั่วคราว ต้องลงแพตช์อย่างเดียว"
-meta: "เรียบเรียงจาก Broadcom (VMSA-2026-0009 และ Q&A), Google Threat Intelligence Group และ BleepingComputer · ข้อมูล ณ 20 พฤศจิกายน 2569"
+meta: "เรียบเรียงจาก Broadcom (VMSA-2026-0009 และ Q&A), Google Threat Intelligence Group และ BleepingComputer · ข้อมูล ณ 20 พฤศจิกายน 2569 · อัปเดต 24 พฤศจิกายน 2569"
 cover: "/media/posts/news/vmware-vcenter-zero-day-vmsa-2026-0009/cover.jpg"
 coverAlt: "ปกข่าวช่องโหว่ vCenter CVE-2026-123890 ข้ามการล็อกอิน CVSS 9.8 Google รายงานว่าถูกใช้โจมตีตั้งแต่ ก.ย. 2569 ไม่มีวิธีแก้ชั่วคราว (ภาพประกอบ)"
 ---
 
 <section class="section">
+
+<div class="prose">
+
+**อัปเดต 24 พ.ย. 2569:** CISA ใส่ CVE-2026-123890 เข้ารายการ KEV แล้วครับ เมื่อ 20 พ.ย. 2569 ผมเปิดไฟล์ KEV ล่าสุด (ฉบับ 23 พ.ย.) ดูเอง ชื่อรายการคือ "VMWare vCenter Authentication Bypass Using an Alternate Path or Channel Vulnerability" CISA ให้เวลาหน่วยงานรัฐบาลกลางสหรัฐฯ แก้ภายใน 23 พ.ย. และสั่งให้ตรวจหาร่องรอยการบุกรุก (forensic triage) ด้วย ในรายการ ช่อง "ใช้ในแคมเปญแรนซัมแวร์หรือไม่" ยังเป็น Unknown ส่วนประกาศของ Broadcom (แก้ล่าสุด 20 พ.ย. เพื่อชี้แจงรุ่นของ VMware Tools) ผมอ่านซ้ำแล้ว ยังไม่เขียนเรื่องการถูกโจมตีไว้ครับ
+
+</div>
 
 ## เกิดอะไรขึ้น
 
@@ -72,7 +80,7 @@ BleepingComputer ก็รายงานเรื่องนี้ มี 2 �
 
 <div class="prose">
 
-ส่วน CISA ผมเปิดรายการ KEV (รายชื่อช่องโหว่ที่ถูกใช้โจมตีจริง) ไฟล์ฉบับ 18 พ.ย. 2569 ดูแล้ว ยังไม่มี CVE-2026-123890 ครับ เพราะประกาศของ Broadcom ออกหลังจากนั้น
+ส่วน CISA ตอนแรก (ไฟล์ KEV ฉบับ 18 พ.ย. 2569) ยังไม่มี CVE-2026-123890 เพราะประกาศของ Broadcom ออกหลังจากนั้น แต่ตอนนี้เข้ารายการ KEV (รายชื่อช่องโหว่ที่ถูกใช้โจมตีจริง) แล้ว ตามที่เขียนไว้ในกล่องอัปเดตด้านบนครับ
 
 </div>
 
@@ -90,6 +98,7 @@ BleepingComputer ก็รายงานเรื่องนี้ มี 2 �
 <li><span class="news-tl__date">15 ต.ค.</span><div>GTIG และ Mandiant เผยแพร่รายงานเรื่อง BeyondTrust<span class="news-tl__src">Google Threat Intelligence Group</span></div></li>
 <li class="is-key"><span class="news-tl__date">19 พ.ย.</span><div>Broadcom ออก VMSA-2026-0009 แก้ช่องโหว่ทั้ง 5 ตัว<span class="news-tl__src">Broadcom</span></div></li>
 <li><span class="news-tl__date">20 พ.ย.</span><div>GTIG และ Mandiant เผยแพร่รายงาน ARMORY CASTLE Exploits vSphere<span class="news-tl__src">Google Threat Intelligence Group</span></div></li>
+<li class="is-key"><span class="news-tl__date">20 พ.ย.</span><div>CISA เพิ่ม CVE-2026-123890 เข้า KEV กำหนดแก้ 23 พ.ย.<span class="news-tl__src">CISA KEV</span></div></li>
 </ol>
 
 </div>
@@ -188,7 +197,7 @@ BleepingComputer ก็รายงานเรื่องนี้ มี 2 �
 - Broadcom VMSA-2026-0009 Questions &amp; Answers: <a href="https://github.com/vmware/vcf-security-and-compliance-guidelines/blob/main/security-advisories/vmsa-2026-0009/README.md" rel="noopener">github.com/vmware</a>
 - Google Threat Intelligence Group และ Mandiant, ARMORY CASTLE Exploits vSphere (20 พ.ย. 2569): <a href="https://cloud.google.com/blog/topics/threat-intelligence/armory-castle-exploits-vsphere" rel="noopener">cloud.google.com</a>
 - BleepingComputer (ความเชื่อมโยงกับ BeyondTrust และสถานะการยืนยันของ Broadcom): <a href="https://www.bleepingcomputer.com/news/security/vmware-patches-vcenter-zero-day-exploited-in-attacks-since-september/" rel="noopener">bleepingcomputer.com</a>
-- CISA KEV catalog (ตรวจ 20 พ.ย. 2569): <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" rel="noopener">cisa.gov</a>
+- CISA KEV catalog (ไฟล์ KEV ฉบับ 23 พ.ย. 2569 ตรวจ 24 พ.ย.): <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" rel="noopener">cisa.gov</a>
 
 </div>
 

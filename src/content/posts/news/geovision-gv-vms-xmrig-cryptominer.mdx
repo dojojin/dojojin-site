@@ -1,0 +1,136 @@
+---
+title: "GeoVision GV-VMS ถูกใช้ลง XMRig ขุดเหรียญใน 13 องค์กร ผู้ดูแลระบบกล้องควรเช็กรุ่นและร่องรอยการบุกรุก"
+topic: infra-ai
+type: news
+tags: [security, cctv]
+date: 2026-11-24T11:20:00+07:00
+section: security
+sourceName: "Huntress และ GeoVision"
+sourceUrl: "https://www.huntress.com/blog/geovision-camera-software-xmrig-cryptominer"
+description: "Huntress พบการโจมตีระบบกล้อง GeoVision ใน 13 องค์กร เพื่อลง XMRig ขุดเหรียญ ส่วนผู้ผลิตออกคำแนะนำสำหรับ GV-VMS ที่เปิด WebCam Server และต่อออกอินเทอร์เน็ต สรุปรุ่นแก้ อาการที่ควรตรวจ และเหตุผลที่อัปเดตอย่างเดียวอาจยังไม่พอ"
+kicker: "ข่าวความปลอดภัยไซเบอร์ · ระบบกล้อง"
+lead: "ใครดูแลระบบกล้องที่ใช้ GeoVision GV-VMS ลองเช็กเครื่องบันทึกด้วยครับ Huntress พบการโจมตีใน 13 องค์กร เพื่อลงโปรแกรมขุดเหรียญ XMRig ผู้ผลิตมีรุ่นแก้และคู่มือตรวจเครื่องแล้ว แต่ถ้าเครื่องถูกเจาะไปก่อน การอัปเดตอย่างเดียวไม่ได้ยืนยันว่าเอามัลแวร์ออกหมดครับ"
+meta: "เรียบเรียงจากรายงาน Huntress และประกาศ GeoVision GV-SFW-2026-11-01 (11 พฤศจิกายน 2569) · เหตุการณ์ส่วนใหญ่เกิด 8–10 พฤศจิกายน · ตรวจข้อมูล 24 พฤศจิกายน 2569"
+cover: "/media/posts/news/geovision-gv-vms-xmrig-cryptominer/cover.jpg"
+coverAlt: "ปกข่าว GeoVision GV-VMS ถูกใช้ลง XMRig ใน 13 องค์กร พร้อมโลโก้ GeoVision และฉากตู้ระบบกล้องวงจรปิด ภาพประกอบไม่ใช่อุปกรณ์รุ่นที่เกิดเหตุ"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น และทำไมหยิบมาเตือนตอนนี้
+
+<div class="prose">
+
+Huntress รายงานว่าพบการโจมตีระบบกล้อง GeoVision ใน 13 องค์กรจากหลายอุตสาหกรรม เหตุการณ์ส่วนใหญ่เกิดช่วง 8–10 พ.ย. 2569 เครื่องที่ตรวจพบมีบริการหรือหน้าจัดการเปิดให้เข้าถึงจากอินเทอร์เน็ต
+
+นี่เป็นรายงานเหตุการณ์ก่อนหน้านี้ครับ ไม่ใช่การโจมตีที่เพิ่งเริ่มวันที่ 24 พ.ย. ผมหยิบมาเตือนสำหรับคนที่มีเครื่องบันทึกกล้องเปิดใช้อยู่ แต่ยังไม่ได้ตรวจรุ่นซอฟต์แวร์และร่องรอยในเครื่อง
+
+ฝั่ง GeoVision ออกประกาศ GV-SFW-2026-11-01 วันที่ 11 พ.ย. ระบุว่าเป้าหมายคือระบบ NVR ที่ใช้ GV-VMS เปิด WebCam Server และเข้าถึงจากอินเทอร์เน็ตได้ ผู้โจมตีใช้ช่องโหว่สั่งรันคำสั่งจากระยะไกลโดยไม่ต้องล็อกอิน และได้สิทธิ์ SYSTEM ซึ่งเป็นสิทธิ์ระดับสูงของ Windows
+
+ขอบเขตที่พูดถึงจึงเป็นซอฟต์แวร์บนเครื่องบันทึกหรือเครื่องจัดการกล้อง ไม่ได้แปลว่ากล้องทุกตัวของ GeoVision ถูกเจาะครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## จากระบบกล้องไปเป็นเครื่องขุดเหรียญ
+
+<div class="prose">
+
+รายงาน Huntress พบคำสั่งผิดปกติออกมาจากโปรเซส `GeoStartupAgentService.exe` แล้วเรียก PowerShell ไปดึงไฟล์จากภายนอก ก่อนลง XMRig ในชื่อ `ApplyUpdate.exe`
+
+ระหว่างทางมีการนำไดรเวอร์ที่มีช่องโหว่ชื่อ `kvckiller.sys` มาใช้รบกวนระบบป้องกัน เทคนิคนี้เรียกว่า BYOVD คือเอาไดรเวอร์ที่มีจุดอ่อนเข้ามาช่วยโจมตี และมีการแก้ค่าการเริ่มทำงานของส่วนประกอบ Microsoft Defender ด้วย
+
+บางเครื่องยังมีงานตั้งเวลา `PackageUpdater` คอยเรียกตัวโหลดมัลแวร์ใหม่ทุก 15 นาที และ `PackageUpdater_Startup` ที่ทำงานตอนเปิดเครื่อง ชื่อที่ดูเหมือนตัวอัปเดตจึงไม่ได้แปลว่าเป็นไฟล์ปกติเสมอไปครับ
+
+ตัวเลขบัญชีในรายงาน Huntress ไม่ตรงกันเอง ส่วนต้นเขียน 10 บัญชี แต่ตารางท้ายเขียน 9 บัญชี ผมจึงใช้เฉพาะจำนวน 13 องค์กรที่ตรงกันทั้งสองจุด ไม่ตีความเพิ่มว่ามีเครื่องเสียหายทั้งหมดกี่เครื่อง
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ผู้ผลิตแนะนำให้อัปเดตเป็นรุ่นไหน
+
+<div class="split">
+<div class="prose">
+
+GeoVision ระบุรุ่นอัปเดตไว้ในหน้าสุดท้ายของประกาศตามภาพครับ ให้เลือกตามสายรุ่นที่ใช้อยู่
+
+<div class="news-cards">
+<div class="news-card is-ok"><b>GV-VMS V20</b>อัปเดตเป็น V20.1.3 โดยประกาศระบุแพตช์ WebCam Server V20.0.2.10</div>
+<div class="news-card is-ok"><b>GV-VMS V17.4.8</b>ลงแพตช์ V17.4.8.65 ในรายการปรับปรุงอ้างถึงตัวแก้ WebCam Server V17.4.8.58</div>
+<div class="news-card is-ok"><b>GV-VMS V18.3.5</b>ลงแพตช์ V18.3.5.25 ในรายการปรับปรุงอ้างถึงตัวแก้ WebCam Server V18.3.5.22</div>
+</div>
+
+ประกาศบอกว่าชุดอัปเดตรวมตัวแก้ CVE-2026-7372, CVE-2026-42369 และ CVE-2026-42370 แต่ไม่ได้ชี้ว่าการโจมตีรอบนี้ใช้ตัวไหน จึงยังไม่ควรฟันธงจากรายชื่อแพตช์อย่างเดียวครับ
+
+</div>
+<figure class="news-fig news-fig--zoom"><div class="news-fig__img"><img src="/media/posts/news/geovision-gv-vms-xmrig-cryptominer/advisory-patches.jpg" width="1132" height="1600" loading="lazy" alt="หน้าที่ 7 ของประกาศ GeoVision ระบุรุ่นอัปเดต V20.1.3, V17.4.8.65 และ V18.3.5.25 พร้อมลิงก์ดาวน์โหลดทางการ" /></div><figcaption><span class="news-fig__credit">ภาพ: GeoVision · <a href="https://dlcdn.geovision.com.tw/TechNotice/CyberSecurity/2026/Security_Advisory_XMRigAttackAdvisory-2026-11-01.pdf" rel="noopener">ประกาศ GV-SFW-2026-11-01 หน้า 7</a></span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## ถ้าดูแลเครื่องอยู่ เริ่มตรงไหน
+
+<div class="prose">
+
+อาการที่ผู้ผลิตให้สังเกตคือ CPU สูงทั้งที่เครื่องว่าง เครื่องช้าหรือพัดลมทำงานผิดปกติ Defender หยุดทำงาน มี PowerShell หรือโปรแกรมที่ไม่รู้จัก และมีงานตั้งเวลาที่ไม่ได้สร้างเอง
+
+ชื่อไฟล์อย่าง `update.exe` พบได้ในโปรแกรมปกติด้วยครับ ต้องดูตำแหน่งไฟล์ โปรเซสต้นทาง และหลักฐานประกอบ ไม่ใช่เห็นชื่อแล้วลบทันที
+
+<ol class="news-steps">
+<li class="is-key"><b>จำกัดทางเข้าจากอินเทอร์เน็ต</b>Huntress แนะนำให้เอาบริการที่ไม่จำเป็นออกจากอินเทอร์เน็ต หรือให้เข้าผ่าน VPN และจำกัด IP ที่ไว้ใจ</li>
+<li><b>ตรวจว่าเครื่องถูกเจาะไปแล้วหรือยัง</b>ดูโปรเซส งานตั้งเวลา ไฟล์ และ log ตามคู่มือ GeoVision โดยเฉพาะ PowerShell ที่ถูกเรียกจากโปรเซสของ GeoVision</li>
+<li><b>ถ้าพบความผิดปกติ ให้แยกเครื่องและเก็บหลักฐานก่อน</b>Huntress แนะนำให้เก็บหลักฐานก่อนลบไฟล์หรือแก้การตั้งค่า แล้วให้ทีมดูแลระบบไล่ตรวจตามคู่มือผู้ผลิต</li>
+<li><b>อัปเดตซอฟต์แวร์และตรวจซ้ำ</b>ลงรุ่นแก้ให้ตรงสายรุ่น ตรวจสถานะระบบป้องกันและการเชื่อมต่อผิดปกติ การลงแพตช์กับการกำจัดมัลแวร์เป็นคนละขั้นตอนครับ</li>
+</ol>
+
+ผมว่าเครื่องบันทึกกล้องควรอยู่ในรายการอัปเดตและตรวจความปลอดภัยเหมือนเซิร์ฟเวอร์เครื่องอื่น เพราะถ้าเปิดบริการออกอินเทอร์เน็ต ก็กลายเป็นทางเข้าระบบองค์กรได้เหมือนกันครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## มีองค์กรไทยโดนไหม
+
+<div class="prose">
+
+แหล่งข้อมูลสองฉบับที่ตรวจไม่ได้ระบุเหยื่อในไทย ผมจึงยังบอกไม่ได้ว่ามีองค์กรไทยได้รับผลกระทบหรือไม่ จำนวน 13 องค์กรเป็นขอบเขตที่ Huntress ตรวจพบ ไม่ใช่ยอดผู้เสียหายทั้งหมดทั่วโลกครับ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- Huntress, GeoVision Camera Software Abused to Deploy XMRig Cryptominer: <a href="https://www.huntress.com/blog/geovision-camera-software-xmrig-cryptominer" rel="noopener">huntress.com</a>
+- GeoVision, Security Advisory: XMRig attack Vulnerability Response, GV-SFW-2026-11-01 (11 พ.ย. 2569): <a href="https://dlcdn.geovision.com.tw/TechNotice/CyberSecurity/2026/Security_Advisory_XMRigAttackAdvisory-2026-11-01.pdf" rel="noopener">ประกาศและลิงก์แพตช์ทางการ (PDF)</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: by dojojin.tech · ฉากตู้ระบบกล้องเป็นภาพประกอบ ไม่ใช่ภาพอุปกรณ์รุ่นที่ถูกโจมตี · โลโก้ GeoVision จาก <a href="https://www.geovision.com.tw/" rel="noopener">เว็บไซต์ผู้ผลิต</a> เป็นเครื่องหมายการค้าของเจ้าของ
+- ภาพเอกสาร: GeoVision, ประกาศ GV-SFW-2026-11-01 หน้า 7
+
+</div>
+
+</section>

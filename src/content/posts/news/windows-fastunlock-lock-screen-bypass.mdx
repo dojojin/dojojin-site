@@ -1,0 +1,184 @@
+---
+title: "Windows FastUnlock ข้ามหน้าจอล็อกด้วย Narrator ยังไม่มีแพตช์ ต้องจับเครื่องจริงถึงทำได้ ตั้ง PIN ตอนเปิดเครื่องช่วยได้"
+topic: infra-ai
+type: news
+tags: [security, windows, microsoft]
+date: 2026-11-24T10:10:00+07:00
+section: security
+sourceName: "ThreatLocker, Security Affairs, Born City และ ThaiCERT"
+sourceUrl: "https://www.threatlocker.com/blog/proof-of-concept-for-fastunlock-windows-lock-screen-bypass-from-nightmare-eclipse"
+description: "FastUnlock คือวิธีข้ามหน้าจอล็อก Windows 11 ด้วย Narrator ที่นักวิจัย Chaotic Eclipse ปล่อยเมื่อ 19 พ.ย. 2569 ต้องเข้าถึงเครื่องจริง ได้สิทธิ์ WsiAccount (ไม่ใช่แอดมิน) ยังไม่มีแพตช์และ CVE ยังไม่พบการโจมตีจริง สรุปว่าอะไรยืนยันแล้ว อะไรเป็นคำอ้าง ThaiCERT เตือนอะไร และตั้ง BitLocker PIN ช่วยอย่างไร"
+kicker: "ข่าวความปลอดภัยไซเบอร์"
+lead: "FastUnlock คือวิธีข้ามหน้าจอล็อก Windows 11 ด้วย Narrator (โปรแกรมอ่านหน้าจอ) ที่นักวิจัยชื่อ Chaotic Eclipse ปล่อยออกมา ผู้โจมตีต้องจับเครื่องจริงได้ถึงจะรันโปรแกรมจากหน้าจอล็อกได้ ThreatLocker ลองทำตามแล้วได้ผลบางส่วน ส่วนที่ว่าเจาะเครื่องที่เข้ารหัส BitLocker ได้ใน 5 นาที ยังเป็นคำอ้างของนักวิจัยเอง ตอนนี้ยังไม่มีแพตช์ ไม่มี CVE และผมไม่พบคำแถลงของ Microsoft"
+meta: "เรียบเรียงจาก ThreatLocker, Security Affairs, Born City และ ThaiCERT · ข้อมูล ณ 24 พฤศจิกายน 2569"
+cover: "/media/posts/news/windows-fastunlock-lock-screen-bypass/cover.jpg"
+coverAlt: "ปกข่าว Windows FastUnlock ข้ามหน้าจอล็อกด้วย Narrator ยังไม่มีแพตช์ โน้ตบุ๊กเปิดอยู่บนโต๊ะตอนกลางคืน มีแฟลชไดรฟ์เสียบอยู่ (ภาพประกอบ)"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="split">
+<div class="prose">
+
+วันที่ 19 พฤศจิกายน 2569 นักวิจัยที่ใช้ชื่อ Chaotic Eclipse ปล่อยรายละเอียดช่องโหว่ Windows ตัวใหม่ชื่อ FastUnlock ครับ
+
+Security Affairs ระบุว่าเขายังใช้ชื่ออื่นด้วย เช่น Nightmare-Eclipse ส่วนชื่อจริงตามที่เขาเปิดเผยเองคือ Abdelhamid Naceri
+
+ตัวช่วยคือ Narrator โปรแกรมอ่านหน้าจอที่มากับ Windows ขั้นตอนคร่าว ๆ คือ เริ่มจากหน้ากู้คืนบัญชี Microsoft (กด "ลืม PIN" หรือ "ลืมรหัสผ่าน") แล้วเปิด Narrator ใช้คีย์บอร์ดไล่เข้าไปในหน้าตั้งค่า จนเปิด File Explorer ได้ทั้งที่ยังอยู่หน้าจอล็อก จากนั้นเสียบแฟลชไดรฟ์เพื่อรันโปรแกรม
+
+ข้อจำกัดสำคัญคือ **ต้องจับเครื่องจริงได้** และในเครื่องต้องมีบัญชี Microsoft (บัญชีออนไลน์) อย่างน้อยหนึ่งบัญชี ไม่ใช่การโจมตีผ่านอินเทอร์เน็ตครับ
+
+</div>
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/news/windows-fastunlock-lock-screen-bypass/photo-1.jpg" width="1448" height="1086" loading="lazy" alt="ภาพประกอบ โน้ตบุ๊กปิดฝาและกระเป๋าเดินทางวางทิ้งไว้บนโต๊ะในล็อบบี้ตอนค่ำ" /></div><figcaption><span class="news-fig__credit">ภาพ: ภาพประกอบจาก DOJOJIN.TECH ไม่ใช่ภาพเหตุการณ์จริง</span></figcaption></figure>
+</div>
+
+<div class="prose">
+
+ตอนนี้ยังไม่มี CVE (เลขทะเบียนช่องโหว่สากล) ยังไม่มีแพตช์จาก Microsoft และทั้ง Born City กับ ThaiCERT บอกตรงกันว่ายังไม่พบการโจมตีจริง
+
+</div>
+
+</section>
+
+<section class="section">
+
+## อะไรยืนยันแล้ว อะไรยังเป็นคำอ้าง
+
+<div class="prose">
+
+ข้อมูลเรื่องนี้แน่นอนไม่เท่ากัน ผมแยกให้ดูตามนี้ครับ
+
+<div class="news-cards">
+<div class="news-card is-ok"><b>ThreatLocker ลองทำตามแล้ว</b><span class="news-pill">ทดสอบเอง</span> บริษัทความปลอดภัยรายนี้ลองทำตามแล้วได้เข้าเป็นบัญชี WsiAccount ซึ่งไม่ใช่แอดมิน ระหว่างทดสอบพิมพ์จากคีย์บอร์ดจริงไม่ได้ ต้องเปิดคีย์บอร์ดบนหน้าจอแทน และใช้ไดรฟ์ภายนอกช่วย</div>
+<div class="news-card is-warn"><b>ข้าม BitLocker ได้ใน 5 นาที</b><span class="news-pill">คำอ้างของนักวิจัย</span> นักวิจัยบอกว่าเจาะเครื่อง Windows 11 26H2 ที่ลงอัปเดตเดือน พ.ย. และเข้ารหัสทั้งเครื่องได้ ใช้เวลารวม 5 นาทีตั้งแต่เจอจนเจาะสำเร็จ และทำซ้ำได้ทุกเครื่องที่ลอง ข้อนี้ผมยังไม่พบใครทดสอบซ้ำ</div>
+<div class="news-card is-warn"><b>รันโปรแกรมได้จริงหรือไม่</b><span class="news-pill">เห็นต่างกัน</span> Born City บอกว่าวิดีโอที่นักวิจัยปล่อยโชว์แค่เปิด File Explorer ได้ ไม่ได้โชว์การรันโปรแกรม ตัวนักวิจัยยอมรับว่าไม่ได้ทำขั้นสุดท้ายให้ดูเพราะไม่มีแฟลชไดรฟ์ แต่บอกว่าเคยทำมาหลายรอบแล้ว ส่วน ThreatLocker บอกว่าเข้าถึงได้ถึงระดับรันโค้ดและไฟล์</div>
+<div class="news-card is-warn"><b>Windows 10</b><span class="news-pill">ยังไม่รู้</span> นักวิจัยบอกเองว่ายังไม่ได้ลอง ไม่แน่ใจว่าใช้ได้ไหม</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ไทม์ไลน์
+
+<div class="prose">
+
+แหล่งข่าวไม่ได้ให้เวลาเป็นนาที ผมจึงใส่แค่วันที่ครับ
+
+<ol class="news-tl">
+<li class="is-key"><span class="news-tl__date">19 พ.ย.</span><div>Security Affairs และ ThreatLocker เผยแพร่รายงานเรื่อง FastUnlock Born City บอกว่านักวิจัยเผยแพร่บน GitHub โดยไม่ได้ปรึกษา Microsoft ล่วงหน้า<span class="news-tl__src">Security Affairs · ThreatLocker · Born City</span></div></li>
+<li><span class="news-tl__date">23 พ.ย.</span><div>ThaiCERT ออกประกาศเตือน ระบุว่ายังไม่มีแพตช์และยังไม่พบหลักฐานการโจมตีจริง<span class="news-tl__src">thaicert.or.th</span></div></li>
+<li><span class="news-tl__date">24 พ.ย.</span><div>ผมตรวจแหล่งที่เปิดอ่านได้ ยังไม่พบประกาศหรือแถลงของ Microsoft<span class="news-tl__src">ผมตรวจเอง</span></div></li>
+</ol>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ใครเสี่ยง และเรื่อง BitLocker
+
+<div class="split">
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/news/windows-fastunlock-lock-screen-bypass/photo-2.jpg" width="1448" height="1086" loading="lazy" alt="ภาพประกอบ โน้ตบุ๊กเปิดหน้าจอล็อกมืด ๆ มีแฟลชไดรฟ์เสียบอยู่ด้านข้าง" /></div><figcaption><span class="news-fig__credit">ภาพ: ภาพประกอบจาก DOJOJIN.TECH ไม่ใช่ภาพเหตุการณ์จริง</span></figcaption></figure>
+<div class="prose">
+
+ThaiCERT แบ่งเครื่องที่เสี่ยงไว้สองกลุ่มครับ กลุ่มแรกคือเครื่อง Windows ที่ผูกบัญชี Microsoft ไว้และเข้าหน้ากู้คืนจากหน้าจอล็อกได้ กลุ่มที่สองคือเครื่องที่เปิด BitLocker แบบทั่วไป ซึ่งปลดล็อกไดรฟ์ให้เองตอนเปิดเครื่อง ไม่ต้องใส่ PIN
+
+ที่น่าห่วงที่สุดคือเครื่องที่หายหรือวางทิ้งไว้ เครื่องในที่สาธารณะ และเครื่องที่ใช้ร่วมกัน
+
+เรื่อง BitLocker สองฝั่งพูดไม่ตรงกัน นักวิจัยบอกว่าวิธีนี้ "ข้าม" BitLocker ได้ ส่วน ThaiCERT บอกว่าเทคนิคนี้ไม่ได้เจาะการเข้ารหัสหรือดึงคีย์ถอดรหัสออกมา แต่ผู้โจมตียังเข้าถึงไฟล์ในเครื่องได้อยู่ดี
+
+ผมว่าที่ ThaiCERT อธิบายฟังขึ้นกว่า เพราะตัวเครื่องปลดล็อกไดรฟ์ให้เองตั้งแต่ตอนเปิด แล้วค่อยมาข้ามกันที่หน้าจอล็อก แต่ข้อนี้เป็นความเห็นผมนะครับ
+
+</div>
+</div>
+
+<div class="prose">
+
+<div class="news-stats">
+<div class="news-stat"><b>WsiAccount</b>บัญชีที่ได้ตามที่ ThreatLocker และ ThaiCERT ระบุ ไม่ใช่แอดมิน</div>
+<div class="news-stat"><b>ยังไม่มี</b>CVE และแพตช์ ณ 24 พ.ย. ตามที่ผมตรวจ</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## Microsoft ว่าอย่างไร
+
+<div class="prose">
+
+ผมยังไม่พบคำแถลงของ Microsoft ครับ
+
+Born City ระบุว่า Microsoft ยังไม่ออกทั้งประกาศความปลอดภัยและอัปเดต ThaiCERT ก็บอกว่ายังไม่มีแพตช์ ผมเช็กรายการประกาศของ MSRC (ศูนย์ตอบสนองความปลอดภัยของ Microsoft) ผ่าน API แล้ว ก็ยังไม่เห็นรายการที่เกี่ยวกับ FastUnlock แต่นี่ไม่ได้แปลว่า Microsoft ไม่รู้เรื่อง แค่ยังไม่มีข้อมูลสาธารณะ
+
+Security Affairs บอกว่านักวิจัยคนนี้ปล่อยโค้ดโจมตีช่องโหว่ zero-day (ช่องโหว่ที่ยังไม่มีแพตช์) ของ Microsoft ต่อสาธารณะมาหลายครั้งแล้ว และบางตัวถูกนำไปโจมตีจริงภายหลัง
+
+ถ้า Microsoft ออกแพตช์หรือประกาศเมื่อไร ผมจะอัปเดตข่าวนี้ครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ในไทย และถ้าเป็นเครื่องคุณ ทำอะไรได้
+
+<div class="prose">
+
+ThaiCERT ออกประกาศเตือนเมื่อ 23 พ.ย. แต่เป็นคำเตือนทั่วไป ไม่ได้ระบุว่ามีองค์กรไทยโดน และผมเองก็ไม่พบรายงานเหยื่อในไทยครับ
+
+คำแนะนำของ ThaiCERT กับ ThreatLocker ไปทางเดียวกันเกือบทั้งหมด
+
+<ol class="news-steps">
+<li class="is-key"><b>ตั้ง PIN ตอนเปิดเครื่องใน BitLocker</b>ThaiCERT แนะนำให้เปิดใช้ Startup PIN แทนการปลดล็อกไดรฟ์อัตโนมัติ ThreatLocker บอกว่ารหัสนี้ต้องใส่ก่อนไดรฟ์ปลดล็อกและก่อน Windows เริ่มทำงาน</li>
+<li><b>ปิดเครื่องหรือ Hibernate เมื่อต้องวางทิ้งไว้</b>ThaiCERT ระบุว่า PIN ป้องกันได้เฉพาะเครื่องที่ยังไม่ได้เปิดใช้งาน และล็อกหน้าจออย่างเดียวไม่พอ</li>
+<li><b>อย่าทิ้งเครื่องไว้ในที่ที่คนอื่นเข้าถึงได้</b>เก็บแล็ปท็อปในที่ปลอดภัยหรือตู้ล็อก ดูแลเครื่องส่วนกลางและโต๊ะที่ใช้ร่วมกัน</li>
+<li><b>ตามข่าวแพตช์ของ Microsoft</b>ลงทันทีที่ออก</li>
+</ol>
+
+สำหรับองค์กร Born City รายงานว่านักวิจัยเสนอวิธีชั่วคราวไว้ คือบล็อกการรัน Narrator ด้วย AppLocker (ฟีเจอร์ของ Windows ที่กำหนดว่าโปรแกรมไหนรันได้) หรือแก้สิทธิ์ไฟล์ (DACL) ผมยังไม่เห็นใครทดสอบวิธีนี้ และผมว่าควรคิดให้ดีก่อนทำ เพราะ Narrator เป็นเครื่องมือที่ผู้พิการทางสายตาใช้งานจริงครับ
+
+ถ้าใช้เครื่องคนเดียวและพกติดตัวตลอด ความเสี่ยงจริงอยู่ที่ตอนเครื่องหายหรือโดนขโมย ผมว่าตั้ง PIN ไว้ก่อนคุ้มที่สุดครับ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- ThreatLocker, Proof of Concept for FastUnlock (19 พ.ย. 2569): <a href="https://www.threatlocker.com/blog/proof-of-concept-for-fastunlock-windows-lock-screen-bypass-from-nightmare-eclipse" rel="noopener">threatlocker.com</a>
+- Security Affairs, Chaotic Eclipse Releases FastUnlock (19 พ.ย. 2569): <a href="https://securityaffairs.com/?p=203537" rel="noopener">securityaffairs.com</a>
+- Born City, FastUnlock: Windows-11-Lücke soll BitLocker in fünf Minuten umgehen (ภาษาเยอรมัน): <a href="https://borncity.com/news/fastunlock-windows-11-luecke-soll-bitlocker-in-fuenf-minuten-umgehen/" rel="noopener">borncity.com</a>
+- ThaiCERT, แจ้งเตือนช่องโหว่ Zero-Day บน Windows (FastUnlock) (23 พ.ย. 2569): <a href="https://www.thaicert.or.th/2026/11/23/%e0%b9%81%e0%b8%88%e0%b9%89%e0%b8%87%e0%b9%80%e0%b8%95%e0%b8%b7%e0%b8%ad%e0%b8%99-%e0%b8%9e%e0%b8%9a%e0%b8%8a%e0%b9%88%e0%b8%ad%e0%b8%87%e0%b9%82%e0%b8%ab%e0%b8%a7%e0%b9%88-zero-day-%e0%b8%9a%e0%b8%99/" rel="noopener">thaicert.or.th</a>
+- Microsoft MSRC (รายการประกาศ ตรวจ 24 พ.ย. 2569 ไม่พบ FastUnlock): <a href="https://api.msrc.microsoft.com/cvrf/v3.0/updates" rel="noopener">api.msrc.microsoft.com</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพในเนื้อข่าว: ภาพประกอบจาก DOJOJIN.TECH ไม่ใช่ภาพเหตุการณ์จริง
+- ภาพปก: by dojojin.tech
+
+ภาพใช้ประกอบข่าว (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>

@@ -1,0 +1,179 @@
+---
+title: "Cisco กับ OpenAI เปิดตัว Shirudo โอเพนซอร์สอุดช่องโหว่ Linux ขณะเครื่องรันอยู่ ไม่ต้องรีบูต ให้ AI agent ช่วยสร้าง 'โล่' ชั่วคราวระหว่างรอแพตช์"
+topic: infra-ai
+type: news
+tags: [security, openai, open-source]
+date: 2026-11-24T10:40:00+07:00
+section: security
+sourceName: "Cisco, OpenAI และ Isovalent"
+sourceUrl: "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/cisco-and-openai-launch-shirudo-a-new-project-to-safeguard-agentic-ai.html"
+description: "Cisco และ OpenAI เปิดตัว Shirudo เมื่อ 23 พ.ย. 2569 โครงการโอเพนซอร์สที่ใช้ eBPF ป้องกัน Linux ที่กำลังรันอยู่โดยไม่ต้องรีบูต ระหว่างรอแพตช์จริง ให้ AI agent ช่วยเขียนโล่ (shield) ทดสอบกับช่องโหว่ Java4Shell อธิบาย eBPF และ agentic AI แบบเข้าใจง่าย พร้อมสิ่งที่ยังเป็นผลทดสอบของบริษัทเอง"
+kicker: "ข่าวความปลอดภัยไซเบอร์"
+lead: "Cisco กับ OpenAI เปิดตัว Shirudo ครับ เป็นโครงการโอเพนซอร์สที่ช่วยปิดทางโจมตีของเครื่อง Linux ที่ยังรันอยู่ ระหว่างที่ทีมกำลังทดสอบและรอลงแพตช์จริง ไม่ต้องรีบูตเครื่อง ส่วนที่ AI agent ทำคือช่วยเขียน 'โล่' ชั่วคราวให้ แต่คนต้องเป็นคนอนุมัติก่อนใช้งาน ผลทดสอบทั้งหมดตอนนี้เป็นของบริษัทเอง"
+meta: "เรียบเรียงจากข่าวแจก Cisco (23 พ.ย. 2569), บล็อก OpenAI และบล็อก Isovalent · ข้อมูล ณ 24 พฤศจิกายน 2569"
+cover: "/media/posts/news/cisco-openai-shirudo-agentic-ai-security/cover.jpg"
+coverAlt: "ปกข่าว Cisco และ OpenAI เปิดตัว Shirudo ป้องกัน Linux ขณะรันอยู่ ไม่ต้องรีบูต eBPF โอเพนซอร์ส มีโลโก้ Cisco และ OpenAI บนพื้นห้องเซิร์ฟเวอร์สว่าง (ภาพประกอบ)"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="split">
+<div class="prose">
+
+วันที่ 23 พฤศจิกายน 2569 Cisco กับ OpenAI ประกาศเปิดตัว **Shirudo** ครับ ชื่อนี้เป็นภาษาญี่ปุ่น แปลว่า "โล่"
+
+มันคือโครงการโอเพนซอร์ส (เปิดโค้ดให้ทุกคนดูและช่วยแก้ได้) สำหรับป้องกันเครื่อง Linux ที่กำลังรันอยู่ ระหว่างที่ทีมดูแลระบบกำลังทดสอบและรอลงแพตช์จริง
+
+ปัญหาที่ทั้งสองบริษัทอยากแก้คือ เจอช่องโหว่วันนี้ ไม่ได้แปลว่าพรุ่งนี้จะแพตช์ได้ครบทุกเครื่อง OpenAI เขียนว่าการทดสอบและลงแพตช์ "ยังใช้เวลาเป็นวันหรือเป็นสัปดาห์"
+
+งานหลักในตัวอย่างที่เปิดให้ดูคือ ใช้ AI agent ช่วยสร้างเกราะป้องกันให้ระบบ Linux ระหว่างรอลงแพตช์ครับ คนดูแลระบบยังเป็นผู้ตัดสินใจว่าจะเปิดใช้เกราะตัวไหน
+
+</div>
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/news/cisco-openai-shirudo-agentic-ai-security/photo-1.jpg" width="1600" height="1200" loading="lazy" alt="ทางเดินห้องเซิร์ฟเวอร์ มีตู้แร็คเซิร์ฟเวอร์และไฟสถานะสีเขียวอมฟ้า ไม่มีคนในภาพ" /></div><figcaption><span class="news-fig__credit">ภาพประกอบจาก DOJOJIN.TECH</span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## ศัพท์ 2 คำที่ต้องรู้
+
+<div class="prose">
+
+<div class="news-cards">
+<div class="news-card"><b>eBPF คืออะไร</b>เทคโนโลยีใน Linux ที่ให้โปรแกรมเล็ก ๆ ทำงานตามจุดต่าง ๆ ในแกนกลางของระบบปฏิบัติการ (kernel) ใช้สังเกตการทำงานและขวางพฤติกรรมที่กำหนดไว้ได้ โดยไม่ต้องหยุดบริการทุกครั้งที่เพิ่มกฎ ส่วน Shirudo มีข้อกำหนดเรื่องแพตช์ kernel เพิ่มเติม ซึ่งผมแยกไว้ด้านล่างครับ</div>
+<div class="news-card"><b>agentic AI คืออะไร</b>AI ที่ไม่ได้แค่ตอบคำถาม แต่ลงมือทำงานหลายขั้นเอง เช่น หาข้อมูล เขียนโค้ด ทดสอบ แล้วส่งผลให้คนตรวจ ในข่าวนี้ AI agent ทำหน้าที่อ่านข้อมูลช่องโหว่ เขียนโล่ และทดสอบ ส่วนคนเป็นคนตัดสินใจว่าจะเปิดใช้หรือไม่</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## Shirudo ทำงานยังไง
+
+<div class="prose">
+
+OpenAI กับ Isovalent (ผู้พัฒนา Tetragon ระบบความปลอดภัยแบบ eBPF ที่เปิดโค้ดมาตั้งแต่ปี 2565) อธิบายขั้นตอนไว้คล้ายกันครับ
+
+Isovalent บอกว่า Shirudo ต่อยอดมาจาก Tetragon โดยเขียนใหม่ให้ AI agent ใช้ได้ ขั้นตอนหลัก ๆ มีแบบนี้
+
+<ol class="news-steps">
+<li><b>agent อ่านข้อมูลช่องโหว่</b>จากประกาศช่องโหว่ภายนอก หรือให้ agent ไปหาเอง</li>
+<li><b>agent เขียน "โล่"</b>เป็นโค้ดเล็ก ๆ ที่ขวางเส้นทางที่ช่องโหว่ต้องใช้ ซึ่งอาจเป็นโปรแกรม eBPF หรือโค้ดแก้ในตัวแอป (bytecode) ก็ได้</li>
+<li><b>ทดสอบกับตัวโจมตีจริง และกับงานปกติ</b>ต้องขวางการโจมตีได้ และต้องไม่ขวางคำขอปกติที่ระบบต้องรับ</li>
+<li class="is-key"><b>คนอนุมัติ แล้วถึงใช้งาน</b>OpenAI เขียนว่า operator (ผู้ดูแลระบบ) ต้องอนุมัติโล่ก่อน แล้วค่อยลงเครื่องที่ยังรันอยู่</li>
+<li><b>เซ็นชื่อดิจิทัลและตรวจก่อนโหลด</b>ทุกโล่ถูกเซ็นด้วยกุญแจ (cryptographic signature) ให้เครื่องตรวจก่อนรัน แม้ผู้โจมตีจะได้สิทธิ์ admin แล้ว (ตามที่ Cisco เขียน)</li>
+</ol>
+
+การปิดเส้นทางที่มีปัญหาทั้งหมดก็มีข้อเสียครับ OpenAI อธิบายว่าบางครั้งการโจมตีกับคำขอปกติใช้คำสั่งของ Linux ตัวเดียวกัน ถ้าบล็อกทั้งหมด บริการที่ต้องใช้งานอาจหยุดไปด้วย
+
+โล่ของ Shirudo จึงต้องแม่นพอที่จะขวางเฉพาะส่วนที่อันตราย
+
+OpenAI ยังบอกว่าใช้ชิป TPM (ชิปความปลอดภัยบนเครื่อง) เก็บบันทึกที่ตรวจสอบได้ว่ามีโล่ตัวไหนถูกโหลดหรือถอดออก
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ผลทดสอบ Java4Shell
+
+<div class="prose">
+
+Cisco บอกว่าทดสอบกับช่องโหว่ร้ายแรงช่วงนี้ 2 ตัว คือ "Java4shell" กับช่องโหว่ของ PHP และ Shirudo เขียนโค้ดที่ตรวจจับและขวางความพยายามโจมตีได้ทั้งสองตัว
+
+แต่ที่มีรายละเอียดให้อ่านมีแค่ Java4Shell ครับ
+
+<div class="news-stats">
+<div class="news-stat"><b>Elasticsearch 9.5.5</b>ระบบที่ใช้ทดสอบ (ตาม Isovalent)</div>
+<div class="news-stat"><b>ไม่ต้องรีสตาร์ต</b>Elasticsearch ยังรันต่อระหว่างโดนโจมตี (ตาม OpenAI)</div>
+</div>
+
+Isovalent เล่าว่าช่องโหว่นี้อยู่ใน OpenJDK (ตัว Java แบบโอเพนซอร์ส) ส่วน OpenAI ระบุว่าใช้ Codex ช่วยสร้างโค้ดเสริมเพื่อตรวจข้อมูลที่ส่งเข้าตัวถอดรหัส Base64 ของ Java แล้วนำไปใช้กับโปรเซส Elasticsearch ที่กำลังรันอยู่
+
+พอลองโจมตี การโจมตีไม่สำเร็จ และมีบันทึกไว้ในล็อก
+
+ผลนี้เป็นการทดสอบของผู้พัฒนาเองครับ ผมยังไม่พบผลทดสอบจากผู้ตรวจอิสระ จึงยังบอกไม่ได้ว่าจะได้ผลแบบเดียวกันกับทุกระบบ
+
+Isovalent เองก็ใช้คำว่าโล่ "appears to be effective" (ดูเหมือนได้ผล) ส่วนหน้า GitHub ของโครงการเขียนว่า "shirudo is pre-release" (ยังเป็นรุ่นก่อนวางจริง)
+
+หน้า GitHub ระบุว่าเครื่องเป้าหมายสำหรับใช้งานจริงต้องใช้ Linux kernel ที่รองรับ signed-loader ABI และมีแพตช์ของ Shirudo พร้อม TPM 2.0 จึงยังไม่ใช่โปรแกรมที่ติดตั้งบน Linux เครื่องไหนก็พร้อมใช้ทันทีครับ ส่วนเครื่องเสมือนสำหรับทดลองใช้ TPM แบบซอฟต์แวร์ได้
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ข้อควรรู้
+
+<div class="prose">
+
+<div class="news-cards">
+<div class="news-card is-ok"><b>เปิดโค้ดให้ใช้ฟรี</b>ไลเซนส์ BSD 2-Clause ส่วนโปรแกรม BPF ใช้ไลเซนส์คู่ BSD และ GPL ตาม OpenAI มีเอกสารและคู่มือ VM quickstart (ลองบนเครื่องเสมือน) ให้ลองเซ็น โหลด และตรวจโล่ทดสอบ</div>
+<div class="news-card is-warn"><b>เป็นแค่ที่กั้นชั่วคราว</b>ทั้งสองบริษัทเขียนตรงกันว่าโล่ใช้ระหว่างรอแพตช์ ไม่ได้มาแทนแพตช์จริง ผู้ดูแลระบบยังต้องอัปเดตตามปกติ</div>
+<div class="news-card is-warn"><b>ยังไม่มีข้อมูลอิสระ</b>ตัวเลขและผลทดสอบมาจากบริษัทเอง ผมยังไม่เจอรายงานทดสอบจากภายนอก</div>
+<div class="news-card"><b>มีงานแนะนำเชิงลึก</b>Cisco ประกาศเว็บบินาร์ 15 ธันวาคม และโค้ดอยู่ที่ github.com/shirudo-dev/shirudo</div>
+</div>
+
+เป้าหมายที่ใหญ่กว่าคือทำให้โครงสร้างพื้นฐานปลอดภัยมาตั้งแต่ต้นและป้องกันตัวเองได้
+
+Jeetu Patel ของ Cisco บอกว่าต้องการให้โครงสร้างพื้นฐานป้องกันตัวเองได้เร็วขึ้น ส่วน Greg Brockman ของ OpenAI ย้ำว่าการเจอบั๊กไม่ได้แปลว่าจะลงแพตช์ได้ครบทุกระบบในวันรุ่งขึ้น
+
+ผมว่าไอเดียนี้ตรงกับปัญหาจริงของคนดูแลเซิร์ฟเวอร์ ที่รู้ว่ามีช่องโหว่แต่ยังรีบูตหรือลงแพตช์ทันทีไม่ได้ แต่ก็ต้องรอดูผลทดสอบจากคนนอกก่อนครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ในไทยล่ะ
+
+<div class="prose">
+
+ผมยังไม่พบข้อมูลผลกระทบในไทยครับ ไม่พบประกาศจาก Cisco หรือ OpenAI ที่เจาะจงประเทศไทย และไม่พบรายงานว่าองค์กรไทยเริ่มใช้แล้ว
+
+Shirudo เป็นโครงการโอเพนซอร์สสำหรับคนดูแลระบบ Linux ใครอยากลองก็เข้า GitHub ได้เลย
+
+แต่ตอนนี้ยังเป็นรุ่นทดลอง ไม่ควรเอาไปใช้กับระบบจริงโดยไม่ทดสอบก่อนครับ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- Cisco Newsroom, Cisco and OpenAI Launch Shirudo, A New Project to Safeguard Agentic AI (ข่าวแจก 23 พ.ย. 2569): <a href="https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/cisco-and-openai-launch-shirudo-a-new-project-to-safeguard-agentic-ai.html" rel="noopener">newsroom.cisco.com</a>
+- OpenAI, OpenAI and Cisco introduce Shirudo (23 พ.ย. 2569): <a href="https://openai.com/index/introducing-shirudo/" rel="noopener">openai.com</a>
+- Isovalent, Cisco and OpenAI introduce Shirudo: <a href="https://isovalent.com/blog/post/cisco-openai-shirudo/" rel="noopener">isovalent.com</a>
+- GitHub, shirudo-dev/shirudo (สถานะ pre-release และข้อกำหนดระบบ): <a href="https://github.com/shirudo-dev/shirudo" rel="noopener">github.com</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: by dojojin.tech
+- ภาพประกอบในเนื้อข่าว: ภาพประกอบจาก DOJOJIN.TECH
+- โลโก้ Cisco: ไฟล์ Cisco logo blue 2016.svg จาก Wikimedia Commons (ระบุสถานะ public domain) · โลโก้ OpenAI จากไฟล์โลโก้ที่ใช้ในข่าวก่อนหน้า เครื่องหมายการค้าเป็นของเจ้าของ
+
+ภาพใช้ประกอบข่าว (editorial use) ลิขสิทธิ์เป็นของเจ้าของภาพตามที่ระบุ
+
+</div>
+
+</section>
