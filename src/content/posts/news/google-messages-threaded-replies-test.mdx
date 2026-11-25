@@ -1,0 +1,89 @@
+---
+title: "Google Messages เตรียมเพิ่มระบบตอบกลับแบบเธรด (Threaded Replies) สไตล์ iMessage จัดระเบียบแชตกลุ่มให้ดูง่ายขึ้น"
+topic: software
+type: news
+tags: [google, android]
+date: 2026-11-25T23:48:00+07:00
+section: tech
+sourceName: "Android Authority, Android Central, Android Headlines และ Siamphone"
+sourceUrl: "https://www.androidauthority.com/google-messages-threaded-replies-3614820/"
+description: "ผลแกะโค้ดแอป Google Messages เบต้าพบ Google กำลังพัฒนาระบบตอบกลับข้อความแบบเธรด (Threaded Replies) ที่มีเส้นเชื่อมแนวตั้งและหน้าต่างแยกสายสนทนาแบบเดียวกับ iMessage ช่วยให้ตามแชตกลุ่ม RCS ที่คุยหลายเรื่องพร้อมกันได้ง่ายขึ้น รองรับทั้งข้อความ รูปภาพ และอิโมจิ"
+kicker: "ข่าวเทคโนโลยี · ซอฟต์แวร์"
+lead: "ใครที่คุยแชตกลุ่มใน Google Messages แล้วข้อความวิ่งปนกันจนตามไม่ทันว่าใครตอบเรื่องไหน ล่าสุดมีคนแกะโค้ดเจอว่า Google กำลังพัฒนาฟีเจอร์ตอบกลับแบบเธรด (Threaded Replies) สไตล์ iMessage แล้วครับ"
+meta: "เรียบเรียงจาก Android Authority, Android Central, Android Headlines และ Siamphone · ข้อมูล ณ 25 พฤศจิกายน 2569"
+cover: "/media/posts/news/google-messages-threaded-replies-test/cover.jpg"
+coverAlt: "ปกข่าว Google Messages เตรียมเพิ่มระบบตอบกลับแบบเธรด (Threaded Replies) สไตล์ iMessage"
+---
+
+<section class="section">
+
+## พบอะไรในโค้ด Google Messages
+
+<div class="split">
+<div class="prose">
+
+รายงานจาก Android Authority, Android Central และ Siamphone ระบุตรงกันว่า จากการแกะโค้ดไฟล์ติดตั้ง (APK teardown) ของแอป **Google Messages** เวอร์ชันทดสอบในเดือนพฤศจิกายน 2569 พบส่วนติดต่อผู้ใช้และสตริงของฟีเจอร์ **ตอบกลับแบบเธรด (Threaded Replies)** ที่กำลังพัฒนาอยู่ครับ
+
+ปัจจุบันเวลาตอบกลับข้อความใน Google Messages ตัวแอปจะทำได้แค่แนบกล่องข้อความต้นทางแบบสั้น ๆ ไว้เหนือคำตอบของเรา พออยู่ในแชตกลุ่มที่คุยหลายหัวข้อพร้อมกัน บทสนทนาจึงยังไหลปะปนกันอยู่ดี
+
+</div>
+<figure class="news-fig news-fig--zoom">
+<img src="/media/posts/news/google-messages-threaded-replies-test/photo-1.jpg" alt="ภาพหน้าจอหลุดจาก APK teardown แสดงหน้าตาฟีเจอร์ Threaded Replies ใน Google Messages" loading="lazy" />
+<figcaption>ภาพหน้าจอจาก APK teardown เผยการทำงานของปุ่มดูเธรดและการตอบกลับแยกห้องสนทนาใน Google Messages (ที่มา: <a href="https://www.androidauthority.com/google-messages-threaded-replies-apple-imessage-3738989/" target="_blank" rel="noopener">Android Authority / AssembleDebug</a> · วางบนพื้นสีโดย DOJOJIN.TECH)</figcaption>
+</figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## เทียบแบบเดิมกับแบบเธรดที่กำลังทำ
+
+<div class="split">
+<div class="prose">
+
+ฟีเจอร์ใหม่นี้ยังอยู่ระหว่างพัฒนาในเวอร์ชันทดสอบนะครับ ทาง Google ยังไม่ได้เปิดให้ผู้ใช้ทั่วไปใช้งานจริง และยังไม่ได้ประกาศวันปล่อยอัปเดตอย่างเป็นทางการ
+
+ผมว่าถ้าฟีเจอร์นี้เปิดใช้จริงกับแชต RCS ในกลุ่มเพื่อนหรือทีมงานได้ จะช่วยให้ Google Messages ตามทันคู่แข่งอย่าง iMessage, Slack หรือ LINE เรื่องการจัดระเบียบแชตกลุ่มขึ้นอีกเยอะเลยครับ
+
+</div>
+<div>
+
+<table class="table-frame">
+<thead><tr><th>จุดเปรียบเทียบ</th><th>แบบเดิม (Quoted Reply)</th><th>แบบใหม่ (Threaded Replies ที่พบในโค้ด)</th></tr></thead>
+<tbody>
+<tr><td>การแสดงสายสนทนา</td><td>แปะกล่องข้อความต้นทางสั้น ๆ เหนือคำตอบ</td><td>มีเส้นแนวตั้งและวงเล็บเชื่อมข้อความที่คุยต่อกัน (สไตล์ iMessage)</td></tr>
+<tr><td>การแยกหัวข้อคุย</td><td>ไหลรวมอยู่ในห้องแชตหลักทั้งหมด</td><td>มีหน้าต่าง Thread View แยกเฉพาะหัวข้อนั้นพร้อมตัวนับจำนวนตอบกลับ</td></tr>
+<tr><td>สื่อที่รองรับ</td><td>ข้อความ รูปภาพ อิโมจิ</td><td>รองรับทั้งข้อความ รูปภาพ และอิโมจิภายในเธรดเช่นเดียวกัน</td></tr>
+</tbody>
+</table>
+
+</div>
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- Android Authority · Android Central · Android Headlines · Siamphone (รายงานผลแกะโค้ด Google Messages พ.ย. 2569)
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: by dojojin.tech
+- ภาพหน้าจอ APK teardown ของ Google Messages: [Android Authority / AssembleDebug](https://www.androidauthority.com/google-messages-threaded-replies-apple-imessage-3738989/) · วางบนพื้นสีโดย DOJOJIN.TECH
+
+</div>
+
+</section>
