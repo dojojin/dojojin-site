@@ -4,15 +4,15 @@ topic: software
 type: news
 tags: [microsoft]
 date: 2026-11-14T18:00:00+07:00
-updated: 2026-11-20T11:43:00+07:00
-bumped: 2026-11-20T11:43:00+07:00
+updated: 2026-11-24T21:30:00+07:00
+bumped: 2026-11-24T21:30:00+07:00
 section: tech
 sourceName: "BleepingComputer, SecurityWeek, MacRumors และสื่อไทย"
 sourceUrl: "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/"
 description: "Microsoft 365 ล่ม 12-13 พ.ย. 2569 Outlook และ Exchange Online เข้าไม่ได้ราว 24 ชั่วโมง สรุปไทม์ไลน์เป็นเวลาไทยตั้งแต่เริ่มจนกลับมาใช้ได้ ผู้ใช้ในไทยโดนช่วงไหน สาเหตุตามที่ Microsoft แจ้ง และถ้าเจออีกควรทำอย่างไร"
 kicker: "ข่าวเทคโนโลยี"
 lead: "Outlook, Exchange Online และบางฟีเจอร์ของ Teams กับ Copilot ใช้ไม่ได้อยู่ราว 24 ชั่วโมง ผมเรียงเหตุการณ์ให้ทีละขั้นเป็นเวลาไทย และดูว่าคนไทยโดนช่วงไหนครับ"
-meta: "เรียบเรียงจาก BleepingComputer, SecurityWeek, MacRumors, azureblog.co.uk และสื่อไทย · ข้อมูล ณ 14 พฤศจิกายน 2569 · อัปเดต 20 พ.ย. 2569: อ่านรายงานเบื้องต้นของ Microsoft (ลงวันที่ 15 พ.ย.) ครบทั้งฉบับแล้ว รายงานฉบับสุดท้ายยังไม่พบ"
+meta: "เรียบเรียงจาก BleepingComputer, SecurityWeek, MacRumors, azureblog.co.uk และสื่อไทย · ข้อมูล ณ 14 พฤศจิกายน 2569 · อัปเดต 20 พ.ย. 2569: อ่านรายงานเบื้องต้นของ Microsoft (ลงวันที่ 15 พ.ย.) ครบทั้งฉบับแล้ว · อัปเดต 24 พ.ย. 2569: รายงานฉบับสุดท้าย (final PIR) ออกแล้ว ยืนยันสาเหตุและเพิ่มมาตรการถาวร"
 cover: "/media/posts/news/microsoft-365-outage-2026-11/cover-v3.jpg"
 coverAlt: "แล็ปท็อปบนโต๊ะ หน้าจอแอปอีเมลสีน้ำเงินมีไอคอนเมฆขีดฆ่าและวงกลมโหลด พร้อมข้อความ Microsoft 365 ล่มเกือบ 24 ชั่วโมง (ภาพประกอบ)"
 ---
@@ -38,6 +38,39 @@ coverAlt: "แล็ปท็อปบนโต๊ะ หน้าจอแอ�
 สิ่งที่ Microsoft แจ้งช่วงเกิดเหตุ ผมอ่านผ่านสื่อเหล่านี้อีกที ยังไม่ได้เปิดโพสต์ต้นทางของ Microsoft เอง เพราะหน้า X เปิดไม่ได้ ส่วนหน้า status เป็นหน้าที่โหลดด้วยสคริปต์ ถ้าแหล่งไหนให้เวลาไม่ตรงกัน ผมเขียนบอกไว้ตรงนั้นเลย ส่วนเรื่องสาเหตุ ตอนนี้ผมอ่านจากรายงานเบื้องต้นของ Microsoft โดยตรงแล้ว ตามอัปเดตด้านบน
 
 เวลาทั้งหมดในข่าวนี้ผมแปลงเป็นเวลาไทย (UTC+7) เอง เดือนนี้เวลาฝั่งตะวันออกของสหรัฐฯ (ET) ช้ากว่าไทย 12 ชั่วโมง เช่น 13:26 ET = 01:26 ของไทยวันรุ่งขึ้น
+
+</div>
+
+</section>
+
+<section class="section">
+
+## อัปเดต 24 พ.ย. 2569: รายงานฉบับสุดท้าย (final PIR) ออกแล้ว
+
+<div class="prose">
+
+The Register รายงานเมื่อ 23 พ.ย. ว่า Microsoft ออกรายงานฉบับสุดท้าย (final post-incident report) แล้วครับ ผมอ่านผ่าน The Register เพราะหน้า status.cloud.microsoft โหลดเนื้อหาไม่ได้ (เป็นหน้าที่โหลดด้วยสคริปต์) และ The Register ไม่ได้เอ่ยเลขเหตุ EX1550543/MO1550821 ถ้าจะอ้าง PIR ตรง ๆ แนะนำให้เปิด status.cloud.microsoft หรือ admin center ยืนยันเองครับ
+
+รายงานฉบับสุดท้ายยืนยันสิ่งที่รายงานเบื้องต้นบอกไว้ และเพิ่มรายละเอียดอีกหลายจุด
+
+<div class="news-cards">
+<div class="news-card is-ok"><b>สาเหตุยืนยันแล้ว</b><span class="news-pill">ตรงกับรายงานเบื้องต้น</span> บั๊กคือ defect ของ Windows ที่เกิดจากโค้ดที่เปลี่ยนไปเดือนกรกฎาคม ใช้เฉพาะเซิร์ฟเวอร์เกตเวย์ของ Microsoft 365 ไม่ใช่ Windows ที่คนทั่วไปใช้</div>
+<div class="news-card is-bad"><b>ช่วงที่หนักสุด</b><span class="news-pill">Exchange Online</span> ช่วง peak เซิร์ฟเวอร์เกตเวย์ในอเมริกาเหนือมากกว่า 80% ไม่ตอบสนอง</div>
+<div class="news-card is-warn"><b>ทำไมทดสอบไม่เจอ</b><span class="news-pill">ยืนยัน</span> ทดสอบโหลดด้วยเครื่องเก่าที่มีแกน (core) น้อยกว่าเครื่องจริง จึงไม่เจอบั๊กที่หนักขึ้นบนเครื่องใหม่</div>
+<div class="news-card is-warn"><b>อีเมลค้าง</b><span class="news-pill">consumer</span> กล่อง consumer ที่ไม่ได้ใช้งานเกิน 30 วัน มีอีเมลค้างที่หมดอายุ (expire) ส่วนอีเมล enterprise ทุกฉบับส่งถึง ไม่หาย</div>
+</div>
+
+มาตรการถาวรที่ Microsoft สัญญาไว้ในรายงานฉบับสุดท้าย
+
+<ol class="news-steps">
+<li><b>แยกส่วนระบบ (partitioning/isolation)</b>กันไม่ให้ปัญหาในเซิร์ฟเวอร์กลุ่มหนึ่งลามไปกลุ่มอื่น</li>
+<li><b>ทดสอบบนฮาร์ดแวร์ใหม่</b>และขยายการทดสอบ failover ให้กว้างขึ้น</li>
+<li><b>เพิ่มการตรวจการเปลี่ยนค่า (change auditing) และ diagnostics</b>ให้เห็นการเปลี่ยนแปลงที่อาจเป็นสาเหตุเร็วขึ้น</li>
+<li><b>เพิ่มความจุสำรอง (spare capacity)</b>ให้ระบบรับทราฟฟิกที่เพิ่มได้</li>
+<li class="is-key"><b>ขยาย retry window เป็น 48 ชั่วโมง</b>อีเมลที่ส่งไม่ผ่านจะเก็บรอส่งได้นานขึ้น ไม่เด้งกลับ</li>
+</ol>
+
+สรุปคือรายงานฉบับสุดท้ายยืนยันสาเหตุตามรายงานเบื้องต้น และเพิ่มมาตรการถาวร 5 ข้อครับ ตัวเลขและรายละเอียดในข่าวนี้ที่มาจากรายงานเบื้องต้นยังใช้ได้เหมือนเดิม
 
 </div>
 
@@ -199,7 +232,7 @@ Microsoft บอกด้วยว่า "This was a technical issue not related
 
 สิ่งที่ Microsoft ทำไปแล้วตามรายงานเบื้องต้น มี 4 อย่าง คือขยายเวลาเก็บอีเมลที่ส่งค้าง เพิ่มความจุ เฝ้าดูรูปแบบการย้ายทราฟฟิกมากขึ้น และเพิ่มตัวกันไม่ให้การกระจายทราฟฟิกลามเป็นลูกโซ่
 
-รายการแก้ไขถาวรทั้งหมดต้องรอรายงานฉบับสุดท้าย ซึ่งรายงานเบื้องต้นระบุวันที่ 20 พ.ย. ไว้ แต่ ณ 20 พ.ย. 11:40 น. ผมยังไม่พบฉบับนั้นครับ
+**อัปเดต 24 พ.ย.:** รายงานฉบับสุดท้าย (final PIR) ออกแล้วครับ ยืนยันสาเหตุตามรายงานเบื้องต้น และเพิ่มมาตรการถาวร 5 ข้อ ดูรายละเอียดในหัวข้อ "อัปเดต 24 พ.ย. 2569" ด้านบน
 
 </div>
 
@@ -249,6 +282,7 @@ Microsoft บอกด้วยว่า "This was a technical issue not related
 - BleepingComputer, Microsoft says months-old bug caused global Microsoft 365 outage (16 พ.ย. 2569): <a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-says-months-old-bug-caused-global-microsoft-365-outage/" rel="noopener">bleepingcomputer.com</a>
 - Microsoft, Preliminary Post Incident Report for Microsoft 365 (EX1550543/MO1550821, 15 พ.ย. 2569) ไฟล์ PDF ที่ next.ink นำมาลง: <a href="https://next.ink/wp-content/uploads/2026/11/PostIncidentReport.pdf" rel="noopener">next.ink</a>
 - The Register (16 พ.ย. 2569): <a href="https://www.theregister.com/2026/11/16/microsoft-blames-monster-email-outage-on-software-defect-introduced-in-july-fix/5310026" rel="noopener">theregister.com</a>
+- The Register (23 พ.ย. 2569): รายงานว่า Microsoft ออกรายงานฉบับสุดท้าย (final PIR) แล้ว ยืนยันสาเหตุและเพิ่มมาตรการถาวร
 - BetaNews (สาเหตุแบบอัปเกรดเครือข่าย): <a href="https://betanews.com/article/microsoft-365-outage-network-upgrade/" rel="noopener">betanews.com</a>
 - SecurityWeek: <a href="https://www.securityweek.com/microsoft-365-outage-disrupts-outlook-exchange-online-and-teams/" rel="noopener">securityweek.com</a>
 - MacRumors (คำชี้แจงของ Microsoft ตอนกลับมาใช้ได้): <a href="https://www.macrumors.com/2026/11/13/microsoft-365-outage-resolving/" rel="noopener">macrumors.com</a>
