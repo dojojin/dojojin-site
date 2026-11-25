@@ -1,0 +1,93 @@
+---
+title: "Signal เพิ่มระบบกัน AI (Siri AI / Gemini) แอบอ่านหน้าจอแชตบน iOS และ Android พร้อมจี้ค่าย OS เปิดทางเลือกให้แอปถอนตัว"
+topic: software
+type: news
+tags: [security, ai, android, apple]
+date: 2026-11-25T12:43:00+07:00
+section: security
+sourceName: "Signal Blog, MacRumors, TechCrunch และ The Hacker News"
+sourceUrl: "https://signal.org/blog/protecting-your-privacy/"
+description: "Signal ประกาศมาตรการป้องกัน AI ระดับระบบปฏิบัติการ (เช่น Siri AI และ Gemini) ไม่ให้อ่านหน้าจอแชตบน iOS และ Android โดยเพิ่มปุ่ม Block Siri AI บน iOS และเปิด Screen Security อัตโนมัติบน Android ส่วน macOS แนะนำให้เพิ่ม Signal ในรายการ Siri Excluded Apps เอง"
+kicker: "ข่าวความปลอดภัยไซเบอร์ · ความเป็นส่วนตัว"
+lead: "พอระบบปฏิบัติการเริ่มฝัง AI ที่มองเห็นหน้าจอได้ตลอดเวลา แอปแชตเข้ารหัสอย่าง Signal ก็เจอโจทย์ใหม่ครับ เพราะถึงข้อมูลระหว่างส่งจะเข้ารหัสแน่นแค่ไหน แต่ถ้าถอดรหัสมาโชว์บนจอแล้ว AI ของระบบมาอ่านจอได้ ความลับก็หลุดอยู่ดี ล่าสุด Signal เลยออกฟีเจอร์กัน AI อ่านหน้าจอบน iOS และ Android แล้ว"
+meta: "เรียบเรียงจาก Signal Blog (24 พ.ย. 2569), MacRumors, TechCrunch และ The Hacker News · ข้อมูล ณ 25 พฤศจิกายน 2569"
+cover: "/media/posts/news/signal-blocks-ai-screen-access-ios-android/cover.jpg"
+coverAlt: "ปกข่าว Signal เพิ่มระบบกัน AI (Siri AI / Gemini) อ่านหน้าจอแชตบน iOS และ Android พร้อมวิธีตั้งค่าบน macOS"
+---
+
+<section class="section">
+
+## ทำไม Signal ต้องกัน AI ของระบบ
+
+<div class="prose">
+
+ในบล็อกทางการของ Signal วันที่ 24 พฤศจิกายน 2569 ทาง Signal อธิบายตรงไปตรงมาครับว่า การเข้ารหัสแบบ end-to-end (E2EE) ปกป้องข้อความระหว่างเดินทางได้จริง แต่จุดอ่อนใหม่อยู่ที่ปลายทาง — เมื่อข้อความถูกถอดรหัสมาแสดงบนหน้าจอ แล้วมี AI agent ประจำเครื่อง (เช่น Siri AI ของ Apple, Gemini บน Android หรือ Microsoft Recall บน Windows) คอยดูหน้าจอหรือจับภาพหน้าจอเพื่อไปประมวลผลต่อ
+
+ก่อนหน้านี้ Signal เคยปิดกั้นการจับภาพหน้าจอบน Windows 11 ไปแล้วเพื่อกัน Windows Recall ล่าสุดจึงขยายมาตรการมาที่มือถือและคอมพิวเตอร์แต่ละแพลตฟอร์มครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## Signal ป้องกันยังไงในแต่ละระบบ
+
+<div class="prose">
+
+ความสามารถในการบล็อก AI อ่านหน้าจอของ Signal บนแต่ละระบบปฏิบัติการขึ้นอยู่กับเครื่องมือและ API ที่ค่าย OS เปิดให้แอปใช้งานครับ
+
+</div>
+
+<table class="table-frame">
+<thead><tr><th>ระบบปฏิบัติการ</th><th>วิธีป้องกันของ Signal</th><th>ข้อจำกัดที่ Signal ระบุไว้</th></tr></thead>
+<tbody>
+<tr><td><b>iOS</b> (iPhone / iPad)</td><td>บล็อกการจับภาพหน้าจอในแอป และเพิ่มตัวเลือก <code>Block Siri AI</code> เพื่อจำกัดการเข้าถึงหน้าจอแชต</td><td>ยังกันช่องทางระบบอื่น เช่น Accessibility, แจ้งเตือน หรือไฟล์ระบบไม่ได้ทั้งหมด</td></tr>
+<tr><td><b>Android</b></td><td>เปิดโหมด <code>Screen Security</code> อัตโนมัติเมื่อตรวจพบ AI อย่าง Gemini พยายามอ่านหน้าจอ</td><td>ความแม่นยำในการตรวจจับแตกต่างกันไปตามผู้ผลิตมือถือแต่ละยี่ห้อ</td></tr>
+<tr><td><b>macOS</b></td><td>ต้องเข้าไปเพิ่มแอป Signal ในรายการ <b>Siri Excluded Apps</b> ที่ Settings ด้วยตัวเอง</td><td>macOS ยังไม่มี API ให้แอปสั่งบล็อกการจับภาพหน้าจออัตโนมัติในลักษณะนี้ได้สมบูรณ์</td></tr>
+</tbody>
+</table>
+
+</section>
+
+<section class="section">
+
+## ข้อจำกัดที่ Signal ยอมรับตรง ๆ
+
+<div class="prose">
+
+Signal ย้ำในโพสต์ว่าวิธีบล็อกการจับภาพหน้าจอเป็นเพียง **"ทางแก้ชั่วคราวที่ไม่สมบูรณ์"** เพราะยังปิดกั้นช่องทางอื่นอย่าง Accessibility permissions, การอ่านแจ้งเตือน (notifications) หรือการเข้าถึงไฟล์ระบบของ AI agent ไม่ได้ทั้งหมด
+
+ทาง Signal จึงเรียกร้องให้ทั้ง Apple, Google และ Microsoft เปิดเผยเอกสารทางเทคนิคอย่างโปร่งใสว่า AI ของระบบเข้าถึงข้อมูลแอปอย่างไร และสร้างมาตรฐานกลางให้แอปต่าง ๆ สามารถสั่ง "opt-out" ห้าม AI เข้ามายุ่งกับหน้าจอได้จริงจากระดับ OS
+
+ผมว่าเรื่องนี้คนใช้แอปแชตส่วนตัวในไทยควรจับตาครับ เพราะยิ่งมือถือรุ่นใหม่เปิดฟีเจอร์ AI อ่านหน้าจอเป็นค่าเริ่มต้น การมีสวิตช์แยกชัดเจนในระดับระบบจะสำคัญขึ้นเรื่อย ๆ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- Signal Blog (24 พ.ย. 2569): <a href="https://signal.org/blog/protecting-your-privacy/" rel="noopener">signal.org</a>
+- MacRumors (24 พ.ย. 2569): <a href="https://www.macrumors.com/2026/11/24/signal-blocks-ai-access-to-protect-chats/" rel="noopener">macrumors.com</a>
+- TechCrunch · The Hacker News · Help Net Security
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: by dojojin.tech
+
+</div>
+
+</section>

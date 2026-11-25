@@ -1,0 +1,90 @@
+---
+title: "Google DeepMind เปิดตัว 'Humanity's First Exam' และ Kaggle Hackathon ทดสอบความสม่ำเสมอของ AI กับโจทย์พื้นฐาน"
+topic: infra-ai
+type: news
+tags: [google, ai]
+date: 2026-11-25T12:48:00+07:00
+section: tech
+sourceName: "Google Blog (Google DeepMind)"
+sourceUrl: "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/humanitys-first-exam/"
+description: "Google DeepMind เปิดตัวเกณฑ์วัด Humanity's First Exam (HFE) และงานแข่งบน Kaggle ถึง 15 ธ.ค. 2569 เพื่อวัดความสม่ำเสมอของ LLM บนโจทย์ข้อความและภาพพื้นฐาน 544 ข้อ (20 หมวด) พบว่าแม้รุ่นท็อปทำ pass@1 ได้ 96–98% แต่คะแนนร่วงลงเมื่อทดสอบซ้ำหลายรอบ และ 73% ของความผิดพลาดเกิดในโจทย์การมองเห็นภาพ"
+kicker: "ข่าวเทคโนโลยี · AI"
+lead: "ปกติเกณฑ์วัด AI มักทดสอบด้วยโจทย์คณิตศาสตร์หรือโค้ดระดับโอลิมปิก แต่ Google DeepMind เพิ่งเปิดตัว Humanity's First Exam (HFE) เพื่อวัดอีกมุมหนึ่งครับ คือดูว่า AI เก่ง ๆ ทุกวันนี้ตอบคำถามง่าย ๆ ในชีวิตประจำวันได้ถูกต้องสม่ำเสมอทุกรอบจริงไหม"
+meta: "เรียบเรียงจาก Google Blog (24 พ.ย. 2569) · ข้อมูล ณ 25 พฤศจิกายน 2569"
+cover: "/media/posts/news/google-deepmind-humanitys-first-exam/cover.jpg"
+coverAlt: "ปกข่าว Google DeepMind เปิดตัว Humanity's First Exam โจทย์ 544 ข้อ 20 หมวด และ Kaggle Hackathon ถึง 15 ธ.ค. 2569"
+---
+
+<section class="section">
+
+## Humanity's First Exam วัดอะไรต่างจากเดิม
+
+<div class="prose">
+
+วันที่ 24 พฤศจิกายน 2569 Google DeepMind เปิดตัวชุดทดสอบ **Humanity's First Exam (HFE)** พร้อมจัด Hackathon บน Kaggle ครับ
+
+ต่างจากเกณฑ์วัดรุ่นก่อนที่เน้นวัด "เพดานความฉลาด" ว่าโมเดลทำข้อสอบยากสุดได้ไหม (pass@1) ตัว HFE ออกแบบมาวัด **"พื้นความน่าเชื่อถือ" (reliability floor)** บนโจทย์ข้อความและรูปภาพพื้นฐานที่คนทั่วไปตอบได้สบาย ๆ แต่ทดสอบซ้ำหลายรอบและเปลี่ยนเงื่อนไขเล็กน้อย (เช่น metric แบบ family pass^4) เพื่อดูว่าโมเดลตอบถูกสม่ำเสมอทุกรอบหรือไม่
+
+<div class="news-stats">
+<div class="news-stat"><b>544 ข้อ</b>ชุดโจทย์ข้อความและภาพพื้นฐานใน HFE</div>
+<div class="news-stat"><b>20 หมวด</b>ทักษะพื้นฐาน เช่น นับจำนวน มองภาพ และตรรกะทั่วไป</div>
+<div class="news-stat"><b>73%</b>สัดส่วนความผิดพลาดที่กระจุกอยู่ในงานมองเห็นภาพ</div>
+</div>
+
+ผลเบื้องต้นที่ทีมวิจัยพบคือ แม้โมเดลระดับท็อปจะทำคะแนนรอบเดียว (single-attempt) ได้สูงราว **96–98%** แต่พอทดสอบความสม่ำเสมอหลายครั้งหรือพลิกมุมคำถามเล็กน้อย คะแนนกลับร่วงลงอย่างชัดเจน
+
+</div>
+
+</section>
+
+<section class="section">
+
+## Kaggle Hackathon เปิดรับโจทย์ถึง 15 ธ.ค. 2569
+
+<div class="split">
+<div class="prose">
+
+Google DeepMind เปิดให้นักวิจัยและชุมชน Kaggle ส่งโจทย์ง่าย ๆ ในชีวิตประจำวันหรือกรณีขอบ (edge-case) ที่โมเดล AI ยุคปัจจุบันยังพลาดซ้ำ ๆ เข้ามาขยายชุดทดสอบตลอดระยะเวลา 3 สัปดาห์ ตั้งแต่วันที่ **24 พฤศจิกายน ถึง 15 ธันวาคม 2569** ครับ
+
+ผมว่าแนวคิดนี้ตรงกับสิ่งที่คนใช้งานจริงเจอบ่อยเลยครับ บางทีโมเดลเขียนโค้ดซับซ้อนได้คล่อง แต่พอนับสิ่งของในรูปหรือดูรายละเอียดง่าย ๆ กลับพลาดแบบไม่น่าเชื่อ การมี benchmark ที่วัดความนิ่งทุกรอบแบบนี้ช่วยให้เห็นจุดอ่อนของ AI ชัดกว่าตัวเลขโอลิมปิกเยอะ
+
+</div>
+<div>
+
+<table class="table-frame">
+<thead><tr><th>หัวข้อเปรียบเทียบ</th><th>การวัดแบบเดิม (`pass@1`)</th><th>Humanity's First Exam (HFE)</th></tr></thead>
+<tbody>
+<tr><td>เป้าหมายการวัด</td><td>วัดเพดานความฉลาดในการตอบถูกอย่างน้อย 1 ครั้ง</td><td>วัดพื้นความน่าเชื่อถือ (reliability floor) เมื่อถามซ้ำ/เปลี่ยนมุมเล็กน้อย (family pass^4)</td></tr>
+<tr><td>ผลลัพธ์ที่พบ</td><td>โมเดลท็อปทำคะแนนได้ราว <b>96–98%</b></td><td>คะแนนร่วงชัดเจน โดยเฉพาะงานภาพที่รวมความผิดพลาดไว้ถึง <b>73%</b></td></tr>
+<tr><td>กำหนดการ Kaggle</td><td>—</td><td>รับโจทย์จากชุมชน <b>24 พ.ย. – 15 ธ.ค. 2569</b> (544 ข้อเริ่มต้น / 20 หมวด)</td></tr>
+</tbody>
+</table>
+
+</div>
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- Google Blog, Google DeepMind (24 พ.ย. 2569): <a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/humanitys-first-exam/" rel="noopener">blog.google</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: by dojojin.tech · โลโก้ Google จาก Google
+
+</div>
+
+</section>

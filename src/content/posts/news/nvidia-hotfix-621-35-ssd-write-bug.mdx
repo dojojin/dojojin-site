@@ -1,0 +1,89 @@
+---
+title: "NVIDIA ออกไดรเวอร์ Hotfix 621.35 แก้บั๊กเขียนไฟล์ลง SSD สูงสุด 30 GB/ชม. — แต่ผู้ใช้พบว่ายังไม่หายขาด แนะถอยกลับ 621.01"
+topic: computer
+type: news
+tags: [nvidia, windows, gpu]
+date: 2026-11-25T12:49:00+07:00
+section: tech
+sourceName: "NVIDIA Customer Care (Bug 7116722), TechPowerUp, Notebookcheck และ Droidsans"
+sourceUrl: "https://droidsans.com/nvidia-hotfix-621-35-driver/"
+description: "NVIDIA ปล่อย GeForce Hotfix Driver 621.35 (20 พ.ย. 2569) แก้ Bug 7116722 ที่ NVDisplayContainer.exe เขียนไฟล์ log (nvlog.nvlgstg) ลง SSD สูงสุดราว 30 GB ต่อชั่วโมงในรุ่น 621.14 และ 621.24 แต่ผู้ใช้ทดสอบพบว่ายังมีอาการเขียนเบื้องหลังเหลืออยู่เมื่อเปิดเครื่องทิ้งไว้นาน จึงแนะนำให้ถอยกลับรุ่น 621.01 ไปก่อน"
+kicker: "ข่าวเทคโนโลยี · ซอฟต์แวร์"
+lead: "ใครใช้การ์ดจอ NVIDIA บน Windows และอัปไดรเวอร์ช่วงกลางเดือน พ.ย. มา เช็กรุ่นกันหน่อยครับ เพราะรุ่น 621.14 และ 621.24 มีบั๊กแอบเขียนไฟล์ log ลง SSD ตลอดเวลาแม้เปิดเครื่องทิ้งไว้เฉย ๆ สูงสุดถึง ~30 GB ต่อชั่วโมง ล่าสุด NVIDIA ออก Hotfix 621.35 มาแก้แล้ว แต่ผู้ใช้ทดสอบพบว่ายังไม่หาย 100%"
+meta: "เรียบเรียงจาก NVIDIA Hotfix Release Notes (Bug 7116722), TechPowerUp, Notebookcheck และ Droidsans (25 พ.ย. 2569) · ข้อมูล ณ 25 พฤศจิกายน 2569"
+cover: "/media/posts/news/nvidia-hotfix-621-35-ssd-write-bug/cover.jpg"
+coverAlt: "ปกข่าว NVIDIA ออกไดรเวอร์ Hotfix 621.35 แก้บั๊กเขียนไฟล์ลง SSD สูงสุด 30 GB/ชม. แต่ยังไม่หายขาด แนะถอยกลับ 621.01"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้นกับไดรเวอร์ 621.14 และ 621.24
+
+<div class="prose">
+
+ผู้ใช้การ์ดจอ GeForce บน Windows พบปัญหาในไดรเวอร์ Game Ready รุ่น **621.14 และ 621.24** โดยโปรเซสเบื้องหลัง `NVDisplay.Container.exe` เขียนข้อมูลลงไฟล์ log ชื่อ `nvlog.nvlgstg` (ในโฟลเดอร์ `C:\ProgramData\NVIDIA Corporation\nvtopps\nct\`) ซ้ำ ๆ อย่างต่อเนื่องแม้เครื่องจะอยู่เฉย ๆ ไม่ได้เล่นเกม
+
+<div class="news-stats">
+<div class="news-stat"><b>3–30+ GB/ชม.</b>ปริมาณการเขียนไฟล์ลง SSD ที่ผู้ใช้รายงาน</div>
+<div class="news-stat"><b>Bug 7116722</b>รหัสปัญหาในบันทึกแก้ไขของ NVIDIA</div>
+<div class="news-stat"><b>621.01</b>รุ่นล่าสุดก่อนหน้า ที่ไม่เจอบั๊กนี้</div>
+</div>
+
+ผลกระทบตรง ๆ คือทำให้ค่าเขียนสะสม (TBW) ของ SSD วิ่งขึ้นเร็วผิดปกติและสึกหรอโดยไม่จำเป็นครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## Hotfix 621.35 แก้ได้แค่ไหน และควรทำอย่างไร
+
+<div class="split">
+<div class="prose">
+
+วันที่ 20 พฤศจิกายน 2569 NVIDIA ออกไดรเวอร์ **GeForce Hotfix 621.35** (สร้างต่อจากฐานของ 621.24) เพื่อแก้ Bug `7116722` โดยเฉพาะ โดยต้องดาวน์โหลดเองจากหน้า Customer Care ของ NVIDIA ไม่ได้อัปเดตผ่านแอป NVIDIA เพราะเป็นรุ่น Hotfix ที่ไม่ได้ผ่าน WHQL เต็มรูปแบบครับ
+
+ผมว่าใครที่ตั้งเครื่องเปิดทิ้งไว้โหลดงานหรือทำงานทั้งคืน รีบเช็กใน Task Manager / Resource Monitor หรือถอยไป **621.01** ไว้ก่อนจะสบายใจกว่าครับ จนกว่า NVIDIA จะออกรุ่น WHQL ตัวใหม่ที่แก้ขาดจริง
+
+</div>
+<div>
+
+<table class="table-frame">
+<thead><tr><th>รุ่นไดรเวอร์</th><th>อาการไฟล์ <code>nvlog.nvlgstg</code></th><th>สถานะ / คำแนะนำ</th></tr></thead>
+<tbody>
+<tr><td><b>Game Ready 621.01</b></td><td>ยังไม่พบบั๊กนี้ (เขียน log ระดับปกติ)</td><td><b>แนะนำตอนนี้</b> สำหรับคนที่ต้องการถอยรุ่น</td></tr>
+<tr><td><b>621.14 / 621.24</b></td><td>เขียนเบื้องหลัง 3–30+ GB/ชม. แม้เครื่อง idle</td><td><b>เสี่ยง SSD สึกหรอ</b> ควรเลี่ยงหรือถอยออก</td></tr>
+<tr><td><b>Hotfix 621.35</b> (20 พ.ย.)</td><td>ลดลงหลังรีบูต แต่ยังเขียนสะสมเมื่อ idle ข้ามคืน</td><td><b>ลดอาการแต่ยังไม่จบ 100%</b> (ต้องโหลดแยกเอง)</td></tr>
+</tbody>
+</table>
+
+</div>
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- Droidsans (25 พ.ย. 2569): <a href="https://droidsans.com/nvidia-hotfix-621-35-driver/" rel="noopener">droidsans.com</a>
+- TechPowerUp · Notebookcheck (รายงาน NVIDIA GeForce Hotfix 621.35 / Bug 7116722)
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: by dojojin.tech · โลโก้ NVIDIA จาก NVIDIA
+
+</div>
+
+</section>

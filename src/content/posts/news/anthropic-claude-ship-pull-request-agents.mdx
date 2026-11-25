@@ -1,0 +1,93 @@
+---
+title: "Anthropic เปิดตัว 'Claude Ship' ชุด AI Agent ช่วยรีวิว แก้ไข และอนุมัติ Pull Request บน GitHub ตามนโยบายทีม"
+topic: infra-ai
+type: news
+tags: [anthropic, ai]
+date: 2026-11-25T12:45:00+07:00
+section: tech
+sourceName: "Anthropic (Claude), TechCrunch และ TechTalkThai"
+sourceUrl: "https://www.techtalkthai.com/anthropic-launches-claude-ship-ai-review-fix-approve-pull-requests/"
+description: "Anthropic เปิดตัว Claude Ship สำหรับทีมพัฒนาที่ใช้ GitHub บนแผน Claude Team และ Enterprise รวม 3 agent คือ Code Review (GA), PR Steward (Beta) แก้บั๊ก/conflict และ Claude Approvals (Beta) อนุมัติ PR งานรูทีนตามไฟล์นโยบาย .claude/approvals.yml พร้อมคำสั่ง /ship ใน Claude Code"
+kicker: "ข่าวเทคโนโลยี · AI"
+lead: "พอทีมพัฒนาเริ่มใช้ AI เขียนโค้ดเร็วขึ้น คอขวดใหม่ก็ย้ายไปอยู่ที่ขั้นตอนรอรีวิวและแก้ Pull Request แทนครับ ล่าสุด Anthropic เปิดตัว Claude Ship เพื่อจัดการวงจร PR บน GitHub แบบอัตโนมัติ ตั้งแต่ตรวจโค้ด แก้ CI พัง ไปจนถึงอนุมัติงานรูทีนตามไฟล์นโยบายที่ทีมกำหนด"
+meta: "เรียบเรียงจากประกาศ Anthropic, TechCrunch และ TechTalkThai (24 พ.ย. 2569) · ข้อมูล ณ 25 พฤศจิกายน 2569"
+cover: "/media/posts/news/anthropic-claude-ship-pull-request-agents/cover.jpg"
+coverAlt: "ปกข่าว Anthropic เปิดตัว Claude Ship ชุด Agent ช่วยรีวิว แก้ไข และอนุมัติ Pull Request บน GitHub ตามนโยบายทีม"
+---
+
+<section class="section">
+
+## Claude Ship คืออะไร
+
+<div class="prose">
+
+Anthropic ประกาศเปิดตัว **Claude Ship** เมื่อวันที่ 23 พฤศจิกายน 2569 สำหรับองค์กรที่ใช้แผน **Claude Team และ Enterprise** ร่วมกับ GitHub ครับ โดยนักพัฒนาที่ใช้ Claude Code สามารถเรียกใช้งานได้จากคำสั่ง `/ship` ในเทอร์มินัลเพื่อส่งงานเข้าสู่ระบบตรวจและดูแล PR อัตโนมัติ
+
+หัวใจของ Claude Ship ประกอบด้วย AI Agent 3 ตัวที่แบ่งหน้าที่กันชัดเจน
+
+<div class="news-cards">
+<div class="news-card is-ok"><b>1. Code Review (GA)</b>เปิดใช้งานทั่วไปแล้ว ตรวจ diff ของ Pull Request ด้วยหลาย agent (เลือกได้ทั้ง Quick, Standard, Deep) แล้วสรุปข้อสังเกต</div>
+<div class="news-card"><b>2. PR Steward (Beta)</b>คอยเก็บงานหลังเปิด PR เช่น ถ้า CI ตก เกิด merge conflict หรือ Code Review ทักจุดที่ต้องแก้ ก็จะเข้าไปแก้และ push commit ใหม่ให้ แต่ <b>ไม่มีสิทธิ์อนุมัติหรือ merge เอง</b></div>
+<div class="news-card is-warn"><b>3. Claude Approvals (Beta)</b>ตรวจ PR เทียบกับไฟล์นโยบาย <code>.claude/approvals.yml</code> ของคลังโค้ด ถ้าเข้าเกณฑ์งานเสี่ยงต่ำหรือรูทีนที่ทีมอนุญาตไว้ Claude จะกดอนุมัติให้ได้</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## กลไกควบคุมและข้อจำกัดที่ต้องรู้
+
+<div class="split">
+<div class="prose">
+
+ถึงจะมีระบบอนุมัติอัตโนมัติ แต่ Anthropic ออกแบบให้ควบคุมผ่านไฟล์ `.claude/approvals.yml` ที่ทีมเขียนกติกาเองทั้งหมด และแนะนำให้เปิดโหมดสังเกตการณ์ (observe-only) ดูก่อนในช่วงแรก
+
+ระหว่างที่ PR Steward กำลังทำงานใน GitHub นักพัฒนายังสามารถพิมพ์ `@claude` เพื่อสั่งงานเพิ่ม หรือพิมพ์ `@claude stop` ในคอมเมนต์เพื่อหยุดกลางคันได้ทันที
+
+ผมว่าแนวคิดที่แยก PR Steward (คนแก้โค้ด) ออกจาก Claude Approvals (คนตรวจตามนโยบาย) เป็นการออกแบบที่รอบคอบดีครับ ไม่ปล่อยให้ agent ตัวเดียวทั้งเขียนเองและกดผ่านเองแบบไร้กรอบ
+
+</div>
+<div>
+
+<table class="table-frame">
+<thead><tr><th>การตั้งค่า / เงื่อนไข</th><th>รายละเอียดและข้อจำกัด</th></tr></thead>
+<tbody>
+<tr><td>คำสั่งเริ่มต้น</td><td><code>/ship</code> ใน Claude Code (แผน Team และ Enterprise)</td></tr>
+<tr><td>โหมดควบคุม PR</td><td>ไฟล์ <code>.claude/approvals.yml</code> กำหนดเงื่อนไขอนุมัติ + แนะนำเริ่มแบบ <code>observe-only</code></td></tr>
+<tr><td>การแทรกแซงระหว่างรัน</td><td>พิมพ์ <code>@claude</code> สั่งเพิ่ม หรือ <code>@claude stop</code> ในคอมเมนต์ PR เพื่อหยุดทันที</td></tr>
+<tr><td>คลังโค้ดที่ยังไม่รองรับ</td><td>คลังที่เปิด Zero Data Retention, HIPAA หรือ customer-managed encryption keys</td></tr>
+<tr><td>การคิดค่าบริการ</td><td>คิดเครดิตตามการใช้โทเคนแยกจากโควตาปกติ (ตั้งเพดานงบได้)</td></tr>
+</tbody>
+</table>
+
+</div>
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- TechTalkThai (24 พ.ย. 2569): <a href="https://www.techtalkthai.com/anthropic-launches-claude-ship-ai-review-fix-approve-pull-requests/" rel="noopener">techtalkthai.com</a>
+- TechCrunch · The New Stack · ประกาศของ Anthropic (23 พ.ย. 2569)
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: by dojojin.tech · โลโก้ Anthropic จาก anthropic.com
+
+</div>
+
+</section>
