@@ -1,0 +1,89 @@
+---
+title: "แอปแนะนำ: Pearcleaner เครื่องมือถอนการติดตั้งแอปบน Mac พร้อมกวาดไฟล์แคชตกค้าง ฟรีและโอเพนซอร์ส"
+topic: software
+type: news
+tags: [app, open-source]
+date: 2026-11-26T15:28:00+07:00
+section: app
+sourceName: "Pearcleaner (GitHub)"
+sourceUrl: "https://github.com/alienator88/Pearcleaner"
+description: "แนะนำ Pearcleaner แอปถอนการติดตั้งโปรแกรมบน macOS ที่ช่วยค้นหาและลบไฟล์แคช การตั้งค่า และไฟล์ตกค้างของแอปออกให้หมดจด ใช้ฟรี โอเพนซอร์ส และจัดการ Homebrew ได้ในตัว"
+kicker: "แอปแนะนำ"
+lead: "บน macOS เวลาลากแอปลงถังขยะเฉยๆ ไฟล์แคชกับไฟล์ตั้งค่ามักยังค้างกินพื้นที่ SSD อยู่ครับ ตัวช่วยที่แนะนำคือ Pearcleaner แอปโอเพนซอร์สฟรีที่ช่วยสแกนหาไฟล์ลูกที่เกี่ยวข้องทั้งหมดแล้วลบทิ้งพร้อมกันในคลิกเดียว"
+meta: "เรียบเรียงจากหน้า GitHub ของ Pearcleaner (รุ่นล่าสุด 5.4.3) · ข้อมูล ณ 26 พฤศจิกายน 2569"
+cover: "/media/posts/news/pearcleaner-macos-app-review/cover.jpg"
+coverAlt: "หน้าจอแอป Pearcleaner บน macOS แสดงรายการแอปและพื้นที่ SSD พร้อมไอคอนแอป"
+---
+
+<section class="section">
+
+## Pearcleaner คืออะไร
+
+<div class="split">
+<div class="prose">
+
+**Pearcleaner** เป็นแอปถอนการติดตั้ง (Uninstaller) แบบโอเพนซอร์สสำหรับ **macOS** (เขียนด้วย SwiftUI น้ำหนักเบา) ที่ช่วยค้นหาไฟล์ประกอบทั้งหมดของแอปที่ต้องการลบ ไม่ว่าจะเป็นไฟล์ใน `~/Library/Application Support`, `Caches`, `Preferences` หรือ `LaunchAgents` แล้วรวมมาให้ติ๊กเลือกหรือลบทิ้งพร้อมกันครับ
+
+</div>
+<figure class="news-fig news-fig--zoom">
+<img src="/media/posts/news/pearcleaner-macos-app-review/shot-1.jpg" alt="ภาพหน้าจอจริงของแอป Pearcleaner บน macOS แสดงแถบรายการแอปและสถานะพื้นที่ SSD" loading="lazy" />
+<figcaption>หน้าตาแอป Pearcleaner บน macOS (ที่มา: <a href="https://github.com/alienator88/Pearcleaner" target="_blank" rel="noopener">GitHub / alienator88/Pearcleaner</a> · วางบนพื้นสีโดย DOJOJIN.TECH)</figcaption>
+</figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## จุดเด่นที่ทำได้มากกว่าการลากลงถังขยะ
+
+<div class="prose">
+
+- **กวาดไฟล์ตกค้าง (Orphaned Files):** ตรวจหาไฟล์ค้างของแอปเก่าที่เราเคยลากลงถังขยะไปแล้ว เพื่อช่วยคืนพื้นที่ SSD
+- **รองรับ Homebrew & Updater:** ในรุ่นล่าสุด (5.4.3) มีมุมมองจัดการและอัปเดตแพ็กเกจ Homebrew พร้อมแถบความคืบหน้าและระบบเตือนก่อนอัปเดตแอปจาก Mac App Store ข้ามแหล่ง
+- **Sentinel ตรวจจับอัตโนมัติ:** เปิดโหมดเฝ้าระวังได้ เมื่อเราลากแอปลงถังขยะตามปกติ Pearcleaner จะเด้งขึ้นมาถามให้ลบไฟล์ที่เกี่ยวข้องตามไปด้วยทันที
+
+<div class="table-frame">
+
+| หัวข้อ | รายละเอียด |
+| --- | --- |
+| **แพลตฟอร์มที่รองรับ** | macOS (เขียนด้วย SwiftUI น้ำหนักเบา) |
+| **ราคาและไลเซนส์** | ฟรี โอเพนซอร์ส (ดาวน์โหลดจาก GitHub หรือ Homebrew) |
+| **ตำแหน่งไฟล์ที่สแกน** | `~/Library/Application Support`, `Caches`, `Preferences`, `LaunchAgents` |
+| **ฟีเจอร์เสริมเด่น** | Orphaned Files Finder, Homebrew UI, Sentinel เฝ้าระวังอัตโนมัติ |
+
+</div>
+
+<div class="news-stats">
+<div class="news-stat"><b>ฟรี & Open-Source</b>ดาวน์โหลดได้จาก GitHub หรือลงผ่าน Homebrew</div>
+<div class="news-stat"><b>Orphaned Finder</b>สแกนหาไฟล์ตกค้างจากแอปที่เคยลบไปแล้ว</div>
+<div class="news-stat"><b>Homebrew UI</b>จัดการและอัปเดตแอปในหน้าต่างเดียว</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- [Pearcleaner GitHub Repository](https://github.com/alienator88/Pearcleaner) (รุ่นล่าสุด v5.4.3)
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปกและภาพหน้าจอแอป: [alienator88/Pearcleaner (GitHub)](https://github.com/alienator88/Pearcleaner) · วางบนพื้นสีโดย DOJOJIN.TECH
+
+</div>
+
+</section>

@@ -1,0 +1,91 @@
+---
+title: "แอปแนะนำ: WizTree โปรแกรมสแกนพื้นที่ SSD/ฮาร์ดดิสก์บน Windows หาไฟล์กินพื้นที่เสร็จในไม่กี่วินาที"
+topic: software
+type: news
+tags: [app, windows]
+date: 2026-11-26T15:30:00+07:00
+section: app
+sourceName: "WizTree (diskanalyzer.com)"
+sourceUrl: "https://diskanalyzer.com/"
+description: "แนะนำ WizTree โปรแกรมวิเคราะห์พื้นที่ดิสก์บน Windows (และรองรับ macOS/Linux แล้ว) ที่อ่านตาราง MFT ของ NTFS โดยตรง สแกนไดรฟ์หลายร้อย GB ได้ในไม่กี่วินาที ใช้ฟรีสำหรับส่วนตัว"
+kicker: "แอปแนะนำ"
+lead: "เวลาไดรฟ์ C: เต็มแต่ไม่รู้ว่าไฟล์ไหนแอบกินพื้นที่อยู่ ลองใช้ WizTree ดูครับ จุดเด่นคือสแกนพาร์ทิชัน NTFS ได้เร็วมากระดับไม่กี่วินาทีเพราะอ่านตาราง MFT โดยตรง พร้อมแผนภาพสี่เหลี่ยมดูง่ายและใช้ฟรีสำหรับงานส่วนตัวครับ"
+meta: "เรียบเรียงจากเว็บไซต์ทางการ Antibody Software (WizTree) · ข้อมูล ณ 26 พฤศจิกายน 2569"
+cover: "/media/posts/news/wiztree-disk-space-analyzer-review/cover.jpg"
+coverAlt: "หน้าจอโปรแกรม WizTree แสดงตารางโฟลเดอร์และแผนภาพ Treemap วิเคราะห์พื้นที่ดิสก์ พร้อมไอคอนแอป"
+---
+
+<section class="section">
+
+## WizTree คืออะไร และทำไมถึงเร็วมาก
+
+<div class="split">
+<div class="prose">
+
+**WizTree** (พัฒนาโดย Antibody Software) เป็นโปรแกรมวิเคราะห์พื้นที่จัดเก็บข้อมูลบน **Windows** (และปัจจุบันขยายมารองรับ macOS กับ Linux ด้วย) ที่ขึ้นชื่อเรื่องความเร็วในการสแกนครับ
+
+สาเหตุที่ WizTree สแกนไดรฟ์ขนาดใหญ่ระดับ 1TB เสร็จภายในไม่กี่วินาที เป็นเพราะบนไดรฟ์แบบ **NTFS** ตัวโปรแกรมจะอ่านไฟล์ **Master File Table (MFT)** ของระบบไฟล์โดยตรง แทนการไล่เปิดดูทีละโฟลเดอร์แบบโปรแกรมรุ่นเก่า และยังจัดการกับไฟล์แบบ Hard Link ได้ถูกต้องไม่นับขนาดซ้ำครับ
+
+</div>
+<figure class="news-fig news-fig--zoom">
+<img src="/media/posts/news/wiztree-disk-space-analyzer-review/shot-1.jpg" alt="ภาพหน้าจอจริงของโปรแกรม WizTree แสดงรายการโฟลเดอร์ขนาดใหญ่และแผนภาพ Treemap ด้านล่าง" loading="lazy" />
+<figcaption>หน้าจอโปรแกรม WizTree แสดงขนาดโฟลเดอร์และแผนภาพ Treemap (ที่มา: <a href="https://diskanalyzer.com/" target="_blank" rel="noopener">diskanalyzer.com</a> · วางบนพื้นสีโดย DOJOJIN.TECH)</figcaption>
+</figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## ฟีเจอร์เด่นที่ช่วยให้เคลียร์พื้นที่ได้ไว
+
+<div class="prose">
+
+- **Visual Treemap:** แสดงไฟล์และโฟลเดอร์เป็นบล็อกสี่เหลี่ยมขนาดตามสัดส่วนพื้นที่จริง มองปราดเดียวก็เห็นทันทีว่าโฟลเดอร์ไหนหรือไฟล์วิดีโอ/ZIP ก้อนไหนใหญ่ที่สุด
+- **ค้นหาไฟล์และส่งออก CSV:** กรองหาไฟล์ตามชื่อ นามสกุล หรือขนาดได้ทันที และส่งออกรายการไฟล์เป็น `.csv` ได้
+- **มีรุ่น Portable:** ดาวน์โหลดแบบไม่ต้องติดตั้ง (Portable) ใส่แฟลชไดรฟ์ไปใช้เช็กเครื่องอื่นได้สะดวก
+
+<div class="table-frame">
+
+| หัวข้อ | รายละเอียด |
+| --- | --- |
+| **แพลตฟอร์มที่รองรับ** | Windows (NTFS/MFT) และขยายรองรับ macOS / Linux |
+| **ราคาและไลเซนส์** | ฟรีสำหรับใช้งานส่วนตัว (มีรุ่น Portable ไม่ต้องติดตั้ง) |
+| **กลไกความเร็ว** | อ่าน Master File Table (MFT) ของ NTFS โดยตรง ไม่นับ Hard Link ซ้ำ |
+| **การแสดงผลและส่งออก** | Visual Treemap สัดส่วนพื้นที่จริง, กรองค้นหาไฟล์, ส่งออก CSV |
+
+</div>
+
+<div class="news-stats">
+<div class="news-stat"><b>ฟรี (ใช้งานส่วนตัว)</b>ใช้งานบนเครื่องส่วนตัวได้ฟรี ไม่จำกัดฟีเจอร์สแกน</div>
+<div class="news-stat"><b>MFT Direct Scan</b>สแกนไดรฟ์ NTFS ได้เร็วกว่า WinDirStat สูงสุด 46 เท่า</div>
+<div class="news-stat"><b>Windows / Mac / Linux</b>รองรับครบทั้ง 3 ระบบปฏิบัติการ</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- [WizTree Official Website (Antibody Software)](https://diskanalyzer.com/)
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปกและภาพหน้าจอโปรแกรม: [diskanalyzer.com](https://diskanalyzer.com/) · วางบนพื้นสีโดย DOJOJIN.TECH
+
+</div>
+
+</section>

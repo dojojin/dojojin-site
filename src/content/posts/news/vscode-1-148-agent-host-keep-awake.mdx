@@ -1,0 +1,88 @@
+---
+title: "Visual Studio Code 1.148 ออกแล้ว — แชต Agent Host เร็วขึ้น 30% พร้อมโหมดห้ามเครื่องหลับระหว่างรันงาน"
+topic: software
+type: news
+tags: [microsoft, ai]
+date: 2026-11-26T15:24:00+07:00
+section: tech
+sourceName: "Visual Studio Code Release Notes"
+sourceUrl: "https://code.visualstudio.com/updates/v1_148"
+description: "Microsoft ปล่อย Visual Studio Code 1.148 (25 พ.ย. 2569) เร่งความเร็วเริ่มตอบแชต Agent Host ขึ้น 30% เพิ่มตั้งค่า sessions.keepAwakeWhileWorking ป้องกันเครื่องหลับระหว่างทำงาน และล้าง worktree อัตโนมัติ"
+kicker: "ข่าวเทคโนโลยี · ซอฟต์แวร์"
+lead: "ใครใช้ VS Code รันงาน Agent ยาว ๆ แล้วเจอปัญหาคอมพ์หลับกลางทาง อัปเดต VS Code 1.148 รอบนี้แก้ให้ตรงจุดเลยครับ แถมยังเร่งเวลาเริ่มตอบของ Agent Host Chat ให้เร็วขึ้นอีก 30% ด้วย"
+meta: "เรียบเรียงจาก Release Notes ของ Visual Studio Code 1.148 และ Insiders 1.149 · ข้อมูล ณ 26 พฤศจิกายน 2569"
+cover: "/media/posts/news/vscode-1-148-agent-host-keep-awake/cover.jpg"
+coverAlt: "ภาพปกข่าว Visual Studio Code 1.148 พร้อมโลโก้ VS Code"
+---
+
+<section class="section">
+
+## จุดเด่นใน Visual Studio Code 1.148 (25 พ.ย. 2569)
+
+<div class="split">
+<div class="prose">
+
+Microsoft ปล่อย **Visual Studio Code 1.148** เวอร์ชันเสถียรเมื่อวันที่ 25 พฤศจิกายน 2569 โดยเน้นปรับปรุงการทำงานของระบบ Agent และ Remote Workspace ให้เสถียรและเร็วขึ้นกว่าเดิมครับ
+
+<div class="news-stats">
+<div class="news-stat"><b>เร็วขึ้น 30%</b>เวลาเริ่มตอบแชตของ Agent Host เร็วกว่าเดิม</div>
+<div class="news-stat"><b>Keep Awake</b>ป้องกันเครื่อง host หลับขณะ Agent ทำงาน</div>
+<div class="news-stat"><b>Dev Container</b>สร้างสภาพแวดล้อม Linux แยกให้แต่ละงานได้ทันที</div>
+</div>
+
+</div>
+<figure class="news-fig news-fig--zoom">
+<img src="/media/posts/news/vscode-1-148-agent-host-keep-awake/photo-1.jpg" alt="ภาพประกาศเปิดตัว Visual Studio Code v1.148" loading="lazy" />
+<figcaption>ภาพเปิดตัว Visual Studio Code เวอร์ชัน 1.148 (ที่มา: <a href="https://code.visualstudio.com/updates/v1_148" target="_blank" rel="noopener">Visual Studio Code</a>)</figcaption>
+</figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## สรุปฟีเจอร์ใหม่สำคัญ
+
+<div class="prose">
+
+<table class="table-frame">
+<thead><tr><th>ฟีเจอร์ / การปรับปรุง</th><th>รายละเอียด</th></tr></thead>
+<tbody>
+<tr><td><b>Agent Chat Performance</b></td><td>ปรับ Agent Host harness ให้เริ่มตอบสนองเร็วขึ้น 30% เทียบกับรุ่น Stable ก่อนหน้า</td></tr>
+<tr><td><b>Keep agents going (Preview)</b></td><td>ตั้งค่า <code>sessions.keepAwakeWhileWorking</code> เพื่อกันเครื่อง idle-sleep ระหว่างงานอัตโนมัติ</td></tr>
+<tr><td><b>Worktree Cleanup</b></td><td>เคลียร์พื้นที่ดิสก์จาก Git worktree ของงาน Agent เก่าบนเครื่อง remote โดยไม่ต้องสลับหน้าต่าง</td></tr>
+<tr><td><b>Sandbox Profiles & Dev Containers</b></td><td>กำหนดกฎ Sandbox แยกตาม remote host และสั่งสร้าง Dev Container ให้นักพัฒนา/Agent ใช้งานได้ทันที</td></tr>
+</tbody>
+</table>
+
+### เบื้องหลังการปรับความเร็ว Agent Host
+ทีมพัฒนา VS Code ระบุว่าหลังจากย้ายระบบการทำงานของ Agent มาอยู่บน **Agent Host** แบบใหม่ หลายคนบ่นว่าช่วงเริ่มตอบช้ากว่ารุ่นเดิม ในเวอร์ชัน **1.148** จึงปรับจูนจนเวลาเริ่มตอบเร็วขึ้น **30%** และห่างจากความเร็วของระบบเก่าเหลือเพียงราว **5%** เท่านั้น ส่วนฟีเจอร์ `sessions.keepAwakeWhileWorking` จะช่วยสั่งไม่ให้เครื่อง host เข้าโหมด idle-sleep ระหว่างที่ Agent กำลังรันงานยาวๆ แบบไม่ต้องเฝ้าหน้าจอครับ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- [Visual Studio Code 1.148 Release Notes](https://code.visualstudio.com/updates/v1_148) (25 พ.ย. 2569)
+- [VS Code Insiders 1.149](https://code.visualstudio.com/updates/v1_149) และ [Copilot harness blog](https://code.visualstudio.com/blogs/2026/11/18/copilot-harness)
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: by dojojin.tech · โลโก้ Visual Studio Code จาก Wikimedia Commons
+
+</div>
+
+</section>

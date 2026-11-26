@@ -19,6 +19,22 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content, headings } = await render(entry);
 const d = entry.data;
+const ciTone = (() => {
+  const tags = d.tags || [];
+  const slug = entry.id.split('/')[1] || '';
+  if (d.pr?.toLowerCase() === 'ais') return 'ais';
+  if (tags.includes('samsung')) return 'samsung';
+  if (tags.includes('google') || tags.includes('android')) return 'google';
+  if (tags.includes('microsoft') || tags.includes('windows') || slug.includes('vscode')) return 'microsoft';
+  if (tags.includes('openai')) return 'openai';
+  if (tags.includes('anthropic')) return 'anthropic';
+  if (tags.includes('nvidia')) return 'nvidia';
+  if (tags.includes('apple')) return slug.includes('red') ? 'red' : 'slate';
+  if (tags.includes('security') || tags.includes('data-breach')) return slug.includes('1password') ? 'google' : 'amber';
+  if (slug.includes('mitsubishi')) return 'red';
+  if (d.topic === 'car') return 'green';
+  return 'green';
+})();
 const toc = headings.filter((h) => h.depth === 2);
 // Related: same menu section, ranked by shared tags (+1 for same topic), newest first on ties.
 const self = `/${entry.id}/`;
@@ -73,7 +89,7 @@ const schema = [
       <b>ในบทความนี้</b>
       <ol>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
     </nav>
-    <main class="content" data-type={d.type}><Content /></main>
+    <main class="content" data-type={d.type} data-ci={ciTone}><Content /></main>
     <ZoomImages />
   </div>
 

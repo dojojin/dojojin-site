@@ -840,12 +840,70 @@ main[data-type="news"] .shot__more .shot__credit { font-size: var(--fs-caption);
 .prose td kbd { font-size: 0.85em; overflow-wrap: break-word; }
 .prose table:not([class]) :is(th, td) { text-align: left; vertical-align: top; padding: var(--space-2); border-bottom: 1px solid var(--border-hairline); overflow-wrap: break-word; min-width: 0; }
 .prose table:not([class]) th { color: var(--text-secondary); font-weight: 600; }
-/* framed table: outer border, column dividers, pastel header (one tone, see .tint) */
-.table-frame { width: 100%; border-collapse: separate; border-spacing: 0; font-size: var(--fs-caption); margin-bottom: var(--space-4); border: 1.5px solid var(--tone-green); border-radius: var(--radius); overflow: hidden; background: var(--surface-elevated); }
-.table-frame :is(th, td) { text-align: left; vertical-align: top; padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--border-hairline); overflow-wrap: break-word; min-width: 0; }
+/* framed table: outer border, column dividers, pastel header (auto-follows post brand/topic CI via [data-ci]) */
+.content {
+  --ci-color: var(--tone-green);
+  --ci-bg: var(--tone-green-bg);
+  --ci-border: color-mix(in srgb, var(--tone-green) 55%, var(--border-hairline));
+}
+.content[data-ci="samsung"] { --ci-color: #1428a0; --ci-bg: #e8efff; --ci-border: #93b4ff; }
+.content[data-ci="google"] { --ci-color: #174ea6; --ci-bg: #e8f0fe; --ci-border: #8ab4f8; }
+.content[data-ci="microsoft"] { --ci-color: #005a9e; --ci-bg: #e6f2fb; --ci-border: #7cc0f0; }
+.content[data-ci="openai"] { --ci-color: #065f46; --ci-bg: #dcfce7; --ci-border: #6ee7b7; }
+.content[data-ci="anthropic"] { --ci-color: #9a3412; --ci-bg: #ffedd5; --ci-border: #fdba74; }
+.content[data-ci="nvidia"] { --ci-color: #3f6212; --ci-bg: #ecfccb; --ci-border: #a3e635; }
+.content[data-ci="ais"] { --ci-color: #3f6212; --ci-bg: #ecfccb; --ci-border: #84cc16; }
+.content[data-ci="red"] { --ci-color: #b91c1c; --ci-bg: #fee2e2; --ci-border: #fca5a5; }
+.content[data-ci="amber"] { --ci-color: #c2410c; --ci-bg: #ffedd5; --ci-border: #fdba74; }
+.content[data-ci="slate"] { --ci-color: #334155; --ci-bg: #f1f5f9; --ci-border: #cbd5e1; }
+
+:root[data-theme="dark"] .content[data-ci="samsung"] { --ci-color: #93b4ff; --ci-bg: #15223e; --ci-border: #2f4b8f; }
+:root[data-theme="dark"] .content[data-ci="google"] { --ci-color: #8ab4f8; --ci-bg: #15253d; --ci-border: #2b5086; }
+:root[data-theme="dark"] .content[data-ci="microsoft"] { --ci-color: #7cc0f0; --ci-bg: #12263a; --ci-border: #25537e; }
+:root[data-theme="dark"] .content[data-ci="openai"] { --ci-color: #6ee7b7; --ci-bg: #112a22; --ci-border: #1e5c48; }
+:root[data-theme="dark"] .content[data-ci="anthropic"] { --ci-color: #fdba74; --ci-bg: #2e1d12; --ci-border: #6b3c1e; }
+:root[data-theme="dark"] .content[data-ci="nvidia"],
+:root[data-theme="dark"] .content[data-ci="ais"] { --ci-color: #a3e635; --ci-bg: #1a2812; --ci-border: #3f6212; }
+:root[data-theme="dark"] .content[data-ci="red"] { --ci-color: #fca5a5; --ci-bg: #321618; --ci-border: #7f1d1d; }
+:root[data-theme="dark"] .content[data-ci="amber"] { --ci-color: #fdba74; --ci-bg: #2e1c12; --ci-border: #7c2d12; }
+:root[data-theme="dark"] .content[data-ci="slate"] { --ci-color: #cbd5e1; --ci-bg: #1e242d; --ci-border: #3b4454; }
+
+.table-frame {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: clamp(0.92rem, 0.88rem + 0.16vw, 1rem);
+  line-height: 1.55;
+  margin-bottom: var(--space-4);
+  border: 1.5px solid var(--ci-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface-elevated);
+  box-shadow: var(--shadow-raised);
+}
+.table-frame :is(th, td) {
+  text-align: left;
+  vertical-align: top;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-hairline);
+  overflow-wrap: break-word;
+  min-width: 0;
+}
 .table-frame :is(th, td) + :is(th, td) { border-left: 1px solid var(--border-hairline); }
 .table-frame tr:last-child td { border-bottom: 0; }
-.table-frame th { background: var(--tone-green-bg); color: var(--tone-green); font-weight: 600; }
+.table-frame th {
+  background: var(--ci-bg);
+  color: var(--ci-color);
+  font-weight: 700;
+  font-size: 0.94em;
+  border-bottom: 1.5px solid var(--ci-border);
+}
+.table-frame tbody tr:nth-child(even) td {
+  background: color-mix(in srgb, var(--ci-bg) 32%, var(--surface-elevated));
+}
+.table-frame tbody tr:hover td {
+  background: color-mix(in srgb, var(--ci-bg) 55%, var(--surface-elevated));
+}
 
 /* News data blocks written as HTML (not images) so they follow light/dark tokens.
    .news-cards status cards · .news-stats tiles · .news-bars bar rows · .news-band period bar · .news-steps numbered cards */

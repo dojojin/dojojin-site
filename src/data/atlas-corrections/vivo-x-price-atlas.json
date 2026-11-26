@@ -1012,5 +1012,38 @@
     "source": "https://www.androidpolice.com/2016/10/17/qualcomm-announces-three-new-mid-range-snapdragon-chipsets-653-626-427/",
     "snippet": "The 653, 626, and 427 all receive a new X9 LTE modem",
     "checked": "2026-11-24, source fetched and quoted (main session)"
+  },
+  {
+    "id": "vivo-x500-pro",
+    "path": "rear_camera",
+    "op": "set",
+    "old": "50 MP Sony LYTIA L910 1/1.28\" f/1.57 OIS (1.5 deg) + 64 MP Sony LYTIA 610 1/2\" 85 mm periscope 3.5x + 50 MP Samsung JN5 1/2.75\" 15 mm ultrawide; Zeiss 400 mm extender Gen 2 Ultra",
+    "new": "50 MP Sony LYTIA L910 1/1.28\" f/1.57 OIS (1.5 deg) + 64 MP Sony LYTIA 610 1/2\" 85 mm periscope 3.5x + 50 MP Samsung JN5 1/2.75\" 15 mm ultrawide; Zeiss Telephoto Extender Gen 2 (200 mm equivalent)",
+    "why": "X500 Pro supports the optional 200 mm Gen 2 extender, not the 400 mm Gen 2 Ultra.",
+    "source": "https://www.vivo.com/th/products/x500-pro",
+    "snippet": "vivo ZEISS ชุดเลนส์เสริม Gen 2 ระยะซูม 200 mm",
+    "checked": "2026-11-25"
+  },
+  {
+    "id": "vivo-x500-pro",
+    "path": "cam.cameras[role=tele].notes",
+    "op": "set",
+    "old": "Zeiss Telephoto Extender Gen 2 Ultra (400 mm) compatible",
+    "new": "Zeiss Telephoto Extender Gen 2 (200 mm equivalent) compatible",
+    "why": "X500 Pro supports the optional 200 mm Gen 2 extender, not the 400 mm Gen 2 Ultra.",
+    "source": "https://www.vivo.com/th/products/x500-pro",
+    "snippet": "vivo ZEISS ชุดเลนส์เสริม Gen 2 ระยะซูม 200 mm",
+    "checked": "2026-11-25"
+  },
+  {
+    "id": "vivo-x500-pro",
+    "path": "cam.optical_zoom",
+    "op": "set",
+    "old": "3.5x optical (85 mm periscope); 0.6x ultra-wide; 400 mm with Zeiss extender",
+    "new": "3.5x optical (85 mm periscope); 0.6x ultra-wide; 200 mm equivalent with optional Zeiss Gen 2 extender",
+    "why": "X500 Pro supports the optional 200 mm Gen 2 extender, not the 400 mm Gen 2 Ultra.",
+    "source": "https://www.vivo.com/th/products/x500-pro",
+    "snippet": "vivo ZEISS ชุดเลนส์เสริม Gen 2 ระยะซูม 200 mm",
+    "checked": "2026-11-25"
   }
 ]
