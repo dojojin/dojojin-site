@@ -20,6 +20,10 @@ Claude Code reads `CLAUDE.md`; Antigravity also reads `GEMINI.md`, which points 
 - A fact counts as verified only if you opened the page yourself. Search summaries do not count.
 - No single-source news. Outlets repeating one outlet's report count as one source.
 - Site copy is in the owner's voice: simple Thai, ผม/ครับ, no emoji.
+- The voice pass (เกลาสำนวน) changes wording only: never a number, date, name, link or HTML block. Run
+  `python3 scripts/content/check-voice-pass.py <slug>` afterwards. Full list: `docs/editorial-standard.md` §4.1 (owner, 26 Nov 2026: "ห้ามละเมิด").
+- No process talk on the page ("ผมเปิดหน้านี้ไม่ได้", "403"). Keep every hedge and attribution at the same strength.
+- When an article's facts change, open its cover and every image with text and fix them too.
 - Covers are 1600×1200 and carry the subject's real logo/icon and brand colours. Text on a cover must match the article.
 - Never write AI / Codex / ChatGPT / Canva / NanoBanana in image credits, alt text or inside images. Cover credit: "by dojojin.tech".
 - No images from Thai news outlets.

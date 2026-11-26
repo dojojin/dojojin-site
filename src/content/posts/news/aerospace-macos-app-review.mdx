@@ -4,7 +4,7 @@ topic: software
 type: news
 tags: [app, open-source]
 date: 2026-11-25T12:51:00+07:00
-updated: 2026-11-26T23:30:00+07:00
+updated: 2026-11-27T00:30:00+07:00
 section: app
 sourceName: "AeroSpace (GitHub)"
 sourceUrl: "https://github.com/nikitabobko/AeroSpace"
@@ -24,9 +24,9 @@ coverAlt: "ภาพประกอบหน้าจอ macOS ที่จั�
 
 AeroSpace เป็นโปรแกรมจัดการหน้าต่างแบบ **tiling window manager** สำหรับ macOS ที่ได้แรงบันดาลใจจาก `i3` บน Linux ครับ
 
-ถ้าเคยใช้แอปอย่าง Rectangle มาก่อน ตัวนั้นคือเราต้องกดปุ่มลัดสั่งย้ายหน้าต่างทีละอัน แต่แนวคิดของ tiling แบบ AeroSpace คือพอเปิดหน้าต่างใหม่ ระบบจะจัดแบ่งพื้นที่หน้าจอให้เป็นช่องต่อกันเป็นต้นไม้ (tree layout) อัตโนมัติ ไม่ซ้อนทับกัน และควบคุมทุกอย่างด้วยคีย์บอร์ดเป็นหลัก
+ถ้าเคยใช้แอปอย่าง Rectangle มาก่อน ตัวนั้นเราต้องกดปุ่มลัดย้ายหน้าต่างทีละอัน ส่วน tiling แบบ AeroSpace พอเปิดหน้าต่างใหม่ ระบบจะแบ่งหน้าจอเป็นช่องต่อกันแบบต้นไม้ (tree layout) ให้อัตโนมัติ ไม่ซ้อนทับกัน และคุมทุกอย่างด้วยคีย์บอร์ดเป็นหลัก
 
-ที่สำคัญคือ AeroSpace ใช้ระบบ workspace จำลองของตัวเองแทน macOS Spaces ปกติ เลยสลับหน้าต่างข้าม workspace ได้ทันทีแบบไม่มีแอนิเมชันหน่วง และ **ไม่ต้องปิด System Integrity Protection (SIP)** เหมือนบางตัวในสายเดียวกันครับ
+ที่สำคัญคือ AeroSpace ใช้ระบบ workspace จำลองของตัวเองแทน macOS Spaces ปกติ เลยสลับหน้าต่างข้าม workspace ได้ทันทีแบบไม่มีแอนิเมชันหน่วง และ **ไม่ต้องปิด System Integrity Protection (SIP)** เหมือนบางตัวในสายเดียวกันครับ (SIP คือระบบที่กันไม่ให้โปรแกรมไปแก้ไฟล์ระบบของ macOS)
 
 </div>
 
@@ -39,10 +39,10 @@ AeroSpace เป็นโปรแกรมจัดการหน้าต่�
 <div class="split">
 <div class="prose">
 
-ในภาพแสดงโครงสร้างการจัดหน้าต่างแบบแบ่งช่อง (tree layout) ของ AeroSpace ครับ ตัวแอปเก็บการตั้งค่าไว้ในไฟล์ข้อความธรรมดา `~/.aerospace.toml` (หรือ `~/.config/aerospace/aerospace.toml`) ทำให้เอาขึ้น Git เพื่อซิงก์ข้ามเครื่อง Mac หลายเครื่องได้ง่ายมาก
+ภาพข้าง ๆ คือโครงสร้างการจัดหน้าต่างแบบแบ่งช่อง (tree layout) ของ AeroSpace ครับ ตัวแอปเก็บการตั้งค่าไว้ในไฟล์ข้อความธรรมดา `~/.aerospace.toml` (หรือ `~/.config/aerospace/aerospace.toml`) เลยเอาขึ้น Git ไว้ซิงก์ข้ามเครื่อง Mac ได้ง่าย
 
 <ol class="news-steps">
-<li><b>ติดตั้งผ่าน Homebrew</b>รัน <code>brew install --cask nikitabobko/tap/aerospace</code> (วิธีนี้จะจัดการอัปเดตและล้าง quarantine ให้อัตโนมัติ)</li>
+<li><b>ติดตั้งผ่าน Homebrew</b>รัน <code>brew install --cask nikitabobko/tap/aerospace</code> (วิธีนี้อัปเดตให้เอง และล้างสถานะ quarantine ที่ macOS ติดไว้กับไฟล์จากเน็ตให้อัตโนมัติ)</li>
 <li><b>เปิดสิทธิ์ Accessibility</b>เป็นแอปจัดหน้าต่าง ถ้า macOS ขอสิทธิ์ ให้อนุญาต <code>AeroSpace.app</code> ใน System Settings → Privacy & Security → Accessibility</li>
 <li><b>คัดลอกไฟล์ config เริ่มต้น</b>คัดลอก <code>default-config.toml</code> จากในแอปมาวางที่ <code>~/.aerospace.toml</code> แล้วใช้งานได้ทันที</li>
 </ol>
@@ -71,8 +71,8 @@ AeroSpace เป็นโปรแกรมจัดการหน้าต่�
 ก่อนติดตั้งมี 2 เรื่องที่ผู้พัฒนาบอกไว้ชัดบน GitHub ครับ
 
 <div class="news-cards">
-<div class="news-card is-warn"><b>ยังเป็น Public Beta (v0.21.3-Beta)</b>ฟีเจอร์และรูปแบบคำสั่งในไฟล์ config อาจมีการปรับเปลี่ยนได้ในอนาคต เหมาะกับ power user หรือสาย dev ที่คุ้นกับไฟล์ config และคีย์บอร์ด</div>
-<div class="news-card is-warn"><b>ไม่ได้ผ่าน Apple Notarization</b>ถ้าดาวน์โหลดไฟล์ zip จาก GitHub มาแตกเอง macOS อาจขึ้นเตือนความปลอดภัย ต้องล้าง quarantine ด้วย <code>xattr -d com.apple.quarantine /Applications/AeroSpace.app</code> หรือติดตั้งผ่าน Homebrew cask แทน</div>
+<div class="news-card is-warn"><b>ยังเป็น Public Beta (v0.21.3-Beta)</b>ฟีเจอร์และรูปแบบคำสั่งในไฟล์ config อาจเปลี่ยนได้อีก เหมาะกับ power user หรือสาย dev ที่คุ้นกับไฟล์ config และคีย์บอร์ด</div>
+<div class="news-card is-warn"><b>ไม่ได้ผ่าน Apple Notarization</b>คือยังไม่ผ่านการตรวจรับรองแอปของ Apple ถ้าดาวน์โหลดไฟล์ zip จาก GitHub มาแตกเอง macOS อาจขึ้นเตือนความปลอดภัย ต้องล้าง quarantine ด้วย <code>xattr -d com.apple.quarantine /Applications/AeroSpace.app</code> หรือติดตั้งผ่าน Homebrew cask แทน</div>
 </div>
 
 </div>
@@ -92,7 +92,7 @@ AeroSpace เป็นโปรแกรมจัดการหน้าต่�
 <div class="spec-row"><svg class="icon spec-icon" aria-hidden="true"><use href="#icon-globe" /></svg><div><b>ดาวน์โหลด</b>GitHub (nikitabobko/AeroSpace) หรือ Homebrew Cask</div></div>
 </div>
 
-ผมว่าถ้าคุณใช้ Rectangle แล้วอยากขยับไปสายคีย์บอร์ดล้วนแบบไม่ต้องมานั่งแบ่งครึ่งจอทีละหน้าต่าง AeroSpace เป็นตัวที่น่าลองมากครับ โดยเฉพาะคนเขียนโค้ดที่ใช้จอใหญ่หรือต่อหลายจอ
+ผมว่าถ้าใช้ Rectangle อยู่ แล้วอยากขยับไปสายคีย์บอร์ดล้วน ไม่ต้องมานั่งแบ่งครึ่งจอทีละหน้าต่าง AeroSpace น่าลองมากครับ โดยเฉพาะคนเขียนโค้ดที่ใช้จอใหญ่หรือต่อหลายจอ
 
 </div>
 

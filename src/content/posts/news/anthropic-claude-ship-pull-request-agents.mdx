@@ -4,7 +4,7 @@ topic: infra-ai
 type: news
 tags: [anthropic, ai]
 date: 2026-11-25T12:45:00+07:00
-updated: 2026-11-26T23:30:00+07:00
+updated: 2026-11-27T00:30:00+07:00
 section: tech
 sourceName: "Anthropic (Claude) และ TechTalkThai"
 sourceUrl: "https://claude.com/resources/articles/introducing-claude-ship"
@@ -22,14 +22,16 @@ coverAlt: "ปกข่าว Anthropic เปิดตัว Claude Ship ชุ
 
 <div class="prose">
 
-Anthropic ประกาศเปิดตัว **Claude Ship** (สถานะ beta คือยังอยู่ในช่วงทดลองใช้) เมื่อวันที่ 23 พฤศจิกายน 2569 สำหรับองค์กรที่ใช้แผน **Claude Team และ Enterprise** ร่วมกับ GitHub ครับ โดยนักพัฒนาที่ใช้ Claude Code สามารถเรียกใช้งานได้จากคำสั่ง `/ship` เพื่อให้ Claude ส่งโค้ด เปิด PR รีวิว และแก้ตามที่ตรวจพบ ส่วนจะ merge ได้หรือไม่ขึ้นกับสิทธิ์ของนักพัฒนาและกฎของ repository
+Anthropic เปิดตัว **Claude Ship** เมื่อวันที่ 23 พฤศจิกายน 2569 ครับ ตอนนี้ยังเป็น beta (ช่วงทดลองใช้) สำหรับองค์กรที่ใช้แผน **Claude Team และ Enterprise** ร่วมกับ GitHub
 
-หัวใจของ Claude Ship ประกอบด้วย AI Agent 3 ตัวที่แบ่งหน้าที่กันชัดเจน
+นักพัฒนาที่ใช้ Claude Code เรียกได้ด้วยคำสั่ง `/ship` ให้ Claude ส่งโค้ด เปิด PR รีวิว และแก้ตามที่ตรวจเจอ ส่วนจะ merge (รวมเข้าโค้ดหลัก) ได้หรือไม่ ขึ้นกับสิทธิ์ของนักพัฒนาและกฎของ repository
+
+Claude Ship มี AI Agent 3 ตัว แบ่งหน้าที่กันชัดเจน
 
 <div class="news-cards">
-<div class="news-card is-ok"><b>1. Code Review (GA)</b>GA คือเปิดให้ใช้งานทั่วไปแล้ว ตรวจ PR เทียบกับโค้ดทั้งโปรเจกต์จากหลายมุมมอง (เลือกระดับได้ทั้ง Quick, Standard, Deep แยกตาม repository) แล้วโพสต์ข้อสังเกตลงใน PR</div>
+<div class="news-card is-ok"><b>1. Code Review (GA)</b>GA คือเปิดให้ใช้งานทั่วไปแล้ว ตรวจ PR เทียบกับโค้ดทั้งโปรเจกต์จากหลายมุม (เลือกระดับ Quick, Standard หรือ Deep แยกแต่ละ repository ได้) แล้วโพสต์ข้อสังเกตลงใน PR</div>
 <div class="news-card"><b>2. PR Steward (Beta)</b>คอยเก็บงานหลังเปิด PR เช่น ถ้า CI ตก เกิด merge conflict หรือ Code Review ทักจุดที่ต้องแก้ ก็จะเข้าไปแก้และ push commit ใหม่ให้ แต่ Anthropic <b>ออกแบบไม่ให้อนุมัติหรือ merge เอง</b></div>
-<div class="news-card is-warn"><b>3. Claude Approvals (Beta)</b>ตรวจ PR เทียบกับไฟล์นโยบายของทีมในคลังโค้ด (ตามเอกสารคือ <code>.claude/approvals.yml</code>) ถ้าเป็นการเปลี่ยนแปลงทั่วไปที่นโยบายอนุญาตไว้ Claude จะอนุมัติให้ได้ หรือกำหนดให้บางกรณีต้องให้คนอนุมัติ</div>
+<div class="news-card is-warn"><b>3. Claude Approvals (Beta)</b>ตรวจ PR เทียบกับไฟล์นโยบายของทีมในคลังโค้ด (ตามเอกสารคือ <code>.claude/approvals.yml</code>) ถ้าเป็นการแก้ทั่วไปที่นโยบายอนุญาตไว้ Claude อนุมัติให้ได้เลย หรือทีมจะกำหนดให้บางกรณีต้องมีคนอนุมัติก็ได้</div>
 </div>
 
 </div>
@@ -43,11 +45,11 @@ Anthropic ประกาศเปิดตัว **Claude Ship** (สถาน�
 <div class="split">
 <div class="prose">
 
-ถึงจะมีระบบอนุมัติอัตโนมัติ แต่ Anthropic ออกแบบให้ควบคุมผ่านไฟล์ `.claude/approvals.yml` ที่ทีมเขียนกติกาเองทั้งหมด และแนะนำให้เปิดโหมดสังเกตการณ์ (observe-only) ดูก่อนในช่วงแรก
+ถึงจะอนุมัติอัตโนมัติได้ แต่ทีมคุมทุกอย่างผ่านไฟล์ `.claude/approvals.yml` ที่เขียนกติกาเองครับ Anthropic แนะนำให้เปิดโหมดดูอย่างเดียว (observe-only) ไว้ก่อนในช่วงแรก
 
-ระหว่างที่ PR Steward กำลังทำงานใน GitHub นักพัฒนายังสามารถพิมพ์ `@claude` เพื่อสั่งงานเพิ่ม หรือพิมพ์ `@claude stop` ในคอมเมนต์เพื่อหยุดกลางคันได้ทันที
+ระหว่างที่ PR Steward กำลังทำงานใน GitHub นักพัฒนายังพิมพ์ `@claude` เพื่อสั่งงานเพิ่ม หรือพิมพ์ `@claude stop` ในคอมเมนต์เพื่อหยุดกลางคันได้ทันที
 
-ผมว่าแนวคิดที่แยก PR Steward (คนแก้โค้ด) ออกจาก Claude Approvals (คนตรวจตามนโยบาย) เป็นการออกแบบที่รอบคอบดีครับ ไม่ปล่อยให้ agent ตัวเดียวทั้งเขียนเองและกดผ่านเองแบบไร้กรอบ
+ผมว่าการแยก PR Steward (ตัวแก้โค้ด) ออกจาก Claude Approvals (ตัวตรวจตามนโยบาย) เป็นการออกแบบที่รอบคอบดีครับ agent ตัวเดียวจะไม่ได้ทั้งเขียนเองและกดผ่านเองแบบไร้กรอบ
 
 </div>
 <div>

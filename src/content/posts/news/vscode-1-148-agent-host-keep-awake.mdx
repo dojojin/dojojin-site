@@ -3,7 +3,7 @@ title: "Visual Studio Code 1.148 ออกแล้ว — แชต Agent Host 
 topic: software
 type: news
 tags: [microsoft, ai]
-updated: 2026-11-26T23:30:00+07:00
+updated: 2026-11-27T00:30:00+07:00
 date: 2026-11-26T15:24:00+07:00
 section: tech
 sourceName: "Visual Studio Code Release Notes"
@@ -23,7 +23,7 @@ coverAlt: "ภาพปกข่าว Visual Studio Code 1.148 พร้อม�
 <div class="split">
 <div class="prose">
 
-Microsoft ปล่อย **Visual Studio Code 1.148** เวอร์ชันเสถียรเมื่อวันที่ 25 พฤศจิกายน 2569 โดยเน้นปรับปรุงการทำงานของระบบ Agent และ Remote Workspace ให้เสถียรและเร็วขึ้นกว่าเดิมครับ
+Microsoft ปล่อย **Visual Studio Code 1.148** เวอร์ชันเสถียรเมื่อวันที่ 25 พฤศจิกายน 2569 ครับ รอบนี้เน้นให้ระบบ Agent (ผู้ช่วย AI ที่ลงมือทำงานต่อกันได้หลายขั้น) และ Remote Workspace (การเขียนโค้ดบนเครื่องอื่นผ่านเครือข่าย) เสถียรและเร็วขึ้น
 
 <div class="news-stats">
 <div class="news-stat"><b>เร็วขึ้น 30%</b>เวลาเริ่มตอบแชตของ Agent Host เฉลี่ยเทียบกับรุ่น Stable ก่อนหน้า</div>
@@ -50,14 +50,18 @@ Microsoft ปล่อย **Visual Studio Code 1.148** เวอร์ชัน�
 <thead><tr><th>ฟีเจอร์ / การปรับปรุง</th><th>รายละเอียด</th></tr></thead>
 <tbody>
 <tr><td><b>Agent Chat Performance</b></td><td>เวลาเริ่มตอบของแชตใน Agent Host เร็วขึ้นเฉลี่ย 30% เทียบกับรุ่น Stable ก่อนหน้า</td></tr>
-<tr><td><b>Keep agents going (Preview)</b></td><td>ตั้งค่า <code>sessions.keepAwakeWhileWorking</code> เพื่อกันเครื่อง idle-sleep ระหว่าง Agent ทำงาน บน host ที่รองรับ (ค่าเริ่มต้น <code>whenPluggedIn</code> = กันเฉพาะตอนเสียบปลั๊ก, <code>always</code> = กันแม้ใช้แบตเตอรี่)</td></tr>
+<tr><td><b>Keep agents going (Preview)</b></td><td>ตั้งค่า <code>sessions.keepAwakeWhileWorking</code> เพื่อกันเครื่องเข้า idle-sleep (หลับเองเมื่อไม่มีคนใช้) ระหว่าง Agent ทำงาน บน host ที่รองรับ (ค่าเริ่มต้น <code>whenPluggedIn</code> = กันเฉพาะตอนเสียบปลั๊ก, <code>always</code> = กันแม้ใช้แบตเตอรี่)</td></tr>
 <tr><td><b>Worktree Cleanup</b></td><td>เคลียร์พื้นที่ดิสก์จาก Git worktree ของงาน Agent ที่ไม่ได้ใช้บน remote host โดยเปิดได้จาก Chat view หรือ Command Palette</td></tr>
 <tr><td><b>Sandbox Profiles & Dev Containers (Experimental)</b></td><td>กำหนดกฎ Sandbox แยกตาม remote host และสร้าง Dev Container (Ubuntu) ให้ Agent ทำงานในสภาพแวดล้อมแยก ต้องมี Docker บน host</td></tr>
 </tbody>
 </table>
 
 ### เบื้องหลังการปรับความเร็ว Agent Host
-ทีมพัฒนา VS Code ระบุว่าหลังจากย้ายระบบการทำงานของ Agent มาอยู่บน **Agent Host** แบบใหม่ หลายคนบ่นว่าช่วงเริ่มตอบช้ากว่ารุ่นเดิม ในเวอร์ชัน **1.148** จึงปรับจนเวลาเริ่มตอบเร็วขึ้นเฉลี่ย **30%** และอยู่ในราว **5%** ของความเร็วระบบเก่า ส่วน `sessions.keepAwakeWhileWorking` ให้ host ที่รองรับกันเครื่องไม่ให้หลับระหว่างที่ Agent ทำงาน แม้ปิดหน้าต่างไปแล้ว และปล่อยให้หลับได้หลังงานจบครับ
+ทีม VS Code บอกว่าหลังย้ายการทำงานของ Agent มาอยู่บน **Agent Host** แบบใหม่ หลายคนบ่นว่าเริ่มตอบช้ากว่ารุ่นเดิม
+
+รุ่น **1.148** เลยปรับจนเวลาเริ่มตอบเร็วขึ้นเฉลี่ย **30%** และใกล้เคียงระบบเก่า ต่างกันเพียงราว **5%**
+
+ส่วน `sessions.keepAwakeWhileWorking` จะให้ host ที่รองรับไม่หลับระหว่างที่ Agent ทำงาน แม้ปิดหน้าต่างไปแล้ว และปล่อยให้หลับได้เมื่องานจบครับ
 
 </div>
 
