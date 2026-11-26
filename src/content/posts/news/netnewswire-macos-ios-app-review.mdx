@@ -4,6 +4,7 @@ topic: software
 type: news
 tags: [app, open-source]
 date: 2026-11-26T15:26:00+07:00
+updated: 2026-11-26T22:30:00+07:00
 section: app
 sourceName: "NetNewsWire (netnewswire.com)"
 sourceUrl: "https://netnewswire.com/"
@@ -37,29 +38,38 @@ coverAlt: "หน้าจอแอป NetNewsWire 7 บน macOS แสดง�
 
 <section class="section">
 
-## ฟีเจอร์เด่นและบริการที่รองรับ
+## RSS คืออะไร และเริ่มใช้ยังไง
 
 <div class="prose">
 
-- **ซิงก์ข้ามอุปกรณ์หลายรูปแบบ:** รองรับทั้ง **iCloud** ฟรีในตัว หรือเชื่อมกับ Feedbin, Feedly, BazQux, Inoreader, NewsBlur, The Old Reader และ FreshRSS
-- **คีย์ลัดและ Reader View:** อ่านบทความแบบตัดโฆษณาได้ในแอป มีคีย์ลัดปุ่มเดียวสำหรับเลื่อนอ่าน/ติดดาวบน Mac และมี Safari Extension ช่วยกดเพิ่มฟีดจากหน้าเว็บได้ทันที
-- **นำเข้า-ส่งออก OPML:** ย้ายรายการฟีดจากแอปอื่นมาเข้า NetNewsWire ได้ในคลิกเดียว
+ถ้าไม่เคยใช้ RSS มาก่อน อธิบายง่าย ๆ แบบนี้ครับ เว็บข่าวหรือบล็อกจำนวนมากมีไฟล์รายการบทความใหม่ของตัวเอง เรียกว่า "ฟีด" (feed) แอปอย่าง NetNewsWire จะไปอ่านไฟล์นี้ให้ แล้วเอาบทความใหม่จากทุกเว็บที่เราเลือกมารวมไว้ที่เดียว และจำให้ว่าเรื่องไหนอ่านแล้ว
+
+เราจึงไม่ต้องไล่เปิดทีละเว็บ และไม่มีอัลกอริทึมมาเลือกแทนว่าจะได้เห็นอะไร
+
+ขั้นตอนเริ่มใช้บน Mac ตามคู่มือของ NetNewsWire (คู่มือที่มีบนเว็บเป็นของรุ่น 6.1 ชื่อเมนูในรุ่น 7 อาจต่างไปเล็กน้อย)
+
+<ol class="news-steps">
+<li><b>เพิ่มบัญชีซิงก์ (ข้ามได้)</b>ถ้าอ่านบน Mac เครื่องเดียว ไม่ต้องเพิ่มบัญชี ถ้าอยากให้ iPhone กับ iPad เห็นรายการเดียวกัน ให้เพิ่มบัญชี iCloud หรือบริการที่ใช้อยู่ในหน้าตั้งค่า Accounts</li>
+<li><b>เพิ่มเว็บแรก</b>เลือก New Web Feed แล้ววางที่อยู่ของเว็บที่อยากติดตาม หรือที่อยู่ฟีดของเว็บนั้น</li>
+<li><b>ย้ายมาจากแอปอื่น</b>ส่งออกรายการเว็บจากแอปเดิมเป็นไฟล์ OPML (ไฟล์รายชื่อเว็บที่ติดตาม) แล้วเลือก File › Import Subscriptions… ใน NetNewsWire</li>
+<li><b>อ่าน</b>คลิกชื่อเว็บในแถบข้างเพื่อดูบทความ หรือเปิด Today เพื่อดูเรื่องล่าสุดของวัน</li>
+</ol>
+
+ข้อควรรู้ก่อนใช้ครับ
+
+- เว็บที่ไม่มีฟีดจะเพิ่มเข้ามาไม่ได้ และบางเว็บใส่ในฟีดแค่บทคัดย่อ ต้องกดไปอ่านต่อที่หน้าเว็บ
+- คู่มือบอกว่าตอนนำเข้ารายการเว็บเข้าบัญชี iCloud การซิงก์ครั้งแรกอาจใช้เวลาหลายนาที
+- ตั้งแต่รุ่น 7.0.4 มีตัวเลือกปิดการซิงก์เนื้อหาของบทความที่ยังไม่ได้อ่าน ผู้ใช้ใหม่จะปิดไว้ให้ตั้งแต่ต้น ช่วยให้ iCloud ซิงก์เร็วขึ้นและใช้พื้นที่น้อยลง
 
 <div class="table-frame">
 
 | หัวข้อ | รายละเอียด |
 | --- | --- |
-| **แพลตฟอร์มที่รองรับ** | macOS 15+, iOS 26+ และ iPadOS |
-| **ราคาและไลเซนส์** | ฟรี 100% โอเพนซอร์ส ไม่มีโฆษณาและไม่มีค่าสมาชิก |
-| **ระบบซิงก์ฟีด** | iCloud, Feedbin, Feedly, BazQux, Inoreader, NewsBlur, FreshRSS |
-| **จุดเด่นหลัก** | Native UI เบาเร็ว, Reader View ตัดโฆษณา, นำเข้า-ส่งออก OPML |
+| **แพลตฟอร์มที่รองรับ** | macOS 15 ขึ้นไป, iOS 26 ขึ้นไป (iPhone และ iPad) |
+| **ราคาและไลเซนส์** | ฟรี และโอเพนซอร์ส |
+| **บริการซิงก์** | iCloud, Feedbin, Feedly, BazQux, Inoreader, NewsBlur, The Old Reader, FreshRSS |
+| **อื่น ๆ** | Reader view, ส่วนขยาย Safari สำหรับเพิ่มฟีด, คีย์ลัดปุ่มเดียว, นำเข้าและส่งออก OPML |
 
-</div>
-
-<div class="news-stats">
-<div class="news-stat"><b>ฟรี 100%</b>โอเพนซอร์ส ไม่มีโฆษณา ไม่มีค่าสมาชิกรายเดือน</div>
-<div class="news-stat"><b>iCloud Sync</b>ซิงก์สถานะการอ่านข้าม Mac / iPhone / iPad</div>
-<div class="news-stat"><b>OPML Import</b>ย้ายรายการติดตามจากแอป RSS อื่นได้ทันที</div>
 </div>
 
 </div>
@@ -73,6 +83,7 @@ coverAlt: "หน้าจอแอป NetNewsWire 7 บน macOS แสดง�
 <div class="prose">
 
 - [NetNewsWire Official Website](https://netnewswire.com/)
+- คู่มือ NetNewsWire: [What is RSS? What are feeds?](https://netnewswire.com/help/what-is-rss.html) · [Get started (รุ่น 6 สำหรับ Mac)](https://netnewswire.com/help/mac/6.1/en/getting-started.html) · [Import feeds from OPML](https://netnewswire.com/help/mac/6.1/en/import-opml.html) · [How to Optimize iCloud Syncing](https://netnewswire.com/help/optimize-icloud.html)
 
 </div>
 

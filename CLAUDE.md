@@ -4,6 +4,12 @@
 
 > เอกสาร deploy/troubleshooting ฉบับเต็ม ดูที่ [`DEPLOYMENT.md`](./DEPLOYMENT.md)
 
+> **กฎเนื้อหาชุดเดียวสำหรับทุกเครื่องมือ (Claude Code, Codex, Antigravity/agy):**
+> ก่อนเลือกข่าว เขียน ตรวจ หรือทำปก ต้องอ่าน [`docs/editorial-standard.md`](./docs/editorial-standard.md) (การเลือกข่าว เกณฑ์แหล่งข้อมูล สำนวนเจ้าของเว็บ ปก รายการตรวจ)
+> แล้วตามด้วย [`docs/news-writing-guide.md`](./docs/news-writing-guide.md) (markup และสคริปต์) ·
+> Codex อ่าน [`AGENTS.md`](./AGENTS.md) · Antigravity อ่าน [`GEMINI.md`](./GEMINI.md) ทั้งสองไฟล์ชี้มาที่เอกสารชุดเดียวกัน
+> เจ้าของสั่งกติกาใหม่เมื่อไร ให้เขียนลง `docs/editorial-standard.md` พร้อมวันที่ ไม่เก็บไว้ในความจำของเครื่องมือตัวเดียว
+
 ---
 
 ## ภาพรวม

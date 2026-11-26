@@ -4,12 +4,13 @@ topic: infra-ai
 type: news
 tags: [security, windows, microsoft]
 date: 2026-11-24T10:10:00+07:00
+updated: 2026-11-26T23:30:00+07:00
 section: security
 sourceName: "ThreatLocker, Security Affairs, Born City และ ThaiCERT"
 sourceUrl: "https://www.threatlocker.com/blog/proof-of-concept-for-fastunlock-windows-lock-screen-bypass-from-nightmare-eclipse"
 description: "FastUnlock คือวิธีข้ามหน้าจอล็อก Windows 11 ด้วย Narrator ที่นักวิจัย Chaotic Eclipse ปล่อยเมื่อ 19 พ.ย. 2569 ต้องเข้าถึงเครื่องจริง ได้สิทธิ์ WsiAccount (ไม่ใช่แอดมิน) ยังไม่มีแพตช์และ CVE ยังไม่พบการโจมตีจริง สรุปว่าอะไรยืนยันแล้ว อะไรเป็นคำอ้าง ThaiCERT เตือนอะไร และตั้ง BitLocker PIN ช่วยอย่างไร"
 kicker: "ข่าวความปลอดภัยไซเบอร์"
-lead: "FastUnlock คือวิธีข้ามหน้าจอล็อก Windows 11 ด้วย Narrator (โปรแกรมอ่านหน้าจอ) ที่นักวิจัยชื่อ Chaotic Eclipse ปล่อยออกมา ผู้โจมตีต้องจับเครื่องจริงได้ถึงจะรันโปรแกรมจากหน้าจอล็อกได้ ThreatLocker ลองทำตามแล้วได้ผลบางส่วน ส่วนที่ว่าเจาะเครื่องที่เข้ารหัส BitLocker ได้ใน 5 นาที ยังเป็นคำอ้างของนักวิจัยเอง ตอนนี้ยังไม่มีแพตช์ ไม่มี CVE และผมไม่พบคำแถลงของ Microsoft"
+lead: "FastUnlock คือวิธีข้ามหน้าจอล็อก Windows 11 ด้วย Narrator (โปรแกรมอ่านหน้าจอ) ที่นักวิจัยชื่อ Chaotic Eclipse ปล่อยออกมา ผู้โจมตีต้องจับเครื่องจริงได้ถึงจะรันโปรแกรมจากหน้าจอล็อกได้ ThreatLocker ลองทำตามแล้วได้เข้าเป็นบัญชี WsiAccount ที่ไม่ใช่แอดมิน ส่วนที่ว่าเจาะเครื่องที่เข้ารหัส BitLocker ได้ใน 5 นาที ยังเป็นคำอ้างของนักวิจัยเอง ตอนนี้ยังไม่มีแพตช์ ไม่มี CVE และผมไม่พบคำแถลงของ Microsoft"
 meta: "เรียบเรียงจาก ThreatLocker, Security Affairs, Born City และ ThaiCERT · ข้อมูล ณ 24 พฤศจิกายน 2569"
 cover: "/media/posts/news/windows-fastunlock-lock-screen-bypass/cover.jpg"
 coverAlt: "ปกข่าว Windows FastUnlock ข้ามหน้าจอล็อกด้วย Narrator ยังไม่มีแพตช์ โน้ตบุ๊กเปิดอยู่บนโต๊ะตอนกลางคืน มีแฟลชไดรฟ์เสียบอยู่ (ภาพประกอบ)"
@@ -138,8 +139,8 @@ ThaiCERT ออกประกาศเตือนเมื่อ 23 พ.ย. �
 คำแนะนำของ ThaiCERT กับ ThreatLocker ไปทางเดียวกันเกือบทั้งหมด
 
 <ol class="news-steps">
-<li class="is-key"><b>ตั้ง PIN ตอนเปิดเครื่องใน BitLocker</b>ThaiCERT แนะนำให้เปิดใช้ Startup PIN แทนการปลดล็อกไดรฟ์อัตโนมัติ ThreatLocker บอกว่ารหัสนี้ต้องใส่ก่อนไดรฟ์ปลดล็อกและก่อน Windows เริ่มทำงาน</li>
-<li><b>ปิดเครื่องหรือ Hibernate เมื่อต้องวางทิ้งไว้</b>ThaiCERT ระบุว่า PIN ป้องกันได้เฉพาะเครื่องที่ยังไม่ได้เปิดใช้งาน และล็อกหน้าจออย่างเดียวไม่พอ</li>
+<li class="is-key"><b>ตั้ง PIN ตอนเปิดเครื่องใน BitLocker</b>ThaiCERT แนะนำให้เปิดใช้ Startup PIN แทนการปลดล็อกไดรฟ์อัตโนมัติ ThreatLocker เรียกว่า "preboot PIN" (PIN ก่อนเข้า Windows) และบอกว่าช่วยลดความเสี่ยงได้ถ้าเครื่องเพิ่งเปิด</li>
+<li><b>ปิดเครื่องหรือ Hibernate เมื่อต้องวางทิ้งไว้</b>ThreatLocker บอกว่า PIN ช่วยป้องกันเครื่องที่ปิดอยู่หรือ Hibernate ไว้ ส่วน ThaiCERT ระบุว่าล็อกหน้าจออย่างเดียวไม่พอ</li>
 <li><b>อย่าทิ้งเครื่องไว้ในที่ที่คนอื่นเข้าถึงได้</b>เก็บแล็ปท็อปในที่ปลอดภัยหรือตู้ล็อก ดูแลเครื่องส่วนกลางและโต๊ะที่ใช้ร่วมกัน</li>
 <li><b>ตามข่าวแพตช์ของ Microsoft</b>ลงทันทีที่ออก</li>
 </ol>

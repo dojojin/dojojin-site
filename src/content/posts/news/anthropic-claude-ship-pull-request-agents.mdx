@@ -4,13 +4,14 @@ topic: infra-ai
 type: news
 tags: [anthropic, ai]
 date: 2026-11-25T12:45:00+07:00
+updated: 2026-11-26T23:30:00+07:00
 section: tech
-sourceName: "Anthropic (Claude), TechCrunch และ TechTalkThai"
-sourceUrl: "https://www.techtalkthai.com/anthropic-launches-claude-ship-ai-review-fix-approve-pull-requests/"
+sourceName: "Anthropic (Claude) และ TechTalkThai"
+sourceUrl: "https://claude.com/resources/articles/introducing-claude-ship"
 description: "Anthropic เปิดตัว Claude Ship สำหรับทีมพัฒนาที่ใช้ GitHub บนแผน Claude Team และ Enterprise รวม 3 agent คือ Code Review (GA), PR Steward (Beta) แก้บั๊ก/conflict และ Claude Approvals (Beta) อนุมัติ PR งานรูทีนตามไฟล์นโยบาย .claude/approvals.yml พร้อมคำสั่ง /ship ใน Claude Code"
 kicker: "ข่าวเทคโนโลยี · AI"
-lead: "พอทีมพัฒนาเริ่มใช้ AI เขียนโค้ดเร็วขึ้น คอขวดใหม่ก็ย้ายไปอยู่ที่ขั้นตอนรอรีวิวและแก้ Pull Request แทนครับ ล่าสุด Anthropic เปิดตัว Claude Ship เพื่อจัดการวงจร PR บน GitHub แบบอัตโนมัติ ตั้งแต่ตรวจโค้ด แก้ CI พัง ไปจนถึงอนุมัติงานรูทีนตามไฟล์นโยบายที่ทีมกำหนด"
-meta: "เรียบเรียงจากประกาศ Anthropic, TechCrunch และ TechTalkThai (24 พ.ย. 2569) · ข้อมูล ณ 25 พฤศจิกายน 2569"
+lead: "พอทีมพัฒนาเริ่มใช้ AI เขียนโค้ดเร็วขึ้น คอขวดใหม่ก็ย้ายไปอยู่ที่ขั้นตอนรอรีวิวและแก้ Pull Request (PR คือคำขอให้นำโค้ดที่แก้ไปรวมเข้ากับโค้ดหลัก) แทนครับ ล่าสุด Anthropic เปิดตัว Claude Ship เพื่อจัดการวงจร PR บน GitHub แบบอัตโนมัติ ตั้งแต่ตรวจโค้ด แก้ CI (ระบบตรวจโค้ดอัตโนมัติ) ที่ตกไป จนถึงอนุมัติงานรูทีนตามไฟล์นโยบายที่ทีมกำหนด"
+meta: "เรียบเรียงจากประกาศ Anthropic (23 พ.ย. 2569), เอกสาร Claude Code และ TechTalkThai · ข้อมูล ณ 25 พฤศจิกายน 2569"
 cover: "/media/posts/news/anthropic-claude-ship-pull-request-agents/cover.jpg"
 coverAlt: "ปกข่าว Anthropic เปิดตัว Claude Ship ชุด Agent ช่วยรีวิว แก้ไข และอนุมัติ Pull Request บน GitHub ตามนโยบายทีม"
 ---
@@ -21,14 +22,14 @@ coverAlt: "ปกข่าว Anthropic เปิดตัว Claude Ship ชุ
 
 <div class="prose">
 
-Anthropic ประกาศเปิดตัว **Claude Ship** เมื่อวันที่ 23 พฤศจิกายน 2569 สำหรับองค์กรที่ใช้แผน **Claude Team และ Enterprise** ร่วมกับ GitHub ครับ โดยนักพัฒนาที่ใช้ Claude Code สามารถเรียกใช้งานได้จากคำสั่ง `/ship` ในเทอร์มินัลเพื่อส่งงานเข้าสู่ระบบตรวจและดูแล PR อัตโนมัติ
+Anthropic ประกาศเปิดตัว **Claude Ship** (สถานะ beta คือยังอยู่ในช่วงทดลองใช้) เมื่อวันที่ 23 พฤศจิกายน 2569 สำหรับองค์กรที่ใช้แผน **Claude Team และ Enterprise** ร่วมกับ GitHub ครับ โดยนักพัฒนาที่ใช้ Claude Code สามารถเรียกใช้งานได้จากคำสั่ง `/ship` เพื่อให้ Claude ส่งโค้ด เปิด PR รีวิว และแก้ตามที่ตรวจพบ ส่วนจะ merge ได้หรือไม่ขึ้นกับสิทธิ์ของนักพัฒนาและกฎของ repository
 
 หัวใจของ Claude Ship ประกอบด้วย AI Agent 3 ตัวที่แบ่งหน้าที่กันชัดเจน
 
 <div class="news-cards">
-<div class="news-card is-ok"><b>1. Code Review (GA)</b>เปิดใช้งานทั่วไปแล้ว ตรวจ diff ของ Pull Request ด้วยหลาย agent (เลือกได้ทั้ง Quick, Standard, Deep) แล้วสรุปข้อสังเกต</div>
-<div class="news-card"><b>2. PR Steward (Beta)</b>คอยเก็บงานหลังเปิด PR เช่น ถ้า CI ตก เกิด merge conflict หรือ Code Review ทักจุดที่ต้องแก้ ก็จะเข้าไปแก้และ push commit ใหม่ให้ แต่ <b>ไม่มีสิทธิ์อนุมัติหรือ merge เอง</b></div>
-<div class="news-card is-warn"><b>3. Claude Approvals (Beta)</b>ตรวจ PR เทียบกับไฟล์นโยบาย <code>.claude/approvals.yml</code> ของคลังโค้ด ถ้าเข้าเกณฑ์งานเสี่ยงต่ำหรือรูทีนที่ทีมอนุญาตไว้ Claude จะกดอนุมัติให้ได้</div>
+<div class="news-card is-ok"><b>1. Code Review (GA)</b>GA คือเปิดให้ใช้งานทั่วไปแล้ว ตรวจ PR เทียบกับโค้ดทั้งโปรเจกต์จากหลายมุมมอง (เลือกระดับได้ทั้ง Quick, Standard, Deep แยกตาม repository) แล้วโพสต์ข้อสังเกตลงใน PR</div>
+<div class="news-card"><b>2. PR Steward (Beta)</b>คอยเก็บงานหลังเปิด PR เช่น ถ้า CI ตก เกิด merge conflict หรือ Code Review ทักจุดที่ต้องแก้ ก็จะเข้าไปแก้และ push commit ใหม่ให้ แต่ Anthropic <b>ออกแบบไม่ให้อนุมัติหรือ merge เอง</b></div>
+<div class="news-card is-warn"><b>3. Claude Approvals (Beta)</b>ตรวจ PR เทียบกับไฟล์นโยบายของทีมในคลังโค้ด (ตามเอกสารคือ <code>.claude/approvals.yml</code>) ถ้าเป็นการเปลี่ยนแปลงทั่วไปที่นโยบายอนุญาตไว้ Claude จะอนุมัติให้ได้ หรือกำหนดให้บางกรณีต้องให้คนอนุมัติ</div>
 </div>
 
 </div>
@@ -57,8 +58,8 @@ Anthropic ประกาศเปิดตัว **Claude Ship** เมื่�
 <tr><td>คำสั่งเริ่มต้น</td><td><code>/ship</code> ใน Claude Code (แผน Team และ Enterprise)</td></tr>
 <tr><td>โหมดควบคุม PR</td><td>ไฟล์ <code>.claude/approvals.yml</code> กำหนดเงื่อนไขอนุมัติ + แนะนำเริ่มแบบ <code>observe-only</code></td></tr>
 <tr><td>การแทรกแซงระหว่างรัน</td><td>พิมพ์ <code>@claude</code> สั่งเพิ่ม หรือ <code>@claude stop</code> ในคอมเมนต์ PR เพื่อหยุดทันที</td></tr>
-<tr><td>คลังโค้ดที่ยังไม่รองรับ</td><td>คลังที่เปิด Zero Data Retention, HIPAA หรือ customer-managed encryption keys</td></tr>
-<tr><td>การคิดค่าบริการ</td><td>คิดเครดิตตามการใช้โทเคนแยกจากโควตาปกติ (ตั้งเพดานงบได้)</td></tr>
+<tr><td>องค์กรที่ยังใช้ไม่ได้</td><td>องค์กรที่เปิด Zero Data Retention (โหมดที่ Anthropic ไม่เก็บข้อมูลลูกค้า), ใช้ค่า HIPAA (มาตรฐานข้อมูลสุขภาพของสหรัฐ) หรือใช้ customer-managed encryption keys (กุญแจเข้ารหัสที่ลูกค้าดูแลเอง)</td></tr>
+<tr><td>การคิดค่าบริการ</td><td>คิดตามการใช้โทเคนผ่าน usage credits แยกจากโควตาของแผน (ตั้งเพดานงบรายเดือนได้) และโหมด observe ก็มีค่าใช้จ่าย</td></tr>
 </tbody>
 </table>
 
@@ -73,8 +74,9 @@ Anthropic ประกาศเปิดตัว **Claude Ship** เมื่�
 
 <div class="prose">
 
-- TechTalkThai (24 พ.ย. 2569): <a href="https://www.techtalkthai.com/anthropic-launches-claude-ship-ai-review-fix-approve-pull-requests/" rel="noopener">techtalkthai.com</a>
-- TechCrunch · The New Stack · ประกาศของ Anthropic (23 พ.ย. 2569)
+- Anthropic, Introducing Claude Ship (23 พ.ย. 2569): <a href="https://claude.com/resources/articles/introducing-claude-ship" rel="noopener">claude.com</a>
+- เอกสาร Claude Code: <a href="https://code.claude.com/docs/en/claude-ship" rel="noopener">code.claude.com</a>
+- TechTalkThai (25 พ.ย. 2569): <a href="https://www.techtalkthai.com/anthropic-launches-claude-ship-ai-review-fix-approve-pull-requests/" rel="noopener">techtalkthai.com</a>
 
 </div>
 
