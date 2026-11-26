@@ -1,0 +1,121 @@
+---
+title: "แอปแนะนำ: Keka บีบอัดและแตกไฟล์บน macOS โหลดฟรีจากเว็บ ใช้กับ 7z, ZIP และ RAR อย่างไร"
+topic: software
+type: news
+tags: [app]
+date: 2026-11-26T19:15:00+07:00
+section: app
+sourceName: "Keka (keka.io และ GitHub)"
+sourceUrl: "https://www.keka.io/"
+description: "แนะนำ Keka สำหรับบีบอัดและแตกไฟล์บน macOS วิธีเริ่มใช้ การตั้งรหัสผ่าน 7z กับ ZIP ที่ต่างกัน และข้อจำกัดเรื่อง RAR โหลดฟรีจากเว็บทางการ มีรุ่น Mac App Store สำหรับสนับสนุนผู้พัฒนา แต่ไม่ได้เปิดซอร์สโค้ด"
+kicker: "แอปแนะนำ"
+lead: "ถ้าใช้ Mac แล้วมีคนส่งไฟล์ .7z หรือ .rar มาให้ หรืออยากรวมไฟล์ใส่รหัสผ่านก่อนส่งต่อ Keka เป็นอีกตัวที่น่าดูครับ โหลดฟรีจากเว็บผู้พัฒนาได้ ผมสรุปวิธีเริ่มใช้ การตั้งรหัสผ่าน และรูปแบบไฟล์ที่รองรับให้ดูครับ"
+meta: "เรียบเรียงจาก keka.io, คู่มือและคำชี้แจงผู้พัฒนาบน GitHub aonez/Keka · อ้างอิงรุ่น 1.6.8 · ข้อมูล ณ 26 พฤศจิกายน 2569"
+cover: "/media/posts/news/keka-macos-app-review/cover.jpg"
+coverAlt: "ปกแนะนำ Keka 1.6.8 โทนส้ม พร้อมภาพประกอบจากไอคอนแอปและกล่องไฟล์ 7z ZIP RAR"
+---
+
+<section class="section">
+
+## Keka คืออะไร
+
+<div class="split">
+<div class="prose">
+
+Keka เป็นโปรแกรมจัดการไฟล์บีบอัดบน macOS ครับ งานหลักมีสองอย่าง คือรวมไฟล์หรือโฟลเดอร์เป็นไฟล์บีบอัด และแตกไฟล์ที่คนอื่นส่งมาให้ ลากไฟล์ไปวางบนหน้าต่าง Keka หรือไอคอนใน Dock ได้เลย
+
+ชื่ออย่าง 7z, ZIP และ RAR คือรูปแบบไฟล์บีบอัด ซึ่งต้องแยกด้วยว่าโปรแกรม ‘สร้างได้’ หรือแค่ ‘เปิดได้’ ตัวอย่างชัดที่สุดคือ Keka เปิดไฟล์ RAR ได้ แต่รายการรูปแบบที่สร้างได้บนเว็บไม่ได้มี RAR อยู่ด้วยครับ
+
+ข้อมูลนี้เรียบเรียงจากเว็บและคู่มือผู้พัฒนาครับ
+
+</div>
+<figure class="news-fig"><div class="news-fig__img"><img src="/media/posts/news/keka-macos-app-review/shot-1.jpg" width="512" height="512" loading="lazy" alt="ไอคอนทางการของแอป Keka บน macOS" /></div><figcaption><span class="news-fig__credit">ภาพ: Keka · <a href="https://www.keka.io/" rel="noopener">keka.io</a></span></figcaption></figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## รูปแบบไฟล์ ราคา และข้อจำกัด
+
+<div class="prose">
+
+<div class="table-frame">
+
+| หัวข้อ | รายละเอียด |
+| --- | --- |
+| **แพลตฟอร์มที่รองรับ** | macOS (Apple Silicon & Intel) |
+| **รุ่นที่ใช้อ้างอิง** | 1.6.8 จาก GitHub Releases |
+| **ฟอร์แมตที่สร้างได้** | 7Z, ZIP, TAR, GZIP, BZIP2, XZ, LZIP, BROTLI, ZSTD, DMG, ISO |
+| **ฟอร์แมตที่แตกได้** | 7Z, ZIP, RAR, TAR, GZIP, BZIP2, XZ, LZIP, ISO, CAB, MSI และอีกมากมาย |
+| **การเข้ารหัสตามเว็บผู้พัฒนา** | 7z ใช้ AES-256 ส่วน ZIP ระบุ Zip 2.0 legacy ไม่ควรเหมารวมว่าไฟล์ทุกแบบใช้ AES-256 |
+| **ราคา** | **ฟรี** เมื่อดาวน์โหลดจาก `keka.io` หรือ GitHub (รุ่น Mac App Store แบบเสียเงินเพื่อสนับสนุนผู้พัฒนา) |
+| **ซอร์สโค้ด** | ไม่ได้เปิดซอร์สโค้ดของแอป ผู้พัฒนายืนยันเรื่องนี้ไว้บน GitHub แม้จะมี repository สาธารณะสำหรับปัญหา คู่มือ และไฟล์ดาวน์โหลด |
+
+</div>
+
+รุ่นใน Mac App Store เป็นอีกช่องทางสนับสนุนผู้พัฒนาครับ เว็บทางการบอกว่าเป็นแอปเดียวกัน แต่รับอัปเดตผ่าน App Store ส่วนราคาในร้านไทยต้องดูตอนซื้ออีกครั้ง ผมยังไม่ได้ยืนยันตัวเลขนั้น
+
+</div>
+
+</section>
+
+<section class="section">
+
+## เริ่มใช้แบบง่าย ๆ
+
+<div class="prose">
+
+ผมสรุปจากคู่มือทางการไว้สามงานที่ใช้บ่อยครับ
+
+<ol class="news-steps">
+<li><b>รวมไฟล์ก่อนส่ง</b>เลือกชนิดไฟล์ใน Keka แล้วลากไฟล์หรือโฟลเดอร์ลงหน้าต่างหรือไอคอนใน Dock ถ้าปรับระดับการบีบอัดสูงขึ้น อาจต้องรอนานขึ้นด้วย ไม่ได้มีแต่ข้อดีเรื่องขนาดไฟล์อย่างเดียว</li>
+<li><b>แตกไฟล์ที่ได้รับมา</b>ลากไฟล์บีบอัดไปวางบน Keka ได้เลย ถ้าตั้ง Keka เป็นแอปแตกไฟล์เริ่มต้นแล้ว ก็เปิดด้วยการดับเบิลคลิกไฟล์ได้</li>
+<li><b>ใส่รหัสผ่านก่อนสร้างไฟล์</b>คู่มือระบุให้กรอกรหัสในช่อง Password และ Repeat สำหรับรูปแบบที่รองรับ เช่น 7z และ ZIP ส่วนตอนแตกไฟล์ที่มีรหัส โปรแกรมจะถามรหัสจากเรา</li>
+</ol>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## เหมาะกับใคร
+
+<div class="prose">
+
+ถ้าคุณต้องรับไฟล์หลายแบบ หรืออยากกำหนดรูปแบบและรหัสผ่านของไฟล์ที่จะส่งเอง Keka มีตัวเลือกให้ดูมากขึ้นครับ แต่ถ้างานที่ทำอยู่เปิดและบีบอัดได้ด้วยเครื่องมือที่ใช้อยู่แล้ว ก็ไม่จำเป็นต้องเปลี่ยนเพียงเพราะแอปนี้รองรับนามสกุลเยอะกว่า
+
+ก่อนส่งงานให้คนอื่น ผมว่าเช็กกับผู้รับสักนิดว่าเขาเปิดรูปแบบที่เราเลือกได้ไหม โดยเฉพาะไฟล์ที่เข้ารหัส และควรเก็บต้นฉบับไว้จนกว่าจะแน่ใจว่าผู้รับเปิดไฟล์ได้ครับ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- เว็บไซต์ทางการ (รูปแบบไฟล์ การเข้ารหัส และรุ่น App Store): <a href="https://www.keka.io/en/" rel="noopener">keka.io</a>
+- GitHub Repository: <a href="https://github.com/aonez/Keka" rel="noopener">github.com/aonez/Keka</a> (v1.6.8)
+- คู่มือผู้พัฒนา: <a href="https://github.com/aonez/Keka/wiki/Compressing-with-Keka" rel="noopener">การบีบอัดไฟล์</a> และ <a href="https://github.com/aonez/Keka/wiki/Extracting-with-Keka" rel="noopener">การแตกไฟล์</a>
+- ผู้พัฒนา aonez ชี้แจงว่าไม่ได้เปิดซอร์สโค้ดแล้ว (22 พ.ค. 2568): <a href="https://github.com/aonez/Keka/discussions/1627" rel="noopener">GitHub Discussion #1627</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: by dojojin.tech
+- ไอคอนแอป: <a href="https://www.keka.io/" rel="noopener">keka.io</a>
+
+</div>
+
+</section>

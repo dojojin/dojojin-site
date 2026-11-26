@@ -4,6 +4,7 @@ topic: infra-ai
 type: news
 tags: [security, microsoft, open-source]
 date: 2026-11-20T17:51:00+07:00
+updated: 2026-11-26T21:36:54+07:00
 section: security
 sourceName: "PyPI, StepSecurity, OX Security และ BleepingComputer"
 sourceUrl: "https://www.stepsecurity.io/blog/microsoft-agent-framework-pypi-package-compromised"
@@ -130,12 +131,13 @@ StepSecurity กับ OX Security อธิบายตรงกันว่า
 
 <div class="prose">
 
-StepSecurity, OX Security และ BleepingComputer แนะนำตรงกัน เรียงเป็นขั้นตอนได้แบบนี้ครับ
+เริ่มจากไม่เปิด Python หรือ pip ในสภาพแวดล้อมที่สงสัยก่อนครับ StepSecurity ระบุไว้ชัด เพราะแค่เริ่มเครื่องมือเหล่านี้ก็อาจเรียกโค้ดในไฟล์ .pth ได้ ขั้นตอนตรวจควรอ่านไฟล์และบันทึกที่มีอยู่โดยไม่เรียกตัวแปลภาษาในสภาพแวดล้อมนั้น
 
 <ol class="news-steps">
-<li><b>เช็กรุ่นที่ติดตั้ง</b>รัน <code>pip show agent-framework</code> ในทุก virtualenv, container image และเครื่อง build แล้วเปิดไฟล์ requirements, poetry.lock, uv.lock ดูด้วยว่ามี 1.26.1 หรือ 1.26.2 ไหม</li>
-<li><b>หาไฟล์ .pth</b>ค้นใน site-packages หา agent_framework_meta.pth และ af_runtime_diag.pth ถ้าเจอ ให้ถือว่าเครื่องนั้นรันโค้ดร้ายไปแล้ว</li>
-<li class="is-key"><b>แยกเครื่องที่โดน</b>อย่ารัน Python หรือ pip ต่อบนเครื่องนั้นจนกว่าจะเคลียร์ แล้วสร้างสภาพแวดล้อมใหม่จากฐานที่สะอาด อย่าแค่ถอนแพ็กเกจแล้วใช้เครื่องเดิมต่อ</li>
+<li class="is-key"><b>แยกสภาพแวดล้อมที่สงสัย</b>ถ้าเคยติดตั้ง 1.26.1 หรือ 1.26.2 ให้แยกเครื่องหรือสภาพแวดล้อมนั้นก่อนเปิด Python หรือ pip อีก ตรวจทั้งเครื่องพัฒนา container และเครื่อง build ที่เกี่ยวข้อง</li>
+<li><b>อ่านหลักฐานโดยไม่เรียก Python</b>เริ่มจากเปิดไฟล์ requirements, poetry.lock, uv.lock และบันทึกการติดตั้งด้วยเครื่องมืออ่านข้อความ อย่าใช้ <code>pip show</code> เป็นขั้นแรกบนสภาพแวดล้อมที่อาจมีไฟล์ .pth อันตราย ทั้งนี้ไฟล์ล็อกบอกสิ่งที่โครงการกำหนดไว้ ไม่ได้ยืนยันสิ่งที่ติดตั้งจริงทั้งหมด</li>
+<li><b>ตรวจไฟล์ที่ติดตั้งและเก็บหลักฐาน</b>ให้ทีมดูแลตรวจไฟล์ใน site-packages หา agent_framework_meta.pth และ af_runtime_diag.pth โดยไม่เริ่ม interpreter ของสภาพแวดล้อมนั้น การพบไฟล์ยืนยันว่ามีองค์ประกอบอันตรายอยู่ แต่ไม่ได้พิสูจน์เพียงอย่างเดียวว่าโค้ดเคยทำงานแล้วเมื่อไร</li>
+<li><b>สร้างสภาพแวดล้อมใหม่จากฐานที่สะอาด</b>อย่าแค่ถอนแพ็กเกจแล้วใช้เครื่องเดิมต่อ ระหว่างตรวจเหตุให้ถือว่ารหัสที่โค้ดสามารถอ่านหรือขอได้อาจได้รับผลกระทบ</li>
 <li><b>ล็อกที่ 1.26.0</b>ใช้ agent-framework==1.26.0 คู่กับไฟล์ล็อกที่มี hash และบล็อกสองรุ่นเสียไว้เลย</li>
 <li class="is-key"><b>เปลี่ยนรหัสจากเครื่องที่สะอาด</b>เปลี่ยนรหัสและโทเคนทุกตัวที่เครื่องนั้นเข้าถึงได้ ทั้ง secret ใน CI, คีย์ Azure และ AWS, รหัส registry และ Docker, Git credential, โทเคน Hugging Face และ OpenAI, service connection ของ Azure DevOps</li>
 <li><b>ตรวจล็อก</b>ดู Azure sign-in log ว่า managed identity หรือ federated credential ถูกใช้ผิดปกติไหม ดู egress log ว่ามีการต่อไป webhook.site ไหม และบล็อกปลายทางนี้ไว้ที่เครื่อง build</li>
@@ -172,6 +174,7 @@ StepSecurity บอกว่าเจอ 1.26.1 หรือ 1.26.2 ที่ไ
 <div class="prose">
 
 - PyPI, หน้า agent-framework และ Release history (อ่าน 20 พ.ย. 2569): <a href="https://pypi.org/project/agent-framework/">pypi.org/project/agent-framework</a>
+- Python Documentation, การประมวลผลไฟล์ .pth ตอนเริ่ม interpreter: <a href="https://docs.python.org/3.14/library/site.html">docs.python.org</a>
 - StepSecurity, "Microsoft agent-framework PyPI package compromised" (เวลา UTC ละเอียด ไฟล์ที่ต้องหา วิธีแก้): <a href="https://www.stepsecurity.io/blog/microsoft-agent-framework-pypi-package-compromised">stepsecurity.io</a>
 - OX Security, "Breaking: Hijacked releases of Microsoft's official agent-framework steals Azure and CI credentials" (17 พ.ย. 2569): <a href="https://www.ox.security/blog/breaking-hijacked-releases-of-microsofts-official-agent-framework-steals-azure-and-ci-credentials">ox.security</a>
 - BleepingComputer, "Microsoft's agent-framework PyPI package compromised to steal credentials": <a href="https://www.bleepingcomputer.com/news/security/microsofts-agent-framework-pypi-package-compromised-to-steal-credentials/">bleepingcomputer.com</a>
