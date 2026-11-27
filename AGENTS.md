@@ -3,6 +3,14 @@
 Instructions for every coding/writing agent in this repo (Codex, Antigravity/agy, Claude Code, others).
 Claude Code reads `CLAUDE.md`; Antigravity also reads `GEMINI.md`, which points here. All three must stay consistent.
 
+## News work: one skill, one gate
+
+For anything about /news/ (digest, writing, fixing, covers) follow the skill **`.claude/skills/dojojin-news/SKILL.md`**
+(also at `.agents/skills/dojojin-news/`). It starts from the script's digest in `~/news-digest/`, not from your own search.
+A news post is not finished until `python3 scripts/content/check-post.py <slug>` prints PASS; put that output in your report.
+The same check runs as a git pre-commit hook (`scripts/hooks/pre-commit`, enabled with `git config core.hooksPath scripts/hooks`):
+a news post dated 27 Nov 2026 or later that does not PASS cannot be committed. Never use `--no-verify`; only the owner may.
+
 ## Read before you work
 
 | Task | Read |

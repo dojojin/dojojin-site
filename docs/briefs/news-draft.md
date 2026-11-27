@@ -19,7 +19,13 @@ copywriter will polish the Thai afterwards, and a separate step makes the cover 
 - Never put the owner's name or email in any request or User-Agent.
 - Find the PRIMARY source first (the company's or agency's own statement, advisory, press release, release notes, court/DOJ page).
 - Source rule: the story needs the official source, or 2+ independent outlets. Outlets repeating one outlet count as one.
-  If you cannot meet the rule, STOP writing, and report "DOES NOT MEET SOURCE RULE" with what you found.
+  The owner picked this story, so do NOT drop it for having one source (owner rule, 27 Nov 2026). Search for support in
+  this order: the subject's own statement/advisory/release notes/filing → a second outlet with its own reporting → the
+  primary evidence the outlet used (benchmark listing, patent, certification database, commit, video, transcript) →
+  background facts that bear on it. If it is still one origin after a real search, write it honestly: title starts with
+  "[ข่าวลือ]" or "มีรายงานว่า…", the lead names the single origin, one block says what is confirmed / not confirmed /
+  what you looked for and did not find, and the supporting background has its own section and sources. Report it as
+  "SINGLE ORIGIN: <who>" so the lead agent can list it in `scripts/content/source-exceptions.txt` and in followups.
 - Check Thai impact: is Thailand / Thai users mentioned anywhere? If nothing found, the post says so plainly.
 - Write `_sources/posts/news/<slug>/facts.md` (mkdir -p): one line per fact: fact | URL | short quote copied from that page.
   Every number, date, name and quote in the post must have a line there.
@@ -50,5 +56,5 @@ characters per line), one key number or fact for a badge, 2 short chips, and wha
 All cover text must match the article exactly.
 
 ## Final message (plain text, no file)
-VERDICT (drafted / DOES NOT MEET SOURCE RULE), the sources you opened (URL + what each confirmed), what you could not verify,
+VERDICT (drafted / drafted, SINGLE ORIGIN: <who>), the sources you opened (URL + what each confirmed), what you could not verify,
 any tag you needed that is missing from TAGS, and anything in the digest line that turned out to be wrong.
