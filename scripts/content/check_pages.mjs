@@ -27,12 +27,12 @@ for (const width of [390, 768, 1280]) {
     if (res.status() !== 200) { problems.push(`${width} ${route} HTTP ${res.status()}`); continue; }
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
     if (overflow > 0) problems.push(`${width} ${route} horizontal overflow ${overflow}px`);
-    if (await page.locator('dialog').count() && await page.locator('.shot').count()) {
+    if (await page.locator('dialog').count() && await page.locator('button.shot').count()) {
       await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 600) { scrollTo(0, y); await new Promise((r) => setTimeout(r, 40)); } });
       await page.waitForTimeout(500);
-      const broken = await page.evaluate(() => [...document.querySelectorAll('.shot img')].filter((x) => !x.naturalWidth).map((x) => x.src));
+      const broken = await page.evaluate(() => [...document.querySelectorAll('button.shot img')].filter((x) => !x.naturalWidth).map((x) => x.src));
       broken.forEach((src) => problems.push(`${width} ${route} image did not load: ${src}`));
-      await page.locator('.shot').first().click();
+      await page.locator('button.shot').first().click();
       await page.waitForTimeout(300);
       if (!(await page.evaluate(() => !!document.querySelector('dialog[open]')))) problems.push(`${width} ${route} modal did not open`);
       await page.keyboard.press('Escape');
