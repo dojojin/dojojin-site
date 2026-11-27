@@ -18,7 +18,7 @@ a news post dated 27 Nov 2026 or later that does not PASS cannot be committed. N
 | Anything in this repo | [`CLAUDE.md`](./CLAUDE.md) — stack, commands, deploy, responsive and Core Web Vitals rules |
 | Picking, writing, checking or illustrating content | [`docs/editorial-standard.md`](./docs/editorial-standard.md) — **the single editorial standard** (selection, sources, owner's voice, covers, checklist) |
 | Making news end to end (order of work, who does what) | [`docs/briefs/README.md`](./docs/briefs/README.md) |
-| Drafting a picked story / voice pass / cover and images | [`docs/briefs/news-draft.md`](./docs/briefs/news-draft.md) · [`docs/briefs/voice-pass.md`](./docs/briefs/voice-pass.md) · [`docs/briefs/images.md`](./docs/briefs/images.md) (ready-made briefs, same for every agent) |
+| Drafting a picked story / voice pass / cover and images | [`docs/briefs/news-draft.md`](./docs/briefs/news-draft.md) · [`docs/briefs/voice-pass.md`](./docs/briefs/voice-pass.md) · [`docs/briefs/images.md`](./docs/briefs/images.md) · [`docs/briefs/fact-review.md`](./docs/briefs/fact-review.md) (ready-made briefs, same for every agent) |
 | News page markup, HTML blocks, cover scripts | [`docs/news-writing-guide.md`](./docs/news-writing-guide.md) |
 | Charger / headphone / food / knowledge posts, FB carousel | `.claude/skills/dojojin-*/SKILL.md` (plain Markdown; usable by any agent) |
 | Facebook review pack | [`docs/fb-review-pack.md`](./docs/fb-review-pack.md) |

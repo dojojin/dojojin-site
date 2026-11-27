@@ -32,7 +32,7 @@ ALIAS = {  # outlet name fragment (lower case) -> domain fragment
     "windows latest": "windowslatest", "people news": "peoplenews", "al jazeera": "aljazeera", "brand inside": "brandinside",
     "u.s. news": "usnews", "tech times": "techtimes", "9to5google": "9to5google", "9to5mac": "9to5mac"}
 PROCESS = re.compile(r"ผมเปิด(หน้า|อ่าน|ลิงก์)|เปิดหน้านี้(ตรง)?ไม่ได้|หน้าที่ผมเปิด|ตอนผมตรวจ|\b40[34]\b(?! *(บาท|ล้าน|คน|คัน))|ต้นฉบับ(?!เป็นภาพ)")
-AI_WORDS = re.compile(r"(ภาพ|เครดิต|alt=)[^\n]{0,80}\b(AI|Codex|ChatGPT|NanoBanana|Canva|Midjourney|DALL)", re.I)
+AI_WORDS = re.compile(r"(^- [^\n]*(ภาพปก|ภาพประกอบ|ภาพใน|เครดิต)[^\n]*|alt=\"[^\"]*|coverAlt:[^\n]*)\b(สร้างด้วย AI|AI[- ]generated|Codex|ChatGPT|NanoBanana|Canva|Midjourney|DALL)", re.I | re.M)  # credit lines and alt text only
 
 
 def _exceptions() -> dict[str, str]:

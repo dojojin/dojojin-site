@@ -20,6 +20,7 @@ Start a NEW conversation for each news round; habits from an old conversation (C
 | 5 | **Voice pass** | A DIFFERENT agent, brief = `docs/briefs/voice-pass.md`. Save a copy of the draft first; `VOICE_BASE=<copy dir> python3 scripts/content/check-voice-pass.py <slug>` |
 | 6 | **Cover + body image** | Brief = `docs/briefs/images.md`. Every image through `scripts/content/gen_image.sh` (queues, cooldown 25 s codex / 90 s NanoBanana, falls back). In agy: `IMAGE_ENGINES="agy codex"` (NanoBanana gives about 14 images per 5 h; the script moves to ChatGPT when it runs out). Never call an image tool directly. No Canva templates. A real photo or official product image exists → build the cover from it with `scripts/content/photo_cover.py` + `render_cover.mjs` instead of generating one. Real logo + brand colours, 1600×1200, text matches the article. Look at every image |
 | 7 | **Assemble** | Put the figure in a `.split` beside its text; check each thing the copywriter flagged against `facts.md` |
+| 7b | **Fact review** | A third agent that did not draft or polish, read-only, brief = `docs/briefs/fact-review.md`: post vs `facts.md`, `facts.md` vs the real pages (3+ links per post), who said each quote, cover text vs article. Fix every MUST FIX and SHOULD FIX it reports, regenerate covers whose text changed. The scripts cannot see these mistakes |
 | 8 | **Gate** | `python3 scripts/content/check-post.py <slug>...` → PASS, then `python3 scripts/content/thumbs.py`, `npm run build`, `npm run lint`, then `node scripts/content/check_pages.mjs http://100.89.1.29:4173 /news/<slug>/ ...` (opens each page at 390 / 768 / 1280, reports horizontal overflow and broken assets, saves screenshots of the first route to `/tmp/dojojin-intake/`) and look at the screenshots |
 | 9 | **Report** | Thai, 🔵 Fact / 🟡 Opinion: gate output, preview links, what could not be verified, what the digest got wrong |
 | 10 | **Commit / deploy** | Only when the owner says so in this session. `git push origin main` = production. Owner's name only, no trailer |
@@ -75,7 +76,8 @@ Age = today minus the original post's `date:`. The digest prints the age and the
 | One section, no Thai impact, "ครับ" once | 2+ sections, say what it means for Thai users (or that nothing was found), voice pass by another agent |
 | Four images generated in 3 minutes | `gen_image.sh` only (cooldown) |
 | Car news in `section: tech`, cyber news in `tech` | car → `auto`, vulnerabilities/attacks → `security` |
+| 11 posts passed every script, yet 9 needed fixes: wording stronger than the source, a quote under the wrong person (title and cover), unsourced glue sentences, marketing claims as fact | Step 7b (independent fact review) is not optional |
 
-## What the gate cannot judge (a second agent and the owner still look)
+## What the gate cannot judge (step 7b and the owner still look)
 Whether the Thai sounds like the owner · whether the cover text matches the article · whether a logo is the real one ·
 whether two outlets are independent · whether the page really says what the post claims.
