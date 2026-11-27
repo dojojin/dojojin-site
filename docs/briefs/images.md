@@ -21,6 +21,9 @@ Read first: `docs/editorial-standard.md` section 5 (cover and image rules, the c
   Keep `prompt.txt` and the raw output in `_sources/posts/news/<slug>/cover-gen/`.
 - In the prompt: put each exact Thai string in quotes, ask for correct Thai letterforms and tone marks, 4:3 landscape,
   text in the left ~55%, subject on the right, about 90px clear from every edge.
+- **Read the text at 100% scale, not on the whole image:** `python3 scripts/content/cover_zoom.py <slug>` writes four
+  full-resolution tiles; open each and compare every Thai word with your prompt, mark by mark (vowels above/below, tone
+  marks, การันต์). A cover once shipped with "ข้อมูลูถูกเข้าถึง" because the extra ู is invisible at thumbnail size.
 - LOOK at every result. Regenerate (max 2 retries) if a Thai word is misspelled, text differs from the prompt, the logo is
   wrong or distorted, text touches an edge, or hands/faces appear. Then centre-crop to 4:3 and resize to exactly
   1600×1200, JPEG quality 88.

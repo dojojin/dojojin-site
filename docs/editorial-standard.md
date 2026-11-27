@@ -219,7 +219,7 @@ IMAGE_ENGINES="agy codex" scripts/content/gen_image.sh --prompt prompt.txt --out
 - [ ] `python3 scripts/content/thumbs.py` · `python3 scripts/content/check-splits.py <ไฟล์>` = OK
 - [ ] `npm run build` และ `npm run lint` ผ่าน
 - [ ] เปิดหน้าจริงที่ 390 / 768 / 1280: ไม่มี scroll แนวนอน และ**ดูภาพหน้าจอจริง**
-- [ ] ดูปกด้วยตา: 4:3 เต็มกรอบ CI ถูก ข้อความถูก
+- [ ] ดูปกด้วยตา: 4:3 เต็มกรอบ CI ถูก ข้อความถูก · **อ่านตัวหนังสือบนปกที่ขนาดจริง 100%** ด้วย `python3 scripts/content/cover_zoom.py <slug>` ทีละคำ ทีละสระ/วรรณยุกต์ (เพิ่ม 28 พ.ย. 2569 หลังปก FIFA สะกด "ข้อมูลู" หลุดขึ้นเว็บ)
 - [ ] รายงานเจ้าของเป็นภาษาไทย แยก 🔵 Fact / 🟡 Opinion: ตรวจอะไรแล้ว · อะไรยังยืนยันไม่ได้ · อะไรไม่ผ่านเกณฑ์
 - [ ] **รอเจ้าของสั่ง** ก่อน commit และก่อน deploy
 
