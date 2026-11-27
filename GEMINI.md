@@ -6,6 +6,6 @@ Antigravity / Gemini agents: the rules for this repo are in [`AGENTS.md`](./AGEN
 - [`docs/editorial-standard.md`](./docs/editorial-standard.md) — news selection, sources, owner's writing voice, covers, pre-delivery checklist
 - [`docs/news-writing-guide.md`](./docs/news-writing-guide.md) — page markup and cover tooling
 
-**News work (digest, writing, covers): follow `.claude/skills/dojojin-news/SKILL.md` step by step, in a new conversation, and finish only when `python3 scripts/content/check-post.py <slug>` prints PASS. Do not use Canva templates or call image tools directly; use `IMAGE_ENGINES=agy scripts/content/gen_image.sh`.**
+**News work (digest, writing, covers): follow `.claude/skills/dojojin-news/SKILL.md` step by step, in a new conversation, and finish only when `python3 scripts/content/check-post.py <slug>` prints PASS. Do not use Canva templates or call image tools directly; use `IMAGE_ENGINES="agy codex" scripts/content/gen_image.sh`.**
 
 Do not keep a separate copy of the rules here. If the owner gives a new standing rule, add it to `docs/editorial-standard.md`.

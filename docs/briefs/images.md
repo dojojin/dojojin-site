@@ -17,7 +17,7 @@ Read first: `docs/editorial-standard.md` section 5 (cover and image rules, the c
 - Generate ONE image at a time through the central script (it queues, waits the cooldown, and falls back between tools):
   `scripts/content/gen_image.sh --prompt <prompt.txt> --out <out.png> -i <logo file> -i public/media/posts/news/pearcleaner-macos-app-review/cover.jpg`
   The last `-i` is the approved style reference (layout and finish only; tell the prompt not to copy its text or icon).
-  Inside Antigravity, or when Codex is unavailable: prefix `IMAGE_ENGINES=agy` (NanoBanana, 90 s gap).
+  Inside Antigravity, or when Codex is unavailable: prefix `IMAGE_ENGINES="agy codex"` (NanoBanana first with a 90 s gap, about 14 images per 5 hours; ChatGPT when that runs out).
   Keep `prompt.txt` and the raw output in `_sources/posts/news/<slug>/cover-gen/`.
 - In the prompt: put each exact Thai string in quotes, ask for correct Thai letterforms and tone marks, 4:3 landscape,
   text in the left ~55%, subject on the right, about 90px clear from every edge.

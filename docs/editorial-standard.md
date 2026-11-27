@@ -177,7 +177,7 @@
 
 ```bash
 scripts/content/gen_image.sh --prompt prompt.txt --out cover.png -i logo.png -i style-ref.jpg   # ลองตามลำดับ codex → agy
-IMAGE_ENGINES=agy scripts/content/gen_image.sh --prompt prompt.txt --out cover.png -i logo.png  # ทำงานใน agy หรือ Codex ใช้ไม่ได้
+IMAGE_ENGINES="agy codex" scripts/content/gen_image.sh --prompt prompt.txt --out cover.png -i logo.png  # ทำงานใน agy หรือ Codex ใช้ไม่ได้
 ```
 
 - `codex` = ChatGPT Image · `agy` = NanoBanana · ตัวแรกล้มหรือถูกปฏิเสธ สคริปต์สลับไปตัวถัดไปเอง
