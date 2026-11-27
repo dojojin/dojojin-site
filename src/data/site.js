@@ -48,6 +48,7 @@ export const TAGS = {
   gizmo: "GIZMO", rizz: "RIZZ", remax: "REMAX", elecjet: "ELECJET",
   "true-corp": "True", dtac: "dtac", "5g": "5G",
   php: "PHP", security: "ความปลอดภัย", scam: "มิจฉาชีพ",
+  asus: "ASUS", cisco: "Cisco", nginx: "nginx", spacex: "SpaceX",
   apache: "Apache", openssh: "OpenSSH", wordpress: "WordPress", cctv: "กล้องวงจรปิด", onvif: "ONVIF",
   xiaomi: "Xiaomi", redmagic: "REDMAGIC", motorola: "Motorola", nvidia: "NVIDIA", gaming: "เกม",
   dunlop: "DUNLOP", honda: "Honda", tire: "ยางรถยนต์", ev: "EV", motorcycle: "มอเตอร์ไซค์", motorsport: "มอเตอร์สปอร์ต",

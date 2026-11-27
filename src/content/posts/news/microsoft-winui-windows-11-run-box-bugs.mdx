@@ -1,0 +1,138 @@
+---
+title: "วิศวกร Microsoft ยอมรับบนเวที Ignite: WinUI ที่ใช้ทำกล่อง Run ใหม่ของ Windows 11 \"มีบั๊กเยอะ\""
+topic: software
+type: news
+tags: [microsoft, windows]
+date: 2026-11-27T14:30:00+07:00
+section: tech
+sourceName: "Microsoft Ignite 2026 (คลิปเซสชันทางการ), Windows Latest"
+sourceUrl: "https://ignite.microsoft.com/en-US/sessions/1787856633196001EAXC-1791588232533001CWLE"
+description: "ในงาน Ignite 2026 ทีม Windows Developer Platform ของ Microsoft พูดบนเวทีว่า WinUI มีจุดกวนใจเล็ก ๆ (paper cuts) เยอะและมีบั๊กเยอะ WinUI คือกรอบสร้างหน้าตาแอปที่ Windows 11 ใช้กับกล่อง Run ใหม่ พร้อมสรุปว่าคนทั่วไปได้รับผลอะไร"
+kicker: "ข่าวเทคโนโลยี · Windows"
+lead: "กล่อง Run ใหม่ของ Windows 11 (ที่เรียกด้วย Win+R) สร้างด้วยกรอบงานชื่อ WinUI ครับ และในงาน Microsoft Ignite 2026 ผู้บรรยายของทีมพัฒนายอมรับต่อหน้านักพัฒนาว่า WinUI มีรอยบาดเล็ก ๆ (paper cuts) เยอะ และ \"มีบั๊กเยอะ\" ตามคลิปเซสชันที่ Microsoft เผยแพร่เอง"
+meta: "เรียบเรียงจากคลิปและหน้าเซสชันทางการของ Microsoft Ignite 2026, บล็อกทีม Windows Command Line และ Windows Latest · ข้อมูล ณ 27 พฤศจิกายน 2569"
+cover: "/media/posts/news/microsoft-winui-windows-11-run-box-bugs/cover.jpg"
+coverAlt: "ปกข่าว วิศวกร Microsoft ยอมรับ WinUI ที่ใช้ทำกล่อง Run ใหม่ของ Windows 11 มีบั๊กเยอะ"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="split">
+<div class="prose">
+
+ในงาน Microsoft Ignite 2026 มีเซสชันชื่อ "Building Windows apps with WinUI and agents" ผู้บรรยายคือ Jaylyn Barbee และ Beth Pan จากทีม Windows Developer Platform ครับ เซสชันนี้จัดวันที่ 18 พฤศจิกายน 2569 ตามเวลาสหรัฐฯ (ตรงกับราว 04:45 น. วันที่ 19 พฤศจิกายน เวลาไทย)
+
+ช่วงท้ายเซสชัน ผู้บรรยายพูดว่า "We've heard you that there's many paper cuts on the WinUI platform. There's a lot of bugs." แปลว่า "เราได้ยินที่พวกคุณบอกมาแล้วว่า แพลตฟอร์ม WinUI มีรอยบาดเล็ก ๆ น้อย ๆ (paper cuts) เยอะ มีบั๊กเยอะ" ไฟล์คำบรรยายของคลิปที่ Microsoft เผยแพร่ไม่ได้ระบุว่าใครพูดประโยคนี้ ส่วน Windows Latest ระบุว่าเป็น Beth Pan ครับ
+
+ประโยคถัดมาคือ "in the last couple years, we've really been like pounding down on these paper cuts" แปลว่า "ช่วงสองสามปีหลังเราจัดการรอยบาดพวกนี้อย่างหนัก" คือเป็นการยอมรับปัญหา พร้อมบอกว่ากำลังแก้อยู่
+
+</div>
+<figure class="news-fig news-fig--zoom">
+<img src="/media/posts/news/microsoft-winui-windows-11-run-box-bugs/photo-1.jpg" width="1600" height="1200" loading="lazy" alt="โต๊ะทำงานสว่าง มีโน้ตบุ๊กเงินเปิดอยู่ หน้าจอเป็นเดสก์ท็อปสีฟ้าอ่อนและหน้าต่างเล็กที่มีช่องกรอกว่างกับปุ่มสองปุ่ม มีกาแฟและสมุดวางข้าง ๆ" />
+<figcaption>ภาพจำลองโน้ตบุ๊กที่เปิดหน้าต่างโต้ตอบเล็ก ๆ แทนกล่อง Run ใหม่ของ Windows 11 ที่สร้างด้วย WinUI (ภาพประกอบจาก DOJOJIN.TECH)</figcaption>
+</figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## WinUI คืออะไร และเกี่ยวกับกล่อง Run อย่างไร
+
+<div class="split">
+<div class="prose">
+
+WinUI คือชุดเครื่องมือที่นักพัฒนาใช้วาดหน้าตาแอปบน Windows ครับ ปุ่ม เมนู ช่องกรอกข้อความ หน้าต่างที่ดูทันสมัยแบบ Windows 11 มาจากตรงนี้ ถ้ากรอบงานนี้มีบั๊ก แอปที่สร้างด้วยมันก็อาจพลอยมีอาการแปลก ๆ ตามไปด้วย
+
+ทีม Windows Command Line ของ Microsoft เขียนในบล็อกเมื่อ 1 พฤษภาคม 2569 ว่ากล่อง Run ใหม่ "is a C#/WinUI 3 application" แปลว่า เป็นแอปที่เขียนด้วย C# และ WinUI 3 ส่วนในเซสชัน Ignite ผู้บรรยายก็เอ่ยว่า widgets และ "the new run experience" (กล่อง Run แบบใหม่) ย้ายมาใช้ WinUI แล้ว
+
+</div>
+<div>
+
+<div class="news-stats">
+<div class="news-stat"><b>94 ms</b>เวลาเปิดกล่อง Run ใหม่ (ค่ากลาง ตัวเลขของ Microsoft)</div>
+<div class="news-stat"><b>103 ms</b>กล่อง Run แบบเก่า (ตัวเลขของ Microsoft)</div>
+<div class="news-stat"><b>8 ธ.ค. 2569</b>Windows Latest รายงานว่าถึงเครื่องทั่วไปพร้อมอัปเดตประจำเดือน</div>
+</div>
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ฟีเจอร์ที่รอนาน: InkCanvas
+
+<div class="split">
+<div class="prose">
+
+Windows Latest ยกตัวอย่างว่า InkCanvas (พื้นที่ให้เขียนด้วยปากกาในแอป) รอนานราว 4 ปี โดยนับจากคำถามของนักพัฒนาในปี 2565 แต่ผมหาลิงก์ของคำถามนั้นไม่เจอครับ
+
+ส่วนที่มีหลักฐานชัดคือ ต.ค. 2566 Microsoft ตอบในหน้า GitHub ว่า "inking are under investigation for 1.5" (ฟีเจอร์เขียนด้วยปากกากำลังอยู่ระหว่างศึกษาสำหรับรุ่น 1.5) และ 25 ส.ค. 2569 รุ่นทดลอง 2.4.1 ก็ออก InkCanvas, InkToolbar และ InkPresenter ให้ลองครับ
+
+ในเซสชัน ผู้บรรยายบอกว่า TableView, ชาร์ต และ InkCanvas ยังเป็นรุ่นทดลอง และขอให้นักพัฒนาลองแล้วส่งความเห็น
+
+</div>
+<div>
+
+<table class="table-frame">
+<thead><tr><th>เมื่อไร</th><th>เกิดอะไรขึ้น</th></tr></thead>
+<tbody>
+<tr><td><b>2565</b></td><td>นักพัฒนาถามหา InkCanvas (ตามรายงานของ Windows Latest)</td></tr>
+<tr><td><b>14 ต.ค. 2566</b></td><td>Microsoft ตอบว่ากำลังศึกษาเรื่อง inking</td></tr>
+<tr><td><b>25 ส.ค. 2569</b></td><td>ออกรุ่นทดลอง 2.4.1 ที่มี InkCanvas</td></tr>
+<tr><td><b>18 พ.ย. 2569</b></td><td>แจ้งในเซสชัน Ignite ว่ายังเป็นรุ่นทดลอง</td></tr>
+</tbody>
+</table>
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## คนใช้ Windows 11 ในไทยควรรู้อะไร
+
+<div class="prose">
+
+สิ่งที่เซสชันยอมรับคือปัญหาของ WinUI โดยรวมครับ ไม่ได้บอกว่ากล่อง Run ใหม่มีบั๊กอะไรโดยเฉพาะ จึงยังบอกไม่ได้ว่าผู้ใช้จะเจออาการอะไร และผมยังไม่พบรายงานที่พูดถึงผู้ใช้ในไทยโดยตรง
+
+ผมว่าข้อนี้น่าสนใจเพราะ Microsoft กำลังย้ายหน้าต่างเก่าของ Windows มาใช้ WinUI หลายจุด ถ้ากรอบงานดีขึ้น หน้าต่างพวกนั้นก็น่าจะลื่นขึ้น
+
+ในเซสชัน Microsoft พูดถึงการเปิดซอร์ส WinUI ขึ้น GitHub การปรับประสิทธิภาพ การอุดช่องว่างของ API (ชุดคำสั่งที่แอปเรียกใช้) ด้านหน้าต่าง และคอนโทรลใหม่ว่าเป็นสิ่งที่กำลังทำอยู่
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- Microsoft Ignite 2026: [Building Windows apps with WinUI and agents](https://ignite.microsoft.com/en-US/sessions/1787856633196001EAXC-1791588232533001CWLE) (หน้าเซสชันและไฟล์คำบรรยายของคลิป)
+- Microsoft Windows Command Line: [The new Run dialog: faster, cleaner, and more capable](https://devblogs.microsoft.com/commandline/the-new-run-dialog-faster-cleaner-and-more-capable/) (1 พ.ค. 2569)
+- GitHub: [microsoft-ui-xaml discussion #8980](https://github.com/microsoft/microsoft-ui-xaml/discussions/8980), [WindowsAppSDK discussion #6718](https://github.com/microsoft/WindowsAppSDK/discussions/6718)
+- Windows Latest: [บทความ 27 พ.ย. 2569](https://www.windowslatest.com/2026/11/27/theres-a-lot-of-bugs-microsofts-own-engineers-say-winui-the-framework-behind-windows-11s-new-run-box-has-many-paper-cuts-as-one-missing-feature-took-four-years-to-arrive/) และ [ข่าวกำหนดเปิดใช้กล่อง Run](https://www.windowslatest.com/2026/11/14/windows-11s-modern-run-box-arrives-for-everyone-in-december-and-microsoft-found-almost-nobody-ever-clicked-browse-in-the-old-one/)
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: by dojojin.tech
+- ภาพในเนื้อข่าว: ภาพประกอบจาก DOJOJIN.TECH
+
+</div>
+
+</section>

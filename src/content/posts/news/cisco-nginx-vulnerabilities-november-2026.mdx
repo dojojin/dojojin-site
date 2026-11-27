@@ -1,0 +1,147 @@
+---
+title: "Cisco ประกาศช่องโหว่ nginx 5 รายการกระทบ ISE, Nexus, Catalyst Center หลายตัวยังรอแพตช์ถึงปีหน้า"
+topic: network
+type: news
+tags: [cisco, nginx, security]
+date: 2026-11-27T10:00:00+07:00
+section: security
+sourceName: "Cisco Security Advisory และ nginx.org"
+sourceUrl: "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s"
+description: "Cisco ประกาศว่าช่องโหว่ nginx 5 รายการที่ nginx ออกแพตช์เมื่อ 18 พ.ย. 2569 กระทบผลิตภัณฑ์ของ Cisco เช่น ISE 3.5, Nexus 3000/9000 และ Catalyst Center ให้คะแนน CVSS 8.1 ยังไม่มีวิธีเลี่ยงชั่วคราว และมีโค้ดทดสอบการโจมตีออกมาแล้ว"
+kicker: "ข่าวความปลอดภัยไซเบอร์"
+lead: "ใครดูแลอุปกรณ์ Cisco ที่เป็น ISE, Nexus หรือ Catalyst Center ลองเช็กประกาศนี้ครับ Cisco ยืนยันว่าช่องโหว่ใน nginx 5 รายการกระทบผลิตภัณฑ์ของตัวเอง ยังไม่มีวิธีเลี่ยงชั่วคราว และแพตช์ของหลายตัวจะออกเดือนธันวาคมถึงปีหน้า"
+meta: "เรียบเรียงจากประกาศของ Cisco และ nginx.org · ข้อมูล ณ 27 พฤศจิกายน 2569"
+cover: "/media/posts/news/cisco-nginx-vulnerabilities-november-2026/cover.jpg"
+coverAlt: "ภาพปกข่าวช่องโหว่ nginx กระทบอุปกรณ์ Cisco พร้อมโลโก้ Cisco และ nginx"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="split">
+<div class="prose">
+
+nginx (ซอฟต์แวร์เว็บเซิร์ฟเวอร์และ reverse proxy หรือตัวกลางรับส่งคำขอ ที่ใช้กันแพร่หลาย) ออกแพตช์แก้ช่องโหว่เมื่อวันที่ **18 พฤศจิกายน 2569** รวม 10 รายการ ตามที่ประกาศบน nginx.org ครับ
+
+ต่อมา Cisco ลงประกาศ (เผยแพร่ครั้งแรก 21 พ.ย. เวลาไทย อัปเดตล่าสุด 26 พ.ย.) ว่าช่องโหว่ 5 รายการในชุดนี้อยู่ในผลิตภัณฑ์ของ Cisco หลายตัว เพราะ Cisco เอา nginx ไปใช้เป็นส่วนประกอบ ช่องโหว่เหล่านี้อาจทำให้ผู้โจมตีรันโค้ดจากระยะไกลได้ (RCE) ตามที่ Cisco เขียนไว้
+
+Cisco ให้ระดับ **High** คะแนนความรุนแรง CVSS 8.1 (ในเนื้อประกาศใช้คำว่า "critical" หรือร้ายแรงมาก แต่ป้ายระดับคือ High) บอกว่า**ไม่มีวิธีเลี่ยงชั่วคราว (workaround)** และรู้ว่ามีโค้ดพิสูจน์การโจมตี (proof-of-concept) แล้ว แต่ยังไม่พบการใช้โจมตีจริง
+
+</div>
+<div>
+
+<div class="news-stats">
+<div class="news-stat"><b>5 CVE</b>ที่ Cisco ระบุในประกาศนี้</div>
+<div class="news-stat"><b>CVSS 8.1</b>ระดับ High ตาม Cisco</div>
+<div class="news-stat"><b>ไม่มี</b>วิธีเลี่ยงชั่วคราว (workaround) ต้องรอแพตช์ของแต่ละผลิตภัณฑ์</div>
+</div>
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ช่องโหว่อยู่ตรงไหนของ nginx
+
+<div class="prose">
+
+5 รายการที่ Cisco อ้าง (แต่ละรายการมีเลข CVE หรือเลขทะเบียนช่องโหว่สากล) แยกตามส่วนของ nginx ได้ดังนี้ครับ ส่วนใหญ่เป็นบั๊กแบบ use-after-free คือโปรแกรมไปใช้หน่วยความจำที่คืนไปแล้ว ทุกรายการแก้แล้วใน nginx 1.31.9 (mainline) และ 1.30.7 (stable)
+
+</div>
+
+<table class="table-frame">
+<thead><tr><th>CVE</th><th>ส่วนที่มีปัญหา (ตาม nginx.org)</th><th>รุ่น nginx ที่ได้รับผลกระทบ</th></tr></thead>
+<tbody>
+<tr><td><b>CVE-2026-123007</b></td><td>HTTP/2 flow control (memory corruption)</td><td>1.9.5 ถึง 1.31.8</td></tr>
+<tr><td><b>CVE-2026-123633</b></td><td>HTTP/2 (use-after-free)</td><td>1.19.7 ถึง 1.31.8</td></tr>
+<tr><td><b>CVE-2026-121810</b></td><td>HTTP/3 (use-after-free)</td><td>1.25.0 ถึง 1.31.8</td></tr>
+<tr><td><b>CVE-2026-123634</b></td><td>resolver (use-after-free)</td><td>0.6.18 ถึง 1.31.8</td></tr>
+<tr><td><b>CVE-2026-113425</b></td><td>mail proxy (use-after-free)</td><td>0.5.33 ถึง 1.31.8</td></tr>
+</tbody>
+</table>
+
+<div class="prose">
+
+อีกข้อที่ควรรู้คือ nginx ออกแพตช์เพิ่มเมื่อ 23 พ.ย. (1.30.8 และ 1.31.10) แก้ช่องโหว่ CVE-2026-132779 ที่ทำให้ซีพียูทำงานหนักเกินเมื่อใช้ ssl_early_data ตัวนี้ไม่อยู่ในประกาศของ Cisco ครับ ใครอัปเดต nginx เองควรข้ามไปรุ่นนี้เลย
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ผลิตภัณฑ์ Cisco ตัวไหนโดน
+
+<div class="prose">
+
+ตารางนี้คัดจากตาราง Cisco priority products ในประกาศครับ Cisco บอกว่ากำลังตรวจสอบสายผลิตภัณฑ์อยู่และจะอัปเดตตารางเรื่อย ๆ จึงควรกลับไปเช็กหน้าประกาศเป็นระยะ
+
+</div>
+
+<table class="table-frame">
+<thead><tr><th>สถานะ</th><th>ผลิตภัณฑ์ และรุ่นที่แก้ตามประกาศ</th></tr></thead>
+<tbody>
+<tr><td><b>กระทบ</b></td><td>Identity Services Engine (ISE): เฉพาะรุ่น 3.5 แก้ที่ 3.5 Patch 5 (ธ.ค. 2569)<br /> Nexus 3000/9000 โหมด standalone NX-OS: 10.3.11 (ธ.ค. 2569), 10.4.9 (ม.ค. 2570), 10.5.7 (ธ.ค. 2569), 10.6.5 (ก.พ. 2570), 10.7.1 (ธ.ค. 2569)<br /> Catalyst Center: 3.3.3 และ 3.4.1 (ยังไม่กำหนดวัน)<br /> UCS Director: ยังไม่กำหนดรุ่นที่แก้</td></tr>
+<tr><td><b>กำลังตรวจสอบ</b></td><td>IOS XR Software, Nexus 7000 Series</td></tr>
+<tr><td><b>ไม่กระทบ</b></td><td>IOS XE, Catalyst SD-WAN (Controller, Manager, Validator), Secure Firewall ASA / FMC / FTD, MDS 9000, Nexus Dashboard, Nexus 9000 โหมด ACI, UCS Central</td></tr>
+<tr><td><b>กระทบ (ผลิตภัณฑ์อื่น)</b></td><td>Smart Software Manager On-Prem (10-202701, ก.พ. 2570), Secure Endpoint Private Cloud Appliance (PC 5.0, พ.ค. 2570), Intersight Virtual Appliance (1.1.9-0, ธ.ค. 2569), Intersight (1.30.7 และ 1.31.f, ธ.ค. 2569), Vulnerability Management (1.30.7, พ.ย. 2569), Webex Assistant for Meetings (1.15.16, พ.ย. 2569), AI PODs for Collaboration (1.0.3, ธ.ค. 2569), Smart PHY (27.1.0, มี.ค. 2570), CX GC AIOps, CX SmartLog, Finesse, Unified Intelligence Center, Unified Contact Center Express, CWAY Cloud</td></tr>
+</tbody>
+</table>
+
+</section>
+
+<section class="section">
+
+## กระทบคนไทยแค่ไหน และต้องทำอะไร
+
+<div class="split">
+<div class="prose">
+
+ผมยังไม่พบรายงานที่พูดถึงไทยโดยเฉพาะครับ ประกาศของ Cisco ไม่ระบุประเทศ แต่ ISE, Nexus และ Catalyst Center เป็นอุปกรณ์ที่องค์กรไทยใช้กันเยอะ ถ้าดูแลอยู่ควรเช็กตามนี้
+
+1. **เช็กรุ่นที่ใช้อยู่** เทียบกับตารางด้านบน โดยเฉพาะ ISE 3.5 และ Nexus 3000/9000 แบบ standalone NX-OS
+2. **เปิดหน้าประกาศของ Cisco** แล้วดู bug ID ของผลิตภัณฑ์ที่ใช้ (เช่น CSCwx92289 ของ ISE) Cisco บอกว่า workaround ถ้ามีจะเขียนอยู่ใน bug นั้น
+3. **วางแผนอัปเกรด** ตามวันที่ Cisco ให้ไว้ ซึ่งส่วนใหญ่เป็นเดือนธันวาคมถึงปีหน้า วันที่ในตารางเป็นประมาณการและอาจเปลี่ยนได้
+4. **ลดการเข้าถึงจากภายนอก** ของหน้าจัดการและบริการที่ใช้ nginx ระหว่างรอแพตช์ ข้อนี้เป็นแนวปฏิบัติทั่วไป ไม่ได้มาจาก Cisco
+5. **ถ้าใช้ nginx เอง** (ไม่ใช่ในอุปกรณ์ Cisco) อัปเดตเป็น 1.30.8 หรือ 1.31.10 ขึ้นไป
+
+ช่องโหว่ HTTP/2 สองตัว (CVE-2026-123007 และ CVE-2026-123633) ต้องเปิด HTTP/2 ไว้ถึงจะโดนครับ มีโพสต์ในรายชื่อเมล oss-security เขียนว่าการปิด HTTP/2 (`http2 off`) ใน nginx ที่ดูแลเองช่วยลดความเสี่ยงได้ แต่ Cisco ไม่ได้แนะนำวิธีนี้สำหรับอุปกรณ์ของตัวเอง
+
+</div>
+<figure class="news-fig news-fig--zoom">
+<img src="/media/posts/news/cisco-nginx-vulnerabilities-november-2026/photo-1.jpg" width="1600" height="1200" loading="lazy" alt="ตู้แร็กอุปกรณ์เครือข่ายในห้องเซิร์ฟเวอร์มืด มีสวิตช์หลายตัว สายแลน ไฟสถานะฟ้าเขียว และไฟเตือนสีเหลืองหนึ่งดวง" />
+<figcaption>ภาพจำลองตู้อุปกรณ์เครือข่ายในห้องเซิร์ฟเวอร์ แทนอุปกรณ์ Cisco ที่โดนช่องโหว่ nginx (ภาพประกอบจาก DOJOJIN.TECH)</figcaption>
+</figure>
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- Cisco Security Advisory (อัปเดต 26 พ.ย. 2569): [Vulnerabilities in nginx Affecting Cisco Products: November 2026](https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s) (ต้นทาง)
+- nginx.org: [ข่าวประกาศ](https://nginx.org/) และ [security advisories](https://nginx.org/en/security_advisories.html)
+- oss-security (18 พ.ย. 2569): [CVE-2026-123633, CVE-2026-123007: nginx RCE via HTTP/2](https://www.openwall.com/lists/oss-security/2026/11/18/16)
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: by dojojin.tech
+- ภาพในเนื้อข่าว: ภาพประกอบจาก DOJOJIN.TECH
+
+</div>
+
+</section>

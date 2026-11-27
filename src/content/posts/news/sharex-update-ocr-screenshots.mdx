@@ -1,0 +1,127 @@
+---
+title: "ShareX 22.5.0 เปลี่ยนระบบ OCR ใหม่ อ่านข้อความจากภาพหน้าจอได้กว่า 100 ภาษา ไม่ต้องโหลด language pack"
+topic: software
+type: news
+tags: [app, windows, open-source]
+date: 2026-11-27T10:00:00+07:00
+section: app
+sourceName: "ShareX (Changelog ทางการ)"
+sourceUrl: "https://getsharex.com/changelog"
+description: "ShareX แอปจับภาพหน้าจอฟรีบน Windows ออกรุ่น 22.5.0 เมื่อ 26 พ.ย. 2569 เปลี่ยน OCR จาก Windows OCR เป็น PaddleOCR รองรับกว่า 100 ภาษาโดยไม่ต้องโหลดชุดภาษา พร้อมหน้าต่าง OCR ใหม่ Pixel editor และ region capture ที่เปิดเร็วขึ้น"
+kicker: "ข่าวเทคโนโลยี · Software แนะนำ"
+lead: "ShareX แอปจับภาพหน้าจอฟรีของ Windows ออกรุ่น 22.5.0 ครับ ของเด่นคือระบบ OCR (อ่านตัวอักษรจากภาพแล้วแปลงเป็นข้อความ) ที่เปลี่ยนมาใช้ PaddleOCR ทีมระบุว่ารองรับกว่า 100 ภาษาโดยไม่ต้องโหลดชุดภาษาเพิ่ม และประมวลผลในเครื่อง"
+meta: "เรียบเรียงจาก Changelog และหน้าเว็บทางการของ ShareX, GitHub ของ ShareX · ข้อมูล ณ 27 พฤศจิกายน 2569"
+cover: "/media/posts/news/sharex-update-ocr-screenshots/cover.jpg"
+coverAlt: "ภาพปกข่าว ShareX 22.5.0 อัปเดตระบบ OCR อ่านข้อความจากภาพหน้าจอ พร้อมโลโก้ ShareX"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="split">
+<div class="prose">
+
+ShareX ออกรุ่น **22.5.0** ครับ Changelog ทางการลงวันที่ 26 พฤศจิกายน 2569 ส่วนที่คนใช้จะรู้สึกที่สุดคือ OCR
+
+ใครยังไม่รู้จัก ShareX อ่านแนะนำแอปตัวเต็มได้ที่ <a href="/news/sharex-windows-app-review/">แอปแนะนำ: ShareX จับภาพหน้าจอ อัดวิดีโอ ทำ GIF บน Windows</a> ครับ
+
+รุ่นก่อนหน้า ShareX ใช้ OCR ที่มากับ Windows ซึ่งต้องลงชุดภาษาใน Windows ก่อนถึงจะอ่านภาษานั้นได้ รุ่นนี้เปลี่ยนเป็น PaddleOCR โดยทีมเขียนไว้ว่า "Replaced Windows OCR with AI powered PaddleOCR" แปลว่า เปลี่ยนจาก Windows OCR มาเป็น PaddleOCR ที่ใช้โมเดล AI
+
+ทีมบอกด้วยว่าให้ผลแม่นกว่ามาก แต่ผมยังหาผลทดสอบความแม่นจากภายนอกไม่เจอครับ
+
+</div>
+<div>
+
+<div class="news-stats">
+<div class="news-stat"><b>22.5.0</b>รุ่นล่าสุด วันที่ 26 พ.ย. 2569 ตาม Changelog</div>
+<div class="news-stat"><b>กว่า 100 ภาษา</b>ตามที่ ShareX ระบุ ไม่ต้องโหลดชุดภาษา (language pack)</div>
+<div class="news-stat"><b>ฟรี</b>โอเพนซอร์ส ใบอนุญาต GPL-3.0</div>
+</div>
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## สิ่งที่เปลี่ยนในรุ่นนี้
+
+<div class="split">
+<div class="prose">
+
+สิ่งที่เปลี่ยนเรื่อง OCR ตาม Changelog อยู่ในตารางครับ ทุกอย่างยังรันในเครื่อง ไม่ได้ส่งภาพขึ้นเซิร์ฟเวอร์ ตามที่ทีมเขียนไว้ว่า "everything still runs locally on your device" (ทุกอย่างยังรันในเครื่องของคุณ)
+
+นอกจาก OCR ยังมี Pixel editor เครื่องมือวาดพิกเซลอาร์ตและทำแอนิเมชันสไปรต์ ปรับ image editor หลายจุด และ region capture (โหมดลากเลือกพื้นที่จับภาพ) ที่ทีมบอกว่าเปิดเร็วขึ้นราวสองเท่า รุ่นนี้ยังอัปเกรดโปรเจกต์เป็น .NET 11 และเอาช่องอัปเดตแบบ Dev ออกด้วย
+
+</div>
+<div>
+
+<table class="table-frame">
+<thead><tr><th>เรื่อง</th><th>สิ่งที่ Changelog ระบุ</th></tr></thead>
+<tbody>
+<tr><td><b>เครื่องมือ OCR</b></td><td>เปลี่ยนจาก Windows OCR เป็น PaddleOCR</td></tr>
+<tr><td><b>หน้าต่าง OCR</b></td><td>ออกแบบใหม่ มีภาพตัวอย่างที่วงกรอบข้อความ คลิกกรอบเพื่อคัดลอก ใช้ล้อเมาส์ซูมได้</td></tr>
+<tr><td><b>แยกย่อหน้า</b></td><td>ตัวเลือก "Separate paragraphs" ตรวจย่อหน้าและคงโครงสร้างในข้อความ</td></tr>
+<tr><td><b>ค้นหาในประวัติ</b></td><td>ตัวเลือกให้ข้อความในภาพที่จับไว้ค้นหาได้ในประวัติ (Application settings, History)</td></tr>
+<tr><td><b>ตัวเลือกที่ถูกลบ</b></td><td>"Language" และ "Scale factor" เพราะไม่ต้องเลือกภาษาแล้ว</td></tr>
+<tr><td><b>Pixel editor</b></td><td>เครื่องมือใหม่ มีเลเยอร์ ไทม์ไลน์แอนิเมชัน tilemap และนำเข้า/ส่งออก sprite sheet</td></tr>
+<tr><td><b>Region capture</b></td><td>เปิดเร็วขึ้นราวสองเท่า เพิ่มเครื่องมือ Ellipse region และ Freehand region กลับมา</td></tr>
+</tbody>
+</table>
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ภาษาไทย ระบบที่รองรับ และที่ดาวน์โหลด
+
+<div class="split">
+<div class="prose">
+
+**ภาษาไทย:** Changelog บอกแค่ "กว่า 100 ภาษา" ไม่ได้ระบุชื่อภาษา ผมจึงยังยืนยันไม่ได้ว่า OCR รุ่นใหม่อ่านภาษาไทยได้หรือไม่ ตอนนี้ทีมยังไม่ได้ประกาศรายชื่อภาษาครับ (ตัวแอปมีเมนูภาษาไทยอยู่แล้ว แต่นั่นเป็นภาษาของหน้าจอแอป ไม่เกี่ยวกับ OCR)
+
+**ราคาและใบอนุญาต:** ShareX ฟรี ไม่มีโฆษณา และเป็นโอเพนซอร์สภายใต้ GPL-3.0 ตามหน้าเว็บและไฟล์ LICENSE บน GitHub
+
+**ระบบที่รองรับ:** รุ่น 22.5.0 มีไฟล์ให้โหลดเฉพาะ x64 (ตัวติดตั้งและแบบพกพา) ส่วน Windows ขั้นต่ำ ผมหาประกาศเฉพาะของรุ่น 22.5.0 ไม่เจอ สิ่งที่ยืนยันได้คือ Changelog รุ่น 18.0.0 ระบุว่า ShareX เลิกรองรับ Windows 7 และต้องใช้ Windows 10 แบบ 64 บิตขึ้นไป หน้าคู่มือ OCR บนเว็บยังเขียนข้อมูลของ Windows OCR แบบเดิมอยู่ ยังไม่ได้อัปเดตตามรุ่นนี้
+
+**ดาวน์โหลด:** ทีมระบุช่องทางทางการ 4 ทาง คือ [เว็บ ShareX](https://getsharex.com/downloads), [GitHub Releases](https://github.com/ShareX/ShareX/releases/tag/v22.5.0), [Microsoft Store](https://apps.microsoft.com/detail/9nblggh4z1sp) และ [Steam](https://store.steampowered.com/app/400040/ShareX/) ผมแนะนำให้โหลดจากช่องทางเหล่านี้เท่านั้นครับ
+
+</div>
+<figure class="news-fig news-fig--zoom">
+<img src="/media/posts/news/sharex-update-ocr-screenshots/photo-1.jpg" width="1600" height="1200" loading="lazy" alt="จอคอมพิวเตอร์บนโต๊ะแสดงหน้าเอกสารเป็นเส้นสีเทาเบลอ มีกรอบเส้นประสีขาวล้อมบางส่วนของหน้า" />
+<figcaption>ภาพจำลองจอที่ลากกรอบเลือกพื้นที่บนหน้าจอ แทนการจับภาพหน้าจอแล้วให้ OCR อ่านข้อความ (ภาพประกอบจาก DOJOJIN.TECH)</figcaption>
+</figure>
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- ShareX (26 พ.ย. 2569): [Changelog รุ่น 22.5.0](https://getsharex.com/changelog) (ต้นทาง)
+- ShareX: [หน้าแรก](https://getsharex.com/), [คู่มือ OCR](https://getsharex.com/docs/ocr), [GitHub (README และ LICENSE)](https://github.com/ShareX/ShareX)
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: by dojojin.tech
+- ภาพในเนื้อข่าว: ภาพประกอบจาก DOJOJIN.TECH
+
+</div>
+
+</section>

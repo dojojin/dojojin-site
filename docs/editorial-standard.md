@@ -35,6 +35,14 @@
 | 7. เจ้าของตรวจ | **เจ้าของ** ดู preview | |
 | 8. commit → deploy | เมื่อเจ้าของสั่งเท่านั้น | |
 
+**คำสั่งงานสำเร็จรูป (ใช้ได้กับทุกเครื่องมือ ส่งให้ agent ตามขั้น)**
+- ขั้น 3–4 ค้นและร่าง: [`docs/briefs/news-draft.md`](./briefs/news-draft.md) · ผลที่ต้องได้: `facts.md`, ไฟล์ข่าว, `cover-brief.md`
+- ขั้น 5 เกลาสำนวน: [`docs/briefs/voice-pass.md`](./briefs/voice-pass.md) · ต้องเป็น agent คนละตัวกับที่ร่าง
+- ปกและภาพ: [`docs/briefs/images.md`](./briefs/images.md) + ข้อ 5 ของเอกสารนี้ + `scripts/content/gen_image.sh`
+- ลำดับงานทั้งรอบ (ฉบับที่เจ้าของตรวจผ่าน 27 พ.ย. 2569): [`docs/briefs/README.md`](./briefs/README.md)
+- ตัวช่วยเปิดเว็บแล้วหาข้อความ: `python3 -I scripts/content/fetch_grep.py <url> <regex>...`
+- สคริปต์ตรวจ (ผลต้องผ่านไม่ว่าใช้เครื่องมือไหน): `check-splits.py`, `check-voice-pass.py`, `check-sources.py`, `npm run build`, `npm run lint`
+
 - ข่าวที่ยังมีเรื่องค้าง (รอราคาไทย รอแพตช์ รอรายงาน) → เพิ่มบรรทัดใน `~/news-digest/followups.md`
 - ข่าวเดิมที่มี**ข้อมูลใหม่จริง** → เพิ่มบล็อก "อัปเดต <วันที่>" + `updated:` + `bumped:` (ค่าเดียวกัน) · แก้คำเฉย ๆ ใส่แค่ `updated:`
 - ถ้าเจ้าของสั่ง "ปักหมุด" ใช้ `pinned: true`
@@ -156,6 +164,18 @@
 | สร้างภาพทั้งปกด้วยเครื่องมือสร้างภาพ (ChatGPT Image ผ่าน `codex exec`, NanoBanana ใน agy) | แอปแนะนำ หรือข่าวที่ไม่มีภาพจริง | แนบไอคอน/โลโก้จริงเป็นภาพอ้างอิง + ปกที่ผ่านแล้วเป็นตัวอย่างสไตล์ · ระบุข้อความไทยทุกคำแบบ exact · สั่ง "ไม่มีคน ไม่มีมือ ไม่มีลายน้ำ" · เก็บ prompt ไว้ที่ `_sources/posts/news/<slug>/cover-chatgpt/` |
 | Canva (`copy-design` จากแม่แบบ → `edit-design`) | ต้องการเลย์เอาต์นิตยสารสม่ำเสมอ | ดู `news-writing-guide.md` |
 
+**สร้างภาพผ่านสคริปต์กลาง (ทุกเครื่องมือใช้ตัวเดียวกัน · เจ้าของสั่ง 27 พ.ย. 2569: "ถ้าไปใช้ agy ให้สลับไปใช้ NanoBanana เอง โดยทิ้งช่วง cooldown ไว้ด้วย")**
+
+```bash
+scripts/content/gen_image.sh --prompt prompt.txt --out cover.png -i logo.png -i style-ref.jpg   # ลองตามลำดับ codex → agy
+IMAGE_ENGINES=agy scripts/content/gen_image.sh --prompt prompt.txt --out cover.png -i logo.png  # ทำงานใน agy หรือ Codex ใช้ไม่ได้
+```
+
+- `codex` = ChatGPT Image · `agy` = NanoBanana · ตัวแรกล้มหรือถูกปฏิเสธ สคริปต์สลับไปตัวถัดไปเอง
+- **cooldown อยู่ในสคริปต์แล้ว:** เว้นอย่างน้อย 25 วินาที (codex) / 90 วินาที (agy, เจ้าของสั่ง 27 พ.ย. 2569) ระหว่างการเรียกเครื่องมือเดียวกัน ถ้าโดน 429 / quota / cooldown จะรอ 120 แล้ว 300 วินาทีก่อนลองใหม่ · หลาย agent เรียกพร้อมกันได้ สคริปต์เข้าคิวให้
+- **ห้ามเรียกเครื่องมือสร้างภาพตรง ๆ หลายภาพรวดเดียว** ให้เรียกผ่านสคริปต์นี้ทีละภาพ (agy ที่ใช้เครื่องมือ NanoBanana ในตัวเองต้องเว้นช่วงเท่ากัน)
+- ภาพที่ได้ต้องเปิดดูด้วยตาทุกภาพ แล้วย่อ/ครอปเป็น 1600×1200 และรัน `thumbs.py`
+
 `codex exec` ต้องส่ง prompt ทาง stdin เมื่อแนบภาพ: `codex exec --skip-git-repo-check -s workspace-write -i icon.png -i style-ref.jpg - < prompt.txt`
 
 ตัวอย่างปกที่ผ่านแล้ว (ใช้เป็นภาพอ้างอิงสไตล์): `public/media/posts/news/keka-macos-app-review/cover.jpg`, `public/media/posts/news/pearcleaner-macos-app-review/cover.jpg`
@@ -177,6 +197,7 @@
 
 - [ ] ทุกตัวเลข/วันที่/คำพูด มีแหล่งที่เปิดแล้วใน `facts.md` หรือรายงาน
 - [ ] ผ่านเกณฑ์แหล่งข้อมูลข้อ 2 · `sourceName` ไม่ใช่สื่อเจ้าเดียว
+- [ ] `python3 scripts/content/check-sources.py <slug>` = OK (ข่าวแหล่งเดียวผ่านได้เฉพาะที่เจ้าของอนุมัติใน `scripts/content/source-exceptions.txt`)
 - [ ] หัวข่าว description lead เนื้อหา ตาราง ปก **พูดตรงกัน**
 - [ ] ไม่มีโน้ตภายใน ไม่มีประโยคหมดสถานะ ไม่มีคำเด็ดขาดที่ไม่ระบุผู้พูด
 - [ ] ผ่านการเกลาสำนวนโดย agent อีกตัว · ไม่มี emoji · ไม่มีคำว่า AI/Codex ในเครดิต

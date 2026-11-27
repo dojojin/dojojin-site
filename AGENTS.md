@@ -9,6 +9,8 @@ Claude Code reads `CLAUDE.md`; Antigravity also reads `GEMINI.md`, which points 
 |---|---|
 | Anything in this repo | [`CLAUDE.md`](./CLAUDE.md) — stack, commands, deploy, responsive and Core Web Vitals rules |
 | Picking, writing, checking or illustrating content | [`docs/editorial-standard.md`](./docs/editorial-standard.md) — **the single editorial standard** (selection, sources, owner's voice, covers, checklist) |
+| Making news end to end (order of work, who does what) | [`docs/briefs/README.md`](./docs/briefs/README.md) |
+| Drafting a picked story / voice pass / cover and images | [`docs/briefs/news-draft.md`](./docs/briefs/news-draft.md) · [`docs/briefs/voice-pass.md`](./docs/briefs/voice-pass.md) · [`docs/briefs/images.md`](./docs/briefs/images.md) (ready-made briefs, same for every agent) |
 | News page markup, HTML blocks, cover scripts | [`docs/news-writing-guide.md`](./docs/news-writing-guide.md) |
 | Charger / headphone / food / knowledge posts, FB carousel | `.claude/skills/dojojin-*/SKILL.md` (plain Markdown; usable by any agent) |
 | Facebook review pack | [`docs/fb-review-pack.md`](./docs/fb-review-pack.md) |
@@ -41,7 +43,10 @@ npm run build      # static build → dist/
 npm run lint
 npx astro preview --host 0.0.0.0 --port 4173   # owner reviews at http://100.89.1.29:4173
 python3 scripts/content/thumbs.py
+scripts/content/gen_image.sh --prompt prompt.txt --out cover.png -i logo.png   # image tool with cooldown: codex (ChatGPT) then agy (NanoBanana); IMAGE_ENGINES=agy inside Antigravity
+DIGEST_ENGINES=codex ~/news-digest/run.sh   # news digest; final AI recheck by agy | codex | claude (default order "agy codex claude", or one line in ~/news-digest/engine)
 python3 scripts/content/check-splits.py src/content/posts/news/<slug>.mdx
+python3 scripts/content/check-sources.py <slug>   # sources: links open, every named outlet is linked, 2-source rule, facts.md
 ```
 
 ## Working with other agents
