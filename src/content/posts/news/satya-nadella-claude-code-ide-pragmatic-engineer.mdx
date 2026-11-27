@@ -1,0 +1,119 @@
+---
+title: "Satya Nadella ยอมรับ Microsoft ตั้งตัวไม่ทัน เมื่อ Claude Code ทำให้ IDE เดิมจางหายในราว 6 เดือน"
+topic: software
+type: news
+tags: [microsoft, ai, anthropic]
+date: 2026-11-27T18:20:00+07:00
+section: tech
+sourceName: "The Pragmatic Engineer, The Next Web, Windows Latest และ Blognone"
+sourceUrl: "https://newsletter.pragmaticengineer.com/p/software-engineering-after-code-becomes"
+description: "Satya Nadella ซีอีโอ Microsoft ให้สัมภาษณ์ The Pragmatic Engineer ยอมรับว่าตั้งตัวไม่ทันเมื่อ Claude Code ดึงงานเขียนโค้ดไปสู่ Terminal จน IDE เดิมจางลงในราว 6 เดือน พร้อมชี้โจทย์ใหญ่ยุคนี้คือการตรวจสอบโค้ด"
+kicker: "ข่าวเทคโนโลยี · AI & Dev"
+lead: "Satya Nadella ซีอีโอ Microsoft ออกมายอมรับตรง ๆ ในรายการ The Pragmatic Engineer ว่าบริษัทตั้งตัวไม่ทันเมื่อ Claude Code ของ Anthropic เปลี่ยนวิธีเขียนโค้ดมาอยู่บนหน้าจอคำสั่ง จนบทบาทของ IDE เดิมจางลงภายในเวลาราว 6 เดือนครับ"
+meta: "เรียบเรียงจาก The Pragmatic Engineer, The Next Web, Windows Latest และ Blognone · ข้อมูล ณ 27 พฤศจิกายน 2569"
+cover: "/media/posts/news/satya-nadella-claude-code-ide-pragmatic-engineer/cover.jpg"
+coverAlt: "ภาพปกข่าว Satya Nadella ซีอีโอ Microsoft กล่าวถึงการเปลี่ยนแปลงของ IDE และ Claude Code พร้อมโลโก้ Microsoft และ Claude"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="prose">
+
+**Satya Nadella** ซีอีโอ Microsoft ให้สัมภาษณ์กับ **Gergely Orosz** ในรายการ *The Pragmatic Engineer* (เผยแพร่ 16 พฤศจิกายน 2569) โดยเล่าถึงจุดเปลี่ยนของเครื่องมือพัฒนาซอฟต์แวร์ครับ
+
+แม้ Microsoft จะมี VS Code และ GitHub Copilot และไล่ตาม Cursor ในโหมด **AI agent** (ระบบ AI ที่รับเป้าหมายแล้วลงมือแก้ไฟล์ รันทดสอบ และทำงานหลายขั้นตอนได้เอง) ได้ทัน แต่สิ่งที่ทำให้บริษัทตั้งตัวไม่ทันคือการที่ Anthropic เปิดตัว **Claude Code** เมื่อ 24 กุมภาพันธ์ 2568 และดึงงานเขียนโค้ดมาอยู่บน **Terminal / CLI** (Command-Line Interface — หน้าจอพิมพ์คำสั่งแบบข้อความ)
+
+Nadella เล่าว่าเมื่อโมเดล AI ก้าวกระโดดแบบไม่เป็นเส้นตรง รูปแบบเครื่องมือต้องเปลี่ยนเร็วตามไปด้วย พร้อมเตือนตัวเองว่า `"Don't be in love with what you built."` ("อย่าหลงรักสิ่งที่ตัวเองสร้างไว้") และตอบพิธีกรที่พูดถึงช่วงราว 6 เดือนว่า `"IDEs kind of faded away"` ("โปรแกรม **IDE** — Integrated Development Environment หรือเครื่องมือแก้ไขโค้ดและจัดการโปรเจกต์ครบวงจรอย่าง VS Code — ก็ค่อย ๆ จางหายไป") จากเวิร์กโฟลว์หลักของนักพัฒนาหลายคนครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ทิศทางใหม่ของ IDE และจุดที่ยังแก้ไม่ตก
+
+<div class="split">
+<div class="prose">
+
+แต่ Nadella มองว่านี่ไม่ใช่จุดจบถาวรของ IDE ครับ เขาพูดถึงโอกาสที่ `"there could be a rebirth even of an IDE"` ("อาจเห็นการเกิดใหม่ของ IDE ด้วยซ้ำ") โดยหน้าตาใหม่จะเปลี่ยนจากการนั่งพิมพ์โค้ดทีละบรรทัด ไปเป็นพื้นที่สำหรับป้อนสเปก จัดการไฟล์ **Markdown** (รูปแบบไฟล์ข้อความธรรมดาที่จัดหัวข้อและรายการได้ง่าย นิยมใช้อธิบายข้อกำหนดงานให้ AI) รอบระบบ software factory (โรงงานซอฟต์แวร์ที่ใช้ AI) ของทีม
+
+ส่วนปัญหาใหญ่ที่สุดตอนนี้ Nadella ชี้ชัดว่า `"In a world where code generation has become cheap, what has become hard is verification"` ("ในโลกที่การสร้างโค้ดมีราคาถูกลง สิ่งที่กลายเป็นเรื่องยากคือการ **verification** — การตรวจสอบยืนยันว่าโค้ดทำงานถูกต้องและปลอดภัยจริง") เพราะถ้าให้โมเดลตรวจงานกันเอง อาจเจออาการบิดเบือนเป้าหมาย เช่น แอบลบชุดทดสอบที่พังเพื่อให้ผลเทสต์ขึ้นว่าผ่านครับ
+
+Microsoft จึงหันไปเน้นใช้หลายโมเดลคู่กัน ทั้งโมเดลบนเครื่องพีซีกับคลาวด์ผ่านตัวจัดเส้นทางอย่าง Copilot Fusion
+
+ภาพรวมในตลาดก็สอดคล้องกับสิ่งที่ Nadella เล่า ข้อมูลจากแบบสำรวจนักพัฒนาของ Stack Overflow ประจำปี 2569 (เผยแพร่ 6 ตุลาคม 2569) ระบุว่า Claude Code ครองสัดส่วนผู้ใช้สูงสุดในกลุ่ม coding agent ที่ 66% ตามด้วย GitHub Copilot ที่ 59% ขณะที่นักพัฒนา 84.3% ยังคงใช้ IDE ร่วมกับการทำงานอยู่
+
+ด้าน Microsoft เองก็ออกอัปเดต VS Code 1.147 เมื่อ 18 พฤศจิกายน 2569 เพิ่มตัวจัดเส้นทางเลือกโมเดลอัตโนมัติ (ฟีเจอร์ทดลอง) หน้าจอ Inbox รวมงานของ agent (ฟีเจอร์ทดลอง) และเปิดให้องค์กรที่ตั้งค่าคุมผ่าน managed settings ของ Copilot ใช้ harness (ชุดตัวคุมการทำงานและเครื่องมือของ agent) ของ Claude กับ Codex ภายใน VS Code ร่วมกับ Copilot ได้
+
+</div>
+<figure class="news-fig news-fig--zoom">
+<img src="/media/posts/news/satya-nadella-claude-code-ide-pragmatic-engineer/photo-1.jpg" width="1200" height="675" alt="แบนเนอร์เปิดตัว Visual Studio Code รุ่น 1.147 จากหน้าบันทึกการอัปเดตทางการของ Microsoft" loading="lazy" />
+<figcaption><span class="news-fig__credit">ภาพ: <a href="https://code.visualstudio.com/updates/v1_147" rel="noopener">Visual Studio Code</a></span></figcaption>
+</figure>
+</div>
+
+<div class="prose">
+
+<div class="table-frame">
+
+| ประเด็น | รายละเอียดที่ยืนยันได้ |
+| --- | --- |
+| **จุดเปลี่ยนที่ Microsoft พลาด** | คาดไม่ถึงว่า Claude Code บน CLI จะดึงงานออกจาก IDE ได้ในราว 6 เดือน |
+| **บทบาทใหม่ของ IDE** | เน้นป้อนสเปกและไฟล์ Markdown รอบระบบ software factory แทนการพิมพ์โค้ดเอง |
+| **โจทย์ยากที่ยังไม่จบ** | การตรวจสอบความถูกต้องของโค้ด (verification) เพราะโมเดลที่ตรวจงานกันเองอาจบิดเบือนเป้าหมาย |
+| **ท่าทีล่าสุดของ VS Code** | รุ่น 1.147 (18 พ.ย. 2569) เพิ่ม model router (ทดลอง) และให้องค์กรที่ใช้ managed settings เปิด harness ของ Claude กับ Codex คู่กับ Copilot ได้ |
+| **สัดส่วนในตลาด (Stack Overflow 2569)** | กลุ่ม coding agent: Claude Code 66%, GitHub Copilot 59% · ยังมีผู้ใช้ IDE 84.3% |
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## นักพัฒนาในไทยควรจับตาอะไร
+
+<div class="prose">
+
+ฝั่ง Microsoft ยังไม่ได้ประกาศนโยบายหรือราคาที่เจาะจงสำหรับตลาดไทย แต่สำหรับนักพัฒนาในไทยที่ใช้ VS Code, GitHub Copilot หรือ Claude Code อยู่แล้ว ผลกระทบที่เห็นชัดคือเครื่องมือฝั่ง IDE กำลังปรับตัวมาเป็นห้องควบคุม agent แทนการบังคับใช้โมเดลเดียว ทำให้ VS Code เลือกใช้ agent ได้ทั้ง Copilot, Claude และ Codex ตามงานที่ถนัด
+
+ผมว่าประเด็นที่น่าเอาไปใช้จริงที่สุดจากบทสัมภาษณ์นี้คือเรื่องการตรวจสอบโค้ดครับ (ข้อนี้เป็นความเห็นผม) ต่อให้ AI agent ช่วยเขียนโค้ดใน Terminal ได้เร็วขึ้นแค่ไหน นักพัฒนาในไทยยังต้องวางระบบเทสต์ รีวิวโค้ดส่วนสิทธิ์การเข้าถึง ฐานข้อมูล และการจ่ายเงินให้รัดกุมก่อนขึ้นระบบจริงเสมอ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- The Pragmatic Engineer (16 พ.ย. 2569): <a href="https://newsletter.pragmaticengineer.com/p/software-engineering-after-code-becomes" rel="noopener">Software engineering after code becomes cheap with Satya Nadella</a> (และ<a href="https://www.youtube.com/watch?v=0NE89Nzfk20" rel="noopener">วิดีโอบทสัมภาษณ์บน YouTube</a>)
+- The Next Web (16 พ.ย. 2569): <a href="https://thenextweb.com/news/satya-nadella-claude-code-ide-pragmatic-engineer" rel="noopener">Satya Nadella says Claude Code caught Microsoft off guard and the IDE faded</a>
+- Windows Latest (23 พ.ย. 2569): <a href="https://www.windowslatest.com/2026/11/23/the-thing-that-hit-us-satya-nadella-admits-vs-code-faded-in-six-months-after-a-decade-on-top-because-of-claude-code-and-some-developers-say-theyve-stopped-opening-it/" rel="noopener">Satya Nadella admits VS Code faded in six months because of Claude Code</a>
+- Blognone (27 พ.ย. 2569): <a href="https://www.blognone.com/node/152267" rel="noopener">Satya Nadella ยอมรับไมโครซอฟท์มองพลาด ไม่เห็นว่า Claude Code จะมาฆ่า IDE</a>
+- Visual Studio Code (18 พ.ย. 2569): <a href="https://code.visualstudio.com/updates/v1_147" rel="noopener">Visual Studio Code 1.147 Release Notes</a> และ <a href="https://code.visualstudio.com/docs/copilot/agents/overview" rel="noopener">Build with AI in VS Code</a>
+- Stack Overflow (6 ต.ค. 2569): <a href="https://survey.stackoverflow.co/2026/ai" rel="noopener">2026 Developer Survey — AI</a> และ <a href="https://survey.stackoverflow.co/2026/technology" rel="noopener">Technology</a>
+- Anthropic (24 ก.พ. 2568): <a href="https://www.anthropic.com/news/claude-3-7-sonnet" rel="noopener">Claude 3.7 Sonnet and Claude Code</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: by dojojin.tech
+- ภาพเปิดตัว Visual Studio Code 1.147: <a href="https://code.visualstudio.com/updates/v1_147" rel="noopener">Visual Studio Code</a>
+
+</div>
+
+</section>
