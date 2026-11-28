@@ -26,11 +26,21 @@ copywriter will polish the Thai afterwards, and a separate step makes the cover 
   primary evidence the outlet used (benchmark listing, patent, certification database, commit, video, transcript) →
   background facts that bear on it. If it is still one origin after a real search, write it honestly: title starts with
   "[ข่าวลือ]" or "มีรายงานว่า…", the lead names the single origin, one block says what is confirmed / not confirmed /
-  what you looked for and did not find, and the supporting background has its own section and sources. Report it as
+  what is not confirmed yet, written about the claim ("XPENG Thailand ยังไม่ได้ประกาศเรื่องนี้"), never about
+  your search ("ค้นหาแล้วไม่พบ", "ตรวจ 28 พ.ย.": the gate fails on these), and the supporting background has its own section and sources. Report it as
   "SINGLE ORIGIN: <who>" so the lead agent can list it in `scripts/content/source-exceptions.txt` and in followups.
 - Check Thai impact: is Thailand / Thai users mentioned anywhere? If nothing found, the post says so plainly.
 - Write `_sources/posts/news/<slug>/facts.md` (mkdir -p): one line per fact: fact | URL | short quote copied from that page.
   Every number, date, name and quote in the post must have a line there.
+  - **Keep the qualifier on the same line, in the fact and in the quote**: "up to", "with the optional battery", "in some
+    models", "reportedly", "expected", "beta", "unofficial / fan project", "fixed on <date>". A number without the
+    condition the page attaches to it is a wrong fact (Dell 14S: "21 h" was only for the optional battery).
+  - Each URL's date = the page's own publish date (not the day you read it).
+  - Thai-context lines (sold in Thailand, Thai price, Thai users affected) need a Thai or official Thai page, like any fact.
+- **Write only what facts.md holds.** No bridge sentences that add a fact ("รุ่นเริ่มต้นคือแรม 8GB", "ขายในไทยแล้ว").
+  If a sentence needs a fact you do not have, cut the sentence.
+- **Say what kind of thing it is in the title and lead**, not only in the body: fan project / unofficial / needs your own
+  copy / rumour / the company's own claim / beta. "ยืนยันแล้ว" only for what an independent party confirmed.
 
 ## Write `src/content/posts/news/<slug>.mdx`
 - Frontmatter exactly like the model posts: title, topic, type: news, tags (ONLY tags already in TAGS in src/data/site.js;
@@ -52,9 +62,10 @@ copywriter will polish the Thai afterwards, and a separate step makes the cover 
 - After writing: `python3 scripts/content/check-splits.py src/content/posts/news/<slug>.mdx` must print OK.
 
 ## Cover brief (you do not make the image)
-Write `_sources/posts/news/<slug>/cover-brief.md`: the subject's real brand (name, official logo page or file URL you found,
-brand colours as hex if the brand publishes them or as plainly visible on its site), a 3-line Thai cover headline (max ~14
-characters per line), one key number or fact for a badge, 2 short chips, and what real-looking scene fits (no people's faces).
+Write `_sources/posts/news/<slug>/cover-brief.md` for cover layout A (docs/briefs/images.md): the subject's real brand
+(name, official logo page or file URL you found, brand colour as hex), a 2-line Thai headline, ONE fact of the story,
+whether it is a product story (and where the maker's official product images are), and what scene fits if no real photo
+exists (no faces or hands, no device or car that could be taken for the brand's model). No badges or chips.
 All cover text must match the article exactly.
 
 ## Final message (plain text, no file)

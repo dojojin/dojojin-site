@@ -20,7 +20,7 @@ steps this session cannot do.** Never write "verified" for a page you could not 
   Images: inside Codex use your own image tool for the text-free background, ONE image at a time, and wait at least
   25 s between images (do not nest `codex exec` through `gen_image.sh`); everything else in step 6 is the same.
   Steps 5 and 7b need separate agents: spawn a sub-agent for each and give it only the brief and the slugs.
-- **Antigravity (agy):** new conversation. Images: run `scripts/content/gen_image.sh` from the terminal; it calls ChatGPT through `codex exec` directly. Never use agy's own image tool (NanoBanana), even if it is offered (owner, 28 Nov 2026).
+- **Antigravity (agy):** new conversation. Step 7b: spawn a separate agent (or ask the owner to run it in Codex/Claude) with `docs/briefs/fact-review.md`; it writes `review-7b.md` with `reviewer:` different from `writer: agy`. Images: run `scripts/content/gen_image.sh` from the terminal; it calls ChatGPT through `codex exec` directly. Never use agy's own image tool (NanoBanana), even if it is offered (owner, 28 Nov 2026).
 - **Claude Code:** images through `scripts/content/gen_image.sh` as well.
 
 ## Steps (do them in order; do not skip or merge)
@@ -32,13 +32,13 @@ steps this session cannot do.** Never write "verified" for a page you could not 
 | 3 | **Owner picks** | Write only the numbers the owner picks. Never write an unpicked story |
 | 4 | **Research + draft** | One agent per story, brief = `docs/briefs/news-draft.md`. Output: `_sources/posts/news/<slug>/facts.md`, the `.mdx`, `cover-brief.md`. Item marked "สื่อเจ้าเดียว" → see **Single-source picks** below (do not drop it) |
 | 5 | **Voice pass** | A DIFFERENT agent, brief = `docs/briefs/voice-pass.md`. Save a copy of the draft first; `VOICE_BASE=<copy dir> python3 scripts/content/check-voice-pass.py <slug>` |
-| 6 | **Cover + body image** | Brief = `docs/briefs/images.md`. **Cover = layout A**: full photo + real logo + 2-line headline + ONE fact, built by `python3 scripts/content/cover_a.py <slug>` from `cover-a/spec.json`. The image tool makes only a text-free background (subject in the upper half) through `scripts/content/gen_image.sh` (ChatGPT through `codex exec`, queued with a 25 s cooldown; the same command from Claude Code and from Antigravity/agy; NanoBanana is not used); it never draws text. No chips, labels or pills. No Canva templates. Real photo exists → use it as the background |
+| 6 | **Cover + body image** | Brief = `docs/briefs/images.md`. **Product story (launch, price, on sale, spec, recall) → the real product from the maker's pages, never a generated device; `figure.md` starts with `product: yes|no` (the gate checks it).** **Cover = layout A**: full photo + real logo + 2-line headline + ONE fact, built by `python3 scripts/content/cover_a.py <slug>` from `cover-a/spec.json`. The image tool makes only a text-free background (subject in the upper half) through `scripts/content/gen_image.sh` (ChatGPT through `codex exec`, queued with a 25 s cooldown; the same command from Claude Code and from Antigravity/agy; NanoBanana is not used); it never draws text. No chips, labels or pills. No Canva templates. Real photo exists → use it as the background |
 | 7 | **Assemble** | Put the figure in a `.split` beside its text; check each thing the copywriter flagged against `facts.md` |
-| 7b | **Fact review** | A third agent that did not draft or polish, read-only, brief = `docs/briefs/fact-review.md`: post vs `facts.md`, `facts.md` vs the real pages (3+ links per post), who said each quote, cover text vs article. Fix every MUST FIX and SHOULD FIX it reports, regenerate covers whose text changed. The scripts cannot see these mistakes |
+| 7b | **Fact review** | A third agent that did not draft or polish, brief = `docs/briefs/fact-review.md`: post vs `facts.md`, `facts.md` vs the real pages (3+ links per post), who said each quote, cover text vs article, dropped qualifiers, product images. It writes `_sources/posts/news/<slug>/review-7b.md` (M1, M2, S1 … findings, `post_version:` = the post's updated/date). **Check each finding against the page or the facts.md quote before changing anything (reviewers are wrong too)**, then answer every number under `## การแก้` (`M1: แก้แล้ว — …` / `M1: ไม่แก้ — <proof>`). Regenerate covers whose text changed. **The gate fails a new post without this file or with an unanswered finding**: step 7b cannot be skipped |
 | 8 | **Gate** | `python3 scripts/content/check-post.py <slug>...` → PASS, then `python3 scripts/content/thumbs.py`, `npm run build`, `npm run lint`, then `node scripts/content/check_pages.mjs http://100.89.1.29:4173 /news/<slug>/ ...` (opens each page at 390 / 768 / 1280, reports horizontal overflow and broken assets, saves screenshots of the first route to `/tmp/dojojin-intake/`) and look at the screenshots |
-| 9 | **Report** | Thai, 🔵 Fact / 🟡 Opinion: preflight output, gate output, preview links, **the step 7b reviewer's findings (must-fix, should-fix, the links it opened) and what you changed for each**, what could not be verified, what the digest got wrong. A report without the 7b findings means step 7b was not done |
+| 9 | **Report** | Thai, 🔵 Fact / 🟡 Opinion: preflight output, gate output, preview links, **the step 7b findings and answers, copied from each `review-7b.md` (who reviewed, must-fix, should-fix, the links it opened, what you changed or why not)**, what could not be verified, what the digest got wrong. A report without the 7b findings means step 7b was not done |
 | 10 | **Commit / deploy** | Only when the owner says so in this session. `git push origin main` = production. Owner's name only, no trailer |
-| 11 | **Follow up old stories** | Last step of every round: go through digest section "I. ติดตามข่าวเดิม" and the lines marked "อาจเกี่ยวกับโพสต์ที่ลงแล้ว". See **Follow-ups** below |
+| 11 | **Follow up old stories** | An update to a published post (new `updated:`/`bumped:`) goes through step 7b too: the gate asks for a fresh `review-7b.md`. Last step of every round: go through digest section "I. ติดตามข่าวเดิม" and the lines marked "อาจเกี่ยวกับโพสต์ที่ลงแล้ว". See **Follow-ups** below |
 
 Full table with lessons learned: `docs/briefs/README.md`.
 
@@ -68,7 +68,7 @@ The owner picking a number IS the decision to run it. Never drop a picked story 
 2. **Found support** → write normally and cite it.
 3. **Still one origin after a real search** → write it anyway, honestly:
    - title starts with "[ข่าวลือ]" or "มีรายงานว่า…"; lead names the single origin ("ต้นทางเดียว: X")
-   - a short block says what is confirmed, what is not, and what you looked for and did not find (reader-facing wording)
+   - a short block says what is confirmed and what is not yet, written about the claim ("XPENG Thailand ยังไม่ได้ประกาศเรื่องนี้"), never about your search ("ค้นหาแล้วไม่พบ", "ตรวจ 28 พ.ย.": the gate fails on these)
    - the supporting background goes in its own section with its own sources
    - add one line to `scripts/content/source-exceptions.txt`: `<slug> | เจ้าของเลือกจากสรุป <วันที่ รอบ ข้อ N>: ต้นทางเดียว <X>`
      (only for a story the owner picked; never to make an unpicked story pass)
@@ -112,6 +112,8 @@ Age = today minus the original post's `date:`. The digest prints the age and the
 | Two outlets relaying one dealer's launch material written as "รายงานตรงกัน", and "ราคาอย่างเป็นทางการ" softened to "ราคารายงาน" | One company's material = one origin (the company); match its strength, neither stronger nor weaker |
 | Car news in `section: tech`, cyber news in `tech` | car → `auto`, vulnerabilities/attacks → `security` |
 | 11 posts passed every script, yet 9 needed fixes: wording stronger than the source, a quote under the wrong person (title and cover), unsourced glue sentences, marketing claims as fact | Step 7b (independent fact review) is not optional |
+| agy, 28 Nov: 8 posts passed every script with no 7b review on file; "21 h" without "optional battery", a price tied to an 8GB spec no page gave, a fan project headlined like a release, "ยืนยันแล้ว" over a company's own claim, a source dated the day it was read, generated laptop/EV in product stories, "ค้นหาแล้วไม่พบ" in the body | `review-7b.md` required by the gate · qualifier on the same facts.md line · headline says fan/unofficial/rumour · real product image (gate) · process talk fails the gate |
+| The 7b reviewer called 6 correct claims wrong because it could not open YouTube and an X post | A blocked page is "could not open", never "not in source"; the writer checks every finding against facts.md before changing |
 
 ## What the gate cannot judge (step 7b and the owner still look)
 Whether the Thai sounds like the owner · whether the cover text matches the article · whether a logo is the real one ·

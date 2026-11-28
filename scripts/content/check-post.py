@@ -8,6 +8,10 @@ Runs check-splits.py and check-sources.py, then checks what those do not:
   image file exists and has width/height · cover credit line is "ภาพปก: by dojojin.tech" · section fits the topic ·
   the body has more than one content section · the page says something about Thailand/Thai users (or says none found) ·
   owner's voice markers (ครับ) · years in พ.ศ. · no emoji · cover-brief.md exists (the cover text was planned from the article).
+New posts (not yet in git HEAD) must also have (added 28 Nov 2026 after agy's 8-post round skipped the fact review):
+  _sources/posts/news/<slug>/review-7b.md from an independent fact reviewer for this post_version, every finding answered
+  (also for a published post that gets a new updated:/bumped:) · no process talk in title/description/lead/body ·
+  figure.md `product: yes|no`, and for yes a real credited product picture (a generated device is not the product).
 It cannot judge: whether the Thai reads like the owner, whether the cover text matches the article, whether a logo is real.
 Those still need a second agent's voice pass and a human look at the images.
 """
@@ -77,7 +81,7 @@ def check(slug, offline):
         F.append(f"เนื้อข่าวมีหัวข้อเดียว ({len(content_h2)}) ต้องมีอย่างน้อย 2 หัวข้อ เช่น เกิดอะไรขึ้น + กระทบคนไทย/ต้องทำอะไร")
     main = re.split(r"## แหล่งข้อมูล", body)[0]
     if not re.search(r"ในไทย|คนไทย|ผู้ใช้ไทย|ประเทศไทย|ตลาดไทย|ราคาไทย|ภาษาไทย|เมืองไทย", main):
-        F.append("ไม่พูดถึงผลกระทบหรือความเกี่ยวข้องกับไทยเลย (ถ้าไม่พบข้อมูล ให้เขียนบอกตรง ๆ)")
+        F.append('ไม่พูดถึงผลกระทบหรือความเกี่ยวข้องกับไทยเลย (ถ้าไม่มีข้อมูล เขียนถึงข้อเท็จจริง เช่น "ยังไม่มีรายงานผลกระทบในไทย" ไม่ใช่ "ผมหาไม่เจอ")')
     if main.count("ครับ") < 3:
         F.append(f'มี "ครับ" {main.count("ครับ")} ครั้ง: ยังไม่ใช่สำนวนเจ้าของ (ต้องผ่านขั้นเกลาสำนวนโดย agent อีกตัว)')
     if re.search(r"[\U0001F300-\U0001FAFF☀-➿]", t):
@@ -87,7 +91,115 @@ def check(slug, offline):
         W.append(f"มีปี ค.ศ. ในเนื้อข่าวราว {len(ad)} จุด (ใช้ พ.ศ. ยกเว้นชื่อเฉพาะ)")
     if not (ROOT / "_sources/posts/news" / slug / "cover-brief.md").exists() and not get("updated"):
         W.append("ไม่มี cover-brief.md (ข้อความบนปกควรวางแผนจากเนื้อข่าว)")
+    new, upd = is_new(p), is_update(p, get)
+    if new or upd:  # 28 Nov 2026 rules: new posts and new updates of published posts only
+        F += review_7b(slug, get("updated") or get("bumped") or get("date"))
+        F += process_talk(get("title") + "\n" + get("description") + "\n" + get("lead") + "\n" + main)
+    if new:
+        F += product_photo(slug, body)
+    if "ยืนยันแล้ว" in main:
+        W.append('มีคำว่า "ยืนยันแล้ว": ใครยืนยัน? คำแถลงของบริษัทเองหรือสื่อที่เล่าต่อกัน ไม่นับเป็นการยืนยัน')
     return F, W
+
+
+PROCESS = re.compile(
+    r"ค้น(หา)?แล้ว(ก็)?(ยัง)?ไม่(พบ|เจอ)|สิ่งที่(ผม)?ค้น(หา)?|ผมค้น(หา)?(?!พบ)|ผม(หา|เช็ก|ตรวจ)\S{0,25}?ไม่(พบ|เจอ)"
+    r"|ผมเปิด(ลิงก์|อ่าน)|เปิดหน้านี้(ตรง)?ไม่ได้|ตอนผมตรวจ|(ผม|ที่)ตรวจ(สอบ)?(ซ้ำ)?(เมื่อ)?\s?\d{1,2}\s?[ก-ฮ]\.[ก-ฮ]\.")
+
+
+def process_talk(text):
+    """Reader-facing text written about our search instead of about the facts (XPENG, 28 Nov 2026)."""
+    return ["เล่าขั้นตอนทำงานในเนื้อข่าว: …" + text[max(0, m.start() - 30):m.end() + 20].replace("\n", " ")
+            + '… เขียนถึงข้อเท็จจริงแทน เช่น "XPENG Thailand ยังไม่ได้ประกาศเรื่องนี้"' for m in PROCESS.finditer(text)]
+
+
+def is_update(p, get):
+    """True when a published post gets a new updated:/bumped: value (a follow-up update also needs step 7b)."""
+    rel = p.relative_to(ROOT).as_posix()
+    r = subprocess.run(["git", "show", f"HEAD:{rel}"], cwd=ROOT, capture_output=True, text=True)
+    if r.returncode:
+        return False
+    old = lambda k: (re.search(rf'^{k}:\s*["\']?(.*?)["\']?\s*$', r.stdout.partition("\n---\n")[0], re.M) or [None, ""])[1]
+    return any(get(k) and get(k) != old(k) for k in ("updated", "bumped"))
+
+
+def is_new(p):
+    """True when the post is not in HEAD yet (a new post). Old, published posts are not held to the 28 Nov rules."""
+    rel = p.relative_to(ROOT).as_posix()
+    return subprocess.run(["git", "cat-file", "-e", f"HEAD:{rel}"], cwd=ROOT, capture_output=True).returncode != 0
+
+
+# REVIEW: format of _sources/posts/news/<slug>/review-7b.md (docs/briefs/fact-review.md shows the full template)
+#   reviewer: <who reviewed>   writer: <who drafted>   VERDICT: publish as is | fix first | do not publish
+#   ## MUST FIX (M1. M2. ... or "- ไม่มี")   ## SHOULD FIX (S1. ...)   ## CHECKED OK (3+ source URLs opened)
+#   ## COULD NOT OPEN   ## การแก้ (ผู้เขียนตอบทุกข้อ: "M1: แก้แล้ว — ..." or "M1: ไม่แก้ — เหตุผล + หลักฐาน")
+def review_7b(slug, version):
+    f = ROOT / "_sources/posts/news" / slug / "review-7b.md"
+    if not f.exists():
+        return ["ไม่มี review-7b.md: ข่าวใหม่/อัปเดตต้องผ่านขั้น 7b (ตรวจข้อเท็จจริงโดย agent ที่ไม่ได้เขียน) ตาม docs/briefs/fact-review.md"]
+    t = f.read_text(encoding="utf-8")
+    out = []
+    line = lambda k: (re.search(rf"^{k}:[ \t]*(.*)$", t, re.M | re.I) or [None, None])[1]
+    rv, wr = line("reviewer"), line("writer")
+    if not rv or not wr:
+        out.append("review-7b.md ต้องมีบรรทัด reviewer: และ writer:")
+    elif re.sub(r"\W", "", rv.lower()) == re.sub(r"\W", "", wr.lower()):
+        out.append("review-7b.md: reviewer กับ writer เป็นตัวเดียวกัน ขั้น 7b ต้องเป็น agent ที่ไม่ได้เขียน")
+    pv = (line("post_version") or "").strip().strip('"\'')
+    if pv != version:
+        out.append(f"review-7b.md: post_version ({pv or 'ไม่มี'}) ไม่ตรงกับ updated/date ของข่าว ({version}) ผลตรวจเป็นของข่าวฉบับอื่น ต้องตรวจฉบับนี้ใหม่")
+    v = (line("VERDICT") or "").strip().lower()
+    if v not in ("publish as is", "fix first", "do not publish"):
+        out.append('review-7b.md: VERDICT ต้องเป็นค่าเดียว: publish as is / fix first / do not publish')
+    elif v == "do not publish":
+        out.append("ผู้ตรวจขั้น 7b ตัดสินว่าไม่ควรลง (VERDICT: do not publish) ต้องให้เจ้าของตัดสิน")
+    part = lambda h: (re.search(rf"^##[ \t]*{h}[^\n]*\n(.*?)(?=^##[ \t]|\Z)", t, re.M | re.S | re.I) or [None, ""])[1]
+    norm = lambda u: re.sub(r"[#?].*$", "", u).rstrip("/").lower()
+    urls = {norm(u) for u in re.findall(r"https?://[^\s)>\]\"'`]+", part("CHECKED OK"))}
+    if len(urls) < 3:
+        out.append(f"review-7b.md: หัวข้อ CHECKED OK มีลิงก์ (ไม่นับซ้ำ) ที่ผู้ตรวจเปิดเอง {len(urls)} ลิงก์ ต้องอย่างน้อย 3")
+    item = re.compile(r"^[-* \t]*\**[ \t]*([MS]\d+)[ \t]*\**[ \t]*[.):]", re.M | re.I)
+    found = set()
+    for h in ("MUST FIX", "SHOULD FIX"):
+        body = part(h)
+        ids = {x.upper() for x in item.findall(body)}
+        if not ids and re.sub(r"[-\s]|ไม่มี|none", "", body, flags=re.I):
+            out.append(f'review-7b.md: หัวข้อ {h} มีเนื้อหาแต่ไม่มีเลขข้อ (เขียนเป็น "M1. …" / "S1. …" หรือ "- ไม่มี")')
+        found |= ids
+    if "การแก้" not in t:
+        out.append("review-7b.md ไม่มีหัวข้อ ## การแก้ (ผู้เขียนต้องตอบทุกข้อที่ผู้ตรวจพบ)")
+    else:
+        answered = {m.group(1).upper() for m in re.finditer(
+            r"^[-* \t]*\**[ \t]*([MS]\d+)[ \t]*\**[ \t]*:[ \t]*(?:แก้แล้ว|ไม่แก้)[ \t]*[—–-][ \t]*(\S.{9,})$", part("การแก้"), re.M | re.I)}
+        miss = sorted(found - answered, key=lambda x: (x[0], int(x[1:])))
+        if miss:
+            out.append("review-7b.md: ยังไม่ได้ตอบข้อ " + ", ".join(miss) + ' (เขียน "M1: แก้แล้ว — <แก้อะไร>" หรือ "M1: ไม่แก้ — <เหตุผล + หลักฐาน>")')
+    return out
+
+
+def product_photo(slug, body):
+    """figure.md says `product: yes|no`. A product story needs a real, credited picture of it (Dell 14S, 28 Nov 2026)."""
+    fig = ROOT / "_sources/posts/news" / slug / "figure.md"
+    ft = fig.read_text(encoding="utf-8") if fig.exists() else ""
+    m = re.search(r"^product:\s*(yes|no)\b", ft, re.M | re.I)
+    if not m:
+        return ["figure.md ต้องมีบรรทัด product: yes หรือ product: no (ข่าวนี้เกี่ยวกับสินค้าที่มีตัวจริงไหม: เปิดตัว ราคา วางขาย สเปก เรียกคืน)"]
+    if m.group(1).lower() == "no":
+        return []
+    caps = re.findall(r'news-fig__credit">(.*?)</span>', body, re.S)
+    credits = (re.search(r"## ที่มาของภาพ(.*)", body, re.S) or [None, ""])[1].splitlines()
+    real = [c for c in caps if re.search(r"ภาพ:\s*(?!ภาพประกอบ)\S", c) and "DOJOJIN" not in c.upper()]
+    for ln in credits:
+        seg = re.sub(r"ภาพปก:\s*by dojojin\.tech", "", ln, flags=re.I)
+        if re.search(r"ภาพ(?!ประกอบ)", seg) and "http" in seg and "DOJOJIN" not in seg.upper():
+            real.append(seg)
+    if real:
+        return []
+    no = re.search(r"^no-official-image:\s*(.+)$", ft, re.M)
+    if no and len(no.group(1)) >= 40 and "http" in no.group(1):
+        return []
+    return ["product: yes แต่ไม่มีภาพสินค้าจริงที่มีเครดิตผู้ผลิต: ใส่ภาพจริงจากผู้ผลิต (ภาพข่าวแจก หน้าสินค้า) พร้อมเครดิต \"ภาพ: <ผู้ผลิต>\" "
+            "หรือถ้ายังไม่มีภาพทางการเลย เขียน no-official-image: <เหตุผล + ลิงก์หน้าที่ค้นแล้ว> ใน figure.md"]
 
 
 def main():

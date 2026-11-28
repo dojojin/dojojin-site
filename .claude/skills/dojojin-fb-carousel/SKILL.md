@@ -51,7 +51,11 @@ HippoCraft is a dark navy engineering log with emoji. dojojin.tech is light, lik
 - **Every number and claim comes from the published post,** including its hedges. Vendor numbers stay vendor numbers, and expected dates stay "คาดว่า".
 - **Voice:** the owner's (ผม/ครับ, simple Thai, plain opinions). Never invent his experiences.
 - **Slides:** short lines, one idea per slide, about 7 slides.
-- **`post.txt` (Facebook): the owner's own format (17 Nov 2026), copy it exactly.** Reference: `_sources/social/sets/bluetooth-guide/post.txt`.
+- **`post.txt`, newer format (owner, 28 Nov 2026; reference `_sources/social/sets/1password-recap/post.txt`) — use this one from now on:**
+  `<emoji> <headline>? <short answer>ครับ` · blank line · `. . . .  <intro ending "ส่วนนี้คือฉบับย่อครับ">` · blank line ·
+  points start with `‣ ` (one space, no emoji marker) · then the same `-----------------` / `✓` ×3 / link / hashtags blocks as below.
+  For a recap of an older post, the intro says when it was posted ("ข่าวนี้ผมลงในเว็บไว้ตั้งแต่ <date> ...").
+- **Older format (17 Nov 2026), kept for reference:** Reference: `_sources/social/sets/bluetooth-guide/post.txt`.
   - Emoji are part of his FB format, as in his review posts. The site itself stays emoji-free.
   - A topic marker goes after the emoji on the headline and on every point. For Bluetooth it is `ᚼᛒ`, the two runes in the Bluetooth logo. For another topic, pick a fitting marker or leave it out.
   - `👉` marks general points and `🎵` marks audio points.

@@ -13,13 +13,15 @@ is placed by `scripts/content/cover_a.py` in the site font.
 
 1. Folder `_sources/posts/news/<slug>/cover-a/` with:
    - `bg.jpg`: a real or official photo if one exists (credit it). Otherwise generate a scene through
-     `scripts/content/gen_image.sh` (one image at a time; it calls ChatGPT through `codex exec`; never NanoBanana or an agent's own image tool, except inside Codex itself). The prompt
+     `scripts/content/gen_image.sh` (product stories: see "Product stories" below first; one image at a time; it calls ChatGPT through `codex exec`; never NanoBanana or an agent's own image tool, except inside Codex itself). The prompt
      must say: NO text, NO letters, NO logos, NO people/hands/faces; main subject in the UPPER 55% of the frame; the LOWER
      40% calm and uncluttered, fading to dark navy (dark tone) or off-white (light tone). Never invent a product's look.
      The background must NOT contain: a face or a hand (even in a real photo or an official screenshot), another
      outlet's photograph (outlet photos belong in the body with credit, never on the cover), readable text or device
      names on a screen, or the previous model standing in for a rumoured new one (use a scene that points to no model).
-   - `logo.png`: the real logo from the brand's own site or Wikimedia Commons, without a tagline. US government seals are
+   - `logo.png`: the real logo from the brand's own site or Wikimedia Commons, without a tagline. The logo is the subject
+     of the story; when an attacker only impersonates a brand (a fake "Google Sheets" extension), use the platform where it
+     happened (Chrome) or no brand, so readers do not think the impersonated company is at fault. US government seals are
      public domain. No real logo file → stop and say so.
    - `spec.json`: `{"bg":"bg.jpg","logo":"logo.png","lines":["บรรทัด 1","บรรทัด 2"],"fact":"…","tone":"dark"|"light","accent":"#hex"}`
      (`"plate":"dark"` for a logo with white lettering; `"bg_position"` to shift the crop). `tone` follows the photo.
@@ -30,11 +32,29 @@ is placed by `scripts/content/cover_a.py` in the site font.
    under the scrim. `python3 scripts/content/cover_zoom.py <slug>` gives 100% tiles if you need to look closely.
 4. Set `coverAlt` to the cover text ("ปกข่าว <line 1> <line 2> · <fact>").
 
+## Product stories: the real product, always (owner rule since 14 Nov 2026, enforced by the gate from 28 Nov 2026)
+When the story is about a product that exists or was officially shown (launch, Thai price, on sale, spec, recall, review):
+1. Look on the maker's own pages first: Thai product page, newsroom / press kit, global product page, official social post.
+2. The **body image must be that real product** (official image, credited "ภาพ: <Maker>" + link). The cover background
+   should be it too when it is big enough (the gate fails above 1.7× enlargement); otherwise a generated scene with **no
+   device or vehicle in it**.
+3. **Never generate the product, and never generate a device or car a reader could take for the brand's model** (a
+   generated laptop for Dell 14S, a generated silver EV for an XPENG story: both wrong, 28 Nov 2026).
+4. No official image exists at all (rumour, not yet shown) → generated scene without the device, and write
+   `no-official-image: <why + which pages you checked>` in `figure.md`. The gate fails a price/on-sale story whose images
+   are all generated unless this line is there.
+Generated scenes are fine for stories with no physical product (malware, policy, outages, company filings), and for the
+approved pastel app infographics.
+
 ## Body image → `public/media/posts/news/<slug>/photo-1.jpg` (1600×1200 or 1600×900)
 - If an official image or real screenshot exists, use that (credit + link). Otherwise a realistic scene that illustrates
-  the story with NO text, NO logos, NO people/hands/faces, generated with the same script (no `-i`).
-- Write `_sources/posts/news/<slug>/figure.md`: `**Alt:**` (what is in the picture), `**Caption:**` (one Thai sentence ending
-  "(ภาพประกอบจาก DOJOJIN.TECH)"), `**Placement:**` (which section it sits beside).
+  the story with NO text, NO logos, NO people/hands/faces, generated with the same script (no `-i`), and with no
+  product of the story in it (see above).
+- Write `_sources/posts/news/<slug>/figure.md`: first line `product: yes` or `product: no` (is the story about a product
+  that exists: launch, price, on sale, spec, recall), then `**Alt:**` (what is in the picture), `**Caption:**` (one Thai
+  sentence; a generated scene ends "(ภาพประกอบจาก DOJOJIN.TECH)", a real image is credited "ภาพ: <owner>" with a link),
+  `**Placement:**` (which section it sits beside). The gate fails a new post whose figure.md has no `product:` line, and a
+  `product: yes` post with no credited real picture unless `no-official-image: <reason + links of pages checked>` is there.
 - In the post the figure goes inside `<div class="split">` next to a `<div class="prose">` block
   (`<figure class="news-fig news-fig--zoom">` with `<img ... width height loading="lazy" alt>` and `<figcaption>`), and
   "## ที่มาของภาพ" gets the line "- ภาพในเนื้อข่าว: ภาพประกอบจาก DOJOJIN.TECH".
