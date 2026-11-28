@@ -34,7 +34,7 @@ a news post dated 27 Nov 2026 or later that does not PASS cannot be committed. N
   `python3 scripts/content/check-voice-pass.py <slug>` afterwards. Full list: `docs/editorial-standard.md` §4.1 (owner, 26 Nov 2026: "ห้ามละเมิด").
 - No process talk on the page ("ผมเปิดหน้านี้ไม่ได้", "403"). Keep every hedge and attribution at the same strength.
 - When an article's facts change, open its cover and every image with text and fix them too.
-- Covers are 1600×1200 and carry the subject's real logo/icon and brand colours. Text on a cover must match the article.
+- News covers are 1600×1200 in layout A: full photo, real logo, a 2-line headline and one fact, built with `scripts/content/cover_a.py`. Image tools make text-free backgrounds only; they never draw text. Cover text must match the article.
 - Never write AI / Codex / ChatGPT / Canva / NanoBanana in image credits, alt text or inside images. Cover credit: "by dojojin.tech".
 - No images from Thai news outlets.
 - **Do not commit, push or deploy unless the owner says so in this session.** Pushing `main` deploys production.

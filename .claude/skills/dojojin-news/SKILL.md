@@ -18,7 +18,7 @@ Start a NEW conversation for each news round; habits from an old conversation (C
 | 3 | **Owner picks** | Write only the numbers the owner picks. Never write an unpicked story |
 | 4 | **Research + draft** | One agent per story, brief = `docs/briefs/news-draft.md`. Output: `_sources/posts/news/<slug>/facts.md`, the `.mdx`, `cover-brief.md`. Item marked "สื่อเจ้าเดียว" → see **Single-source picks** below (do not drop it) |
 | 5 | **Voice pass** | A DIFFERENT agent, brief = `docs/briefs/voice-pass.md`. Save a copy of the draft first; `VOICE_BASE=<copy dir> python3 scripts/content/check-voice-pass.py <slug>` |
-| 6 | **Cover + body image** | Brief = `docs/briefs/images.md`. Every image through `scripts/content/gen_image.sh` (queues, cooldown 25 s codex / 90 s NanoBanana, falls back). In agy: `IMAGE_ENGINES="agy codex"` (NanoBanana gives about 14 images per 5 h; the script moves to ChatGPT when it runs out). Never call an image tool directly. No Canva templates. A real photo or official product image exists → build the cover from it with `scripts/content/photo_cover.py` + `render_cover.mjs` instead of generating one. Real logo + brand colours, 1600×1200, text matches the article. Look at every image, and read the cover text on the 100% tiles from `cover_zoom.py` |
+| 6 | **Cover + body image** | Brief = `docs/briefs/images.md`. **Cover = layout A**: full photo + real logo + 2-line headline + ONE fact, built by `python3 scripts/content/cover_a.py <slug>` from `cover-a/spec.json`. The image tool makes only a text-free background (subject in the upper half) through `scripts/content/gen_image.sh` (queues, cooldown, falls back; in agy `IMAGE_ENGINES="agy codex"`); it never draws text. No chips, labels or pills. No Canva templates. Real photo exists → use it as the background |
 | 7 | **Assemble** | Put the figure in a `.split` beside its text; check each thing the copywriter flagged against `facts.md` |
 | 7b | **Fact review** | A third agent that did not draft or polish, read-only, brief = `docs/briefs/fact-review.md`: post vs `facts.md`, `facts.md` vs the real pages (3+ links per post), who said each quote, cover text vs article. Fix every MUST FIX and SHOULD FIX it reports, regenerate covers whose text changed. The scripts cannot see these mistakes |
 | 8 | **Gate** | `python3 scripts/content/check-post.py <slug>...` → PASS, then `python3 scripts/content/thumbs.py`, `npm run build`, `npm run lint`, then `node scripts/content/check_pages.mjs http://100.89.1.29:4173 /news/<slug>/ ...` (opens each page at 390 / 768 / 1280, reports horizontal overflow and broken assets, saves screenshots of the first route to `/tmp/dojojin-intake/`) and look at the screenshots |
@@ -68,14 +68,15 @@ Age = today minus the original post's `date:`. The digest prints the age and the
 | Mistake | Rule |
 |---|---|
 | Wrote 11 posts in an old conversation with the old Canva template | New conversation; follow this file |
-| Covers 1024×768, no logo, same navy template for every brand | 1600×1200, real logo + brand colours, dark only for cyber |
+| Covers 1024×768, no logo, same navy template for every brand | 1600×1200 layout A with the real logo; tone follows the photo |
 | Cover said RAM 8GB, article said 6GB | Cover text is checked against the article word by word |
 | Invented a phone that looks like another brand | Product news uses the real official image, or no product on the cover |
 | No `facts.md`, outlet names without links, dead links | `check-sources.py` (inside the gate) must pass |
 | One-outlet rumours written as plain news, no label, no support | Follow "Single-source picks": search for support, label the origin, list in source-exceptions |
 | One section, no Thai impact, "ครับ" once | 2+ sections, say what it means for Thai users (or that nothing was found), voice pass by another agent |
 | Four images generated in 3 minutes | `gen_image.sh` only (cooldown) |
-| Cover shipped with "ข้อมูลูถูกเข้าถึง" (extra ู); three reviewers looked at the whole image and missed it | `python3 scripts/content/cover_zoom.py <slug>` and read every word on the 100% tiles, mark by mark, before and after any cover edit |
+| Cover shipped with "ข้อมูลูถูกเข้าถึง" (extra ู) drawn by the image tool; three looks at the whole image missed it | Text on covers is placed by `cover_a.py`, never drawn by an image tool |
+| Owner: covers "รกไป" (label + 3 lines + pill + chips + logo tile) | Layout A: logo, 2 lines, one fact, nothing else |
 | Headline said "12 GB", lead, table and cover said "เกิน 12 GB" | Title, description, lead, stat cards, tables and cover carry the same number with the same qualifier |
 | Car news in `section: tech`, cyber news in `tech` | car → `auto`, vulnerabilities/attacks → `security` |
 | 11 posts passed every script, yet 9 needed fixes: wording stronger than the source, a quote under the wrong person (title and cover), unsourced glue sentences, marketing claims as fact | Step 7b (independent fact review) is not optional |
