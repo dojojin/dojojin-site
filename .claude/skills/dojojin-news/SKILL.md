@@ -6,7 +6,7 @@ description: Use for any news work on dojojin.tech (/news/) — the owner says "
 # dojojin.tech news: from the digest to a published post
 
 **A post is finished only when `python3 scripts/content/check-post.py <slug>` prints PASS.** Paste that output in your report.
-Do not say "เสร็จแล้ว" without it. Rules live in `docs/editorial-standard.md` (read sections 0, 2, 4, 4.1, 5 once per session).
+Do not say "เสร็จแล้ว" without it. Rules live in `docs/editorial-standard.md` (read sections 0, 2, 4, 4.1, 4.2, 5 once per session; 4.2 is how the owner wants fixes done and reported).
 Start a NEW conversation for each news round; habits from an old conversation (Canva templates, direct image tools) are not the method.
 
 ## Step 0: can this session do the job?

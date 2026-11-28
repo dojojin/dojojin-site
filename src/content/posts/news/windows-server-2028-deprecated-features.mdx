@@ -1,0 +1,146 @@
+---
+title: "Windows Server 2028 เตรียมหยุดพัฒนา 4 ฟีเจอร์ รวม PowerShell 5.1 และ WDS — ยังไม่ได้ถอดออกทันที"
+topic: software
+type: news
+tags: [microsoft, windows]
+date: 2026-11-28T13:35:00+07:00
+section: tech
+sourceName: "Microsoft Learn และ Microsoft Support"
+sourceUrl: "https://learn.microsoft.com/en-us/windows-server/get-started/removed-deprecated-features-windows-server?tabs=ws28-preview"
+description: "Microsoft ระบุ 4 ฟีเจอร์ที่จะหยุดพัฒนาใน Windows Server 2028 ได้แก่ BranchCache, WDS, Windows PowerShell 5.1 และ Windows Sockets Direct ผู้ดูแลระบบควรตรวจงานที่พึ่งพาและทดสอบทางเลือกก่อนย้าย"
+kicker: "ข่าวเทคโนโลยี · Windows Server"
+lead: "ใครดูแล Windows Server เช็กรายการนี้ไว้ครับ Microsoft ระบุ 4 ฟีเจอร์ที่จะหยุดพัฒนาใน Windows Server 2028 มีทั้ง PowerShell 5.1 และ WDS ที่ใช้ติดตั้งระบบผ่านเครือข่าย แต่คำว่าหยุดพัฒนาไม่ได้แปลว่าถอดออกทันที ตัวระบบยังอยู่ช่วง Preview และแผนอาจเปลี่ยนก่อนออกจริงครับ"
+meta: "เรียบเรียงจากเอกสาร Microsoft Learn และ Microsoft Support · ข้อมูล ณ 28 พฤศจิกายน 2569"
+cover: "/media/posts/news/windows-server-2028-deprecated-features/cover.jpg"
+coverAlt: "ปกข่าว Server 2028 หยุดพัฒนา 4 ฟีเจอร์ · ยังไม่ใช่การถอดออกทันที"
+---
+
+<section class="section">
+
+## หยุดพัฒนา ต่างจากถอดออกอย่างไร
+
+<div class="split">
+<div class="prose">
+
+เอกสาร **Microsoft Learn** แยกรายการฟีเจอร์ที่หยุดพัฒนาออกจากรายการที่ถอดออกครับ สำหรับ Windows Server 2028 ฝั่งที่หยุดพัฒนามี **4 รายการ** คือ BranchCache, Windows Deployment Services, Windows PowerShell 5.1 และ Windows Sockets Direct
+
+**ตามนิยามทั่วไปของ Microsoft** คำว่า **Deprecated** หมายถึง Microsoft จะไม่พัฒนาฟีเจอร์นั้นต่อ และอาจถอดออกจากระบบรุ่นหลัง ส่วนประกอบที่อยู่ในสถานะนี้ยังมีให้ใช้ ยังรองรับงานจริง และยังได้รับอัปเดตความปลอดภัยกับคุณภาพตามอายุการสนับสนุนของผลิตภัณฑ์ครับ
+
+อีกข้อที่ต้องดูคู่กันคือ **Windows Server 2028 ยังเป็น Preview** หรือรุ่นทดสอบก่อนออกจริง Microsoft เตือนว่ารายการนี้ไม่ได้แปลว่าฟีเจอร์หายไปจากบิลด์ทดสอบปัจจุบันแล้ว และแผนหยุดพัฒนาอาจเปลี่ยนก่อนวางจำหน่ายได้
+
+ข่าวนี้จึงเป็นสัญญาณให้เริ่มตรวจว่าระบบของเราพึ่งพาอะไรอยู่ ไม่ใช่ประกาศว่าทุกองค์กรต้องย้ายระบบในวันนี้ครับ
+
+ในภาพเป็นตารางจากเอกสาร Microsoft Learn ที่แสดงรายการและคำอธิบายของแต่ละฟีเจอร์ ข้อมูลส่วนนี้เป็นรายการหยุดพัฒนา ไม่ใช่รายการที่ถอดออกแล้วครับ
+
+</div>
+<figure class="news-fig news-fig--zoom">
+<img src="/media/posts/news/windows-server-2028-deprecated-features/photo-1.jpg" width="656" height="549" alt="ภาพหน้าจอตาราง 4 ฟีเจอร์ที่หยุดพัฒนาใน Windows Server 2028 จาก Microsoft Learn" loading="lazy" />
+<figcaption><span class="news-fig__credit">ภาพ: <a href="https://learn.microsoft.com/en-us/windows-server/get-started/removed-deprecated-features-windows-server?tabs=ws28-preview" rel="noopener">Microsoft Learn</a></span></figcaption>
+</figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## มีอะไรอยู่ในรายการบ้าง
+
+<div class="prose">
+
+**BranchCache** เป็นระบบแคชเนื้อหาเพื่อลดการใช้แบนด์วิดท์ระหว่างสำนักงาน เช่น เก็บสำเนาไฟล์ที่ดาวน์โหลดมาแล้วไว้ให้เครื่องในสาขาใช้ต่อ Microsoft แนะนำให้สำรวจงานที่ใช้แคชจากเซิร์ฟเวอร์ไฟล์ เว็บ หรือบริการรับส่งไฟล์เบื้องหลัง แล้ววางแผนเปลี่ยนไปใช้ทางเลือกอื่นครับ เอกสารรายการนี้ยังไม่ได้แนะนำทางเลือกเดียวสำหรับทุกระบบ
+
+ส่วน **Windows Sockets Direct** เป็นเทคโนโลยีเชื่อมต่อแอปเครือข่ายกับเครือข่ายความเร็วสูง ตั้งแต่ Windows Server 2028 การสร้างจุดเชื่อมต่อแบบ system area network จะถูกปิดไว้โดยค่าเริ่มต้น และ Microsoft ระบุว่าจะถอดฟีเจอร์นี้ในรุ่นหลัง จุดที่ต้องแยกคือการเปลี่ยนนี้ **ไม่กระทบ NetworkDirect, SMB Direct หรือการทำงาน RDMA อื่น ๆ** ซึ่งเป็นการเข้าถึงหน่วยความจำเครื่องปลายทางผ่านเครือข่ายโดยตรง
+
+<div class="table-frame">
+
+| ฟีเจอร์ที่หยุดพัฒนา | สิ่งที่ผู้ดูแลระบบควรตรวจ |
+| --- | --- |
+| BranchCache | งานแคชไฟล์และเนื้อหาระหว่างสาขา |
+| Windows Deployment Services (WDS) | ระบบติดตั้ง Windows และบูตผ่านเครือข่ายที่พึ่งพา WDS |
+| Windows PowerShell 5.1 | สคริปต์ โมดูล และขั้นตอนดูแลระบบเดิม |
+| Windows Sockets Direct | แอปที่พึ่งพาเทคโนโลยีนี้โดยเฉพาะ ไม่ใช่ RDMA ทุกแบบ |
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ใช้ WDS อยู่ ต้องดูมากกว่าตัวเซิร์ฟเวอร์
+
+<div class="prose">
+
+**WDS** ย่อจาก Windows Deployment Services เป็นบทบาทเซิร์ฟเวอร์สำหรับติดตั้ง Windows ผ่านเครือข่าย การหยุดพัฒนารอบนี้ครอบคลุมบริการ เครื่องมือจัดการ ส่วนเชื่อมต่อ และ **PXE** ของ WDS ด้วยครับ PXE คือการเริ่มบูตเครื่องจากเครือข่ายก่อนเข้าระบบปฏิบัติการ
+
+ตามคำแนะนำของ **Microsoft Support** ถ้าใช้ Microsoft Configuration Manager ร่วมกับ PXE ที่อาศัย WDS ให้ทดสอบย้ายไปใช้ PXE responder ของ Configuration Manager แบบไม่ใช้ WDS ระบบติดตั้งของ Configuration Manager เองไม่ได้อยู่ในประกาศหยุดพัฒนานี้
+
+แต่ทางเลือกดังกล่าวรองรับการส่งข้อมูลแบบ unicast ไม่รองรับ multicast ที่พึ่งพา WDS ครับ ถ้าองค์กรใช้ส่งอิมเมจติดตั้งให้หลายเครื่องพร้อมกัน ต้องประเมินกำลังของจุดกระจายไฟล์ แบนด์วิดท์ และรอบติดตั้งใหม่ด้วย ไม่ใช่เปลี่ยนตัวเลือกแล้วถือว่าจบ
+
+ประกาศนี้ไม่ได้เปลี่ยนการรองรับ WDS บน Windows Server รุ่นเดิมที่ยังอยู่ในอายุสนับสนุน เช่น Windows Server 2025 ส่วนวันที่จะถอด WDS ออกจากรุ่นอนาคต Microsoft ระบุว่าจะอัปเดตเมื่อมีข้อมูลกำหนดการเพิ่มเติม
+
+</div>
+
+</section>
+
+<section class="section">
+
+## PowerShell 5.1 ยังใช้คู่กับรุ่น 7 ได้
+
+<div class="prose">
+
+เอกสารฟีเจอร์ใหม่ของ Windows Server 2028 Preview ระบุว่าระบบมี **PowerShell 7** และยังมี **Windows PowerShell 5.1 ใช้คู่กัน** เพื่อให้งานอัตโนมัติเดิมทำต่อได้โดยไม่ถูกบังคับให้ย้ายทันทีครับ
+
+คู่มือย้ายของ Microsoft ย้ำว่า PowerShell 7 ติดตั้งและทำงานข้างรุ่นเดิมได้ แต่ยังมีความต่างด้านความเข้ากันได้ ผู้ดูแลระบบจึงควรทดสอบสคริปต์ โมดูล และงานอัตโนมัติที่ใช้อยู่จริงก่อนตัดสินใจย้าย
+
+ผมว่าเริ่มจากจดรายการงานสำคัญ แล้วทดลองกับข้อมูลและเครื่องทดสอบก่อน จะเห็นชัดกว่าการเปลี่ยนพร้อมกันทั้งระบบครับ โดยเฉพาะงานตามเวลาและงานที่พึ่งพาโมดูลเก่า ต้องตรวจว่าผลลัพธ์ยังตรงกับที่ระบบปลายทางต้องการด้วย
+
+</div>
+
+</section>
+
+<section class="section">
+
+## กระทบผู้ใช้และองค์กรในไทยแค่ไหน
+
+<div class="prose">
+
+ยังไม่พบเงื่อนไขหรือผลกระทบที่ระบุแยกสำหรับประเทศไทยในเอกสารชุดนี้ครับ เรื่องนี้เกี่ยวกับองค์กรที่ดูแล Windows Server และมีงานพึ่งพา 4 ฟีเจอร์ข้างต้น ส่วนจะกระทบมากน้อยแค่ไหนขึ้นกับระบบที่ใช้
+
+สำหรับทีมไอที ผมแนะนำให้แยกสองงานครับ งานแรกคือสำรวจว่ามีอะไรพึ่งพาฟีเจอร์เหล่านี้บ้าง งานที่สองคือทดสอบทางเลือกและค่อยกำหนดแผนย้ายตามรุ่นที่องค์กรใช้อยู่ การหยุดพัฒนาเป็นเหตุให้เตรียมตัว แต่ยังไม่ใช่เหตุให้สรุปว่าระบบเดิมหมดการสนับสนุนแล้ว
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- Microsoft Learn: [Features removed or no longer developed in Windows Server](https://learn.microsoft.com/en-us/windows-server/get-started/removed-deprecated-features-windows-server?tabs=ws28-preview)
+- Microsoft Learn: [What's new in Windows Server 2028 Preview](https://learn.microsoft.com/en-us/windows-server/get-started/whats-new-windows-server-2028)
+- Microsoft Support: [Windows Deployment Services deprecation in the next Windows Server release](https://support.microsoft.com/en-us/servicing/os/windows/docs/2026/09/windows-deployment-services-deprecation-in-the-next-windows-server-release)
+- Microsoft Learn: [Migrating from Windows PowerShell 5.1 to PowerShell 7](https://learn.microsoft.com/en-us/powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7.6)
+- Microsoft Learn: [BranchCache](https://learn.microsoft.com/en-us/windows-server/networking/branchcache/branchcache) และ [Windows Sockets Direct Architecture](https://learn.microsoft.com/en-us/windows-hardware/drivers/network/windows-sockets-direct-architecture)
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: by dojojin.tech
+- ภาพพื้นปก: ภาพประกอบจาก DOJOJIN.TECH
+- ภาพหน้าจอ: [Microsoft Learn](https://learn.microsoft.com/en-us/windows-server/get-started/removed-deprecated-features-windows-server?tabs=ws28-preview)
+- โลโก้: [Microsoft Windows Server](https://www.microsoft.com/en-us/windows-server)
+
+</div>
+
+</section>

@@ -1,0 +1,115 @@
+---
+title: "Microsoft เลิกพัฒนา MTP ผ่าน Bluetooth บน Windows ส่วน USB ใช้ต่อได้ และยังมีคู่มือส่งไฟล์ Bluetooth ทั่วไป"
+topic: software
+type: news
+tags: [microsoft, windows, bluetooth]
+date: 2026-11-28T13:30:00+07:00
+section: tech
+sourceName: "Microsoft Learn, Microsoft Support และ Windows Latest"
+sourceUrl: "https://learn.microsoft.com/en-us/windows/whats-new/deprecated-features"
+description: "Microsoft เพิ่ม MTP ผ่าน Bluetooth ในรายการเลิกพัฒนาเดือนพฤศจิกายน 2569 อาจถอดใน Windows รุ่นหน้า Microsoft ยืนยันว่า MTP ผ่านสาย USB ใช้ต่อได้ ส่วน Microsoft Support ยังมีคู่มือส่งไฟล์ Bluetooth ทั่วไป"
+kicker: "ข่าวซอฟต์แวร์ · Windows"
+lead: "เห็นข่าว Windows เลิกพัฒนา MTP ผ่าน Bluetooth แล้วอาจสงสัยว่าต่อไปจะส่งไฟล์จากมือถือเข้าคอมไม่ได้หรือเปล่า ข่าวนี้มีขอบเขตเฉพาะวิธีเชื่อมต่อครับ Microsoft ยืนยันว่า MTP ผ่านสาย USB ยังใช้ได้ ส่วน Microsoft Support ยังมีคู่มือส่งไฟล์ผ่านเมนู Bluetooth ทั่วไปแยกอยู่อีกหน้าหนึ่ง"
+meta: "เรียบเรียงจาก Microsoft Learn, Microsoft Support และ Windows Latest · ข้อมูล ณ 28 พฤศจิกายน 2569"
+cover: "/media/posts/news/windows-mtp-bluetooth-deprecated/cover.jpg"
+coverAlt: "ปกข่าว เลิกพัฒนา MTP ผ่าน Bluetooth · ผ่าน USB ยังใช้ได้"
+---
+
+<section class="section">
+
+## เลิกพัฒนาอะไร และยังไม่ได้ถอดอะไร
+
+<div class="split">
+<div class="prose">
+
+Microsoft เพิ่ม **MTP over Bluetooth** ลงในรายการฟีเจอร์ที่เลิกพัฒนาประจำเดือนพฤศจิกายน 2569 ครับ คำว่า deprecated ในเอกสารนี้หมายถึงไม่พัฒนาต่อ และบริษัทบอกว่าอาจนำออกจาก Windows รุ่นอนาคต แต่ยังไม่ได้ระบุวันที่ถอด
+
+**MTP (Media Transfer Protocol)** คือวิธีรับส่งข้อมูลกับอุปกรณ์พกพา ส่วนที่ประกาศเลิกพัฒนารอบนี้เป็นการทำงานผ่าน Bluetooth โดยเฉพาะ ไม่ได้เลิก MTP ทุกช่องทาง ในภาพเป็นตัวอย่างที่ Windows Latest ใช้ประกอบการเชื่อมต่อ OnePlus 8T ผ่านสาย USB ซึ่งเป็นช่องทางที่ Microsoft ระบุว่ายังใช้ได้
+
+ผมว่าเวลาอ่านข่าวนี้ควรแยกคำว่า **เลิกพัฒนา** ออกจาก **ถอดออกแล้ว** ครับ เพราะสถานะในประกาศยังไม่ได้หมายความว่าฟีเจอร์หายจากเครื่องทันทีที่อ่านข่าว และยังไม่มีวันถอดที่แน่นอน
+
+</div>
+<figure class="news-fig news-fig--zoom">
+<img src="/media/posts/news/windows-mtp-bluetooth-deprecated/photo-1.jpg" width="1600" height="900" alt="ภาพแล็ปท็อปแสดงโฟลเดอร์ของ OnePlus 8T ผ่าน MTP ทางสาย USB จาก Windows Latest" loading="lazy" />
+<figcaption><span class="news-fig__credit">ภาพ: <a href="https://www.windowslatest.com/2026/11/27/every-time-you-plug-in-your-android-phone-windows-11-uses-mtp-and-microsoft-is-now-retiring-the-bluetooth-version-that-dates-back-to-vista/" rel="noopener">Windows Latest</a> · ตัวอย่างผ่าน USB</span></figcaption>
+</figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## MTP ผ่าน Bluetooth ใช้ทำอะไร
+
+<div class="prose">
+
+เอกสาร Windows Portable Devices อธิบายว่า MTP ผ่าน Bluetooth ใช้ส่งและซิงก์ข้อมูลระหว่างคอมพิวเตอร์กับอุปกรณ์พกพา ตัวอย่างคือการซิงก์เพลงและเพลย์ลิสต์จาก **Windows Media Player** ไปยังเครื่องเล่นเพลงที่รองรับ จึงเป็นเรื่องของการจัดการข้อมูลอุปกรณ์ผ่านช่องทางหนึ่ง ไม่ใช่ชื่อเรียกรวมของการส่งไฟล์ไร้สายทั้งหมดครับ
+
+ฟีเจอร์นี้มีอยู่ใน Windows 7 และ Windows Vista ที่ติดตั้ง Platform Update ส่วน Vista รุ่นปกติไม่ได้รองรับตามตารางของ Microsoft ข้อมูลนี้ช่วยบอกที่มาของระบบ แต่ไม่ได้หมายความว่ามือถือหรือเครื่องเล่นเพลงทุกเครื่องใช้วิธีดังกล่าว
+
+ส่วนชื่อ Windows 10 ในตารางหมายถึงระบบที่คู่มือยังแสดงขั้นตอนอยู่ครับ หน้า Microsoft Support ระบุว่า Windows 10 หมดการสนับสนุนเมื่อ **14 ตุลาคม 2568** การมีคู่มือเดิมอยู่ไม่ได้แปลว่าสถานะการสนับสนุนเปลี่ยนกลับมา
+
+<div class="table-frame">
+<table>
+<thead><tr><th>วิธีเชื่อมต่อ</th><th>สถานะที่ควรแยกให้ชัด</th></tr></thead>
+<tbody>
+<tr><td>MTP ผ่าน Bluetooth</td><td>เลิกพัฒนา อาจถอดในอนาคต ยังไม่ระบุวัน</td></tr>
+<tr><td>MTP ผ่านสาย USB</td><td>Microsoft ระบุว่ายังใช้จัดการไฟล์บนอุปกรณ์ที่เชื่อมต่อได้</td></tr>
+<tr><td>เครื่องมือส่งและรับไฟล์ Bluetooth ทั่วไป</td><td>ยังมีคู่มือ Microsoft Support สำหรับ Windows 11 และ Windows 10 โดย Windows 10 หมดการสนับสนุนแล้ว</td></tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+## ผู้ใช้ในไทยยังส่งไฟล์แบบไหนได้บ้าง
+
+<div class="prose">
+
+ประกาศไม่ได้แยกกำหนดสำหรับประเทศไทยครับ ถ้าคุณใช้สาย USB จัดการไฟล์อยู่แล้ว เอกสารยืนยันชัดว่าช่องทางนั้นยังใช้ได้ ผมว่าคนที่ใช้สาย USB อยู่แล้วไม่จำเป็นต้องเปลี่ยนวิธีเพียงเพราะเห็นคำว่า MTP ในพาดหัวข่าวครับ
+
+ส่วนการส่งไฟล์ Bluetooth แบบทั่วไป คู่มือ Microsoft Support ยังมีวิธีรับไฟล์บน Windows 11 อยู่ครับ อุปกรณ์อีกฝั่งต้องจับคู่กับคอมไว้ก่อน และรองรับการส่งไฟล์ในวิธีนี้ด้วย ไม่ใช่อุปกรณ์ Bluetooth ทุกชนิดจะส่งไฟล์ได้เหมือนกัน
+
+<div class="news-steps">
+<div><b>เปิดหน้ารับส่งไฟล์</b>ไปที่ Settings › Bluetooth &amp; devices › Devices แล้วเลือก Send or receive files via Bluetooth ในส่วน Related settings</div>
+<div><b>เตรียมคอมรับไฟล์</b>เลือก Receive files ให้คอมรอการเชื่อมต่อ จากนั้นเริ่มส่งจากอีกเครื่องตามคู่มือของอุปกรณ์นั้น</div>
+<div><b>เลือกที่เก็บ</b>เมื่อส่งเสร็จ ตรวจโฟลเดอร์ปลายทางและกด Finish เพื่อจบขั้นตอน</div>
+</div>
+
+หากคุณดูแลอุปกรณ์เก่าที่ซิงก์เพลงหรือจัดการข้อมูลผ่าน MTP over Bluetooth โดยตรง ผมแนะนำให้ตรวจว่ามีทางเลือกผ่าน USB หรือไม่ และติดตามวันถอดจริงจาก Microsoft ก่อนเปลี่ยนระบบครับ ส่วนใครใช้ Bluetooth รับส่งไฟล์ทั่วไป ประกาศนี้ไม่ได้บอกว่าจะยกเลิกเครื่องมือนั้น
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- [Microsoft Learn: Deprecated features for Windows client](https://learn.microsoft.com/en-us/windows/whats-new/deprecated-features) — รายการเดือนพฤศจิกายน 2569 และข้อยืนยันว่าใช้ MTP ผ่าน USB ต่อได้
+- [Microsoft Learn: Microsoft-Windows-WPD-BusEnumService](https://learn.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/microsoft-windows-wpd-busenumservice) — การใช้งาน MTP/BT และตัวอย่างซิงก์เพลง
+- [Microsoft Learn: Support in Windows 7 and Windows Vista](https://learn.microsoft.com/en-us/windows/win32/wpd_sdk/support-in-windows-vista) — ตารางระบบที่รองรับ
+- [Microsoft Support: Send and receive files over Bluetooth in Windows](https://support.microsoft.com/en-us/windows/hardware/bluetooth/send-and-receive-files-over-bluetooth-in-windows) — ขั้นตอนรับส่งไฟล์ Bluetooth ทั่วไป
+- [Windows Latest: Microsoft retiring MTP over Bluetooth](https://www.windowslatest.com/2026/11/27/every-time-you-plug-in-your-android-phone-windows-11-uses-mtp-and-microsoft-is-now-retiring-the-bluetooth-version-that-dates-back-to-vista/) — เบาะแสข่าวและภาพประกอบ ไม่ใช่การยืนยันอิสระอีกต้นทาง
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: by dojojin.tech · ภาพพื้นปก: ภาพประกอบจาก DOJOJIN.TECH · ภาพในเนื้อข่าวจาก [Windows Latest](https://www.windowslatest.com/2026/11/27/every-time-you-plug-in-your-android-phone-windows-11-uses-mtp-and-microsoft-is-now-retiring-the-bluetooth-version-that-dates-back-to-vista/) · โลโก้ Windows จาก [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Windows_logo_-_2021.svg)
+
+</div>
+
+</section>

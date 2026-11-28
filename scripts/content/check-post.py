@@ -4,7 +4,7 @@
   python3 scripts/content/check-post.py <slug>...        (add --offline to skip opening links)
 
 Runs check-splits.py and check-sources.py, then checks what those do not:
-  cover.jpg exists and is exactly 1600x1200 with a cover.800.webp thumbnail · at least one <figure> in the body, every
+  cover.jpg exists and is exactly 1600x1200 with a cover.800.webp thumbnail · layout A background (cover-a/bg) not enlarged more than 1.7x · at least one <figure> in the body, every
   image file exists and has width/height · cover credit line is "ภาพปก: by dojojin.tech" · section fits the topic ·
   the body has more than one content section · the page says something about Thailand/Thai users (or says none found) ·
   owner's voice markers (ครับ) · years in พ.ศ. · no emoji · cover-brief.md exists (the cover text was planned from the article).
@@ -45,6 +45,15 @@ def check(slug, offline):
     else:
         if Image.open(cov).size != (1600, 1200):
             F.append(f"ปกขนาด {Image.open(cov).size} ต้องเป็น 1600x1200")
+        spec = ROOT / "_sources/posts/news" / slug / "cover-a/spec.json"
+        if spec.exists():  # layout A: the background must be a real large image, not a small one blown up
+            import json as _j
+            bgf = spec.parent / _j.loads(spec.read_text(encoding="utf-8")).get("bg", "bg.jpg")
+            if bgf.exists():
+                bw, bh = Image.open(bgf).size
+                up = max(1600 / bw, 1200 / bh)  # how much the photo is enlarged to fill 1600x1200
+                if up > 1.7:
+                    F.append(f"ภาพพื้นหลังปก {bgf.name} เล็กเกินไป ({bw}x{bh}) ถูกขยาย {up:.1f} เท่าจนแตก (ไม่เกิน 1.7 เท่า) ให้หาไฟล์ใหญ่กว่าหรือสร้างฉากใหม่")
         if not (media / "cover.800.webp").exists():
             F.append("ยังไม่ได้รัน thumbs.py (ไม่มี cover.800.webp)")
     figs = re.findall(r"<figure[^>]*>.*?</figure>", body, re.S)
