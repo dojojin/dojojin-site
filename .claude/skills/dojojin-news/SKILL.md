@@ -42,6 +42,21 @@ steps this session cannot do.** Never write "verified" for a page you could not 
 
 Full table with lessons learned: `docs/briefs/README.md`.
 
+## App recommendations (แอปแนะนำ)
+
+- **Finding:** the digest's section G holds app picks. It is filled on Monday morning, or any time with
+  `DIGEST_APPS=1 ~/news-digest/run.sh` (inside agy add `DIGEST_ENGINES="codex claude"`). This is the one place where the
+  recheck AI searches the web (max 4 searches). Show the list; the owner picks; do not pick apps yourself.
+- **Writing:** same steps 4–10 as news, plus: `section: app`, tag `app` (and the platform tag, e.g. `windows`, `android`).
+  Before drafting, grep `src/content/posts/news/` for the app name: an app already covered gets an update or nothing.
+- **Facts come from the app's own pages:** official site, store listing (App Store / Google Play / Microsoft Store),
+  GitHub releases and licence. State: price (free / paid / in-app purchases / subscription), platforms and minimum OS,
+  where to download (official links only), first-run steps, limits, what data it collects if the store page says so,
+  and whether Thai is supported (say "not stated" if no page says it). Never write that the owner tried the app.
+- **Images:** the real app icon as the cover logo; real screenshots from the store page or official site in the body,
+  credited. Cover background: a real official image, or a text-free scene made with `gen_image.sh`.
+- Models: `src/content/posts/news/sharex-windows-app-review.mdx`, `keka-macos-app-review.mdx`.
+
 ## Single-source picks (owner, 27 Nov 2026: "ถ้าที่ผมเลือกมี source ทางเดียว แต่เป็นข่าวที่น่าสนใจ เราจะไม่ตัดออก แต่จะให้หาข้อมูลสนับสนุนแทน")
 
 The owner picking a number IS the decision to run it. Never drop a picked story for having one source. Instead:
