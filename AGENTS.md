@@ -7,6 +7,7 @@ Claude Code reads `CLAUDE.md`; Antigravity also reads `GEMINI.md`, which points 
 
 For anything about /news/ (digest, writing, fixing, covers) follow the skill **`.claude/skills/dojojin-news/SKILL.md`**
 (also at `.agents/skills/dojojin-news/`). It starts from the script's digest in `~/news-digest/`, not from your own search.
+Start every news session with `scripts/content/preflight.sh` (network, browser, write access); a FAIL means stop and tell the owner.
 A news post is not finished until `python3 scripts/content/check-post.py <slug>` prints PASS; put that output in your report.
 The same check runs as a git pre-commit hook (`scripts/hooks/pre-commit`, enabled with `git config core.hooksPath scripts/hooks`):
 a news post dated 27 Nov 2026 or later that does not PASS cannot be committed. Never use `--no-verify`; only the owner may.

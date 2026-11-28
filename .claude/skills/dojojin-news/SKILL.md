@@ -9,6 +9,19 @@ description: Use for any news work on dojojin.tech (/news/) — the owner says "
 Do not say "เสร็จแล้ว" without it. Rules live in `docs/editorial-standard.md` (read sections 0, 2, 4, 4.1, 5 once per session).
 Start a NEW conversation for each news round; habits from an old conversation (Canva templates, direct image tools) are not the method.
 
+## Step 0: can this session do the job?
+
+Run `scripts/content/preflight.sh` before anything else and paste its output. **Any FAIL = stop and tell the owner which
+steps this session cannot do.** Never write "verified" for a page you could not open, and never skip the browser check silently.
+
+- **Codex / ChatGPT:** the default sandbox has no network and cannot start Chromium (tested 28 Nov 2026: curl exit 6,
+  Chromium "Operation not permitted", `~/news-digest/` read-only). News work needs a session the owner started with
+  network and full access for this repo. Use your built-in web/search tool only if it really opens the page.
+  Images: inside Codex use your own image tool for the text-free background, ONE image at a time, and wait at least
+  25 s between images (do not nest `codex exec` through `gen_image.sh`); everything else in step 6 is the same.
+  Steps 5 and 7b need separate agents: spawn a sub-agent for each and give it only the brief and the slugs.
+- **Antigravity:** new conversation; `IMAGE_ENGINES="agy codex"`.
+
 ## Steps (do them in order; do not skip or merge)
 
 | # | Step | How |
@@ -22,7 +35,7 @@ Start a NEW conversation for each news round; habits from an old conversation (C
 | 7 | **Assemble** | Put the figure in a `.split` beside its text; check each thing the copywriter flagged against `facts.md` |
 | 7b | **Fact review** | A third agent that did not draft or polish, read-only, brief = `docs/briefs/fact-review.md`: post vs `facts.md`, `facts.md` vs the real pages (3+ links per post), who said each quote, cover text vs article. Fix every MUST FIX and SHOULD FIX it reports, regenerate covers whose text changed. The scripts cannot see these mistakes |
 | 8 | **Gate** | `python3 scripts/content/check-post.py <slug>...` → PASS, then `python3 scripts/content/thumbs.py`, `npm run build`, `npm run lint`, then `node scripts/content/check_pages.mjs http://100.89.1.29:4173 /news/<slug>/ ...` (opens each page at 390 / 768 / 1280, reports horizontal overflow and broken assets, saves screenshots of the first route to `/tmp/dojojin-intake/`) and look at the screenshots |
-| 9 | **Report** | Thai, 🔵 Fact / 🟡 Opinion: gate output, preview links, what could not be verified, what the digest got wrong |
+| 9 | **Report** | Thai, 🔵 Fact / 🟡 Opinion: preflight output, gate output, preview links, **the step 7b reviewer's findings (must-fix, should-fix, the links it opened) and what you changed for each**, what could not be verified, what the digest got wrong. A report without the 7b findings means step 7b was not done |
 | 10 | **Commit / deploy** | Only when the owner says so in this session. `git push origin main` = production. Owner's name only, no trailer |
 | 11 | **Follow up old stories** | Last step of every round: go through digest section "I. ติดตามข่าวเดิม" and the lines marked "อาจเกี่ยวกับโพสต์ที่ลงแล้ว". See **Follow-ups** below |
 
@@ -78,6 +91,9 @@ Age = today minus the original post's `date:`. The digest prints the age and the
 | Cover shipped with "ข้อมูลูถูกเข้าถึง" (extra ู) drawn by the image tool; three looks at the whole image missed it | Text on covers is placed by `cover_a.py`, never drawn by an image tool |
 | Owner: covers "รกไป" (label + 3 lines + pill + chips + logo tile) | Layout A: logo, 2 lines, one fact, nothing else |
 | Headline said "12 GB", lead, table and cover said "เกิน 12 GB" | Title, description, lead, stat cards, tables and cover carry the same number with the same qualifier |
+| Cover background with a woman's face from an app screenshot; another outlet's photo with a fingertip and a device name on screen; an iPhone 17e shown for an iPhone 18 rumour | Cover background: no faces or hands even in real or official images, no other outlet's photo, no readable screen text, no older model standing in for a rumoured one |
+| Cover fact line "ภาพรุ่นปกติ · ราคารายงาน …" | The fact line is a fact of the story; notes about the picture go in `coverAlt` and the credit |
+| Two outlets relaying one dealer's launch material written as "รายงานตรงกัน", and "ราคาอย่างเป็นทางการ" softened to "ราคารายงาน" | One company's material = one origin (the company); match its strength, neither stronger nor weaker |
 | Car news in `section: tech`, cyber news in `tech` | car → `auto`, vulnerabilities/attacks → `security` |
 | 11 posts passed every script, yet 9 needed fixes: wording stronger than the source, a quote under the wrong person (title and cover), unsourced glue sentences, marketing claims as fact | Step 7b (independent fact review) is not optional |
 

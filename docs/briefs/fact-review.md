@@ -32,7 +32,7 @@ numbers first. A page that blocks you: say so, do not guess. Never put the site 
 - internal consistency: the same number the same everywhere in the post; sums and "x times" claims computed correctly.
 - Thai-impact section: does it state only what the sources support (or plainly say nothing was found)?
 
-## The four mistakes found most often (27 Nov 2026 round: 9 of 11 posts passed every script and still needed fixes)
+## The mistakes found most often (27 Nov 2026 round: 9 of 11 posts passed every script and still needed fixes)
 1. **Stronger than the source**: "ไม่เชื่ออีกต่อไป" for "has not followed yet", "รายงานตรงกัน" for outlets relaying one report,
    "ยืนยันแล้ว" in a table header over rows that are a journalist's wording, a dropped "in simulation" / "reportedly" / "may".
 2. **Wrong speaker**: a quote, rule or opinion put under the headline person when someone else said it (another panellist,
@@ -40,6 +40,10 @@ numbers first. A page that blocks you: say so, do not guess. Never put the site 
 3. **Glue sentences with no source**: causal links ("จนทำให้…"), market colour ("ยอดนิยมในไทย"), dates attached to a change,
    and most of all the Thai-impact section and table cells.
 4. **A maker's marketing claim written as fact**: "first in the world", charging times, benchmark gains. Say who claims it.
+5. **Several outlets relaying one company's release** presented as independent agreement, or the release's wording made
+   weaker or stronger ("ราคาอย่างเป็นทางการ" turned into "ราคารายงาน"). The origin is the company: say so, match its strength.
+6. **Cover background**: a face or hand, another outlet's photo, readable screen text, an older model shown for a rumoured
+   one; a fact line that is a note about the picture instead of a fact of the story.
 
 ## After the report
 The lead agent (or you, if told to) fixes every MUST FIX and SHOULD FIX in the .mdx, adds the verified lines to `facts.md`,

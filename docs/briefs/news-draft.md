@@ -19,6 +19,8 @@ copywriter will polish the Thai afterwards, and a separate step makes the cover 
 - Never put the owner's name or email in any request or User-Agent.
 - Find the PRIMARY source first (the company's or agency's own statement, advisory, press release, release notes, court/DOJ page).
 - Source rule: the story needs the official source, or 2+ independent outlets. Outlets repeating one outlet count as one.
+  Outlets relaying one company's launch material or press release are ONE origin (the company): name it, do not write
+  that the outlets "agree", and keep the release's own strength (do not soften "official price" to "reported price").
   The owner picked this story, so do NOT drop it for having one source (owner rule, 27 Nov 2026). Search for support in
   this order: the subject's own statement/advisory/release notes/filing → a second outlet with its own reporting → the
   primary evidence the outlet used (benchmark listing, patent, certification database, commit, video, transcript) →

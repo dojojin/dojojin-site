@@ -16,14 +16,17 @@ is placed by `scripts/content/cover_a.py` in the site font.
      `scripts/content/gen_image.sh` (one image at a time; in Antigravity prefix `IMAGE_ENGINES="agy codex"`). The prompt
      must say: NO text, NO letters, NO logos, NO people/hands/faces; main subject in the UPPER 55% of the frame; the LOWER
      40% calm and uncluttered, fading to dark navy (dark tone) or off-white (light tone). Never invent a product's look.
+     The background must NOT contain: a face or a hand (even in a real photo or an official screenshot), another
+     outlet's photograph (outlet photos belong in the body with credit, never on the cover), readable text or device
+     names on a screen, or the previous model standing in for a rumoured new one (use a scene that points to no model).
    - `logo.png`: the real logo from the brand's own site or Wikimedia Commons, without a tagline. US government seals are
      public domain. No real logo file → stop and say so.
    - `spec.json`: `{"bg":"bg.jpg","logo":"logo.png","lines":["บรรทัด 1","บรรทัด 2"],"fact":"…","tone":"dark"|"light","accent":"#hex"}`
      (`"plate":"dark"` for a logo with white lettering; `"bg_position"` to shift the crop). `tone` follows the photo.
-     Headline: 2 short lines that make people want to read, not a compressed title. Fact: one number or one caveat
+     Headline: 2 short lines that make people want to read, not a compressed title. Fact: a fact of the STORY, never a note about the picture ("ภาพรุ่นปกติ" goes in `coverAlt` and the credit line): one number or one caveat
      ("ต้นทางเดียว: X", "ยังไม่ยืนยัน"). Check every word, number and who-said-it against the article.
 2. `python3 scripts/content/cover_a.py <slug>` then `python3 scripts/content/thumbs.py`.
-3. Look at the result: text not sitting on a busy part of the photo, logo visible on its plate, nothing important hidden
+3. Look at the result: the main subject is not buried under the scrim (shift with `bg_position`); text not sitting on a busy part of the photo, logo visible on its plate, nothing important hidden
    under the scrim. `python3 scripts/content/cover_zoom.py <slug>` gives 100% tiles if you need to look closely.
 4. Set `coverAlt` to the cover text ("ปกข่าว <line 1> <line 2> · <fact>").
 
