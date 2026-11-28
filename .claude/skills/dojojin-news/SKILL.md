@@ -20,7 +20,8 @@ steps this session cannot do.** Never write "verified" for a page you could not 
   Images: inside Codex use your own image tool for the text-free background, ONE image at a time, and wait at least
   25 s between images (do not nest `codex exec` through `gen_image.sh`); everything else in step 6 is the same.
   Steps 5 and 7b need separate agents: spawn a sub-agent for each and give it only the brief and the slugs.
-- **Antigravity:** new conversation; `IMAGE_ENGINES="agy codex"`.
+- **Antigravity (agy):** new conversation. Images: run `scripts/content/gen_image.sh` from the terminal; it calls ChatGPT through `codex exec` directly. Never use agy's own image tool (NanoBanana), even if it is offered (owner, 28 Nov 2026).
+- **Claude Code:** images through `scripts/content/gen_image.sh` as well.
 
 ## Steps (do them in order; do not skip or merge)
 
@@ -31,7 +32,7 @@ steps this session cannot do.** Never write "verified" for a page you could not 
 | 3 | **Owner picks** | Write only the numbers the owner picks. Never write an unpicked story |
 | 4 | **Research + draft** | One agent per story, brief = `docs/briefs/news-draft.md`. Output: `_sources/posts/news/<slug>/facts.md`, the `.mdx`, `cover-brief.md`. Item marked "สื่อเจ้าเดียว" → see **Single-source picks** below (do not drop it) |
 | 5 | **Voice pass** | A DIFFERENT agent, brief = `docs/briefs/voice-pass.md`. Save a copy of the draft first; `VOICE_BASE=<copy dir> python3 scripts/content/check-voice-pass.py <slug>` |
-| 6 | **Cover + body image** | Brief = `docs/briefs/images.md`. **Cover = layout A**: full photo + real logo + 2-line headline + ONE fact, built by `python3 scripts/content/cover_a.py <slug>` from `cover-a/spec.json`. The image tool makes only a text-free background (subject in the upper half) through `scripts/content/gen_image.sh` (queues, cooldown, falls back; in agy `IMAGE_ENGINES="agy codex"`); it never draws text. No chips, labels or pills. No Canva templates. Real photo exists → use it as the background |
+| 6 | **Cover + body image** | Brief = `docs/briefs/images.md`. **Cover = layout A**: full photo + real logo + 2-line headline + ONE fact, built by `python3 scripts/content/cover_a.py <slug>` from `cover-a/spec.json`. The image tool makes only a text-free background (subject in the upper half) through `scripts/content/gen_image.sh` (ChatGPT through `codex exec`, queued with a 25 s cooldown; the same command from Claude Code and from Antigravity/agy; NanoBanana is not used); it never draws text. No chips, labels or pills. No Canva templates. Real photo exists → use it as the background |
 | 7 | **Assemble** | Put the figure in a `.split` beside its text; check each thing the copywriter flagged against `facts.md` |
 | 7b | **Fact review** | A third agent that did not draft or polish, read-only, brief = `docs/briefs/fact-review.md`: post vs `facts.md`, `facts.md` vs the real pages (3+ links per post), who said each quote, cover text vs article. Fix every MUST FIX and SHOULD FIX it reports, regenerate covers whose text changed. The scripts cannot see these mistakes |
 | 8 | **Gate** | `python3 scripts/content/check-post.py <slug>...` → PASS, then `python3 scripts/content/thumbs.py`, `npm run build`, `npm run lint`, then `node scripts/content/check_pages.mjs http://100.89.1.29:4173 /news/<slug>/ ...` (opens each page at 390 / 768 / 1280, reports horizontal overflow and broken assets, saves screenshots of the first route to `/tmp/dojojin-intake/`) and look at the screenshots |

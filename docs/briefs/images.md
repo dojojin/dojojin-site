@@ -13,7 +13,7 @@ is placed by `scripts/content/cover_a.py` in the site font.
 
 1. Folder `_sources/posts/news/<slug>/cover-a/` with:
    - `bg.jpg`: a real or official photo if one exists (credit it). Otherwise generate a scene through
-     `scripts/content/gen_image.sh` (one image at a time; in Antigravity prefix `IMAGE_ENGINES="agy codex"`). The prompt
+     `scripts/content/gen_image.sh` (one image at a time; it calls ChatGPT through `codex exec`; never NanoBanana or an agent's own image tool, except inside Codex itself). The prompt
      must say: NO text, NO letters, NO logos, NO people/hands/faces; main subject in the UPPER 55% of the frame; the LOWER
      40% calm and uncluttered, fading to dark navy (dark tone) or off-white (light tone). Never invent a product's look.
      The background must NOT contain: a face or a hand (even in a real photo or an official screenshot), another

@@ -52,7 +52,7 @@ npm run build      # static build → dist/
 npm run lint
 npx astro preview --host 0.0.0.0 --port 4173   # owner reviews at http://100.89.1.29:4173
 python3 scripts/content/thumbs.py
-scripts/content/gen_image.sh --prompt prompt.txt --out cover.png -i logo.png   # image tool with cooldown: codex (ChatGPT) then agy (NanoBanana); IMAGE_ENGINES=agy inside Antigravity
+scripts/content/gen_image.sh --prompt prompt.txt --out cover.png -i logo.png   # ChatGPT images through codex exec, with cooldown; the only image path (no NanoBanana since 28 Nov 2026)
 DIGEST_ENGINES=codex ~/news-digest/run.sh   # news digest; final AI recheck by agy | codex | claude (default order "agy codex claude", or one line in ~/news-digest/engine)
 python3 scripts/content/check-splits.py src/content/posts/news/<slug>.mdx
 python3 scripts/content/check-sources.py <slug>   # sources: links open, every named outlet is linked, 2-source rule, facts.md

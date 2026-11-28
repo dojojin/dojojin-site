@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 # Generate or edit one image with whichever image tool is available, with a cooldown between calls.
-#   scripts/content/gen_image.sh --prompt prompt.txt --out cover.png [-i ref1.png -i ref2.jpg] [--engine codex|agy]
-# Engines:  codex = ChatGPT image through `codex exec`      agy = NanoBanana through `agy -p`
-# Order: --engine, else $IMAGE_ENGINES, else "codex agy". Working in Antigravity: IMAGE_ENGINES="agy codex" (NanoBanana first,
-# ChatGPT when its quota is used up; NanoBanana allows roughly 14 images per 5 hours, observed 27 Nov 2026).
+#   scripts/content/gen_image.sh --prompt prompt.txt --out cover.png [-i ref1.png -i ref2.jpg]
+# Engine: ChatGPT image through `codex exec`, for every agent (Claude, Antigravity/agy, Codex itself excepted: see the skill).
+# NanoBanana is no longer used (owner, 28 Nov 2026). Any engine other than codex is refused.
 # Cooldown: waits so that two calls to the same engine are at least GAP seconds apart (shared lock in /tmp, so
 # parallel agents queue instead of hitting HTTP 429 / quota_cooldown). On a refusal it backs off and retries,
 # then falls through to the next engine. Exit 0 = image written to --out. Look at every image before using it.
@@ -13,7 +12,8 @@ while [ $# -gt 0 ]; do case "$1" in
   --prompt) PROMPT="$2"; shift 2;; --out) OUT="$2"; shift 2;; --engine) ENG="$2"; shift 2;;
   -i) REFS+=("$2"); shift 2;; *) echo "unknown arg $1" >&2; exit 2;; esac; done
 [ -f "$PROMPT" ] && [ -n "$OUT" ] || { echo "usage: gen_image.sh --prompt file --out file [-i ref]... [--engine codex|agy]" >&2; exit 2; }
-ENGINES="${ENG:-${IMAGE_ENGINES:-codex agy}}"
+ENGINES="${ENG:-${IMAGE_ENGINES:-codex}}"
+for e in $ENGINES; do [ "$e" = codex ] || { echo "engine $e is not allowed: images are made with ChatGPT (codex) only (owner, 28 Nov 2026)" >&2; exit 2; }; done
 BIN="$HOME/.local/bin"; export PATH="$HOME/.gemini/antigravity/bin:$BIN:$PATH"
 OUT="$(realpath -m "$OUT")"; WORK="$(mktemp -d)"; trap 'rm -rf "$WORK"' EXIT
 declare -A GAP=([codex]=25 [agy]=90)          # seconds between calls to the same engine
