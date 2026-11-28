@@ -1,0 +1,123 @@
+---
+title: "มีรายงานว่า Windows 11 บูตวนหลังอัปเดต KB5132061 พร้อมวิธีแก้ชั่วคราว — Microsoft ยังไม่ยืนยัน"
+topic: software
+type: news
+tags: ["microsoft", "windows"]
+date: 2026-11-28T20:42:00+07:00
+section: tech
+sourceName: "Microsoft Support, Windows Release Health, Windows Digitals, Howto-Connect และ BleepingComputer"
+sourceUrl: "https://support.microsoft.com/en-us/servicing/os/windows-11/2026/11/kb5132061-windows-11-24h2-25h2-26h2-security-update"
+description: "มีรายงานผู้ใช้ Windows 11 เจออาการบูตวนและรหัสผิดพลาด 0xc0000001 หลังติดตั้งอัปเดต KB5132061 เดือน พ.ย. 2569 พร้อมวิธีแก้ชั่วคราวผ่าน Windows RE, ปิด Virtualization ใน BIOS และปิดไดรเวอร์เก่า PxHlpa64.sys ขณะที่ Microsoft ยังไม่ระบุอาการนี้เป็นปัญหาที่ยืนยันแล้ว"
+kicker: "ข่าวเทคโนโลยี · ซอฟต์แวร์"
+lead: "ใครใช้ Windows 11 แล้วเพิ่งกดอัปเดตแพตช์ความปลอดภัย KB5132061 เดือนพฤศจิกายน 2569 ช่วงนี้มีรายงานจากกลุ่มผู้ใช้และเว็บคู่มือแก้ปัญหาอย่าง Windows Digitals กับ Howto-Connect ว่าบางเครื่องเจออาการบูตวนเข้า Windows ไม่ได้ครับ แต่เรื่องนี้ Microsoft ยังไม่ได้ยืนยันอย่างเป็นทางการ"
+meta: "เรียบเรียงจาก Microsoft Support, Windows Release Health, Windows Digitals, Howto-Connect และ BleepingComputer · ข้อมูล ณ 28 พฤศจิกายน 2569"
+cover: "/media/posts/news/windows-11-kb5132061-boot-loop-workaround/cover.jpg"
+coverAlt: "ปกข่าว Win 11 บูตวน หลัง KB5132061 · มีรายงาน 0xc0000001 · Microsoft ยังไม่ยืนยัน"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้นหลังอัปเดต KB5132061
+
+<div class="split">
+<div class="prose">
+
+KB5132061 เป็นอัปเดตความปลอดภัยประจำเดือนที่ Microsoft ปล่อยเมื่อวันที่ 10 พฤศจิกายน 2569 สำหรับ Windows 11 รุ่น 26H2 (Build 26300.9974), 25H2 (Build 26200.9974) และ 24H2 เฉพาะรุ่น Enterprise กับ Education (Build 26100.9974) ครับ
+
+ตามรายงานของ Windows Digitals และ Howto-Connect เครื่องที่เจอปัญหาจะรีสตาร์ตวนไม่เข้าหน้าเดสก์ท็อป เด้งเข้าหน้า Automatic Repair (ระบบซ่อมแซมอัตโนมัติ) ซ้ำ ๆ หรือขึ้นจอฟ้าแจ้งรหัสผิดพลาด `0xc0000001`, `0xc0000098` หรือ `INACCESSIBLE_BOOT_DEVICE` โดยบางเครื่องยังเข้า Safe Mode (โหมดปลอดภัย) ได้ตามปกติครับ
+
+</div>
+<figure class="news-fig news-fig--zoom">
+  <img src="/media/posts/news/windows-11-kb5132061-boot-loop-workaround/photo-1.jpg" width="1448" height="1086" loading="lazy" alt="ภาพจำลองหน้าจอคอมพิวเตอร์และวงแหวนหมุนวนในโทนสีน้ำเงินเข้มสื่อถึงอาการบูตวนหลังอัปเดตระบบ" />
+  <figcaption>อาการบูตวนและหน้าจอ Automatic Repair หลังอัปเดตเป็นรายงานจากฝั่งผู้ใช้ ซึ่งหน้าของ Microsoft ยังไม่ได้ระบุ (ภาพประกอบจาก DOJOJIN.TECH)</figcaption>
+</figure>
+</div>
+
+<div class="news-cards">
+<div class="news-card is-ok">
+<span class="news-pill">Microsoft ยืนยันและแก้แล้ว</span>
+<b>แพตช์ KB5132061 ออก 10 พ.ย. 2569 เคยมีปัญหาติดตั้งไม่ผ่าน</b>
+<p>หน้าสนับสนุนของ Microsoft ระบุปัญหาติดตั้งไม่ผ่านรหัส 0x80070306, 0x800f0989, 0x800f0993 (เกิดกับเครื่องจำนวนจำกัดที่เคยลง KB5127936 ตามที่ BleepingComputer รายงาน) และบอกว่าตัวแก้ทำงานให้เองแล้วบนเครื่องที่ต่ออินเทอร์เน็ตและอัปเดตผ่าน Windows Update ไม่ต้องทำอะไรเพิ่ม ส่วนปัญหาการเชื่อมต่อ SQL Server ที่อยู่ในหน้าเดียวกันเป็นอีกเรื่อง เริ่มจากอัปเดตตั้งแต่ 13 ต.ค. 2569 เกิดบนเครื่องเซิร์ฟเวอร์ และ Microsoft <b>ยังไม่แก้</b> มีแค่วิธีบรรเทาสำหรับองค์กรผ่าน Microsoft Support</p>
+</div>
+<div class="news-card is-warn">
+<span class="news-pill">ยังไม่ยืนยัน</span>
+<b>อาการบูตวน 0xc0000001 และไดรเวอร์ PxHlpa64.sys</b>
+<p>ในหน้าสนับสนุน KB5132061 และ Windows Release Health (รุ่น 26H2) ยังไม่มีการระบุอาการบูตวนหรือรหัส 0xc0000001 เป็นปัญหาที่รับทราบแล้วครับ</p>
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## วิธีแก้ชั่วคราวตามรายงานผู้ใช้
+
+<div class="prose">
+
+ถ้าเครื่องติดอาการบูตวนหลังอัปเดต KB5132061 ผู้ใช้ในฟอรัมและคู่มือของ Windows Digitals กับ Howto-Connect แนะนำให้ลองไล่แก้ทีละขั้นผ่านหน้า **Windows Recovery Environment (Windows RE)** หรือหน้าต่างกู้คืนระบบสีน้ำเงินครับ
+
+วิธีบังคับเข้า Windows RE คือ กดปุ่มเปิด-ปิดเครื่องค้างไว้ให้ดับขณะกำลังโหลดเข้า Windows ทำซ้ำ 2 ครั้ง แล้วครั้งที่ 3 ระบบจะเด้งเข้าหน้ากู้คืนให้เองครับ (ถ้าเครื่องเปิด BitLocker ไว้ ต้องเตรียมรหัสกู้คืน BitLocker Recovery Key ไว้ด้วยนะครับ)
+
+</div>
+
+<div class="news-steps">
+<div class="news-step is-key">
+<b>1. ถอนการติดตั้งอัปเดตล่าสุด (Uninstall Updates)</b>
+<p>เข้า Troubleshoot &gt; Advanced options &gt; Uninstall Updates แล้วเลือก Uninstall latest quality update เพื่อถอดแพตช์ KB5132061 ออกก่อน วิธีนี้ไฟล์และแอปยังอยู่ครบ แต่บางเครื่องที่อัปเดตค้างครึ่ง ๆ กลาง ๆ อาจกดถอนไม่ได้ครับ</p>
+</div>
+<div class="news-step">
+<b>2. ย้อนจุดคืนค่า (System Restore / Point-in-time restore)</b>
+<p>ถ้าวิธีแรกไม่ผ่าน ให้ลองใช้ System Restore หรือ Point-in-time restore เพื่อย้อนระบบกลับไปก่อนวันที่ติดตั้งอัปเดต (Point-in-time restore เก็บย้อนหลังได้สูงสุด 72 ชั่วโมง)</p>
+</div>
+<div class="news-step">
+<b>3. ปิด Virtualization ชั่วคราวใน BIOS/UEFI</b>
+<p>วิธีนี้ไม่ใช่วิธีทางการของ Microsoft แต่ Windows Digitals บอกว่าช่วยเครื่องที่มีอาการนี้ได้หลายเครื่อง: เมื่อเข้า BIOS/UEFI (ผ่าน Troubleshoot &gt; Advanced options &gt; UEFI Firmware Settings) แล้วปิดค่า Virtualization (ระบบจำลองเครื่อง) อย่าง Intel VT-x หรือ AMD SVM Mode เครื่องจะบูตเข้า Windows ได้ครับ แต่ช่วงที่ปิดอยู่ ฟีเจอร์อย่าง WSL 2, Docker, Hyper-V และ Memory Integrity จะใช้งานไม่ได้ชั่วคราว (Howto-Connect)</p>
+</div>
+<div class="news-step">
+<b>4. ปิดไดรเวอร์เก่า PxHlpa64.sys</b>
+<p>Windows Digitals ระบุว่าในหลายเครื่อง ตัวกระตุ้นปัญหาคือ PxHlpa64.sys ซึ่งเป็นไดรเวอร์เก่าของโปรแกรมเขียนแผ่น CD/DVD ปิดได้โดยเปิด Command Prompt แบบ Administrator แล้วสั่ง <code>sc config PxHlpa64 start= disabled</code> จากนั้นค่อยกลับไปเปิด Virtualization ใน BIOS ตามเดิมครับ (ตามคู่มือของ Windows Digitals) ข้อควรรู้คือ พอปิดไดรเวอร์ตัวนี้ ไดรฟ์ DVD และการเปิดไฟล์ ISO อาจใช้ไม่ได้ ส่วนเครื่องที่ไม่มีไดรเวอร์นี้ Windows Digitals แนะนำให้ปิด Virtualization ไว้จนกว่า Microsoft จะแก้</p>
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+## ผลกระทบต่อผู้ใช้ในไทย
+
+<div class="prose">
+
+ตอนนี้ยังไม่พบรายงานเฉพาะจากผู้ใช้ในไทยครับ KB5132061 เป็นอัปเดตความปลอดภัยรายเดือนของ Windows 11 รุ่น 24H2, 25H2 และ 26H2 (Windows Digitals บอกว่าเครื่องส่วนใหญ่ลงได้ปกติ) ใครที่เคยลงโปรแกรมเขียนแผ่น CD/DVD รุ่นเก่า ควรตรวจสอบและสำรองข้อมูลสำคัญก่อนกดรีสตาร์ตอัปเดตครับ ถ้ายังไม่รีบ อาจกด Pause updates (พักอัปเดต) ชั่วคราวเพื่อรอดูความชัดเจนจาก Microsoft ก่อนก็ได้
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- Microsoft Support (10 พ.ย. 2569): [November 10, 2026—KB5132061 (OS Builds 26300.9974, 26200.9974 and 26100.9974)](https://support.microsoft.com/en-us/servicing/os/windows-11/2026/11/kb5132061-windows-11-24h2-25h2-26h2-security-update)
+- Microsoft Learn: [Windows 11, version 26H2 Release Health](https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-26h2)
+- [Windows Digitals](https://www.windowsdigitals.com/kb5132061-wont-boot/) (ปรับปรุง 27 พ.ย. 2569 รวบรวมรายงานจากฟอรัม Microsoft และ Reddit)
+- [Howto-Connect](https://www.howto-connect.com/kb5132061-boot-loop/) (19 พ.ย. 2569)
+- [BleepingComputer](https://www.bleepingcomputer.com/news/microsoft/microsoft-confirms-kb5132061-installation-issues-0x80070306-0x800f0989-0x800f0993-errors/) (12 พ.ย. 2569)
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: by dojojin.tech
+- ภาพในเนื้อข่าว: ภาพประกอบจาก DOJOJIN.TECH
+
+</div>
+
+</section>

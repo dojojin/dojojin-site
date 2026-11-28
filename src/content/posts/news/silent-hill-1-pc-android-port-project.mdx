@@ -1,0 +1,112 @@
+---
+title: "โปรเจกต์แฟนเมด Silent Hill PC ทำให้ภาคแรกเล่นบน PC และ Android ได้ ต้องใช้แผ่นเกมของตัวเอง"
+topic: software
+type: news
+tags: [gaming, android, open-source, retro-game]
+date: 2026-11-28T20:48:00+07:00
+section: tech
+sourceName: "GitHub (keklick1337/silent-hill-pc) และ Rely on Horror"
+sourceUrl: "https://github.com/keklick1337/silent-hill-pc"
+description: "นักพัฒนาอิสระ Vladislav Tislenko (keklick1337) ปล่อยอัปเดต Silent Hill PC รุ่น v1.2.0 เอนจินโอเพนซอร์สเขียนใหม่ด้วย C++20 สำหรับเล่น Silent Hill ภาคแรกปี 2542 แบบเนทีฟบน Windows, Linux, macOS และเพิ่มเวอร์ชัน Android เป็นงานแฟนเมดที่ไม่เกี่ยวกับ Konami และต้องใช้ไฟล์จากแผ่นเกมของผู้เล่นเอง"
+kicker: "ข่าวเทคโนโลยี · เกมโอเพนซอร์ส"
+lead: "เกมสยองขวัญ Silent Hill ภาคแรกจากเครื่อง PlayStation ปี 2542 ไม่เคยมีเวอร์ชัน PC อย่างเป็นทางการมาก่อนครับ ล่าสุดนักพัฒนาอิสระ Vladislav Tislenko (keklick1337) ปล่อยโปรเจกต์โอเพนซอร์สชื่อ Silent Hill PC ที่เขียนเอนจินขึ้นใหม่ทั้งหมดเพื่อให้เล่นเกมนี้ได้โดยตรงบน PC และเพิ่งเพิ่มเวอร์ชัน Android เข้ามาในรุ่น v1.2.0 เป็นงานแฟนเมดที่ไม่เกี่ยวกับ Konami และต้องใช้ไฟล์จากแผ่นเกมของเราเองครับ"
+meta: "เรียบเรียงจากหน้าโปรเจกต์และบันทึกการอัปเดตของ keklick1337 บน GitHub รวมถึงรายงานจาก Rely on Horror · ข้อมูล ณ 28 พฤศจิกายน 2569"
+cover: "/media/posts/news/silent-hill-1-pc-android-port-project/cover.jpg"
+coverAlt: "ปกข่าว Silent Hill ภาคแรก ฉบับแฟนเมด เล่นบน PC/Android · ไม่เกี่ยวกับ Konami · ต้องใช้แผ่นเกมของตัวเอง"
+---
+
+<section class="section">
+
+## เกิดอะไรขึ้น
+
+<div class="split">
+<div class="prose">
+
+โปรเจกต์ **Silent Hill PC** ของ **Vladislav Tislenko (keklick1337)** บน GitHub เปิดให้ดาวน์โหลดแล้วภายใต้สัญญาอนุญาต **GPL-3.0** (สัญญาอนุญาตซอฟต์แวร์เสรีแบบโอเพนซอร์ส) โดยไม่เกี่ยวข้องกับ Konami และเป็นโปรเจกต์ส่วนบุคคลที่ไม่แสวงหากำไรครับ
+
+จุดสำคัญคือโปรแกรมนี้ **ไม่ใช่ตัวจำลองเครื่อง PlayStation (emulator)** แต่เป็นการเขียนเอนจินเกมขึ้นใหม่ตั้งแต่ต้นด้วยภาษา **C++20** ครับ ตัวเอนจินอ้างอิงการทำงานจากข้อมูลของชุมชน **silent-hill-decomp** (โครงการถอดรหัสพฤติกรรมเกมต้นฉบับ) ทำให้เกมทำงานแบบเนทีฟบนอุปกรณ์ยุคใหม่ได้โดยตรง
+
+ในรุ่นล่าสุด **v1.2.0** ที่ปล่อยออกมาเมื่อวันที่ 26 พฤศจิกายน 2569 เวลา 05:15 น. ตามเวลาไทย (25 พฤศจิกายน เวลา 22:15 UTC) ผู้พัฒนาเพิ่มไฟล์ APK สำหรับ **Android** ให้โหลดในหน้า Releases ของโปรเจกต์ (ข้อมูลเรื่อง Android มาจากหน้า Releases ของผู้พัฒนาเอง) นอกเหนือจากเวอร์ชัน **Windows**, **Linux** และ **macOS** ที่มีอยู่เดิมครับ
+
+</div>
+<figure class="news-fig news-fig--zoom">
+  <img src="/media/posts/news/silent-hill-1-pc-android-port-project/photo-1.jpg" width="1448" height="1086" loading="lazy" alt="ภาพจำลองบรรยากาศถนนในเมืองร้างที่ปกคลุมด้วยหมอกหนายามค่ำคืนพร้อมลำแสงไฟฉายส่องผ่าน" />
+  <figcaption>ภาพบรรยากาศเมืองในหมอกที่สร้างขึ้นประกอบข่าว ไม่ใช่ภาพจากตัวเกม (ภาพประกอบจาก DOJOJIN.TECH)</figcaption>
+</figure>
+</div>
+
+</section>
+
+<section class="section">
+
+## จุดเด่นและข้อกำหนดของตัวเกม
+
+<div class="prose">
+
+โปรเจกต์นี้ไม่ได้แค่ทำให้เกมเปิดติด แต่ยังปรับปรุงระบบกราฟิกและการเล่นให้เข้ากับฮาร์ดแวร์ปัจจุบัน โดยมีตัวเลือกปรับภาพถึง 7 ระดับ ตั้งแต่แบบดั้งเดิมไปจนถึงโหมดที่เปิดใช้ความสามารถของ **Vulkan** (ตัวประมวลผลกราฟิกสมัยใหม่)
+
+<div class="table-frame">
+
+| หัวข้อ | รายละเอียดตามข้อมูลต้นทาง |
+| --- | --- |
+| **แพลตฟอร์มที่รองรับ** | Windows (x86_64), Linux (x86_64), macOS (Apple Silicon / Intel) และ Android |
+| **ความต้องการขั้นต่ำ Android** | Android 10 (API 29) ขึ้นไป และชิปกราฟิกที่รองรับ Vulkan 1.1 ขึ้นไป |
+| **ฟีเจอร์กราฟิกบน PC** | Ray Tracing (จำลองแสงเงาและภาพสะท้อน), HDR, ลบรอยหยักแบบ TAA, หมอกแบบมีมิติ (Volumetric Fog) และระบบขยายความละเอียดเท็กซ์เจอร์ (ยังเป็นแบบทดลอง) |
+| **ข้อจำกัดบน macOS** | สื่อ Rely on Horror ระบุว่า macOS ยังไม่รองรับ Ray Tracing เนื่องจากข้อจำกัดของ MoltenVK |
+| **ฟีเจอร์เสริมอื่น ๆ** | โหลดฉากทันที (ปรับกลับเป็นความเร็วแผ่นได้), รองรับม็อดด้วยภาษา Lua และรองรับจอยเกม/ระบบสัมผัสบนมือถือ |
+
+</div>
+
+สำหรับฝั่ง **Android** รุ่น v1.2.0 ออกไฟล์ APK แยกตามสถาปัตยกรรมชิปทั้ง `arm64-v8a`, `armeabi-v7a`, `x86_64`, `x86` และแบบ `universal` โดยผู้พัฒนาปรับแต่งตัวเรนเดอร์ให้เหมาะกับชิปกราฟิกมือถือ พร้อมปุ่มควบคุมบนหน้าจอและระบบสั่นของโทรศัพท์ครับ
+
+ข้อควรรู้ที่สำคัญมากคือ **ในตัวโปรเจกต์ไม่มีไฟล์เกมลิขสิทธิ์แถมมาให้** (ยกเว้นข้อความภาษาอังกฤษของเกม) ผู้เล่นต้องนำเข้าไฟล์อิมเมจแผ่นเกมของตัวเองตอนเปิดใช้งานครั้งแรกครับ โดยตอนนี้รองรับเฉพาะแผ่นโซนอเมริกาเหนือรุ่น **NTSC USA v1.1 (รหัส SLUS-007.07)** เท่านั้น ส่วนแผ่นโซน PAL และญี่ปุ่นยังไม่ได้ทดสอบ
+
+ทาง **Rely on Horror** บอกว่าไฟล์ ISO มาตรฐานขนาด 2,048 ไบต์ใช้ไม่ได้ ต้องเป็นไฟล์อิมเมจแผ่นดิบ ส่วนหน้า GitHub ของโปรเจกต์บอกชนิดไฟล์ที่รับไว้ คือ `.cue` คู่กับ `.bin`, `.bin` อย่างเดียว, `.iso` แบบเซกเตอร์ 2,352 ไบต์ หรือไฟล์ `.zip` ที่รวมไฟล์เหล่านี้ครับ
+
+</div>
+
+</section>
+
+<section class="section">
+
+## คนไทยเล่นได้ไหม
+
+<div class="prose">
+
+คนไทยดาวน์โหลดได้ผ่านหน้า GitHub Releases ของผู้พัฒนาครับ แต่มีข้อจำกัดสองเรื่องที่ต้องรู้ก่อน
+
+- **ภาษาในเกม:** จากเอกสารลิขสิทธิ์ของโปรเจกต์ ตัวเกมมีคำแปลเพิ่ม 12 ภาษานอกเหนือจากภาษาอังกฤษจากแผ่นเกม (เช่น จีน ญี่ปุ่น เกาหลี อาหรับ ฯลฯ) **ยังไม่มีภาษาไทย** ในชุดภาษาทางการของโปรเจกต์ครับ
+- **ไฟล์แผ่นเกม:** ผู้เล่นต้องเตรียมไฟล์อิมเมจจากแผ่นเกมของตัวเองรหัส `SLUS-007.07` ของตัวเองมาแปลงข้อมูลเข้าตัวเกมในครั้งแรก ไม่อย่างนั้นจะเข้าเล่นไม่ได้ครับ
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## แหล่งข้อมูล
+
+<div class="prose">
+
+- GitHub — keklick1337/silent-hill-pc: <a href="https://github.com/keklick1337/silent-hill-pc" rel="noopener">หน้าหลักโปรเจกต์และรายละเอียดฟีเจอร์</a>
+- GitHub Releases (26 พ.ย. 2569 เวลาไทย): <a href="https://github.com/keklick1337/silent-hill-pc/releases/tag/v1.2.0" rel="noopener">บันทึกการอัปเดต Silent Hill PC v1.2.0</a>
+- เอกสารลิขสิทธิ์และคำแปลในโปรเจกต์: <a href="https://github.com/keklick1337/silent-hill-pc/blob/master/COPYRIGHT.md" rel="noopener">COPYRIGHT.md</a>
+- คู่มือการสร้างไฟล์ติดตั้ง Android: <a href="https://github.com/keklick1337/silent-hill-pc/blob/master/docs/BUILDING.md" rel="noopener">docs/BUILDING.md</a>
+- Rely on Horror (27 พ.ย. 2569): <a href="https://www.relyonhorror.com/latest-news/silent-hill-news/silent-hill-1-pc-port/" rel="noopener">Silent Hill 1 Gets a PC Port with Ray Tracing, HDR, and Mod Support</a>
+
+</div>
+
+</section>
+
+<section class="section sources">
+
+## ที่มาของภาพ
+
+<div class="prose">
+
+- ภาพปก: by dojojin.tech
+- ภาพในเนื้อข่าว: ภาพประกอบจาก DOJOJIN.TECH
+
+</div>
+
+</section>
